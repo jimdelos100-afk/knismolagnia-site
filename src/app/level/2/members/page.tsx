@@ -14,21 +14,24 @@ export default async function MembersPage() {
   ])
 
   const followed = new Set((follows || []).map((f: any) => f.followed_id))
-  const rows = await Promise.all((members || []).map(async (m: any) => {
-    let avatar: string | null = null
-    if (m.is_visible && m.avatar_url) {
-      const signed = await supabase.storage.from('avatars').createSignedUrl(m.avatar_url, 3600)
-      avatar = signed.data?.signedUrl || null
-    }
-    return {
-      user_id: m.user_id,
-      access_level: m.access_level,
-      display_name: m.display_name,
-      bio: m.bio,
-      is_visible: m.is_visible,
-      avatar,
-      initialFollowing: followed.has(m.user_id),
-    }
+  const avatarPaths = [...new Set((members || []).filter((m: any) => m.is_visible && m.avatar_url).map((m: any) => m.avatar_url))] as string[]
+  const avatarMap = new Map<string, string>()
+  if (avatarPaths.length) {
+    const signed = await supabase.storage.from('avatars').createSignedUrls(avatarPaths, 3600)
+    avatarPaths.forEach((path, i) => {
+      const url = signed.data?.[i]?.signedUrl
+      if (url) avatarMap.set(path, url)
+    })
+  }
+
+  const rows = (members || []).map((m: any) => ({
+    user_id: m.user_id,
+    access_level: m.access_level,
+    display_name: m.display_name,
+    bio: m.bio,
+    is_visible: m.is_visible,
+    avatar: m.avatar_url ? avatarMap.get(m.avatar_url) || null : null,
+    initialFollowing: followed.has(m.user_id),
   }))
 
   return <>

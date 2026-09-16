@@ -49,6 +49,7 @@ export default function DiscussionRoom() {
   const [busy, setBusy] = useState(false)
   const [currentUserId, setCurrentUserId] = useState('')
   const streamRef = useRef<HTMLDivElement>(null)
+  const signedAvatarCacheRef = useRef<Map<string, string | null>>(new Map())
 
   async function load(scrollToBottom = false) {
     const { data: authData } = await supabase.auth.getUser()
@@ -70,25 +71,26 @@ export default function DiscussionRoom() {
     }
 
     const followed = new Set((follows || []).map((f: any) => f.followed_id))
-    const signedCache = new Map<string, string | null>()
-    async function signedAvatar(path: string | null, visible: boolean) {
-      if (!visible || !path) return null
-      if (signedCache.has(path)) return signedCache.get(path) || null
-      const signed = await supabase.storage.from('avatars').createSignedUrl(path, 3600)
-      const url = signed.data?.signedUrl || null
-      signedCache.set(path, url)
-      return url
+    const cache = signedAvatarCacheRef.current
+    const neededPaths = [...new Set([
+      ...(messages || []).filter((m: any) => m.is_visible && m.avatar_url).map((m: any) => m.avatar_url),
+      ...(commentRows || []).filter((c: any) => c.is_visible && c.avatar_url).map((c: any) => c.avatar_url),
+    ].filter((path: any) => path && !cache.has(path)))] as string[]
+
+    if (neededPaths.length) {
+      const signed = await supabase.storage.from('avatars').createSignedUrls(neededPaths, 3600)
+      neededPaths.forEach((path, i) => cache.set(path, signed.data?.[i]?.signedUrl || null))
     }
 
-    const hydratedMessages = await Promise.all((messages || []).map(async (m: any) => ({
+    const hydratedMessages = (messages || []).map((m: any) => ({
       ...m,
-      avatar: await signedAvatar(m.avatar_url, m.is_visible),
+      avatar: m.is_visible && m.avatar_url ? cache.get(m.avatar_url) || null : null,
       initialFollowing: followed.has(m.user_id),
-    })))
-    const hydratedComments = await Promise.all((commentRows || []).map(async (c: any) => ({
+    }))
+    const hydratedComments = (commentRows || []).map((c: any) => ({
       ...c,
-      avatar: await signedAvatar(c.avatar_url, c.is_visible),
-    })))
+      avatar: c.is_visible && c.avatar_url ? cache.get(c.avatar_url) || null : null,
+    }))
 
     setRows(hydratedMessages)
     setComments(hydratedComments)

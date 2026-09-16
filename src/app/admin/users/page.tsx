@@ -16,13 +16,18 @@ export default async function UsersPage() {
     ? await supabase.from('profiles').select('id,display_name,email,bio,avatar_url').in('id', ids)
     : { data: [] as any[] }
 
-  const profilesWithAvatar = await Promise.all((profiles || []).map(async (p: any) => {
-    let avatar_signed_url: string | null = null
-    if (p.avatar_url) {
-      const signed = await supabase.storage.from('avatars').createSignedUrl(p.avatar_url, 3600)
-      avatar_signed_url = signed.data?.signedUrl || null
-    }
-    return { ...p, avatar_signed_url }
+  const avatarPaths = [...new Set((profiles || []).map((p: any) => p.avatar_url).filter(Boolean))] as string[]
+  const avatarMap = new Map<string, string>()
+  if (avatarPaths.length) {
+    const signed = await supabase.storage.from('avatars').createSignedUrls(avatarPaths, 3600)
+    avatarPaths.forEach((path, i) => {
+      const url = signed.data?.[i]?.signedUrl
+      if (url) avatarMap.set(path, url)
+    })
+  }
+  const profilesWithAvatar = (profiles || []).map((p: any) => ({
+    ...p,
+    avatar_signed_url: p.avatar_url ? avatarMap.get(p.avatar_url) || null : null,
   }))
 
   const profileMap = new Map(profilesWithAvatar.map((p: any) => [p.id, p]))

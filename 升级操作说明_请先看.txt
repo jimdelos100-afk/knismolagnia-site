@@ -1,30 +1,13 @@
-KNISMOLAGNIA.CLUB V5.3 升级操作说明
+V5.4 上传步骤
 
-本包已经合并 V5、V5.1、V5.2 和 V5.3 的全部改动。
+1. 当前线上 Supabase 数据库的 V5.4 迁移已经执行完成，不需要再运行 SQL。
+2. 解压完整升级包，打开 knismolagnia-v5-social-auth 文件夹。
+3. 进入 GitHub 仓库 knismolagnia-site。
+4. 点击 Add file → Upload files。
+5. 把 knismolagnia-v5-social-auth 文件夹“里面的全部内容”拖进仓库根目录覆盖同名文件。
+6. 点击 Commit changes。
+7. 等待 Vercel 最新 Deployment 变为绿色 Ready。
+8. 部署后先测试个人资料锁定和管理员“资料修改审核”。
 
-【你当前这个线上项目最简单的做法】
-数据库的 002、003、004、005、006 增量升级已经应用到当前 Supabase 项目，因此现在只需要上传新版源码，不要重复运行 SQL。
-
-1. 解压本 ZIP。
-2. 打开 GitHub 仓库：jimdelos100-afk/knismolagnia-site
-3. 点 Add file → Upload files。
-4. 把“knismolagnia-v5-social-auth”文件夹里面的全部内容拖到仓库根目录，同名文件覆盖。
-5. 点 Commit changes。
-6. 打开 Vercel → knismolagnia-site → Deployments。
-7. 等最新部署变成绿色 Ready。
-8. 按“测试清单.txt”测试。
-
-【本次 V5.3 重点】
-- 每条交流室留言下新增评论区。
-- 每个账号在每条留言下只能评论一次；提交前会提示，数据库也会强制限制。
-- 管理员隐藏评论后，该账号仍不能在同一条留言下再次评论。
-- 评论显示头像、用户名、Level、完整到秒的时间戳。
-- 从交流室进入访客主页后可以直接“返回交流室”。
-- 从同好列表进入访客主页后可以直接“返回同好列表”。
-- 全站 Level 标识统一为 Level 1—Level 6，数字不补 0。
-- V5.2 的后台交流室、聊天式留言、同好列表位置等改动全部保留。
-
-【不要做】
-- 不要重新运行 001_initial.sql。
-- 当前线上项目也不需要重新运行 002/003/004/005/006。
-- 不要把 Supabase service-role、数据库密码、Resend SMTP 密钥上传 GitHub。
+性能建议：
+如果动态页面仍明显卡顿，可进入 Vercel 项目 → Settings → Functions，把 Function Region 选择为 Singapore（sin1），让服务器函数更靠近当前位于新加坡的 Supabase 数据库，然后重新部署。
