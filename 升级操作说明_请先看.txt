@@ -1,0 +1,39 @@
+KNISMOLAGNIA.CLUB V5 升级操作说明
+
+请严格按下面顺序做：
+
+【第 1 步：Supabase 改注册邮件为验证码】
+1. 打开 Supabase 项目。
+2. 左侧 Authentication → Email Templates。
+3. 打开 Confirm signup。
+4. 把正文改为“邮箱验证码模板.txt”里的内容。
+5. 保存。
+6. Authentication → Providers → Email，确认“Confirm email / 邮箱确认”保持开启。
+
+【第 2 步：升级数据库】
+1. Supabase 左侧 SQL Editor。
+2. New query。
+3. 打开本源码包：supabase/migrations/002_member_social_and_verification.sql
+4. 全部复制进去。
+5. 点击 Run。
+6. 看到 Success 后停止。
+
+注意：线上现有数据库不要重新运行 001_initial.sql，否则可能碰到已有对象冲突。只运行 002。
+
+【第 3 步：上传新版源码到 GitHub】
+1. 解压本 ZIP。
+2. 打开 GitHub 仓库：jimdelos100-afk/knismolagnia-site
+3. Add file → Upload files。
+4. 把解压后的项目内容上传到仓库根目录，同名文件覆盖。
+5. 提交 Commit changes。
+6. Vercel 会自动重新部署。
+
+【第 4 步：等待 Vercel】
+进入 Vercel → knismolagnia-site → Deployments。
+看到最新部署变成绿色 Ready 后再测试。
+
+【第 5 步：测试】
+按“测试清单.txt”逐项测试。建议用一个全新邮箱测试注册验证码，不要先用管理员账号测试删除账户。
+
+【Builder 可视化首页】
+源码已经保留 Builder Public API Key。发布新版后，在 Builder 创建 Page，URL 设置为 /，Preview URL 设置为 https://knismolagnia.club/。发布后首页正文可视化编辑；网站顶部账号/权限导航仍由代码控制。

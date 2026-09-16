@@ -1,13 +1,14 @@
 {
   "name": "knismolagnia-club",
   "private": true,
-  "version": "4.0.0",
+  "version": "5.0.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "@builder.io/sdk-react-nextjs": "^0.25.13",
     "@supabase/ssr": "^0.7.0",
     "@supabase/supabase-js": "^2.57.4",
     "next": "^15.5.3",

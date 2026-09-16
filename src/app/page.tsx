@@ -1,5 +1,13 @@
 import Link from 'next/link'
 import SiteHeader from '@/components/SiteHeader'
+import {
+  Content,
+  fetchOneEntry,
+  getBuilderSearchParams,
+  isPreviewing,
+} from '@builder.io/sdk-react-nextjs'
+
+const BUILDER_API_KEY = process.env.NEXT_PUBLIC_BUILDER_API_KEY || 'dea84b529b784fffb987fc23d31e956a'
 
 const cards = [
   [1,'♡','汉化组介绍','组内介绍、公告以及登录入口。'],
@@ -9,10 +17,9 @@ const cards = [
   [5,'☁','讨论室','成员主题、回复与交流空间。'],
   [6,'◇','资源区','具有相应授权与权限的成员区域。'],
 ]
-export default function Home() {
-  return <>
-    <SiteHeader />
-    <main className="wrap">
+
+function OriginalHomeBody() {
+  return <main className="wrap">
       <section className="hero">
         <div className="kicker">♡ 汉化组官方网站 ♡</div>
         <h1><span>欢迎来到</span><strong>我们的<br/>粉色小基地</strong><i>。</i></h1>
@@ -29,6 +36,38 @@ export default function Home() {
         <p>本版本的数据将由 Supabase 保存：用户资料、访问等级、投稿、讨论、内容与附件均有独立权限控制。管理员可以在后台审核账号、调整等级并维护各层内容。</p>
       </section>
     </main>
+}
+
+export const dynamic = 'force-dynamic'
+
+type HomeProps = {
+  searchParams: Promise<Record<string, string | string[] | undefined>>
+}
+
+export default async function Home({ searchParams }: HomeProps) {
+  const search = await searchParams
+  const builderSearch = Object.fromEntries(
+    Object.entries(search).map(([key, value]) => [key, Array.isArray(value) ? value[0] ?? '' : value ?? ''])
+  )
+
+  let content: any = null
+  try {
+    content = await fetchOneEntry({
+      model: 'page',
+      apiKey: BUILDER_API_KEY,
+      options: getBuilderSearchParams(builderSearch),
+      userAttributes: { urlPath: '/' },
+      fetchOptions: { cache: 'no-store' },
+    })
+  } catch {
+    // Builder 暂时不可用时保留原首页，避免影响登录与会员功能。
+  }
+
+  return <>
+    <SiteHeader />
+    {content || isPreviewing(builderSearch)
+      ? <Content content={content} model="page" apiKey={BUILDER_API_KEY} />
+      : <OriginalHomeBody />}
     <footer className="wrap">KNISMOLAGNIA.CLUB ♡ <span>尊重 · 同意 · 隐私 · 创作</span></footer>
   </>
 }
