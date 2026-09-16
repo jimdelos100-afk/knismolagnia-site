@@ -1,39 +1,30 @@
-KNISMOLAGNIA.CLUB V5 升级操作说明
+KNISMOLAGNIA.CLUB V5.2 升级操作说明
 
-请严格按下面顺序做：
+本包已经合并 V5、V5.1 和 V5.2 的全部改动。
 
-【第 1 步：Supabase 改注册邮件为验证码】
-1. 打开 Supabase 项目。
-2. 左侧 Authentication → Email Templates。
-3. 打开 Confirm signup。
-4. 把正文改为“邮箱验证码模板.txt”里的内容。
-5. 保存。
-6. Authentication → Providers → Email，确认“Confirm email / 邮箱确认”保持开启。
+【你当前这个线上项目最简单的做法】
+数据库的 002、003、004 增量升级已经应用到当前 Supabase 项目，因此现在只需要上传新版源码，不要重复运行 SQL。
 
-【第 2 步：升级数据库】
-1. Supabase 左侧 SQL Editor。
-2. New query。
-3. 打开本源码包：supabase/migrations/002_member_social_and_verification.sql
-4. 全部复制进去。
-5. 点击 Run。
-6. 看到 Success 后停止。
-
-注意：线上现有数据库不要重新运行 001_initial.sql，否则可能碰到已有对象冲突。只运行 002。
-
-【第 3 步：上传新版源码到 GitHub】
 1. 解压本 ZIP。
 2. 打开 GitHub 仓库：jimdelos100-afk/knismolagnia-site
-3. Add file → Upload files。
-4. 把解压后的项目内容上传到仓库根目录，同名文件覆盖。
-5. 提交 Commit changes。
-6. Vercel 会自动重新部署。
+3. 点 Add file → Upload files。
+4. 把“knismolagnia-v5-social-auth”文件夹里面的全部内容拖到仓库根目录，同名文件覆盖。
+5. 点 Commit changes。
+6. 打开 Vercel → knismolagnia-site → Deployments。
+7. 等最新部署变成绿色 Ready。
+8. 按“测试清单.txt”测试。
 
-【第 4 步：等待 Vercel】
-进入 Vercel → knismolagnia-site → Deployments。
-看到最新部署变成绿色 Ready 后再测试。
+【本次 V5.2 重点】
+- 管理后台“交流室管理”打开 /admin/discussion，不会离开后台布局。
+- Level 2 的同好列表入口移动到本层已发布内容的最底部。
+- Level 5 改为聊天式交流室，不再要求标题。
+- 所有有 Level 5 权限的成员都可以发送留言。
+- 留言显示头像、用户名、等级、完整到秒的时间戳。
+- 点击可见成员头像/用户名可进入成员主页并关注。
+- 高于自己等级的成员继续遵守隐私规则：只显示等级，其余资料隐藏。
+- 管理后台可以查看并删除交流室留言。
 
-【第 5 步：测试】
-按“测试清单.txt”逐项测试。建议用一个全新邮箱测试注册验证码，不要先用管理员账号测试删除账户。
-
-【Builder 可视化首页】
-源码已经保留 Builder Public API Key。发布新版后，在 Builder 创建 Page，URL 设置为 /，Preview URL 设置为 https://knismolagnia.club/。发布后首页正文可视化编辑；网站顶部账号/权限导航仍由代码控制。
+【不要做】
+- 不要重新运行 001_initial.sql。
+- 当前线上项目也不需要重新运行 002/003/004。
+- 不要把 Supabase service-role、数据库密码、Resend SMTP 密钥上传 GitHub。

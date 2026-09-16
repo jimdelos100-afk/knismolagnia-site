@@ -36,7 +36,7 @@ export default function LoginForm() {
     setBusy(false)
     if(error) return setMsg(error.message)
     setSent(true); setSeconds(60)
-    setMsg('验证码已发送，请查看邮箱。')
+    setMsg('如果该邮箱可以注册，验证码已发送。若一直收不到，该邮箱可能已经注册，请切换到登录。')
   }
 
   async function resendCode(){

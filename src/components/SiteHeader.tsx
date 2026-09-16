@@ -3,7 +3,7 @@ import { getSessionContext } from '@/lib/auth'
 
 const levels = [
   ['1','公开介绍'],['2','兴趣文化'],['3','作品投稿'],
-  ['4','作品档案'],['5','讨论室'],['6','资源区']
+  ['4','作品档案'],['5','成员交流'],['6','资源区']
 ]
 
 export default async function SiteHeader() {
