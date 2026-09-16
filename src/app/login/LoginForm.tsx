@@ -51,7 +51,7 @@ export default function LoginForm() {
   async function finishSignup(e:React.FormEvent){
     e.preventDefault(); setMsg('')
     if(!sent) return sendCode()
-    if(!/^\d{6}$/.test(token)) return setMsg('请输入邮件中的 6 位验证码。')
+    if(!/^\d{8}$/.test(token)) return setMsg('请输入邮件中的 8 位验证码。')
     setBusy(true)
     const {error}=await supabase.auth.verifyOtp({email,token,type:'email'})
     setBusy(false)
@@ -80,7 +80,7 @@ export default function LoginForm() {
     {mode==='signup' && <>
       <label>确认密码<input type="password" minLength={8} value={confirmPassword} onChange={e=>setConfirmPassword(e.target.value)} required disabled={sent}/></label>
       {!sent ? <button type="button" className="button secondary full" disabled={busy} onClick={sendCode}>{busy?'发送中…':'获取邮箱验证码'}</button> : <>
-        <label>邮箱验证码<input inputMode="numeric" autoComplete="one-time-code" maxLength={6} value={token} onChange={e=>setToken(e.target.value.replace(/\D/g,'').slice(0,6))} placeholder="6 位验证码" required/></label>
+        <label>邮箱验证码<input inputMode="numeric" autoComplete="one-time-code" maxLength={8} value={token} onChange={e=>setToken(e.target.value.replace(/\D/g,'').slice(0,8))} placeholder="8 位验证码" required/></label>
         <button type="button" className="button secondary full" disabled={busy||seconds>0} onClick={resendCode}>{seconds>0?`${seconds} 秒后可重新发送`:'重新发送验证码'}</button>
       </>}
     </>}

@@ -20,3 +20,28 @@
 .submission-admin .actions{margin-top:12px}
 @media(max-width:800px){.member-grid{grid-template-columns:1fr}.member-card{grid-template-columns:64px 1fr}.member-card>.button{grid-column:1/-1;width:100%;text-align:center}.member-avatar{width:56px;height:56px}}
 @media(max-width:430px){.profile-avatar-row{align-items:flex-start}.member-card{grid-template-columns:50px 1fr;padding:18px}.member-avatar{width:46px;height:46px}}
+
+/* V5.1：同好列表视图切换 + 管理员成员资料 */
+.member-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px;padding:14px 18px}
+.member-count{font-size:11px;color:#9b7e8e}.member-count b{font-size:22px;color:#d65f98;margin-right:3px}
+.view-switch{display:flex;gap:6px;padding:4px;border:1px solid #eed8e3;border-radius:99px;background:#fff8fc}
+.view-switch button{border:0;background:transparent;color:#9a788a;padding:8px 12px;border-radius:99px;font-size:10px;cursor:pointer}
+.view-switch button.on{background:#e76eaa;color:#fff}
+.member-bio{margin-top:10px;padding-top:10px;border-top:1px solid #f3e4eb}
+.member-bio>b{display:block;color:#d6659c;font-size:9px;letter-spacing:.5px;margin-bottom:4px}
+.member-bio p{margin:0;white-space:pre-wrap;line-height:1.65}
+.member-list{display:grid;grid-template-columns:1fr;gap:10px}
+.member-list .member-card{grid-template-columns:64px minmax(0,1fr) auto;padding:18px 22px}
+.member-list .member-avatar{width:54px;height:54px}
+.member-list .member-main{display:grid;grid-template-columns:100px 170px minmax(240px,1fr);gap:14px;align-items:center}
+.member-list .member-main h3{margin:0}
+.member-list .member-bio{margin:0;padding:0;border:0}
+.admin-user-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;border:1px solid #ead2de;background:#fff}
+.admin-user-avatar.placeholder{display:grid;place-items:center;background:#fff0f7;color:#c76294;font-weight:800}
+.admin-user-bio{min-width:180px;max-width:340px;white-space:pre-wrap;line-height:1.55;color:#826879}
+.admin-me{display:block;width:max-content;margin-top:5px;padding:3px 6px;border-radius:99px;background:#fff0f7;color:#d65f98;font-size:8px}
+.admin-delete-account{float:none;white-space:nowrap;margin:0;padding:9px 12px}
+.admin-delete-account:disabled{opacity:.45;cursor:not-allowed}
+.admin-user-table td{vertical-align:middle}
+@media(max-width:900px){.member-list .member-main{grid-template-columns:1fr}.member-list .member-bio{padding-top:8px;border-top:1px solid #f3e4eb}.member-list .member-card{grid-template-columns:58px 1fr}.member-list .member-card>.button{grid-column:1/-1;width:100%}}
+@media(max-width:600px){.member-toolbar{align-items:flex-start;flex-direction:column}.view-switch{width:100%}.view-switch button{flex:1}.member-list .member-card{grid-template-columns:50px 1fr;padding:16px}.member-list .member-avatar{width:46px;height:46px}}
