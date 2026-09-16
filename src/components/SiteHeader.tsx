@@ -19,7 +19,7 @@ export default async function SiteHeader() {
       </div>
     </div>
     <nav className="levelnav">
-      {levels.map(([n,t]) => <Link key={n} href={`/level/${n}`}><b>{n.padStart(2,'0')}</b><span>{t}</span></Link>)}
+      {levels.map(([n,t]) => <Link key={n} href={`/level/${n}`}><b>Level {n}</b><span>{t}</span></Link>)}
     </nav>
   </header>
 }

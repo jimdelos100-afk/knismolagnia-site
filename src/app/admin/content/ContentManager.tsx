@@ -27,8 +27,8 @@ export default function ContentManager({initial}:{initial:Item[]}){
     if(error)setMsg(error.message); else setItems(x=>x.filter(i=>i.id!==id))
   }
   return <><form className="panel admin-form" onSubmit={create}><div className="form-grid">
-    <label>层级<select value={level} onChange={e=>setLevel(+e.target.value)}>{[1,2,3,4,5,6].map(n=><option value={n} key={n}>第 {String(n).padStart(2,'0')} 层</option>)}</select></label>
+    <label>Level<select value={level} onChange={e=>setLevel(+e.target.value)}>{[1,2,3,4,5,6].map(n=><option value={n} key={n}>Level {n}</option>)}</select></label>
     <label>类型<select value={kind} onChange={e=>setKind(e.target.value)}><option value="page">普通内容</option><option value="announcement">公告</option><option value="work">作品</option></select></label>
-  </div><label>标题<input value={title} onChange={e=>setTitle(e.target.value)} required/></label><label>正文<textarea rows={7} value={body} onChange={e=>setBody(e.target.value)} required/></label><label>附件（可多选）<input type="file" multiple onChange={e=>setFiles(e.target.files)}/></label><button className="button primary" disabled={busy}>{busy?'正在上传…':'发布到该层 ♡'}</button>{msg&&<span className="form-msg">{msg}</span>}</form>
-  <div className="admin-content-list">{items.map(i=><article className="panel" key={i.id}><span className="badge">第 {String(i.level).padStart(2,'0')} 层</span><h3>{i.title}</h3><p>{i.body.slice(0,180)}{i.body.length>180?'…':''}</p><small>{i.content_files?.length||0} 个附件</small><button className="danger-button" onClick={()=>remove(i.id)}>删除</button></article>)}</div></>
+  </div><label>标题<input value={title} onChange={e=>setTitle(e.target.value)} required/></label><label>正文<textarea rows={7} value={body} onChange={e=>setBody(e.target.value)} required/></label><label>附件（可多选）<input type="file" multiple onChange={e=>setFiles(e.target.files)}/></label><button className="button primary" disabled={busy}>{busy?'正在上传…':'发布到该 Level ♡'}</button>{msg&&<span className="form-msg">{msg}</span>}</form>
+  <div className="admin-content-list">{items.map(i=><article className="panel" key={i.id}><span className="badge">Level {i.level}</span><h3>{i.title}</h3><p>{i.body.slice(0,180)}{i.body.length>180?'…':''}</p><small>{i.content_files?.length||0} 个附件</small><button className="danger-button" onClick={()=>remove(i.id)}>删除</button></article>)}</div></>
 }

@@ -35,9 +35,9 @@ export default async function MembersPage() {
     <SiteHeader />
     <main className="wrap level-page">
       <div className="level-heading">
-        <small>第 02 层 · 子层级</small>
+        <small>Level 2 · 同好列表</small>
         <h1>同好列表</h1>
-        <p>你可以查看与自己同等级或更低等级成员的头像、昵称与个人简介。更高等级成员仅显示等级，其余资料以星号隐藏。</p>
+        <p>你可以查看与自己同 Level 或更低 Level 成员的头像、昵称与个人简介。更高 Level 成员仅显示 Level，其余资料以星号隐藏。</p>
       </div>
       <MemberDirectory rows={rows as any} currentUserId={user.id} />
     </main>

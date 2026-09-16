@@ -34,7 +34,7 @@ export default async function UsersPage() {
   return <>
     <div className="admin-head">
       <div><small>成员管理</small><h1>账号与权限</h1></div>
-      <p>管理员可以查看成员头像、简介、等级与账号状态，并可永久删除其他成员账号。</p>
+      <p>管理员可以查看成员头像、简介、Level 与账号状态，并可永久删除其他成员账号。</p>
     </div>
     <UserManager initial={rows as any} currentUserId={user.id} />
   </>

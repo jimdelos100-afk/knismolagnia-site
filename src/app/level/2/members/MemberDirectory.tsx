@@ -40,14 +40,14 @@ export default function MemberDirectory({ rows, currentUserId }: { rows: MemberR
 
     <div className={view === 'cards' ? 'member-grid' : 'member-list'}>
       {rows.map(m => <article className="panel member-card" key={m.user_id}>
-        {m.is_visible ? <Link href={`/level/2/members/${m.user_id}`} className="member-avatar-link">
+        {m.is_visible ? <Link href={`/level/2/members/${m.user_id}?from=members`} className="member-avatar-link">
           {m.avatar
             ? <img className="member-avatar" src={m.avatar} alt={`${m.display_name} 的头像`} />
             : <div className="member-avatar masked">{(m.display_name || '成').slice(0, 1)}</div>}
         </Link> : <div className="member-avatar masked">******</div>}
         <div className="member-main">
-          <span className="badge">等级 {String(m.access_level).padStart(2, '0')}</span>
-          <h3>{m.is_visible ? <Link className="member-name-link" href={`/level/2/members/${m.user_id}`}>{m.display_name}</Link> : m.display_name}</h3>
+          <span className="badge">Level {m.access_level}</span>
+          <h3>{m.is_visible ? <Link className="member-name-link" href={`/level/2/members/${m.user_id}?from=members`}>{m.display_name}</Link> : m.display_name}</h3>
           <div className="member-bio"><b>个人简介</b><p>{m.bio || '这个成员还没有填写简介。'}</p></div>
         </div>
         {m.user_id !== currentUserId && m.is_visible && <FollowButton targetId={m.user_id} initialFollowing={m.initialFollowing} />}

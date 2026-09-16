@@ -17,6 +17,6 @@ export default async function AdminHome(){
       <article><span>讨论主题</span><b>{t.count??0}</b></article>
       <article><span>待审实名</span><b>{v.count??0}</b></article>
     </div>
-    <div className="panel"><h3>后台说明</h3><p>在“成员管理”调整访问等级与账号状态；在“层级内容”向任意一层添加文字和多个文件；在“投稿管理”审核成员投稿；在“实名认证”查看并处理站内实名申请。</p></div>
+    <div className="panel"><h3>后台说明</h3><p>在“成员管理”调整 Level 与账号状态；在“Level 内容”向任意 Level 添加文字和多个文件；在“投稿管理”审核成员投稿；在“实名认证”查看并处理站内实名申请。</p></div>
   </>
 }

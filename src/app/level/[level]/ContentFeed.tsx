@@ -15,7 +15,7 @@ export default function ContentFeed({items}:{items:I[]}) {
     else if(data?.signedUrl) window.open(data.signedUrl,'_blank','noopener,noreferrer')
     setLoading(null)
   }
-  if(!items.length) return <div className="empty panel">这一层暂时还没有内容，管理员可以从后台添加文字和附件。</div>
+  if(!items.length) return <div className="empty panel">这个 Level 暂时还没有内容，管理员可以从后台添加文字和附件。</div>
   return <div className="content-feed">{items.map(x=><article className="panel content-item" key={x.id}>
     <span className="badge">{x.kind==='announcement'?'公告':x.kind==='work'?'作品':'内容'}</span>
     <h2>{x.title}</h2><p className="content-body">{x.body}</p>

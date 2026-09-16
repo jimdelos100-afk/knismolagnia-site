@@ -11,7 +11,7 @@ const meta: Record<number,[string,string]> = {
   2:['兴趣文化介绍','成员可访问的文化、术语与入门内容。'],
   3:['作品目录 / 投稿箱','浏览作品目录，也可以向汉化组投稿。'],
   4:['作品档案 / 评价','作品简介、评价与来源信息。'],
-  5:['成员交流室','达到本层权限的成员都可以发布留言并交流。'],
+  5:['成员交流室','拥有 Level 5 权限的成员都可以发布留言并交流。'],
   6:['资源区','仅用于有权分发并具有相应访问权限的文件。']
 }
 
@@ -23,9 +23,9 @@ export default async function LevelPage({params}:{params:Promise<{level:string}>
     .select('id,title,body,kind,created_at,content_files(id,file_name,bucket_id,path,mime_type,size_bytes)')
     .eq('level',n).eq('is_published',true).order('created_at',{ascending:false})
   return <><SiteHeader/><main className="wrap level-page">
-    <div className="level-heading"><small>第 {String(n).padStart(2,'0')} 层</small><h1>{meta[n][0]}</h1><p>{meta[n][1]}</p></div>
+    <div className="level-heading"><small>Level {n}</small><h1>{meta[n][0]}</h1><p>{meta[n][1]}</p></div>
     <ContentFeed items={(items || []) as any} />
-    {n===2 && <div className="panel members-entry"><h3>同好列表</h3><p>浏览成员资料并关注同好。高于你等级的成员会自动隐藏资料。</p><Link className="button primary" href="/level/2/members">进入同好列表 ♡</Link></div>}
+    {n===2 && <div className="panel members-entry"><h3>同好列表</h3><p>浏览成员资料并关注同好。高于你当前 Level 的成员会自动隐藏资料。</p><Link className="button primary" href="/level/2/members">进入同好列表 ♡</Link></div>}
     {n===3 && <SubmissionBox />}
     {n===5 && <DiscussionRoom />}
   </main></>

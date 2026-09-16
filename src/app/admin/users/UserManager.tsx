@@ -83,7 +83,7 @@ export default function UserManager({ initial, currentUserId }: { initial: Row[]
           <th>成员</th>
           <th>邮箱</th>
           <th>简介</th>
-          <th>等级</th>
+          <th>Level</th>
           <th>角色</th>
           <th>状态</th>
           <th>操作</th>
