@@ -59,7 +59,6 @@ export default async function AccountPage() {
       <ProfileEditor
         initialName={profile?.display_name || ''}
         initialBio={profile?.bio || ''}
-        initialAvatarPath={profile?.avatar_url || null}
         initialAvatarUrl={avatarUrl}
         pendingRequest={pendingRequest as any}
         pendingAvatarUrl={pendingAvatarUrl}

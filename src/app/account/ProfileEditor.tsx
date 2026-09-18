@@ -16,7 +16,6 @@ type ChangeRequest = {
 type Props = {
   initialName: string
   initialBio: string
-  initialAvatarPath: string | null
   initialAvatarUrl: string | null
   pendingRequest: ChangeRequest | null
   pendingAvatarUrl: string | null
@@ -26,7 +25,6 @@ type Props = {
 export default function ProfileEditor({
   initialName,
   initialBio,
-  initialAvatarPath,
   initialAvatarUrl,
   pendingRequest,
   pendingAvatarUrl,
@@ -34,10 +32,9 @@ export default function ProfileEditor({
 }: Props) {
   const supabase = useMemo(() => createClient(), [])
   const bioLocked = initialBio.trim().length > 0
-  const avatarLocked = Boolean(initialAvatarPath)
 
   const [firstBio, setFirstBio] = useState('')
-  const [avatarUrl, setAvatarUrl] = useState(initialAvatarUrl || '')
+  const avatarUrl = initialAvatarUrl || ''
   const [changeName, setChangeName] = useState(initialName)
   const [changeBio, setChangeBio] = useState(initialBio)
   const [requestAvatarPath, setRequestAvatarPath] = useState('')
@@ -59,32 +56,6 @@ export default function ProfileEditor({
       'image/gif': 'gif',
     }
     return extMap[file.type] || 'jpg'
-  }
-
-  async function uploadFirstAvatar(file: File) {
-    const invalid = validateAvatar(file)
-    if (invalid) return setMsg(invalid)
-    setBusy(true)
-    setMsg('')
-    const { data: { user } } = await supabase.auth.getUser()
-    if (!user) { setBusy(false); return }
-
-    const path = `${user.id}/avatar-${Date.now()}.${extensionFor(file)}`
-    const up = await supabase.storage.from('avatars').upload(path, file, { upsert: false, contentType: file.type })
-    if (up.error) { setBusy(false); return setMsg(up.error.message) }
-
-    const { error } = await supabase.rpc('set_initial_profile_avatar', { new_avatar_url: path })
-    if (error) {
-      await supabase.storage.from('avatars').remove([path])
-      setBusy(false)
-      return setMsg(error.message)
-    }
-
-    const signed = await supabase.storage.from('avatars').createSignedUrl(path, 3600)
-    setAvatarUrl(signed.data?.signedUrl || '')
-    setBusy(false)
-    setMsg('首次头像已保存并锁定。后续更换需要管理员审核。')
-    window.setTimeout(() => location.reload(), 700)
   }
 
   async function saveFirstBio() {
@@ -126,7 +97,7 @@ export default function ProfileEditor({
 
     const nameValue = changeName.trim() === initialName ? null : changeName.trim()
     const bioValue = bioLocked && changeBio.trim() !== initialBio ? changeBio.trim() : null
-    const avatarValue = avatarLocked && requestAvatarPath ? requestAvatarPath : null
+    const avatarValue = requestAvatarPath || null
     if (!nameValue && bioValue === null && !avatarValue) return setMsg('没有检测到需要提交审核的修改。')
 
     setBusy(true)
@@ -154,22 +125,20 @@ export default function ProfileEditor({
   return <div className="profile-editor-stack">
     <section className="panel profile-lock-notice">
       <h3>个人资料修改规则</h3>
-      <p><b>昵称：</b>注册完成后立即锁定，不能直接修改。</p>
+      <p><b>昵称：</b>可以申请修改，通过管理员审核后生效。</p>
       <p><b>个人简介：</b>第一次填写并保存后锁定。</p>
-      <p><b>头像：</b>第一次上传并保存后锁定。</p>
-      <p>锁定后的任何修改都必须提交管理员审核；已有申请待审核时，不能重复提交新的资料修改申请。</p>
+      <p><b>头像：</b>首次上传和后续更换都可以提交，但必须通过管理员审核后生效。</p>
+      <p>每次只能提交一条资料修改申请；管理员处理以前，昵称、头像和简介都不能再次提交。</p>
     </section>
 
     <section className="panel profile-form">
       <h3>当前个人资料</h3>
       <div className="profile-avatar-row">
         {avatarUrl ? <img className="profile-avatar-img" src={avatarUrl} alt="我的头像" /> : <div className="avatar">{(initialName || 'K').slice(0, 1)}♡</div>}
-        {!avatarLocked
-          ? <label className="avatar-upload">首次上传头像<input type="file" accept="image/png,image/jpeg,image/webp,image/gif" disabled={busy} onChange={e => { const f = e.target.files?.[0]; if (f) void uploadFirstAvatar(f) }} /></label>
-          : <span className="profile-locked-tag">已锁定 · 更换需审核</span>}
+        <span className="profile-locked-tag">{avatarUrl ? '当前头像 · 更换需审核' : '尚未设置 · 上传需审核'}</span>
       </div>
 
-      <label>昵称 <span className="profile-locked-tag">注册后已锁定</span><input value={initialName} readOnly /></label>
+      <label>昵称 <span className="profile-locked-tag">当前昵称</span><input value={initialName} readOnly /></label>
 
       {bioLocked
         ? <label>个人简介 <span className="profile-locked-tag">已锁定 · 修改需审核</span><textarea value={initialBio} rows={5} readOnly /></label>
@@ -191,13 +160,13 @@ export default function ProfileEditor({
           <p>管理员处理此申请前，你不能再次提交资料修改。</p>
         </div>
       </> : <>
-        <p>这里只填写你希望更改的内容。未修改的项目保持原样。</p>
-        <label>申请修改昵称<input value={changeName} maxLength={40} onChange={e => setChangeName(e.target.value)} /></label>
+        <p>填写需要修改的项目并提交。审核通过前页面继续显示原资料。</p>
+        <label>申请修改昵称<input value={changeName} maxLength={40} onChange={e => setChangeName(e.target.value)} placeholder="输入希望使用的新昵称" /></label>
         {bioLocked && <label>申请修改简介<textarea value={changeBio} maxLength={500} rows={5} onChange={e => setChangeBio(e.target.value)} /></label>}
-        {avatarLocked && <div className="profile-avatar-row request-avatar-row">
+        <div className="profile-avatar-row request-avatar-row">
           {requestAvatarPreview ? <img className="profile-avatar-img" src={requestAvatarPreview} alt="候选新头像" /> : <span>当前未选择新头像</span>}
-          <label className="avatar-upload">选择候选新头像<input type="file" accept="image/png,image/jpeg,image/webp,image/gif" disabled={busy} onChange={e => { const f = e.target.files?.[0]; if (f) void uploadRequestedAvatar(f) }} /></label>
-        </div>}
+          <label className="avatar-upload">{avatarUrl ? '选择候选新头像' : '选择首次头像'}<input type="file" accept="image/png,image/jpeg,image/webp,image/gif" disabled={busy} onChange={e => { const f = e.target.files?.[0]; if (f) void uploadRequestedAvatar(f) }} /></label>
+        </div>
         <button className="button primary" disabled={busy}>{busy ? '提交中…' : '提交资料修改申请'}</button>
       </>}
       {msg && <p className="form-msg">{msg}</p>}

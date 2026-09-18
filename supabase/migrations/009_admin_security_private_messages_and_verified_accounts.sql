@@ -1,5 +1,7 @@
 -- V5.5：后台安全、按用户开启实名认证、Level 2 私密留言、审核来源、邮箱验证后建站内账号
 
+begin;
+
 -- 1. 只有邮箱确认后才创建 profiles / memberships。
 create or replace function public.provision_confirmed_user(target auth.users)
 returns void language plpgsql security definer set search_path=public
@@ -37,11 +39,8 @@ revoke all on function public.provision_confirmed_user(auth.users) from public,a
 revoke all on function public.handle_new_user() from public,anon,authenticated;
 revoke all on function public.handle_user_email_confirmed() from public,anon,authenticated;
 
--- 清除历史未验证用户错误生成的“站内账号”；Auth 待验证身份保留，日后验证会自动重建。
-delete from public.memberships m using auth.users u
-where m.user_id=u.id and u.email_confirmed_at is null;
-delete from public.profiles p using auth.users u
-where p.id=u.id and u.email_confirmed_at is null;
+-- 安全修订：历史未验证账号保留，不自动删除任何 profiles / memberships。
+-- 今后新注册用户仍会在邮箱确认后才创建站内资料；历史数据由管理员人工核对。
 
 -- 补齐已经验证但历史上缺少站内资料的账号。
 do $$ declare u auth.users%rowtype; begin
@@ -72,6 +71,7 @@ grant execute on function public.admin_set_verification_enabled(uuid,boolean) to
 drop policy if exists "verification own insert" on public.verification_applications;
 drop policy if exists "verification user insert" on public.verification_applications;
 drop policy if exists "verification self insert" on public.verification_applications;
+drop policy if exists "verification enabled user insert" on public.verification_applications;
 create policy "verification enabled user insert" on public.verification_applications for insert to authenticated
 with check (
   user_id=(select auth.uid())
@@ -96,8 +96,10 @@ create table if not exists public.level2_private_messages (
 alter table public.level2_private_messages enable row level security;
 revoke all on public.level2_private_messages from anon,authenticated;
 grant select,insert on public.level2_private_messages to authenticated;
+drop policy if exists "private message own or admin read" on public.level2_private_messages;
 create policy "private message own or admin read" on public.level2_private_messages for select to authenticated
 using(user_id=(select auth.uid()) or public.is_admin());
+drop policy if exists "private message level2 insert" on public.level2_private_messages;
 create policy "private message level2 insert" on public.level2_private_messages for insert to authenticated
 with check(user_id=(select auth.uid()) and public.can_access_level(2) and source_page='Level 2' and content_type='私密留言');
 create index if not exists level2_private_messages_pending_idx on public.level2_private_messages(status,created_at desc);
@@ -136,3 +138,5 @@ grant select on public.memberships to authenticated;
 grant update on public.memberships to authenticated;
 revoke insert,update,delete on public.audit_logs from anon,authenticated;
 grant select on public.audit_logs to authenticated;
+
+commit;
