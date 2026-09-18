@@ -14,6 +14,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         <Link href="/admin/content">Level 内容</Link>
         <Link href="/admin/submissions">投稿管理</Link>
         <Link href="/admin/verification">实名认证</Link>
+        <Link href="/admin/messages">Level 2 私密留言</Link>
         <Link href="/admin/discussion">交流室管理</Link>
       </nav>
       <Link className="back-home" href="/">← 返回网站</Link>

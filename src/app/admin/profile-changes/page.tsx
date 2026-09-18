@@ -6,7 +6,7 @@ export const dynamic = 'force-dynamic'
 export default async function ProfileChangesPage() {
   const { supabase } = await requireAdmin()
   const { data: requests } = await supabase.from('profile_change_requests')
-    .select('id,user_id,requested_display_name,requested_bio,requested_avatar_url,current_display_name,current_bio,current_avatar_url,status,admin_note,created_at,reviewed_at')
+    .select('id,user_id,requested_display_name,requested_bio,requested_avatar_url,current_display_name,current_bio,current_avatar_url,status,admin_note,source_page,content_type,created_at,reviewed_at')
     .order('created_at', { ascending: false })
     .limit(200)
 

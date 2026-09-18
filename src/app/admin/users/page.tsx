@@ -13,7 +13,7 @@ export default async function UsersPage() {
 
   const ids = (memberships || []).map((m: any) => m.user_id)
   const { data: profiles } = ids.length
-    ? await supabase.from('profiles').select('id,display_name,email,bio,avatar_url').in('id', ids)
+    ? await supabase.from('profiles').select('id,display_name,email,bio,avatar_url,verification_enabled,verification_status').in('id', ids)
     : { data: [] as any[] }
 
   const avatarPaths = [...new Set((profiles || []).map((p: any) => p.avatar_url).filter(Boolean))] as string[]

@@ -6,7 +6,7 @@ export const dynamic='force-dynamic'
 export default async function SubmissionsPage(){
   const {supabase}=await requireAdmin()
   const {data:submissions}=await supabase.from('submissions')
-    .select('id,user_id,title,message,status,admin_note,created_at,submission_files(id,file_name,bucket_id,path)')
+    .select('id,user_id,title,message,status,admin_note,source_page,content_type,created_at,submission_files(id,file_name,bucket_id,path)')
     .order('created_at',{ascending:false}).limit(100)
   const ids=[...new Set((submissions||[]).map((s:any)=>s.user_id))]
   const {data:profiles}=ids.length

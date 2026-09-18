@@ -9,6 +9,8 @@ type Profile = {
   bio: string | null
   avatar_url: string | null
   avatar_signed_url: string | null
+  verification_enabled: boolean
+  verification_status: string | null
 } | null
 
 type Row = {
@@ -33,6 +35,14 @@ export default function UserManager({ initial, currentUserId }: { initial: Row[]
       setRows(r => r.map(x => x.user_id === id ? { ...x, ...patchData } : x))
       setMsg('已保存 ♡')
     }
+  }
+
+  async function toggleVerification(id: string, enabled: boolean) {
+    setMsg('')
+    const { error } = await supabase.rpc('admin_set_verification_enabled', { target_user_id: id, enabled })
+    if (error) return setMsg(error.message)
+    setRows(r => r.map(x => x.user_id === id ? { ...x, profiles: x.profiles ? { ...x.profiles, verification_enabled: enabled } : x.profiles } : x))
+    setMsg(enabled ? '已为该用户开启实名认证。' : '已为该用户关闭实名认证。')
   }
 
   async function removeAccount(row: Row) {
@@ -86,6 +96,7 @@ export default function UserManager({ initial, currentUserId }: { initial: Row[]
           <th>Level</th>
           <th>角色</th>
           <th>状态</th>
+          <th>实名认证</th>
           <th>操作</th>
         </tr>
       </thead>
@@ -116,6 +127,7 @@ export default function UserManager({ initial, currentUserId }: { initial: Row[]
               <option value="suspended">停用</option>
             </select>
           </td>
+          <td><button type="button" className="button secondary" onClick={() => toggleVerification(r.user_id, !r.profiles?.verification_enabled)}>{r.profiles?.verification_enabled ? '关闭' : '开启'}</button><br/><small>{r.profiles?.verification_enabled ? (r.profiles.verification_status || '未提交') : '用户端隐藏'}</small></td>
           <td>
             <button
               type="button"

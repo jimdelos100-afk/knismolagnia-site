@@ -53,7 +53,7 @@ export default async function AccountPage() {
       <div className="stats">
         <article><span>当前 Level</span><b>Level {membership?.access_level}</b><p>可访问 Level 1—Level {membership?.access_level ?? 2}</p></article>
         <article><span>账号状态</span><b>{membership?.status === 'active' ? '正常' : '受限'}</b><p>角色：{membership?.role === 'admin' ? '管理员' : '成员'}</p></article>
-        <article><span>实名认证</span><b>{profile?.verification_status === 'approved' ? '已通过' : profile?.verification_status === 'pending' ? '待审核' : profile?.verification_status === 'rejected' ? '已驳回' : '未提交'}</b><p>当前为站内人工审核</p></article>
+        {profile?.verification_enabled && <article><span>实名认证</span><b>{profile?.verification_status === 'approved' ? '已通过' : profile?.verification_status === 'pending' ? '待审核' : profile?.verification_status === 'rejected' ? '已驳回' : '未提交'}</b><p>当前为站内人工审核</p></article>}
       </div>
 
       <ProfileEditor
@@ -66,7 +66,7 @@ export default async function AccountPage() {
         recentRequests={(profileChanges || []) as any}
       />
 
-      <VerificationForm status={profile?.verification_status || 'unsubmitted'} />
+      {profile?.verification_enabled && <VerificationForm status={profile?.verification_status || 'unsubmitted'} />}
 
       <div className="panel"><h3>我的关注 <span className="badge">仅自己可见</span></h3><div className="list">
         {following?.length ? following.map((f: any) => { const m: any = memberMap.get(f.followed_id); return <div key={f.followed_id}><span>{m?.display_name || '******'}</span><b>Level {m?.access_level ?? '—'}</b></div> }) : <p>还没有关注任何成员。</p>}
@@ -75,7 +75,7 @@ export default async function AccountPage() {
         {followers?.length ? followers.map((f: any) => { const m: any = memberMap.get(f.follower_id); return <div key={f.follower_id}><span>{m?.display_name || '******'}</span><b>Level {m?.access_level ?? '—'}</b></div> }) : <p>暂时还没有成员关注你。</p>}
       </div></div>
       <div className="panel"><h3>我的投稿</h3><div className="list">{submissions?.length ? submissions.map(s => <div key={s.id}><span>{s.title}</span><b>{s.status === 'pending' ? '待审核' : s.status === 'approved' ? '已通过' : '已退回'}</b></div>) : <p>还没有投稿。</p>}</div></div>
-      <div className="panel"><h3>实名认证提交记录</h3><div className="list">{verificationHistory?.length ? verificationHistory.map(v => <div key={v.id}><span>{new Date(v.created_at).toLocaleDateString('zh-CN')}</span><b>{v.status === 'pending' ? '待审核' : v.status === 'approved' ? '已通过' : '已驳回'}{v.admin_note ? ` · ${v.admin_note}` : ''}</b></div>) : <p>暂无记录。</p>}</div></div>
+      {profile?.verification_enabled && <div className="panel"><h3>实名认证提交记录</h3><div className="list">{verificationHistory?.length ? verificationHistory.map(v => <div key={v.id}><span>{new Date(v.created_at).toLocaleDateString('zh-CN')}</span><b>{v.status === 'pending' ? '待审核' : v.status === 'approved' ? '已通过' : '已驳回'}{v.admin_note ? ` · ${v.admin_note}` : ''}</b></div>) : <p>暂无记录。</p>}</div></div>}
       <DeleteAccount email={user.email || ''} />
     </section>
   </main></>

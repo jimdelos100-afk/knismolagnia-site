@@ -25,6 +25,8 @@ export default function VerificationForm({ status }: { status: string }) {
       user_id: user.id,
       real_name: realName.trim(),
       id_number: cleanId,
+      source_page: '个人资料',
+      content_type: '实名认证',
     })
     setBusy(false)
     if (error) return setMsg(error.message.includes('verification_one_pending_per_user') ? '已有一条待审核申请，请等待管理员处理。' : error.message)

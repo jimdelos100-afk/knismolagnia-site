@@ -18,6 +18,8 @@ type Row = {
   admin_note: string | null
   created_at: string
   reviewed_at: string | null
+  source_page: string
+  content_type: string
 }
 
 export default function ProfileChangeManager({ rows }: { rows: Row[] }) {
@@ -73,6 +75,7 @@ export default function ProfileChangeManager({ rows }: { rows: Row[] }) {
         <div>
           <small>{new Date(row.created_at).toLocaleString('zh-CN')}</small>
           <h3>{row.current_display_name}</h3>
+          <p><small>用户 ID：{row.user_id} · 来源：{row.source_page} · 类型：{row.content_type}</small></p>
         </div>
         <span className="badge">{row.status === 'pending' ? '待审核' : row.status === 'approved' ? '已通过' : '已驳回'}</span>
       </div>

@@ -1,0 +1,27 @@
+KNISMOLAGNIA.CLUB V5.5 升级说明
+
+本次新增：
+1. 实名认证默认关闭，由管理员在“后台 → 成员管理”中为每位用户单独开启；关闭时用户个人资料页完全不显示实名认证区域。
+2. Level 2 新增“给管理员留言”，内容仅提交者本人及管理员可读，不向其他用户公开。
+3. 后台待审核内容显示提交用户、来源界面、内容类型和提交时间。
+4. 保持网站原有的 8 位邮箱验证码，不改变验证码长度。
+5. 未验证邮箱只保留 Supabase 发送验证码所需的待验证 Auth 身份，不创建站内 Profile、Membership 或 Level；验证成功后才自动建立正式网站账号。
+6. 后台页面使用服务端管理员校验；数据库 RLS 和受控 RPC 再次校验管理员身份。Level 6 不等于管理员，只有 role=admin 且账号状态正常才能进入后台和执行管理操作。
+
+升级顺序：
+1. 先在 Supabase SQL Editor 执行 supabase/migrations/009_admin_security_private_messages_and_verified_accounts.sql 全部内容。
+2. 再把本压缩包中的网站文件上传/覆盖到 GitHub 仓库。
+3. 等待 Vercel 自动部署完成。
+4. 用普通账号测试手动访问 /admin、/admin/users、/admin/messages，均应被重定向到普通账号页且无法读取后台数据。
+
+重要说明：
+- 009 SQL 会移除历史“邮箱尚未验证但已错误生成”的站内 Profile 与 Membership，不会删除 Supabase Auth 中的待验证身份。该用户日后完成邮箱验证时，站内账号会自动生成。
+- Supabase 内部必须先创建待验证 Auth 身份才能发送验证码，因此“未验证不生成账号”在本版本中指不生成任何可使用的网站会员账号、Level、个人主页或成员目录记录。
+- 请确认 Supabase 后台 Authentication → Email 已开启 Confirm email。
+- 邮件模板必须使用 {{ .Token }}，并保持 Supabase 项目现有的 8 位 OTP 设置；用户界面接收 8 位验证码。
+
+测试重点：
+- 新用户未验证前，profiles 和 memberships 中没有对应记录；验证后各生成一条。
+- 新用户实名认证开关默认关闭，账号页没有实名认证卡片；管理员开启后才显示。
+- Level 2 私密留言只在后台“Level 2 私密留言”中显示。
+- 普通用户直接请求后台表、修改 role/access_level、调用管理员 RPC 都会被拒绝。

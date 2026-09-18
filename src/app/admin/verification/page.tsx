@@ -6,16 +6,16 @@ export const dynamic = 'force-dynamic'
 export default async function VerificationAdminPage() {
   const { supabase } = await requireAdmin()
   const { data } = await supabase.from('verification_applications')
-    .select('id,user_id,real_name,id_number,status,admin_note,created_at')
+    .select('id,user_id,real_name,id_number,status,admin_note,source_page,content_type,created_at')
     .order('created_at', { ascending: false })
 
   const ids = [...new Set((data || []).map((r: any) => r.user_id))]
   const { data: profiles } = ids.length
-    ? await supabase.from('profiles').select('id,display_name').in('id', ids)
+    ? await supabase.from('profiles').select('id,display_name,email').in('id', ids)
     : { data: [] as any[] }
 
-  const names = new Map((profiles || []).map((p: any) => [p.id, p.display_name]))
-  const rows = (data || []).map((r: any) => ({ ...r, profile: { display_name: names.get(r.user_id) || '成员' } }))
+  const profileMap = new Map((profiles || []).map((p: any) => [p.id, p]))
+  const rows = (data || []).map((r: any) => ({ ...r, profile: profileMap.get(r.user_id) || { display_name: '成员' } }))
 
   return <>
     <div className="admin-head">

@@ -11,7 +11,9 @@ type Row = {
   status: string
   admin_note: string | null
   created_at: string
-  profile?: { display_name?: string } | null
+  source_page: string
+  content_type: string
+  profile?: { display_name?: string, email?: string } | null
 }
 
 export default function VerificationManager({ rows }: { rows: Row[] }) {
@@ -57,6 +59,7 @@ export default function VerificationManager({ rows }: { rows: Row[] }) {
         <div>
           <small>{new Date(r.created_at).toLocaleString('zh-CN')}</small>
           <h3>{r.profile?.display_name || '成员'} · {r.real_name}</h3>
+          <p><small>用户：{r.profile?.email || r.user_id} · 来源：{r.source_page} · 类型：{r.content_type}</small></p>
           <p className="verification-id-line">身份证号：<code>{revealed.has(r.id) ? r.id_number : masked(r.id_number)}</code> <button type="button" className="tiny-link-button" onClick={() => toggleReveal(r.id)}>{revealed.has(r.id) ? '隐藏' : '显示完整号码'}</button></p>
         </div>
         <span className="badge">{r.status === 'pending' ? '待审核' : r.status === 'approved' ? '已通过' : '已驳回'}</span>
