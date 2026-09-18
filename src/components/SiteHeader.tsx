@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getSessionContext } from '@/lib/auth'
+import ThemeToggle from './ThemeToggle'
 
 const levels = [
   ['1','公开介绍'],['2','兴趣文化'],['3','作品投稿'],
@@ -12,6 +13,7 @@ export default async function SiteHeader() {
     <div className="topbar wrap">
       <Link className="logo" href="/"><i>♡</i><b>KNISMOLAGNIA.CLUB</b></Link>
       <div className="top-actions">
+        <ThemeToggle compact />
         {user ? <>
           <Link href="/account">我的账号</Link>
           {membership?.role === 'admin' && <Link href="/admin">管理后台</Link>}

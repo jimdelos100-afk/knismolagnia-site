@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { requireAdmin } from '@/lib/auth'
+import ThemeToggle from '@/components/ThemeToggle'
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   await requireAdmin()
@@ -17,6 +18,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         <Link href="/admin/messages">Level 2 私密留言</Link>
         <Link href="/admin/discussion">交流室管理</Link>
       </nav>
+      <ThemeToggle />
       <Link className="back-home" href="/">← 返回网站</Link>
     </aside>
     <section className="admin-main">{children}</section>
