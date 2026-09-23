@@ -1,0 +1,56 @@
+{
+  "type": "custom_web_mesh_rig_not_cubism",
+  "canvas": [
+    1024,
+    1536
+  ],
+  "mesh": {
+    "columns": 40,
+    "rows": 60
+  },
+  "headPivot": [
+    539,
+    300
+  ],
+  "defaultStrength": 0.6,
+  "blink": {
+    "closeSeconds": 0.07,
+    "holdSeconds": 0.06,
+    "openSeconds": 0.09,
+    "automaticIntervalSeconds": [
+      3.1,
+      5.4
+    ]
+  },
+  "views": {
+    "full": [
+      512,
+      768,
+      1
+    ],
+    "bust": [
+      526,
+      398,
+      1.9
+    ],
+    "face": [
+      546,
+      209,
+      4.5
+    ]
+  },
+  "expressions": [
+    "neutral",
+    "happy",
+    "shy",
+    "surprised",
+    "angry",
+    "sad"
+  ],
+  "wardrobes": [
+    "original",
+    "overknee",
+    "tights"
+  ],
+  "notes": "These values describe runtime.js. This file is a reference, not a Cubism model3.json or an automatically loaded configuration."
+}
