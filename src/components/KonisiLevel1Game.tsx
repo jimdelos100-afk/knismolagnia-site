@@ -14,7 +14,7 @@ export default function KonisiLevel1Game() {
         sandbox="allow-scripts"
         referrerPolicy="no-referrer"
       />
-      <p className="level1-konisi-note">小游戏仅在浏览器中运行，不会读取账号、等级或聊天记录。当前为 2D 动态互动版，并非 Cubism .moc3 模型。</p>
+      <p className="level1-konisi-note">小游戏已替换为你的自制角色差分版本。当前仅保留这套素材里提供的表情与三套外观：原图、白色裤袜、白色过膝袜。</p>
     </section>
   )
 }
