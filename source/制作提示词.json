@@ -1,0 +1,45 @@
+{
+  "method": "Built-in image generation/editing, then mechanical alignment, alpha separation and packaging",
+  "sourceCanvas": [
+    1024,
+    1536
+  ],
+  "prompts": [
+    {
+      "id": "happy",
+      "prompt": "Use case: identity-preserve. Edit target: the supplied cropped portrait. This is production artwork for independent expression layers of the SAME anime character. Keep all geometry/registration unchanged: exact same camera, head tilt, head scale, canvas composition, purple iris color, blond hair strands, blue beret, daisy, blue cross hairclip, ribbons, neck choker and clothing. Change only facial muscles, eyes/eyebrows and mouth inside the existing face. Preserve delicate pastel painted rendering and tiny details. Output exactly this one portrait, at the same 1050:1125 aspect ratio, on true transparent background. No labels, frames, sheets, new accessories or hands. Do not straighten the tilted head. Create a very clear joyful laughing expression: BOTH eyes are gently squeezed into closed upward smiling arcs, eyebrows relaxed and elevated, open smiling mouth with small visible upper teeth, lightly rosy cheeks. Joyful, friendly, nonsexual."
+    },
+    {
+      "id": "shy",
+      "prompt": "Use case: identity-preserve. Edit target: the supplied cropped portrait. This is production artwork for independent expression layers of the SAME anime character. Keep all geometry/registration unchanged: exact same camera, head tilt, head scale, canvas composition, purple iris color, blond hair strands, blue beret, daisy, blue cross hairclip, ribbons, neck choker and clothing. Change only facial muscles, eyes/eyebrows and mouth inside the existing face. Preserve delicate pastel painted rendering and tiny details. Output exactly this one portrait, at the same 1050:1125 aspect ratio, on true transparent background. No labels, frames, sheets, new accessories or hands. Do not straighten the tilted head. Create a very clear shy/bashful expression: both purple eyes open looking slightly sideways/downwards, eyebrows gently worried, visibly rosy blush across both cheeks, a tiny hesitant closed smile. Calm, sweet, nonsexual."
+    },
+    {
+      "id": "surprised",
+      "prompt": "Use case: identity-preserve. Edit target: the supplied cropped portrait. This is production artwork for independent expression layers of the SAME anime character. Keep all geometry/registration unchanged: exact same camera, head tilt, head scale, canvas composition, purple iris color, blond hair strands, blue beret, daisy, blue cross hairclip, ribbons, neck choker and clothing. Change only facial muscles, eyes/eyebrows and mouth inside the existing face. Preserve delicate pastel painted rendering and tiny details. Output exactly this one portrait, at the same 1050:1125 aspect ratio, on true transparent background. No labels, frames, sheets, new accessories or hands. Do not straighten the tilted head. Create a very clear startled/surprised expression: large wide-open purple eyes with slightly smaller irises, eyebrows raised high, small round open O-shaped mouth. Innocently surprised, nonsexual."
+    },
+    {
+      "id": "angry",
+      "prompt": "Use case: identity-preserve. Edit target: the supplied cropped portrait. This is production artwork for independent expression layers of the SAME anime character. Keep all geometry/registration unchanged: exact same camera, head tilt, head scale, canvas composition, purple iris color, blond hair strands, blue beret, daisy, blue cross hairclip, ribbons, neck choker and clothing. Change only facial muscles, eyes/eyebrows and mouth inside the existing face. Preserve delicate pastel painted rendering and tiny details. Output exactly this one portrait, at the same 1050:1125 aspect ratio, on true transparent background. No labels, frames, sheets, new accessories or hands. Do not straighten the tilted head. Create a very clear annoyed/angry expression: angled downward furrowed eyebrows, narrowed purple eyes looking directly at viewer, small displeased pouting/frowning closed mouth, subtle cheek flush. Nonsexual."
+    },
+    {
+      "id": "sad",
+      "prompt": "Use case: identity-preserve. Edit target: the supplied cropped portrait. This is production artwork for independent expression layers of the SAME anime character. Keep all geometry/registration unchanged: exact same camera, head tilt, head scale, canvas composition, purple iris color, blond hair strands, blue beret, daisy, blue cross hairclip, ribbons, neck choker and clothing. Change only facial muscles, eyes/eyebrows and mouth inside the existing face. Preserve delicate pastel painted rendering and tiny details. Output exactly this one portrait, at the same 1050:1125 aspect ratio, on true transparent background. No labels, frames, sheets, new accessories or hands. Do not straighten the tilted head. Create a very clear sad/teary expression: raised inner eyebrows, slightly drooping eyelids over purple eyes, glistening small tear beads at lower eyelids and one subtle tear track on the cheek, a small downturned mouth. Nonsexual."
+    },
+    {
+      "id": "blink",
+      "prompt": "Use case: identity-preserve. Edit target: the supplied cropped portrait. This is production artwork for independent expression layers of the SAME anime character. Keep all geometry/registration unchanged: exact same camera, head tilt, head scale, canvas composition, purple iris color, blond hair strands, blue beret, daisy, blue cross hairclip, ribbons, neck choker and clothing. Change only facial muscles, eyes/eyebrows and mouth inside the existing face. Preserve delicate pastel painted rendering and tiny details. Output exactly this one portrait, at the same 1050:1125 aspect ratio, on true transparent background. No labels, frames, sheets, new accessories or hands. Do not straighten the tilted head. Create the closed-eye blink animation key pose: BOTH eyes fully closed with delicate natural downward-curving eyelash lines, mouth retains the source tiny neutral closed smile. Peaceful neutral blink, no blush change, no smile arcs or expression change elsewhere."
+    },
+    {
+      "id": "overknee",
+      "prompt": "Use case: precise-object-edit. Edit target is the supplied lower-body costume crop. Create ONE matching costume variant for the same full-body anime character. Add elegant opaque matte WHITE OVER-THE-KNEE STOCKINGS on both legs. Both stockings extend several centimeters ABOVE the knees, with a clearly visible simple softly curved white cuff at mid-thigh and a modest exposed upper-leg band between skirt and cuff. Cotton/nylon fabric with delicate pale blue/lavender shadows, clean white not skin-colored, no lace or garter, no glossy effect. Keep the EXACT leg silhouettes, crossed standing pose, leg placement, lengths, all skirt folds, gold hair and original white ankle boots with blue bows. The stockings go inside the existing boots. Keep the same full crop framing and 720:1596 aspect ratio. True transparent background, not black fill. Professional nonsexual character costume asset. Change only the stocking area. Do not change anatomy, clothing, pose, camera, scale, hair. No labels, frames or extra objects."
+    },
+    {
+      "id": "tights",
+      "prompt": "Use case: precise-object-edit. Edit target is the supplied lower-body costume crop. Create ONE matching costume variant for the same full-body anime character. Add opaque matte WHITE TIGHTS / PANTYHOSE covering BOTH legs continuously from under the skirt down into the existing white ankle boots, with absolutely NO visible bare skin on either leg and NO visible thigh cuffs, NO horizontal sock tops or bands. Upper waistband and panty area remain fully hidden under the original skirt. Thin smooth white fabric with soft pale blue/lavender shadows and soft white highlights, no skin-colored panels. Keep the EXACT leg silhouettes, crossed standing pose, leg placement, lengths, all skirt folds, golden hair and original ankle boots with blue bows unchanged. Match the same full crop framing and 720:1596 aspect ratio. True transparent background. Professional nonsexual costume asset. Change only the two exposed leg areas. No labels, frames or extra objects."
+    },
+    {
+      "id": "face_clean",
+      "prompt": "Use case: precise-object-edit. Edit target is this exact cropped anime portrait for Live2D layer preparation. Remove ONLY the entire two eyes, eyelashes, eyebrows, the tiny nose mark and mouth marks from the visible face, replacing them with smoothly matching unmarked pale face skin. This is a blank face underlay, with no facial features; do not put closed eyes or any other expression. Preserve the face outline, chin, skin shading, hair over the face, every blond hair strand, exact tilted head placement/size, purple-free blank face, blue beret daisy, blue cross hairclip, blue ribbons, choker, and all clothing pixel-aligned to the reference. Same 1050:1125 aspect ratio and composition, true transparent background, one portrait, no sheet and no text. Delicate original pastel painted rendering."
+    }
+  ]
+}
