@@ -1,0 +1,7 @@
+# Never commit local Supabase keys, private data or dependencies
+.env*
+!.env.example
+node_modules/
+.next/
+*.tsbuildinfo
+.DS_Store

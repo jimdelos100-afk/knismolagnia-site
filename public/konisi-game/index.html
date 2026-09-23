@@ -33,20 +33,20 @@
     <div class="scene-label">午后 · 书页边的风</div>
     <div class="hint">移动鼠标 · 点击角色 · 选择回应</div>
     <div class="character neutral" id="characterArt" aria-hidden="true">
-      <img class="layer" src="新差分素材/角色分层与动态演示/parts/part_leg_left.png" alt="">
-      <img class="layer" src="新差分素材/角色分层与动态演示/parts/part_leg_right.png" alt="">
-      <img class="layer" id="wardrobeLeft" src="" alt="">
-      <img class="layer" id="wardrobeRight" src="" alt="">
-      <img class="layer" src="新差分素材/角色分层与动态演示/parts/part_body.png" alt="">
-      <img class="layer" src="新差分素材/角色分层与动态演示/parts/part_arm_left.png" alt="">
-      <img class="layer" src="新差分素材/角色分层与动态演示/parts/part_arm_right.png" alt="">
-      <img class="layer" src="新差分素材/角色分层与动态演示/parts/part_head.png" alt="">
-      <img class="layer" id="exprSkin" src="新差分素材/角色分层与动态演示/layers/expressions/neutral/neutral_skin.png" alt="">
-      <img class="layer face-shift-left" id="exprEyeLeft" src="新差分素材/角色分层与动态演示/layers/expressions/neutral/neutral_eye_left.png" alt="">
-      <img class="layer face-shift-right" id="exprEyeRight" src="新差分素材/角色分层与动态演示/layers/expressions/neutral/neutral_eye_right.png" alt="">
-      <img class="layer" id="exprMouth" src="新差分素材/角色分层与动态演示/layers/expressions/neutral/neutral_mouth.png" alt="">
-      <img class="layer" src="新差分素材/角色分层与动态演示/parts/part_hair_left.png" alt="">
-      <img class="layer" src="新差分素材/角色分层与动态演示/parts/part_hair_right.png" alt="">
+      <img class="layer" src="assets/parts/part_leg_left.png" alt="">
+      <img class="layer" src="assets/parts/part_leg_right.png" alt="">
+      <img class="layer" id="wardrobeLeft" alt="">
+      <img class="layer" id="wardrobeRight" alt="">
+      <img class="layer" src="assets/parts/part_body.png" alt="">
+      <img class="layer" src="assets/parts/part_arm_left.png" alt="">
+      <img class="layer" src="assets/parts/part_arm_right.png" alt="">
+      <img class="layer" src="assets/parts/part_head.png" alt="">
+      <img class="layer" id="exprSkin" src="assets/expressions/neutral/neutral_skin.png" alt="">
+      <img class="layer face-shift-left" id="exprEyeLeft" src="assets/expressions/neutral/neutral_eye_left.png" alt="">
+      <img class="layer face-shift-right" id="exprEyeRight" src="assets/expressions/neutral/neutral_eye_right.png" alt="">
+      <img class="layer" id="exprMouth" src="assets/expressions/neutral/neutral_mouth.png" alt="">
+      <img class="layer" src="assets/parts/part_hair_left.png" alt="">
+      <img class="layer" src="assets/parts/part_hair_right.png" alt="">
     </div>
     <button type="button" class="hit" id="talkHit" aria-label="点击角色并与柯妮丝互动">与柯妮丝交谈</button>
   </section>
@@ -64,8 +64,8 @@ const $=id=>document.getElementById(id);
 const scene=$('scene'),art=$('characterArt'),text=$('dialogue'),choices=$('choices'),chapter=$('chapter');
 const exprSkin=$('exprSkin'),exprEyeLeft=$('exprEyeLeft'),exprEyeRight=$('exprEyeRight'),exprMouth=$('exprMouth');
 const wardrobeLeft=$('wardrobeLeft'),wardrobeRight=$('wardrobeRight');
-const expressionBase='新差分素材/角色分层与动态演示/layers/expressions/';
-const wardrobeBase='新差分素材/角色分层与动态演示/layers/wardrobe/';
+const expressionBase='assets/expressions/';
+const wardrobeBase='assets/wardrobe/';
 const costumeLabels={original:'原图默认',tights:'白色裤袜',overknee:'白色过膝袜'};
 const expressionNames=['neutral','happy','shy','sad','surprised','angry','blink'];
 let current='start',clicks=0,follow=true,blinkTimer=null,talkTimer=null,currentExpr='neutral',currentCostume='original';
@@ -106,7 +106,7 @@ function setCostume(name){
     wardrobeLeft.src=`${wardrobeBase}overknee/overknee_left.png`;
     wardrobeRight.src=`${wardrobeBase}overknee/overknee_right.png`;
   }else{
-    wardrobeLeft.src=''; wardrobeRight.src='';
+    wardrobeLeft.removeAttribute('src'); wardrobeRight.removeAttribute('src');
   }
   $('costume').value=name;
   $('costumeNote').textContent=`当前外观：${costumeLabels[name]}。本页已完全替换为你的自制角色差分，并删除了旧版未包含的其他差分。`;
