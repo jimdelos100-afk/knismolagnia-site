@@ -21,8 +21,7 @@ const cards = [
 function OriginalHomeBody() {
   return <main className="wrap">
       <section className="hero">
-        <div className="kicker">♡ 汉化组官方网站 ♡</div>
-        <h1><span>欢迎来到</span><strong>我们的<br/>粉色小基地</strong><i>。</i></h1>
+        <h1><span>欢迎来到</span><strong>柯妮丝·摩拉·戈妮娅</strong><i>。</i></h1>
         <p>从公开介绍开始，按 Level 进入文化资料、作品档案、投稿与成员交流。注册后获得基础成员权限，更高 Level 由管理员审核开放。</p>
         <div className="actions"><Link className="button primary" href="/login">进入 / 登录 ♡</Link><Link className="button secondary" href="#levels">浏览六个 Level</Link></div>
       </section>
@@ -68,6 +67,6 @@ export default async function Home({ searchParams }: HomeProps) {
     {content || isPreviewing(builderSearch)
       ? <Content content={content} model="page" apiKey={BUILDER_API_KEY} />
       : <OriginalHomeBody />}
-    <footer className="wrap">KNISMOLAGNIA.CLUB ♡ <span>尊重 · 同意 · 隐私 · 创作</span></footer>
+    <footer className="wrap">雪糕少女汉化组官网 ♡ <span>尊重 · 同意 · 隐私 · 创作</span></footer>
   </>
 }

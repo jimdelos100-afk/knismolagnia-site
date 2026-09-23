@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { getSessionContext } from '@/lib/auth'
 import ThemeToggle from './ThemeToggle'
 
@@ -11,7 +12,12 @@ export default async function SiteHeader() {
   const { user, membership } = await getSessionContext()
   return <header className="site-header">
     <div className="topbar wrap">
-      <Link className="logo" href="/"><i>♡</i><b>KNISMOLAGNIA.CLUB</b></Link>
+      <Link className="logo" href="/">
+        <span className="logo-mark" aria-hidden="true">
+          <Image src="/logo-girl.png" alt="" width={62} height={62} />
+        </span>
+        <b>雪糕少女汉化组官网</b>
+      </Link>
       <div className="top-actions">
         <ThemeToggle compact />
         {user ? <>

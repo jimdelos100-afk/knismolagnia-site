@@ -44,7 +44,8 @@ p { overflow-wrap: anywhere; }
 .topbar { height: 127px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .logo { display: flex; align-items: center; gap: 17px; color: inherit; text-decoration: none; min-width: 0; }
 .logo:hover { text-decoration: none; }
-.logo i { display: grid; place-items: center; width: 62px; height: 62px; border: 2px solid currentColor; border-radius: 50%; font-size: 36px; font-style: normal; flex: none; }
+.logo-mark { display: grid; place-items: center; width: 62px; height: 62px; border-radius: 50%; overflow: hidden; flex: none; background: #ffffff22; border: 1px solid #ffffff55; }
+.logo-mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .logo b { font-family: Georgia,"Songti SC",serif; font-size: clamp(18px,2.5vw,30px); letter-spacing: 1px; overflow-wrap: anywhere; }
 .top-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
 .top-actions a { color: var(--ink); font-size: .875rem; white-space: nowrap; }
@@ -137,7 +138,7 @@ textarea { resize: vertical; min-height: 100px; }
 .admin-side { display: flex; flex-direction: column; padding: 24px 18px; border-right: 1px solid #bbb; background: #ebebeb; }
 .admin-side .logo { color: var(--red-dark); gap: 8px; }
 .admin-side .logo b { font: bold 12px/1.5 Arial,sans-serif; letter-spacing: 0; }
-.admin-side .logo i { width: 30px; height: 30px; font-size: 19px; }
+.admin-side .logo .logo-mark { width: 30px; height: 30px; border: 1px solid #d6bfd1; background: #fff; }
 .admin-side>small { display: block; padding: 24px 0 8px; border-bottom: 2px solid var(--red); }
 .admin-side nav { display: grid; }
 .admin-side nav a,.back-home { padding: 12px 4px; border-bottom: 1px solid #ccc; font-size: .875rem; }

@@ -3,8 +3,8 @@ import Script from 'next/script'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'KNISMOLAGNIA.CLUB',
-  description: '汉化组官方网站',
+  title: '雪糕少女汉化组官网',
+  description: '雪糕少女汉化组官网',
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
