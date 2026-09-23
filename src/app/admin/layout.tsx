@@ -7,12 +7,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   await requireAdmin()
   return <main className="admin-shell">
     <aside className="admin-side">
-      <Link className="logo" href="/">
-        <span className="logo-mark admin" aria-hidden="true">
-          <Image src="/logo-girl.png" alt="" width={30} height={30} />
-        </span>
-        <b>雪糕少女汉化组官网</b>
-      </Link>
+      <Link className="logo" href="/"><span className="logo-mark" aria-hidden="true"><Image src="/logo-girl.png" width={30} height={30} alt="" /></span><b>雪糕少女汉化组官网</b></Link>
       <small>管理员后台</small>
       <nav>
         <Link href="/admin">总览</Link>

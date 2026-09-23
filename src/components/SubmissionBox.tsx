@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 
-export default function SubmissionBox({ level }: { level: 3 | 4 }) {
+export default function SubmissionBox({ level, preview = false }: { level: 3 | 4; preview?: boolean }) {
   const supabase = useMemo(() => createClient(), [])
   const [title, setTitle] = useState('')
   const [author, setAuthor] = useState('')
@@ -22,6 +22,7 @@ export default function SubmissionBox({ level }: { level: 3 | 4 }) {
 
   async function submit(event: React.FormEvent) {
     event.preventDefault()
+    if (preview) return setMsg('仅为本地设计预览，不会提交。')
     if (cover && (!cover.type.startsWith('image/') || cover.size > 10 * 1024 * 1024)) return setMsg('作品封面必须是 10MB 以内的图片。')
     setBusy(true)
     setMsg('')
@@ -76,6 +77,6 @@ export default function SubmissionBox({ level }: { level: 3 | 4 }) {
     <label>标签<input value={tags} onChange={event => setTags(event.target.value)} placeholder="汉化作品, 已完结, 类型标签" /><small>用逗号或空格分隔，最多 12 个。</small></label>
     <label>补充说明（可选）<textarea value={message} onChange={event => setMessage(event.target.value)} rows={5} /></label>
     <label>附件<input type="file" multiple onChange={event => setFiles(event.target.files)} /></label>
-    <button className="button primary" disabled={busy}>{busy ? '正在提交…' : '提交投稿 ♡'}</button>{msg && <span className="form-msg">{msg}</span>}
+    <button className="button primary" disabled={busy || preview}>{preview ? '本地预览不可提交' : busy ? '正在提交…' : '提交投稿 ♡'}</button>{msg && <span className="form-msg">{msg}</span>}
   </form></section>
 }

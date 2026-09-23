@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "dev:design": "node scripts/dev-design.mjs"
   },
   "dependencies": {
     "@builder.io/sdk-react-nextjs": "^0.25.13",

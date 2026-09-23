@@ -1,0 +1,31 @@
+雪糕少女汉化组网站 · Level 1 小游戏整合版
+
+一、文件说明
+这是 Next.js 网站源码压缩包，不是双击可运行的静态网站。
+首页、六层路由、Supabase 登录等级限制以及本地设计预览功能保留。
+新增 /public/konisi-game/index.html 和素材，游戏嵌入 /level/1 页面末尾。
+也可单独访问 /konisi-game/index.html；纯静态游戏本身无需认证。
+游戏使用原有 2D 动态角色互动方案，不是 Cubism .moc3 正式 Live2D 模型。
+角色完整原画：public/konisi-game/素材/角色完整立绘.png
+
+二、在电脑上运行
+1. 解压 ZIP，打开本文件所在的目录（package.json 应与本文件同级）。
+2. 从你以前能正常运行的网站文件夹复制 .env.local 到此目录；不要公开此文件。
+   如需自己配置，本项目实际使用 NEXT_PUBLIC_SUPABASE_URL 和 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY。
+3. 打开终端运行 npm install，然后 npm run dev:design。
+4. 打开 http://127.0.0.1:3000/level/1 并向下滚动到底部。
+   如果端口被占用，以终端显示的端口为准。
+5. 使用普通开发模式 npm run dev 时，Level 1 页面仍然正常公开展示小游戏。
+
+三、部署 Vercel
+1. 请先在本地测试本项目，再上传源码到你的网站 GitHub 仓库或建立新分支/PR。
+2. Vercel 框架选 Next.js，Build Command 和 Output Directory 保持框架默认，不要设置成 public。
+3. 生产环境需配置你自己的 Supabase URL 和 publishable key；绝不上传 .env.local，
+   也不要配置 LOCAL_DESIGN_MODE=true 或 BUILDER_DESIGN_MODE=true 到生产环境。
+4. 等 Vercel Production 显示 Ready 再打开正式域名 /level/1 验证。
+5. 这份 ZIP 没有替你改动线上 GitHub / Vercel，也不包含真实 Supabase 凭证。
+
+四、注意
+网站首页在 Builder CMS 中如果有单独发布的内容，首页有可能优先显示 CMS 版本；
+本次游戏固定添加在 /level/1 的正式页面和本地设计预览页面，不受首页覆盖影响。
+静态小游戏通过 sandbox iframe 隔离，不可读取网站的 Supabase 会话。

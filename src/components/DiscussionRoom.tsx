@@ -37,7 +37,7 @@ function exactTime(value: string) {
   return `${d.getFullYear()}年${pad(d.getMonth() + 1)}月${pad(d.getDate())}日 ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`
 }
 
-export default function DiscussionRoom() {
+export default function DiscussionRoom({ preview = false }: { preview?: boolean }) {
   const supabase = useMemo(() => createClient(), [])
   const [rows, setRows] = useState<ChatRow[]>([])
   const [comments, setComments] = useState<CommentRow[]>([])
@@ -104,8 +104,8 @@ export default function DiscussionRoom() {
   }
 
   useEffect(() => {
-    void load(true)
-  }, [])
+    if (!preview) void load(true)
+  }, [preview])
 
   const commentsByThread = useMemo(() => {
     const map = new Map<string, CommentRow[]>()
@@ -180,6 +180,8 @@ export default function DiscussionRoom() {
     setMsg('评论已发布。')
     await load(false)
   }
+
+  if (preview) return <section className="discussion-room"><div className="panel"><h2>成员交流室 · 示例消息</h2><p>本地设计预览，不读取或发布真实交流记录。</p></div><div className="chat-messages"><article className="panel chat-message"><div className="chat-avatar placeholder">示</div><div className="chat-message-main"><div className="chat-meta"><div className="chat-userline"><span className="chat-user">示例用户</span><span className="badge">Level 5</span></div><time>2026年01月01日 12:00:00</time></div><p className="chat-body">这是一条用于调整交流室布局、颜色与间距的测试留言。</p><div className="chat-comments"><div className="chat-comments-title"><b>评论</b><span>1</span></div><div className="chat-comment-list"><div className="chat-comment"><div className="chat-comment-avatar placeholder">评</div><div className="chat-comment-main"><div className="chat-comment-meta"><div><span>示例评论者</span><span className="badge">Level 5</span></div></div><p>这里是示例评论。</p></div></div></div></div></div></article></div><div className="panel chat-composer"><label>留言内容<textarea rows={3} placeholder="预览模式不会发送消息" disabled /></label><div className="chat-compose-actions"><button className="button primary" disabled type="button">发送留言 ♡</button></div></div></section>
 
   return <section className="chat-room">
     <div className="panel chat-head">

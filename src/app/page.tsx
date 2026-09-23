@@ -67,6 +67,6 @@ export default async function Home({ searchParams }: HomeProps) {
     {content || isPreviewing(builderSearch)
       ? <Content content={content} model="page" apiKey={BUILDER_API_KEY} />
       : <OriginalHomeBody />}
-    <footer className="wrap">雪糕少女汉化组官网 ♡ <span>尊重 · 同意 · 隐私 · 创作</span></footer>
+    <footer className="wrap">雪糕少女汉化组官网 <span>尊重 · 同意 · 隐私 · 创作</span></footer>
   </>
 }

@@ -2,8 +2,26 @@ import { NextResponse, type NextRequest } from 'next/server'
 import { updateSession } from '@/lib/supabase/middleware'
 
 export async function middleware(request: NextRequest) {
-  // 统一使用正式域名，避免用户在 Vercel 默认域名与正式域名之间切换时 Cookie 不共享，出现“回首页像退出登录”的现象。
-  const host = request.headers.get('host')?.toLowerCase()
+  const host = (request.headers.get('host') || '').toLowerCase()
+  const isLoopback = /^(?:localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/.test(host)
+  const isDesign = process.env.NODE_ENV === 'development' && process.env.LOCAL_DESIGN_MODE === 'true'
+  const isLevelPreview = /^\/level\/[1-6]\/??$/.test(request.nextUrl.pathname)
+
+  // Remove any incoming marker; only middleware is allowed to set the trusted marker.
+  const requestHeaders = new Headers(request.headers)
+  requestHeaders.delete('x-local-design-verified')
+
+  // Never serve design-mock pages from a non-loopback host while design mode is enabled.
+  // `npm run dev:design` additionally binds the dev server to 127.0.0.1 only.
+  if (isDesign && isLevelPreview && !isLoopback) {
+    return new NextResponse('Local design preview is available only on this computer.', { status: 403 })
+  }
+  if (isDesign && isLoopback && isLevelPreview) {
+    requestHeaders.set('x-local-design-verified', '1')
+    return NextResponse.next({ request: { headers: requestHeaders } })
+  }
+
+  // Preserve the real production-domain redirect and normal Supabase authentication.
   if (host === 'knismolagnia-site.vercel.app') {
     const url = request.nextUrl.clone()
     url.protocol = 'https:'

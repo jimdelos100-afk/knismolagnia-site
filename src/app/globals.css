@@ -44,8 +44,8 @@ p { overflow-wrap: anywhere; }
 .topbar { height: 127px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .logo { display: flex; align-items: center; gap: 17px; color: inherit; text-decoration: none; min-width: 0; }
 .logo:hover { text-decoration: none; }
-.logo-mark { display: grid; place-items: center; width: 62px; height: 62px; border-radius: 50%; overflow: hidden; flex: none; background: #ffffff22; border: 1px solid #ffffff55; }
-.logo-mark img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.logo-mark { display: grid; place-items: center; width: 62px; height: 62px; border: 1px solid #ffffff88; border-radius: 50%; overflow: hidden; background: #ffffff1a; flex: none; }
+.logo-mark img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .logo b { font-family: Georgia,"Songti SC",serif; font-size: clamp(18px,2.5vw,30px); letter-spacing: 1px; overflow-wrap: anywhere; }
 .top-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
 .top-actions a { color: var(--ink); font-size: .875rem; white-space: nowrap; }
@@ -138,7 +138,7 @@ textarea { resize: vertical; min-height: 100px; }
 .admin-side { display: flex; flex-direction: column; padding: 24px 18px; border-right: 1px solid #bbb; background: #ebebeb; }
 .admin-side .logo { color: var(--red-dark); gap: 8px; }
 .admin-side .logo b { font: bold 12px/1.5 Arial,sans-serif; letter-spacing: 0; }
-.admin-side .logo .logo-mark { width: 30px; height: 30px; border: 1px solid #d6bfd1; background: #fff; }
+.admin-side .logo .logo-mark { width: 30px; height: 30px; }
 .admin-side>small { display: block; padding: 24px 0 8px; border-bottom: 2px solid var(--red); }
 .admin-side nav { display: grid; }
 .admin-side nav a,.back-home { padding: 12px 4px; border-bottom: 1px solid #ccc; font-size: .875rem; }
@@ -253,7 +253,7 @@ time { color: #666; font-size: .8rem; }
   .site-header { height: auto; border-bottom: 0; }
   .topbar { height: auto; min-height: 106px; gap: 12px; padding: 16px 0; flex-wrap: wrap; }
   .logo { gap: 10px; }
-  .logo i { width: 40px; height: 40px; font-size: 25px; }
+  .logo .logo-mark { width: 40px; height: 40px; }
   .logo b { font-size: clamp(15px,4.5vw,23px); letter-spacing: .3px; }
   .top-actions { margin-left: auto; }
   .levelnav { position: static; width: 100%; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); padding: 0; background: #303030; border: 0; }
@@ -471,3 +471,12 @@ html[data-theme="dark"] .theme-toggle.compact { background: #18212a66; border-co
   .theme-toggle.compact { padding: 7px 8px; }
   .theme-toggle.compact .theme-toggle-label { display: none; }
 }
+
+/* Level 1 standalone dialogue game, appended after all existing content. */
+.level1-konisi-game { margin-top: 36px; margin-bottom: 40px; min-width: 0; }
+.level1-konisi-heading { padding: 14px 18px; background: var(--paper); border: 1px solid var(--line); border-bottom: none; }
+.level1-konisi-heading h2 { margin: 0 0 6px; color: var(--red-dark); font-size: clamp(19px,2.4vw,26px); }
+.level1-konisi-heading p { margin: 0; color: var(--muted); font-size: .875rem; }
+.level1-konisi-frame { display: block; width: 100%; height: 970px; border: 1px solid var(--line); background: #fffafa; border-radius: 0 0 12px 12px; }
+.level1-konisi-note { font-size: .8rem; color: var(--muted); margin: 10px 0; }
+@media (max-width: 610px) { .level1-konisi-heading { padding: 12px; } .level1-konisi-frame { height: 1020px; } }
