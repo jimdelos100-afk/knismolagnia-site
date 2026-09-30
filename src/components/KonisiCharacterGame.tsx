@@ -12,7 +12,7 @@ export default function KonisiCharacterGame({ level }: { level: 1 | 2 | 3 }) {
       <iframe
         className="konisi-frame"
         title={`Level ${level} 柯妮丝${kneeling ? '跪姿' : seated ? '坐姿' : '站姿'}：换装与动作互动`}
-        src={`/konisi-game/${kneeling ? 'kneeling' : seated ? 'seated' : 'index'}.html?v=20260930d`}
+        src={`/konisi-game/${kneeling ? 'kneeling' : seated ? 'seated' : 'index'}.html?v=20260930e`}
         loading="lazy"
         sandbox="allow-scripts"
         referrerPolicy="no-referrer"

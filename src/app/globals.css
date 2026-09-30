@@ -479,3 +479,6 @@ html[data-theme="dark"] .theme-toggle.compact { background: #18212a66; border-co
 .konisi-heading p { margin: 0; color: var(--muted); font-size: .875rem; }
 .konisi-frame { display: block; width: 100%; height: 825px; border: 1px solid var(--line); background: #fffafa; border-radius: 0 0 12px 12px; }
 @media (max-width: 720px) { .konisi-heading { padding: 12px; } .konisi-frame { height: 1160px; } }
+/* Keep the embedded interaction within one mobile screen. */
+@media (max-width:720px){.konisi-game{margin-top:18px;margin-bottom:18px}.konisi-heading{padding:9px 12px}.konisi-heading h2{font-size:17px;margin:0}.konisi-heading p{display:none}.konisi-frame{height:max(460px,calc(100svh - 72px));}}
+@media (max-width:720px) and (orientation:landscape){.konisi-frame{height:max(320px,calc(100svh - 56px));}}

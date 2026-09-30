@@ -1,4 +1,4 @@
-/* Both poses share one renderer. Expressions and blinking are independent states. */
+/* Three poses share one renderer. Expressions and blinking are independent states. */
 (() => {
   'use strict';
   const $ = id => document.getElementById(id);
@@ -6,15 +6,17 @@
   const W = model.width, H = model.height;
   const outfits = model.outfits || { original:'原装', tights:'白色裤袜', overknee:'过膝白丝' };
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  const state = { expression:'neutral', outfit:model.defaultOutfit || 'original', full:true, follow:!reduced.matches, motion:!reduced.matches, gaze:[0,0], target:[0,0], shake:[0,0], shakeTarget:[0,0], nextShake:0, time:0, blinkAt:-100, nextBlink:2.5, reaction:null, reactionStart:0, reactionDuration:0 };
+  const state = { expression:'neutral', outfit:model.defaultOutfit || 'original', focus:model.full.slice(0,2), zoom:model.full[2], follow:!reduced.matches, motion:!reduced.matches, gaze:[0,0], target:[0,0], shake:[0,0], shakeTarget:[0,0], nextShake:0, time:0, blinkAt:-100, nextBlink:2.5, reaction:null, reactionStart:0, reactionDuration:0 };
   const canvas = $('character'), scene = $('scene');
   let gl, program, texture, uniforms, indexCount, open, closed, frame=0, lastTime=0, visible=true, ready=false, metrics;
   const images = new Map();
+  const pointers=new Map();let gesture=null;
   function makeCanvas() { const c=document.createElement('canvas'); c.width=W; c.height=H; return c; }
   function paint(ctx, asset) { ctx.drawImage(images.get(asset.src),asset.x,asset.y,asset.width,asset.height); }
   function feedback() {
     $('costume').value=state.outfit;
-    $('view').textContent=state.full?'查看半身':'查看全身'; $('view').setAttribute('aria-pressed',String(!state.full));
+    $('reset').textContent='回到初始位置';
+    if($('zoomLevel'))$('zoomLevel').textContent=Math.round(state.zoom/model.full[2]*100)+'%';
     $('follow').textContent=state.follow?'关闭目光跟随':'开启目光跟随'; $('follow').setAttribute('aria-pressed',String(state.follow));
     $('motion').textContent=state.motion?'暂停动作':'继续动作'; $('motion').setAttribute('aria-pressed',String(state.motion));
     $('appearance').textContent=outfits[state.outfit];
@@ -52,7 +54,7 @@
     gl.clearColor(0,0,0,0);
   }
   function updateMetrics() {
-    const r=scene.getBoundingClientRect(),view=state.full?model.full:model.bust;
+    const r=scene.getBoundingClientRect(),view=[...state.focus,state.zoom];
     metrics={rect:r,view,fit:Math.min(r.width/W,r.height/H)*.96*view[2]};
     const dpr=Math.min(devicePixelRatio||1,2),width=Math.max(1,Math.round(r.width*dpr)),height=Math.max(1,Math.round(r.height*dpr));
     if(canvas.width!==width||canvas.height!==height){canvas.width=width;canvas.height=height;if(gl)gl.viewport(0,0,width,height);}
@@ -101,13 +103,44 @@
     document.querySelectorAll('[data-action]').forEach(item=>item.classList.toggle('is-active',item===button));
     compose();$('speaker').textContent='柯妮丝';$('dialogue').textContent=reaction.line;requestFrame();
   }
+  function refreshCamera(){updateMetrics();feedback();resetGaze();requestFrame();}
+  function zoomAt(next,clientX,clientY){
+    updateMetrics();const r=metrics.rect;
+    const x=clientX==null?r.left+r.width/2:clientX,y=clientY==null?r.top+r.height/2:clientY;
+    const anchor=point({clientX:x,clientY:y});
+    state.zoom=Math.max(.5,Math.min(4,next));updateMetrics();
+    state.focus=[anchor[0]-(x-r.left-r.width/2)/metrics.fit,anchor[1]-(y-r.top-r.height/2)/metrics.fit];refreshCamera();
+  }
+  function beginGesture(){
+    updateMetrics();const ps=[...pointers.values()],a=ps[0];if(!a){gesture=null;return;}
+    if(ps.length>=2){const b=ps[1],mid=[(a.x+b.x)/2,(a.y+b.y)/2];gesture={pinch:true,distance:Math.max(1,Math.hypot(b.x-a.x,b.y-a.y)),zoom:state.zoom,anchor:point({clientX:mid[0],clientY:mid[1]})};}
+    else gesture={pinch:false,x:a.x,y:a.y,focus:[...state.focus],fit:metrics.fit};
+  }
+  function attachCameraControls(){
+    $('reset').addEventListener('click',()=>{pointers.clear();gesture=null;scene.classList.remove('is-dragging');state.focus=model.full.slice(0,2);state.zoom=model.full[2];refreshCamera();});
+    $('zoomIn').addEventListener('click',()=>zoomAt(state.zoom*1.2));$('zoomOut').addEventListener('click',()=>zoomAt(state.zoom/1.2));
+    scene.addEventListener('pointerdown',e=>{
+      if(e.target.closest('button')||e.button>0)return;
+      e.preventDefault();pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});scene.setPointerCapture?.(e.pointerId);scene.classList.add('is-dragging');resetGaze();beginGesture();
+    });
+    scene.addEventListener('pointermove',e=>{
+      if(!pointers.has(e.pointerId)||!gesture)return;e.preventDefault();pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});const ps=[...pointers.values()];
+      if(gesture.pinch&&ps.length>=2){const a=ps[0],b=ps[1],mid=[(a.x+b.x)/2,(a.y+b.y)/2];state.zoom=Math.max(.5,Math.min(4,gesture.zoom*Math.hypot(b.x-a.x,b.y-a.y)/gesture.distance));updateMetrics();const r=metrics.rect;state.focus=[gesture.anchor[0]-(mid[0]-r.left-r.width/2)/metrics.fit,gesture.anchor[1]-(mid[1]-r.top-r.height/2)/metrics.fit];}
+      else if(!gesture.pinch){const a=ps[0];state.focus=[gesture.focus[0]-(a.x-gesture.x)/gesture.fit,gesture.focus[1]-(a.y-gesture.y)/gesture.fit];}
+      refreshCamera();
+    });
+    function end(e){if(!pointers.has(e.pointerId))return;pointers.delete(e.pointerId);if(scene.hasPointerCapture?.(e.pointerId))scene.releasePointerCapture(e.pointerId);beginGesture();if(!pointers.size)scene.classList.remove('is-dragging');}
+    for(const event of ['pointerup','pointercancel','lostpointercapture'])scene.addEventListener(event,end);
+    scene.addEventListener('wheel',e=>{e.preventDefault();const delta=e.deltaY*(e.deltaMode===1?16:e.deltaMode===2?metrics.rect.height:1);zoomAt(state.zoom*Math.exp(-Math.max(-300,Math.min(300,delta))*.002),e.clientX,e.clientY);},{passive:false});
+    scene.addEventListener('keydown',e=>{if(e.target!==scene)return;const moves={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]};if(moves[e.key]){e.preventDefault();updateMetrics();state.focus=state.focus.map((v,i)=>v-moves[e.key][i]*24/metrics.fit);refreshCamera();}else if(['+','=','-','0','Home'].includes(e.key)){e.preventDefault();if(e.key==='0'||e.key==='Home')$('reset').click();else zoomAt(state.zoom*(e.key==='-'?1/1.2:1.2));}});
+  }
   function attachControls() {
     $('costume').addEventListener('change',e=>{if(outfits[e.target.value]){state.outfit=e.target.value;compose();}});
-    $('view').addEventListener('click',()=>{state.full=!state.full;resetGaze();updateMetrics();feedback();requestFrame();});
+    attachCameraControls();
     $('follow').addEventListener('click',()=>{state.follow=!state.follow;resetGaze();feedback();});
     $('motion').addEventListener('click',()=>{state.motion=!state.motion;state.blinkAt=-100;lastTime=0;feedback();requestFrame();});
     document.querySelectorAll('[data-action]').forEach(button=>button.addEventListener('click',()=>react(button.dataset.action,button)));
-    scene.addEventListener('pointermove',e=>{if(!state.follow||e.pointerType==='touch'||!gl)return;const p=point(e),h=model.head,dx=(p[0]-(h[0]+h[2]/2))/(W*.22),dy=(p[1]-(h[1]+h[3]/2))/(H*.18);state.target=[Math.tanh(dx),Math.tanh(dy)];requestFrame();});
+    scene.addEventListener('pointermove',e=>{if(pointers.size||!state.follow||e.pointerType==='touch'||!gl)return;const p=point(e),h=model.head,dx=(p[0]-(h[0]+h[2]/2))/(W*.22),dy=(p[1]-(h[1]+h[3]/2))/(H*.18);state.target=[Math.tanh(dx),Math.tanh(dy)];requestFrame();});
     scene.addEventListener('pointerleave',resetGaze);scene.addEventListener('pointercancel',resetGaze);
     new ResizeObserver(()=>{updateMetrics();resetGaze();requestFrame();}).observe(scene);
     document.addEventListener('visibilitychange',()=>{lastTime=0;resetGaze();if(document.hidden&&frame){cancelAnimationFrame(frame);frame=0;}else requestFrame();});
