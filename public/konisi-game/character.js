@@ -6,7 +6,7 @@
   const W = model.width, H = model.height;
   const outfits = { original:'原装', tights:'白色裤袜', overknee:'过膝白丝' };
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  const state = { expression:'neutral', outfit:'original', full:true, follow:!reduced.matches, motion:!reduced.matches, gaze:[0,0], target:[0,0], time:0, blinkAt:-100, nextBlink:2.5, reaction:null, reactionStart:0, reactionDuration:0 };
+  const state = { expression:'neutral', outfit:'original', full:true, follow:!reduced.matches, motion:!reduced.matches, gaze:[0,0], target:[0,0], shake:[0,0], shakeTarget:[0,0], nextShake:0, time:0, blinkAt:-100, nextBlink:2.5, reaction:null, reactionStart:0, reactionDuration:0 };
   const canvas = $('character'), scene = $('scene');
   let gl, program, texture, uniforms, indexCount, open, closed, frame=0, lastTime=0, visible=true, ready=false, metrics;
   const images = new Map();
@@ -33,13 +33,8 @@
   function initializeRenderer() {
     gl=canvas.getContext('webgl',{alpha:true,antialias:true,premultipliedAlpha:false,preserveDrawingBuffer:true});
     if(!gl) throw new Error('WebGL unavailable');
-    const vs=`attribute vec2 aPos;attribute vec2 aUV;varying vec2 vUV;uniform vec2 uSize;uniform vec2 uFocus;uniform float uZoom;uniform mediump vec2 uArt;uniform float uTime;uniform float uMotion;uniform float uSeated;uniform float uReact;uniform float uReactT;
-      void main(){vec2 p=aPos;float x=p.x,y=p.y;float breath=sin(uTime*1.8)*uMotion;float upper;float head;
-      if(uSeated>.5){float torso=smoothstep(410.,480.,y)*(1.-smoothstep(630.,735.,y))*smoothstep(270.,345.,x)*(1.-smoothstep(550.,650.,x));p.y-=breath*1.5*torso;float hair=smoothstep(370.,530.,y)*(1.-smoothstep(690.,770.,y))*max(1.-smoothstep(210.,300.,x),smoothstep(640.,745.,x));p.x+=sin(uTime*1.4+y*.008)*2.8*hair*uMotion;upper=1.-smoothstep(780.,1180.,y);head=(1.-smoothstep(470.,560.,y))*smoothstep(150.,250.,y);}
-      else{float torso=smoothstep(315.,400.,y)*(1.-smoothstep(625.,770.,y))*smoothstep(350.,430.,x)*(1.-smoothstep(650.,760.,x));p.y-=breath*1.7*torso;float hair=smoothstep(340.,490.,y)*(1.-smoothstep(850.,970.,y))*max(1.-smoothstep(285.,410.,x),smoothstep(680.,800.,x));p.x+=sin(uTime*1.4+y*.007)*2.8*hair*uMotion;upper=1.-smoothstep(920.,1320.,y);head=1.-smoothstep(300.,390.,y);}
-      p.x+=sin(uTime*.72)*3.2*upper*uMotion;p.y+=sin(uTime*.46+1.2)*1.2*upper*uMotion;
-      float pulse=pow(max(0.,sin(uTime*.38)),14.)*uMotion;p.x+=pulse*2.2*head;
-      float wave=sin(3.1415926*uReactT);if(uReact>.5&&uReact<1.5)p.y+=wave*6.*head;if(uReact>1.5&&uReact<2.5)p.x-=wave*10.*upper;if(uReact>2.5&&uReact<3.5)p.x+=sin(uReactT*12.566)*4.*head*wave;if(uReact>3.5)p.x+=sin(uReactT*18.85)*5.*head*wave;
+    const vs=`attribute vec2 aPos;attribute vec2 aUV;varying vec2 vUV;uniform vec2 uSize;uniform vec2 uFocus;uniform float uZoom;uniform mediump vec2 uArt;uniform vec2 uShake;
+      void main(){vec2 p=aPos+uShake;
       float fit=min(uSize.x/uArt.x,uSize.y/uArt.y)*.96*uZoom;vec2 q=(p-uFocus)*fit/uSize*2.;gl_Position=vec4(q.x,-q.y,0.,1.);vUV=aUV;}`;
     const fs=`precision mediump float;varying vec2 vUV;uniform sampler2D uOpen;uniform sampler2D uClosed;uniform mediump vec2 uArt;uniform vec2 uGaze;uniform vec4 uEyeL;uniform vec4 uEyeR;uniform float uBlink;
       float iris(vec2 p,vec4 eye){return 1.-smoothstep(.2,1.,length((p-eye.xy)/max(eye.zw,vec2(1.))));}
@@ -52,7 +47,7 @@
     const vb=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,vb);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(vertices),gl.STATIC_DRAW);
     for(const [name,offset] of [['aPos',0],['aUV',8]]){const p=gl.getAttribLocation(program,name);gl.enableVertexAttribArray(p);gl.vertexAttribPointer(p,2,gl.FLOAT,false,16,offset);}
     const ib=gl.createBuffer();gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,ib);gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,new Uint16Array(indices),gl.STATIC_DRAW);indexCount=indices.length;
-    uniforms={};for(const name of ['uSize','uFocus','uZoom','uArt','uTime','uMotion','uSeated','uReact','uReactT','uGaze','uEyeL','uEyeR','uBlink'])uniforms[name]=gl.getUniformLocation(program,name);
+    uniforms={};for(const name of ['uSize','uFocus','uZoom','uArt','uShake','uGaze','uEyeL','uEyeR','uBlink'])uniforms[name]=gl.getUniformLocation(program,name);
     texture=[];for(let i=0;i<2;i++){const t=gl.createTexture();texture.push(t);gl.activeTexture(gl.TEXTURE0+i);gl.bindTexture(gl.TEXTURE_2D,t);for(const k of [gl.TEXTURE_WRAP_S,gl.TEXTURE_WRAP_T])gl.texParameteri(gl.TEXTURE_2D,k,gl.CLAMP_TO_EDGE);for(const k of [gl.TEXTURE_MIN_FILTER,gl.TEXTURE_MAG_FILTER])gl.texParameteri(gl.TEXTURE_2D,k,gl.LINEAR);gl.uniform1i(gl.getUniformLocation(program,i?'uClosed':'uOpen'),i);}
     gl.clearColor(0,0,0,0);
   }
@@ -66,26 +61,30 @@
   function requestFrame(){if(ready&&visible&&!document.hidden&&!frame)frame=requestAnimationFrame(render);}
   function render(ts) {
     frame=0;const dt=lastTime?Math.min((ts-lastTime)/1000,.05):0;lastTime=ts;if(state.motion)state.time+=dt;
-    const smooth=1-Math.exp(-dt/0.095);for(let i=0;i<2;i++)state.gaze[i]+=(state.target[i]-state.gaze[i])*smooth;
+    const smooth=1-Math.exp(-dt/0.072);for(let i=0;i<2;i++)state.gaze[i]+=(state.target[i]-state.gaze[i])*smooth;
     if(state.motion&&state.time>state.nextBlink){state.blinkAt=state.time;state.nextBlink=state.time+3.4+Math.random()*2.2;}
     const age=state.time-state.blinkAt;
     let blink=age<0||age>.2?0:age<.065?age/.065:age<.11?1:(.2-age)/.09;
     if(['happy','blink'].includes(state.expression))blink=0;
-    let react=0,reactT=0;
+    let reactT=0;
     if(state.reaction){
       if(!state.reactionStart)state.reactionStart=ts;
       reactT=Math.min(1,(ts-state.reactionStart)/state.reactionDuration);
-      react={pat:1,poke:2,pinch:3,rub:4}[state.reaction]||0;
-      if(reactT>=1){state.reaction=null;state.reactionStart=0;state.expression='neutral';delete document.documentElement.dataset.reaction;document.querySelectorAll('[data-action]').forEach(button=>button.classList.remove('is-active'));compose();react=0;reactT=0;}
+      if(reactT>=1){state.reaction=null;state.reactionStart=0;state.expression='neutral';delete document.documentElement.dataset.reaction;document.querySelectorAll('[data-action]').forEach(button=>button.classList.remove('is-active'));compose();reactT=0;}
     }
+    const amplitudes={pat:4.5,poke:8,pinch:6.5,rub:10};
+    const shaking=state.motion||state.reaction;
+    if(shaking&&ts>=state.nextShake){const amplitude=state.reaction?amplitudes[state.reaction]:1.8,angle=Math.random()*Math.PI*2,strength=amplitude*(.35+Math.random()*.65);state.shakeTarget=[Math.cos(angle)*strength,Math.sin(angle)*strength];state.nextShake=ts+(state.reaction?45+Math.random()*65:170+Math.random()*240);}
+    if(!shaking)state.shakeTarget=[0,0];
+    const shakeSmooth=1-Math.exp(-dt/(state.reaction ? .045 : .11));for(let i=0;i<2;i++)state.shake[i]+=(state.shakeTarget[i]-state.shake[i])*shakeSmooth;
     if(gl){const u=uniforms,v=metrics.view,eyes=model.eyes[state.expression]||[],empty=[-100,-100,1,1];
-      gl.uniform2f(u.uSize,canvas.width,canvas.height);gl.uniform2f(u.uFocus,v[0],v[1]);gl.uniform1f(u.uZoom,v[2]);gl.uniform2f(u.uArt,W,H);gl.uniform1f(u.uTime,state.time);gl.uniform1f(u.uMotion,state.motion ? .6 : 0);gl.uniform1f(u.uSeated,model.id==='seated'?1:0);
-      gl.uniform1f(u.uReact,react);gl.uniform1f(u.uReactT,reactT);
-      gl.uniform2f(u.uGaze,state.gaze[0]*2.6,state.gaze[1]*1.8);gl.uniform4fv(u.uEyeL,eyes[0]||empty);gl.uniform4fv(u.uEyeR,eyes[1]||empty);gl.uniform1f(u.uBlink,blink);gl.clear(gl.COLOR_BUFFER_BIT);gl.drawElements(gl.TRIANGLES,indexCount,gl.UNSIGNED_SHORT,0);
-    }
+      gl.uniform2f(u.uSize,canvas.width,canvas.height);gl.uniform2f(u.uFocus,v[0],v[1]);gl.uniform1f(u.uZoom,v[2]);gl.uniform2f(u.uArt,W,H);gl.uniform2f(u.uShake,state.shake[0],state.shake[1]);
+      gl.uniform2f(u.uGaze,state.gaze[0]*4.8,state.gaze[1]*3.4);gl.uniform4fv(u.uEyeL,eyes[0]||empty);gl.uniform4fv(u.uEyeR,eyes[1]||empty);gl.uniform1f(u.uBlink,blink);gl.clear(gl.COLOR_BUFFER_BIT);gl.drawElements(gl.TRIANGLES,indexCount,gl.UNSIGNED_SHORT,0);
+    }else $('fallback').style.transform=`translate(${state.shake[0]}px,${state.shake[1]}px)`;
     document.documentElement.dataset.blink=blink>.75?'closed':'open';
     const settling=state.gaze.some((v,i)=>Math.abs(v-state.target[i])>.0001);
-    if(state.motion||settling||state.reaction)requestFrame();
+    const shakeSettling=state.shake.some((value,index)=>Math.abs(value-state.shakeTarget[index])>.01)||state.shake.some(value=>Math.abs(value)>.01);
+    if(state.motion||settling||state.reaction||shakeSettling)requestFrame();
   }
   function resetGaze(){state.target=[0,0];requestFrame();}
   function point(e){updateMetrics();const r=metrics.rect,v=metrics.view;return [(e.clientX-r.left-r.width/2)/metrics.fit+v[0],(e.clientY-r.top-r.height/2)/metrics.fit+v[1]];}
@@ -108,7 +107,7 @@
     $('follow').addEventListener('click',()=>{state.follow=!state.follow;resetGaze();feedback();});
     $('motion').addEventListener('click',()=>{state.motion=!state.motion;state.blinkAt=-100;lastTime=0;feedback();requestFrame();});
     document.querySelectorAll('[data-action]').forEach(button=>button.addEventListener('click',()=>react(button.dataset.action,button)));
-    scene.addEventListener('pointermove',e=>{if(!state.follow||e.pointerType==='touch'||!gl)return;const p=point(e),h=model.head,dx=(p[0]-(h[0]+h[2]/2))/(W*.3),dy=(p[1]-(h[1]+h[3]/2))/(H*.25);state.target=[Math.tanh(dx),Math.tanh(dy)];requestFrame();});
+    scene.addEventListener('pointermove',e=>{if(!state.follow||e.pointerType==='touch'||!gl)return;const p=point(e),h=model.head,dx=(p[0]-(h[0]+h[2]/2))/(W*.22),dy=(p[1]-(h[1]+h[3]/2))/(H*.18);state.target=[Math.tanh(dx),Math.tanh(dy)];requestFrame();});
     scene.addEventListener('pointerleave',resetGaze);scene.addEventListener('pointercancel',resetGaze);
     new ResizeObserver(()=>{updateMetrics();resetGaze();requestFrame();}).observe(scene);
     document.addEventListener('visibilitychange',()=>{lastTime=0;resetGaze();if(document.hidden&&frame){cancelAnimationFrame(frame);frame=0;}else requestFrame();});
