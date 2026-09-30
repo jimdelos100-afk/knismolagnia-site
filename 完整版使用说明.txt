@@ -1,0 +1,13 @@
+完整网站源码 V4
+
+包含网站全部源码、三套角色素材、数据库迁移文件、构建配置和依赖锁定文件；已合并第三层角色与挠脚底互动。
+
+本包无需再合并之前的替换包。解压后进入knismolagnia-site文件夹，能看到package.json。
+
+更新已有GitHub项目：分批上传src、public、scripts、supabase文件夹和根目录配置文件，保持原目录结构。上传到仓库根目录，不要把knismolagnia-site外层文件夹一起套进去，也不要把zip文件直接上传当作网站源码。GitHub网页可分批提交；全部上传完成后等待Vercel最新部署Ready。不要删除原仓库或重建数据库。已有Vercel环境变量继续保留。
+
+本地运行：需要Node.js，在项目目录npm install；保留自己原有.env.local，或按README配置公开Supabase变量；npm run dev:design预览。正式运行和部署看README.md。
+
+包内不包含node_modules、构建缓存、真实账号数据或私密环境配置。数据库迁移文件仅作为源码的一部分，不需要为这次角色更新重复执行。
+
+第三层：默认白色裤袜，可切换白色短袜与光脚；五个互动按钮，新增挠脚底。GitHub连接写入403，因此目前提供完整源码下载，尚未上线。
