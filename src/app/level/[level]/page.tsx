@@ -62,6 +62,6 @@ export default async function LevelPage({ params, searchParams }: {
     {n === 2 && ctx.user && <PrivateMessageBox userId={ctx.user.id} />}
     {n === 2 && <div className="panel members-entry"><h3>同好列表</h3><p>浏览成员资料并关注同好。高于你当前 Level 的成员会自动隐藏资料。</p><Link className="button primary" href="/level/2/members">进入同好列表 ♡</Link></div>}
     {(n === 3 || n === 4) && <SubmissionBox level={n as 3 | 4} />}{n === 5 && <DiscussionRoom />}
-    {(n === 1 || n === 2) && <KonisiCharacterGame level={n} />}
+    {(n === 1 || n === 2 || n === 3) && <KonisiCharacterGame level={n} />}
   </main></>
 }

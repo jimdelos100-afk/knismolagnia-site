@@ -1,4 +1,4 @@
-/* Generated from the supplied transparent character layers; no scenery is embedded. */
+/* Transparent character models. */
 window.KONISI_MODELS = {
   "standing": {
     "id": "standing",
@@ -369,5 +369,258 @@ window.KONISI_MODELS = {
         "height": 75
       }
     ]
+  },
+  "kneeling": {
+    "id": "kneeling",
+    "width": 1024,
+    "height": 1536,
+    "full": [
+      512,
+      768,
+      1
+    ],
+    "bust": [
+      458,
+      455,
+      1.85
+    ],
+    "head": [
+      385,
+      210,
+      165,
+      140
+    ],
+    "eyes": {
+      "neutral": [
+        [
+          426.5,
+          251,
+          8.5,
+          9
+        ],
+        [
+          505,
+          280,
+          12,
+          10
+        ]
+      ],
+      "wink": [
+        [
+          426.5,
+          250,
+          9.5,
+          9
+        ],
+        [
+          -100,
+          -100,
+          1,
+          1
+        ]
+      ],
+      "puzzled": [
+        [
+          417.5,
+          247,
+          6.5,
+          9
+        ],
+        [
+          492.5,
+          275.5,
+          8.5,
+          8.5
+        ]
+      ],
+      "pout": [
+        [
+          427,
+          253.5,
+          9,
+          7.5
+        ],
+        [
+          504.5,
+          278.5,
+          12.5,
+          7.5
+        ]
+      ],
+      "sleepy": [
+        [
+          427.5,
+          256,
+          9.5,
+          6
+        ],
+        [
+          505,
+          283.5,
+          12,
+          7.5
+        ]
+      ],
+      "startled": [
+        [
+          427.5,
+          249.5,
+          8.5,
+          10.5
+        ],
+        [
+          501,
+          274,
+          12,
+          10
+        ]
+      ],
+      "blink": [],
+      "laugh": []
+    },
+    "base": {
+      "src": "assets/kneeling/base.webp",
+      "x": 77,
+      "y": 0,
+      "width": 853,
+      "height": 1200
+    },
+    "expressions": {
+      "neutral": {
+        "src": "assets/kneeling/face-neutral.webp",
+        "x": 385,
+        "y": 205,
+        "width": 170,
+        "height": 150
+      },
+      "wink": {
+        "src": "assets/kneeling/face-wink.webp",
+        "x": 391,
+        "y": 207,
+        "width": 151,
+        "height": 136
+      },
+      "puzzled": {
+        "src": "assets/kneeling/face-puzzled.webp",
+        "x": 391,
+        "y": 207,
+        "width": 151,
+        "height": 136
+      },
+      "pout": {
+        "src": "assets/kneeling/face-pout.webp",
+        "x": 391,
+        "y": 207,
+        "width": 151,
+        "height": 136
+      },
+      "sleepy": {
+        "src": "assets/kneeling/face-sleepy.webp",
+        "x": 391,
+        "y": 207,
+        "width": 151,
+        "height": 136
+      },
+      "startled": {
+        "src": "assets/kneeling/face-startled.webp",
+        "x": 391,
+        "y": 207,
+        "width": 151,
+        "height": 136
+      },
+      "blink": {
+        "src": "assets/kneeling/face-blink.webp",
+        "x": 391,
+        "y": 207,
+        "width": 151,
+        "height": 136
+      },
+      "laugh": {
+        "src": "assets/kneeling/face-laugh.webp",
+        "x": 391,
+        "y": 207,
+        "width": 151,
+        "height": 136
+      }
+    },
+    "wardrobe": {
+      "tights": {
+        "src": "assets/kneeling/tights.webp",
+        "x": 65,
+        "y": 1200,
+        "width": 829,
+        "height": 336
+      },
+      "shortsocks": {
+        "src": "assets/kneeling/shortsocks.webp",
+        "x": 0,
+        "y": 1200,
+        "width": 896,
+        "height": 336
+      },
+      "barefoot": {
+        "src": "assets/kneeling/barefoot.webp",
+        "x": 64,
+        "y": 1200,
+        "width": 820,
+        "height": 336
+      }
+    },
+    "blinkEyes": [
+      {
+        "src": "assets/kneeling/blink-left.webp",
+        "x": 391,
+        "y": 207,
+        "width": 75,
+        "height": 78
+      },
+      {
+        "src": "assets/kneeling/blink-right.webp",
+        "x": 462,
+        "y": 234,
+        "width": 80,
+        "height": 84
+      }
+    ],
+    "defaultOutfit": "tights",
+    "outfits": {
+      "tights": "白色裤袜",
+      "shortsocks": "白色短袜",
+      "barefoot": "光脚"
+    },
+    "amplitudes": {
+      "pat": 4.5,
+      "poke": 8,
+      "pinch": 6.5,
+      "rub": 10,
+      "tickle": 14
+    },
+    "reactions": {
+      "pat": {
+        "mood": "wink",
+        "duration": 1050,
+        "line": "嘿嘿，帽子可要扶稳呀。"
+      },
+      "poke": {
+        "mood": "startled",
+        "duration": 900,
+        "line": "哇！我刚刚还在发呆呢。"
+      },
+      "pinch": {
+        "mood": "pout",
+        "duration": 1100,
+        "line": "脸颊不是小面团啦……轻一点嘛。"
+      },
+      "rub": {
+        "mood": "puzzled",
+        "duration": 1200,
+        "line": "唔？你是不是在找我的发夹？"
+      },
+      "tickle": {
+        "mood": "laugh",
+        "duration": 1600,
+        "line": "哈哈，好痒！让我缓一缓啦。"
+      }
+    }
   }
 };

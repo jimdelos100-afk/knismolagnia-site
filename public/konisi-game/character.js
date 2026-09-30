@@ -4,9 +4,9 @@
   const $ = id => document.getElementById(id);
   const model = window.KONISI_MODELS[document.body.dataset.pose];
   const W = model.width, H = model.height;
-  const outfits = { original:'原装', tights:'白色裤袜', overknee:'过膝白丝' };
+  const outfits = model.outfits || { original:'原装', tights:'白色裤袜', overknee:'过膝白丝' };
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  const state = { expression:'neutral', outfit:'original', full:true, follow:!reduced.matches, motion:!reduced.matches, gaze:[0,0], target:[0,0], shake:[0,0], shakeTarget:[0,0], nextShake:0, time:0, blinkAt:-100, nextBlink:2.5, reaction:null, reactionStart:0, reactionDuration:0 };
+  const state = { expression:'neutral', outfit:model.defaultOutfit || 'original', full:true, follow:!reduced.matches, motion:!reduced.matches, gaze:[0,0], target:[0,0], shake:[0,0], shakeTarget:[0,0], nextShake:0, time:0, blinkAt:-100, nextBlink:2.5, reaction:null, reactionStart:0, reactionDuration:0 };
   const canvas = $('character'), scene = $('scene');
   let gl, program, texture, uniforms, indexCount, open, closed, frame=0, lastTime=0, visible=true, ready=false, metrics;
   const images = new Map();
@@ -25,7 +25,7 @@
     if(state.outfit!=='original') paint(g,model.wardrobe[state.outfit]);
     if(state.expression!=='neutral') paint(g,model.expressions[state.expression]);
     closed=makeCanvas(); const cg=closed.getContext('2d'); cg.drawImage(open,0,0);
-    if(!['happy','blink'].includes(state.expression)) for(const eye of model.blinkEyes) paint(cg,eye);
+    if(!['happy','laugh','blink'].includes(state.expression)) for(const eye of model.blinkEyes) paint(cg,eye);
     if(gl) for(let i=0;i<2;i++) { gl.activeTexture(gl.TEXTURE0+i); gl.bindTexture(gl.TEXTURE_2D,texture[i]); gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,i?closed:open); }
     else $('fallback').src=open.toDataURL();
     feedback(); requestFrame();
@@ -65,14 +65,14 @@
     if(state.motion&&state.time>state.nextBlink){state.blinkAt=state.time;state.nextBlink=state.time+3.4+Math.random()*2.2;}
     const age=state.time-state.blinkAt;
     let blink=age<0||age>.2?0:age<.065?age/.065:age<.11?1:(.2-age)/.09;
-    if(['happy','blink'].includes(state.expression))blink=0;
+    if(['happy','laugh','blink'].includes(state.expression))blink=0;
     let reactT=0;
     if(state.reaction){
       if(!state.reactionStart)state.reactionStart=ts;
       reactT=Math.min(1,(ts-state.reactionStart)/state.reactionDuration);
       if(reactT>=1){state.reaction=null;state.reactionStart=0;state.expression='neutral';delete document.documentElement.dataset.reaction;document.querySelectorAll('[data-action]').forEach(button=>button.classList.remove('is-active'));compose();reactT=0;}
     }
-    const amplitudes={pat:4.5,poke:8,pinch:6.5,rub:10};
+    const amplitudes=model.amplitudes || {pat:4.5,poke:8,pinch:6.5,rub:10};
     const shaking=state.motion||state.reaction;
     if(shaking&&ts>=state.nextShake){const amplitude=state.reaction?amplitudes[state.reaction]:1.8,angle=Math.random()*Math.PI*2,strength=amplitude*(.35+Math.random()*.65);state.shakeTarget=[Math.cos(angle)*strength,Math.sin(angle)*strength];state.nextShake=ts+(state.reaction?45+Math.random()*65:170+Math.random()*240);}
     if(!shaking)state.shakeTarget=[0,0];
@@ -88,14 +88,14 @@
   }
   function resetGaze(){state.target=[0,0];requestFrame();}
   function point(e){updateMetrics();const r=metrics.rect,v=metrics.view;return [(e.clientX-r.left-r.width/2)/metrics.fit+v[0],(e.clientY-r.top-r.height/2)/metrics.fit+v[1]];}
-  const reactions={
+  const reactions=model.reactions || {
     pat:{mood:'happy',duration:900,line:'唔……这样轻轻摸头的话，我很喜欢哦。'},
     poke:{mood:'surprised',duration:760,line:'呀！突然戳过来，吓了我一跳。'},
     pinch:{mood:'shy',duration:980,line:'脸要被捏红啦……轻一点嘛。'},
     rub:{mood:'angry',duration:1160,line:'头发都要被揉乱了，快住手啦。'}
   };
   function react(kind,button){
-    const reaction=reactions[kind];if(!reaction||model.id!=='standing')return;
+    const reaction=reactions[kind];if(!reaction||model.id==='seated')return;
     state.reaction=kind;state.reactionStart=0;state.reactionDuration=reaction.duration;state.expression=reaction.mood;state.blinkAt=-100;
     delete document.documentElement.dataset.reaction;void document.documentElement.offsetWidth;document.documentElement.dataset.reaction=kind;
     document.querySelectorAll('[data-action]').forEach(item=>item.classList.toggle('is-active',item===button));
@@ -115,7 +115,7 @@
     reduced.addEventListener('change',()=>{if(reduced.matches){state.motion=false;state.follow=false;resetGaze();feedback();requestFrame();}});
     canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();if(frame)cancelAnimationFrame(frame);frame=0;fallback();compose();updateMetrics();});
   }
-  function fallback(){gl=null;state.motion=false;state.follow=false;state.gaze=[0,0];state.target=[0,0];canvas.style.display='none';$('fallback').style.display='block';for(const id of ['follow','motion'])$(id).disabled=true;$('renderNote').textContent=model.id==='standing'?'静态预览 · 穿搭与动作表情仍可使用':'静态预览 · 穿搭仍可使用';}
+  function fallback(){gl=null;state.motion=false;state.follow=false;state.gaze=[0,0];state.target=[0,0];canvas.style.display='none';$('fallback').style.display='block';for(const id of ['follow','motion'])$(id).disabled=true;$('renderNote').textContent=model.id!=='seated'?'静态预览 · 穿搭与动作表情仍可使用':'静态预览 · 穿搭仍可使用';}
   async function load() {
     $('loading').hidden=false;$('retry').hidden=true;
     const assets=[model.base,...Object.values(model.expressions),...Object.values(model.wardrobe),...model.blinkEyes];

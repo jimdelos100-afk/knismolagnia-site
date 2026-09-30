@@ -38,6 +38,6 @@ export default function LocalLevelPreview({ level }: { level: number }) {
     {level === 2 && <><div className="panel profile-form"><h3>给管理员留言 <span className="badge">仅管理员可见</span></h3><p>本地预览，不会发送任何消息。</p><label>留言内容<textarea disabled placeholder="示例留言" /></label><button className="button primary" disabled type="button">发送私密留言</button></div><div className="panel members-entry"><h3>同好列表</h3><p>本地预览仅展示入口，不读取真实成员资料。</p><Link className="button primary" href="/level/2/members">进入同好列表 ♡</Link></div></>}
     {(level === 3 || level === 4) && <SubmissionBox level={level as 3 | 4} preview />}
     {level === 5 && <DiscussionRoom preview />}
-    {(level === 1 || level === 2) && <KonisiCharacterGame level={level} />}
+    {(level === 1 || level === 2 || level === 3) && <KonisiCharacterGame level={level} />}
   </main></>
 }
