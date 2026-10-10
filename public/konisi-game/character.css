@@ -9,3 +9,15 @@ body[data-pose=kneeling] .action-grid button[data-action=tickle]{grid-column:1/-
  .interaction{grid-template-columns:minmax(0,1fr) minmax(240px,.85fr);grid-template-rows:1fr}.control-panel{border-top:0;border-left:1px solid var(--line);overflow-y:auto;justify-content:center}.topbar{padding:5px 12px}.topbar h1{font-size:15px}.dialogue{font-size:13px}
 }
 @media(max-width:720px){body[data-pose=standing] .action-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+
+/* Homepage companion: one accessible click action, independent presentation. */
+body[data-mode=companion]{height:100svh;padding:0;background:transparent;overflow:hidden}
+body[data-mode=companion] .shell{height:100%;border:0;border-radius:0;background:transparent;display:flex;flex-direction:column}
+body[data-mode=companion] .topbar,body[data-mode=companion] .bottom,body[data-mode=companion] .settings,body[data-mode=companion] .action-box,body[data-mode=companion] .zoom-tools,body[data-mode=companion] .status{display:none}
+body[data-mode=companion] .interaction{height:auto;flex:1;min-height:0;display:grid;grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto;background:transparent}
+body[data-mode=companion] .interaction::before{display:none}
+body[data-mode=companion] .character-pane{height:auto;min-height:0;cursor:pointer;touch-action:pan-y}
+body[data-mode=companion] .control-panel{padding:6px 14px;border:0;background:transparent;backdrop-filter:none;overflow:visible}
+body[data-mode=companion] .dialogue-wrap{margin:0;min-height:0;padding:8px 12px;text-align:center}
+body[data-mode=companion] .speaker{display:none}
+body[data-mode=companion] .dialogue{margin:0;min-height:0;font-size:14px;line-height:1.5}

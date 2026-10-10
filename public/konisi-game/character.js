@@ -3,6 +3,7 @@
   'use strict';
   const $ = id => document.getElementById(id);
   const model = window.KONISI_MODELS[document.body.dataset.pose];
+  const companion = document.body.dataset.mode === 'companion';
   const W = model.width, H = model.height;
   const outfits = model.outfits || { original:'原装', tights:'白色裤袜', overknee:'过膝白丝' };
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
@@ -17,7 +18,7 @@
     $('costume').value=state.outfit;
     $('reset').textContent='回到初始位置';
     if($('zoomLevel'))$('zoomLevel').textContent=Math.round(state.zoom/model.full[2]*100)+'%';
-    $('follow').textContent=state.follow?'关闭目光跟随':'开启目光跟随'; $('follow').setAttribute('aria-pressed',String(state.follow));
+    $('follow').textContent=state.follow?'关闭头眼跟随':'开启头眼跟随'; $('follow').setAttribute('aria-pressed',String(state.follow));
     $('motion').textContent=state.motion?'暂停动作':'继续动作'; $('motion').setAttribute('aria-pressed',String(state.motion));
     $('appearance').textContent=outfits[state.outfit];
     document.documentElement.dataset.expression=state.expression; document.documentElement.dataset.outfit=state.outfit;
@@ -35,8 +36,16 @@
   function initializeRenderer() {
     gl=canvas.getContext('webgl',{alpha:true,antialias:true,premultipliedAlpha:false,preserveDrawingBuffer:true});
     if(!gl) throw new Error('WebGL unavailable');
-    const vs=`attribute vec2 aPos;attribute vec2 aUV;varying vec2 vUV;uniform vec2 uSize;uniform vec2 uFocus;uniform float uZoom;uniform mediump vec2 uArt;uniform vec2 uShake;
-      void main(){vec2 p=aPos+uShake;
+    const vs=`attribute vec2 aPos;attribute vec2 aUV;varying vec2 vUV;uniform vec2 uSize;uniform vec2 uFocus;uniform float uZoom;uniform mediump vec2 uArt;uniform vec2 uShake;uniform vec2 uHeadGaze;uniform vec4 uHead;
+      void main(){
+      vec2 center=uHead.xy+uHead.zw*vec2(.5,.35);
+      vec2 radius=uHead.zw*vec2(1.15,1.3);
+      float weight=1.-smoothstep(.55,1.35,length((aPos-center)/radius));
+      vec2 pivot=uHead.xy+uHead.zw*vec2(.5,1.25);
+      float angle=uHeadGaze.x*.035;
+      vec2 d=aPos-pivot;
+      vec2 rotated=vec2(cos(angle)*d.x-sin(angle)*d.y,sin(angle)*d.x+cos(angle)*d.y);
+      vec2 p=aPos+weight*(rotated-d+uHeadGaze*vec2(7.,5.))+uShake;
       float fit=min(uSize.x/uArt.x,uSize.y/uArt.y)*.96*uZoom;vec2 q=(p-uFocus)*fit/uSize*2.;gl_Position=vec4(q.x,-q.y,0.,1.);vUV=aUV;}`;
     const fs=`precision mediump float;varying vec2 vUV;uniform sampler2D uOpen;uniform sampler2D uClosed;uniform mediump vec2 uArt;uniform vec2 uGaze;uniform vec4 uEyeL;uniform vec4 uEyeR;uniform float uBlink;
       float iris(vec2 p,vec4 eye){return 1.-smoothstep(.2,1.,length((p-eye.xy)/max(eye.zw,vec2(1.))));}
@@ -49,7 +58,7 @@
     const vb=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,vb);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(vertices),gl.STATIC_DRAW);
     for(const [name,offset] of [['aPos',0],['aUV',8]]){const p=gl.getAttribLocation(program,name);gl.enableVertexAttribArray(p);gl.vertexAttribPointer(p,2,gl.FLOAT,false,16,offset);}
     const ib=gl.createBuffer();gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,ib);gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,new Uint16Array(indices),gl.STATIC_DRAW);indexCount=indices.length;
-    uniforms={};for(const name of ['uSize','uFocus','uZoom','uArt','uShake','uGaze','uEyeL','uEyeR','uBlink'])uniforms[name]=gl.getUniformLocation(program,name);
+    uniforms={};for(const name of ['uSize','uFocus','uZoom','uArt','uShake','uHeadGaze','uHead','uGaze','uEyeL','uEyeR','uBlink'])uniforms[name]=gl.getUniformLocation(program,name);
     texture=[];for(let i=0;i<2;i++){const t=gl.createTexture();texture.push(t);gl.activeTexture(gl.TEXTURE0+i);gl.bindTexture(gl.TEXTURE_2D,t);for(const k of [gl.TEXTURE_WRAP_S,gl.TEXTURE_WRAP_T])gl.texParameteri(gl.TEXTURE_2D,k,gl.CLAMP_TO_EDGE);for(const k of [gl.TEXTURE_MIN_FILTER,gl.TEXTURE_MAG_FILTER])gl.texParameteri(gl.TEXTURE_2D,k,gl.LINEAR);gl.uniform1i(gl.getUniformLocation(program,i?'uClosed':'uOpen'),i);}
     gl.clearColor(0,0,0,0);
   }
@@ -81,6 +90,7 @@
     const shakeSmooth=1-Math.exp(-dt/(state.reaction ? .045 : .11));for(let i=0;i<2;i++)state.shake[i]+=(state.shakeTarget[i]-state.shake[i])*shakeSmooth;
     if(gl){const u=uniforms,v=metrics.view,eyes=model.eyes[state.expression]||[],empty=[-100,-100,1,1];
       gl.uniform2f(u.uSize,canvas.width,canvas.height);gl.uniform2f(u.uFocus,v[0],v[1]);gl.uniform1f(u.uZoom,v[2]);gl.uniform2f(u.uArt,W,H);gl.uniform2f(u.uShake,state.shake[0],state.shake[1]);
+      gl.uniform2f(u.uHeadGaze,state.gaze[0],state.gaze[1]);gl.uniform4fv(u.uHead,model.head);
       gl.uniform2f(u.uGaze,state.gaze[0]*4.8,state.gaze[1]*3.4);gl.uniform4fv(u.uEyeL,eyes[0]||empty);gl.uniform4fv(u.uEyeR,eyes[1]||empty);gl.uniform1f(u.uBlink,blink);gl.clear(gl.COLOR_BUFFER_BIT);gl.drawElements(gl.TRIANGLES,indexCount,gl.UNSIGNED_SHORT,0);
     }else $('fallback').style.transform=`translate(${state.shake[0]}px,${state.shake[1]}px)`;
     document.documentElement.dataset.blink=blink>.75?'closed':'open';
@@ -136,11 +146,22 @@
   }
   function attachControls() {
     $('costume').addEventListener('change',e=>{if(outfits[e.target.value]){state.outfit=e.target.value;compose();}});
-    attachCameraControls();
+    if(!companion) attachCameraControls();
+    else {
+      scene.addEventListener('click',e=>{if(!e.target.closest('button'))react('pat',scene);});
+      scene.addEventListener('keydown',e=>{if(e.target===scene&&['Enter',' '].includes(e.key)){e.preventDefault();react('pat',scene);}});
+    }
     $('follow').addEventListener('click',()=>{state.follow=!state.follow;resetGaze();feedback();});
     $('motion').addEventListener('click',()=>{state.motion=!state.motion;state.blinkAt=-100;lastTime=0;feedback();requestFrame();});
     document.querySelectorAll('[data-action]').forEach(button=>button.addEventListener('click',()=>react(button.dataset.action,button)));
-    scene.addEventListener('pointermove',e=>{if(pointers.size||!state.follow||e.pointerType==='touch'||!gl)return;const p=point(e),h=model.head,dx=(p[0]-(h[0]+h[2]/2))/(W*.22),dy=(p[1]-(h[1]+h[3]/2))/(H*.18);state.target=[Math.tanh(dx),Math.tanh(dy)];requestFrame();});
+    function followPointer(e){if(pointers.size||!state.follow||e.pointerType==='touch'||!gl)return;const p=point(e),h=model.head,dx=(p[0]-(h[0]+h[2]/2))/(W*.22),dy=(p[1]-(h[1]+h[3]/2))/(H*.18);state.target=[Math.tanh(dx),Math.tanh(dy)];requestFrame();}
+    document.addEventListener('pointermove',followPointer,{passive:true});
+    window.addEventListener('message',e=>{
+      if(e.source!==window.parent||!e.data)return;
+      if(e.data.type==='konisi-pointer-reset')resetGaze();
+      else if(e.data.type==='konisi-pointer'&&Number.isFinite(e.data.x)&&Number.isFinite(e.data.y))followPointer({clientX:e.data.x,clientY:e.data.y});
+    });
+    document.documentElement.addEventListener('pointerleave',resetGaze);
     scene.addEventListener('pointerleave',resetGaze);scene.addEventListener('pointercancel',resetGaze);
     new ResizeObserver(()=>{updateMetrics();resetGaze();requestFrame();}).observe(scene);
     document.addEventListener('visibilitychange',()=>{lastTime=0;resetGaze();if(document.hidden&&frame){cancelAnimationFrame(frame);frame=0;}else requestFrame();});

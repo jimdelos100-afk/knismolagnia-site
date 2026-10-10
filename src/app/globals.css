@@ -482,3 +482,7 @@ html[data-theme="dark"] .theme-toggle.compact { background: #18212a66; border-co
 /* Keep the embedded interaction within one mobile screen. */
 @media (max-width:720px){.konisi-game{margin-top:18px;margin-bottom:18px}.konisi-heading{padding:9px 12px}.konisi-heading h2{font-size:17px;margin:0}.konisi-heading p{display:none}.konisi-frame{height:max(460px,calc(100svh - 72px));}}
 @media (max-width:720px) and (orientation:landscape){.konisi-frame{height:max(320px,calc(100svh - 56px));}}
+
+.home-character{display:flex;justify-content:center;padding-top:12px}
+.home-character-frame{display:block;width:min(100%,480px);height:520px;border:0;background:transparent}
+@media(max-width:720px){.home-character-frame{height:min(480px,72svh)}}
