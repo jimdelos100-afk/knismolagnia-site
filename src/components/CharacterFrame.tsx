@@ -15,7 +15,7 @@ export default function CharacterFrame(props: IframeHTMLAttributes<HTMLIFrameEle
       const rect = iframe.getBoundingClientRect()
       if (rect.bottom < 0 || rect.top > innerHeight) return
       iframe.contentWindow?.postMessage(point
-        ? { type: 'konisi-pointer', x: point.x - rect.left, y: point.y - rect.top }
+        ? { type: 'konisi-pointer', x: point.x - rect.left, y: point.y - rect.top, spanX: Math.max(320, innerWidth * .42), spanY: Math.max(260, innerHeight * .44) }
         : { type: 'konisi-pointer-reset' }, '*')
     }
     const move = (event: PointerEvent) => {

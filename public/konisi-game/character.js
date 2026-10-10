@@ -1,4 +1,4 @@
-/* Three poses share one renderer. Expressions and blinking are independent states. */
+/* Three poses share one renderer. Larger softened head and pupil tracking, with isolated click-only companion mode. */
 (() => {
   'use strict';
   const $ = id => document.getElementById(id);
@@ -7,9 +7,9 @@
   const W = model.width, H = model.height;
   const outfits = model.outfits || { original:'原装', tights:'白色裤袜', overknee:'过膝白丝' };
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  const state = { expression:'neutral', outfit:model.defaultOutfit || 'original', focus:model.full.slice(0,2), zoom:model.full[2], follow:!reduced.matches, motion:!reduced.matches, gaze:[0,0], target:[0,0], shake:[0,0], shakeTarget:[0,0], nextShake:0, time:0, blinkAt:-100, nextBlink:2.5, reaction:null, reactionStart:0, reactionDuration:0 };
+  const state = { expression:'neutral', outfit:model.defaultOutfit || 'original', focus:companion?[model.head[0]+model.head[2]*.36,model.head[1]+205]:model.full.slice(0,2), zoom:companion?3.35:model.full[2], follow:!reduced.matches, motion:!reduced.matches, gaze:[0,0], target:[0,0], shake:[0,0], shakeTarget:[0,0], nextShake:0, time:0, blinkAt:-100, nextBlink:2.5, reaction:null, reactionStart:0, reactionDuration:0 };
   const canvas = $('character'), scene = $('scene');
-  let gl, program, texture, uniforms, indexCount, open, closed, frame=0, lastTime=0, visible=true, ready=false, metrics;
+  let gl, program, texture, uniforms, indexCount, open, closed, frame=0, lastTime=0, lastDraw=0, visible=true, ready=false, metrics;
   const images = new Map();
   const pointers=new Map();let gesture=null;
   function makeCanvas() { const c=document.createElement('canvas'); c.width=W; c.height=H; return c; }
@@ -38,21 +38,24 @@
     if(!gl) throw new Error('WebGL unavailable');
     const vs=`attribute vec2 aPos;attribute vec2 aUV;varying vec2 vUV;uniform vec2 uSize;uniform vec2 uFocus;uniform float uZoom;uniform mediump vec2 uArt;uniform vec2 uShake;uniform vec2 uHeadGaze;uniform vec4 uHead;
       void main(){
-      vec2 center=uHead.xy+uHead.zw*vec2(.5,.35);
-      vec2 radius=uHead.zw*vec2(1.15,1.3);
-      float weight=1.-smoothstep(.55,1.35,length((aPos-center)/radius));
-      vec2 pivot=uHead.xy+uHead.zw*vec2(.5,1.25);
-      float angle=uHeadGaze.x*.035;
+      // Soft head/neck deformation, independently of the iris shift.
+      // Elliptical weights keep the hairline smooth rather than moving a rectangle.
+      vec2 center=uHead.xy+uHead.zw*vec2(.5,.50);
+      vec2 radius=uHead.zw*vec2(.85,1.05);
+      float weight=1.-smoothstep(.70,1.55,length((aPos-center)/radius));
+      vec2 pivot=uHead.xy+uHead.zw*vec2(.5,1.22);
+      float angle=uHeadGaze.x*.080;
       vec2 d=aPos-pivot;
       vec2 rotated=vec2(cos(angle)*d.x-sin(angle)*d.y,sin(angle)*d.x+cos(angle)*d.y);
-      vec2 p=aPos+weight*(rotated-d+uHeadGaze*vec2(7.,5.))+uShake;
+      vec2 headMove=vec2(uHeadGaze.x*23.,uHeadGaze.y*18.);
+      vec2 p=aPos+weight*(rotated-d+headMove)+uShake;
       float fit=min(uSize.x/uArt.x,uSize.y/uArt.y)*.96*uZoom;vec2 q=(p-uFocus)*fit/uSize*2.;gl_Position=vec4(q.x,-q.y,0.,1.);vUV=aUV;}`;
     const fs=`precision mediump float;varying vec2 vUV;uniform sampler2D uOpen;uniform sampler2D uClosed;uniform mediump vec2 uArt;uniform vec2 uGaze;uniform vec4 uEyeL;uniform vec4 uEyeR;uniform float uBlink;
-      float iris(vec2 p,vec4 eye){return 1.-smoothstep(.2,1.,length((p-eye.xy)/max(eye.zw,vec2(1.))));}
+      float iris(vec2 p,vec4 eye){return 1.-smoothstep(.55,1.35,length((p-eye.xy)/max(eye.zw*vec2(1.85,1.65),vec2(1.))));}
       void main(){vec2 p=vUV*uArt;float m=max(iris(p,uEyeL),iris(p,uEyeR));vec2 uv=vUV-uGaze*m*(1.-uBlink)/uArt;vec4 a=texture2D(uOpen,uv);a.a=texture2D(uOpen,vUV).a;vec4 b=texture2D(uClosed,vUV);gl_FragColor=mix(a,b,uBlink);}`;
     function shader(kind,src){const s=gl.createShader(kind);gl.shaderSource(s,src);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw new Error(gl.getShaderInfoLog(s));return s;}
     program=gl.createProgram();gl.attachShader(program,shader(gl.VERTEX_SHADER,vs));gl.attachShader(program,shader(gl.FRAGMENT_SHADER,fs));gl.linkProgram(program);if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw new Error(gl.getProgramInfoLog(program));gl.useProgram(program);
-    const columns=36,rows=56,vertices=[],indices=[];
+    const columns=72,rows=108,vertices=[],indices=[];
     for(let j=0;j<=rows;j++)for(let i=0;i<=columns;i++)vertices.push(i*W/columns,j*H/rows,i/columns,j/rows);
     for(let j=0;j<rows;j++)for(let i=0;i<columns;i++){const a=j*(columns+1)+i,b=a+1,c=a+columns+1,d=c+1;indices.push(a,c,b,b,c,d);}
     const vb=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,vb);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(vertices),gl.STATIC_DRAW);
@@ -71,8 +74,12 @@
   }
   function requestFrame(){if(ready&&visible&&!document.hidden&&!frame)frame=requestAnimationFrame(render);}
   function render(ts) {
-    frame=0;const dt=lastTime?Math.min((ts-lastTime)/1000,.05):0;lastTime=ts;if(state.motion)state.time+=dt;
-    const smooth=1-Math.exp(-dt/0.072);for(let i=0;i<2;i++)state.gaze[i]+=(state.target[i]-state.gaze[i])*smooth;
+    frame=0;
+    // Global companion runs at roughly 30 fps while idle to reduce GPU load.
+    if(companion&&!state.reaction&&lastDraw&&ts-lastDraw<32){requestFrame();return;}
+    lastDraw=ts;
+    const dt=lastTime?Math.min((ts-lastTime)/1000,.05):0;lastTime=ts;if(state.motion)state.time+=dt;
+    const smooth=1-Math.exp(-dt/0.105);for(let i=0;i<2;i++)state.gaze[i]+=(state.target[i]-state.gaze[i])*smooth;
     if(state.motion&&state.time>state.nextBlink){state.blinkAt=state.time;state.nextBlink=state.time+3.4+Math.random()*2.2;}
     const age=state.time-state.blinkAt;
     let blink=age<0||age>.2?0:age<.065?age/.065:age<.11?1:(.2-age)/.09;
@@ -91,7 +98,7 @@
     if(gl){const u=uniforms,v=metrics.view,eyes=model.eyes[state.expression]||[],empty=[-100,-100,1,1];
       gl.uniform2f(u.uSize,canvas.width,canvas.height);gl.uniform2f(u.uFocus,v[0],v[1]);gl.uniform1f(u.uZoom,v[2]);gl.uniform2f(u.uArt,W,H);gl.uniform2f(u.uShake,state.shake[0],state.shake[1]);
       gl.uniform2f(u.uHeadGaze,state.gaze[0],state.gaze[1]);gl.uniform4fv(u.uHead,model.head);
-      gl.uniform2f(u.uGaze,state.gaze[0]*4.8,state.gaze[1]*3.4);gl.uniform4fv(u.uEyeL,eyes[0]||empty);gl.uniform4fv(u.uEyeR,eyes[1]||empty);gl.uniform1f(u.uBlink,blink);gl.clear(gl.COLOR_BUFFER_BIT);gl.drawElements(gl.TRIANGLES,indexCount,gl.UNSIGNED_SHORT,0);
+      gl.uniform2f(u.uGaze,state.gaze[0]*6.6,state.gaze[1]*4.7);gl.uniform4fv(u.uEyeL,eyes[0]||empty);gl.uniform4fv(u.uEyeR,eyes[1]||empty);gl.uniform1f(u.uBlink,blink);gl.clear(gl.COLOR_BUFFER_BIT);gl.drawElements(gl.TRIANGLES,indexCount,gl.UNSIGNED_SHORT,0);
     }else $('fallback').style.transform=`translate(${state.shake[0]}px,${state.shake[1]}px)`;
     document.documentElement.dataset.blink=blink>.75?'closed':'open';
     const settling=state.gaze.some((v,i)=>Math.abs(v-state.target[i])>.0001);
@@ -154,12 +161,25 @@
     $('follow').addEventListener('click',()=>{state.follow=!state.follow;resetGaze();feedback();});
     $('motion').addEventListener('click',()=>{state.motion=!state.motion;state.blinkAt=-100;lastTime=0;feedback();requestFrame();});
     document.querySelectorAll('[data-action]').forEach(button=>button.addEventListener('click',()=>react(button.dataset.action,button)));
-    function followPointer(e){if(pointers.size||!state.follow||e.pointerType==='touch'||!gl)return;const p=point(e),h=model.head,dx=(p[0]-(h[0]+h[2]/2))/(W*.22),dy=(p[1]-(h[1]+h[3]/2))/(H*.18);state.target=[Math.tanh(dx),Math.tanh(dy)];requestFrame();}
+    function followPointer(e){
+      if(pointers.size||!state.follow||e.pointerType==='touch'||!gl)return;
+      // Distances are measured from the *visible face* in screen pixels.
+      // Parent-page events provide viewport-relative spans so the global widget
+      // looks across the entire website instead of pinning to the nearest edge.
+      updateMetrics();
+      const r=metrics.rect,h=model.head,faceX=h[0]+h[2]*.5,faceY=h[1]+h[3]*.48;
+      const screenX=r.left+r.width*.5+(faceX-state.focus[0])*metrics.fit;
+      const screenY=r.top+r.height*.5+(faceY-state.focus[1])*metrics.fit;
+      const spanX=Number.isFinite(e.spanX)?Math.max(120,Math.min(2000,e.spanX)):Math.max(115,r.width*.55);
+      const spanY=Number.isFinite(e.spanY)?Math.max(110,Math.min(1600,e.spanY)):Math.max(105,r.height*.6);
+      state.target=[Math.tanh((e.clientX-screenX)/spanX*1.65),Math.tanh((e.clientY-screenY)/spanY*1.65)];
+      requestFrame();
+    }
     document.addEventListener('pointermove',followPointer,{passive:true});
     window.addEventListener('message',e=>{
       if(e.source!==window.parent||!e.data)return;
       if(e.data.type==='konisi-pointer-reset')resetGaze();
-      else if(e.data.type==='konisi-pointer'&&Number.isFinite(e.data.x)&&Number.isFinite(e.data.y))followPointer({clientX:e.data.x,clientY:e.data.y});
+      else if(e.data.type==='konisi-pointer'&&Number.isFinite(e.data.x)&&Number.isFinite(e.data.y))followPointer({clientX:e.data.x,clientY:e.data.y,spanX:e.data.spanX,spanY:e.data.spanY});
     });
     document.documentElement.addEventListener('pointerleave',resetGaze);
     scene.addEventListener('pointerleave',resetGaze);scene.addEventListener('pointercancel',resetGaze);

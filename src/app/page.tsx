@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import HomeCharacter from '@/components/HomeCharacter'
 import SiteHeader from '@/components/SiteHeader'
 import {
   Content,
@@ -65,7 +64,6 @@ export default async function Home({ searchParams }: HomeProps) {
 
   return <>
     <SiteHeader />
-    <HomeCharacter />
     {content || isPreviewing(builderSearch)
       ? <Content content={content} model="page" apiKey={BUILDER_API_KEY} />
       : <OriginalHomeBody />}

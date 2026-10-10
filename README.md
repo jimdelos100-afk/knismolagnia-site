@@ -1,44 +1,43 @@
-# 雪糕少女汉化组官网 · V6 完整源码
+# 雪糕少女汉化组官网 · V7 全站看板娘版（完整源码）
 
-完整 Next.js 网站，保留六层页面、账号和后台、数据库迁移、Builder 首页支持及全部角色素材。
+本包在原 V6 Next.js 源码上调整角色位置与动画，保留账号、六个 Level、数据库迁移、后台、投稿、交流室、Builder 首页支持和全部人物资源。
 
-## 本版角色位置
+## 角色分布
 
-| 页面 | 角色 | 互动 |
+| 页面 | 角色 | 功能 |
 | --- | --- | --- |
-| 首页 | 原第一层站姿 | 点击角色摸头，或聚焦后按 Enter / 空格；没有换装及多动作面板 |
-| 第一层 | 原第二层坐姿 | 保留穿搭、拖动、缩放、复位和预留互动区域 |
-| 第二层 | 原第三层跪姿 | 保留三种穿搭、五个动作（含挠脚底）、拖动缩放及复位 |
-| 第三层 | 无角色小游戏 | 保留原有作品和投稿内容 |
+| 官网首页 `/` | 原 Level 1 站姿，作为固定全站看板娘 | 仅点击 / Enter / 空格摸头；增强头部和目光跟随；收起、展开 |
+| 我的账号 `/account` | 同一公共看板娘 | 与官网一致；不依赖用户的 Level |
+| Level 1 `/level/1` | 原 Level 2 坐姿（另有全站看板娘） | 保留换装、拖动、缩放、复位、互动预留区；增强跟随 |
+| Level 2 `/level/2` | 原 Level 3 跪姿（另有全站看板娘） | 保留换装和五种动作、拖动、缩放、复位；增强跟随 |
+| Level 3—6 | 仅公共看板娘 | 层级作品、投稿、聊天与资源不受影响 |
 
-三处均支持目光与头部跟随鼠标；鼠标在角色框外的网页区域移动也会传入坐标。头部在颈部附近做小幅转动和位移，眼睛独立追随。鼠标离开网页后回正。手机无需鼠标，首页支持点击，层级游戏仍支持单指拖动、双指缩放。减少动态效果偏好会默认关闭跟随与自动动作。
+**角色不是 Live2D Cubism 模型。** 参考了 https://github.com/stevenjoezhang/live2d-widget 中的常驻看板娘与显隐交互思路，但为了保持已有柯妮丝素材，继续使用本地 WebGL 网格头部变形、瞳孔采样偏移和原有姿态表情；未直接集成或复制 Live2D Widget 的代码，也不需要额外的 Cubism SDK、CDN 或模型。
 
-首页在 SiteHeader 后、原生或 Builder 首页内容前显示。手机首页角色高度最多为视口的 72%，首页其余内容仍可正常滚动；层级小游戏继续使用紧凑控制面板。
+## 首页与各层是否互相影响？
 
-## 首页与各层的独立性
+- 官网正文为 `src/app/page.tsx`，账号页为 `src/app/account/page.tsx`，每层内容为 `src/app/level/[level]/page.tsx`。它们是独立页面，修改 Level 内容不会替换官网正文或账号资料。
+- 常驻看板娘在 `src/app/layout.tsx` 中通过 `src/components/HomeCharacter.tsx` 装载；页面间导航时不需要重置看板娘。只在官网、账号、Level 页面显示；管理后台和登录页不强制显示，以免干扰操作。
+- 常驻看板娘入口独立指向 `public/konisi-game/home.html`（站姿，点击摸头，隐藏其它互动按钮）。Level 1/2 的姿态映射在 `src/components/KonisiCharacterGame.tsx`（`seated.html` / `kneeling.html`），修改该映射不会改动全站看板娘的站姿与独立互动状态。
+- `public/konisi-game/character.js`、`character.css`、`models.js` 和 `src/components/CharacterFrame.tsx` 仍是三套角色共用的动画核心。**直接改动这些共享文件可能同时影响不同页面的角色**。专属调整请优先使用 HTML `data-mode="companion"` 或 `data-pose="seated|kneeling"` 分支。
+- 窗口底部的看板娘可收起／展开；收起状态保存在本地浏览器。它不会读取账号信息，不修改 Level 的访问权限。
 
-- 首页入口：`src/components/HomeCharacter.tsx` 与 `public/konisi-game/home.html`。
-- 层级映射：`src/components/KonisiCharacterGame.tsx`，第一层指向 seated，第二层指向 kneeling。
-- 修改各层内容、层级映射或 seated/kneeling 入口，不会改动首页角色入口和设置。
-- 公共文件 `character.js`、`character.css`、`models.js`、`CharacterFrame.tsx` 及全站样式仍由三处共享；修改共享逻辑或样式可能影响所有角色。首页专属样式使用 `data-mode=companion`，层级调整应限定相应选择器。
-- 首页固定站姿默认穿搭和摸头回应；坐姿和跪姿的切换状态不会传到首页。
+## 动画与性能
 
-## 安装与部署
+- 头部跟随由柔性网格控制，增加旋转和偏移幅度；眼睛独立跟随鼠标，页面其它位置的鼠标坐标通过沙箱消息传入，看板娘会平滑转回原位。
+- 动画尊重系统“减少动态效果”设置。全站小看板娘在待机时限制了绘制帧率，并在不可见时暂停绘制；普通 Level 游戏保留原动作逻辑。
+- 手机端支持点击互动；Level 1/2 保留单指拖动及双指缩放。手机没有鼠标，因此不会模拟虚假的桌面鼠标跟随。
+- 角色 iframe 使用 `sandbox="allow-scripts"`，父页只发送坐标和复位消息，不向沙箱授予同源账号访问权限。WebGL 不可用时会回退至静态图，目光和头部跟随将不可用，但原来的动作表情和换装仍可使用。
 
-1. 将压缩包中的 `knismolagnia-site` 文件夹内容放入项目根目录，其中应直接包含 `package.json`。
-2. 执行 `npm install`，保留你原有的 `.env.local` 和部署环境变量。
-3. 公开配置至少需要 `NEXT_PUBLIC_SUPABASE_URL`、`NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`。
-4. 本地执行 `npm run dev:design` 查看首页与 `/level/1`、`/level/2`、`/level/3`。设计预览只在 development 环境生效；生产访问仍遵守原有账号权限。
-5. 正式部署执行 `npm run build`，或提交至原 GitHub 项目由 Vercel 构建。不要在正式环境启用设计预览。已有数据库无需为本次角色调整重复执行迁移。
+## 完整源码替换与部署
 
-不要上传 `.env.local`、真实密钥、`node_modules` 或 `.next`。本包不包含这些文件。
+1. 解压，把 `knismolagnia-site/` 内**全部内容**放到你原 GitHub 仓库根目录，确保根目录直接存在 `package.json`、`src/`、`public/`、`supabase/`。
+2. 请保留你原有的 Vercel 环境变量、Supabase 项目、数据库和 `.env.local`，不要上传真实密钥、`node_modules`、`.next` 或 `.env.local`。
+3. 如果本地已经配置好环境，执行 `npm ci`、`npm run dev:design` 进行本地样式预览；生产部署执行 `npm run build` 或提交 GitHub 交给 Vercel 自动构建。
+4. 本次未新增数据库字段，不需要重新执行 Supabase 迁移。正式发布前检查官网、账号、Level 1—6、移动端及管理后台。
 
-## 实现与验证
+## 本次验证范围
 
-角色是透明分层素材配合 WebGL 网格动画，并非 Cubism `.moc3` 模型。页面不可见时暂停渲染；WebGL 不可用时降级静态图，首页点击表情、层级换装与已有动作仍可用，头眼跟随不支持静态降级。
+已完成：上传压缩包结构和原始页面映射审查、全部相关 TSX 语法解析、`character.js` JavaScript 语法检查、角色资源路径静态完整性检查以及源码重新打包。由于本次运行环境无法从 npm Registry 安装依赖，且其 Chromium 浏览器禁止访问测试页面，**本版未完成 Next.js 生产构建、浏览器动态渲染或真实手机触控验证**。请在正式上线前通过 Vercel 构建与网页实测确认。
 
-iframe 保持 `sandbox="allow-scripts"`。父页只发送鼠标坐标或复位消息，子页验证消息来源和有限数值，不开放同源账号访问。
-
-V6 已通过首页及前三层设计预览路由映射检查、TypeScript 检查、使用本地示例公开环境配置的生产构建、OpenGL ES 2 着色器编译链接、首页单击/键盘回应、三套头眼跟随与复位、层级拖动/滚轮/模拟双指缩放、穿搭和动作恢复检查。尚未完成 V6 浏览器视觉验收或真实手机触控验收。
-
-本次仅交付完整源码包，未提交远程仓库或发布线上网站。
+本包只交付完整源码，未自动修改你的 GitHub 仓库或 Vercel 线上部署。

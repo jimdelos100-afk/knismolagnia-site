@@ -1,9 +1,45 @@
+'use client'
+
+import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import CharacterFrame from './CharacterFrame'
 
-/** Homepage placement and entry are independent of the level mapping. */
+/**
+ * Persistent, route-independent site mascot.
+ * Kept in RootLayout so changing Level 1/2 never changes or remounts the mascot.
+ * Only pointer coordinates are forwarded to its opaque sandboxed iframe.
+ */
 export default function HomeCharacter() {
-  return <section className="home-character wrap" aria-label="首页柯妮丝">
-    <CharacterFrame className="home-character-frame" title="柯妮丝：点击摸摸头，目光与头部跟随鼠标"
-      src="/konisi-game/home.html?v=20261010f" sandbox="allow-scripts" referrerPolicy="no-referrer" />
-  </section>
+  const pathname = usePathname() || '/'
+  const [minimized, setMinimized] = useState(false)
+  const visibleOnRoute = pathname === '/' || pathname === '/account' || pathname.startsWith('/level/')
+
+  useEffect(() => {
+    try { setMinimized(window.localStorage.getItem('konisi-companion-minimized') === '1') }
+    catch { /* Storage can be disabled; keep the default. */ }
+  }, [])
+
+  const toggle = () => {
+    const next = !minimized
+    setMinimized(next)
+    try { window.localStorage.setItem('konisi-companion-minimized', next ? '1' : '0') }
+    catch { /* The toggle should still work without storage. */ }
+  }
+
+  return <aside className={`site-companion ${minimized ? 'is-minimized' : ''} ${visibleOnRoute ? '' : 'is-route-hidden'}`}
+    aria-label="柯妮丝 · 全站看板娘">
+    <div className="site-companion-top">
+      <span aria-hidden="true">♡</span><span>柯妮丝在看着你</span>
+      <button type="button" onClick={toggle} aria-label="收起柯妮丝看板娘" title="收起看板娘">×</button>
+    </div>
+    <CharacterFrame
+      className="site-companion-frame"
+      title="柯妮丝全站看板娘：移动鼠标，头部和目光追随；点击摸头"
+      src="/konisi-game/home.html?v=20261010g"
+      sandbox="allow-scripts"
+      referrerPolicy="no-referrer"
+      loading="lazy"
+    />
+    <button className="site-companion-restore" type="button" onClick={toggle} aria-label="展开柯妮丝看板娘" title="展开看板娘">♡ 柯妮丝</button>
+  </aside>
 }

@@ -14,7 +14,7 @@ export default function KonisiCharacterGame({ level }: { level: 1 | 2 }) {
       <CharacterFrame
         className="konisi-frame"
         title={`Level ${level} 柯妮丝${kneeling ? '跪姿' : seated ? '坐姿' : '站姿'}：换装与动作互动`}
-        src={`/konisi-game/${kneeling ? 'kneeling' : seated ? 'seated' : 'index'}.html?v=20261010f`}
+        src={`/konisi-game/${kneeling ? 'kneeling' : seated ? 'seated' : 'index'}.html?v=20261010g`}
         loading="lazy"
         sandbox="allow-scripts"
         referrerPolicy="no-referrer"
