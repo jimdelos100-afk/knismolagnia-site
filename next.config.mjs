@@ -4,10 +4,10 @@ const nextConfig = {
   async headers() {
     // Public art can be decoded by WebGL inside the opaque, script-only iframe.
     // Anonymous image requests do not send the site's account cookies.
-    return [{
-      source: '/konisi-game/assets/:path*',
+    return ['/konisi-game/assets/:path*', '/konisi-game/live2d/:path*'].map(source => ({
+      source,
       headers: [{ key: 'Access-Control-Allow-Origin', value: '*' }],
-    }]
+    }))
   },
   images: {
     remotePatterns: [

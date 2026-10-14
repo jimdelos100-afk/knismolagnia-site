@@ -22,7 +22,7 @@ body[data-mode=companion] .dialogue-wrap{margin:0;min-height:0;padding:8px 12px;
 body[data-mode=companion] .speaker{display:none}
 body[data-mode=companion] .dialogue{margin:0;min-height:0;font-size:14px;line-height:1.5}
 
-/* Compact floating companion: portrait crop makes the facial movement readable. */
+/* Companion camera now frames the entire standing artwork instead of cropping the portrait. */
 body[data-mode=companion] .character-pane { touch-action: manipulation; }
 body[data-mode=companion] .interaction { grid-template-rows: minmax(0,1fr) auto; }
 body[data-mode=companion] .control-panel { padding: 0 7px 7px; }
@@ -36,3 +36,6 @@ body[data-mode=companion] .loading { background: #f8edf9; font-size: 12px; }
   body[data-mode=companion] .dialogue-wrap { padding: 4px 5px; }
   body[data-mode=companion] .scene-note { bottom: 3px; font-size: 9px; padding: 3px 5px; }
 }
+
+/* The companion has dialogue below the full figure; do not cover shoes with a caption. */
+body[data-mode=companion] .scene-note { display: none; }

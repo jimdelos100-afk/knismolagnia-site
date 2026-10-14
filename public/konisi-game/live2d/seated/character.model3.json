@@ -1,0 +1,10 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "seated-source-materials.moc3",
+		"Textures": [
+			"seated-source-materials.2048/texture_00.png"
+		],
+		"DisplayInfo": "seated-source-materials.cdi3.json"
+	}
+}

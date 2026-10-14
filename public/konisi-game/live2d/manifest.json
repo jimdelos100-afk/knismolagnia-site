@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "poses": {
+    "standing": {
+      "model": "standing/character.model3.json"
+    },
+    "seated": {
+      "model": "seated/character.model3.json",
+      "drawableRoles": {
+        "base": [
+          "ArtMesh10"
+        ]
+      }
+    },
+    "kneeling": {
+      "model": "kneeling/character.model3.json",
+      "drawableRoles": {
+        "base": ["ArtMesh12"],
+        "wardrobe": {
+          "barefoot": "ArtMesh9",
+          "shortsocks": "ArtMesh10",
+          "tights": "ArtMesh11"
+        }
+      }
+    }
+  }
+}

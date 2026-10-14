@@ -1,0 +1,10 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "kneeling-source-materials.moc3",
+		"Textures": [
+			"kneeling-source-materials.2048/texture_00.png"
+		],
+		"DisplayInfo": "kneeling-source-materials.cdi3.json"
+	}
+}

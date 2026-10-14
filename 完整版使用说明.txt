@@ -1,43 +1,38 @@
-# 雪糕少女汉化组官网 · V7 全站看板娘版（完整源码）
+雪糕少女汉化组官网 · V8 Live2D 版
 
-本包在原 V6 Next.js 源码上调整角色位置与动画，保留账号、六个 Level、数据库迁移、后台、投稿、交流室、Builder 首页支持和全部人物资源。
+本包是完整 Next.js 网站源码。首页是全身站姿，Level 1 是坐姿，Level 2 是跪姿。
+角色使用各自真实的 Live2D Cubism .moc3，运行资源随源码提供。
+眼球、目光和头部均不会跟随鼠标；保留自然头动、眨眼、换装、互动和视角控制。
 
-## 角色分布
+上传与部署
 
-| 页面 | 角色 | 功能 |
-| --- | --- | --- |
-| 官网首页 `/` | 原 Level 1 站姿，作为固定全站看板娘 | 仅点击 / Enter / 空格摸头；增强头部和目光跟随；收起、展开 |
-| 我的账号 `/account` | 同一公共看板娘 | 与官网一致；不依赖用户的 Level |
-| Level 1 `/level/1` | 原 Level 2 坐姿（另有全站看板娘） | 保留换装、拖动、缩放、复位、互动预留区；增强跟随 |
-| Level 2 `/level/2` | 原 Level 3 跪姿（另有全站看板娘） | 保留换装和五种动作、拖动、缩放、复位；增强跟随 |
-| Level 3—6 | 仅公共看板娘 | 层级作品、投稿、聊天与资源不受影响 |
+1. 解压后，将 knismolagnia-site 文件夹里的全部内容放进原 GitHub 仓库根目录，覆盖同名源码。
+   仓库根目录应直接有 package.json、src、public、supabase，不能再套一层 knismolagnia-site。
+2. 保留原部署平台的环境变量和原 Supabase 项目。不要上传 .env.local、node_modules 或 .next。
+   本包不包含真实密钥，没有更改数据库结构，不需要重新执行迁移。
+3. 使用原来的 Next.js 托管方式，安装命令 npm ci，构建命令 npm run build。
+   若原来已绑定 GitHub，提交源码后可按原来的流程部署。
+   本网站包含账号和服务端功能，不能直接作为 GitHub Pages 纯静态站点上传。
 
-**角色不是 Live2D Cubism 模型。** 参考了 https://github.com/stevenjoezhang/live2d-widget 中的常驻看板娘与显隐交互思路，但为了保持已有柯妮丝素材，继续使用本地 WebGL 网格头部变形、瞳孔采样偏移和原有姿态表情；未直接集成或复制 Live2D Widget 的代码，也不需要额外的 Cubism SDK、CDN 或模型。
+本地检查
 
-## 首页与各层是否互相影响？
+沿用原有环境配置，安装依赖后运行 npm run dev。
+仅检查页面样式可运行 npm run dev:design；设计预览不能用于正式部署。
+通过 HTTP(S) 打开页面，不能直接双击 HTML 文件运行角色。
 
-- 官网正文为 `src/app/page.tsx`，账号页为 `src/app/account/page.tsx`，每层内容为 `src/app/level/[level]/page.tsx`。它们是独立页面，修改 Level 内容不会替换官网正文或账号资料。
-- 常驻看板娘在 `src/app/layout.tsx` 中通过 `src/components/HomeCharacter.tsx` 装载；页面间导航时不需要重置看板娘。只在官网、账号、Level 页面显示；管理后台和登录页不强制显示，以免干扰操作。
-- 常驻看板娘入口独立指向 `public/konisi-game/home.html`（站姿，点击摸头，隐藏其它互动按钮）。Level 1/2 的姿态映射在 `src/components/KonisiCharacterGame.tsx`（`seated.html` / `kneeling.html`），修改该映射不会改动全站看板娘的站姿与独立互动状态。
-- `public/konisi-game/character.js`、`character.css`、`models.js` 和 `src/components/CharacterFrame.tsx` 仍是三套角色共用的动画核心。**直接改动这些共享文件可能同时影响不同页面的角色**。专属调整请优先使用 HTML `data-mode="companion"` 或 `data-pose="seated|kneeling"` 分支。
-- 窗口底部的看板娘可收起／展开；收起状态保存在本地浏览器。它不会读取账号信息，不修改 Level 的访问权限。
+角色范围
 
-## 动画与性能
+- 首页、账号和 Level 页的公共看板娘：全身站姿，可收起、展开，点击或 Enter / 空格摸头。
+- Level 1：坐姿，保留三种换装、拖动、缩放、复位和暂停动画。
+- Level 2：跪姿，保留三种换装和摸头、戳、捏、揉、挠脚底五种互动。
+- Level 3—6、账号、后台、投稿、聊天和数据库逻辑沿用 V8。
+- 角色 iframe 仍使用 allow-scripts 沙盒，父页不会向角色发送鼠标坐标。
 
-- 头部跟随由柔性网格控制，增加旋转和偏移幅度；眼睛独立跟随鼠标，页面其它位置的鼠标坐标通过沙箱消息传入，看板娘会平滑转回原位。
-- 动画尊重系统“减少动态效果”设置。全站小看板娘在待机时限制了绘制帧率，并在不可见时暂停绘制；普通 Level 游戏保留原动作逻辑。
-- 手机端支持点击互动；Level 1/2 保留单指拖动及双指缩放。手机没有鼠标，因此不会模拟虚假的桌面鼠标跟随。
-- 角色 iframe 使用 `sandbox="allow-scripts"`，父页只发送坐标和复位消息，不向沙箱授予同源账号访问权限。WebGL 不可用时会回退至静态图，目光和头部跟随将不可用，但原来的动作表情和换装仍可使用。
+这是基础绑定版本：站姿使用粗拆部件，坐姿和跪姿使用局部网格变形。
+表情、眨眼及换装使用原有图像素材映射到真实模型的纹理；头动直接驱动已绑定的模型参数。
+没有遮挡补绘、发丝物理、复杂口型或独立 motion3 / exp3 动作文件。
+模型加载失败会显示“重新加载”，不会用旧的图片变形冒充 Live2D。
 
-## 完整源码替换与部署
-
-1. 解压，把 `knismolagnia-site/` 内**全部内容**放到你原 GitHub 仓库根目录，确保根目录直接存在 `package.json`、`src/`、`public/`、`supabase/`。
-2. 请保留你原有的 Vercel 环境变量、Supabase 项目、数据库和 `.env.local`，不要上传真实密钥、`node_modules`、`.next` 或 `.env.local`。
-3. 如果本地已经配置好环境，执行 `npm ci`、`npm run dev:design` 进行本地样式预览；生产部署执行 `npm run build` 或提交 GitHub 交给 Vercel 自动构建。
-4. 本次未新增数据库字段，不需要重新执行 Supabase 迁移。正式发布前检查官网、账号、Level 1—6、移动端及管理后台。
-
-## 本次验证范围
-
-已完成：上传压缩包结构和原始页面映射审查、全部相关 TSX 语法解析、`character.js` JavaScript 语法检查、角色资源路径静态完整性检查以及源码重新打包。由于本次运行环境无法从 npm Registry 安装依赖，且其 Chromium 浏览器禁止访问测试页面，**本版未完成 Next.js 生产构建、浏览器动态渲染或真实手机触控验证**。请在正式上线前通过 Vercel 构建与网页实测确认。
-
-本包只交付完整源码，未自动修改你的 GitHub 仓库或 Vercel 线上部署。
+部署和维护详情见 README.md，实际完成范围和验证说明见 Live2D-STATUS.md。
+请保留 public/konisi-game/live2d/vendor 中的来源与许可证文件。
+本包未自动提交 GitHub，也未改动原线上网站。
