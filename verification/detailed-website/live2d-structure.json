@@ -1,0 +1,27 @@
+{
+  "status": "structure-ok",
+  "structuralOnly": true,
+  "runtimeVerified": false,
+  "manifest": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\v8-source\\knismolagnia-site\\public\\konisi-game\\live2d\\manifest.json",
+  "poses": {
+    "standing": {
+      "model": "standing/character.model3.json",
+      "status": "structure-ok"
+    },
+    "seated": {
+      "model": "seated/character.model3.json",
+      "status": "structure-ok"
+    },
+    "kneeling": {
+      "model": "kneeling/character.model3.json",
+      "status": "structure-ok"
+    }
+  },
+  "errors": [],
+  "notes": [
+    "Structure and file signatures do not establish a valid or renderable Live2D model.",
+    "MOC3 compatibility and model integrity require loading with the intended Cubism Core; PNG files must also decode and render.",
+    "This manifest is an integration checklist. It does not install or enable a Live2D runtime.",
+    "Posture, head motion, disabled gaze tracking, framing, and website interactions require runtime and visual verification."
+  ]
+}

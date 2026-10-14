@@ -17,7 +17,7 @@ const live2d = await createLive2DRenderer({
 });
 
 live2d.setCamera({ focus: state.focus, zoom: state.zoom, offset: state.shake });
-live2d.update();
+live2d.update(deltaSeconds);
 live2d.draw();
 console.log(live2d.getStatus(), live2d.getParameters(), live2d.getParts());
 ```
@@ -32,7 +32,9 @@ console.log(live2d.getStatus(), live2d.getParameters(), live2d.getParts());
 - `setParameterById(id, value)`：只有模型中实际存在的参数才返回 `true`，值会限制在真实模型范围。未知 ID 返回 `false`，不会创建无效虚拟参数。先读取 `getParameters()`，不要假定参数名已经绑定到网格。
 - `setPartOpacityById(id, opacity)`：仅修改实际存在的 Part，未知 ID 返回 `false`。可用于在真实工程已经建立部件分组时切换衣服或表情。
 - `setDrawableOpacityById(id, opacity)`：在 Framework 绘制时为实际 ArtMesh 叠加不透明度因子，未知 ID 返回 `false`。跪姿用它在三张独立服装网格间切换，不改写 Core 的只读缓冲区。
-- `update()`：调用 CubismModel.update，让已设置的参数作用于真实 ArtMesh。
+- `update(deltaSeconds = 1/60)`：先调用原生 CubismPhysics.evaluate（模型有物理文件时），再更新真实 ArtMesh。传入实际经过时间；允许 0..0.25 秒，0 表示只更新网格。
+- `getPhysicsStatus()`：报告原生物理组、输出参数、固定fps及计算次数。
+- `resetPhysics()`：复位并稳定原生物理输出；没有物理引用时返回 false。
 - `draw()`：绘制到透明 WebGL canvas。上下文丢失时返回 `false`，渲染错误会抛错。
 - `getParameters()` / `getParts()`：返回真实 ID、范围、当前值。数据为快照。
 - `getDrawables({vertices:true})`：返回真实 ArtMesh ID、顶点数、纹理编号、不透明度及可选顶点快照，可用来核验参数改变是否产生真实网格变形。
@@ -44,7 +46,7 @@ console.log(live2d.getStatus(), live2d.getParameters(), live2d.getParts());
 
 模块不建立 RAF 循环，不监听鼠标、触控或父页面消息。不会添加目光跟随，也不会把指针传入 Cubism 的拖动控制。宿主保留现有状态、按钮、对话和相机事件；自然头动仅能驱动实际绑有形变的参数。暂停、减弱动态、页面可见性及交互节奏仍由宿主控制。
 
-本模块只加载 MOC3 和纹理，不自动播放 model3 内的 Motion、Expression、Physics、Pose 等可选资源；`optionalReferencesNotPlayed` 明确列出它们。本网站由宿主脚本生成自然头动和交互反应参数，表情、眨眼和换装保留 V8 素材映射，未制作独立 motion3 或 exp3 文件。上下文恢复会标记 `reload-required`，页面通过重新加载按钮 dispose 后重新创建模型。
+本模块加载 MOC3、纹理以及 model3 引用的 Physics，并校验全部物理参数实际存在；不自动播放 Motion、Expression、Pose 等其他可选资源；`optionalReferencesNotPlayed` 明确列出它们。本网站由宿主脚本生成自然头动和交互反应参数，表情、眨眼和换装保留 V8 素材映射，站姿采用原像素归属 mask 的明确 body/face host；未制作独立 motion3 或 exp3 文件。上下文恢复会标记 `reload-required`，页面通过重新加载按钮 dispose 后重新创建模型。
 
 ## iframe 资源配置
 

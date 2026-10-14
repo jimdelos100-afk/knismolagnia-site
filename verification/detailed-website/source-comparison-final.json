@@ -1,0 +1,49 @@
+{
+  "baseArchive": "V8-Live2D-GitHub-source.zip",
+  "baseArchiveSha256": "bc1f077ce17997d59129850a0a850b226ed051e3bf643942c43d668f187453c1",
+  "priorFileCount": 200,
+  "unchangedPriorFiles": 188,
+  "changedPriorFiles": [
+    "Live2D-STATUS.md",
+    "README.md",
+    "完整版使用说明.txt",
+    "public/konisi-game/character.js",
+    "public/konisi-game/live2d/INTEGRATION.md",
+    "public/konisi-game/live2d/README.md",
+    "public/konisi-game/live2d/manifest.json",
+    "public/konisi-game/live2d/renderer.mjs",
+    "public/konisi-game/live2d/standing/character.model3.json",
+    "public/konisi-game/live2d/vendor/cubism-framework-5-r.5.mjs",
+    "public/konisi-game/live2d/vendor/provenance.json",
+    "src/components/HomeCharacter.tsx"
+  ],
+  "deletedPriorFiles": [],
+  "unchangedProtectedFiles": 146,
+  "businessAndLevel1Level2Unchanged": true,
+  "models": [
+    {
+      "pose": "standing",
+      "model": "standing/character.model3.json",
+      "mocSha256": "0e496d30e887f48e5daf432556ccaf1be0726a2617a2485d91703ac60f065e46",
+      "mocBytes": 131328
+    },
+    {
+      "pose": "seated",
+      "model": "seated/character.model3.json",
+      "mocSha256": "b811dc80c699e4546648bd5d60ca23e54028b98fddb5b72addc776e88585db94",
+      "mocBytes": 17664
+    },
+    {
+      "pose": "kneeling",
+      "model": "kneeling/character.model3.json",
+      "mocSha256": "e792bfb6cb3850ea29e6093d65e4477cf654c974d2be4337cb242e4d20661515",
+      "mocBytes": 22528
+    }
+  ],
+  "websiteChecksPassed": 63,
+  "standingAppearanceChecksPassed": 204,
+  "productionBuildPassed": true,
+  "typeCheckPassed": true,
+  "onlineAccountsDatabaseVerified": false,
+  "deployed": false
+}

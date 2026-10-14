@@ -36,7 +36,7 @@ export default function HomeCharacter() {
     <CharacterFrame
       className="site-companion-frame"
       title="柯妮丝全站看板娘：可点击摸头，保留自然头动，目光不跟随鼠标"
-      src="/konisi-game/home.html?v=20261014-cubism"
+      src="/konisi-game/home.html?v=20261014-detailed"
       sandbox="allow-scripts"
       referrerPolicy="no-referrer"
       loading="lazy"

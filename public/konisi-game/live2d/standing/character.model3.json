@@ -1,10 +1,18 @@
 {
-	"Version": 3,
-	"FileReferences": {
-		"Moc": "standing-rough-parts.moc3",
-		"Textures": [
-			"standing-rough-parts.2048/texture_00.png"
-		],
-		"DisplayInfo": "standing-rough-parts.cdi3.json"
-	}
+  "Version": 3,
+  "FileReferences": {
+    "Moc": "detailed/standing-detailed.moc3",
+    "Textures": [
+      "detailed/standing-detailed.4096/texture_00.png"
+    ],
+    "Physics": "detailed/standing-detailed.physics3.json",
+    "DisplayInfo": "detailed/standing-detailed.cdi3.json"
+  },
+  "Groups": [
+    {
+      "Target": "Parameter",
+      "Name": "EyeBlink",
+      "Ids": []
+    }
+  ]
 }

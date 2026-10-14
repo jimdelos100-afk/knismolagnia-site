@@ -3,10 +3,11 @@
  * Framework/Core retain their own Live2D licenses; see vendor/licenses/.
  */
 import { cameraMatrix, assetURL } from './camera-math.mjs';
+import { validatePhysicsSettings } from './physics-validation.mjs';
 
 let corePromise;
 let frameworkPromise;
-let CubismFramework, CubismMoc, CubismMatrix44, CubismRenderer_WebGL, CubismShaderManager_WebGL;
+let CubismFramework, CubismMoc, CubismMatrix44, CubismRenderer_WebGL, CubismShaderManager_WebGL, CubismPhysics;
 let users = 0;
 let ownsFramework = false;
 const activeCanvases = new WeakSet();
@@ -65,7 +66,7 @@ export async function createLive2DRenderer(options) {
   // Framework references Core constants while its module is evaluated.
   // Import it only after the Core script has initialized, including cold loads.
   if (!frameworkPromise) frameworkPromise = import('./vendor/cubism-framework-5-r.5.mjs').then(module => {
-    ({ CubismFramework, CubismMoc, CubismMatrix44, CubismRenderer_WebGL, CubismShaderManager_WebGL } = module);
+    ({ CubismFramework, CubismMoc, CubismMatrix44, CubismRenderer_WebGL, CubismShaderManager_WebGL, CubismPhysics } = module);
   }).catch(error => { frameworkPromise = null; throw error; });
   await frameworkPromise;
   // Reserve after awaiting Core so concurrent calls cannot claim one canvas.
@@ -86,7 +87,8 @@ class Live2DRenderer {
     this.canvas = canvas; this.options = options;
     this.abortController = new AbortController();
     this.textures = []; this.textureDimensions = []; this.defaultMapping = null;
-    this.moc = null; this.model = null; this.renderer = null;
+    this.moc = null; this.model = null; this.renderer = null; this.physics = null;
+    this.physicsInfo = { loaded: false, reason: 'No Physics reference in model3.', inputIds: [], outputIds: [], evaluations: 0 };
     this.retained = false; this.disposed = false;
     this.parameterIndices = new Map(); this.partIndices = new Map();
     this.drawableIndices = new Map(); this.drawableOpacities = new Map();
@@ -183,13 +185,41 @@ class Live2DRenderer {
       uvs: Array.from(this.model.getDrawableVertexUvs(drawable.index)),
       indices: Array.from(this.model.getDrawableVertexIndices(drawable.index)),
     }));
+    await this.loadPhysics(refs, url.href, signal);
     Object.assign(this.status, { phase: 'ready', modelLoaded: true, shadersReady: true,
       mocVersion, latestMocVersion, drawableCount: this.model.getDrawableCount(),
       textureCount: this.textures.length, parameterCount: this.parameterIndices.size,
       partCount: this.partIndices.size,
       // Loading these optional assets or choosing their behaviour belongs to the app.
-      optionalReferencesNotPlayed: Object.keys(refs).filter(key => !['Moc', 'Textures', 'DisplayInfo', 'UserData'].includes(key)),
+      optionalReferencesNotPlayed: Object.keys(refs).filter(key => !['Moc', 'Textures', 'DisplayInfo', 'UserData', 'Physics'].includes(key)),
     });
+  }
+
+  async loadPhysics(refs, modelUrl, signal) {
+    if (!refs.Physics) return;
+    const url = assetURL(refs.Physics, modelUrl);
+    const bytes = await readBuffer(url, signal);
+    const json = JSON.parse(new TextDecoder().decode(bytes).replace(/^\uFEFF/, ''));
+    // The SDK synthesizes unknown parameter IDs. Reject them here so an
+    // unbound/absent hair parameter can never be mistaken for a completed rig.
+    const descriptor = validatePhysicsSettings(json, this.getParameters());
+    this.physics = CubismPhysics.create(bytes, bytes.byteLength);
+    if (!this.physics) throw new Error('Cubism Physics rejected the physics3 file.');
+    this.physicsInfo = { loaded: true, url, ...descriptor, evaluations: 0, reason: null };
+    this.physics.stabilization(this.model);
+    this.model.update();
+  }
+
+  getPhysicsStatus() { return structuredClone(this.physicsInfo); }
+
+  resetPhysics() {
+    this.assertModel();
+    if (!this.physics) return false;
+    for (const id of this.physicsInfo.outputIds) {
+      const index = this.parameterIndices.get(id);
+      this.model.setParameterValueByIndex(index, this.model.getParameterDefaultValue(index));
+    }
+    this.physics.stabilization(this.model); this.model.update(); return true;
   }
 
   resize(width, height, dpr = globalThis.devicePixelRatio || 1) {
@@ -312,7 +342,15 @@ class Live2DRenderer {
     if (this.disposed || !this.model) throw new Error('Live2D model is unavailable or disposed.');
   }
 
-  update() { this.assertModel(); this.model.update(); return this; }
+  update(deltaSeconds = 1 / 60) {
+    this.assertModel();
+    if (!Number.isFinite(deltaSeconds) || deltaSeconds < 0 || deltaSeconds > 0.25) throw new RangeError('Physics step must be 0..0.25 seconds; subdivide long frames.');
+    if (this.physics && deltaSeconds > 0) {
+      this.physics.evaluate(this.model, deltaSeconds);
+      this.physicsInfo.evaluations++;
+    }
+    this.model.update(); return this;
+  }
 
   draw() {
     this.assertModel();
@@ -334,6 +372,7 @@ class Live2DRenderer {
     this.disposed = true; this.abortController.abort();
     this.canvas.removeEventListener('webglcontextlost', this.onContextLost);
     this.canvas.removeEventListener('webglcontextrestored', this.onContextRestored);
+    this.physics?.release(); this.physics = null;
     this.renderer?.release(); this.renderer = null;
     for (const texture of this.textures) this.gl.deleteTexture(texture);
     this.textures.length = 0;

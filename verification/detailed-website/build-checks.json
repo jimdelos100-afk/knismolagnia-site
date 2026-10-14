@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-14",
+  "scope": "Build and type checks; placeholder public configuration only. No live account/database testing.",
+  "checks": [
+    {
+      "name": "TypeScript --noEmit",
+      "pass": true
+    },
+    {
+      "name": "Next.js production build",
+      "pass": true
+    },
+    {
+      "name": "Three model structures",
+      "pass": true
+    }
+  ]
+}

@@ -5,9 +5,13 @@
   "coreUrl": "https://cubism.live2d.com/sdk-web/core/06/live2dcubismcore.min.js",
   "sdkSha256": "67064a7fb1812cf502f5c4a03bfe12cc638c75a621bb4acf06bb28763df06ba0",
   "coreSha256": "8741f739779b5d5210872bd3d7d99f0f1e56e6c87409e7d26d6bb4b80aa1ef47",
-  "bundledFrameworkSha256": "8cda4d876ff4ebe0e1248605944754791c18cc2731e101b784f128759c49b868",
+  "bundledFrameworkSha256": "5a5f9e057b3ad678208182e581f2554d1bd94825bb5d055bcf2af66b29ee6131",
   "coreModified": false,
   "frameworkSourceModified": false,
   "coreLicense": "Live2D Proprietary Software License Agreement",
-  "frameworkLicense": "Live2D Open Software License Agreement"
+  "frameworkLicense": "Live2D Open Software License Agreement",
+  "additionalExports": [
+    "CubismPhysics"
+  ],
+  "scope": "Website shared Cubism runtime, including native six-group standing hair physics."
 }

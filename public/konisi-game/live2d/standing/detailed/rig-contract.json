@@ -1,0 +1,399 @@
+{
+  "version": 1,
+  "sourceMocSha256": "0e496d30e887f48e5daf432556ccaf1be0726a2617a2485d91703ac60f065e46",
+  "minimumGroupCount": 6,
+  "requireOcclusionBindings": true,
+  "stage": "Standing artwork and six native hair chains completed; final raster, geometry and physics checks passed.",
+  "pendingWork": [],
+  "groups": [
+    {
+      "id": "hair_long_left_outer",
+      "sourceBoneChain": [
+        [
+          415.69,
+          237.1
+        ],
+        [
+          295.91,
+          467.16
+        ],
+        [
+          174.22,
+          672.51
+        ],
+        [
+          183.73,
+          896.87
+        ]
+      ],
+      "outputParameterIds": [
+        "Param_Angle_Rotation_1_hair_long_left_outer",
+        "Param_Angle_Rotation_2_hair_long_left_outer",
+        "Param_Angle_Rotation_3_hair_long_left_outer",
+        "Param_Angle_Rotation_4_hair_long_left_outer",
+        "Param_Angle_Rotation_5_hair_long_left_outer",
+        "Param_Angle_Rotation_6_hair_long_left_outer",
+        "Param_Angle_Rotation_7_hair_long_left_outer"
+      ],
+      "drawableIds": [
+        "hair_long_left_outer2",
+        "hair_long_left_outer3",
+        "hair_long_left_outer4",
+        "hair_long_left_outer5",
+        "hair_long_left_outer6",
+        "hair_long_left_outer7",
+        "hair_long_left_outer8",
+        "hair_long_left_outer_occlusion2",
+        "hair_long_left_outer_occlusion3",
+        "hair_long_left_outer_occlusion5",
+        "hair_long_left_outer_occlusion6",
+        "hair_long_left_outer_occlusion7"
+      ],
+      "occlusionDrawableIds": [
+        "hair_long_left_outer_occlusion2",
+        "hair_long_left_outer_occlusion3",
+        "hair_long_left_outer_occlusion5",
+        "hair_long_left_outer_occlusion6",
+        "hair_long_left_outer_occlusion7"
+      ],
+      "regions": {
+        "root": {
+          "sourcePixelCenter": [
+            415.69,
+            237.1
+          ],
+          "radius": 17.120042274056644,
+          "nearestNativeVertexDistancePixels": 15.120042274056642
+        },
+        "tip": {
+          "sourcePixelCenter": [
+            183.73,
+            896.87
+          ],
+          "radius": 12,
+          "nearestNativeVertexDistancePixels": 2.624853711854995
+        }
+      },
+      "maxTipDisplacementPixels": 12,
+      "maxPhysicsDisplacementPixels": 12
+    },
+    {
+      "id": "hair_long_right_outer",
+      "sourceBoneChain": [
+        [
+          611.53,
+          297.94
+        ],
+        [
+          809.27,
+          459.56
+        ],
+        [
+          830.18,
+          607.86
+        ],
+        [
+          948.07,
+          735.25
+        ]
+      ],
+      "outputParameterIds": [
+        "Param_Angle_Rotation_1_hair_long_right_outer",
+        "Param_Angle_Rotation_2_hair_long_right_outer",
+        "Param_Angle_Rotation_3_hair_long_right_outer",
+        "Param_Angle_Rotation_4_hair_long_right_outer",
+        "Param_Angle_Rotation_5_hair_long_right_outer",
+        "Param_Angle_Rotation_6_hair_long_right_outer",
+        "Param_Angle_Rotation_7_hair_long_right_outer"
+      ],
+      "drawableIds": [
+        "hair_long_right_outer2",
+        "hair_long_right_outer3",
+        "hair_long_right_outer4",
+        "hair_long_right_outer5",
+        "hair_long_right_outer6",
+        "hair_long_right_outer7",
+        "hair_long_right_outer8",
+        "hair_long_right_outer_occlusion4",
+        "hair_long_right_outer_occlusion5",
+        "hair_long_right_outer_occlusion6",
+        "hair_long_right_outer_occlusion7",
+        "hair_long_right_outer_occlusion8"
+      ],
+      "occlusionDrawableIds": [
+        "hair_long_right_outer_occlusion4",
+        "hair_long_right_outer_occlusion5",
+        "hair_long_right_outer_occlusion6",
+        "hair_long_right_outer_occlusion7",
+        "hair_long_right_outer_occlusion8"
+      ],
+      "regions": {
+        "root": {
+          "sourcePixelCenter": [
+            611.53,
+            297.94
+          ],
+          "radius": 12,
+          "nearestNativeVertexDistancePixels": 1.9877853861106296
+        },
+        "tip": {
+          "sourcePixelCenter": [
+            948.07,
+            735.25
+          ],
+          "radius": 12,
+          "nearestNativeVertexDistancePixels": 4.08748755979906
+        }
+      },
+      "maxTipDisplacementPixels": 12,
+      "maxPhysicsDisplacementPixels": 12
+    },
+    {
+      "id": "hair_side_left",
+      "sourceBoneChain": [
+        [
+          468.53,
+          245.92
+        ],
+        [
+          453.96,
+          310.77
+        ],
+        [
+          483.1,
+          374.68
+        ]
+      ],
+      "outputParameterIds": [
+        "Param_Angle_Rotation_1_hair_side_left",
+        "Param_Angle_Rotation_2_hair_side_left",
+        "Param_Angle_Rotation_3_hair_side_left",
+        "Param_Angle_Rotation_4_hair_side_left",
+        "Param_Angle_Rotation_5_hair_side_left"
+      ],
+      "drawableIds": [
+        "hair_side_left2",
+        "hair_side_left3",
+        "hair_side_left4",
+        "hair_side_left5",
+        "hair_side_left6",
+        "hair_side_left_occlusion2",
+        "hair_side_left_occlusion3"
+      ],
+      "occlusionDrawableIds": [
+        "hair_side_left_occlusion2",
+        "hair_side_left_occlusion3"
+      ],
+      "regions": {
+        "root": {
+          "sourcePixelCenter": [
+            468.53,
+            245.92
+          ],
+          "radius": 12,
+          "nearestNativeVertexDistancePixels": 6.530530520478784
+        },
+        "tip": {
+          "sourcePixelCenter": [
+            483.1,
+            374.68
+          ],
+          "radius": 12,
+          "nearestNativeVertexDistancePixels": 0.35131497466187517
+        }
+      },
+      "maxTipDisplacementPixels": 7.2,
+      "maxPhysicsDisplacementPixels": 7.2
+    },
+    {
+      "id": "hair_side_right",
+      "sourceBoneChain": [
+        [
+          602,
+          279.75
+        ],
+        [
+          576.62,
+          346.49
+        ],
+        [
+          625.97,
+          402.41
+        ]
+      ],
+      "outputParameterIds": [
+        "Param_Angle_Rotation_1_hair_side_right",
+        "Param_Angle_Rotation_2_hair_side_right",
+        "Param_Angle_Rotation_3_hair_side_right",
+        "Param_Angle_Rotation_4_hair_side_right",
+        "Param_Angle_Rotation_5_hair_side_right"
+      ],
+      "drawableIds": [
+        "hair_side_right2",
+        "hair_side_right3",
+        "hair_side_right4",
+        "hair_side_right5",
+        "hair_side_right6",
+        "hair_side_right_occlusion2",
+        "hair_side_right_occlusion3"
+      ],
+      "occlusionDrawableIds": [
+        "hair_side_right_occlusion2",
+        "hair_side_right_occlusion3"
+      ],
+      "regions": {
+        "root": {
+          "sourcePixelCenter": [
+            602,
+            279.75
+          ],
+          "radius": 12,
+          "nearestNativeVertexDistancePixels": 0.6752267951290521
+        },
+        "tip": {
+          "sourcePixelCenter": [
+            625.97,
+            402.41
+          ],
+          "radius": 12,
+          "nearestNativeVertexDistancePixels": 2.9982375103339236
+        }
+      },
+      "maxTipDisplacementPixels": 7.2,
+      "maxPhysicsDisplacementPixels": 7.2
+    },
+    {
+      "id": "hair_bang_left_outer",
+      "sourceBoneChain": [
+        [
+          547.43,
+          74.73
+        ],
+        [
+          481.49,
+          117.12
+        ],
+        [
+          443.8,
+          182.02
+        ],
+        [
+          461.07,
+          233.31
+        ]
+      ],
+      "outputParameterIds": [
+        "Param_Angle_Rotation_1_hair_bang_left_outer",
+        "Param_Angle_Rotation_2_hair_bang_left_outer",
+        "Param_Angle_Rotation_3_hair_bang_left_outer",
+        "Param_Angle_Rotation_4_hair_bang_left_outer",
+        "Param_Angle_Rotation_5_hair_bang_left_outer",
+        "Param_Angle_Rotation_6_hair_bang_left_outer",
+        "Param_Angle_Rotation_7_hair_bang_left_outer"
+      ],
+      "drawableIds": [
+        "hair_bang_left_outer2",
+        "hair_bang_left_outer3",
+        "hair_bang_left_outer4",
+        "hair_bang_left_outer5",
+        "hair_bang_left_outer6",
+        "hair_bang_left_outer7",
+        "hair_bang_left_outer8",
+        "hair_bang_left_outer_occlusion2",
+        "hair_bang_left_outer_occlusion3",
+        "hair_bang_left_outer9"
+      ],
+      "occlusionDrawableIds": [
+        "hair_bang_left_outer_occlusion2",
+        "hair_bang_left_outer_occlusion3"
+      ],
+      "regions": {
+        "root": {
+          "sourcePixelCenter": [
+            547.43,
+            74.73
+          ],
+          "radius": 12,
+          "nearestNativeVertexDistancePixels": 3.171578536294304
+        },
+        "tip": {
+          "sourcePixelCenter": [
+            461.07,
+            233.31
+          ],
+          "radius": 12,
+          "nearestNativeVertexDistancePixels": 0.3204097708364279
+        }
+      },
+      "maxTipDisplacementPixels": 7.2,
+      "maxPhysicsDisplacementPixels": 7.2
+    },
+    {
+      "id": "hair_bang_right_outer",
+      "sourceBoneChain": [
+        [
+          636.4,
+          139.63
+        ],
+        [
+          644.78,
+          210.28
+        ],
+        [
+          613.9,
+          276.75
+        ]
+      ],
+      "outputParameterIds": [
+        "Param_Angle_Rotation_1_hair_bang_right_outer",
+        "Param_Angle_Rotation_2_hair_bang_right_outer",
+        "Param_Angle_Rotation_3_hair_bang_right_outer",
+        "Param_Angle_Rotation_4_hair_bang_right_outer",
+        "Param_Angle_Rotation_5_hair_bang_right_outer"
+      ],
+      "drawableIds": [
+        "hair_bang_right_outer2",
+        "hair_bang_right_outer3",
+        "hair_bang_right_outer4",
+        "hair_bang_right_outer5",
+        "hair_bang_right_outer6",
+        "hair_bang_right_outer_occlusion2",
+        "hair_bang_right_outer_occlusion3"
+      ],
+      "occlusionDrawableIds": [
+        "hair_bang_right_outer_occlusion2",
+        "hair_bang_right_outer_occlusion3"
+      ],
+      "regions": {
+        "root": {
+          "sourcePixelCenter": [
+            636.4,
+            139.63
+          ],
+          "radius": 12,
+          "nearestNativeVertexDistancePixels": 4.880106068808909
+        },
+        "tip": {
+          "sourcePixelCenter": [
+            613.9,
+            276.75
+          ],
+          "radius": 12,
+          "nearestNativeVertexDistancePixels": 5.307116023918719
+        }
+      },
+      "maxTipDisplacementPixels": 7.2,
+      "maxPhysicsDisplacementPixels": 7.2
+    }
+  ],
+  "requiresVisualReview": true,
+  "visualReviewPassed": true,
+  "physicsBehaviorVerified": true,
+  "actualHairRigVerified": true,
+  "visualReviewEvidence": {
+    "summary": "../../../verification/final-verification-summary.json",
+    "neutralImageSha256": "f7dffa54b343d470147af310e6f881124c14cd51460af9383d50181e97d3226a",
+    "missingOpaqueReferencePixels": 0,
+    "alphaThreshold": "PSD alpha >=250 and neutral runtime alpha <128"
+  }
+}

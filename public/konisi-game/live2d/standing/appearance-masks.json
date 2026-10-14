@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "canvas": [
+    1024,
+    1536
+  ],
+  "sourcePSDSha256": "48162ca158323755e86e5b1b618bf2be51f38204785f419169b4a00df21ad5db",
+  "verifiedMocSha256": "0e496d30e887f48e5daf432556ccaf1be0726a2617a2485d91703ac60f065e46",
+  "pixelPolicy": "Body/face are binary original-visible ownership masks. Eyes retain original alpha for native-layer fade compensation. No painting or resampling. Do not clip hair or occlusion underpaint into replacement appearance patches.",
+  "body": {
+    "file": "appearance-body-mask.png",
+    "x": 34,
+    "y": 296,
+    "width": 958,
+    "height": 1240,
+    "pixels": 363952,
+    "sha256": "ce9e2c7542f447fc08cd4b6e623524706e9137acd369f1c5b127510ed228716e"
+  },
+  "face": {
+    "file": "appearance-face-mask.png",
+    "x": 446,
+    "y": 80,
+    "width": 225,
+    "height": 216,
+    "pixels": 11572,
+    "sha256": "2c473a6f02726e4e285b6e794d170bcd6279cc41dd28971f7a32ff309be1d793"
+  },
+  "eyes": {
+    "file": "appearance-eye-mask.png",
+    "x": 488,
+    "y": 189,
+    "width": 117,
+    "height": 72,
+    "pixels": 1846,
+    "sha256": "63fc2f072ee815a0f2ac952d2a87ab286110e3ae2c4da924fcc82c9d1b153ef3"
+  },
+  "roles": {
+    "bodyHost": "body_visible_fixed",
+    "faceHost": "face_visible_residual",
+    "facialOriginal": [
+      "eye_left_highlight_upper",
+      "eye_left_highlight_center",
+      "eye_right_highlight_upper",
+      "eye_right_highlight_secondary",
+      "eye_left_pupil_visible_rim",
+      "eye_left_upper_lash",
+      "eye_right_upper_lash",
+      "eye_left_iris",
+      "eye_right_iris",
+      "eye_left_sclera_visible",
+      "eye_right_sclera_visible",
+      "eye_left_lower_lid_rim",
+      "eye_right_lower_lid_rim",
+      "brow_left_visible",
+      "brow_right_visible",
+      "nose_visible_mark",
+      "mouth_visible_line",
+      "face_skin_local_visible"
+    ],
+    "facialOcclusion": [
+      "iris_left_occlusion",
+      "iris_right_occlusion",
+      "sclera_left_occlusion",
+      "sclera_right_occlusion",
+      "brow_left_occlusion",
+      "brow_right_occlusion"
+    ],
+    "blinkFade": [
+      "eye_left_highlight_upper",
+      "eye_left_highlight_center",
+      "eye_right_highlight_upper",
+      "eye_right_highlight_secondary",
+      "eye_left_pupil_visible_rim",
+      "eye_left_upper_lash",
+      "eye_right_upper_lash",
+      "eye_left_iris",
+      "eye_right_iris",
+      "eye_left_sclera_visible",
+      "eye_right_sclera_visible",
+      "eye_left_lower_lid_rim",
+      "eye_right_lower_lid_rim",
+      "iris_left_occlusion",
+      "iris_right_occlusion",
+      "sclera_left_occlusion",
+      "sclera_right_occlusion"
+    ]
+  },
+  "verification": {
+    "sourcePSDPixelLayers": 75,
+    "facialOriginalLayers": 18,
+    "bodyFaceOverlapPixels": 0,
+    "bodyHairOverlapPixels": 0,
+    "faceHairOverlapPixels": 0,
+    "masksRereadExact": true,
+    "neutralRenderOrders": {
+      "face_skin_local_visible": 61,
+      "face_visible_residual": 62,
+      "brow_left_visible": 63,
+      "eye_left_upper_lash": 71,
+      "mouth_visible_line": 78
+    }
+  }
+}

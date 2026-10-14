@@ -1,0 +1,578 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "ParamAngleX",
+			"GroupId": "",
+			"Name": "角度 X"
+		},
+		{
+			"Id": "ParamAngleY",
+			"GroupId": "",
+			"Name": "角度 Y"
+		},
+		{
+			"Id": "ParamAngleZ",
+			"GroupId": "",
+			"Name": "角度 Z"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "",
+			"Name": "左眼 开闭"
+		},
+		{
+			"Id": "ParamEyeLSmile",
+			"GroupId": "",
+			"Name": "左眼 微笑"
+		},
+		{
+			"Id": "ParamEyeROpen",
+			"GroupId": "",
+			"Name": "右眼 开闭"
+		},
+		{
+			"Id": "ParamEyeRSmile",
+			"GroupId": "",
+			"Name": "右眼 微笑"
+		},
+		{
+			"Id": "ParamEyeBallX",
+			"GroupId": "",
+			"Name": "眼珠 X"
+		},
+		{
+			"Id": "ParamEyeBallY",
+			"GroupId": "",
+			"Name": "眼珠 Y"
+		},
+		{
+			"Id": "ParamBrowLY",
+			"GroupId": "",
+			"Name": "左眉 上下"
+		},
+		{
+			"Id": "ParamBrowRY",
+			"GroupId": "",
+			"Name": "右眉 上下"
+		},
+		{
+			"Id": "ParamBrowLX",
+			"GroupId": "",
+			"Name": "左眉 左右"
+		},
+		{
+			"Id": "ParamBrowRX",
+			"GroupId": "",
+			"Name": "右眉 左右"
+		},
+		{
+			"Id": "ParamBrowLAngle",
+			"GroupId": "",
+			"Name": "左眉 角度"
+		},
+		{
+			"Id": "ParamBrowRAngle",
+			"GroupId": "",
+			"Name": "右眉 角度"
+		},
+		{
+			"Id": "ParamBrowLForm",
+			"GroupId": "",
+			"Name": "左眉 変形"
+		},
+		{
+			"Id": "ParamBrowRForm",
+			"GroupId": "",
+			"Name": "右眉 変形"
+		},
+		{
+			"Id": "ParamMouthForm",
+			"GroupId": "",
+			"Name": "嘴 变形"
+		},
+		{
+			"Id": "ParamMouthOpenY",
+			"GroupId": "",
+			"Name": "嘴 开闭"
+		},
+		{
+			"Id": "ParamCheek",
+			"GroupId": "",
+			"Name": "脸颊泛红"
+		},
+		{
+			"Id": "ParamBodyAngleX",
+			"GroupId": "",
+			"Name": "身体旋转 X"
+		},
+		{
+			"Id": "ParamBodyAngleY",
+			"GroupId": "",
+			"Name": "身体旋转 Y"
+		},
+		{
+			"Id": "ParamBodyAngleZ",
+			"GroupId": "",
+			"Name": "身体旋转 Z"
+		},
+		{
+			"Id": "ParamBreath",
+			"GroupId": "",
+			"Name": "呼吸"
+		},
+		{
+			"Id": "ParamHairFront",
+			"GroupId": "",
+			"Name": "摇动 前发"
+		},
+		{
+			"Id": "ParamHairSide",
+			"GroupId": "",
+			"Name": "摇动 侧发"
+		},
+		{
+			"Id": "ParamHairBack",
+			"GroupId": "",
+			"Name": "摇动 后发"
+		},
+		{
+			"Id": "Param_Angle_Rotation_1_hair_long_left_outer",
+			"GroupId": "ParamGroup",
+			"Name": "[0]hair_long_left_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_2_hair_long_left_outer",
+			"GroupId": "ParamGroup",
+			"Name": "[1]hair_long_left_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_3_hair_long_left_outer",
+			"GroupId": "ParamGroup",
+			"Name": "[2]hair_long_left_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_4_hair_long_left_outer",
+			"GroupId": "ParamGroup",
+			"Name": "[3]hair_long_left_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_5_hair_long_left_outer",
+			"GroupId": "ParamGroup",
+			"Name": "[4]hair_long_left_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_6_hair_long_left_outer",
+			"GroupId": "ParamGroup",
+			"Name": "[5]hair_long_left_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_7_hair_long_left_outer",
+			"GroupId": "ParamGroup",
+			"Name": "[6]hair_long_left_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_1_hair_long_right_outer",
+			"GroupId": "ParamGroup2",
+			"Name": "[0]hair_long_right_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_2_hair_long_right_outer",
+			"GroupId": "ParamGroup2",
+			"Name": "[1]hair_long_right_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_3_hair_long_right_outer",
+			"GroupId": "ParamGroup2",
+			"Name": "[2]hair_long_right_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_4_hair_long_right_outer",
+			"GroupId": "ParamGroup2",
+			"Name": "[3]hair_long_right_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_5_hair_long_right_outer",
+			"GroupId": "ParamGroup2",
+			"Name": "[4]hair_long_right_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_6_hair_long_right_outer",
+			"GroupId": "ParamGroup2",
+			"Name": "[5]hair_long_right_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_7_hair_long_right_outer",
+			"GroupId": "ParamGroup2",
+			"Name": "[6]hair_long_right_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_1_hair_side_left",
+			"GroupId": "ParamGroup3",
+			"Name": "[0]hair_side_left"
+		},
+		{
+			"Id": "Param_Angle_Rotation_2_hair_side_left",
+			"GroupId": "ParamGroup3",
+			"Name": "[1]hair_side_left"
+		},
+		{
+			"Id": "Param_Angle_Rotation_3_hair_side_left",
+			"GroupId": "ParamGroup3",
+			"Name": "[2]hair_side_left"
+		},
+		{
+			"Id": "Param_Angle_Rotation_4_hair_side_left",
+			"GroupId": "ParamGroup3",
+			"Name": "[3]hair_side_left"
+		},
+		{
+			"Id": "Param_Angle_Rotation_5_hair_side_left",
+			"GroupId": "ParamGroup3",
+			"Name": "[4]hair_side_left"
+		},
+		{
+			"Id": "Param_Angle_Rotation_1_hair_side_right",
+			"GroupId": "ParamGroup4",
+			"Name": "[0]hair_side_right"
+		},
+		{
+			"Id": "Param_Angle_Rotation_2_hair_side_right",
+			"GroupId": "ParamGroup4",
+			"Name": "[1]hair_side_right"
+		},
+		{
+			"Id": "Param_Angle_Rotation_3_hair_side_right",
+			"GroupId": "ParamGroup4",
+			"Name": "[2]hair_side_right"
+		},
+		{
+			"Id": "Param_Angle_Rotation_4_hair_side_right",
+			"GroupId": "ParamGroup4",
+			"Name": "[3]hair_side_right"
+		},
+		{
+			"Id": "Param_Angle_Rotation_5_hair_side_right",
+			"GroupId": "ParamGroup4",
+			"Name": "[4]hair_side_right"
+		},
+		{
+			"Id": "Param_Angle_Rotation_1_hair_bang_left_outer",
+			"GroupId": "ParamGroup5",
+			"Name": "[0]hair_bang_left_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_2_hair_bang_left_outer",
+			"GroupId": "ParamGroup5",
+			"Name": "[1]hair_bang_left_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_3_hair_bang_left_outer",
+			"GroupId": "ParamGroup5",
+			"Name": "[2]hair_bang_left_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_4_hair_bang_left_outer",
+			"GroupId": "ParamGroup5",
+			"Name": "[3]hair_bang_left_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_5_hair_bang_left_outer",
+			"GroupId": "ParamGroup5",
+			"Name": "[4]hair_bang_left_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_6_hair_bang_left_outer",
+			"GroupId": "ParamGroup5",
+			"Name": "[5]hair_bang_left_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_7_hair_bang_left_outer",
+			"GroupId": "ParamGroup5",
+			"Name": "[6]hair_bang_left_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_1_hair_bang_right_outer",
+			"GroupId": "ParamGroup6",
+			"Name": "[0]hair_bang_right_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_2_hair_bang_right_outer",
+			"GroupId": "ParamGroup6",
+			"Name": "[1]hair_bang_right_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_3_hair_bang_right_outer",
+			"GroupId": "ParamGroup6",
+			"Name": "[2]hair_bang_right_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_4_hair_bang_right_outer",
+			"GroupId": "ParamGroup6",
+			"Name": "[3]hair_bang_right_outer"
+		},
+		{
+			"Id": "Param_Angle_Rotation_5_hair_bang_right_outer",
+			"GroupId": "ParamGroup6",
+			"Name": "[4]hair_bang_right_outer"
+		}
+	],
+	"ParameterGroups": [
+		{
+			"Id": "ParamGroup",
+			"GroupId": "",
+			"Name": "hair_long_left_outer"
+		},
+		{
+			"Id": "ParamGroup2",
+			"GroupId": "",
+			"Name": "hair_long_right_outer"
+		},
+		{
+			"Id": "ParamGroup3",
+			"GroupId": "",
+			"Name": "hair_side_left"
+		},
+		{
+			"Id": "ParamGroup4",
+			"GroupId": "",
+			"Name": "hair_side_right"
+		},
+		{
+			"Id": "ParamGroup5",
+			"GroupId": "",
+			"Name": "hair_bang_left_outer"
+		},
+		{
+			"Id": "ParamGroup6",
+			"GroupId": "",
+			"Name": "hair_bang_right_outer"
+		}
+	],
+	"Parts": [
+		{
+			"Id": "Part44",
+			"Name": "standing-bang-edge-repair.psd"
+		},
+		{
+			"Id": "Part43",
+			"Name": "standing-edge-repair.psd"
+		},
+		{
+			"Id": "Part",
+			"Name": "80_Hat"
+		},
+		{
+			"Id": "Part2",
+			"Name": "80_HairClip"
+		},
+		{
+			"Id": "Part3",
+			"Name": "70_hair_side_right"
+		},
+		{
+			"Id": "Part4",
+			"Name": "70_hair_side_left"
+		},
+		{
+			"Id": "Part5",
+			"Name": "70_hair_long_right"
+		},
+		{
+			"Id": "Part6",
+			"Name": "70_hair_long_left"
+		},
+		{
+			"Id": "Part7",
+			"Name": "70_hair_bangs_right"
+		},
+		{
+			"Id": "Part8",
+			"Name": "70_hair_bangs_left"
+		},
+		{
+			"Id": "Part9",
+			"Name": "70_hair_bangs"
+		},
+		{
+			"Id": "Part10",
+			"Name": "70_Ribbon"
+		},
+		{
+			"Id": "Part11",
+			"Name": "65_Nose"
+		},
+		{
+			"Id": "Part12",
+			"Name": "65_Mouth"
+		},
+		{
+			"Id": "Part13",
+			"Name": "65_EyeR"
+		},
+		{
+			"Id": "Part14",
+			"Name": "65_EyeL"
+		},
+		{
+			"Id": "Part15",
+			"Name": "65_BrowR"
+		},
+		{
+			"Id": "Part16",
+			"Name": "65_BrowL"
+		},
+		{
+			"Id": "Part17",
+			"Name": "64_Face"
+		},
+		{
+			"Id": "Part18",
+			"Name": "50_Neck"
+		},
+		{
+			"Id": "Part19",
+			"Name": "40_Body"
+		},
+		{
+			"Id": "Part20",
+			"Name": "20_hair_back"
+		},
+		{
+			"Id": "Part21",
+			"Name": "15_EyesUnderpaint"
+		},
+		{
+			"Id": "Part22",
+			"Name": "14_EyesUnderpaint"
+		},
+		{
+			"Id": "Part23",
+			"Name": "13_EyesUnderpaint"
+		},
+		{
+			"Id": "Part24",
+			"Name": "10_hair_side_right_Occlusion"
+		},
+		{
+			"Id": "Part25",
+			"Name": "10_hair_side_left_Occlusion"
+		},
+		{
+			"Id": "Part26",
+			"Name": "10_hair_long_right_Occlusion"
+		},
+		{
+			"Id": "Part27",
+			"Name": "10_hair_long_left_Occlusion"
+		},
+		{
+			"Id": "Part28",
+			"Name": "10_hair_bangs_right_Occlusion"
+		},
+		{
+			"Id": "Part29",
+			"Name": "10_hair_bangs_left_Occlusion"
+		},
+		{
+			"Id": "Part30",
+			"Name": "10_hair_bangs_Occlusion"
+		},
+		{
+			"Id": "Part31",
+			"Name": "10_hair_back_Occlusion"
+		},
+		{
+			"Id": "Part32",
+			"Name": "05_Neck"
+		},
+		{
+			"Id": "Part33",
+			"Name": "05_Face"
+		},
+		{
+			"Id": "Part34",
+			"Name": "05_Body"
+		},
+		{
+			"Id": "Part41",
+			"Name": "40_HeadEdges"
+		},
+		{
+			"Id": "Part42",
+			"Name": "40_BodyRepair"
+		},
+		{
+			"Id": "hair_side_right_Skinning",
+			"Name": "hair_side_right(蒙皮)"
+		},
+		{
+			"Id": "Part38",
+			"Name": "hair_side_right(旋转)"
+		},
+		{
+			"Id": "hair_side_left_Skinning",
+			"Name": "hair_side_left(蒙皮)"
+		},
+		{
+			"Id": "Part37",
+			"Name": "hair_side_left(旋转)"
+		},
+		{
+			"Id": "hair_long_right_outer_Skinning",
+			"Name": "hair_long_right_outer(蒙皮)"
+		},
+		{
+			"Id": "Part36",
+			"Name": "hair_long_right_outer(旋转)"
+		},
+		{
+			"Id": "hair_long_left_outer_Skinning",
+			"Name": "hair_long_left_outer(蒙皮)"
+		},
+		{
+			"Id": "Part35",
+			"Name": "hair_long_left_outer(旋转)"
+		},
+		{
+			"Id": "hair_bang_right_outer_Skinning",
+			"Name": "hair_bang_right_outer(蒙皮)"
+		},
+		{
+			"Id": "Part40",
+			"Name": "hair_bang_right_outer(旋转)"
+		},
+		{
+			"Id": "hair_bang_left_outer_Skinning",
+			"Name": "hair_bang_left_outer(蒙皮)"
+		},
+		{
+			"Id": "Part39",
+			"Name": "hair_bang_left_outer(旋转)"
+		},
+		{
+			"Id": "hair_side_right_occlusion_Skinning",
+			"Name": "hair_side_right_occlusion(蒙皮)"
+		},
+		{
+			"Id": "hair_side_left_occlusion_Skinning",
+			"Name": "hair_side_left_occlusion(蒙皮)"
+		},
+		{
+			"Id": "hair_long_right_outer_occlusion_Skinning",
+			"Name": "hair_long_right_outer_occlusion(蒙皮)"
+		},
+		{
+			"Id": "hair_long_left_outer_occlusion_Skinning",
+			"Name": "hair_long_left_outer_occlusion(蒙皮)"
+		},
+		{
+			"Id": "hair_bang_right_outer_occlusion_Skinning",
+			"Name": "hair_bang_right_outer_occlusion(蒙皮)"
+		},
+		{
+			"Id": "hair_bang_left_outer_occlusion_Skinning",
+			"Name": "hair_bang_left_outer_occlusion(蒙皮)"
+		}
+	]
+}

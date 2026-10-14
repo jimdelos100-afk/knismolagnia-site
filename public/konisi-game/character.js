@@ -10,7 +10,7 @@
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const state = { expression:'neutral', outfit:model.defaultOutfit || 'original', focus:model.full.slice(0,2), zoom:companion?1.0:model.full[2], headMotion:!reduced.matches, motion:!reduced.matches, headInput:[0,0], target:[0,0], shake:[0,0], shakeTarget:[0,0], nextShake:0, time:0, blinkAt:-100, nextBlink:2.5, reaction:null, reactionStart:0, reactionDuration:0 };
   const canvas = $('character'), scene = $('scene');
-  let live2d, compositor, frame=0, lastTime=0, lastDraw=0, visible=true, ready=false, metrics, controlsAttached=false, loading=false;
+  let live2d, compositor, maxHeadInput=30, frame=0, lastTime=0, lastDraw=0, visible=true, ready=false, metrics, controlsAttached=false, loading=false;
   const images = new Map();
   const pointers=new Map();let gesture=null;
   function feedback() {
@@ -34,10 +34,16 @@
     if(!response.ok) throw new Error('Live2D manifest HTTP '+response.status);
     const manifest=await response.json(), pose=manifest.poses?.[model.id];
     if(!pose?.model) throw new Error('This pose has no exported Live2D model.');
+    maxHeadInput=Number.isFinite(pose.maxHeadInput)?pose.maxHeadInput:30;
     const modelUrl=new URL(pose.model,new URL('./live2d/manifest.json',document.baseURI)).href;
     const r=scene.getBoundingClientRect();
     live2d=await createLive2DRenderer({canvas,modelUrl,width:r.width,height:r.height});
-    compositor=await createTextureCompositor({mapping:live2d.getTextureMapping(),model,images,modelUrl,drawableRoles:pose.drawableRoles});
+    if(pose.appearance==='standing-detailed') {
+      const {createStandingAppearance}=await import(new URL('./live2d/standing-appearance.mjs',document.baseURI).href);
+      compositor=await createStandingAppearance({mapping:live2d.getTextureMapping(),model,images,modelUrl});
+    } else {
+      compositor=await createTextureCompositor({mapping:live2d.getTextureMapping(),model,images,modelUrl,drawableRoles:pose.drawableRoles});
+    }
     if(!live2d.getParameters().some(parameter=>parameter.id==='ParamAngleZ')) throw new Error('The model has no head-motion parameter.');
     document.documentElement.dataset.renderer='cubism';
   }
@@ -80,10 +86,16 @@
     const reactionAngle=state.reaction&&!reduced.matches
       ? Math.sin(Math.PI*reactT)*Math.sin(reactT*Math.PI*2*(cycles[state.reaction]||1))*20 : 0;
     try {
-      live2d.setParameterById('ParamAngleZ',state.headInput[0]*70+reactionAngle);
+      live2d.setParameterById('ParamAngleZ',Math.max(-maxHeadInput,Math.min(maxHeadInput,state.headInput[0]*70+reactionAngle)));
       live2d.setCamera({focus:state.focus,zoom:state.zoom,offset:state.shake});
       compositor.apply(live2d,blink);
-      live2d.update();
+      if(!state.motion&&!state.reaction) {
+        // Paused/reduced motion stays still, including native hair inertia.
+        live2d.resetPhysics();
+        live2d.update(0);
+      } else {
+        live2d.update(dt);
+      }
       if(!live2d.draw()) throw new Error('Live2D rendering context is unavailable.');
     }catch(error){showFailure(error);return;}
     document.documentElement.dataset.blink=blink>.75?'closed':'open';
@@ -188,7 +200,8 @@
   Object.defineProperty(window,'KONISI_LIVE2D',{value:Object.freeze({snapshot:({vertices=false}={})=>({
     pose:model.id,ready,headMotion:state.headMotion,motion:state.motion,expression:state.expression,outfit:state.outfit,
     status:live2d?.getStatus()||null,parameters:ready?live2d.getParameters():[],
-    drawables:ready?live2d.getDrawables({vertices}):[],appearance:compositor?.getStatus()||null
+    drawables:ready?live2d.getDrawables({vertices}):[],appearance:compositor?.getStatus()||null,
+    physics:ready?live2d.getPhysicsStatus():null
   })})});
   $('retry').addEventListener('click',load);load();
 })();

@@ -1,38 +1,17 @@
-雪糕少女汉化组官网 · V8 Live2D 版
+雪糕少女汉化组官网 · V8 精细 Live2D 版
 
-本包是完整 Next.js 网站源码。首页是全身站姿，Level 1 是坐姿，Level 2 是跪姿。
-角色使用各自真实的 Live2D Cubism .moc3，运行资源随源码提供。
-眼球、目光和头部均不会跟随鼠标；保留自然头动、眨眼、换装、互动和视角控制。
+本包是已经接入新首页模型的完整网站源码。首页为全身精细站姿，包含自然头动、眨眼、遮挡补绘与六组发丝物理；Level 1 保持坐姿，Level 2 保持跪姿。眼球、目光和头部均不跟随鼠标。
 
-上传与部署
+部署方法
+1. 将压缩包中 knismolagnia-site 文件夹里的全部内容放到原 GitHub 仓库根目录，覆盖同名源码。
+   仓库根目录直接有 package.json、src、public、supabase，不能再套一层 knismolagnia-site。
+2. 保留原托管平台的环境变量及原 Supabase 项目。本包没有真实密钥，无需重建数据库或重新跑迁移。
+3. 沿用原 Next.js 部署方式：npm ci 安装，npm run build 构建；普通 Node 托管使用 npm start。
+   已绑定 GitHub 的平台可以按原流程提交后部署。网站有账号与服务端功能，不是 GitHub Pages 静态站点。
 
-1. 解压后，将 knismolagnia-site 文件夹里的全部内容放进原 GitHub 仓库根目录，覆盖同名源码。
-   仓库根目录应直接有 package.json、src、public、supabase，不能再套一层 knismolagnia-site。
-2. 保留原部署平台的环境变量和原 Supabase 项目。不要上传 .env.local、node_modules 或 .next。
-   本包不包含真实密钥，没有更改数据库结构，不需要重新执行迁移。
-3. 使用原来的 Next.js 托管方式，安装命令 npm ci，构建命令 npm run build。
-   若原来已绑定 GitHub，提交源码后可按原来的流程部署。
-   本网站包含账号和服务端功能，不能直接作为 GitHub Pages 纯静态站点上传。
+PSD、Cubism 工程及制作参考不需要上传网站；本包只提供网站源码、必要模型资源及验证记录。
+Level 1/2 的换装、互动、缩放和复位保留。暂停或减少动态效果时，发丝也会停稳。
+账号、Level 3—6、后台、投稿、聊天和数据库逻辑沿用此前网站。
 
-本地检查
-
-沿用原有环境配置，安装依赖后运行 npm run dev。
-仅检查页面样式可运行 npm run dev:design；设计预览不能用于正式部署。
-通过 HTTP(S) 打开页面，不能直接双击 HTML 文件运行角色。
-
-角色范围
-
-- 首页、账号和 Level 页的公共看板娘：全身站姿，可收起、展开，点击或 Enter / 空格摸头。
-- Level 1：坐姿，保留三种换装、拖动、缩放、复位和暂停动画。
-- Level 2：跪姿，保留三种换装和摸头、戳、捏、揉、挠脚底五种互动。
-- Level 3—6、账号、后台、投稿、聊天和数据库逻辑沿用 V8。
-- 角色 iframe 仍使用 allow-scripts 沙盒，父页不会向角色发送鼠标坐标。
-
-这是基础绑定版本：站姿使用粗拆部件，坐姿和跪姿使用局部网格变形。
-表情、眨眼及换装使用原有图像素材映射到真实模型的纹理；头动直接驱动已绑定的模型参数。
-没有遮挡补绘、发丝物理、复杂口型或独立 motion3 / exp3 动作文件。
-模型加载失败会显示“重新加载”，不会用旧的图片变形冒充 Live2D。
-
-部署和维护详情见 README.md，实际完成范围和验证说明见 Live2D-STATUS.md。
-请保留 public/konisi-game/live2d/vendor 中的来源与许可证文件。
-本包未自动提交 GitHub，也未改动原线上网站。
+部署前验证记录在 verification/detailed-website，详细说明见 README.md 与 Live2D-STATUS.md。
+本包没有替你提交 GitHub 或发布线上网站；不要上传真实 .env、node_modules 或 .next。

@@ -2,7 +2,11 @@
   "schemaVersion": 1,
   "poses": {
     "standing": {
-      "model": "standing/character.model3.json"
+      "model": "standing/character.model3.json",
+      "appearance": "standing-detailed",
+      "maxHeadInput": 21,
+      "rigContract": "standing/detailed/rig-contract.json",
+      "modelSha256": "0e496d30e887f48e5daf432556ccaf1be0726a2617a2485d91703ac60f065e46"
     },
     "seated": {
       "model": "seated/character.model3.json",
@@ -15,7 +19,9 @@
     "kneeling": {
       "model": "kneeling/character.model3.json",
       "drawableRoles": {
-        "base": ["ArtMesh12"],
+        "base": [
+          "ArtMesh12"
+        ],
         "wardrobe": {
           "barefoot": "ArtMesh9",
           "shortsocks": "ArtMesh10",

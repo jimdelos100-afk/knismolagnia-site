@@ -1,0 +1,5220 @@
+{
+  "date": "2026-10-14T08:39:54.186Z",
+  "scope": "All existing standing outfits and expressions including fully closed blink, complete 1024x1536 actual Cubism render at neutral parameters and without physics stepping. Whole visible source pixels, face ownership, facial drawable opacity and outside-body/face pixel invariance checked.",
+  "checks": [
+    {
+      "name": "neutral original preserves native detailed atlas pixels",
+      "pass": true,
+      "detail": {
+        "active": 587743,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "detailed face/body mapping within declared tolerance",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "original/neutral whole visible artwork agrees with V8 reference",
+      "pass": true,
+      "detail": {
+        "active": 587821,
+        "changed": 117885,
+        "large": 6922,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8184706738956247,
+        "largeFraction": 0.011775693621017283,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      }
+    },
+    {
+      "name": "original/neutral full face ownership matches reference",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 3517,
+        "large": 261,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 3.3034936521175053,
+        "largeFraction": 0.02418682235195997,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      }
+    },
+    {
+      "name": "original/neutral pixels outside face/body stay unchanged",
+      "pass": true,
+      "detail": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/neutral closed eyes visible pixels match source",
+      "pass": true,
+      "detail": {
+        "whole": {
+          "active": 587821,
+          "changed": 118171,
+          "large": 7071,
+          "missing": 0,
+          "extra": 1,
+          "meanActiveError": 1.8155773611354478,
+          "largeFraction": 0.012029172145942388,
+          "bounds": [
+            33,
+            0,
+            987,
+            1523
+          ]
+        },
+        "face": {
+          "active": 10791,
+          "changed": 2539,
+          "large": 56,
+          "missing": 0,
+          "extra": 0,
+          "meanActiveError": 1.6047863960707998,
+          "largeFraction": 0.00518950977666574,
+          "bounds": [
+            456,
+            99,
+            670,
+            295
+          ]
+        }
+      }
+    },
+    {
+      "name": "original/neutral blink affects face only",
+      "pass": true,
+      "detail": {
+        "active": 587743,
+        "changed": 4704,
+        "large": 2288,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.2548265143098259,
+        "largeFraction": 0.003892857932803964,
+        "bounds": [
+          481,
+          166,
+          607,
+          261
+        ]
+      }
+    },
+    {
+      "name": "original neutral blink hides all eye glyphs while keeping brows mouth nose",
+      "pass": true,
+      "detail": {
+        "eye_left_highlight_upper": 0,
+        "eye_left_highlight_center": 0,
+        "eye_right_highlight_upper": 0,
+        "eye_right_highlight_secondary": 0,
+        "eye_left_pupil_visible_rim": 0,
+        "eye_left_upper_lash": 0,
+        "eye_right_upper_lash": 0,
+        "eye_left_iris": 0,
+        "eye_right_iris": 0,
+        "eye_left_sclera_visible": 0,
+        "eye_right_sclera_visible": 0,
+        "eye_left_lower_lid_rim": 0,
+        "eye_right_lower_lid_rim": 0,
+        "brow_left_visible": 1,
+        "brow_right_visible": 1,
+        "nose_visible_mark": 1,
+        "mouth_visible_line": 1,
+        "face_skin_local_visible": 1,
+        "iris_left_occlusion": 0,
+        "iris_right_occlusion": 0,
+        "sclera_left_occlusion": 0,
+        "sclera_right_occlusion": 0,
+        "brow_left_occlusion": 1,
+        "brow_right_occlusion": 1
+      }
+    },
+    {
+      "name": "original/neutral blink 0.001 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 195,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.07337132795848392,
+        "largeFraction": 0,
+        "bounds": [
+          488,
+          189,
+          600,
+          257
+        ]
+      }
+    },
+    {
+      "name": "original/neutral blink 0.25 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 877,
+        "large": 30,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.6115744601983134,
+        "largeFraction": 0.0027800945232137894,
+        "bounds": [
+          488,
+          189,
+          604,
+          259
+        ]
+      }
+    },
+    {
+      "name": "original/neutral blink 0.5 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 839,
+        "large": 6,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.5168195718654435,
+        "largeFraction": 0.0005560189046427579,
+        "bounds": [
+          488,
+          188,
+          605,
+          259
+        ]
+      }
+    },
+    {
+      "name": "original/neutral blink 0.75 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 636,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.4235010657029006,
+        "largeFraction": 0,
+        "bounds": [
+          488,
+          188,
+          605,
+          259
+        ]
+      }
+    },
+    {
+      "name": "original/neutral reopening restores exact actual pixels",
+      "pass": true
+    },
+    {
+      "name": "original/happy whole visible artwork agrees with V8 reference",
+      "pass": true,
+      "detail": {
+        "active": 587821,
+        "changed": 120336,
+        "large": 7356,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.841673315516118,
+        "largeFraction": 0.01251401361979242,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      }
+    },
+    {
+      "name": "original/happy full face ownership matches reference",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 3764,
+        "large": 3,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8728570104716893,
+        "largeFraction": 0.00027800945232137893,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      }
+    },
+    {
+      "name": "original/happy pixels outside face/body stay unchanged",
+      "pass": true,
+      "detail": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/happy hides every original facial glyph and underpaint",
+      "pass": true,
+      "detail": {
+        "eye_left_highlight_upper": 0,
+        "eye_left_highlight_center": 0,
+        "eye_right_highlight_upper": 0,
+        "eye_right_highlight_secondary": 0,
+        "eye_left_pupil_visible_rim": 0,
+        "eye_left_upper_lash": 0,
+        "eye_right_upper_lash": 0,
+        "eye_left_iris": 0,
+        "eye_right_iris": 0,
+        "eye_left_sclera_visible": 0,
+        "eye_right_sclera_visible": 0,
+        "eye_left_lower_lid_rim": 0,
+        "eye_right_lower_lid_rim": 0,
+        "brow_left_visible": 0,
+        "brow_right_visible": 0,
+        "nose_visible_mark": 0,
+        "mouth_visible_line": 0,
+        "face_skin_local_visible": 0,
+        "iris_left_occlusion": 0,
+        "iris_right_occlusion": 0,
+        "sclera_left_occlusion": 0,
+        "sclera_right_occlusion": 0,
+        "brow_left_occlusion": 0,
+        "brow_right_occlusion": 0
+      }
+    },
+    {
+      "name": "original/happy closed expression skips extra eye patches",
+      "pass": true,
+      "detail": {
+        "active": 587743,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/happy reopening restores exact actual pixels",
+      "pass": true
+    },
+    {
+      "name": "original/shy whole visible artwork agrees with V8 reference",
+      "pass": true,
+      "detail": {
+        "active": 587821,
+        "changed": 120128,
+        "large": 7434,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.850842773565422,
+        "largeFraction": 0.012646707075793481,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      }
+    },
+    {
+      "name": "original/shy full face ownership matches reference",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 3795,
+        "large": 3,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8355342414975442,
+        "largeFraction": 0.00027800945232137893,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      }
+    },
+    {
+      "name": "original/shy pixels outside face/body stay unchanged",
+      "pass": true,
+      "detail": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/shy hides every original facial glyph and underpaint",
+      "pass": true,
+      "detail": {
+        "eye_left_highlight_upper": 0,
+        "eye_left_highlight_center": 0,
+        "eye_right_highlight_upper": 0,
+        "eye_right_highlight_secondary": 0,
+        "eye_left_pupil_visible_rim": 0,
+        "eye_left_upper_lash": 0,
+        "eye_right_upper_lash": 0,
+        "eye_left_iris": 0,
+        "eye_right_iris": 0,
+        "eye_left_sclera_visible": 0,
+        "eye_right_sclera_visible": 0,
+        "eye_left_lower_lid_rim": 0,
+        "eye_right_lower_lid_rim": 0,
+        "brow_left_visible": 0,
+        "brow_right_visible": 0,
+        "nose_visible_mark": 0,
+        "mouth_visible_line": 0,
+        "face_skin_local_visible": 0,
+        "iris_left_occlusion": 0,
+        "iris_right_occlusion": 0,
+        "sclera_left_occlusion": 0,
+        "sclera_right_occlusion": 0,
+        "brow_left_occlusion": 0,
+        "brow_right_occlusion": 0
+      }
+    },
+    {
+      "name": "original/shy closed eyes visible pixels match source",
+      "pass": true,
+      "detail": {
+        "whole": {
+          "active": 587821,
+          "changed": 117825,
+          "large": 7176,
+          "missing": 0,
+          "extra": 1,
+          "meanActiveError": 1.8167167385989953,
+          "largeFraction": 0.012207797952097662,
+          "bounds": [
+            33,
+            0,
+            987,
+            1523
+          ]
+        },
+        "face": {
+          "active": 10791,
+          "changed": 1505,
+          "large": 1,
+          "missing": 0,
+          "extra": 0,
+          "meanActiveError": 0.8510332684644611,
+          "largeFraction": 0.00009266981744045964,
+          "bounds": [
+            456,
+            99,
+            670,
+            295
+          ]
+        }
+      }
+    },
+    {
+      "name": "original/shy blink affects face only",
+      "pass": true,
+      "detail": {
+        "active": 587743,
+        "changed": 5223,
+        "large": 2057,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.269795641972767,
+        "largeFraction": 0.0034998290068958713,
+        "bounds": [
+          481,
+          166,
+          607,
+          259
+        ]
+      }
+    },
+    {
+      "name": "original/shy blink 0.001 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/shy blink 0.25 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.12271800574552869,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/shy blink 0.5 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.10895653785562043,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/shy blink 0.75 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.08381984987489574,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/shy reopening restores exact actual pixels",
+      "pass": true
+    },
+    {
+      "name": "original/surprised whole visible artwork agrees with V8 reference",
+      "pass": true,
+      "detail": {
+        "active": 587821,
+        "changed": 120195,
+        "large": 7757,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8836295402852228,
+        "largeFraction": 0.013196194079490185,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      }
+    },
+    {
+      "name": "original/surprised full face ownership matches reference",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 3789,
+        "large": 8,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8925956815865073,
+        "largeFraction": 0.0007413585395236772,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      }
+    },
+    {
+      "name": "original/surprised pixels outside face/body stay unchanged",
+      "pass": true,
+      "detail": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/surprised hides every original facial glyph and underpaint",
+      "pass": true,
+      "detail": {
+        "eye_left_highlight_upper": 0,
+        "eye_left_highlight_center": 0,
+        "eye_right_highlight_upper": 0,
+        "eye_right_highlight_secondary": 0,
+        "eye_left_pupil_visible_rim": 0,
+        "eye_left_upper_lash": 0,
+        "eye_right_upper_lash": 0,
+        "eye_left_iris": 0,
+        "eye_right_iris": 0,
+        "eye_left_sclera_visible": 0,
+        "eye_right_sclera_visible": 0,
+        "eye_left_lower_lid_rim": 0,
+        "eye_right_lower_lid_rim": 0,
+        "brow_left_visible": 0,
+        "brow_right_visible": 0,
+        "nose_visible_mark": 0,
+        "mouth_visible_line": 0,
+        "face_skin_local_visible": 0,
+        "iris_left_occlusion": 0,
+        "iris_right_occlusion": 0,
+        "sclera_left_occlusion": 0,
+        "sclera_right_occlusion": 0,
+        "brow_left_occlusion": 0,
+        "brow_right_occlusion": 0
+      }
+    },
+    {
+      "name": "original/surprised closed eyes visible pixels match source",
+      "pass": true,
+      "detail": {
+        "whole": {
+          "active": 587821,
+          "changed": 117797,
+          "large": 7166,
+          "missing": 0,
+          "extra": 1,
+          "meanActiveError": 1.8173716998882312,
+          "largeFraction": 0.012190785970559065,
+          "bounds": [
+            33,
+            0,
+            987,
+            1523
+          ]
+        },
+        "face": {
+          "active": 10791,
+          "changed": 1502,
+          "large": 1,
+          "missing": 0,
+          "extra": 0,
+          "meanActiveError": 0.8785793716986378,
+          "largeFraction": 0.00009266981744045964,
+          "bounds": [
+            456,
+            99,
+            670,
+            295
+          ]
+        }
+      }
+    },
+    {
+      "name": "original/surprised blink affects face only",
+      "pass": true,
+      "detail": {
+        "active": 587743,
+        "changed": 5018,
+        "large": 1842,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.2255177858349653,
+        "largeFraction": 0.0031340228637346595,
+        "bounds": [
+          481,
+          166,
+          607,
+          259
+        ]
+      }
+    },
+    {
+      "name": "original/surprised blink 0.001 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/surprised blink 0.25 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.10909554258178111,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/surprised blink 0.5 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.10738115095913262,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/surprised blink 0.75 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.09035307200444816,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/surprised reopening restores exact actual pixels",
+      "pass": true
+    },
+    {
+      "name": "original/angry whole visible artwork agrees with V8 reference",
+      "pass": true,
+      "detail": {
+        "active": 587821,
+        "changed": 120220,
+        "large": 7465,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8547789207939152,
+        "largeFraction": 0.012699444218563134,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      }
+    },
+    {
+      "name": "original/angry full face ownership matches reference",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 3800,
+        "large": 5,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8166527661940506,
+        "largeFraction": 0.0004633490872022982,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      }
+    },
+    {
+      "name": "original/angry pixels outside face/body stay unchanged",
+      "pass": true,
+      "detail": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/angry hides every original facial glyph and underpaint",
+      "pass": true,
+      "detail": {
+        "eye_left_highlight_upper": 0,
+        "eye_left_highlight_center": 0,
+        "eye_right_highlight_upper": 0,
+        "eye_right_highlight_secondary": 0,
+        "eye_left_pupil_visible_rim": 0,
+        "eye_left_upper_lash": 0,
+        "eye_right_upper_lash": 0,
+        "eye_left_iris": 0,
+        "eye_right_iris": 0,
+        "eye_left_sclera_visible": 0,
+        "eye_right_sclera_visible": 0,
+        "eye_left_lower_lid_rim": 0,
+        "eye_right_lower_lid_rim": 0,
+        "brow_left_visible": 0,
+        "brow_right_visible": 0,
+        "nose_visible_mark": 0,
+        "mouth_visible_line": 0,
+        "face_skin_local_visible": 0,
+        "iris_left_occlusion": 0,
+        "iris_right_occlusion": 0,
+        "sclera_left_occlusion": 0,
+        "sclera_right_occlusion": 0,
+        "brow_left_occlusion": 0,
+        "brow_right_occlusion": 0
+      }
+    },
+    {
+      "name": "original/angry closed eyes visible pixels match source",
+      "pass": true,
+      "detail": {
+        "whole": {
+          "active": 587821,
+          "changed": 117847,
+          "large": 7198,
+          "missing": 0,
+          "extra": 1,
+          "meanActiveError": 1.8171322562480756,
+          "largeFraction": 0.012245224311482577,
+          "bounds": [
+            33,
+            0,
+            987,
+            1523
+          ]
+        },
+        "face": {
+          "active": 10791,
+          "changed": 1501,
+          "large": 1,
+          "missing": 0,
+          "extra": 0,
+          "meanActiveError": 0.8474654804930034,
+          "largeFraction": 0.00009266981744045964,
+          "bounds": [
+            456,
+            99,
+            670,
+            295
+          ]
+        }
+      }
+    },
+    {
+      "name": "original/angry blink affects face only",
+      "pass": true,
+      "detail": {
+        "active": 587743,
+        "changed": 4931,
+        "large": 1877,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.2535619309800372,
+        "largeFraction": 0.0031935727009934616,
+        "bounds": [
+          481,
+          166,
+          607,
+          259
+        ]
+      }
+    },
+    {
+      "name": "original/angry blink 0.001 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/angry blink 0.25 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.1317533129459735,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/angry blink 0.5 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.10360485589843388,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/angry blink 0.75 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.08402835696413678,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/angry reopening restores exact actual pixels",
+      "pass": true
+    },
+    {
+      "name": "original/sad whole visible artwork agrees with V8 reference",
+      "pass": true,
+      "detail": {
+        "active": 587821,
+        "changed": 120150,
+        "large": 7462,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8489140401584836,
+        "largeFraction": 0.012694340624101555,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      }
+    },
+    {
+      "name": "original/sad full face ownership matches reference",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 3797,
+        "large": 4,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8326846446112501,
+        "largeFraction": 0.0003706792697618386,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      }
+    },
+    {
+      "name": "original/sad pixels outside face/body stay unchanged",
+      "pass": true,
+      "detail": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/sad hides every original facial glyph and underpaint",
+      "pass": true,
+      "detail": {
+        "eye_left_highlight_upper": 0,
+        "eye_left_highlight_center": 0,
+        "eye_right_highlight_upper": 0,
+        "eye_right_highlight_secondary": 0,
+        "eye_left_pupil_visible_rim": 0,
+        "eye_left_upper_lash": 0,
+        "eye_right_upper_lash": 0,
+        "eye_left_iris": 0,
+        "eye_right_iris": 0,
+        "eye_left_sclera_visible": 0,
+        "eye_right_sclera_visible": 0,
+        "eye_left_lower_lid_rim": 0,
+        "eye_right_lower_lid_rim": 0,
+        "brow_left_visible": 0,
+        "brow_right_visible": 0,
+        "nose_visible_mark": 0,
+        "mouth_visible_line": 0,
+        "face_skin_local_visible": 0,
+        "iris_left_occlusion": 0,
+        "iris_right_occlusion": 0,
+        "sclera_left_occlusion": 0,
+        "sclera_right_occlusion": 0,
+        "brow_left_occlusion": 0,
+        "brow_right_occlusion": 0
+      }
+    },
+    {
+      "name": "original/sad closed eyes visible pixels match source",
+      "pass": true,
+      "detail": {
+        "whole": {
+          "active": 587821,
+          "changed": 117801,
+          "large": 7189,
+          "missing": 0,
+          "extra": 1,
+          "meanActiveError": 1.8172768580911536,
+          "largeFraction": 0.01222991352809784,
+          "bounds": [
+            33,
+            0,
+            987,
+            1523
+          ]
+        },
+        "face": {
+          "active": 10791,
+          "changed": 1506,
+          "large": 1,
+          "missing": 0,
+          "extra": 0,
+          "meanActiveError": 0.8568251320544898,
+          "largeFraction": 0.00009266981744045964,
+          "bounds": [
+            456,
+            99,
+            670,
+            295
+          ]
+        }
+      }
+    },
+    {
+      "name": "original/sad blink affects face only",
+      "pass": true,
+      "detail": {
+        "active": 587743,
+        "changed": 5028,
+        "large": 1979,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.26131659585907446,
+        "largeFraction": 0.0033671179410048268,
+        "bounds": [
+          481,
+          167,
+          607,
+          259
+        ]
+      }
+    },
+    {
+      "name": "original/sad blink 0.001 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/sad blink 0.25 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.11968306922435362,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/sad blink 0.5 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.10242331572606803,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/sad blink 0.75 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.0823603002502085,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/sad reopening restores exact actual pixels",
+      "pass": true
+    },
+    {
+      "name": "original/blink whole visible artwork agrees with V8 reference",
+      "pass": true,
+      "detail": {
+        "active": 587821,
+        "changed": 119942,
+        "large": 7142,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8311662904183417,
+        "largeFraction": 0.01214995721486643,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      }
+    },
+    {
+      "name": "original/blink full face ownership matches reference",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 3754,
+        "large": 3,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8348160504123807,
+        "largeFraction": 0.00027800945232137893,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      }
+    },
+    {
+      "name": "original/blink pixels outside face/body stay unchanged",
+      "pass": true,
+      "detail": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/blink hides every original facial glyph and underpaint",
+      "pass": true,
+      "detail": {
+        "eye_left_highlight_upper": 0,
+        "eye_left_highlight_center": 0,
+        "eye_right_highlight_upper": 0,
+        "eye_right_highlight_secondary": 0,
+        "eye_left_pupil_visible_rim": 0,
+        "eye_left_upper_lash": 0,
+        "eye_right_upper_lash": 0,
+        "eye_left_iris": 0,
+        "eye_right_iris": 0,
+        "eye_left_sclera_visible": 0,
+        "eye_right_sclera_visible": 0,
+        "eye_left_lower_lid_rim": 0,
+        "eye_right_lower_lid_rim": 0,
+        "brow_left_visible": 0,
+        "brow_right_visible": 0,
+        "nose_visible_mark": 0,
+        "mouth_visible_line": 0,
+        "face_skin_local_visible": 0,
+        "iris_left_occlusion": 0,
+        "iris_right_occlusion": 0,
+        "sclera_left_occlusion": 0,
+        "sclera_right_occlusion": 0,
+        "brow_left_occlusion": 0,
+        "brow_right_occlusion": 0
+      }
+    },
+    {
+      "name": "original/blink closed expression skips extra eye patches",
+      "pass": true,
+      "detail": {
+        "active": 587743,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "original/blink reopening restores exact actual pixels",
+      "pass": true
+    },
+    {
+      "name": "tights/neutral whole visible artwork agrees with V8 reference",
+      "pass": true,
+      "detail": {
+        "active": 587995,
+        "changed": 117405,
+        "large": 7022,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8513222901555286,
+        "largeFraction": 0.01194227842073487,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      }
+    },
+    {
+      "name": "tights/neutral full face ownership matches reference",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 3517,
+        "large": 261,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 3.3034936521175053,
+        "largeFraction": 0.02418682235195997,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      }
+    },
+    {
+      "name": "tights/neutral pixels outside face/body stay unchanged",
+      "pass": true,
+      "detail": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/neutral closed eyes visible pixels match source",
+      "pass": true,
+      "detail": {
+        "whole": {
+          "active": 587995,
+          "changed": 117691,
+          "large": 7171,
+          "missing": 0,
+          "extra": 1,
+          "meanActiveError": 1.8484298335870204,
+          "largeFraction": 0.012195681936070886,
+          "bounds": [
+            33,
+            0,
+            987,
+            1523
+          ]
+        },
+        "face": {
+          "active": 10791,
+          "changed": 2539,
+          "large": 56,
+          "missing": 0,
+          "extra": 0,
+          "meanActiveError": 1.6047863960707998,
+          "largeFraction": 0.00518950977666574,
+          "bounds": [
+            456,
+            99,
+            670,
+            295
+          ]
+        }
+      }
+    },
+    {
+      "name": "tights/neutral blink affects face only",
+      "pass": true,
+      "detail": {
+        "active": 587910,
+        "changed": 4704,
+        "large": 2288,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.2547541290333554,
+        "largeFraction": 0.0038917521389328297,
+        "bounds": [
+          481,
+          166,
+          607,
+          261
+        ]
+      }
+    },
+    {
+      "name": "tights neutral blink hides all eye glyphs while keeping brows mouth nose",
+      "pass": true,
+      "detail": {
+        "eye_left_highlight_upper": 0,
+        "eye_left_highlight_center": 0,
+        "eye_right_highlight_upper": 0,
+        "eye_right_highlight_secondary": 0,
+        "eye_left_pupil_visible_rim": 0,
+        "eye_left_upper_lash": 0,
+        "eye_right_upper_lash": 0,
+        "eye_left_iris": 0,
+        "eye_right_iris": 0,
+        "eye_left_sclera_visible": 0,
+        "eye_right_sclera_visible": 0,
+        "eye_left_lower_lid_rim": 0,
+        "eye_right_lower_lid_rim": 0,
+        "brow_left_visible": 1,
+        "brow_right_visible": 1,
+        "nose_visible_mark": 1,
+        "mouth_visible_line": 1,
+        "face_skin_local_visible": 1,
+        "iris_left_occlusion": 0,
+        "iris_right_occlusion": 0,
+        "sclera_left_occlusion": 0,
+        "sclera_right_occlusion": 0,
+        "brow_left_occlusion": 1,
+        "brow_right_occlusion": 1
+      }
+    },
+    {
+      "name": "tights/neutral blink 0.001 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 195,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.07337132795848392,
+        "largeFraction": 0,
+        "bounds": [
+          488,
+          189,
+          600,
+          257
+        ]
+      }
+    },
+    {
+      "name": "tights/neutral blink 0.25 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 877,
+        "large": 30,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.6115744601983134,
+        "largeFraction": 0.0027800945232137894,
+        "bounds": [
+          488,
+          189,
+          604,
+          259
+        ]
+      }
+    },
+    {
+      "name": "tights/neutral blink 0.5 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 839,
+        "large": 6,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.5168195718654435,
+        "largeFraction": 0.0005560189046427579,
+        "bounds": [
+          488,
+          188,
+          605,
+          259
+        ]
+      }
+    },
+    {
+      "name": "tights/neutral blink 0.75 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 636,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.4235010657029006,
+        "largeFraction": 0,
+        "bounds": [
+          488,
+          188,
+          605,
+          259
+        ]
+      }
+    },
+    {
+      "name": "tights/neutral reopening restores exact actual pixels",
+      "pass": true
+    },
+    {
+      "name": "tights/happy whole visible artwork agrees with V8 reference",
+      "pass": true,
+      "detail": {
+        "active": 587995,
+        "changed": 119856,
+        "large": 7456,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8745180656298097,
+        "largeFraction": 0.012680379935203531,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      }
+    },
+    {
+      "name": "tights/happy full face ownership matches reference",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 3764,
+        "large": 3,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8728570104716893,
+        "largeFraction": 0.00027800945232137893,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      }
+    },
+    {
+      "name": "tights/happy pixels outside face/body stay unchanged",
+      "pass": true,
+      "detail": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/happy hides every original facial glyph and underpaint",
+      "pass": true,
+      "detail": {
+        "eye_left_highlight_upper": 0,
+        "eye_left_highlight_center": 0,
+        "eye_right_highlight_upper": 0,
+        "eye_right_highlight_secondary": 0,
+        "eye_left_pupil_visible_rim": 0,
+        "eye_left_upper_lash": 0,
+        "eye_right_upper_lash": 0,
+        "eye_left_iris": 0,
+        "eye_right_iris": 0,
+        "eye_left_sclera_visible": 0,
+        "eye_right_sclera_visible": 0,
+        "eye_left_lower_lid_rim": 0,
+        "eye_right_lower_lid_rim": 0,
+        "brow_left_visible": 0,
+        "brow_right_visible": 0,
+        "nose_visible_mark": 0,
+        "mouth_visible_line": 0,
+        "face_skin_local_visible": 0,
+        "iris_left_occlusion": 0,
+        "iris_right_occlusion": 0,
+        "sclera_left_occlusion": 0,
+        "sclera_right_occlusion": 0,
+        "brow_left_occlusion": 0,
+        "brow_right_occlusion": 0
+      }
+    },
+    {
+      "name": "tights/happy closed expression skips extra eye patches",
+      "pass": true,
+      "detail": {
+        "active": 587910,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/happy reopening restores exact actual pixels",
+      "pass": true
+    },
+    {
+      "name": "tights/shy whole visible artwork agrees with V8 reference",
+      "pass": true,
+      "detail": {
+        "active": 587995,
+        "changed": 119648,
+        "large": 7534,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.883684810244985,
+        "largeFraction": 0.012813034124439834,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      }
+    },
+    {
+      "name": "tights/shy full face ownership matches reference",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 3795,
+        "large": 3,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8355342414975442,
+        "largeFraction": 0.00027800945232137893,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      }
+    },
+    {
+      "name": "tights/shy pixels outside face/body stay unchanged",
+      "pass": true,
+      "detail": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/shy hides every original facial glyph and underpaint",
+      "pass": true,
+      "detail": {
+        "eye_left_highlight_upper": 0,
+        "eye_left_highlight_center": 0,
+        "eye_right_highlight_upper": 0,
+        "eye_right_highlight_secondary": 0,
+        "eye_left_pupil_visible_rim": 0,
+        "eye_left_upper_lash": 0,
+        "eye_right_upper_lash": 0,
+        "eye_left_iris": 0,
+        "eye_right_iris": 0,
+        "eye_left_sclera_visible": 0,
+        "eye_right_sclera_visible": 0,
+        "eye_left_lower_lid_rim": 0,
+        "eye_right_lower_lid_rim": 0,
+        "brow_left_visible": 0,
+        "brow_right_visible": 0,
+        "nose_visible_mark": 0,
+        "mouth_visible_line": 0,
+        "face_skin_local_visible": 0,
+        "iris_left_occlusion": 0,
+        "iris_right_occlusion": 0,
+        "sclera_left_occlusion": 0,
+        "sclera_right_occlusion": 0,
+        "brow_left_occlusion": 0,
+        "brow_right_occlusion": 0
+      }
+    },
+    {
+      "name": "tights/shy closed eyes visible pixels match source",
+      "pass": true,
+      "detail": {
+        "whole": {
+          "active": 587995,
+          "changed": 117345,
+          "large": 7276,
+          "missing": 0,
+          "extra": 1,
+          "meanActiveError": 1.849568873884982,
+          "largeFraction": 0.012374254883119754,
+          "bounds": [
+            33,
+            0,
+            987,
+            1523
+          ]
+        },
+        "face": {
+          "active": 10791,
+          "changed": 1505,
+          "large": 1,
+          "missing": 0,
+          "extra": 0,
+          "meanActiveError": 0.8510332684644611,
+          "largeFraction": 0.00009266981744045964,
+          "bounds": [
+            456,
+            99,
+            670,
+            295
+          ]
+        }
+      }
+    },
+    {
+      "name": "tights/shy blink affects face only",
+      "pass": true,
+      "detail": {
+        "active": 587910,
+        "changed": 5223,
+        "large": 2057,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.26971900460954906,
+        "largeFraction": 0.0034988348556751884,
+        "bounds": [
+          481,
+          166,
+          607,
+          259
+        ]
+      }
+    },
+    {
+      "name": "tights/shy blink 0.001 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/shy blink 0.25 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.12271800574552869,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/shy blink 0.5 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.10895653785562043,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/shy blink 0.75 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.08381984987489574,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/shy reopening restores exact actual pixels",
+      "pass": true
+    },
+    {
+      "name": "tights/surprised whole visible artwork agrees with V8 reference",
+      "pass": true,
+      "detail": {
+        "active": 587995,
+        "changed": 119715,
+        "large": 7857,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.916461874675805,
+        "largeFraction": 0.013362358523456833,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      }
+    },
+    {
+      "name": "tights/surprised full face ownership matches reference",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 3789,
+        "large": 8,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8925956815865073,
+        "largeFraction": 0.0007413585395236772,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      }
+    },
+    {
+      "name": "tights/surprised pixels outside face/body stay unchanged",
+      "pass": true,
+      "detail": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/surprised hides every original facial glyph and underpaint",
+      "pass": true,
+      "detail": {
+        "eye_left_highlight_upper": 0,
+        "eye_left_highlight_center": 0,
+        "eye_right_highlight_upper": 0,
+        "eye_right_highlight_secondary": 0,
+        "eye_left_pupil_visible_rim": 0,
+        "eye_left_upper_lash": 0,
+        "eye_right_upper_lash": 0,
+        "eye_left_iris": 0,
+        "eye_right_iris": 0,
+        "eye_left_sclera_visible": 0,
+        "eye_right_sclera_visible": 0,
+        "eye_left_lower_lid_rim": 0,
+        "eye_right_lower_lid_rim": 0,
+        "brow_left_visible": 0,
+        "brow_right_visible": 0,
+        "nose_visible_mark": 0,
+        "mouth_visible_line": 0,
+        "face_skin_local_visible": 0,
+        "iris_left_occlusion": 0,
+        "iris_right_occlusion": 0,
+        "sclera_left_occlusion": 0,
+        "sclera_right_occlusion": 0,
+        "brow_left_occlusion": 0,
+        "brow_right_occlusion": 0
+      }
+    },
+    {
+      "name": "tights/surprised closed eyes visible pixels match source",
+      "pass": true,
+      "detail": {
+        "whole": {
+          "active": 587995,
+          "changed": 117317,
+          "large": 7266,
+          "missing": 0,
+          "extra": 1,
+          "meanActiveError": 1.8502236413574946,
+          "largeFraction": 0.012357247935781766,
+          "bounds": [
+            33,
+            0,
+            987,
+            1523
+          ]
+        },
+        "face": {
+          "active": 10791,
+          "changed": 1502,
+          "large": 1,
+          "missing": 0,
+          "extra": 0,
+          "meanActiveError": 0.8785793716986378,
+          "largeFraction": 0.00009266981744045964,
+          "bounds": [
+            456,
+            99,
+            670,
+            295
+          ]
+        }
+      }
+    },
+    {
+      "name": "tights/surprised blink affects face only",
+      "pass": true,
+      "detail": {
+        "active": 587910,
+        "changed": 5018,
+        "large": 1842,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.22545372591042848,
+        "largeFraction": 0.003133132622340154,
+        "bounds": [
+          481,
+          166,
+          607,
+          259
+        ]
+      }
+    },
+    {
+      "name": "tights/surprised blink 0.001 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/surprised blink 0.25 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.10909554258178111,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/surprised blink 0.5 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.10738115095913262,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/surprised blink 0.75 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.09035307200444816,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/surprised reopening restores exact actual pixels",
+      "pass": true
+    },
+    {
+      "name": "tights/angry whole visible artwork agrees with V8 reference",
+      "pass": true,
+      "detail": {
+        "active": 587995,
+        "changed": 119740,
+        "large": 7565,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.887619792685312,
+        "largeFraction": 0.012865755661187596,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      }
+    },
+    {
+      "name": "tights/angry full face ownership matches reference",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 3800,
+        "large": 5,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8166527661940506,
+        "largeFraction": 0.0004633490872022982,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      }
+    },
+    {
+      "name": "tights/angry pixels outside face/body stay unchanged",
+      "pass": true,
+      "detail": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/angry hides every original facial glyph and underpaint",
+      "pass": true,
+      "detail": {
+        "eye_left_highlight_upper": 0,
+        "eye_left_highlight_center": 0,
+        "eye_right_highlight_upper": 0,
+        "eye_right_highlight_secondary": 0,
+        "eye_left_pupil_visible_rim": 0,
+        "eye_left_upper_lash": 0,
+        "eye_right_upper_lash": 0,
+        "eye_left_iris": 0,
+        "eye_right_iris": 0,
+        "eye_left_sclera_visible": 0,
+        "eye_right_sclera_visible": 0,
+        "eye_left_lower_lid_rim": 0,
+        "eye_right_lower_lid_rim": 0,
+        "brow_left_visible": 0,
+        "brow_right_visible": 0,
+        "nose_visible_mark": 0,
+        "mouth_visible_line": 0,
+        "face_skin_local_visible": 0,
+        "iris_left_occlusion": 0,
+        "iris_right_occlusion": 0,
+        "sclera_left_occlusion": 0,
+        "sclera_right_occlusion": 0,
+        "brow_left_occlusion": 0,
+        "brow_right_occlusion": 0
+      }
+    },
+    {
+      "name": "tights/angry closed eyes visible pixels match source",
+      "pass": true,
+      "detail": {
+        "whole": {
+          "active": 587995,
+          "changed": 117367,
+          "large": 7298,
+          "missing": 0,
+          "extra": 1,
+          "meanActiveError": 1.8499842685737125,
+          "largeFraction": 0.012411670167263328,
+          "bounds": [
+            33,
+            0,
+            987,
+            1523
+          ]
+        },
+        "face": {
+          "active": 10791,
+          "changed": 1501,
+          "large": 1,
+          "missing": 0,
+          "extra": 0,
+          "meanActiveError": 0.8474654804930034,
+          "largeFraction": 0.00009266981744045964,
+          "bounds": [
+            456,
+            99,
+            670,
+            295
+          ]
+        }
+      }
+    },
+    {
+      "name": "tights/angry blink affects face only",
+      "pass": true,
+      "detail": {
+        "active": 587910,
+        "changed": 4931,
+        "large": 1877,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.25348990491741935,
+        "largeFraction": 0.0031926655440458573,
+        "bounds": [
+          481,
+          166,
+          607,
+          259
+        ]
+      }
+    },
+    {
+      "name": "tights/angry blink 0.001 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/angry blink 0.25 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.1317533129459735,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/angry blink 0.5 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.10360485589843388,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/angry blink 0.75 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.08402835696413678,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/angry reopening restores exact actual pixels",
+      "pass": true
+    },
+    {
+      "name": "tights/sad whole visible artwork agrees with V8 reference",
+      "pass": true,
+      "detail": {
+        "active": 587995,
+        "changed": 119670,
+        "large": 7562,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8817566475905407,
+        "largeFraction": 0.012860653576986198,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      }
+    },
+    {
+      "name": "tights/sad full face ownership matches reference",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 3797,
+        "large": 4,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8326846446112501,
+        "largeFraction": 0.0003706792697618386,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      }
+    },
+    {
+      "name": "tights/sad pixels outside face/body stay unchanged",
+      "pass": true,
+      "detail": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/sad hides every original facial glyph and underpaint",
+      "pass": true,
+      "detail": {
+        "eye_left_highlight_upper": 0,
+        "eye_left_highlight_center": 0,
+        "eye_right_highlight_upper": 0,
+        "eye_right_highlight_secondary": 0,
+        "eye_left_pupil_visible_rim": 0,
+        "eye_left_upper_lash": 0,
+        "eye_right_upper_lash": 0,
+        "eye_left_iris": 0,
+        "eye_right_iris": 0,
+        "eye_left_sclera_visible": 0,
+        "eye_right_sclera_visible": 0,
+        "eye_left_lower_lid_rim": 0,
+        "eye_right_lower_lid_rim": 0,
+        "brow_left_visible": 0,
+        "brow_right_visible": 0,
+        "nose_visible_mark": 0,
+        "mouth_visible_line": 0,
+        "face_skin_local_visible": 0,
+        "iris_left_occlusion": 0,
+        "iris_right_occlusion": 0,
+        "sclera_left_occlusion": 0,
+        "sclera_right_occlusion": 0,
+        "brow_left_occlusion": 0,
+        "brow_right_occlusion": 0
+      }
+    },
+    {
+      "name": "tights/sad closed eyes visible pixels match source",
+      "pass": true,
+      "detail": {
+        "whole": {
+          "active": 587995,
+          "changed": 117321,
+          "large": 7289,
+          "missing": 0,
+          "extra": 1,
+          "meanActiveError": 1.8501288276260852,
+          "largeFraction": 0.012396363914659139,
+          "bounds": [
+            33,
+            0,
+            987,
+            1523
+          ]
+        },
+        "face": {
+          "active": 10791,
+          "changed": 1506,
+          "large": 1,
+          "missing": 0,
+          "extra": 0,
+          "meanActiveError": 0.8568251320544898,
+          "largeFraction": 0.00009266981744045964,
+          "bounds": [
+            456,
+            99,
+            670,
+            295
+          ]
+        }
+      }
+    },
+    {
+      "name": "tights/sad blink affects face only",
+      "pass": true,
+      "detail": {
+        "active": 587910,
+        "changed": 5028,
+        "large": 1979,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.261242367028967,
+        "largeFraction": 0.003366161487302478,
+        "bounds": [
+          481,
+          167,
+          607,
+          259
+        ]
+      }
+    },
+    {
+      "name": "tights/sad blink 0.001 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/sad blink 0.25 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.11968306922435362,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/sad blink 0.5 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.10242331572606803,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/sad blink 0.75 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.0823603002502085,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/sad reopening restores exact actual pixels",
+      "pass": true
+    },
+    {
+      "name": "tights/blink whole visible artwork agrees with V8 reference",
+      "pass": true,
+      "detail": {
+        "active": 587995,
+        "changed": 119462,
+        "large": 7242,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8640141497801852,
+        "largeFraction": 0.012316431262170597,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      }
+    },
+    {
+      "name": "tights/blink full face ownership matches reference",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 3754,
+        "large": 3,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8348160504123807,
+        "largeFraction": 0.00027800945232137893,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      }
+    },
+    {
+      "name": "tights/blink pixels outside face/body stay unchanged",
+      "pass": true,
+      "detail": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/blink hides every original facial glyph and underpaint",
+      "pass": true,
+      "detail": {
+        "eye_left_highlight_upper": 0,
+        "eye_left_highlight_center": 0,
+        "eye_right_highlight_upper": 0,
+        "eye_right_highlight_secondary": 0,
+        "eye_left_pupil_visible_rim": 0,
+        "eye_left_upper_lash": 0,
+        "eye_right_upper_lash": 0,
+        "eye_left_iris": 0,
+        "eye_right_iris": 0,
+        "eye_left_sclera_visible": 0,
+        "eye_right_sclera_visible": 0,
+        "eye_left_lower_lid_rim": 0,
+        "eye_right_lower_lid_rim": 0,
+        "brow_left_visible": 0,
+        "brow_right_visible": 0,
+        "nose_visible_mark": 0,
+        "mouth_visible_line": 0,
+        "face_skin_local_visible": 0,
+        "iris_left_occlusion": 0,
+        "iris_right_occlusion": 0,
+        "sclera_left_occlusion": 0,
+        "sclera_right_occlusion": 0,
+        "brow_left_occlusion": 0,
+        "brow_right_occlusion": 0
+      }
+    },
+    {
+      "name": "tights/blink closed expression skips extra eye patches",
+      "pass": true,
+      "detail": {
+        "active": 587910,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "tights/blink reopening restores exact actual pixels",
+      "pass": true
+    },
+    {
+      "name": "overknee/neutral whole visible artwork agrees with V8 reference",
+      "pass": true,
+      "detail": {
+        "active": 587971,
+        "changed": 118087,
+        "large": 7041,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.849237887582891,
+        "largeFraction": 0.01197508040362535,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      }
+    },
+    {
+      "name": "overknee/neutral full face ownership matches reference",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 3517,
+        "large": 261,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 3.3034936521175053,
+        "largeFraction": 0.02418682235195997,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      }
+    },
+    {
+      "name": "overknee/neutral pixels outside face/body stay unchanged",
+      "pass": true,
+      "detail": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/neutral closed eyes visible pixels match source",
+      "pass": true,
+      "detail": {
+        "whole": {
+          "active": 587971,
+          "changed": 118373,
+          "large": 7190,
+          "missing": 0,
+          "extra": 1,
+          "meanActiveError": 1.846345312949108,
+          "largeFraction": 0.012228494262472129,
+          "bounds": [
+            33,
+            0,
+            987,
+            1523
+          ]
+        },
+        "face": {
+          "active": 10791,
+          "changed": 2539,
+          "large": 56,
+          "missing": 0,
+          "extra": 0,
+          "meanActiveError": 1.6047863960707998,
+          "largeFraction": 0.00518950977666574,
+          "bounds": [
+            456,
+            99,
+            670,
+            295
+          ]
+        }
+      }
+    },
+    {
+      "name": "overknee/neutral blink affects face only",
+      "pass": true,
+      "detail": {
+        "active": 587889,
+        "changed": 4704,
+        "large": 2288,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.25476322911297883,
+        "largeFraction": 0.0038918911563237276,
+        "bounds": [
+          481,
+          166,
+          607,
+          261
+        ]
+      }
+    },
+    {
+      "name": "overknee neutral blink hides all eye glyphs while keeping brows mouth nose",
+      "pass": true,
+      "detail": {
+        "eye_left_highlight_upper": 0,
+        "eye_left_highlight_center": 0,
+        "eye_right_highlight_upper": 0,
+        "eye_right_highlight_secondary": 0,
+        "eye_left_pupil_visible_rim": 0,
+        "eye_left_upper_lash": 0,
+        "eye_right_upper_lash": 0,
+        "eye_left_iris": 0,
+        "eye_right_iris": 0,
+        "eye_left_sclera_visible": 0,
+        "eye_right_sclera_visible": 0,
+        "eye_left_lower_lid_rim": 0,
+        "eye_right_lower_lid_rim": 0,
+        "brow_left_visible": 1,
+        "brow_right_visible": 1,
+        "nose_visible_mark": 1,
+        "mouth_visible_line": 1,
+        "face_skin_local_visible": 1,
+        "iris_left_occlusion": 0,
+        "iris_right_occlusion": 0,
+        "sclera_left_occlusion": 0,
+        "sclera_right_occlusion": 0,
+        "brow_left_occlusion": 1,
+        "brow_right_occlusion": 1
+      }
+    },
+    {
+      "name": "overknee/neutral blink 0.001 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 195,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.07337132795848392,
+        "largeFraction": 0,
+        "bounds": [
+          488,
+          189,
+          600,
+          257
+        ]
+      }
+    },
+    {
+      "name": "overknee/neutral blink 0.25 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 877,
+        "large": 30,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.6115744601983134,
+        "largeFraction": 0.0027800945232137894,
+        "bounds": [
+          488,
+          189,
+          604,
+          259
+        ]
+      }
+    },
+    {
+      "name": "overknee/neutral blink 0.5 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 839,
+        "large": 6,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.5168195718654435,
+        "largeFraction": 0.0005560189046427579,
+        "bounds": [
+          488,
+          188,
+          605,
+          259
+        ]
+      }
+    },
+    {
+      "name": "overknee/neutral blink 0.75 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 636,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.4235010657029006,
+        "largeFraction": 0,
+        "bounds": [
+          488,
+          188,
+          605,
+          259
+        ]
+      }
+    },
+    {
+      "name": "overknee/neutral reopening restores exact actual pixels",
+      "pass": true
+    },
+    {
+      "name": "overknee/happy whole visible artwork agrees with V8 reference",
+      "pass": true,
+      "detail": {
+        "active": 587971,
+        "changed": 120538,
+        "large": 7475,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8724346098702147,
+        "largeFraction": 0.012713212046172345,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      }
+    },
+    {
+      "name": "overknee/happy full face ownership matches reference",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 3764,
+        "large": 3,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8728570104716893,
+        "largeFraction": 0.00027800945232137893,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      }
+    },
+    {
+      "name": "overknee/happy pixels outside face/body stay unchanged",
+      "pass": true,
+      "detail": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/happy hides every original facial glyph and underpaint",
+      "pass": true,
+      "detail": {
+        "eye_left_highlight_upper": 0,
+        "eye_left_highlight_center": 0,
+        "eye_right_highlight_upper": 0,
+        "eye_right_highlight_secondary": 0,
+        "eye_left_pupil_visible_rim": 0,
+        "eye_left_upper_lash": 0,
+        "eye_right_upper_lash": 0,
+        "eye_left_iris": 0,
+        "eye_right_iris": 0,
+        "eye_left_sclera_visible": 0,
+        "eye_right_sclera_visible": 0,
+        "eye_left_lower_lid_rim": 0,
+        "eye_right_lower_lid_rim": 0,
+        "brow_left_visible": 0,
+        "brow_right_visible": 0,
+        "nose_visible_mark": 0,
+        "mouth_visible_line": 0,
+        "face_skin_local_visible": 0,
+        "iris_left_occlusion": 0,
+        "iris_right_occlusion": 0,
+        "sclera_left_occlusion": 0,
+        "sclera_right_occlusion": 0,
+        "brow_left_occlusion": 0,
+        "brow_right_occlusion": 0
+      }
+    },
+    {
+      "name": "overknee/happy closed expression skips extra eye patches",
+      "pass": true,
+      "detail": {
+        "active": 587889,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/happy reopening restores exact actual pixels",
+      "pass": true
+    },
+    {
+      "name": "overknee/shy whole visible artwork agrees with V8 reference",
+      "pass": true,
+      "detail": {
+        "active": 587971,
+        "changed": 120330,
+        "large": 7553,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8816017286566855,
+        "largeFraction": 0.012845871650132405,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      }
+    },
+    {
+      "name": "overknee/shy full face ownership matches reference",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 3795,
+        "large": 3,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8355342414975442,
+        "largeFraction": 0.00027800945232137893,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      }
+    },
+    {
+      "name": "overknee/shy pixels outside face/body stay unchanged",
+      "pass": true,
+      "detail": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/shy hides every original facial glyph and underpaint",
+      "pass": true,
+      "detail": {
+        "eye_left_highlight_upper": 0,
+        "eye_left_highlight_center": 0,
+        "eye_right_highlight_upper": 0,
+        "eye_right_highlight_secondary": 0,
+        "eye_left_pupil_visible_rim": 0,
+        "eye_left_upper_lash": 0,
+        "eye_right_upper_lash": 0,
+        "eye_left_iris": 0,
+        "eye_right_iris": 0,
+        "eye_left_sclera_visible": 0,
+        "eye_right_sclera_visible": 0,
+        "eye_left_lower_lid_rim": 0,
+        "eye_right_lower_lid_rim": 0,
+        "brow_left_visible": 0,
+        "brow_right_visible": 0,
+        "nose_visible_mark": 0,
+        "mouth_visible_line": 0,
+        "face_skin_local_visible": 0,
+        "iris_left_occlusion": 0,
+        "iris_right_occlusion": 0,
+        "sclera_left_occlusion": 0,
+        "sclera_right_occlusion": 0,
+        "brow_left_occlusion": 0,
+        "brow_right_occlusion": 0
+      }
+    },
+    {
+      "name": "overknee/shy closed eyes visible pixels match source",
+      "pass": true,
+      "detail": {
+        "whole": {
+          "active": 587971,
+          "changed": 118027,
+          "large": 7295,
+          "missing": 0,
+          "extra": 1,
+          "meanActiveError": 1.8474843997408035,
+          "largeFraction": 0.012407074498572208,
+          "bounds": [
+            33,
+            0,
+            987,
+            1523
+          ]
+        },
+        "face": {
+          "active": 10791,
+          "changed": 1505,
+          "large": 1,
+          "missing": 0,
+          "extra": 0,
+          "meanActiveError": 0.8510332684644611,
+          "largeFraction": 0.00009266981744045964,
+          "bounds": [
+            456,
+            99,
+            670,
+            295
+          ]
+        }
+      }
+    },
+    {
+      "name": "overknee/shy blink affects face only",
+      "pass": true,
+      "detail": {
+        "active": 587889,
+        "changed": 5223,
+        "large": 2057,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.2697286392499264,
+        "largeFraction": 0.0034989598376564284,
+        "bounds": [
+          481,
+          166,
+          607,
+          259
+        ]
+      }
+    },
+    {
+      "name": "overknee/shy blink 0.001 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/shy blink 0.25 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.12271800574552869,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/shy blink 0.5 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.10895653785562043,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/shy blink 0.75 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.08381984987489574,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/shy reopening restores exact actual pixels",
+      "pass": true
+    },
+    {
+      "name": "overknee/surprised whole visible artwork agrees with V8 reference",
+      "pass": true,
+      "detail": {
+        "active": 587971,
+        "changed": 120397,
+        "large": 7876,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.9143801309928552,
+        "largeFraction": 0.013395218471659316,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      }
+    },
+    {
+      "name": "overknee/surprised full face ownership matches reference",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 3789,
+        "large": 8,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8925956815865073,
+        "largeFraction": 0.0007413585395236772,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      }
+    },
+    {
+      "name": "overknee/surprised pixels outside face/body stay unchanged",
+      "pass": true,
+      "detail": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/surprised hides every original facial glyph and underpaint",
+      "pass": true,
+      "detail": {
+        "eye_left_highlight_upper": 0,
+        "eye_left_highlight_center": 0,
+        "eye_right_highlight_upper": 0,
+        "eye_right_highlight_secondary": 0,
+        "eye_left_pupil_visible_rim": 0,
+        "eye_left_upper_lash": 0,
+        "eye_right_upper_lash": 0,
+        "eye_left_iris": 0,
+        "eye_right_iris": 0,
+        "eye_left_sclera_visible": 0,
+        "eye_right_sclera_visible": 0,
+        "eye_left_lower_lid_rim": 0,
+        "eye_right_lower_lid_rim": 0,
+        "brow_left_visible": 0,
+        "brow_right_visible": 0,
+        "nose_visible_mark": 0,
+        "mouth_visible_line": 0,
+        "face_skin_local_visible": 0,
+        "iris_left_occlusion": 0,
+        "iris_right_occlusion": 0,
+        "sclera_left_occlusion": 0,
+        "sclera_right_occlusion": 0,
+        "brow_left_occlusion": 0,
+        "brow_right_occlusion": 0
+      }
+    },
+    {
+      "name": "overknee/surprised closed eyes visible pixels match source",
+      "pass": true,
+      "detail": {
+        "whole": {
+          "active": 587971,
+          "changed": 117999,
+          "large": 7285,
+          "missing": 0,
+          "extra": 1,
+          "meanActiveError": 1.8481391939398373,
+          "largeFraction": 0.012390066857038867,
+          "bounds": [
+            33,
+            0,
+            987,
+            1523
+          ]
+        },
+        "face": {
+          "active": 10791,
+          "changed": 1502,
+          "large": 1,
+          "missing": 0,
+          "extra": 0,
+          "meanActiveError": 0.8785793716986378,
+          "largeFraction": 0.00009266981744045964,
+          "bounds": [
+            456,
+            99,
+            670,
+            295
+          ]
+        }
+      }
+    },
+    {
+      "name": "overknee/surprised blink affects face only",
+      "pass": true,
+      "detail": {
+        "active": 587889,
+        "changed": 5018,
+        "large": 1842,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.22546177934950304,
+        "largeFraction": 0.003133244541061323,
+        "bounds": [
+          481,
+          166,
+          607,
+          259
+        ]
+      }
+    },
+    {
+      "name": "overknee/surprised blink 0.001 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/surprised blink 0.25 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.10909554258178111,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/surprised blink 0.5 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.10738115095913262,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/surprised blink 0.75 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.09035307200444816,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/surprised reopening restores exact actual pixels",
+      "pass": true
+    },
+    {
+      "name": "overknee/angry whole visible artwork agrees with V8 reference",
+      "pass": true,
+      "detail": {
+        "active": 587971,
+        "changed": 120422,
+        "large": 7584,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8855368717164622,
+        "largeFraction": 0.012898595338885762,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      }
+    },
+    {
+      "name": "overknee/angry full face ownership matches reference",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 3800,
+        "large": 5,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8166527661940506,
+        "largeFraction": 0.0004633490872022982,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      }
+    },
+    {
+      "name": "overknee/angry pixels outside face/body stay unchanged",
+      "pass": true,
+      "detail": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/angry hides every original facial glyph and underpaint",
+      "pass": true,
+      "detail": {
+        "eye_left_highlight_upper": 0,
+        "eye_left_highlight_center": 0,
+        "eye_right_highlight_upper": 0,
+        "eye_right_highlight_secondary": 0,
+        "eye_left_pupil_visible_rim": 0,
+        "eye_left_upper_lash": 0,
+        "eye_right_upper_lash": 0,
+        "eye_left_iris": 0,
+        "eye_right_iris": 0,
+        "eye_left_sclera_visible": 0,
+        "eye_right_sclera_visible": 0,
+        "eye_left_lower_lid_rim": 0,
+        "eye_right_lower_lid_rim": 0,
+        "brow_left_visible": 0,
+        "brow_right_visible": 0,
+        "nose_visible_mark": 0,
+        "mouth_visible_line": 0,
+        "face_skin_local_visible": 0,
+        "iris_left_occlusion": 0,
+        "iris_right_occlusion": 0,
+        "sclera_left_occlusion": 0,
+        "sclera_right_occlusion": 0,
+        "brow_left_occlusion": 0,
+        "brow_right_occlusion": 0
+      }
+    },
+    {
+      "name": "overknee/angry closed eyes visible pixels match source",
+      "pass": true,
+      "detail": {
+        "whole": {
+          "active": 587971,
+          "changed": 118049,
+          "large": 7317,
+          "missing": 0,
+          "extra": 1,
+          "meanActiveError": 1.8478998113852554,
+          "largeFraction": 0.012444491309945559,
+          "bounds": [
+            33,
+            0,
+            987,
+            1523
+          ]
+        },
+        "face": {
+          "active": 10791,
+          "changed": 1501,
+          "large": 1,
+          "missing": 0,
+          "extra": 0,
+          "meanActiveError": 0.8474654804930034,
+          "largeFraction": 0.00009266981744045964,
+          "bounds": [
+            456,
+            99,
+            670,
+            295
+          ]
+        }
+      }
+    },
+    {
+      "name": "overknee/angry blink affects face only",
+      "pass": true,
+      "detail": {
+        "active": 587889,
+        "changed": 4931,
+        "large": 1877,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.2534989598376564,
+        "largeFraction": 0.0031927795893442468,
+        "bounds": [
+          481,
+          166,
+          607,
+          259
+        ]
+      }
+    },
+    {
+      "name": "overknee/angry blink 0.001 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/angry blink 0.25 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.1317533129459735,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/angry blink 0.5 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.10360485589843388,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/angry blink 0.75 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.08402835696413678,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/angry reopening restores exact actual pixels",
+      "pass": true
+    },
+    {
+      "name": "overknee/sad whole visible artwork agrees with V8 reference",
+      "pass": true,
+      "detail": {
+        "active": 587971,
+        "changed": 120352,
+        "large": 7581,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.879673487297843,
+        "largeFraction": 0.01289349304642576,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      }
+    },
+    {
+      "name": "overknee/sad full face ownership matches reference",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 3797,
+        "large": 4,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8326846446112501,
+        "largeFraction": 0.0003706792697618386,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      }
+    },
+    {
+      "name": "overknee/sad pixels outside face/body stay unchanged",
+      "pass": true,
+      "detail": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/sad hides every original facial glyph and underpaint",
+      "pass": true,
+      "detail": {
+        "eye_left_highlight_upper": 0,
+        "eye_left_highlight_center": 0,
+        "eye_right_highlight_upper": 0,
+        "eye_right_highlight_secondary": 0,
+        "eye_left_pupil_visible_rim": 0,
+        "eye_left_upper_lash": 0,
+        "eye_right_upper_lash": 0,
+        "eye_left_iris": 0,
+        "eye_right_iris": 0,
+        "eye_left_sclera_visible": 0,
+        "eye_right_sclera_visible": 0,
+        "eye_left_lower_lid_rim": 0,
+        "eye_right_lower_lid_rim": 0,
+        "brow_left_visible": 0,
+        "brow_right_visible": 0,
+        "nose_visible_mark": 0,
+        "mouth_visible_line": 0,
+        "face_skin_local_visible": 0,
+        "iris_left_occlusion": 0,
+        "iris_right_occlusion": 0,
+        "sclera_left_occlusion": 0,
+        "sclera_right_occlusion": 0,
+        "brow_left_occlusion": 0,
+        "brow_right_occlusion": 0
+      }
+    },
+    {
+      "name": "overknee/sad closed eyes visible pixels match source",
+      "pass": true,
+      "detail": {
+        "whole": {
+          "active": 587971,
+          "changed": 118003,
+          "large": 7308,
+          "missing": 0,
+          "extra": 1,
+          "meanActiveError": 1.8480443763382888,
+          "largeFraction": 0.012429184432565552,
+          "bounds": [
+            33,
+            0,
+            987,
+            1523
+          ]
+        },
+        "face": {
+          "active": 10791,
+          "changed": 1506,
+          "large": 1,
+          "missing": 0,
+          "extra": 0,
+          "meanActiveError": 0.8568251320544898,
+          "largeFraction": 0.00009266981744045964,
+          "bounds": [
+            456,
+            99,
+            670,
+            295
+          ]
+        }
+      }
+    },
+    {
+      "name": "overknee/sad blink affects face only",
+      "pass": true,
+      "detail": {
+        "active": 587889,
+        "changed": 5028,
+        "large": 1979,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.2612516988751278,
+        "largeFraction": 0.003366281730054483,
+        "bounds": [
+          481,
+          167,
+          607,
+          259
+        ]
+      }
+    },
+    {
+      "name": "overknee/sad blink 0.001 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/sad blink 0.25 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.11968306922435362,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/sad blink 0.5 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.10242331572606803,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/sad blink 0.75 matches linear visible-pixel transition",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.0823603002502085,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/sad reopening restores exact actual pixels",
+      "pass": true
+    },
+    {
+      "name": "overknee/blink whole visible artwork agrees with V8 reference",
+      "pass": true,
+      "detail": {
+        "active": 587971,
+        "changed": 120144,
+        "large": 7261,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.861930265268185,
+        "largeFraction": 0.012349248517358849,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      }
+    },
+    {
+      "name": "overknee/blink full face ownership matches reference",
+      "pass": true,
+      "detail": {
+        "active": 10791,
+        "changed": 3754,
+        "large": 3,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8348160504123807,
+        "largeFraction": 0.00027800945232137893,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      }
+    },
+    {
+      "name": "overknee/blink pixels outside face/body stay unchanged",
+      "pass": true,
+      "detail": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/blink hides every original facial glyph and underpaint",
+      "pass": true,
+      "detail": {
+        "eye_left_highlight_upper": 0,
+        "eye_left_highlight_center": 0,
+        "eye_right_highlight_upper": 0,
+        "eye_right_highlight_secondary": 0,
+        "eye_left_pupil_visible_rim": 0,
+        "eye_left_upper_lash": 0,
+        "eye_right_upper_lash": 0,
+        "eye_left_iris": 0,
+        "eye_right_iris": 0,
+        "eye_left_sclera_visible": 0,
+        "eye_right_sclera_visible": 0,
+        "eye_left_lower_lid_rim": 0,
+        "eye_right_lower_lid_rim": 0,
+        "brow_left_visible": 0,
+        "brow_right_visible": 0,
+        "nose_visible_mark": 0,
+        "mouth_visible_line": 0,
+        "face_skin_local_visible": 0,
+        "iris_left_occlusion": 0,
+        "iris_right_occlusion": 0,
+        "sclera_left_occlusion": 0,
+        "sclera_right_occlusion": 0,
+        "brow_left_occlusion": 0,
+        "brow_right_occlusion": 0
+      }
+    },
+    {
+      "name": "overknee/blink closed expression skips extra eye patches",
+      "pass": true,
+      "detail": {
+        "active": 587889,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "overknee/blink reopening restores exact actual pixels",
+      "pass": true
+    },
+    {
+      "name": "return to native neutral restores exact actual pixels",
+      "pass": true
+    }
+  ],
+  "comparisons": [
+    {
+      "outfit": "original",
+      "expression": "neutral",
+      "comparison": {
+        "active": 587821,
+        "changed": 117885,
+        "large": 6922,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8184706738956247,
+        "largeFraction": 0.011775693621017283,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      },
+      "face": {
+        "active": 10791,
+        "changed": 3517,
+        "large": 261,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 3.3034936521175053,
+        "largeFraction": 0.02418682235195997,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      },
+      "untouched": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "outfit": "original",
+      "expression": "happy",
+      "comparison": {
+        "active": 587821,
+        "changed": 120336,
+        "large": 7356,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.841673315516118,
+        "largeFraction": 0.01251401361979242,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      },
+      "face": {
+        "active": 10791,
+        "changed": 3764,
+        "large": 3,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8728570104716893,
+        "largeFraction": 0.00027800945232137893,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      },
+      "untouched": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "outfit": "original",
+      "expression": "shy",
+      "comparison": {
+        "active": 587821,
+        "changed": 120128,
+        "large": 7434,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.850842773565422,
+        "largeFraction": 0.012646707075793481,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      },
+      "face": {
+        "active": 10791,
+        "changed": 3795,
+        "large": 3,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8355342414975442,
+        "largeFraction": 0.00027800945232137893,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      },
+      "untouched": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "outfit": "original",
+      "expression": "surprised",
+      "comparison": {
+        "active": 587821,
+        "changed": 120195,
+        "large": 7757,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8836295402852228,
+        "largeFraction": 0.013196194079490185,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      },
+      "face": {
+        "active": 10791,
+        "changed": 3789,
+        "large": 8,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8925956815865073,
+        "largeFraction": 0.0007413585395236772,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      },
+      "untouched": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "outfit": "original",
+      "expression": "angry",
+      "comparison": {
+        "active": 587821,
+        "changed": 120220,
+        "large": 7465,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8547789207939152,
+        "largeFraction": 0.012699444218563134,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      },
+      "face": {
+        "active": 10791,
+        "changed": 3800,
+        "large": 5,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8166527661940506,
+        "largeFraction": 0.0004633490872022982,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      },
+      "untouched": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "outfit": "original",
+      "expression": "sad",
+      "comparison": {
+        "active": 587821,
+        "changed": 120150,
+        "large": 7462,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8489140401584836,
+        "largeFraction": 0.012694340624101555,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      },
+      "face": {
+        "active": 10791,
+        "changed": 3797,
+        "large": 4,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8326846446112501,
+        "largeFraction": 0.0003706792697618386,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      },
+      "untouched": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "outfit": "original",
+      "expression": "blink",
+      "comparison": {
+        "active": 587821,
+        "changed": 119942,
+        "large": 7142,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8311662904183417,
+        "largeFraction": 0.01214995721486643,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      },
+      "face": {
+        "active": 10791,
+        "changed": 3754,
+        "large": 3,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8348160504123807,
+        "largeFraction": 0.00027800945232137893,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      },
+      "untouched": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "outfit": "tights",
+      "expression": "neutral",
+      "comparison": {
+        "active": 587995,
+        "changed": 117405,
+        "large": 7022,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8513222901555286,
+        "largeFraction": 0.01194227842073487,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      },
+      "face": {
+        "active": 10791,
+        "changed": 3517,
+        "large": 261,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 3.3034936521175053,
+        "largeFraction": 0.02418682235195997,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      },
+      "untouched": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "outfit": "tights",
+      "expression": "happy",
+      "comparison": {
+        "active": 587995,
+        "changed": 119856,
+        "large": 7456,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8745180656298097,
+        "largeFraction": 0.012680379935203531,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      },
+      "face": {
+        "active": 10791,
+        "changed": 3764,
+        "large": 3,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8728570104716893,
+        "largeFraction": 0.00027800945232137893,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      },
+      "untouched": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "outfit": "tights",
+      "expression": "shy",
+      "comparison": {
+        "active": 587995,
+        "changed": 119648,
+        "large": 7534,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.883684810244985,
+        "largeFraction": 0.012813034124439834,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      },
+      "face": {
+        "active": 10791,
+        "changed": 3795,
+        "large": 3,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8355342414975442,
+        "largeFraction": 0.00027800945232137893,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      },
+      "untouched": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "outfit": "tights",
+      "expression": "surprised",
+      "comparison": {
+        "active": 587995,
+        "changed": 119715,
+        "large": 7857,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.916461874675805,
+        "largeFraction": 0.013362358523456833,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      },
+      "face": {
+        "active": 10791,
+        "changed": 3789,
+        "large": 8,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8925956815865073,
+        "largeFraction": 0.0007413585395236772,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      },
+      "untouched": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "outfit": "tights",
+      "expression": "angry",
+      "comparison": {
+        "active": 587995,
+        "changed": 119740,
+        "large": 7565,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.887619792685312,
+        "largeFraction": 0.012865755661187596,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      },
+      "face": {
+        "active": 10791,
+        "changed": 3800,
+        "large": 5,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8166527661940506,
+        "largeFraction": 0.0004633490872022982,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      },
+      "untouched": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "outfit": "tights",
+      "expression": "sad",
+      "comparison": {
+        "active": 587995,
+        "changed": 119670,
+        "large": 7562,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8817566475905407,
+        "largeFraction": 0.012860653576986198,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      },
+      "face": {
+        "active": 10791,
+        "changed": 3797,
+        "large": 4,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8326846446112501,
+        "largeFraction": 0.0003706792697618386,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      },
+      "untouched": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "outfit": "tights",
+      "expression": "blink",
+      "comparison": {
+        "active": 587995,
+        "changed": 119462,
+        "large": 7242,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8640141497801852,
+        "largeFraction": 0.012316431262170597,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      },
+      "face": {
+        "active": 10791,
+        "changed": 3754,
+        "large": 3,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8348160504123807,
+        "largeFraction": 0.00027800945232137893,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      },
+      "untouched": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "outfit": "overknee",
+      "expression": "neutral",
+      "comparison": {
+        "active": 587971,
+        "changed": 118087,
+        "large": 7041,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.849237887582891,
+        "largeFraction": 0.01197508040362535,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      },
+      "face": {
+        "active": 10791,
+        "changed": 3517,
+        "large": 261,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 3.3034936521175053,
+        "largeFraction": 0.02418682235195997,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      },
+      "untouched": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "outfit": "overknee",
+      "expression": "happy",
+      "comparison": {
+        "active": 587971,
+        "changed": 120538,
+        "large": 7475,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8724346098702147,
+        "largeFraction": 0.012713212046172345,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      },
+      "face": {
+        "active": 10791,
+        "changed": 3764,
+        "large": 3,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8728570104716893,
+        "largeFraction": 0.00027800945232137893,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      },
+      "untouched": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "outfit": "overknee",
+      "expression": "shy",
+      "comparison": {
+        "active": 587971,
+        "changed": 120330,
+        "large": 7553,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8816017286566855,
+        "largeFraction": 0.012845871650132405,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      },
+      "face": {
+        "active": 10791,
+        "changed": 3795,
+        "large": 3,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8355342414975442,
+        "largeFraction": 0.00027800945232137893,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      },
+      "untouched": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "outfit": "overknee",
+      "expression": "surprised",
+      "comparison": {
+        "active": 587971,
+        "changed": 120397,
+        "large": 7876,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.9143801309928552,
+        "largeFraction": 0.013395218471659316,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      },
+      "face": {
+        "active": 10791,
+        "changed": 3789,
+        "large": 8,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8925956815865073,
+        "largeFraction": 0.0007413585395236772,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      },
+      "untouched": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "outfit": "overknee",
+      "expression": "angry",
+      "comparison": {
+        "active": 587971,
+        "changed": 120422,
+        "large": 7584,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.8855368717164622,
+        "largeFraction": 0.012898595338885762,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      },
+      "face": {
+        "active": 10791,
+        "changed": 3800,
+        "large": 5,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8166527661940506,
+        "largeFraction": 0.0004633490872022982,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      },
+      "untouched": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "outfit": "overknee",
+      "expression": "sad",
+      "comparison": {
+        "active": 587971,
+        "changed": 120352,
+        "large": 7581,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.879673487297843,
+        "largeFraction": 0.01289349304642576,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      },
+      "face": {
+        "active": 10791,
+        "changed": 3797,
+        "large": 4,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8326846446112501,
+        "largeFraction": 0.0003706792697618386,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      },
+      "untouched": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    },
+    {
+      "outfit": "overknee",
+      "expression": "blink",
+      "comparison": {
+        "active": 587971,
+        "changed": 120144,
+        "large": 7261,
+        "missing": 0,
+        "extra": 1,
+        "meanActiveError": 1.861930265268185,
+        "largeFraction": 0.012349248517358849,
+        "bounds": [
+          33,
+          0,
+          987,
+          1523
+        ]
+      },
+      "face": {
+        "active": 10791,
+        "changed": 3754,
+        "large": 3,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 1.8348160504123807,
+        "largeFraction": 0.00027800945232137893,
+        "bounds": [
+          456,
+          99,
+          670,
+          295
+        ]
+      },
+      "untouched": {
+        "active": 216115,
+        "changed": 0,
+        "large": 0,
+        "missing": 0,
+        "extra": 0,
+        "meanActiveError": 0.00003933091178307845,
+        "largeFraction": 0,
+        "bounds": [
+          1024,
+          1536,
+          -1,
+          -1
+        ]
+      }
+    }
+  ],
+  "appearance": {
+    "method": "V8 patches clipped to detailed original body/face ownership; native hair atlas untouched",
+    "expressionParametersRigged": false,
+    "current": {
+      "outfit": "original",
+      "expression": "neutral"
+    },
+    "blink": 0,
+    "maxMappingError": 0,
+    "roles": {
+      "bodyHost": "body_visible_fixed",
+      "faceHost": "face_visible_residual",
+      "facialOriginal": [
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "eye_left_pupil_visible_rim",
+        "eye_left_upper_lash",
+        "eye_right_upper_lash",
+        "eye_left_iris",
+        "eye_right_iris",
+        "eye_left_sclera_visible",
+        "eye_right_sclera_visible",
+        "eye_left_lower_lid_rim",
+        "eye_right_lower_lid_rim",
+        "brow_left_visible",
+        "brow_right_visible",
+        "nose_visible_mark",
+        "mouth_visible_line",
+        "face_skin_local_visible"
+      ],
+      "facialOcclusion": [
+        "iris_left_occlusion",
+        "iris_right_occlusion",
+        "sclera_left_occlusion",
+        "sclera_right_occlusion",
+        "brow_left_occlusion",
+        "brow_right_occlusion"
+      ],
+      "blinkFade": [
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "eye_left_pupil_visible_rim",
+        "eye_left_upper_lash",
+        "eye_right_upper_lash",
+        "eye_left_iris",
+        "eye_right_iris",
+        "eye_left_sclera_visible",
+        "eye_right_sclera_visible",
+        "eye_left_lower_lid_rim",
+        "eye_right_lower_lid_rim",
+        "iris_left_occlusion",
+        "iris_right_occlusion",
+        "sclera_left_occlusion",
+        "sclera_right_occlusion"
+      ]
+    },
+    "drawableOpacities": {
+      "eye_left_highlight_upper": 1,
+      "eye_left_highlight_center": 1,
+      "eye_right_highlight_upper": 1,
+      "eye_right_highlight_secondary": 1,
+      "eye_left_pupil_visible_rim": 1,
+      "eye_left_upper_lash": 1,
+      "eye_right_upper_lash": 1,
+      "eye_left_iris": 1,
+      "eye_right_iris": 1,
+      "eye_left_sclera_visible": 1,
+      "eye_right_sclera_visible": 1,
+      "eye_left_lower_lid_rim": 1,
+      "eye_right_lower_lid_rim": 1,
+      "brow_left_visible": 1,
+      "brow_right_visible": 1,
+      "nose_visible_mark": 1,
+      "mouth_visible_line": 1,
+      "face_skin_local_visible": 1,
+      "iris_left_occlusion": 1,
+      "iris_right_occlusion": 1,
+      "sclera_left_occlusion": 1,
+      "sclera_right_occlusion": 1,
+      "brow_left_occlusion": 1,
+      "brow_right_occlusion": 1
+    },
+    "emptyDrawablesSkipped": [
+      "hair_side_right_occlusion3",
+      "hair_side_right_occlusion4",
+      "hair_side_right_occlusion5",
+      "hair_side_right_occlusion6",
+      "hair_side_left_occlusion3",
+      "hair_side_left_occlusion4",
+      "hair_side_left_occlusion5",
+      "hair_side_left_occlusion6",
+      "hair_long_left_outer_occlusion3",
+      "hair_long_left_outer_occlusion4",
+      "hair_long_left_outer_occlusion8",
+      "hair_bang_left_outer_occlusion3",
+      "hair_bang_left_outer_occlusion4",
+      "hair_bang_left_outer_occlusion5",
+      "hair_bang_left_outer_occlusion6",
+      "hair_bang_left_outer_occlusion7",
+      "hair_bang_left_outer_occlusion8",
+      "hair_bang_right_outer_occlusion3",
+      "hair_bang_right_outer_occlusion4",
+      "hair_bang_right_outer_occlusion5",
+      "hair_bang_right_outer_occlusion6",
+      "hair_long_right_outer_occlusion2",
+      "hair_long_right_outer_occlusion3",
+      "hair_long_right_outer_occlusion4"
+    ],
+    "wardrobeDrawables": {},
+    "originalAtlasPreservedWhenNeutral": true,
+    "patchRegions": [],
+    "blinkRegions": [
+      {
+        "textureIndex": 0,
+        "x": 869,
+        "y": 1488,
+        "width": 131,
+        "height": 98
+      }
+    ]
+  },
+  "renderer": {
+    "phase": "ready",
+    "coreLoaded": true,
+    "modelLoaded": true,
+    "shadersReady": true,
+    "framesDrawn": 127,
+    "visualVerified": false,
+    "gazeTracking": false,
+    "automaticAnimation": false,
+    "sdkVersion": "5-r.5",
+    "coreVersion": 100663297,
+    "mocVersion": 6,
+    "latestMocVersion": 6,
+    "drawableCount": 136,
+    "textureCount": 1,
+    "parameterCount": 63,
+    "partCount": 56,
+    "optionalReferencesNotPlayed": [],
+    "canvasInfo": {
+      "CanvasWidth": 1024,
+      "CanvasHeight": 1536,
+      "CanvasOriginX": 512,
+      "CanvasOriginY": 768,
+      "PixelsPerUnit": 1024
+    },
+    "modelUrl": "http://127.0.0.1:5894/konisi-game/live2d/standing/character.model3.json",
+    "camera": {
+      "focus": [
+        512,
+        768
+      ],
+      "zoom": 1,
+      "padding": 1,
+      "offset": [
+        0,
+        0
+      ]
+    }
+  },
+  "errors": []
+}

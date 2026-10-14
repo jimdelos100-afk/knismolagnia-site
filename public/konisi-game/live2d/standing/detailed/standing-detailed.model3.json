@@ -1,0 +1,18 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "standing-detailed.moc3",
+		"Textures": [
+			"standing-detailed.4096/texture_00.png"
+		],
+		"Physics": "standing-detailed.physics3.json",
+		"DisplayInfo": "standing-detailed.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		}
+	]
+}

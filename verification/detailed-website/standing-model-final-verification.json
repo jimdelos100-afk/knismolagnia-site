@@ -1,0 +1,103 @@
+{
+  "date": "2026-10-14T07:55:28.888028+00:00",
+  "scope": "Isolated standing model only. Delivered website and deployment ZIP unchanged.",
+  "actualHairRigVerified": true,
+  "hairRigBehaviorVerified": true,
+  "readyForWebsite": false,
+  "completedScope": "Standing pose facial artwork separation, occlusion underpaint, six actual hair chains with native physics, small natural head motion and isolated preview.",
+  "rasterCoverageThreshold": "PSD alpha >=250 and neutral runtime alpha <128; zero missing pixels under this threshold. This does not claim pixel-identical WebGL rendering.",
+  "checks": {
+    "native36OutputBehavior": true,
+    "originalBonesHeadAndPatchGeometry": true,
+    "nativePhysics30_60_120Hz": true,
+    "realBrowserRuntime": true,
+    "allReportsUseCurrentModel": true,
+    "alphaReportMatchesFinalRender": true,
+    "sourceOpaquePixelsCoveredByNativeMesh": true,
+    "neutralOpaquePixelGapsEliminated": true,
+    "originalThreePixelRepairAndMotion": true,
+    "distinctRootTipTemporalResponses": true,
+    "gazeDisabledInRuntimeAndMovie": true
+  },
+  "sourceMocSha256": "0e496d30e887f48e5daf432556ccaf1be0726a2617a2485d91703ac60f065e46",
+  "files": {
+    "standing-detailed.moc3": {
+      "bytes": 131328,
+      "sha256": "0e496d30e887f48e5daf432556ccaf1be0726a2617a2485d91703ac60f065e46"
+    },
+    "standing-detailed.physics3.json": {
+      "bytes": 18369,
+      "sha256": "70d2f649d0692e0fc23f0a0fed3c6ff998bc075063da9258d82e1ffdd81f7c40"
+    },
+    "standing-detailed.model3.json": {
+      "bytes": 323,
+      "sha256": "6bd34476200dbedea469c1ed15c4b16ff4a9fd1de1cb2928d764211269a277a5"
+    },
+    "standing-detailed.cdi3.json": {
+      "bytes": 11106,
+      "sha256": "098fe2d511d6d5f3e0410262163ab49f12a368f20f2b78c95cb961ac952f7f11"
+    },
+    "standing-detailed.4096/texture_00.png": {
+      "bytes": 3188567,
+      "sha256": "5e2bb36f32a65ecf0cfd1183e28ef9a5467394a5b9c5ca634322c060eef41453"
+    }
+  },
+  "sourceFiles": {
+    "standing-detailed.psd": {
+      "bytes": 4695727,
+      "sha256": "48162ca158323755e86e5b1b618bf2be51f38204785f419169b4a00df21ad5db"
+    },
+    "standing-detailed.cmo3": {
+      "bytes": 6124983,
+      "sha256": "e679c5b7e2ede5130aad2c1f2d0c2737fab950a80225cead70f63f84f1f74157"
+    }
+  },
+  "physicsPeakPixelsByGroup": {
+    "hair_long_left_outer": 8.998599414866648,
+    "hair_long_right_outer": 9.123774711755638,
+    "hair_side_left": 5.40322005851029,
+    "hair_side_right": 5.399706244998781,
+    "hair_bang_left_outer": 5.399593324902545,
+    "hair_bang_right_outer": 5.399496825329774
+  },
+  "maxPatchOverlapDifferencePixels": 0.17667664997180899,
+  "sourceAppearance": {
+    "visibleUnionPixels": 636350,
+    "opaqueIntersectionPixels": 524778,
+    "opaqueMeanRGBError": 0.6330118005455005,
+    "premultipliedMeanRGBErrorOnVisibleUnion": 1.5115662949080002,
+    "meanAlphaErrorOnVisibleUnion": 1.3006945863125638,
+    "renderMissingOpaqueReferencePixels": 0,
+    "renderAddedOpaquePixels": 0,
+    "compositedComparisons": {
+      "white": {
+        "meanErrorOnVisibleUnion": 1.0497185346782172,
+        "fractionUnionPixelsWithAnyChannelErrorAbove30": 0.002707629449202483
+      },
+      "charcoal": {
+        "meanErrorOnVisibleUnion": 1.3699770371363236,
+        "fractionUnionPixelsWithAnyChannelErrorAbove30": 0.007442445195254184
+      },
+      "preview": {
+        "meanErrorOnVisibleUnion": 1.0014283338751286,
+        "fractionUnionPixelsWithAnyChannelErrorAbove30": 0.002295906340850161
+      }
+    }
+  },
+  "remainingRasterIssue": {
+    "missingOpaqueSourcePixels": 0,
+    "pixelCentersUncoveredByOwningMeshTriangles": 0,
+    "byOriginalLayer": {}
+  },
+  "movie": "verification/standing-final-natural.webm",
+  "reports": [
+    "final-native-physics.json",
+    "final-native-geometry-comparison.json",
+    "final-physics-frame-rates.json",
+    "final-default-vs-psd.json",
+    "final-browser-physics.json",
+    "final-alpha-gap-diagnosis.json",
+    "final-root-tip-temporal-response.json",
+    "final-edge-repair-validation.json"
+  ]
+}
