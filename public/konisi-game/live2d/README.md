@@ -6,7 +6,7 @@
 
 `standing-appearance.mjs` 用明确的原身体/脸部/眼部像素遮罩接入 V8 站姿表情、眨眼和换装，避免覆贴到发束及补绘。`texture-compositor.mjs` 继续服务原坐姿和跪姿。所有外观更新基于初始化中性网格/UV 的真实映射，映射不匹配会报错。
 
-自然头动和交互由 `../character.js` 通过真实 `ParamAngleZ` 驱动，按实际经过时间运行物理。暂停/减少动态效果会保持静止；全身相机、拖动和缩放沿用原功能，目光跟随关闭。
+自然头动和交互由 `../character.js` 通过真实 `ParamAngleZ` 驱动，按实际经过时间运行物理。公共透明站姿默认待机，并支持设置暂停；Level 1/2 保留原减少动态效果行为。公共站姿通过 `standing-gaze.mjs` 对真实眼层的顶点副本做小幅跟随，头部不追踪鼠标；Level 页面角色仍无目光跟随。相机、拖动和缩放保持各自原入口功能。
 
 结构检查：`node scripts/check-live2d.mjs`。结构正确只代表资源存在与基本格式通过，完整运行和画面检查见项目根目录 `verification/detailed-website/`，具体范围见 `Live2D-STATUS.md`。
 

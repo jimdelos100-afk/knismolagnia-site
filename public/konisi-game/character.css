@@ -10,32 +10,30 @@ body[data-pose=kneeling] .action-grid button[data-action=tickle]{grid-column:1/-
 }
 @media(max-width:720px){body[data-pose=standing] .action-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
 
-/* Homepage companion: one accessible click action, independent presentation. */
-body[data-mode=companion]{height:100svh;padding:0;background:transparent;overflow:hidden}
-body[data-mode=companion] .shell{height:100%;border:0;border-radius:0;background:transparent;display:flex;flex-direction:column}
-body[data-mode=companion] .topbar,body[data-mode=companion] .bottom,body[data-mode=companion] .settings,body[data-mode=companion] .action-box,body[data-mode=companion] .zoom-tools,body[data-mode=companion] .status{display:none}
-body[data-mode=companion] .interaction{height:auto;flex:1;min-height:0;display:grid;grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto;background:transparent}
+/* Transparent full-body pet; settings are the only optional panel. */
+html[data-mode=companion],body[data-mode=companion]{height:100%;padding:0;margin:0;background:transparent!important;overflow:hidden;color-scheme:light}
+body[data-mode=companion] button,body[data-mode=companion] select{touch-action:manipulation}
+body[data-mode=companion] .shell{height:100%;max-width:none;border:0;border-radius:0;background:transparent;display:block;overflow:visible}
+body[data-mode=companion] .interaction{height:100%;display:block;background:transparent;overflow:visible}
 body[data-mode=companion] .interaction::before{display:none}
-body[data-mode=companion] .character-pane{height:auto;min-height:0;cursor:pointer;touch-action:pan-y}
-body[data-mode=companion] .control-panel{padding:6px 14px;border:0;background:transparent;backdrop-filter:none;overflow:visible}
-body[data-mode=companion] .dialogue-wrap{margin:0;min-height:0;padding:8px 12px;text-align:center}
-body[data-mode=companion] .speaker{display:none}
-body[data-mode=companion] .dialogue{margin:0;min-height:0;font-size:14px;line-height:1.5}
-
-/* Companion camera now frames the entire standing artwork instead of cropping the portrait. */
-body[data-mode=companion] .character-pane { touch-action: manipulation; }
-body[data-mode=companion] .interaction { grid-template-rows: minmax(0,1fr) auto; }
-body[data-mode=companion] .control-panel { padding: 0 7px 7px; }
-body[data-mode=companion] .dialogue-wrap { padding: 6px 7px; border: 1px solid #eed4e5; border-radius: 10px; background: #fff8fde8; }
-body[data-mode=companion] .dialogue { font-size: 12px; line-height: 1.5; }
-body[data-mode=companion] .scene-note { bottom: 5px; font-size: 11px; padding: 5px 9px; }
-body[data-mode=companion] .loading { background: #f8edf9; font-size: 12px; }
-@media(max-width:720px) {
-  body[data-mode=companion] .control-panel { padding: 0 4px 4px; }
-  body[data-mode=companion] .dialogue { font-size: 10px; }
-  body[data-mode=companion] .dialogue-wrap { padding: 4px 5px; }
-  body[data-mode=companion] .scene-note { bottom: 3px; font-size: 9px; padding: 3px 5px; }
-}
-
-/* The companion has dialogue below the full figure; do not cover shoes with a caption. */
-body[data-mode=companion] .scene-note { display: none; }
+body[data-mode=companion] .character-pane{height:100%;min-height:0;background:transparent;cursor:pointer;touch-action:manipulation}
+body[data-mode=companion] .status{display:none}
+body[data-mode=companion] .loading{background:transparent;font-size:12px;pointer-events:none}
+body[data-mode=companion] .loading button{pointer-events:auto}
+body[data-mode=companion] .pet-settings-toggle{position:absolute;right:8px;bottom:8px;z-index:5;width:34px;height:34px;padding:0;border:1px solid #bdcada;border-radius:50%;background:#fffffff0;color:#506484;font-size:21px;line-height:1}
+body[data-mode=companion] .pet-settings{position:absolute;right:6px;bottom:48px;z-index:6;width:min(285px,calc(100% - 12px));max-height:calc(100% - 66px);overflow:auto;display:flex;flex-direction:column;gap:10px;padding:12px;border:1px solid #d6dce7;border-radius:14px;background:#fffffffa;box-shadow:0 6px 25px #33486b26;backdrop-filter:none;text-align:left}
+body[data-mode=companion] .pet-settings[hidden]{display:none}
+body[data-mode=companion] .pet-settings-heading{display:flex;justify-content:space-between;align-items:center;font-size:14px}
+body[data-mode=companion] .pet-settings-heading button{width:28px;height:28px;padding:0;border:0;border-radius:50%;background:#edf1f7;font-size:22px}
+body[data-mode=companion] .settings{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+body[data-mode=companion] .settings label{display:block;font-size:12px;grid-column:1/-1}
+body[data-mode=companion] .settings select{grid-column:1/-1}
+body[data-mode=companion] .settings button,body[data-mode=companion] .settings select,body[data-mode=companion] .action-grid button{min-height:34px;font-size:12px;padding:6px;border-radius:8px}
+body[data-mode=companion] .settings #motion{grid-column:1/-1}
+body[data-mode=companion] .zoom-tools{position:static;display:flex;justify-content:center;padding:0;background:transparent}
+body[data-mode=companion] .zoom-tools button{width:32px;height:30px}
+body[data-mode=companion] .action-grid{grid-template-columns:1fr 1fr;gap:6px}
+body[data-mode=companion] .pet-help{margin:0;font-size:11px;line-height:1.5;color:#687991}
+body[data-mode=companion] .dialogue-wrap{display:none;position:absolute;left:6px;right:48px;bottom:8px;z-index:4;min-height:0;margin:0;padding:7px 9px;border:1px solid #e1e5ee;border-radius:10px;background:#fffffff2;pointer-events:none}
+html[data-reaction] body[data-mode=companion] .dialogue-wrap{display:block}
+body[data-mode=companion] .dialogue{margin:0;min-height:0;font-size:11px;line-height:1.5}

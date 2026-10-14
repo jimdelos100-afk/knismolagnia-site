@@ -1,0 +1,2390 @@
+{
+  "date": "2026-10-14T09:35:09.119Z",
+  "scope": "Detailed standing and existing Level 1/2 standalone character pages in opaque sandboxed iframe, served only by temporary 127.0.0.1 HTTP server. Actual model SHA, native physics, controls, no tracking, mobile, missing model/retry tested. Login/database/Next routes not exercised.",
+  "checks": [
+    {
+      "name": "index loads actual Cubism in opaque iframe",
+      "pass": true,
+      "detail": {
+        "url": "http://127.0.0.1:5241/konisi-game/live2d/standing/character.model3.json",
+        "drawables": 136,
+        "core": 100663297
+      }
+    },
+    {
+      "name": "index natural parameter changes actual mesh",
+      "pass": true,
+      "detail": {
+        "angle": [
+          1.559877634048462,
+          8.92001724243164
+        ],
+        "maxVertexDelta": 0.0042705535888671875
+      }
+    },
+    {
+      "name": "index detailed model URL and native mesh count",
+      "pass": true,
+      "detail": {
+        "url": "http://127.0.0.1:5241/konisi-game/live2d/standing/character.model3.json",
+        "drawables": 136
+      }
+    },
+    {
+      "name": "index actual served MOC matches verified detailed SHA",
+      "pass": true,
+      "detail": {
+        "url": "http://127.0.0.1:5241/konisi-game/live2d/standing/detailed/standing-detailed.moc3",
+        "sha256": "0e496d30e887f48e5daf432556ccaf1be0726a2617a2485d91703ac60f065e46"
+      }
+    },
+    {
+      "name": "index native physics 6 settings 36 outputs 60fps evaluates",
+      "pass": true,
+      "detail": {
+        "loaded": true,
+        "settingCount": 6,
+        "outputCount": 36,
+        "fps": 60,
+        "evaluations": [
+          11,
+          53
+        ]
+      }
+    },
+    {
+      "name": "index idle native hair outputs and vertices move",
+      "pass": true,
+      "detail": {
+        "parameterDelta": 1.3715996742248535,
+        "maxHairVertexDelta": 0.0026574432849884033,
+        "nonzeroOutputs": 29
+      }
+    },
+    {
+      "name": "index detailed expression carrier used",
+      "pass": true,
+      "detail": {
+        "bodyHost": "body_visible_fixed",
+        "faceHost": "face_visible_residual",
+        "facialOriginal": [
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "eye_left_pupil_visible_rim",
+          "eye_left_upper_lash",
+          "eye_right_upper_lash",
+          "eye_left_iris",
+          "eye_right_iris",
+          "eye_left_sclera_visible",
+          "eye_right_sclera_visible",
+          "eye_left_lower_lid_rim",
+          "eye_right_lower_lid_rim",
+          "brow_left_visible",
+          "brow_right_visible",
+          "nose_visible_mark",
+          "mouth_visible_line",
+          "face_skin_local_visible"
+        ],
+        "facialOcclusion": [
+          "iris_left_occlusion",
+          "iris_right_occlusion",
+          "sclera_left_occlusion",
+          "sclera_right_occlusion",
+          "brow_left_occlusion",
+          "brow_right_occlusion"
+        ],
+        "blinkFade": [
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "eye_left_pupil_visible_rim",
+          "eye_left_upper_lash",
+          "eye_right_upper_lash",
+          "eye_left_iris",
+          "eye_right_iris",
+          "eye_left_sclera_visible",
+          "eye_right_sclera_visible",
+          "eye_left_lower_lid_rim",
+          "eye_right_lower_lid_rim",
+          "iris_left_occlusion",
+          "iris_right_occlusion",
+          "sclera_left_occlusion",
+          "sclera_right_occlusion"
+        ]
+      }
+    },
+    {
+      "name": "index pointer does not affect head or camera",
+      "pass": true,
+      "detail": {
+        "angle": 0,
+        "delta": 0
+      }
+    },
+    {
+      "name": "standing paused native hair is stable",
+      "pass": true,
+      "detail": {
+        "vertexDelta": 0,
+        "evaluations": [
+          74,
+          74
+        ]
+      }
+    },
+    {
+      "name": "index outfit original selected",
+      "pass": true,
+      "detail": {
+        "pixels": 2612502370,
+        "opacities": [
+          [
+            "hat_flower",
+            1
+          ],
+          [
+            "hair_clip",
+            1
+          ],
+          [
+            "hair_long_right_outer_lower",
+            1
+          ],
+          [
+            "hair_long_right_middle",
+            1
+          ],
+          [
+            "hair_long_right_inner",
+            1
+          ],
+          [
+            "hair_long_left_middle",
+            1
+          ],
+          [
+            "hair_long_left_inner",
+            1
+          ],
+          [
+            "hair_left_upper_loop",
+            1
+          ],
+          [
+            "hair_bang_right_inner",
+            1
+          ],
+          [
+            "hair_bang_center_right",
+            1
+          ],
+          [
+            "hair_bang_left_inner",
+            1
+          ],
+          [
+            "hair_bang_center_left",
+            1
+          ],
+          [
+            "hair_bangs_base",
+            1
+          ],
+          [
+            "ribbon_tail_right",
+            1
+          ],
+          [
+            "ribbon_tail_left",
+            1
+          ],
+          [
+            "ribbon_bow_front",
+            1
+          ],
+          [
+            "ribbon_bow_back",
+            1
+          ],
+          [
+            "nose_visible_mark",
+            1
+          ],
+          [
+            "mouth_visible_line",
+            1
+          ],
+          [
+            "eye_right_upper_lash",
+            1
+          ],
+          [
+            "eye_right_sclera_visible",
+            1
+          ],
+          [
+            "eye_right_lower_lid_rim",
+            1
+          ],
+          [
+            "eye_right_iris",
+            1
+          ],
+          [
+            "eye_right_highlight_upper",
+            1
+          ],
+          [
+            "eye_right_highlight_secondary",
+            1
+          ],
+          [
+            "eye_left_upper_lash",
+            1
+          ],
+          [
+            "eye_left_sclera_visible",
+            1
+          ],
+          [
+            "eye_left_pupil_visible_rim",
+            1
+          ],
+          [
+            "eye_left_lower_lid_rim",
+            1
+          ],
+          [
+            "eye_left_iris",
+            1
+          ],
+          [
+            "eye_left_highlight_upper",
+            1
+          ],
+          [
+            "eye_left_highlight_center",
+            1
+          ],
+          [
+            "brow_right_visible",
+            1
+          ],
+          [
+            "brow_left_visible",
+            1
+          ],
+          [
+            "face_visible_residual",
+            1
+          ],
+          [
+            "face_skin_local_visible",
+            1
+          ],
+          [
+            "neck_visible",
+            1
+          ],
+          [
+            "hair_back_right",
+            1
+          ],
+          [
+            "hair_back_left",
+            1
+          ],
+          [
+            "brow_right_occlusion",
+            1
+          ],
+          [
+            "brow_left_occlusion",
+            1
+          ],
+          [
+            "iris_right_occlusion",
+            1
+          ],
+          [
+            "iris_left_occlusion",
+            1
+          ],
+          [
+            "sclera_right_occlusion",
+            1
+          ],
+          [
+            "sclera_left_occlusion",
+            1
+          ],
+          [
+            "hair_long_right_outer_lower_occlusion",
+            1
+          ],
+          [
+            "hair_long_right_middle_occlusion",
+            1
+          ],
+          [
+            "hair_long_right_inner_occlusion",
+            1
+          ],
+          [
+            "hair_long_left_middle_occlusion",
+            1
+          ],
+          [
+            "hair_long_left_inner_occlusion",
+            1
+          ],
+          [
+            "hair_left_upper_loop_occlusion",
+            1
+          ],
+          [
+            "hair_bang_right_inner_occlusion",
+            1
+          ],
+          [
+            "hair_bang_center_right_occlusion",
+            1
+          ],
+          [
+            "hair_bang_left_inner_occlusion",
+            1
+          ],
+          [
+            "hair_bang_center_left_occlusion",
+            1
+          ],
+          [
+            "hair_bangs_base_occlusion",
+            1
+          ],
+          [
+            "hair_back_right_occlusion",
+            1
+          ],
+          [
+            "hair_back_left_occlusion",
+            1
+          ],
+          [
+            "neck_occlusion_underpaint",
+            1
+          ],
+          [
+            "face_occlusion_underpaint",
+            1
+          ],
+          [
+            "body_under_hair_occlusion",
+            1
+          ],
+          [
+            "hair_long_left_outer2",
+            1
+          ],
+          [
+            "hair_long_left_outer3",
+            1
+          ],
+          [
+            "hair_long_left_outer4",
+            1
+          ],
+          [
+            "hair_long_left_outer5",
+            1
+          ],
+          [
+            "hair_long_left_outer6",
+            1
+          ],
+          [
+            "hair_long_left_outer7",
+            1
+          ],
+          [
+            "hair_long_left_outer8",
+            1
+          ],
+          [
+            "hair_long_right_outer2",
+            1
+          ],
+          [
+            "hair_long_right_outer3",
+            1
+          ],
+          [
+            "hair_long_right_outer4",
+            1
+          ],
+          [
+            "hair_long_right_outer5",
+            1
+          ],
+          [
+            "hair_long_right_outer6",
+            1
+          ],
+          [
+            "hair_long_right_outer7",
+            1
+          ],
+          [
+            "hair_long_right_outer8",
+            1
+          ],
+          [
+            "hair_side_left2",
+            1
+          ],
+          [
+            "hair_side_left3",
+            1
+          ],
+          [
+            "hair_side_left4",
+            1
+          ],
+          [
+            "hair_side_left5",
+            1
+          ],
+          [
+            "hair_side_left6",
+            1
+          ],
+          [
+            "hair_side_right2",
+            1
+          ],
+          [
+            "hair_side_right3",
+            1
+          ],
+          [
+            "hair_side_right4",
+            1
+          ],
+          [
+            "hair_side_right5",
+            1
+          ],
+          [
+            "hair_side_right6",
+            1
+          ],
+          [
+            "hair_bang_left_outer2",
+            1
+          ],
+          [
+            "hair_bang_left_outer3",
+            1
+          ],
+          [
+            "hair_bang_left_outer4",
+            1
+          ],
+          [
+            "hair_bang_left_outer5",
+            1
+          ],
+          [
+            "hair_bang_left_outer6",
+            1
+          ],
+          [
+            "hair_bang_left_outer7",
+            1
+          ],
+          [
+            "hair_bang_left_outer8",
+            1
+          ],
+          [
+            "hair_bang_right_outer2",
+            1
+          ],
+          [
+            "hair_bang_right_outer3",
+            1
+          ],
+          [
+            "hair_bang_right_outer4",
+            1
+          ],
+          [
+            "hair_bang_right_outer5",
+            1
+          ],
+          [
+            "hair_bang_right_outer6",
+            1
+          ],
+          [
+            "hair_side_right_occlusion2",
+            1
+          ],
+          [
+            "hair_side_right_occlusion3",
+            1
+          ],
+          [
+            "hair_side_right_occlusion4",
+            1
+          ],
+          [
+            "hair_side_right_occlusion5",
+            1
+          ],
+          [
+            "hair_side_right_occlusion6",
+            1
+          ],
+          [
+            "hair_side_left_occlusion2",
+            1
+          ],
+          [
+            "hair_side_left_occlusion3",
+            1
+          ],
+          [
+            "hair_side_left_occlusion4",
+            1
+          ],
+          [
+            "hair_side_left_occlusion5",
+            1
+          ],
+          [
+            "hair_side_left_occlusion6",
+            1
+          ],
+          [
+            "hair_long_left_outer_occlusion2",
+            1
+          ],
+          [
+            "hair_long_left_outer_occlusion3",
+            1
+          ],
+          [
+            "hair_long_left_outer_occlusion4",
+            1
+          ],
+          [
+            "hair_long_left_outer_occlusion5",
+            1
+          ],
+          [
+            "hair_long_left_outer_occlusion6",
+            1
+          ],
+          [
+            "hair_long_left_outer_occlusion7",
+            1
+          ],
+          [
+            "hair_long_left_outer_occlusion8",
+            1
+          ],
+          [
+            "hair_bang_left_outer_occlusion2",
+            1
+          ],
+          [
+            "hair_bang_left_outer_occlusion3",
+            1
+          ],
+          [
+            "hair_bang_left_outer_occlusion4",
+            1
+          ],
+          [
+            "hair_bang_left_outer_occlusion5",
+            1
+          ],
+          [
+            "hair_bang_left_outer_occlusion6",
+            1
+          ],
+          [
+            "hair_bang_left_outer_occlusion7",
+            1
+          ],
+          [
+            "hair_bang_left_outer_occlusion8",
+            1
+          ],
+          [
+            "hair_bang_right_outer_occlusion2",
+            1
+          ],
+          [
+            "hair_bang_right_outer_occlusion3",
+            1
+          ],
+          [
+            "hair_bang_right_outer_occlusion4",
+            1
+          ],
+          [
+            "hair_bang_right_outer_occlusion5",
+            1
+          ],
+          [
+            "hair_bang_right_outer_occlusion6",
+            1
+          ],
+          [
+            "hair_long_right_outer_occlusion2",
+            1
+          ],
+          [
+            "hair_long_right_outer_occlusion3",
+            1
+          ],
+          [
+            "hair_long_right_outer_occlusion4",
+            1
+          ],
+          [
+            "hair_long_right_outer_occlusion5",
+            1
+          ],
+          [
+            "hair_long_right_outer_occlusion6",
+            1
+          ],
+          [
+            "hair_long_right_outer_occlusion7",
+            1
+          ],
+          [
+            "hair_long_right_outer_occlusion8",
+            1
+          ],
+          [
+            "head_edge_original",
+            1
+          ],
+          [
+            "body_visible_fixed",
+            1
+          ],
+          [
+            "hair_bang_left_outer9",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "name": "index outfit tights selected",
+      "pass": true,
+      "detail": {
+        "pixels": 1203679323,
+        "opacities": [
+          [
+            "hat_flower",
+            1
+          ],
+          [
+            "hair_clip",
+            1
+          ],
+          [
+            "hair_long_right_outer_lower",
+            1
+          ],
+          [
+            "hair_long_right_middle",
+            1
+          ],
+          [
+            "hair_long_right_inner",
+            1
+          ],
+          [
+            "hair_long_left_middle",
+            1
+          ],
+          [
+            "hair_long_left_inner",
+            1
+          ],
+          [
+            "hair_left_upper_loop",
+            1
+          ],
+          [
+            "hair_bang_right_inner",
+            1
+          ],
+          [
+            "hair_bang_center_right",
+            1
+          ],
+          [
+            "hair_bang_left_inner",
+            1
+          ],
+          [
+            "hair_bang_center_left",
+            1
+          ],
+          [
+            "hair_bangs_base",
+            1
+          ],
+          [
+            "ribbon_tail_right",
+            1
+          ],
+          [
+            "ribbon_tail_left",
+            1
+          ],
+          [
+            "ribbon_bow_front",
+            1
+          ],
+          [
+            "ribbon_bow_back",
+            1
+          ],
+          [
+            "nose_visible_mark",
+            1
+          ],
+          [
+            "mouth_visible_line",
+            1
+          ],
+          [
+            "eye_right_upper_lash",
+            1
+          ],
+          [
+            "eye_right_sclera_visible",
+            1
+          ],
+          [
+            "eye_right_lower_lid_rim",
+            1
+          ],
+          [
+            "eye_right_iris",
+            1
+          ],
+          [
+            "eye_right_highlight_upper",
+            1
+          ],
+          [
+            "eye_right_highlight_secondary",
+            1
+          ],
+          [
+            "eye_left_upper_lash",
+            1
+          ],
+          [
+            "eye_left_sclera_visible",
+            1
+          ],
+          [
+            "eye_left_pupil_visible_rim",
+            1
+          ],
+          [
+            "eye_left_lower_lid_rim",
+            1
+          ],
+          [
+            "eye_left_iris",
+            1
+          ],
+          [
+            "eye_left_highlight_upper",
+            1
+          ],
+          [
+            "eye_left_highlight_center",
+            1
+          ],
+          [
+            "brow_right_visible",
+            1
+          ],
+          [
+            "brow_left_visible",
+            1
+          ],
+          [
+            "face_visible_residual",
+            1
+          ],
+          [
+            "face_skin_local_visible",
+            1
+          ],
+          [
+            "neck_visible",
+            1
+          ],
+          [
+            "hair_back_right",
+            1
+          ],
+          [
+            "hair_back_left",
+            1
+          ],
+          [
+            "brow_right_occlusion",
+            1
+          ],
+          [
+            "brow_left_occlusion",
+            1
+          ],
+          [
+            "iris_right_occlusion",
+            1
+          ],
+          [
+            "iris_left_occlusion",
+            1
+          ],
+          [
+            "sclera_right_occlusion",
+            1
+          ],
+          [
+            "sclera_left_occlusion",
+            1
+          ],
+          [
+            "hair_long_right_outer_lower_occlusion",
+            1
+          ],
+          [
+            "hair_long_right_middle_occlusion",
+            1
+          ],
+          [
+            "hair_long_right_inner_occlusion",
+            1
+          ],
+          [
+            "hair_long_left_middle_occlusion",
+            1
+          ],
+          [
+            "hair_long_left_inner_occlusion",
+            1
+          ],
+          [
+            "hair_left_upper_loop_occlusion",
+            1
+          ],
+          [
+            "hair_bang_right_inner_occlusion",
+            1
+          ],
+          [
+            "hair_bang_center_right_occlusion",
+            1
+          ],
+          [
+            "hair_bang_left_inner_occlusion",
+            1
+          ],
+          [
+            "hair_bang_center_left_occlusion",
+            1
+          ],
+          [
+            "hair_bangs_base_occlusion",
+            1
+          ],
+          [
+            "hair_back_right_occlusion",
+            1
+          ],
+          [
+            "hair_back_left_occlusion",
+            1
+          ],
+          [
+            "neck_occlusion_underpaint",
+            1
+          ],
+          [
+            "face_occlusion_underpaint",
+            1
+          ],
+          [
+            "body_under_hair_occlusion",
+            1
+          ],
+          [
+            "hair_long_left_outer2",
+            1
+          ],
+          [
+            "hair_long_left_outer3",
+            1
+          ],
+          [
+            "hair_long_left_outer4",
+            1
+          ],
+          [
+            "hair_long_left_outer5",
+            1
+          ],
+          [
+            "hair_long_left_outer6",
+            1
+          ],
+          [
+            "hair_long_left_outer7",
+            1
+          ],
+          [
+            "hair_long_left_outer8",
+            1
+          ],
+          [
+            "hair_long_right_outer2",
+            1
+          ],
+          [
+            "hair_long_right_outer3",
+            1
+          ],
+          [
+            "hair_long_right_outer4",
+            1
+          ],
+          [
+            "hair_long_right_outer5",
+            1
+          ],
+          [
+            "hair_long_right_outer6",
+            1
+          ],
+          [
+            "hair_long_right_outer7",
+            1
+          ],
+          [
+            "hair_long_right_outer8",
+            1
+          ],
+          [
+            "hair_side_left2",
+            1
+          ],
+          [
+            "hair_side_left3",
+            1
+          ],
+          [
+            "hair_side_left4",
+            1
+          ],
+          [
+            "hair_side_left5",
+            1
+          ],
+          [
+            "hair_side_left6",
+            1
+          ],
+          [
+            "hair_side_right2",
+            1
+          ],
+          [
+            "hair_side_right3",
+            1
+          ],
+          [
+            "hair_side_right4",
+            1
+          ],
+          [
+            "hair_side_right5",
+            1
+          ],
+          [
+            "hair_side_right6",
+            1
+          ],
+          [
+            "hair_bang_left_outer2",
+            1
+          ],
+          [
+            "hair_bang_left_outer3",
+            1
+          ],
+          [
+            "hair_bang_left_outer4",
+            1
+          ],
+          [
+            "hair_bang_left_outer5",
+            1
+          ],
+          [
+            "hair_bang_left_outer6",
+            1
+          ],
+          [
+            "hair_bang_left_outer7",
+            1
+          ],
+          [
+            "hair_bang_left_outer8",
+            1
+          ],
+          [
+            "hair_bang_right_outer2",
+            1
+          ],
+          [
+            "hair_bang_right_outer3",
+            1
+          ],
+          [
+            "hair_bang_right_outer4",
+            1
+          ],
+          [
+            "hair_bang_right_outer5",
+            1
+          ],
+          [
+            "hair_bang_right_outer6",
+            1
+          ],
+          [
+            "hair_side_right_occlusion2",
+            1
+          ],
+          [
+            "hair_side_right_occlusion3",
+            1
+          ],
+          [
+            "hair_side_right_occlusion4",
+            1
+          ],
+          [
+            "hair_side_right_occlusion5",
+            1
+          ],
+          [
+            "hair_side_right_occlusion6",
+            1
+          ],
+          [
+            "hair_side_left_occlusion2",
+            1
+          ],
+          [
+            "hair_side_left_occlusion3",
+            1
+          ],
+          [
+            "hair_side_left_occlusion4",
+            1
+          ],
+          [
+            "hair_side_left_occlusion5",
+            1
+          ],
+          [
+            "hair_side_left_occlusion6",
+            1
+          ],
+          [
+            "hair_long_left_outer_occlusion2",
+            1
+          ],
+          [
+            "hair_long_left_outer_occlusion3",
+            1
+          ],
+          [
+            "hair_long_left_outer_occlusion4",
+            1
+          ],
+          [
+            "hair_long_left_outer_occlusion5",
+            1
+          ],
+          [
+            "hair_long_left_outer_occlusion6",
+            1
+          ],
+          [
+            "hair_long_left_outer_occlusion7",
+            1
+          ],
+          [
+            "hair_long_left_outer_occlusion8",
+            1
+          ],
+          [
+            "hair_bang_left_outer_occlusion2",
+            1
+          ],
+          [
+            "hair_bang_left_outer_occlusion3",
+            1
+          ],
+          [
+            "hair_bang_left_outer_occlusion4",
+            1
+          ],
+          [
+            "hair_bang_left_outer_occlusion5",
+            1
+          ],
+          [
+            "hair_bang_left_outer_occlusion6",
+            1
+          ],
+          [
+            "hair_bang_left_outer_occlusion7",
+            1
+          ],
+          [
+            "hair_bang_left_outer_occlusion8",
+            1
+          ],
+          [
+            "hair_bang_right_outer_occlusion2",
+            1
+          ],
+          [
+            "hair_bang_right_outer_occlusion3",
+            1
+          ],
+          [
+            "hair_bang_right_outer_occlusion4",
+            1
+          ],
+          [
+            "hair_bang_right_outer_occlusion5",
+            1
+          ],
+          [
+            "hair_bang_right_outer_occlusion6",
+            1
+          ],
+          [
+            "hair_long_right_outer_occlusion2",
+            1
+          ],
+          [
+            "hair_long_right_outer_occlusion3",
+            1
+          ],
+          [
+            "hair_long_right_outer_occlusion4",
+            1
+          ],
+          [
+            "hair_long_right_outer_occlusion5",
+            1
+          ],
+          [
+            "hair_long_right_outer_occlusion6",
+            1
+          ],
+          [
+            "hair_long_right_outer_occlusion7",
+            1
+          ],
+          [
+            "hair_long_right_outer_occlusion8",
+            1
+          ],
+          [
+            "head_edge_original",
+            1
+          ],
+          [
+            "body_visible_fixed",
+            1
+          ],
+          [
+            "hair_bang_left_outer9",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "name": "index outfit overknee selected",
+      "pass": true,
+      "detail": {
+        "pixels": 1724664027,
+        "opacities": [
+          [
+            "hat_flower",
+            1
+          ],
+          [
+            "hair_clip",
+            1
+          ],
+          [
+            "hair_long_right_outer_lower",
+            1
+          ],
+          [
+            "hair_long_right_middle",
+            1
+          ],
+          [
+            "hair_long_right_inner",
+            1
+          ],
+          [
+            "hair_long_left_middle",
+            1
+          ],
+          [
+            "hair_long_left_inner",
+            1
+          ],
+          [
+            "hair_left_upper_loop",
+            1
+          ],
+          [
+            "hair_bang_right_inner",
+            1
+          ],
+          [
+            "hair_bang_center_right",
+            1
+          ],
+          [
+            "hair_bang_left_inner",
+            1
+          ],
+          [
+            "hair_bang_center_left",
+            1
+          ],
+          [
+            "hair_bangs_base",
+            1
+          ],
+          [
+            "ribbon_tail_right",
+            1
+          ],
+          [
+            "ribbon_tail_left",
+            1
+          ],
+          [
+            "ribbon_bow_front",
+            1
+          ],
+          [
+            "ribbon_bow_back",
+            1
+          ],
+          [
+            "nose_visible_mark",
+            1
+          ],
+          [
+            "mouth_visible_line",
+            1
+          ],
+          [
+            "eye_right_upper_lash",
+            1
+          ],
+          [
+            "eye_right_sclera_visible",
+            1
+          ],
+          [
+            "eye_right_lower_lid_rim",
+            1
+          ],
+          [
+            "eye_right_iris",
+            1
+          ],
+          [
+            "eye_right_highlight_upper",
+            1
+          ],
+          [
+            "eye_right_highlight_secondary",
+            1
+          ],
+          [
+            "eye_left_upper_lash",
+            1
+          ],
+          [
+            "eye_left_sclera_visible",
+            1
+          ],
+          [
+            "eye_left_pupil_visible_rim",
+            1
+          ],
+          [
+            "eye_left_lower_lid_rim",
+            1
+          ],
+          [
+            "eye_left_iris",
+            1
+          ],
+          [
+            "eye_left_highlight_upper",
+            1
+          ],
+          [
+            "eye_left_highlight_center",
+            1
+          ],
+          [
+            "brow_right_visible",
+            1
+          ],
+          [
+            "brow_left_visible",
+            1
+          ],
+          [
+            "face_visible_residual",
+            1
+          ],
+          [
+            "face_skin_local_visible",
+            1
+          ],
+          [
+            "neck_visible",
+            1
+          ],
+          [
+            "hair_back_right",
+            1
+          ],
+          [
+            "hair_back_left",
+            1
+          ],
+          [
+            "brow_right_occlusion",
+            1
+          ],
+          [
+            "brow_left_occlusion",
+            1
+          ],
+          [
+            "iris_right_occlusion",
+            1
+          ],
+          [
+            "iris_left_occlusion",
+            1
+          ],
+          [
+            "sclera_right_occlusion",
+            1
+          ],
+          [
+            "sclera_left_occlusion",
+            1
+          ],
+          [
+            "hair_long_right_outer_lower_occlusion",
+            1
+          ],
+          [
+            "hair_long_right_middle_occlusion",
+            1
+          ],
+          [
+            "hair_long_right_inner_occlusion",
+            1
+          ],
+          [
+            "hair_long_left_middle_occlusion",
+            1
+          ],
+          [
+            "hair_long_left_inner_occlusion",
+            1
+          ],
+          [
+            "hair_left_upper_loop_occlusion",
+            1
+          ],
+          [
+            "hair_bang_right_inner_occlusion",
+            1
+          ],
+          [
+            "hair_bang_center_right_occlusion",
+            1
+          ],
+          [
+            "hair_bang_left_inner_occlusion",
+            1
+          ],
+          [
+            "hair_bang_center_left_occlusion",
+            1
+          ],
+          [
+            "hair_bangs_base_occlusion",
+            1
+          ],
+          [
+            "hair_back_right_occlusion",
+            1
+          ],
+          [
+            "hair_back_left_occlusion",
+            1
+          ],
+          [
+            "neck_occlusion_underpaint",
+            1
+          ],
+          [
+            "face_occlusion_underpaint",
+            1
+          ],
+          [
+            "body_under_hair_occlusion",
+            1
+          ],
+          [
+            "hair_long_left_outer2",
+            1
+          ],
+          [
+            "hair_long_left_outer3",
+            1
+          ],
+          [
+            "hair_long_left_outer4",
+            1
+          ],
+          [
+            "hair_long_left_outer5",
+            1
+          ],
+          [
+            "hair_long_left_outer6",
+            1
+          ],
+          [
+            "hair_long_left_outer7",
+            1
+          ],
+          [
+            "hair_long_left_outer8",
+            1
+          ],
+          [
+            "hair_long_right_outer2",
+            1
+          ],
+          [
+            "hair_long_right_outer3",
+            1
+          ],
+          [
+            "hair_long_right_outer4",
+            1
+          ],
+          [
+            "hair_long_right_outer5",
+            1
+          ],
+          [
+            "hair_long_right_outer6",
+            1
+          ],
+          [
+            "hair_long_right_outer7",
+            1
+          ],
+          [
+            "hair_long_right_outer8",
+            1
+          ],
+          [
+            "hair_side_left2",
+            1
+          ],
+          [
+            "hair_side_left3",
+            1
+          ],
+          [
+            "hair_side_left4",
+            1
+          ],
+          [
+            "hair_side_left5",
+            1
+          ],
+          [
+            "hair_side_left6",
+            1
+          ],
+          [
+            "hair_side_right2",
+            1
+          ],
+          [
+            "hair_side_right3",
+            1
+          ],
+          [
+            "hair_side_right4",
+            1
+          ],
+          [
+            "hair_side_right5",
+            1
+          ],
+          [
+            "hair_side_right6",
+            1
+          ],
+          [
+            "hair_bang_left_outer2",
+            1
+          ],
+          [
+            "hair_bang_left_outer3",
+            1
+          ],
+          [
+            "hair_bang_left_outer4",
+            1
+          ],
+          [
+            "hair_bang_left_outer5",
+            1
+          ],
+          [
+            "hair_bang_left_outer6",
+            1
+          ],
+          [
+            "hair_bang_left_outer7",
+            1
+          ],
+          [
+            "hair_bang_left_outer8",
+            1
+          ],
+          [
+            "hair_bang_right_outer2",
+            1
+          ],
+          [
+            "hair_bang_right_outer3",
+            1
+          ],
+          [
+            "hair_bang_right_outer4",
+            1
+          ],
+          [
+            "hair_bang_right_outer5",
+            1
+          ],
+          [
+            "hair_bang_right_outer6",
+            1
+          ],
+          [
+            "hair_side_right_occlusion2",
+            1
+          ],
+          [
+            "hair_side_right_occlusion3",
+            1
+          ],
+          [
+            "hair_side_right_occlusion4",
+            1
+          ],
+          [
+            "hair_side_right_occlusion5",
+            1
+          ],
+          [
+            "hair_side_right_occlusion6",
+            1
+          ],
+          [
+            "hair_side_left_occlusion2",
+            1
+          ],
+          [
+            "hair_side_left_occlusion3",
+            1
+          ],
+          [
+            "hair_side_left_occlusion4",
+            1
+          ],
+          [
+            "hair_side_left_occlusion5",
+            1
+          ],
+          [
+            "hair_side_left_occlusion6",
+            1
+          ],
+          [
+            "hair_long_left_outer_occlusion2",
+            1
+          ],
+          [
+            "hair_long_left_outer_occlusion3",
+            1
+          ],
+          [
+            "hair_long_left_outer_occlusion4",
+            1
+          ],
+          [
+            "hair_long_left_outer_occlusion5",
+            1
+          ],
+          [
+            "hair_long_left_outer_occlusion6",
+            1
+          ],
+          [
+            "hair_long_left_outer_occlusion7",
+            1
+          ],
+          [
+            "hair_long_left_outer_occlusion8",
+            1
+          ],
+          [
+            "hair_bang_left_outer_occlusion2",
+            1
+          ],
+          [
+            "hair_bang_left_outer_occlusion3",
+            1
+          ],
+          [
+            "hair_bang_left_outer_occlusion4",
+            1
+          ],
+          [
+            "hair_bang_left_outer_occlusion5",
+            1
+          ],
+          [
+            "hair_bang_left_outer_occlusion6",
+            1
+          ],
+          [
+            "hair_bang_left_outer_occlusion7",
+            1
+          ],
+          [
+            "hair_bang_left_outer_occlusion8",
+            1
+          ],
+          [
+            "hair_bang_right_outer_occlusion2",
+            1
+          ],
+          [
+            "hair_bang_right_outer_occlusion3",
+            1
+          ],
+          [
+            "hair_bang_right_outer_occlusion4",
+            1
+          ],
+          [
+            "hair_bang_right_outer_occlusion5",
+            1
+          ],
+          [
+            "hair_bang_right_outer_occlusion6",
+            1
+          ],
+          [
+            "hair_long_right_outer_occlusion2",
+            1
+          ],
+          [
+            "hair_long_right_outer_occlusion3",
+            1
+          ],
+          [
+            "hair_long_right_outer_occlusion4",
+            1
+          ],
+          [
+            "hair_long_right_outer_occlusion5",
+            1
+          ],
+          [
+            "hair_long_right_outer_occlusion6",
+            1
+          ],
+          [
+            "hair_long_right_outer_occlusion7",
+            1
+          ],
+          [
+            "hair_long_right_outer_occlusion8",
+            1
+          ],
+          [
+            "head_edge_original",
+            1
+          ],
+          [
+            "body_visible_fixed",
+            1
+          ],
+          [
+            "hair_bang_left_outer9",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "name": "index every outfit changes pixels",
+      "pass": true,
+      "detail": [
+        2612502370,
+        1203679323,
+        1724664027
+      ]
+    },
+    {
+      "name": "index zoom pan reset",
+      "pass": true,
+      "detail": {
+        "z": 1.2,
+        "pan": [
+          462,
+          768
+        ],
+        "reset": {
+          "focus": [
+            512,
+            768
+          ],
+          "zoom": 1,
+          "padding": 0.96,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "name": "index pat expression and actual mesh motion then reset",
+      "pass": true,
+      "detail": {
+        "expression": "happy",
+        "angle": 11.41555404663086,
+        "end": "neutral"
+      }
+    },
+    {
+      "name": "index poke expression and actual mesh motion then reset",
+      "pass": true,
+      "detail": {
+        "expression": "surprised",
+        "angle": -9.643712997436523,
+        "end": "neutral"
+      }
+    },
+    {
+      "name": "index pinch expression and actual mesh motion then reset",
+      "pass": true,
+      "detail": {
+        "expression": "shy",
+        "angle": 10.167143821716309,
+        "end": "neutral"
+      }
+    },
+    {
+      "name": "index rub expression and actual mesh motion then reset",
+      "pass": true,
+      "detail": {
+        "expression": "angry",
+        "angle": 3.608140468597412,
+        "end": "neutral"
+      }
+    },
+    {
+      "name": "seated loads actual Cubism in opaque iframe",
+      "pass": true,
+      "detail": {
+        "url": "http://127.0.0.1:5241/konisi-game/live2d/seated/character.model3.json",
+        "drawables": 1,
+        "core": 100663297
+      }
+    },
+    {
+      "name": "seated natural parameter changes actual mesh",
+      "pass": true,
+      "detail": {
+        "angle": [
+          1.4049618244171143,
+          8.161005020141602
+        ],
+        "maxVertexDelta": 0.004092451184988022
+      }
+    },
+    {
+      "name": "Level1 preserves no action buttons",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "seated pointer does not affect head or camera",
+      "pass": true,
+      "detail": {
+        "angle": 0,
+        "delta": 0
+      }
+    },
+    {
+      "name": "seated outfit original selected",
+      "pass": true,
+      "detail": {
+        "pixels": 822665435,
+        "opacities": [
+          [
+            "ArtMesh10",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "name": "seated outfit tights selected",
+      "pass": true,
+      "detail": {
+        "pixels": 2479951678,
+        "opacities": [
+          [
+            "ArtMesh10",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "name": "seated outfit overknee selected",
+      "pass": true,
+      "detail": {
+        "pixels": 2925851793,
+        "opacities": [
+          [
+            "ArtMesh10",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "name": "seated every outfit changes pixels",
+      "pass": true,
+      "detail": [
+        822665435,
+        2479951678,
+        2925851793
+      ]
+    },
+    {
+      "name": "seated zoom pan reset",
+      "pass": true,
+      "detail": {
+        "z": 1.2,
+        "pan": [
+          422.7565104166667,
+          825.5
+        ],
+        "reset": {
+          "focus": [
+            476.5,
+            825.5
+          ],
+          "zoom": 1,
+          "padding": 0.96,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "name": "kneeling loads actual Cubism in opaque iframe",
+      "pass": true,
+      "detail": {
+        "url": "http://127.0.0.1:5241/konisi-game/live2d/kneeling/character.model3.json",
+        "drawables": 4,
+        "core": 100663297
+      }
+    },
+    {
+      "name": "kneeling natural parameter changes actual mesh",
+      "pass": true,
+      "detail": {
+        "angle": [
+          1.4044970273971558,
+          8.147941589355469
+        ],
+        "maxVertexDelta": 0.003831544890999794
+      }
+    },
+    {
+      "name": "Level2 preserves five actions",
+      "pass": true,
+      "detail": 5
+    },
+    {
+      "name": "kneeling pointer does not affect head or camera",
+      "pass": true,
+      "detail": {
+        "angle": 0,
+        "delta": 0
+      }
+    },
+    {
+      "name": "kneeling outfit tights selected",
+      "pass": true,
+      "detail": {
+        "pixels": 3739452910,
+        "opacities": [
+          [
+            "ArtMesh9",
+            0
+          ],
+          [
+            "ArtMesh10",
+            0
+          ],
+          [
+            "ArtMesh11",
+            1
+          ],
+          [
+            "ArtMesh12",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "name": "kneeling outfit shortsocks selected",
+      "pass": true,
+      "detail": {
+        "pixels": 41305874,
+        "opacities": [
+          [
+            "ArtMesh9",
+            0
+          ],
+          [
+            "ArtMesh10",
+            1
+          ],
+          [
+            "ArtMesh11",
+            0
+          ],
+          [
+            "ArtMesh12",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "name": "kneeling outfit barefoot selected",
+      "pass": true,
+      "detail": {
+        "pixels": 506641279,
+        "opacities": [
+          [
+            "ArtMesh9",
+            1
+          ],
+          [
+            "ArtMesh10",
+            0
+          ],
+          [
+            "ArtMesh11",
+            0
+          ],
+          [
+            "ArtMesh12",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "name": "kneeling every outfit changes pixels",
+      "pass": true,
+      "detail": [
+        3739452910,
+        41305874,
+        506641279
+      ]
+    },
+    {
+      "name": "kneeling zoom pan reset",
+      "pass": true,
+      "detail": {
+        "z": 1.2,
+        "pan": [
+          462,
+          768
+        ],
+        "reset": {
+          "focus": [
+            512,
+            768
+          ],
+          "zoom": 1,
+          "padding": 0.96,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "name": "kneeling pat expression and actual mesh motion then reset",
+      "pass": true,
+      "detail": {
+        "expression": "wink",
+        "angle": 10.459456443786621,
+        "end": "neutral"
+      }
+    },
+    {
+      "name": "kneeling poke expression and actual mesh motion then reset",
+      "pass": true,
+      "detail": {
+        "expression": "startled",
+        "angle": 4.461376667022705,
+        "end": "neutral"
+      }
+    },
+    {
+      "name": "kneeling pinch expression and actual mesh motion then reset",
+      "pass": true,
+      "detail": {
+        "expression": "pout",
+        "angle": 11.247611999511719,
+        "end": "neutral"
+      }
+    },
+    {
+      "name": "kneeling rub expression and actual mesh motion then reset",
+      "pass": true,
+      "detail": {
+        "expression": "puzzled",
+        "angle": -5.635729789733887,
+        "end": "neutral"
+      }
+    },
+    {
+      "name": "kneeling tickle expression and actual mesh motion then reset",
+      "pass": true,
+      "detail": {
+        "expression": "laugh",
+        "angle": -0.7959401607513428,
+        "end": "neutral"
+      }
+    },
+    {
+      "name": "home loads actual Cubism in opaque iframe",
+      "pass": true,
+      "detail": {
+        "url": "http://127.0.0.1:5241/konisi-game/live2d/standing/character.model3.json",
+        "drawables": 136,
+        "core": 100663297
+      }
+    },
+    {
+      "name": "home natural parameter changes actual mesh",
+      "pass": true,
+      "detail": {
+        "angle": [
+          1.7293779850006104,
+          8.45435905456543
+        ],
+        "maxVertexDelta": 0.003901839256286621
+      }
+    },
+    {
+      "name": "home detailed model URL and native mesh count",
+      "pass": true,
+      "detail": {
+        "url": "http://127.0.0.1:5241/konisi-game/live2d/standing/character.model3.json",
+        "drawables": 136
+      }
+    },
+    {
+      "name": "home actual served MOC matches verified detailed SHA",
+      "pass": true,
+      "detail": {
+        "url": "http://127.0.0.1:5241/konisi-game/live2d/standing/detailed/standing-detailed.moc3",
+        "sha256": "0e496d30e887f48e5daf432556ccaf1be0726a2617a2485d91703ac60f065e46"
+      }
+    },
+    {
+      "name": "home native physics 6 settings 36 outputs 60fps evaluates",
+      "pass": true,
+      "detail": {
+        "loaded": true,
+        "settingCount": 6,
+        "outputCount": 36,
+        "fps": 60,
+        "evaluations": [
+          8,
+          33
+        ]
+      }
+    },
+    {
+      "name": "home idle native hair outputs and vertices move",
+      "pass": true,
+      "detail": {
+        "parameterDelta": 1.2143425941467285,
+        "maxHairVertexDelta": 0.0026115477085113525,
+        "nonzeroOutputs": 28
+      }
+    },
+    {
+      "name": "home detailed expression carrier used",
+      "pass": true,
+      "detail": {
+        "bodyHost": "body_visible_fixed",
+        "faceHost": "face_visible_residual",
+        "facialOriginal": [
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "eye_left_pupil_visible_rim",
+          "eye_left_upper_lash",
+          "eye_right_upper_lash",
+          "eye_left_iris",
+          "eye_right_iris",
+          "eye_left_sclera_visible",
+          "eye_right_sclera_visible",
+          "eye_left_lower_lid_rim",
+          "eye_right_lower_lid_rim",
+          "brow_left_visible",
+          "brow_right_visible",
+          "nose_visible_mark",
+          "mouth_visible_line",
+          "face_skin_local_visible"
+        ],
+        "facialOcclusion": [
+          "iris_left_occlusion",
+          "iris_right_occlusion",
+          "sclera_left_occlusion",
+          "sclera_right_occlusion",
+          "brow_left_occlusion",
+          "brow_right_occlusion"
+        ],
+        "blinkFade": [
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "eye_left_pupil_visible_rim",
+          "eye_left_upper_lash",
+          "eye_right_upper_lash",
+          "eye_left_iris",
+          "eye_right_iris",
+          "eye_left_sclera_visible",
+          "eye_right_sclera_visible",
+          "eye_left_lower_lid_rim",
+          "eye_right_lower_lid_rim",
+          "iris_left_occlusion",
+          "iris_right_occlusion",
+          "sclera_left_occlusion",
+          "sclera_right_occlusion"
+        ]
+      }
+    },
+    {
+      "name": "home fullbody camera",
+      "pass": true,
+      "detail": {
+        "focus": [
+          512,
+          768
+        ],
+        "zoom": 1,
+        "padding": 0.96,
+        "offset": [
+          0.17888197849666126,
+          1.083411948355515
+        ]
+      }
+    },
+    {
+      "name": "home full figure inside canvas",
+      "pass": true,
+      "detail": {
+        "count": 59426,
+        "x0": 18,
+        "y0": 184,
+        "x1": 319,
+        "y1": 666,
+        "width": 340,
+        "height": 850
+      }
+    },
+    {
+      "name": "home pat reaction",
+      "pass": true
+    },
+    {
+      "name": "index mobile reduced motion starts still with controls visible",
+      "pass": true,
+      "detail": {
+        "angle": 0,
+        "motion": false,
+        "headMotion": false
+      }
+    },
+    {
+      "name": "standing mobile reduced motion hair and camera do not follow pointer",
+      "pass": true,
+      "detail": {
+        "hairDelta": 0,
+        "physicsEvaluations": 0
+      }
+    },
+    {
+      "name": "index mobile layout fits viewport",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "canvas": 390
+      }
+    },
+    {
+      "name": "seated mobile reduced motion starts still with controls visible",
+      "pass": true,
+      "detail": {
+        "angle": 0,
+        "motion": false,
+        "headMotion": false
+      }
+    },
+    {
+      "name": "seated mobile layout fits viewport",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "canvas": 390
+      }
+    },
+    {
+      "name": "kneeling mobile reduced motion starts still with controls visible",
+      "pass": true,
+      "detail": {
+        "angle": 0,
+        "motion": false,
+        "headMotion": false
+      }
+    },
+    {
+      "name": "kneeling mobile layout fits viewport",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "canvas": 390
+      }
+    },
+    {
+      "name": "Level2 touch reaction retains expression with reduced head motion",
+      "pass": true,
+      "detail": {
+        "expression": "laugh",
+        "angle": 0
+      }
+    },
+    {
+      "name": "Level2 touch reaction resets",
+      "pass": true
+    },
+    {
+      "name": "missing model clearly fails without fake fallback",
+      "pass": true
+    },
+    {
+      "name": "load retry recovers actual renderer",
+      "pass": true
+    },
+    {
+      "name": "no JS errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

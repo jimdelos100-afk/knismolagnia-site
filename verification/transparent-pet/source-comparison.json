@@ -1,0 +1,36 @@
+{
+  "baseArchive": "V8-Live2D-detailed-website-2026-10-14.zip",
+  "baseArchiveSha256": "d532a83e7be6f178a917aabfbc07b80ba42b2e376cf1686d66a63f3a41c550ec",
+  "priorFiles": 230,
+  "unchangedPriorFiles": 219,
+  "changedPriorFiles": [
+    "Live2D-STATUS.md",
+    "README.md",
+    "public/konisi-game/character.css",
+    "public/konisi-game/character.js",
+    "public/konisi-game/home.html",
+    "public/konisi-game/live2d/INTEGRATION.md",
+    "public/konisi-game/live2d/README.md",
+    "public/konisi-game/live2d/renderer.mjs",
+    "src/app/globals.css",
+    "src/components/CharacterFrame.tsx",
+    "src/components/HomeCharacter.tsx"
+  ],
+  "deletedPriorFiles": [],
+  "protectedOriginalFilesUnchanged": 178,
+  "modelsUnchanged": true,
+  "level1Level2AndBusinessSourceUnchanged": true,
+  "authorizedVisualChange": "src/app/globals.css companion block only",
+  "checksPassed": {
+    "build-checks.json": 3,
+    "website-pet.json": 46,
+    "legacy-main/website-detailed-integration.json": 63,
+    "legacy-texture/standing-detailed-texture-variants.json": 204
+  },
+  "nativeGazeAndPhysicsVerified": true,
+  "productionBuildPassed": true,
+  "typeCheckPassed": true,
+  "publicSiteInspection": "Browser/read-only HTTPS connection could not complete; online cause not conclusively verified.",
+  "accountsDatabaseVerified": false,
+  "onlineDeploymentPerformed": false
+}

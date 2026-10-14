@@ -1,9 +1,11 @@
 /* Genuine Cubism model renderer. No automatic gaze, drag, blink or head motion.
- * App-owned state and animation can set only parameters present in the model.
+ * App-owned state may opt into copied-vertex gaze for the detailed standing
+ * model; native parameters and drawable buffers remain independently owned.
  * Framework/Core retain their own Live2D licenses; see vendor/licenses/.
  */
 import { cameraMatrix, assetURL } from './camera-math.mjs';
 import { validatePhysicsSettings } from './physics-validation.mjs';
+import { createStandingGaze } from './standing-gaze.mjs';
 
 let corePromise;
 let frameworkPromise;
@@ -88,6 +90,7 @@ class Live2DRenderer {
     this.abortController = new AbortController();
     this.textures = []; this.textureDimensions = []; this.defaultMapping = null;
     this.moc = null; this.model = null; this.renderer = null; this.physics = null;
+    this.gaze = null; this.physicsEnabled = true;
     this.physicsInfo = { loaded: false, reason: 'No Physics reference in model3.', inputIds: [], outputIds: [], evaluations: 0 };
     this.retained = false; this.disposed = false;
     this.parameterIndices = new Map(); this.partIndices = new Map();
@@ -186,6 +189,7 @@ class Live2DRenderer {
       indices: Array.from(this.model.getDrawableVertexIndices(drawable.index)),
     }));
     await this.loadPhysics(refs, url.href, signal);
+    this.gaze = createStandingGaze({ model: this.model, canvasInfo: this.info });
     Object.assign(this.status, { phase: 'ready', modelLoaded: true, shadersReady: true,
       mocVersion, latestMocVersion, drawableCount: this.model.getDrawableCount(),
       textureCount: this.textures.length, parameterCount: this.parameterIndices.size,
@@ -210,7 +214,36 @@ class Live2DRenderer {
     this.model.update();
   }
 
-  getPhysicsStatus() { return structuredClone(this.physicsInfo); }
+  getPhysicsStatus() { return structuredClone({ ...this.physicsInfo, enabled: !!this.physics && this.physicsEnabled }); }
+
+  setPhysicsEnabled(enabled) {
+    this.assertModel();
+    if (typeof enabled !== 'boolean') throw new TypeError('Physics enabled must be a boolean.');
+    if (this.physicsEnabled === enabled) return this;
+    this.physicsEnabled = enabled;
+    if (this.physics) {
+      // Reset once per transition, not on every paused frame. Enabling starts
+      // from stable particles; disabling leaves hair outputs at native defaults.
+      this.resetPhysics();
+      if (!enabled) {
+        for (const id of this.physicsInfo.outputIds) {
+          const index = this.parameterIndices.get(id);
+          this.model.setParameterValueByIndex(index, this.model.getParameterDefaultValue(index));
+        }
+        this.model.update();
+      }
+    }
+    return this;
+  }
+
+  setGaze(x, y, options = {}) {
+    this.assertModel();
+    const supported = this.gaze?.set(x, y, options) ?? false;
+    this.status.gazeTracking = this.gaze?.getStatus().enabled ?? false;
+    return supported;
+  }
+
+  getGazeStatus() { return this.gaze?.getStatus() ?? { supported: false, enabled: false }; }
 
   resetPhysics() {
     this.assertModel();
@@ -333,7 +366,7 @@ class Live2DRenderer {
   }
 
   getStatus() {
-    return { ...this.status, canvasInfo: this.info ? { ...this.info } : null,
+    return { ...this.status, gaze: this.getGazeStatus(), canvasInfo: this.info ? { ...this.info } : null,
       modelUrl: this.modelUrl, camera: { ...this.camera, focus: [...this.camera.focus], offset: [...this.camera.offset] },
       optionalReferencesNotPlayed: [...(this.status.optionalReferencesNotPlayed || [])] };
   }
@@ -345,7 +378,7 @@ class Live2DRenderer {
   update(deltaSeconds = 1 / 60) {
     this.assertModel();
     if (!Number.isFinite(deltaSeconds) || deltaSeconds < 0 || deltaSeconds > 0.25) throw new RangeError('Physics step must be 0..0.25 seconds; subdivide long frames.');
-    if (this.physics && deltaSeconds > 0) {
+    if (this.physics && this.physicsEnabled && deltaSeconds > 0) {
       this.physics.evaluate(this.model, deltaSeconds);
       this.physicsInfo.evaluations++;
     }
@@ -373,6 +406,7 @@ class Live2DRenderer {
     this.canvas.removeEventListener('webglcontextlost', this.onContextLost);
     this.canvas.removeEventListener('webglcontextrestored', this.onContextRestored);
     this.physics?.release(); this.physics = null;
+    this.gaze?.dispose(); this.gaze = null;
     this.renderer?.release(); this.renderer = null;
     for (const texture of this.textures) this.gl.deleteTexture(texture);
     this.textures.length = 0;
@@ -382,6 +416,6 @@ class Live2DRenderer {
     if (this.retained) { this.retained = false; users--; }
     if (users === 0 && ownsFramework) { CubismFramework.dispose(); ownsFramework = false; }
     activeCanvases.delete(this.canvas);
-    Object.assign(this.status, { phase: 'disposed', modelLoaded: false, shadersReady: false });
+    Object.assign(this.status, { phase: 'disposed', modelLoaded: false, shadersReady: false, gazeTracking: false });
   }
 }

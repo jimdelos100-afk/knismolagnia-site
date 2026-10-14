@@ -1,0 +1,217 @@
+{
+  "passed": true,
+  "recordedAtUtc": "2026-10-14T09:28:32.183874+00:00",
+  "execution": "Actual Node/Core tests ran through stdin in this session. Saved script retains those test bodies with path resolution for its saved location; it was syntax-checked without rerunning or extending the tests. This report serializes the successful outputs and checks current asset hashes against the tested hashes.",
+  "runtime": {
+    "node": "24.21.0",
+    "cubismCore": "6.0.1"
+  },
+  "scripts": {
+    "native": "work/standing-detail-v2/verify-standing-gaze-native.mjs",
+    "aperture": "work/standing-detail-v2/verify-gaze-aperture.py"
+  },
+  "testedModuleHashes": {
+    "renderer.mjs": "98791d7ffd2964950135d8e490995e1723a1a885333f102fe7aa5b07e334cd8a",
+    "standing-gaze.mjs": "ea09d1d0a6d4cb00516b7ff22a3955d4dc83502fffe937825eb27b05ec545271"
+  },
+  "nativeTestRange": {
+    "headParameterId": "ParamAngleZ",
+    "headParameterValues": [
+      -15,
+      0,
+      15
+    ],
+    "gazeSamples": [
+      {
+        "x": 1,
+        "y": 1,
+        "strength": 1
+      },
+      {
+        "x": -1,
+        "y": -1,
+        "strength": 1
+      },
+      {
+        "x": 1,
+        "y": -1,
+        "strength": 0.5
+      },
+      {
+        "x": 99,
+        "y": -99,
+        "strength": 2
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "strength": 1
+      }
+    ],
+    "disabledSample": {
+      "x": 1,
+      "y": 1,
+      "enabled": false
+    },
+    "maxVertexErrorAllowedPixels": 0.0001
+  },
+  "reports": [
+    {
+      "pose": "standing/detailed",
+      "mocSha256": "0e496d30e887f48e5daf432556ccaf1be0726a2617a2485d91703ac60f065e46",
+      "supported": true,
+      "changedDrawableIds": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_right_occlusion",
+        "iris_left_occlusion"
+      ],
+      "maxOffsetErrorPixels": 2.4414062499977796e-05,
+      "nativeBuffersByteIdentical": true,
+      "disabledGetterReturnsNativeBuffer": true,
+      "headMotionPreserved": true,
+      "nativeEyeBallValues": [
+        {
+          "id": "ParamEyeBallX",
+          "value": 0,
+          "unchanged": true
+        },
+        {
+          "id": "ParamEyeBallY",
+          "value": 0,
+          "unchanged": true
+        }
+      ],
+      "disposeRestoresGetter": true,
+      "unsupportedPoseGetterUnmodified": false
+    },
+    {
+      "pose": "seated",
+      "mocSha256": "b811dc80c699e4546648bd5d60ca23e54028b98fddb5b72addc776e88585db94",
+      "supported": false,
+      "changedDrawableIds": [],
+      "maxOffsetErrorPixels": 0,
+      "nativeBuffersByteIdentical": true,
+      "disabledGetterReturnsNativeBuffer": true,
+      "headMotionPreserved": true,
+      "nativeEyeBallValues": [
+        {
+          "id": "ParamEyeBallX",
+          "value": 0,
+          "unchanged": true
+        },
+        {
+          "id": "ParamEyeBallY",
+          "value": 0,
+          "unchanged": true
+        }
+      ],
+      "disposeRestoresGetter": true,
+      "unsupportedPoseGetterUnmodified": true
+    },
+    {
+      "pose": "kneeling",
+      "mocSha256": "e792bfb6cb3850ea29e6093d65e4477cf654c974d2be4337cb242e4d20661515",
+      "supported": false,
+      "changedDrawableIds": [],
+      "maxOffsetErrorPixels": 0,
+      "nativeBuffersByteIdentical": true,
+      "disabledGetterReturnsNativeBuffer": true,
+      "headMotionPreserved": true,
+      "nativeEyeBallValues": [
+        {
+          "id": "ParamEyeBallX",
+          "value": 0,
+          "unchanged": true
+        },
+        {
+          "id": "ParamEyeBallY",
+          "value": 0,
+          "unchanged": true
+        }
+      ],
+      "disposeRestoresGetter": true,
+      "unsupportedPoseGetterUnmodified": true
+    }
+  ],
+  "coreBuffersUnchanged": true,
+  "changedStandingDrawableCount": 9,
+  "gazeLimits": {
+    "xPixels": 0.9,
+    "yPixels": 0.4,
+    "radialSafetyCeilingPixels": 1,
+    "actualMaximumCombinedPixels": 0.9848857801796105,
+    "normalization": "+x screen right, +y screen down; x/y clamp [-1,1], strength clamp [0,1]",
+    "protection": "Conservative displacement bound; no new runtime clipping mask or texture edit"
+  },
+  "apertureVerification": {
+    "report": "gaze-aperture-verification.json",
+    "script": "work/standing-detail-v2/verify-gaze-aperture.py",
+    "sourcePSD": "outputs/standing-detail-v2/standing-detailed.psd",
+    "sourcePSDSha256": "48162ca158323755e86e5b1b618bf2be51f38204785f419169b4a00df21ad5db",
+    "alphaThreshold": 128,
+    "testedShiftPixels": [
+      [
+        1,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        -1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        1,
+        -1
+      ],
+      [
+        -1,
+        -1
+      ]
+    ],
+    "all16EyeDirectionChecksOutsidePixels": 0,
+    "scopeLimit": "Tests original visible iris/pupil/highlight support at alpha >=128 against completed eye aperture plus fixed eyelids in source coordinates. The generated iris underpaint moves with its iris beneath native face/lid layers. This is a source-mask bound check, not a GPU clipping-mask implementation, browser screenshot proof, or a claim about arbitrary eye rotations."
+  },
+  "physicsVerification": {
+    "actualRendererMethodsTested": true,
+    "nativePhysicsOutputs": 36,
+    "activeFramesBeforePause": 30,
+    "pausedFrames": 20,
+    "evaluationsBeforePause": 30,
+    "evaluationsAfterPause": 30,
+    "evaluationsAfterFirstResumedFrame": 31,
+    "evaluationsPausedWithoutIncrease": true,
+    "resetCallsForTwoTransitions": 2,
+    "repeatedDisabledCallsDoNotResetAgain": true,
+    "disabledOutputsRemainAtNativeDefaults": true,
+    "headVerticesMoveWhilePhysicsPaused": true,
+    "getDrawablesMatchesRenderedAccessor": true,
+    "gazeDisableRestoresState": true
+  },
+  "modelAndPSDUnmodified": true,
+  "limitations": [
+    "Original EyeBallX/Y parameters remain unbound and unchanged; gaze is copied-vertex rendering only.",
+    "Native geometry tests do not replace the separate browser interaction and appearance verification.",
+    "Pointer smoothing, expression/blink disabling, user settings and companion behaviour belong to the application controller."
+  ]
+}

@@ -1,0 +1,672 @@
+{
+  "date": "2026-10-14T09:36:28.050Z",
+  "scope": "Actual HomeCharacter and CharacterFrame compiled from source with React and TypeScript, only next/navigation usePathname mocked for routes. Actual globals.css, opaque companion iframe, localStorage persistence and untrusted sibling message fixtures; temporary 127.0.0.1 static server; no account/database/Next backend.",
+  "checks": [
+    {
+      "name": "real React parent mounted opaque eager iframe",
+      "pass": true
+    },
+    {
+      "name": "default companion automatically animates head and native hair",
+      "pass": true,
+      "detail": {
+        "time": [
+          0.39300000000000007,
+          1.3248000000000004
+        ],
+        "angle": [
+          2.638176441192627,
+          9.96170711517334
+        ],
+        "hairDelta": 0.004250824451446533,
+        "physics": {
+          "loaded": true,
+          "url": "http://127.0.0.1:1269/konisi-game/live2d/standing/detailed/standing-detailed.physics3.json",
+          "settingCount": 6,
+          "inputIds": [
+            "ParamAngleZ"
+          ],
+          "outputIds": [
+            "Param_Angle_Rotation_1_hair_long_left_outer",
+            "Param_Angle_Rotation_2_hair_long_left_outer",
+            "Param_Angle_Rotation_3_hair_long_left_outer",
+            "Param_Angle_Rotation_4_hair_long_left_outer",
+            "Param_Angle_Rotation_5_hair_long_left_outer",
+            "Param_Angle_Rotation_6_hair_long_left_outer",
+            "Param_Angle_Rotation_7_hair_long_left_outer",
+            "Param_Angle_Rotation_1_hair_long_right_outer",
+            "Param_Angle_Rotation_2_hair_long_right_outer",
+            "Param_Angle_Rotation_3_hair_long_right_outer",
+            "Param_Angle_Rotation_4_hair_long_right_outer",
+            "Param_Angle_Rotation_5_hair_long_right_outer",
+            "Param_Angle_Rotation_6_hair_long_right_outer",
+            "Param_Angle_Rotation_7_hair_long_right_outer",
+            "Param_Angle_Rotation_1_hair_side_left",
+            "Param_Angle_Rotation_2_hair_side_left",
+            "Param_Angle_Rotation_3_hair_side_left",
+            "Param_Angle_Rotation_4_hair_side_left",
+            "Param_Angle_Rotation_5_hair_side_left",
+            "Param_Angle_Rotation_1_hair_side_right",
+            "Param_Angle_Rotation_2_hair_side_right",
+            "Param_Angle_Rotation_3_hair_side_right",
+            "Param_Angle_Rotation_4_hair_side_right",
+            "Param_Angle_Rotation_5_hair_side_right",
+            "Param_Angle_Rotation_1_hair_bang_left_outer",
+            "Param_Angle_Rotation_2_hair_bang_left_outer",
+            "Param_Angle_Rotation_3_hair_bang_left_outer",
+            "Param_Angle_Rotation_4_hair_bang_left_outer",
+            "Param_Angle_Rotation_5_hair_bang_left_outer",
+            "Param_Angle_Rotation_6_hair_bang_left_outer",
+            "Param_Angle_Rotation_7_hair_bang_left_outer",
+            "Param_Angle_Rotation_1_hair_bang_right_outer",
+            "Param_Angle_Rotation_2_hair_bang_right_outer",
+            "Param_Angle_Rotation_3_hair_bang_right_outer",
+            "Param_Angle_Rotation_4_hair_bang_right_outer",
+            "Param_Angle_Rotation_5_hair_bang_right_outer"
+          ],
+          "particleCount": 42,
+          "fps": 60,
+          "evaluations": 39,
+          "reason": null,
+          "enabled": true
+        }
+      }
+    },
+    {
+      "name": "ready handshake reaches actual parent",
+      "pass": true
+    },
+    {
+      "name": "root body frame canvas remain transparent",
+      "pass": true,
+      "detail": {
+        "backgrounds": [
+          {
+            "color": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "bounds": {
+          "n": 65882,
+          "x0": 19,
+          "y0": 26,
+          "x1": 338,
+          "y1": 534,
+          "width": 358,
+          "height": 560
+        }
+      }
+    },
+    {
+      "name": "homepage full figure remains inside transparent canvas",
+      "pass": true,
+      "detail": {
+        "n": 65882,
+        "x0": 19,
+        "y0": 26,
+        "x1": 338,
+        "y1": 534,
+        "width": 358,
+        "height": 560
+      }
+    },
+    {
+      "name": "settings initially collapsed and gear usable",
+      "pass": true
+    },
+    {
+      "name": "settings expand with keyboard focus",
+      "pass": true
+    },
+    {
+      "name": "pause freezes clock head hair and gaze meshes",
+      "pass": true,
+      "detail": {
+        "time": [
+          1.6077000000000001,
+          1.6077000000000001
+        ],
+        "vertices": 0
+      }
+    },
+    {
+      "name": "resume restarts animation",
+      "pass": true
+    },
+    {
+      "name": "head hair and blink toggles independently disable their effects",
+      "pass": true,
+      "detail": {
+        "angle": 7.146495062393399e-10,
+        "physics": {
+          "loaded": true,
+          "url": "http://127.0.0.1:1269/konisi-game/live2d/standing/detailed/standing-detailed.physics3.json",
+          "settingCount": 6,
+          "inputIds": [
+            "ParamAngleZ"
+          ],
+          "outputIds": [
+            "Param_Angle_Rotation_1_hair_long_left_outer",
+            "Param_Angle_Rotation_2_hair_long_left_outer",
+            "Param_Angle_Rotation_3_hair_long_left_outer",
+            "Param_Angle_Rotation_4_hair_long_left_outer",
+            "Param_Angle_Rotation_5_hair_long_left_outer",
+            "Param_Angle_Rotation_6_hair_long_left_outer",
+            "Param_Angle_Rotation_7_hair_long_left_outer",
+            "Param_Angle_Rotation_1_hair_long_right_outer",
+            "Param_Angle_Rotation_2_hair_long_right_outer",
+            "Param_Angle_Rotation_3_hair_long_right_outer",
+            "Param_Angle_Rotation_4_hair_long_right_outer",
+            "Param_Angle_Rotation_5_hair_long_right_outer",
+            "Param_Angle_Rotation_6_hair_long_right_outer",
+            "Param_Angle_Rotation_7_hair_long_right_outer",
+            "Param_Angle_Rotation_1_hair_side_left",
+            "Param_Angle_Rotation_2_hair_side_left",
+            "Param_Angle_Rotation_3_hair_side_left",
+            "Param_Angle_Rotation_4_hair_side_left",
+            "Param_Angle_Rotation_5_hair_side_left",
+            "Param_Angle_Rotation_1_hair_side_right",
+            "Param_Angle_Rotation_2_hair_side_right",
+            "Param_Angle_Rotation_3_hair_side_right",
+            "Param_Angle_Rotation_4_hair_side_right",
+            "Param_Angle_Rotation_5_hair_side_right",
+            "Param_Angle_Rotation_1_hair_bang_left_outer",
+            "Param_Angle_Rotation_2_hair_bang_left_outer",
+            "Param_Angle_Rotation_3_hair_bang_left_outer",
+            "Param_Angle_Rotation_4_hair_bang_left_outer",
+            "Param_Angle_Rotation_5_hair_bang_left_outer",
+            "Param_Angle_Rotation_6_hair_bang_left_outer",
+            "Param_Angle_Rotation_7_hair_bang_left_outer",
+            "Param_Angle_Rotation_1_hair_bang_right_outer",
+            "Param_Angle_Rotation_2_hair_bang_right_outer",
+            "Param_Angle_Rotation_3_hair_bang_right_outer",
+            "Param_Angle_Rotation_4_hair_bang_right_outer",
+            "Param_Angle_Rotation_5_hair_bang_right_outer"
+          ],
+          "particleCount": 42,
+          "fps": 60,
+          "evaluations": 68,
+          "reason": null,
+          "enabled": false
+        },
+        "blink": 0
+      }
+    },
+    {
+      "name": "close button collapses settings and returns focus",
+      "pass": true
+    },
+    {
+      "name": "actual parent pointer bridge moves only iris and highlight vertices",
+      "pass": true,
+      "detail": {
+        "changed": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_right_occlusion",
+          "iris_left_occlusion"
+        ],
+        "maxDelta": 0.001749776303768158,
+        "targets": [
+          [
+            -1,
+            -1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "gaze": {
+          "supported": true,
+          "enabled": true,
+          "strength": 1,
+          "input": [
+            0.9908543037639145,
+            0.9908543037639145
+          ],
+          "offsetPixels": [
+            0.8917688733875231,
+            0.3963417215055658
+          ],
+          "limits": {
+            "xPixels": 0.9,
+            "yPixels": 0.4,
+            "radialPixels": 1
+          },
+          "method": "Copied Framework vertices; original native EyeBall parameters remain unbound",
+          "nativeBuffersModified": false,
+          "nativeEyeBallParametersUsed": false,
+          "movedDrawableIds": [
+            "eye_left_iris",
+            "eye_right_iris",
+            "eye_left_pupil_visible_rim",
+            "eye_left_highlight_upper",
+            "eye_left_highlight_center",
+            "eye_right_highlight_upper",
+            "eye_right_highlight_secondary",
+            "iris_left_occlusion",
+            "iris_right_occlusion"
+          ],
+          "apertureProtection": "Conservative subpixel clamp verified against original eye/sclera/lid masks; no new texture or native clipping mask"
+        }
+      }
+    },
+    {
+      "name": "gaze toggle stops actual eye mesh movement",
+      "pass": true,
+      "detail": {
+        "delta": 0,
+        "status": {
+          "supported": true,
+          "enabled": false,
+          "strength": 1,
+          "input": [
+            0,
+            0
+          ],
+          "offsetPixels": [
+            0,
+            0
+          ],
+          "limits": {
+            "xPixels": 0.9,
+            "yPixels": 0.4,
+            "radialPixels": 1
+          },
+          "method": "Copied Framework vertices; original native EyeBall parameters remain unbound",
+          "nativeBuffersModified": false,
+          "nativeEyeBallParametersUsed": false,
+          "movedDrawableIds": [
+            "eye_left_iris",
+            "eye_right_iris",
+            "eye_left_pupil_visible_rim",
+            "eye_left_highlight_upper",
+            "eye_left_highlight_center",
+            "eye_right_highlight_upper",
+            "eye_right_highlight_secondary",
+            "iris_left_occlusion",
+            "iris_right_occlusion"
+          ],
+          "apertureProtection": "Conservative subpixel clamp verified against original eye/sclera/lid masks; no new texture or native clipping mask"
+        }
+      }
+    },
+    {
+      "name": "non-neutral expression disables gaze and hides original eye layers",
+      "pass": true,
+      "detail": {
+        "gaze": {
+          "supported": true,
+          "enabled": false,
+          "strength": 1,
+          "input": [
+            0,
+            0
+          ],
+          "offsetPixels": [
+            0,
+            0
+          ],
+          "limits": {
+            "xPixels": 0.9,
+            "yPixels": 0.4,
+            "radialPixels": 1
+          },
+          "method": "Copied Framework vertices; original native EyeBall parameters remain unbound",
+          "nativeBuffersModified": false,
+          "nativeEyeBallParametersUsed": false,
+          "movedDrawableIds": [
+            "eye_left_iris",
+            "eye_right_iris",
+            "eye_left_pupil_visible_rim",
+            "eye_left_highlight_upper",
+            "eye_left_highlight_center",
+            "eye_right_highlight_upper",
+            "eye_right_highlight_secondary",
+            "iris_left_occlusion",
+            "iris_right_occlusion"
+          ],
+          "apertureProtection": "Conservative subpixel clamp verified against original eye/sclera/lid masks; no new texture or native clipping mask"
+        },
+        "delta": 0
+      }
+    },
+    {
+      "name": "automatic blink visibly reaches closed-eye state",
+      "pass": true,
+      "detail": {
+        "max": 1,
+        "closed": true
+      }
+    },
+    {
+      "name": "closed expression has no duplicate blink or native eye leaks",
+      "pass": true,
+      "detail": {
+        "gaze": {
+          "supported": true,
+          "enabled": false,
+          "strength": 1,
+          "input": [
+            0,
+            0
+          ],
+          "offsetPixels": [
+            0,
+            0
+          ],
+          "limits": {
+            "xPixels": 0.9,
+            "yPixels": 0.4,
+            "radialPixels": 1
+          },
+          "method": "Copied Framework vertices; original native EyeBall parameters remain unbound",
+          "nativeBuffersModified": false,
+          "nativeEyeBallParametersUsed": false,
+          "movedDrawableIds": [
+            "eye_left_iris",
+            "eye_right_iris",
+            "eye_left_pupil_visible_rim",
+            "eye_left_highlight_upper",
+            "eye_left_highlight_center",
+            "eye_right_highlight_upper",
+            "eye_right_highlight_secondary",
+            "iris_left_occlusion",
+            "iris_right_occlusion"
+          ],
+          "apertureProtection": "Conservative subpixel clamp verified against original eye/sclera/lid masks; no new texture or native clipping mask"
+        },
+        "blink": 0
+      }
+    },
+    {
+      "name": "pet outfit original selected",
+      "pass": true
+    },
+    {
+      "name": "pet outfit tights selected",
+      "pass": true
+    },
+    {
+      "name": "pet outfit overknee selected",
+      "pass": true
+    },
+    {
+      "name": "pet three outfits produce distinct actual pixels",
+      "pass": true,
+      "detail": [
+        3307038474,
+        1949373456,
+        1674491956
+      ]
+    },
+    {
+      "name": "pet expression happy selectable",
+      "pass": true
+    },
+    {
+      "name": "pet expression shy selectable",
+      "pass": true
+    },
+    {
+      "name": "pet expression surprised selectable",
+      "pass": true
+    },
+    {
+      "name": "pet expression angry selectable",
+      "pass": true
+    },
+    {
+      "name": "pet expression sad selectable",
+      "pass": true
+    },
+    {
+      "name": "pet expression blink selectable",
+      "pass": true
+    },
+    {
+      "name": "pet expression neutral selectable",
+      "pass": true
+    },
+    {
+      "name": "pet zoom increases actual camera",
+      "pass": true
+    },
+    {
+      "name": "pet reset restores fullbody camera",
+      "pass": true
+    },
+    {
+      "name": "actual parent persists child preferences from UI",
+      "pass": true,
+      "detail": {
+        "motion": false,
+        "headMotion": false,
+        "gaze": true,
+        "blink": true,
+        "hairPhysics": false,
+        "zoom": 1.05,
+        "outfit": "tights",
+        "expression": "shy"
+      }
+    },
+    {
+      "name": "actual parent reload handshake restores saved settings",
+      "pass": true,
+      "detail": {
+        "saved": {
+          "motion": false,
+          "headMotion": false,
+          "gaze": true,
+          "blink": true,
+          "hairPhysics": false,
+          "zoom": 1.05,
+          "outfit": "tights",
+          "expression": "shy"
+        },
+        "restored": {
+          "motion": false,
+          "headMotion": false,
+          "gaze": true,
+          "blink": true,
+          "hairPhysics": false,
+          "zoom": 1.05,
+          "outfit": "tights",
+          "expression": "shy"
+        }
+      }
+    },
+    {
+      "name": "untrusted sibling cannot alter parent storage or child options",
+      "pass": true,
+      "detail": {
+        "preferences": {
+          "motion": false,
+          "headMotion": false,
+          "gaze": true,
+          "blink": true,
+          "hairPhysics": false,
+          "zoom": 1.05,
+          "outfit": "tights",
+          "expression": "shy"
+        }
+      }
+    },
+    {
+      "name": "malformed trusted configuration is ignored",
+      "pass": true
+    },
+    {
+      "name": "minimize hides frame and stops animation",
+      "pass": true,
+      "detail": {
+        "time": [
+          0.21630000000000021,
+          0.21630000000000021
+        ]
+      }
+    },
+    {
+      "name": "minimized state persists",
+      "pass": true
+    },
+    {
+      "name": "restore shows frame and resumes automatic motion",
+      "pass": true
+    },
+    {
+      "name": "hidden route stops companion animation",
+      "pass": true
+    },
+    {
+      "name": "returning to Level2 keeps standing companion and resumes",
+      "pass": true
+    },
+    {
+      "name": "companion auto motion defaults remain on under OS reduced motion as requested",
+      "pass": true,
+      "detail": {
+        "preferences": {
+          "motion": true,
+          "headMotion": true,
+          "gaze": true,
+          "blink": true,
+          "hairPhysics": true,
+          "zoom": 1,
+          "outfit": "original",
+          "expression": "neutral"
+        },
+        "time": [
+          0.3660999999999999,
+          1.2644000000000006
+        ]
+      }
+    },
+    {
+      "name": "mobile settings expand inside viewport and controls are operable",
+      "pass": true,
+      "detail": {
+        "x": 6,
+        "y": 18,
+        "right": 209,
+        "bottom": 397,
+        "width": 215,
+        "height": 445,
+        "scrollWidth": 215
+      }
+    },
+    {
+      "name": "mobile gaze control toggles",
+      "pass": true
+    },
+    {
+      "name": "cold start while minimized loads model safely with zero-layout frame",
+      "pass": true,
+      "detail": {
+        "ready": true,
+        "status": "ready"
+      }
+    },
+    {
+      "name": "cold minimized model restores rendering and automatic animation",
+      "pass": true,
+      "detail": {
+        "time": [
+          0,
+          0.5492
+        ],
+        "frames": [
+          0,
+          17
+        ]
+      }
+    },
+    {
+      "name": "no JavaScript errors in actual React parent or child",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "legacy-main existing regression suite",
+      "pass": true,
+      "detail": {
+        "checks": 63,
+        "failed": [],
+        "errors": []
+      }
+    },
+    {
+      "name": "legacy-texture existing regression suite",
+      "pass": true,
+      "detail": {
+        "checks": 204,
+        "failed": [],
+        "errors": []
+      }
+    }
+  ],
+  "errors": [],
+  "environment": {
+    "actualParentAndPet": "Chrome 155.0.8059.40, headless, fresh isolated browser contexts",
+    "mobile": "390x844, isMobile=true, hasTouch=true, reducedMotion=reduce",
+    "legacyRegression": "Edge 139.0.3405.102, headless",
+    "parentFixture": "Actual HomeCharacter.tsx and CharacterFrame.tsx, actual React/ReactDOM and globals.css; only next/navigation usePathname stubbed for route transitions; compiled in memory with project Webpack/TypeScript"
+  },
+  "testLimitations": [
+    "No authenticated account, database, live deployment, or Next backend route requests were used.",
+    "Old Edge 139 automated touch in the opaque iframe produced a click offset by the iframe position; the same source passed genuine Playwright tap in Chrome 155. Final mobile conclusions use Chrome 155.",
+    "The minimized cold-start readiness assertion uses 100ms timer polling because requestAnimationFrame polling pauses in display:none iframes."
+  ],
+  "totals": {
+    "petAssertions": 44,
+    "mainRegressionAssertions": 63,
+    "appearanceRegressionAssertions": 204,
+    "failed": 0,
+    "consoleOrPageErrors": 0
+  },
+  "sourceSha256": {
+    "src/components/HomeCharacter.tsx": "72663827ea929a1d737a95565dc3af998141a157e78d710be6954107103bac20",
+    "src/components/CharacterFrame.tsx": "1c1319188fa9b65ec81146d409671b8db8a52f3df9e6520abd6ece40627be230",
+    "src/app/globals.css": "d856270350ea780c334142e5f5548027c16dd6b660ec27893d9623d080cd4a59",
+    "public/konisi-game/home.html": "34cd64f92303bc318bf9fe10ac6fd3cdfc1a54ec9dc84054dea66e54bdc03012",
+    "public/konisi-game/character.js": "4623b3c6bfbeea1999abdce33e326b6f3ad065e0ba46b593364faaa3069d29b5",
+    "public/konisi-game/character.css": "ec8ea79f2acd14f08f8c0414362d18648f3de442a3f34a6cfe58e3534aaaf8ce",
+    "public/konisi-game/live2d/renderer.mjs": "98791d7ffd2964950135d8e490995e1723a1a885333f102fe7aa5b07e334cd8a"
+  },
+  "screenshots": [
+    "pet-transparent-desktop.png",
+    "pet-settings-desktop.png",
+    "pet-transparent-mobile.png",
+    "pet-settings-mobile.png"
+  ],
+  "finalScreenshotsVisuallyInspected": true,
+  "ownedServerAndBrowserClosed": true
+}

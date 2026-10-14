@@ -1,0 +1,192 @@
+{
+  "passed": true,
+  "sourcePSD": "outputs/standing-detail-v2/standing-detailed.psd",
+  "sourcePSDSha256": "48162ca158323755e86e5b1b618bf2be51f38204785f419169b4a00df21ad5db",
+  "canvas": [
+    1024,
+    1536
+  ],
+  "alphaThreshold": 128,
+  "testedShiftPixels": [
+    [
+      1,
+      0
+    ],
+    [
+      -1,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      -1
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      -1,
+      1
+    ],
+    [
+      1,
+      -1
+    ],
+    [
+      -1,
+      -1
+    ]
+  ],
+  "eyes": {
+    "left": {
+      "movingOriginalLayerIds": [
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "eye_left_pupil_visible_rim"
+      ],
+      "apertureAdditionalLayerIds": [
+        "iris_left_occlusion",
+        "eye_left_sclera_visible",
+        "sclera_left_occlusion"
+      ],
+      "fixedLidLayerIds": [
+        "eye_left_upper_lash",
+        "eye_left_lower_lid_rim"
+      ],
+      "movingOriginalPixels": 575,
+      "movingBounds": [
+        497,
+        197,
+        525,
+        224
+      ],
+      "apertureBounds": [
+        491,
+        189,
+        537,
+        227
+      ],
+      "checks": [
+        {
+          "dx": 1,
+          "dy": 0,
+          "outsideApertureOrFixedLids": 0
+        },
+        {
+          "dx": -1,
+          "dy": 0,
+          "outsideApertureOrFixedLids": 0
+        },
+        {
+          "dx": 0,
+          "dy": 1,
+          "outsideApertureOrFixedLids": 0
+        },
+        {
+          "dx": 0,
+          "dy": -1,
+          "outsideApertureOrFixedLids": 0
+        },
+        {
+          "dx": 1,
+          "dy": 1,
+          "outsideApertureOrFixedLids": 0
+        },
+        {
+          "dx": -1,
+          "dy": 1,
+          "outsideApertureOrFixedLids": 0
+        },
+        {
+          "dx": 1,
+          "dy": -1,
+          "outsideApertureOrFixedLids": 0
+        },
+        {
+          "dx": -1,
+          "dy": -1,
+          "outsideApertureOrFixedLids": 0
+        }
+      ]
+    },
+    "right": {
+      "movingOriginalLayerIds": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary"
+      ],
+      "apertureAdditionalLayerIds": [
+        "iris_right_occlusion",
+        "eye_right_sclera_visible",
+        "sclera_right_occlusion"
+      ],
+      "fixedLidLayerIds": [
+        "eye_right_upper_lash",
+        "eye_right_lower_lid_rim"
+      ],
+      "movingOriginalPixels": 396,
+      "movingBounds": [
+        564,
+        228,
+        587,
+        253
+      ],
+      "apertureBounds": [
+        560,
+        220,
+        599,
+        260
+      ],
+      "checks": [
+        {
+          "dx": 1,
+          "dy": 0,
+          "outsideApertureOrFixedLids": 0
+        },
+        {
+          "dx": -1,
+          "dy": 0,
+          "outsideApertureOrFixedLids": 0
+        },
+        {
+          "dx": 0,
+          "dy": 1,
+          "outsideApertureOrFixedLids": 0
+        },
+        {
+          "dx": 0,
+          "dy": -1,
+          "outsideApertureOrFixedLids": 0
+        },
+        {
+          "dx": 1,
+          "dy": 1,
+          "outsideApertureOrFixedLids": 0
+        },
+        {
+          "dx": -1,
+          "dy": 1,
+          "outsideApertureOrFixedLids": 0
+        },
+        {
+          "dx": 1,
+          "dy": -1,
+          "outsideApertureOrFixedLids": 0
+        },
+        {
+          "dx": -1,
+          "dy": -1,
+          "outsideApertureOrFixedLids": 0
+        }
+      ]
+    }
+  },
+  "script": "work/standing-detail-v2/verify-gaze-aperture.py",
+  "execution": "The identical source-mask checks were executed through Python stdin in this session; this saved script reproduces them. Results below serialize those completed checks.",
+  "scopeLimit": "Tests original visible iris/pupil/highlight support at alpha >=128 against completed eye aperture plus fixed eyelids in source coordinates. The generated iris underpaint moves with its iris beneath native face/lid layers. This is a source-mask bound check, not a GPU clipping-mask implementation, browser screenshot proof, or a claim about arbitrary eye rotations."
+}

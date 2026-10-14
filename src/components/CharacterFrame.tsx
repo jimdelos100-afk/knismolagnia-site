@@ -1,8 +1,12 @@
-"use client"
+'use client'
 
-import type { IframeHTMLAttributes } from 'react'
+import { forwardRef, type IframeHTMLAttributes } from 'react'
 
-/** Character input stays inside the frame; the parent never forwards pointer coordinates. */
-export default function CharacterFrame(props: IframeHTMLAttributes<HTMLIFrameElement>) {
-  return <iframe {...props} />
-}
+/** Keep the frame's sandbox intact while allowing the companion's narrow message bridge. */
+const CharacterFrame = forwardRef<HTMLIFrameElement, IframeHTMLAttributes<HTMLIFrameElement>>(
+  function CharacterFrame(props, ref) {
+    return <iframe ref={ref} {...props} />
+  },
+)
+
+export default CharacterFrame

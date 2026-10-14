@@ -488,43 +488,37 @@ html[data-theme="dark"] .theme-toggle.compact { background: #18212a66; border-co
 /* Persistent site companion: independent of all Level page contents and Builder home. */
 .site-companion {
   position: fixed; right: clamp(10px,2vw,26px); bottom: 12px; z-index: 90;
-  width: clamp(240px,23vw,295px); overflow: hidden;
-  border: 1px solid #e9cddf; border-radius: 19px;
-  background: linear-gradient(155deg,#fffbfe,#f8edf9 65%,#edf5ff);
-  box-shadow: 0 12px 40px #744b762b;
-  color: #80506f;
-  isolation: isolate;
+  width: clamp(240px,23vw,295px); overflow: visible;
+  border: 0; border-radius: 0; background: transparent; box-shadow: none;
+  color: #80506f; isolation: isolate; pointer-events: none;
 }
 .site-companion.is-route-hidden { display: none; }
-.site-companion-top { display: flex; gap: 8px; align-items: center; height: 34px; padding: 4px 9px 4px 14px; font-size: 13px; font-weight: 650; }
-.site-companion-top span:first-child { font-size: 17px; color: #b9679f; }
-.site-companion-top button { margin-left: auto; height: 27px; width: 27px; padding: 0; border: 0; border-radius: 8px; background: #fbe5f0; color: #724b66; cursor: pointer; font: 22px/1 Arial,sans-serif; }
-.site-companion-top button:hover { background: #f5cee1; }
-.site-companion-frame { display:block; width:100%; height:min(54svh,430px); min-height:285px; border:0; background:transparent; }
+.site-companion-minimize { position:absolute; top:4px; right:4px; z-index:2; display:grid; place-items:center; width:30px; height:30px; padding:0; border:1px solid #d6b6cc80; border-radius:50%; background:#fff8fcbd; color:#80506f; box-shadow:0 2px 9px #44263b12; cursor:pointer; font:22px/1 Arial,sans-serif; pointer-events:auto; }
+.site-companion-minimize:hover { background:#ffe7f4; }
+.site-companion-frame { display:block; width:100%; height:min(54svh,430px); min-height:285px; border:0; border-radius:0; background:transparent; pointer-events:auto; }
 /* The site home and account pages show a larger, uncropped full-body companion. */
 .site-companion.is-home-route { width:clamp(315px,28vw,365px); }
 .site-companion.is-home-route .site-companion-frame { height:min(70svh,560px); min-height:350px; }
-.site-companion-restore { display:none; width:100%; min-height:43px; padding:8px 15px; border:0; border-radius: 24px; background:linear-gradient(110deg,#ffe1f0,#e4eeff); font-weight:700; color:#835070; cursor:pointer; box-shadow:0 4px 18px #764b721e; }
-.site-companion.is-minimized { width:auto; overflow:visible; border:0; border-radius:24px; box-shadow:none; background:transparent; }
-.site-companion.is-minimized .site-companion-top,
+.site-companion-restore { display:none; width:42px; height:42px; padding:0; border:1px solid #e8c8dc; border-radius:50%; background:#fff5fbe8; font-size:24px; color:#965781; cursor:pointer; box-shadow:0 3px 12px #764b721c; pointer-events:auto; }
+.site-companion.is-minimized { width:42px; }
+.site-companion.is-minimized .site-companion-minimize,
 .site-companion.is-minimized .site-companion-frame { display:none; }
 .site-companion.is-minimized .site-companion-restore { display:block; }
-.site-companion-top button:focus-visible,.site-companion-restore:focus-visible { outline:3px solid #709bcf; outline-offset:2px; }
+.site-companion-minimize:focus-visible,.site-companion-restore:focus-visible { outline:3px solid #709bcf; outline-offset:2px; }
 @media(max-width:720px){
-  .site-companion { right:8px; bottom: max(8px,env(safe-area-inset-bottom)); width: min(42vw,195px); border-radius: 13px; }
-  .site-companion-top { height:29px; font-size:10px; padding:3px 6px; gap:4px; }
-  .site-companion-top span:first-child { font-size:13px; }
-  .site-companion-top button { width:23px; height:23px; font-size:20px; }
+  .site-companion { right:8px; bottom:max(8px,env(safe-area-inset-bottom)); width:min(42vw,195px); }
+  .site-companion-minimize { width:28px; height:28px; font-size:20px; }
   .site-companion-frame { height:min(49svh,340px); min-height:205px; }
   .site-companion.is-home-route { width:clamp(205px,55vw,265px); }
   .site-companion.is-home-route .site-companion-frame { height:min(61svh,445px); min-height:260px; }
-  .site-companion-restore { min-height:38px; font-size:12px; }
+  .site-companion.is-minimized { width:42px; }
 }
 @media(max-height:530px) and (min-width:721px){
   .site-companion-frame { height: min(56vh,290px); min-height: 175px; }
 }
-html[data-theme="dark"] .site-companion { background:linear-gradient(155deg,#342637,#2b3045); border-color:#61516b; color:#f7dfec; }
-html[data-theme="dark"] .site-companion-top button { background:#58435a; color:#fff; }
+html[data-theme="dark"] .site-companion { background:transparent; border:0; box-shadow:none; color:#f7dfec; }
+html[data-theme="dark"] .site-companion-minimize,
+html[data-theme="dark"] .site-companion-restore { background:#49364be0; border-color:#806381; color:#fff; }
 
 @media(max-height:500px) {
   .site-companion.is-home-route .site-companion-frame { height: min(65svh,330px); min-height:170px; }

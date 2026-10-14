@@ -1,0 +1,23 @@
+{
+  "configuration": "Process-only placeholder Supabase settings; no real account or database",
+  "checks": [
+    {
+      "pass": true,
+      "name": "TypeScript source check"
+    },
+    {
+      "pass": true,
+      "name": "Next.js production build"
+    },
+    {
+      "pass": true,
+      "name": "Three model structure checks"
+    }
+  ],
+  "logs": [
+    "typescript.log",
+    "next-build.log",
+    "live2d-structure.json"
+  ],
+  "errors": []
+}
