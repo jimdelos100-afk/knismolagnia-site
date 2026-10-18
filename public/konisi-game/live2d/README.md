@@ -1,15 +1,15 @@
-# 网站 Cubism 模型
+# 网站 Cubism 模型 · 2026-10-18
 
-`manifest.json` 为三个姿态指定各自的 `character.model3.json`。站姿设置引用 `standing/detailed/` 中的精细模型、4096 图集和六组原生物理；坐姿与跪姿继续使用各自原模型。
+`manifest.json` 为 standing、seated、kneeling 指定各自真实模型。正式站姿 `standing/character.model3.json` 引用 `native-2026-10-18/` 中本轮导出及七个 motion3、两个 exp3；MOC SHA-256 为 `cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c`。Level 1 坐姿与 Level 2 跪姿保持原文件。
 
-`renderer.mjs` 使用官方 Core 06 / Framework 5-r.5，读取真实模型、纹理及可选 `physics3.json`，先计算物理再更新网格。它不建立指针跟随或独立动画循环。
+站姿原生 `ParamEyeBallX/Y` 控制九个眼部层，`ParamEyeLOpen/ROpen` 控制连续眨眼，mask 限制虹膜范围。自然头动使用 AngleZ，发丝使用未修改的六组原生 physics3。首页可关闭目光、动作、头动、眨眼与发丝物理；两关场景角色目光保持关闭。
 
-`standing-appearance.mjs` 用明确的原身体/脸部/眼部像素遮罩接入 V8 站姿表情、眨眼和换装，避免覆贴到发束及补绘。`texture-compositor.mjs` 继续服务原坐姿和跪姿。所有外观更新基于初始化中性网格/UV 的真实映射，映射不匹配会报错。
+neutral、blink 使用真实 exp3，其他五种网页表情与三种穿搭保留 V8 外观兼容。renderer 更新顺序为宿主基值、motion、expression、原生眼、physics、Core；全部在本地资源上运行。
 
-自然头动和交互由 `../character.js` 通过真实 `ParamAngleZ` 驱动，按实际经过时间运行物理。公共透明站姿默认待机，并支持设置暂停；Level 1/2 保留原减少动态效果行为。公共站姿通过 `standing-gaze.mjs` 对真实眼层的顶点副本做小幅跟随，头部不追踪鼠标；Level 页面角色仍无目光跟随。相机、拖动和缩放保持各自原入口功能。
+结构检查可运行 `node scripts/check-live2d.mjs`。最终验收证据在根目录 `verification/native-live2d-2026-10-18/`，范围见 `Live2D-STATUS.md`。结构检查、原画像素、眼区/helper 覆盖与浏览器过渡为独立门槛。保留 model3 的相对引用与对应纹理；工程修改后需完整重导和复验。
 
-结构检查：`node scripts/check-live2d.mjs`。结构正确只代表资源存在与基本格式通过，完整运行和画面检查见项目根目录 `verification/detailed-website/`，具体范围见 `Live2D-STATUS.md`。
+通过 HTTP(S) 访问。接口与 iframe 配置见 `INTEGRATION.md`；官方组件来源、哈希和许可在 `vendor/`。PSD、CMO 和源素材位于单独工程包。
 
-保持 model3 中资源的相对路径及与导出匹配的图集，不要单独更换 MOC。参数/ArtMesh 变动后需重新生成外观 mask 并复验。原编辑工程和 PSD 已单独交付，不属于部署资源。
+原始同相机 1024×1536 对比没有达到零 RGBA 差异：2404 个眼部像素不同，其中339个像素 alpha 不同，眼区外严格0差异。用户明确答复“接受图中眼部画面，保留真实差异记录”，接受的仅是图中这一版 export04 眼部画面。对用户接受的冻结参考进行回归仍要求严格0新增差异；批准图、精确模型/纹理合同及原始严格比较失败报告随包保留。此授权没有扩大全局像素或几何容差。
 
-接口和 iframe 配置见 `INTEGRATION.md`；官方来源、SHA256 与许可在 `vendor/provenance.json` 和 `vendor/licenses/`。通过 HTTP(S) 使用，不能直接双击 HTML。
+第二页图集已锁定，独立工程包内有47个低 alpha 修复点的源输入和证据；不可随意解锁后重新排图集。包内既有旧站姿资源只为原网站引用兼容与追溯保留，正式默认入口始终是本页上方指向本轮新导出的 standing/character.model3.json；实验双分支与checkpoint没有替换它。

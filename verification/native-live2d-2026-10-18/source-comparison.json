@@ -1,0 +1,150 @@
+{
+  "checkedAt": "2026-10-18T13:46:58.899578+00:00",
+  "baseArchive": "V8-Live2D-transparent-pet-2026-10-14.zip",
+  "baseArchiveSha256": "9679d1333d8eac27d47ca009120ab9ec18214a5f58c15151abcea7cfff2ec281",
+  "protectedOriginalFilesUnchanged": 154,
+  "changedPriorFiles": [
+    "Live2D-STATUS.md",
+    "README.md",
+    "完整版使用说明.txt",
+    "public/konisi-game/character.js",
+    "public/konisi-game/live2d/INTEGRATION.md",
+    "public/konisi-game/live2d/README.md",
+    "public/konisi-game/live2d/manifest.json",
+    "public/konisi-game/live2d/renderer.mjs",
+    "public/konisi-game/live2d/standing-appearance.mjs",
+    "public/konisi-game/live2d/standing/character.model3.json",
+    "public/konisi-game/live2d/standing/detailed/rig-contract.json",
+    "public/konisi-game/live2d/vendor/cubism-framework-5-r.5.mjs",
+    "public/konisi-game/live2d/vendor/provenance.json"
+  ],
+  "newFiles": [
+    "public/konisi-game/live2d/animation-playback.mjs",
+    "public/konisi-game/live2d/standing/native-2026-10-18/character.model3.json",
+    "public/konisi-game/live2d/standing/native-2026-10-18/cubism-export.model3.json",
+    "public/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.cdi3.json",
+    "public/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.moc3",
+    "public/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.physics3.json",
+    "public/konisi-game/live2d/standing/native-2026-10-18/expressions/blink.exp3.json",
+    "public/konisi-game/live2d/standing/native-2026-10-18/expressions/neutral.exp3.json",
+    "public/konisi-game/live2d/standing/native-2026-10-18/motions/idle.motion3.json",
+    "public/konisi-game/live2d/standing/native-2026-10-18/motions/pat.motion3.json",
+    "public/konisi-game/live2d/standing/native-2026-10-18/motions/pinch.motion3.json",
+    "public/konisi-game/live2d/standing/native-2026-10-18/motions/poke.motion3.json",
+    "public/konisi-game/live2d/standing/native-2026-10-18/motions/rub.motion3.json",
+    "public/konisi-game/live2d/standing/native-2026-10-18/motions/tap.motion3.json",
+    "public/konisi-game/live2d/standing/native-2026-10-18/motions/tickle.motion3.json",
+    "public/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.4096/texture_00.png",
+    "public/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.4096/texture_01.png"
+  ],
+  "level1Level2AndBusinessSourceUnchanged": true,
+  "models": {
+    "standing": {
+      "model": "public/konisi-game/live2d/standing/character.model3.json",
+      "mocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+      "files": {
+        "public/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.moc3": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+        "public/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.4096/texture_00.png": "90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30",
+        "public/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.4096/texture_01.png": "61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7",
+        "public/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.cdi3.json": "03aba1480ab632b11a8c6d79fb9ec0b779190ccb7acccb7640b7794d039ca267",
+        "public/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.physics3.json": "70d2f649d0692e0fc23f0a0fed3c6ff998bc075063da9258d82e1ffdd81f7c40",
+        "public/konisi-game/live2d/standing/native-2026-10-18/motions/idle.motion3.json": "6d01f8b2c4239ce4c83193b56b0055cc70ac2415ed751f7825506a3b314df80e",
+        "public/konisi-game/live2d/standing/native-2026-10-18/motions/tap.motion3.json": "e16e460660f5f479486c2fcc13441b8e4cd2aba761f32cb4a3e99261da0e2eac",
+        "public/konisi-game/live2d/standing/native-2026-10-18/motions/pat.motion3.json": "18730db087039da31dc76a4d2af5c5f864f96a92a8961205789b03aac86e8dc7",
+        "public/konisi-game/live2d/standing/native-2026-10-18/motions/poke.motion3.json": "9b87dde872f11fe81bd6b3ff15407b4ebacc6792974b158c89043f0633387ea2",
+        "public/konisi-game/live2d/standing/native-2026-10-18/motions/pinch.motion3.json": "876b3d804096f21485ba3cfdd998a2a462aa19f834cbbaf4feff2201f813ef98",
+        "public/konisi-game/live2d/standing/native-2026-10-18/motions/rub.motion3.json": "f63df999142d47fb1b935fae70e45154677734afbdd3d5aa093cb82828c4d0ad",
+        "public/konisi-game/live2d/standing/native-2026-10-18/motions/tickle.motion3.json": "fb44b831d8f52ad99ad8821d67bae41dcdbb7b9b6b4917b6ed59946c602a1b0d",
+        "public/konisi-game/live2d/standing/native-2026-10-18/expressions/neutral.exp3.json": "2402406b6c21a56e7724632a6bdbeeb4418b68ad19acf98626a12070e1cb72f6",
+        "public/konisi-game/live2d/standing/native-2026-10-18/expressions/blink.exp3.json": "ab1ed90a19c487eeba40e91226c22684dd4c1594eb52cc7afe122b058a8597a6"
+      }
+    },
+    "seated": {
+      "model": "public/konisi-game/live2d/seated/character.model3.json",
+      "mocSha256": "b811dc80c699e4546648bd5d60ca23e54028b98fddb5b72addc776e88585db94",
+      "files": {
+        "public/konisi-game/live2d/seated/seated-source-materials.moc3": "b811dc80c699e4546648bd5d60ca23e54028b98fddb5b72addc776e88585db94",
+        "public/konisi-game/live2d/seated/seated-source-materials.2048/texture_00.png": "0bd8a713fcba6d2118ff4921a198db5a91d0896c7ef1753f7e03d8cefc0c07d4",
+        "public/konisi-game/live2d/seated/seated-source-materials.cdi3.json": "8869283efc9f60d57a1e2faccf8c8a8fb91db5ef1981e0bf80410d09f5298c64"
+      }
+    },
+    "kneeling": {
+      "model": "public/konisi-game/live2d/kneeling/character.model3.json",
+      "mocSha256": "e792bfb6cb3850ea29e6093d65e4477cf654c974d2be4337cb242e4d20661515",
+      "files": {
+        "public/konisi-game/live2d/kneeling/kneeling-source-materials.moc3": "e792bfb6cb3850ea29e6093d65e4477cf654c974d2be4337cb242e4d20661515",
+        "public/konisi-game/live2d/kneeling/kneeling-source-materials.2048/texture_00.png": "473561f8d5b90eb87d0042f8670d2fec62a9c4a1662f02601315f549dc4e7044",
+        "public/konisi-game/live2d/kneeling/kneeling-source-materials.cdi3.json": "8869283efc9f60d57a1e2faccf8c8a8fb91db5ef1981e0bf80410d09f5298c64"
+      }
+    }
+  },
+  "checksPassed": {
+    "native-core-and-assets.json": 59,
+    "native-browser.json": 279,
+    "native-neutral-vs-original.json": 12,
+    "native-neutral-pixels.json": 11,
+    "native-eye-coverage.json": 38,
+    "native-helper-coverage.json": 39,
+    "native-accepted-appearance-regression.json": 7,
+    "native-accepted-appearance-negative-controls.json": 13,
+    "website/website-native-pet.json": 56,
+    "website/legacy-main/website-detailed-integration.json": 32,
+    "website/legacy-texture/standing-detailed-texture-variants.json": 301,
+    "website/native-expression-transition-diagnostic.json": 3,
+    "website/next/next-candidate-report.json": 31,
+    "website/next/next-outfits-report.json": 9,
+    "build-checks.json": 5
+  },
+  "acceptedNeutralException": {
+    "contractSha256": "db4f7d4484b4f837c0cef4cf3694b700de40fa55acd58d9e2010040ea904fc63",
+    "authorization": {
+      "question": "上图左侧是旧版，中央是当前真实新模型。是否接受新模型眼部更锐的渲染？交接要求默认画面0像素差异，当前尚有2404个眼部像素差异；选择接受才会据实调整这一项验收标准。",
+      "answer": "接受图中眼部画面，保留真实差异记录",
+      "provenance": "Direct human answer relayed by parent root in this task; original displayed image identified by root.",
+      "doesNotAuthorize": "Unseen model versions, non-eye changes, arbitrary global geometry changes, or additional pixel differences."
+    },
+    "originalStrictZeroPassed": false,
+    "originalDifference": {
+      "changedRGBAPixels": 2404,
+      "maximumChannelError": 93,
+      "alphaChanged": 339,
+      "totalChannelError": 59042,
+      "changedBounds": {
+        "left": 487,
+        "top": 187,
+        "right": 605,
+        "bottom": 262
+      },
+      "representation": "premultiplied WebGL framebuffer RGBA from actual gl.readPixels unsigned bytes"
+    },
+    "originalPNGStraightDifference": {
+      "representation": "straight (unpremultiplied) RGBA decoded from original and accepted neutral PNGs",
+      "changedRGBAPixels": 2404,
+      "maximumChannelError": 96,
+      "alphaChanged": 339,
+      "totalChannelError": 58099,
+      "changedBounds": {
+        "left": 487,
+        "top": 187,
+        "right": 605,
+        "bottom": 262
+      },
+      "bothAlphaZeroRGBDifferencePixels": 0
+    },
+    "outsideEyeChangedRGBAPixels": 0,
+    "acceptedReferenceChangedRGBAPixels": 0,
+    "mocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+    "textureSha256": [
+      "90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30",
+      "61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7"
+    ],
+    "shownReviewSha256": "06cdd29030b0ef00f17b90bc4ab5824a48a69fd963c41211ca2fc76d25beab24"
+  },
+  "nativeStandingEyeRigVerified": true,
+  "nativeMotionAndExpressionFilesVerified": true,
+  "productionBuildPassed": true,
+  "typeCheckPassed": true,
+  "accountsDatabaseVerified": false,
+  "onlineDeploymentPerformed": false,
+  "scope": "Source package and local browser checks; no account/database or online deployment claim."
+}

@@ -1,0 +1,350 @@
+{
+  "date": "2026-10-18T13:46:09.636342+00:00",
+  "scope": "Final actual export04 model QA under the human-approved exact eye appearance contract. Historical original strict-zero failure remains false; no global tolerance. Website checks are separate.",
+  "newMocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+  "textureSha256": [
+    "90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30",
+    "61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7"
+  ],
+  "sourceCmoSha256": "d604fc6a7f2bac64ca033fbe21974ccde9f3ceff29be0132e4fd4425b4ce1988",
+  "snapshotSha256": "34940dc0e295882a3a0442825e48bcff3503546a705f7af4b6e2af0da54a2975",
+  "acceptedAppearanceContractSha256": "db4f7d4484b4f837c0cef4cf3694b700de40fa55acd58d9e2010040ea904fc63",
+  "neutralPolicySha256": "44707e98164944aef1e5b85573fb638f85de570e434201abdd5c4b7e675ff790",
+  "formal74TransferManifestSha256": "ff33d120fe61712097c160514bd41562599987d019b37dc2aaf8d965cff21b22",
+  "originalStrictResult": {
+    "pass": false,
+    "opacityPass": false,
+    "comparison": {
+      "width": 1024,
+      "height": 1536,
+      "exactPixelMatch": false,
+      "changedRGBAPixels": 2404,
+      "maximumChannelError": 93,
+      "totalChannelError": 59042,
+      "alphaChanged": 339,
+      "oldNontransparent": 608859,
+      "newNontransparent": 608859,
+      "changedBounds": {
+        "left": 487,
+        "top": 187,
+        "right": 605,
+        "bottom": 262
+      },
+      "examples": [
+        {
+          "x": 582,
+          "y": 262,
+          "original": [
+            252,
+            228,
+            218,
+            255
+          ],
+          "candidate": [
+            251,
+            226,
+            215,
+            255
+          ]
+        },
+        {
+          "x": 583,
+          "y": 262,
+          "original": [
+            252,
+            231,
+            219,
+            255
+          ],
+          "candidate": [
+            251,
+            230,
+            217,
+            255
+          ]
+        },
+        {
+          "x": 585,
+          "y": 262,
+          "original": [
+            168,
+            110,
+            87,
+            255
+          ],
+          "candidate": [
+            170,
+            112,
+            90,
+            255
+          ]
+        },
+        {
+          "x": 586,
+          "y": 262,
+          "original": [
+            233,
+            176,
+            137,
+            255
+          ],
+          "candidate": [
+            232,
+            175,
+            136,
+            255
+          ]
+        },
+        {
+          "x": 581,
+          "y": 261,
+          "original": [
+            253,
+            227,
+            216,
+            255
+          ],
+          "candidate": [
+            253,
+            228,
+            217,
+            255
+          ]
+        },
+        {
+          "x": 582,
+          "y": 261,
+          "original": [
+            251,
+            222,
+            210,
+            255
+          ],
+          "candidate": [
+            238,
+            203,
+            190,
+            254
+          ]
+        },
+        {
+          "x": 583,
+          "y": 261,
+          "original": [
+            247,
+            217,
+            205,
+            255
+          ],
+          "candidate": [
+            248,
+            217,
+            205,
+            255
+          ]
+        },
+        {
+          "x": 584,
+          "y": 261,
+          "original": [
+            249,
+            227,
+            215,
+            254
+          ],
+          "candidate": [
+            251,
+            233,
+            220,
+            254
+          ]
+        },
+        {
+          "x": 585,
+          "y": 261,
+          "original": [
+            225,
+            187,
+            173,
+            255
+          ],
+          "candidate": [
+            226,
+            189,
+            175,
+            255
+          ]
+        },
+        {
+          "x": 586,
+          "y": 261,
+          "original": [
+            197,
+            136,
+            112,
+            255
+          ],
+          "candidate": [
+            193,
+            132,
+            107,
+            255
+          ]
+        },
+        {
+          "x": 587,
+          "y": 261,
+          "original": [
+            228,
+            172,
+            136,
+            255
+          ],
+          "candidate": [
+            228,
+            174,
+            135,
+            255
+          ]
+        },
+        {
+          "x": 588,
+          "y": 261,
+          "original": [
+            243,
+            205,
+            168,
+            255
+          ],
+          "candidate": [
+            245,
+            210,
+            173,
+            255
+          ]
+        }
+      ],
+      "representation": "premultiplied WebGL framebuffer RGBA from actual gl.readPixels unsigned bytes"
+    }
+  },
+  "originalPNGStraightDifference": {
+    "representation": "straight (unpremultiplied) RGBA decoded from original and candidate neutral PNGs",
+    "exactPixelMatch": false,
+    "changedRGBAPixels": 2404,
+    "maximumChannelError": 96,
+    "totalChannelError": 58099,
+    "alphaChanged": 339,
+    "changedBounds": {
+      "left": 487,
+      "top": 187,
+      "right": 605,
+      "bottom": 262
+    }
+  },
+  "strictOutsideEyeComparison": {
+    "exactPixelMatch": true,
+    "changedRGBAPixels": 0,
+    "maximumChannelError": 0,
+    "totalChannelError": 0,
+    "alphaChanged": 0,
+    "changedBounds": null
+  },
+  "strictAcceptedReferenceRegression": {
+    "exactPixelMatch": true,
+    "changedRGBAPixels": 0,
+    "maximumChannelError": 0,
+    "totalChannelError": 0,
+    "alphaChanged": 0,
+    "changedBounds": null
+  },
+  "sourceCMOEvidence": [
+    {
+      "role": "final source CMO after official page1 replacement and export04 settings",
+      "file": "work/recovery-2026-10-18/standing-after-export04-settings.cmo3",
+      "sha256": "d604fc6a7f2bac64ca033fbe21974ccde9f3ceff29be0132e4fd4425b4ce1988"
+    }
+  ],
+  "reports": [
+    {
+      "file": "native-core-and-assets.json",
+      "sha256": "32c37d921dc1a4ca4b8b467e1dc920d575c8a618f8623c2d0c29f811cd9fdcae",
+      "checks": 59,
+      "passed": 59,
+      "errors": 0,
+      "newMocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+      "testedSourceSnapshotSha256": "34940dc0e295882a3a0442825e48bcff3503546a705f7af4b6e2af0da54a2975",
+      "modifiedAfterSnapshot": true
+    },
+    {
+      "file": "native-eye-coverage.json",
+      "sha256": "afe61af15024681c117eaef0c2ccf91eae41da7da36aae89d49653b1a694ec04",
+      "checks": 38,
+      "passed": 38,
+      "errors": 0,
+      "newMocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+      "testedSourceSnapshotSha256": "34940dc0e295882a3a0442825e48bcff3503546a705f7af4b6e2af0da54a2975",
+      "modifiedAfterSnapshot": true
+    },
+    {
+      "file": "native-helper-coverage.json",
+      "sha256": "ed797e20a22d862d0e4f2720f72781631dd0d5e4b552a5227540bb07f88d09c3",
+      "checks": 39,
+      "passed": 39,
+      "errors": 0,
+      "newMocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+      "testedSourceSnapshotSha256": "34940dc0e295882a3a0442825e48bcff3503546a705f7af4b6e2af0da54a2975",
+      "modifiedAfterSnapshot": true
+    },
+    {
+      "file": "native-browser.json",
+      "sha256": "cd2dfa462902bba41e5d986fb997af5a6a1e4bcb19da56a5e5eea771ac4d4ee2",
+      "checks": 279,
+      "passed": 279,
+      "errors": 0,
+      "newMocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+      "testedSourceSnapshotSha256": "34940dc0e295882a3a0442825e48bcff3503546a705f7af4b6e2af0da54a2975",
+      "modifiedAfterSnapshot": true
+    },
+    {
+      "file": "native-neutral-pixels.json",
+      "sha256": "cf5d2e59aa088daf85b63df742a83caa6b1e833b31a27afc3fbd2a7751717f1a",
+      "checks": 11,
+      "passed": 11,
+      "errors": 0,
+      "newMocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+      "testedSourceSnapshotSha256": "34940dc0e295882a3a0442825e48bcff3503546a705f7af4b6e2af0da54a2975",
+      "modifiedAfterSnapshot": true
+    },
+    {
+      "file": "native-neutral-vs-original.json",
+      "sha256": "d79391a25fb971b3f0128afa46d86276174eb50ef741211f07412e98b74ad903",
+      "checks": 12,
+      "passed": 12,
+      "errors": 0,
+      "newMocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+      "testedSourceSnapshotSha256": "34940dc0e295882a3a0442825e48bcff3503546a705f7af4b6e2af0da54a2975",
+      "modifiedAfterSnapshot": true
+    },
+    {
+      "file": "native-accepted-appearance-regression.json",
+      "sha256": "2877348750dada171e8f7f64b9b5099171ccb63f5e5cf873afbb2debe19399de",
+      "checks": 7,
+      "passed": 7,
+      "errors": 0,
+      "newMocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+      "testedSourceSnapshotSha256": "34940dc0e295882a3a0442825e48bcff3503546a705f7af4b6e2af0da54a2975",
+      "modifiedAfterSnapshot": true
+    },
+    {
+      "file": "native-accepted-appearance-negative-controls.json",
+      "sha256": "6494cbce6ba35cd923556879ba148ee95d6a9b811c7237a3905f061fa0662d95",
+      "checks": 13,
+      "passed": 13,
+      "errors": 0,
+      "newMocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+      "testedSourceSnapshotSha256": "34940dc0e295882a3a0442825e48bcff3503546a705f7af4b6e2af0da54a2975",
+      "modifiedAfterSnapshot": true
+    }
+  ],
+  "allModelGateChecksPass": true
+}

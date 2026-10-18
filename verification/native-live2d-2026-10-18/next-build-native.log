@@ -1,0 +1,49 @@
+
+> knismolagnia-club@5.7.0 build
+> next build
+
+   ▲ Next.js 15.5.25
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 6.3s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/6) ...
+   Generating static pages (1/6) 
+   Generating static pages (2/6) 
+   Generating static pages (4/6) 
+ ✓ Generating static pages (6/6)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ƒ /                                    21.3 kB         132 kB
+├ ○ /_not-found                            993 B         104 kB
+├ ƒ /account                             4.37 kB         183 kB
+├ ƒ /admin                                 126 B         103 kB
+├ ƒ /admin/content                       3.53 kB         174 kB
+├ ƒ /admin/discussion                    1.46 kB         172 kB
+├ ƒ /admin/messages                      1.11 kB         171 kB
+├ ƒ /admin/profile-changes               1.57 kB         172 kB
+├ ƒ /admin/submissions                   2.19 kB         178 kB
+├ ƒ /admin/users                         1.92 kB         172 kB
+├ ƒ /admin/verification                  1.44 kB         172 kB
+├ ƒ /auth/callback                         126 B         103 kB
+├ ƒ /level/[level]                       6.52 kB         185 kB
+├ ƒ /level/2/members                     1.61 kB         180 kB
+├ ƒ /level/2/members/[id]                  973 B         180 kB
+└ ƒ /login                               2.04 kB         181 kB
++ First Load JS shared by all             103 kB
+  ├ chunks/170-cde8b70b5872389b.js       46.3 kB
+  ├ chunks/6ddb7b5a-db47e3158b1eb029.js  54.2 kB
+  └ other shared chunks (total)          1.99 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+npm notice
+npm notice New major version of npm available! 11.19.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

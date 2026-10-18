@@ -1,0 +1,127 @@
+{
+  "date": "2026-10-18T13:35:47.374Z",
+  "scope": "Positive and negative controls for exact hash identity, zero RGBA reference regression and strict outside-eye equality. No candidate image, MOC, Atlas or policy was modified.",
+  "newMocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+  "textureSha256": [
+    "90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30",
+    "61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7"
+  ],
+  "testedSourceSnapshotSha256": "34940dc0e295882a3a0442825e48bcff3503546a705f7af4b6e2af0da54a2975",
+  "acceptedAppearanceContractSha256": "db4f7d4484b4f837c0cef4cf3694b700de40fa55acd58d9e2010040ea904fc63",
+  "checks": [
+    {
+      "name": "exact approved current identity and immutable references pass",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "an unseen MOC hash is rejected",
+      "pass": true
+    },
+    {
+      "name": "a changed Atlas 0 hash is rejected",
+      "pass": true
+    },
+    {
+      "name": "a changed Atlas 1 hash is rejected",
+      "pass": true
+    },
+    {
+      "name": "exact reference returns strict zero",
+      "pass": true
+    },
+    {
+      "name": "one additional eye RGB unit is rejected by zero-reference regression",
+      "pass": true,
+      "detail": {
+        "x": 475,
+        "y": 269,
+        "exactPixelMatch": false,
+        "changedRGBAPixels": 1,
+        "maximumChannelError": 1,
+        "totalChannelError": 1,
+        "alphaChanged": 0,
+        "changedBounds": {
+          "left": 475,
+          "top": 269,
+          "right": 475,
+          "bottom": 269
+        }
+      }
+    },
+    {
+      "name": "one outside-eye RGB unit is rejected by zero-reference regression",
+      "pass": true,
+      "detail": {
+        "x": 517,
+        "y": 1522,
+        "exactPixelMatch": false,
+        "changedRGBAPixels": 1,
+        "maximumChannelError": 1,
+        "totalChannelError": 1,
+        "alphaChanged": 0,
+        "changedBounds": {
+          "left": 517,
+          "top": 1522,
+          "right": 517,
+          "bottom": 1522
+        }
+      }
+    },
+    {
+      "name": "one outside-eye RGB unit is also rejected by strict outside-eye comparison",
+      "pass": true
+    },
+    {
+      "name": "one additional eye alpha unit is rejected by zero-reference regression",
+      "pass": true,
+      "detail": {
+        "x": 475,
+        "y": 269,
+        "exactPixelMatch": false,
+        "changedRGBAPixels": 1,
+        "maximumChannelError": 1,
+        "totalChannelError": 1,
+        "alphaChanged": 1,
+        "changedBounds": {
+          "left": 475,
+          "top": 269,
+          "right": 475,
+          "bottom": 269
+        }
+      }
+    },
+    {
+      "name": "one outside-eye alpha unit is rejected by zero-reference regression",
+      "pass": true,
+      "detail": {
+        "x": 517,
+        "y": 1522,
+        "exactPixelMatch": false,
+        "changedRGBAPixels": 1,
+        "maximumChannelError": 1,
+        "totalChannelError": 1,
+        "alphaChanged": 1,
+        "changedBounds": {
+          "left": 517,
+          "top": 1522,
+          "right": 517,
+          "bottom": 1522
+        }
+      }
+    },
+    {
+      "name": "one outside-eye alpha unit is also rejected by strict outside-eye comparison",
+      "pass": true
+    },
+    {
+      "name": "one extra original-difference pixel is not covered by approval",
+      "pass": true
+    },
+    {
+      "name": "one extra original-difference channel unit is not covered by approval",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

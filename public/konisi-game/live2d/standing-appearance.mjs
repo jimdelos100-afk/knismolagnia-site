@@ -69,7 +69,7 @@ function clipPatch(image, spec, mask) {
 
 /** Same setAppearance/apply/getStatus surface as the legacy compositor.
  * mapping must be captured at the exported neutral pose, before physics runs. */
-export async function createStandingAppearance({ mapping, model, images, modelUrl }) {
+export async function createStandingAppearance({ mapping, model, images, modelUrl, nativeEyes = false }) {
   if (model.id !== 'standing') throw new Error('Detailed standing appearance cannot be used for another pose.');
   if (mapping.canvasInfo.CanvasWidth !== model.width || mapping.canvasInfo.CanvasHeight !== model.height) {
     throw new Error('Detailed PSD canvas differs from the V8 standing source.');
@@ -152,21 +152,22 @@ export async function createStandingAppearance({ mapping, model, images, modelUr
   let current = null, revision = 0, uploaded = -1, lastBlink = -1;
   let staticRegions = [], blinkRegion = null, lastOpacities = {};
   return {
-    setAppearance({ outfit = model.defaultOutfit || 'original', expression = 'neutral' } = {}) {
-      if (current?.outfit === outfit && current?.expression === expression) return this;
+    setAppearance({ outfit = model.defaultOutfit || 'original', expression = 'neutral', nativeFace = false } = {}) {
+      nativeFace = nativeEyes && (expression === 'neutral' || nativeFace === true);
+      if (current?.outfit === outfit && current?.expression === expression && current?.nativeFace === nativeFace) return this;
       if (outfit !== 'original' && !model.wardrobe[outfit]) throw new Error('Unknown standing outfit: ' + outfit);
       if (expression !== 'neutral' && !model.expressions[expression]) throw new Error('Unknown standing expression: ' + expression);
       const bodyPatches = patchesFor('body', outfit === 'original' ? [] : [model.wardrobe[outfit]]);
-      const facePatches = patchesFor('face', expression === 'neutral' ? [] : [model.expressions[expression]]);
+      const facePatches = patchesFor('face', expression === 'neutral' || nativeFace ? [] : [model.expressions[expression]]);
       if (outfit !== 'original' && !bodyPatches.length) throw new Error('Outfit has no pixels within the original body ownership.');
-      if (expression !== 'neutral' && !facePatches.length) throw new Error('Expression has no pixels within the original face ownership.');
+      if (expression !== 'neutral' && !nativeFace && !facePatches.length) throw new Error('Expression has no pixels within the original face ownership.');
       const nextRegions = [];
       for (const [role, patches] of [['body', bodyPatches], ['face', facePatches]]) {
         const box = regionBox(parts[role], patches);
         if (box) nextRegions.push(renderRegion(parts[role], box, patches));
       }
       let nextBlinkRegion = null;
-      if (!CLOSED_EXPRESSIONS.has(expression)) {
+      if (!nativeFace && !CLOSED_EXPRESSIONS.has(expression)) {
         const blinkPatches = patchesFor('face', model.blinkEyes);
         if (!blinkPatches.length) throw new Error('Blink assets have no pixels within original face ownership.');
         const box = regionBox(parts.face, blinkPatches);
@@ -186,7 +187,7 @@ export async function createStandingAppearance({ mapping, model, images, modelUr
       for (const region of staticRegions) region.image.width = region.image.height = 1;
       if (blinkRegion) blinkRegion.mix.width = blinkRegion.mix.height = 1;
       staticRegions = nextRegions; blinkRegion = nextBlinkRegion;
-      current = { outfit, expression }; revision++;
+      current = { outfit, expression, nativeFace }; revision++;
       return this;
     },
 
@@ -229,7 +230,7 @@ export async function createStandingAppearance({ mapping, model, images, modelUr
       // skin fade. Brows, mouth and nose retain their own native layers.
       const opacities = {};
       for (const id of facialIds) {
-        const opacity = current.expression !== 'neutral' ? 0 : blinkIds.has(id) ? 1 - value : 1;
+        const opacity = current.nativeFace ? 1 : current.expression !== 'neutral' ? 0 : blinkIds.has(id) ? 1 - value : 1;
         if (renderer.setDrawableOpacityById(id, opacity) === false) throw new Error('Cannot apply standing facial opacity: ' + id);
         opacities[id] = opacity;
       }
@@ -241,6 +242,8 @@ export async function createStandingAppearance({ mapping, model, images, modelUr
       return {
         method: 'V8 patches clipped to detailed original body/face ownership; native hair atlas untouched',
         expressionParametersRigged: false,
+        nativeEyes, facialMode: current?.nativeFace ? 'native Cubism parameters' : 'V8 appearance compatibility',
+        blinkMethod: current?.nativeFace ? 'native EyeOpen parameters; no blink texture or eye opacity override' : 'V8 eye patches and original layer opacity',
         current: current ? { ...current } : null, blink: Math.max(0, lastBlink),
         maxMappingError: Math.max(parts.body.error, parts.face.error),
         roles: { bodyHost: roles.bodyHost, faceHost: roles.faceHost,

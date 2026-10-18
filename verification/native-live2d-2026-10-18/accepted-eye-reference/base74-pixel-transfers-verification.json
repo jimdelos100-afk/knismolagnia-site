@@ -1,0 +1,9693 @@
+{
+  "version": 1,
+  "date": "2026-10-18T13:38:42.879294+00:00",
+  "scope": "Active exact 74-layer-base transfer proof independently enumerated from the approved original74 and repaired74 PSDs. No 75-layer research PSD or its transfer list is used.",
+  "baseSource": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\standing-detail-v2\\repair-artwork\\history\\standing-detailed-74-layer-before-head-edges.psd",
+  "baseSourceSha256": "14f898110aba5ca8176804f64fc143e84d43cdd29c78fbca05bbbebd64be25f8",
+  "base74Update": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\standing-native-gaze-2026-10-15\\artwork-repair\\standing-base74-eye-update.psd",
+  "base74UpdateSha256": "848f09f3004831eb099d726d10ffc622ced36a5f3eba4d614c06b85318c2fe81",
+  "base74UpdateManifest": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\standing-native-gaze-2026-10-15\\artwork-repair\\base74-update-verification.json",
+  "base74UpdateManifestSha256": "a796279187270947f7684b5a765b3153d1b4c6849d2feac790e72db867694e10",
+  "originalLayerCount": 74,
+  "updatedLayerCount": 74,
+  "existingNamesPreserved": true,
+  "modifiedExistingNames": [
+    "eye_left_iris",
+    "eye_left_lower_lid_rim",
+    "eye_left_sclera_visible",
+    "eye_left_upper_lash",
+    "eye_right_iris",
+    "eye_right_lower_lid_rim",
+    "eye_right_sclera_visible",
+    "eye_right_upper_lash",
+    "face_skin_local_visible",
+    "face_visible_residual"
+  ],
+  "other64LayersRGBABoundsAndParentExact": true,
+  "neutralCompositeChangedRGBAPixels": 0,
+  "tenLayerRGBAChannelSumsExactlyConserved": true,
+  "totalExactRGBATransfers": 457,
+  "totalDonorRemovedAlphaPixels": 457,
+  "originalPixelTransfers": [
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_left_lower_lid_rim",
+      "pixels": 4
+    },
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_left_sclera_visible",
+      "pixels": 4
+    },
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_right_lower_lid_rim",
+      "pixels": 7
+    },
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_right_sclera_visible",
+      "pixels": 1
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "pixels": 42
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "pixels": 36
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "pixels": 39
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "pixels": 105
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "pixels": 21
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_lower_lid_rim",
+      "pixels": 17
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "pixels": 65
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "pixels": 116
+    }
+  ],
+  "transferredPixels": [
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        520,
+        198
+      ],
+      "originalRGBA": [
+        152,
+        113,
+        160,
+        253
+      ],
+      "recipientRGBA": [
+        152,
+        113,
+        160,
+        253
+      ],
+      "exactRGBASha256": "77c8d15f5d32fa8e2c8b58cd2ac18a8d7bc4f057e2f715002fbd98fffc4b654d"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        521,
+        198
+      ],
+      "originalRGBA": [
+        161,
+        122,
+        160,
+        253
+      ],
+      "recipientRGBA": [
+        161,
+        122,
+        160,
+        253
+      ],
+      "exactRGBASha256": "a45c602d0a72b305e4331e69f9953041249135829d8006d923ff735676009085"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        521,
+        199
+      ],
+      "originalRGBA": [
+        162,
+        136,
+        207,
+        253
+      ],
+      "recipientRGBA": [
+        162,
+        136,
+        207,
+        253
+      ],
+      "exactRGBASha256": "8705e44bc44eb1ee9a8dfb48e2d8cd55ac03a1cc14c38e08edba3df9bd8ab8f8"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        522,
+        199
+      ],
+      "originalRGBA": [
+        145,
+        116,
+        184,
+        253
+      ],
+      "recipientRGBA": [
+        145,
+        116,
+        184,
+        253
+      ],
+      "exactRGBASha256": "537d37a749600f6a3fad725c4221c35571e8fa9156713c5cf94bc1b872b76eaf"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        523,
+        199
+      ],
+      "originalRGBA": [
+        72,
+        46,
+        108,
+        253
+      ],
+      "recipientRGBA": [
+        72,
+        46,
+        108,
+        253
+      ],
+      "exactRGBASha256": "6f1312b8a19adf9551b54a0a77bb8f9ca00de0ce15e1126e2280d8c6b5416292"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        523,
+        200
+      ],
+      "originalRGBA": [
+        127,
+        106,
+        177,
+        253
+      ],
+      "recipientRGBA": [
+        127,
+        106,
+        177,
+        253
+      ],
+      "exactRGBASha256": "3c4ca2d7932e449ea0d3fbc42a27767e0b0519b8d1e314b8a59cd728f0cc07c8"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        524,
+        200
+      ],
+      "originalRGBA": [
+        71,
+        52,
+        114,
+        253
+      ],
+      "recipientRGBA": [
+        71,
+        52,
+        114,
+        253
+      ],
+      "exactRGBASha256": "0cd10e2ced20b44f514fc4a5d5471b05491f85e6d42dd65a50851dbdcb01150f"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        499,
+        201
+      ],
+      "originalRGBA": [
+        135,
+        128,
+        158,
+        253
+      ],
+      "recipientRGBA": [
+        135,
+        128,
+        158,
+        253
+      ],
+      "exactRGBASha256": "25e36da57544bfce19429b5639700094a7fea0fb762998f269e0f74c2b8083b0"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        524,
+        201
+      ],
+      "originalRGBA": [
+        118,
+        94,
+        165,
+        253
+      ],
+      "recipientRGBA": [
+        118,
+        94,
+        165,
+        253
+      ],
+      "exactRGBASha256": "f852b642007a50fafd007cbb12f4d7a6ed5f48a00dbf2f60ebde2d071e03fc70"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        524,
+        202
+      ],
+      "originalRGBA": [
+        160,
+        139,
+        208,
+        253
+      ],
+      "recipientRGBA": [
+        160,
+        139,
+        208,
+        253
+      ],
+      "exactRGBASha256": "5a8db30a04877b5bde15ee135d5287c9509230d99951f53f2c165ff40f3da372"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        525,
+        202
+      ],
+      "originalRGBA": [
+        99,
+        76,
+        138,
+        253
+      ],
+      "recipientRGBA": [
+        99,
+        76,
+        138,
+        253
+      ],
+      "exactRGBASha256": "e4661053114fe704547125eda6060e61378e1f991054244f109ae5387bdae49a"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        498,
+        203
+      ],
+      "originalRGBA": [
+        159,
+        150,
+        192,
+        253
+      ],
+      "recipientRGBA": [
+        159,
+        150,
+        192,
+        253
+      ],
+      "exactRGBASha256": "cb35f5045b9b8da03f83d61d7817ea64935af1602b1bad76f2b1aa9830cac9f3"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        524,
+        203
+      ],
+      "originalRGBA": [
+        157,
+        136,
+        209,
+        253
+      ],
+      "recipientRGBA": [
+        157,
+        136,
+        209,
+        253
+      ],
+      "exactRGBASha256": "3a6d5333e39f8c6bc9dbd64da0b49599b1f8146585141ac7b26721d9d66ea222"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        525,
+        203
+      ],
+      "originalRGBA": [
+        120,
+        92,
+        161,
+        253
+      ],
+      "recipientRGBA": [
+        120,
+        92,
+        161,
+        253
+      ],
+      "exactRGBASha256": "3a5aeb72c207b7163d90f8b7e3279719127787590015817514f4650f5100550d"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        526,
+        203
+      ],
+      "originalRGBA": [
+        91,
+        66,
+        117,
+        253
+      ],
+      "recipientRGBA": [
+        91,
+        66,
+        117,
+        253
+      ],
+      "exactRGBASha256": "0055f59187cc43683d3539758312d5f57e936f7ac2b108a33c13ae1688750d8b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        525,
+        204
+      ],
+      "originalRGBA": [
+        120,
+        89,
+        160,
+        253
+      ],
+      "recipientRGBA": [
+        120,
+        89,
+        160,
+        253
+      ],
+      "exactRGBASha256": "bd4ad1447c2e67cfa1516b5eaeb00964acff57b24e48d5ce611909e92d95ae19"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        526,
+        204
+      ],
+      "originalRGBA": [
+        106,
+        81,
+        130,
+        253
+      ],
+      "recipientRGBA": [
+        106,
+        81,
+        130,
+        253
+      ],
+      "exactRGBASha256": "187e540d506aac2faec177abc2c54d1424db02f4139583d84153e24bc19eca96"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        525,
+        205
+      ],
+      "originalRGBA": [
+        103,
+        65,
+        141,
+        253
+      ],
+      "recipientRGBA": [
+        103,
+        65,
+        141,
+        253
+      ],
+      "exactRGBASha256": "f00c1bafbf5b1fe525994375bd2bfdc5edd34959cfbc08b1a0d24fc04258cba5"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        526,
+        205
+      ],
+      "originalRGBA": [
+        110,
+        84,
+        133,
+        253
+      ],
+      "recipientRGBA": [
+        110,
+        84,
+        133,
+        253
+      ],
+      "exactRGBASha256": "4cf6c884a4403ca1462f08857ef0b12d6a4872f02a2be02b28297355e8e9a49c"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        525,
+        206
+      ],
+      "originalRGBA": [
+        99,
+        63,
+        131,
+        253
+      ],
+      "recipientRGBA": [
+        99,
+        63,
+        131,
+        253
+      ],
+      "exactRGBASha256": "ea4e8ef834f3232cd525d0baebfcd13cfa1999b4a46ab7cd750b52dcceb3b8cf"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        526,
+        206
+      ],
+      "originalRGBA": [
+        134,
+        111,
+        154,
+        253
+      ],
+      "recipientRGBA": [
+        134,
+        111,
+        154,
+        253
+      ],
+      "exactRGBASha256": "02f99b0df427a78d25e502d9edef9dee06408bb8d1e27a4f1540afab54da3cf9"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        525,
+        207
+      ],
+      "originalRGBA": [
+        93,
+        56,
+        120,
+        253
+      ],
+      "recipientRGBA": [
+        93,
+        56,
+        120,
+        253
+      ],
+      "exactRGBASha256": "41448bfb41cb3ae76cfbc39ed338267304c7eb56d145b2f80dd63c41c3b9b032"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        526,
+        207
+      ],
+      "originalRGBA": [
+        165,
+        142,
+        182,
+        253
+      ],
+      "recipientRGBA": [
+        165,
+        142,
+        182,
+        253
+      ],
+      "exactRGBASha256": "a2c600db71b57ff4c1b18d7ba957002d1e7391f5666f2fadff240cb6caaac4e5"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        525,
+        208
+      ],
+      "originalRGBA": [
+        104,
+        71,
+        125,
+        253
+      ],
+      "recipientRGBA": [
+        104,
+        71,
+        125,
+        253
+      ],
+      "exactRGBASha256": "db368671090dccc3a8cef9567909b1124dcd6a331cbe28b8600d45c6b76bd6f9"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        524,
+        209
+      ],
+      "originalRGBA": [
+        105,
+        61,
+        133,
+        253
+      ],
+      "recipientRGBA": [
+        105,
+        61,
+        133,
+        253
+      ],
+      "exactRGBASha256": "2502edbd6db8ef1b41e695cdf1aa68a1bb9818a8fa766e3be6911dd7707fc55f"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        525,
+        209
+      ],
+      "originalRGBA": [
+        115,
+        83,
+        135,
+        253
+      ],
+      "recipientRGBA": [
+        115,
+        83,
+        135,
+        253
+      ],
+      "exactRGBASha256": "6512991e4c5c8de536e1f1485f9bed6d4a11ab79ebec565d424e184b238f6a58"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        524,
+        210
+      ],
+      "originalRGBA": [
+        100,
+        58,
+        126,
+        253
+      ],
+      "recipientRGBA": [
+        100,
+        58,
+        126,
+        253
+      ],
+      "exactRGBASha256": "f2df9f541f374f54df64abb2bd7201626d777d76c2e54a1ef37f86ea416fc8d8"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        525,
+        210
+      ],
+      "originalRGBA": [
+        139,
+        111,
+        156,
+        253
+      ],
+      "recipientRGBA": [
+        139,
+        111,
+        156,
+        253
+      ],
+      "exactRGBASha256": "4174ff1e665a33c390d434736b1591188b1bfed43524f1a7ea4351108b8e2558"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        524,
+        211
+      ],
+      "originalRGBA": [
+        92,
+        55,
+        120,
+        253
+      ],
+      "recipientRGBA": [
+        92,
+        55,
+        120,
+        253
+      ],
+      "exactRGBASha256": "4d749b7eed2d5bb2f75be8d550b81334dcae6264d22f671421f8aab3b198611c"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        525,
+        211
+      ],
+      "originalRGBA": [
+        163,
+        137,
+        177,
+        253
+      ],
+      "recipientRGBA": [
+        163,
+        137,
+        177,
+        253
+      ],
+      "exactRGBASha256": "6c2e4cb4664e0629a0bc77d5f6ff07d90ff9b9b43a25743d69e15229a139b32c"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        524,
+        212
+      ],
+      "originalRGBA": [
+        94,
+        59,
+        121,
+        253
+      ],
+      "recipientRGBA": [
+        94,
+        59,
+        121,
+        253
+      ],
+      "exactRGBASha256": "9aa8829cdbb01bb756bb6043530c93f1ccd5d6d4b5a457096b9fcf826f3298cd"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        523,
+        213
+      ],
+      "originalRGBA": [
+        130,
+        89,
+        149,
+        253
+      ],
+      "recipientRGBA": [
+        130,
+        89,
+        149,
+        253
+      ],
+      "exactRGBASha256": "f726ffa3ad8f2fac3af2155b81ac83192977d38111026ed9aca91e62dab43f78"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        524,
+        213
+      ],
+      "originalRGBA": [
+        124,
+        90,
+        139,
+        253
+      ],
+      "recipientRGBA": [
+        124,
+        90,
+        139,
+        253
+      ],
+      "exactRGBASha256": "a3ffc11fa5effa317edd2c9dfd7b64ee497fe8ba086de236e3b67e31e0927e93"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        523,
+        214
+      ],
+      "originalRGBA": [
+        174,
+        139,
+        178,
+        253
+      ],
+      "recipientRGBA": [
+        174,
+        139,
+        178,
+        253
+      ],
+      "exactRGBASha256": "2f853745e42f12960275798dfb5c286dce27cb878c5181ad375b359d3f046555"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        522,
+        215
+      ],
+      "originalRGBA": [
+        146,
+        98,
+        155,
+        253
+      ],
+      "recipientRGBA": [
+        146,
+        98,
+        155,
+        253
+      ],
+      "exactRGBASha256": "e0eba7e417b433f73d1eb719cef12714f1e03a8564180960a2d87e913d8153ef"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        523,
+        215
+      ],
+      "originalRGBA": [
+        131,
+        87,
+        129,
+        253
+      ],
+      "recipientRGBA": [
+        131,
+        87,
+        129,
+        253
+      ],
+      "exactRGBASha256": "b43f62f138ecc816d63c05ae3769b6cf263d74eb8cb1a7b290ed04ba0761b72f"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        522,
+        216
+      ],
+      "originalRGBA": [
+        153,
+        112,
+        164,
+        253
+      ],
+      "recipientRGBA": [
+        153,
+        112,
+        164,
+        253
+      ],
+      "exactRGBASha256": "1458316fe4bb655a407838583edbadaea004e7496fc7147a5a9471686127f0f4"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        521,
+        218
+      ],
+      "originalRGBA": [
+        182,
+        163,
+        213,
+        253
+      ],
+      "recipientRGBA": [
+        182,
+        163,
+        213,
+        253
+      ],
+      "exactRGBASha256": "fa9f3b75c0f73d8cc27963acfdebcfe894c1f8ad54dab8fab2c5321a4bc6fad9"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        520,
+        219
+      ],
+      "originalRGBA": [
+        136,
+        104,
+        186,
+        253
+      ],
+      "recipientRGBA": [
+        136,
+        104,
+        186,
+        253
+      ],
+      "exactRGBASha256": "1852b077a32150961737a488e021a12ee4af0e6e2a9b7dbc3403c2f6b4374c4e"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        519,
+        220
+      ],
+      "originalRGBA": [
+        135,
+        101,
+        179,
+        253
+      ],
+      "recipientRGBA": [
+        135,
+        101,
+        179,
+        253
+      ],
+      "exactRGBASha256": "d6a8db9233050c84163790230cad274be315042245695f92c860505e655b1f11"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        514,
+        223
+      ],
+      "originalRGBA": [
+        178,
+        143,
+        172,
+        253
+      ],
+      "recipientRGBA": [
+        178,
+        143,
+        172,
+        253
+      ],
+      "exactRGBASha256": "9865c8a731abd6b0abf56a807291381bb2ea18e37f34f15b08ce361483fb56b4"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "sourceXY": [
+        515,
+        223
+      ],
+      "originalRGBA": [
+        166,
+        138,
+        181,
+        253
+      ],
+      "recipientRGBA": [
+        166,
+        138,
+        181,
+        253
+      ],
+      "exactRGBASha256": "f8d87e06efb3fdab94ee7a3d8f2f3160b846191d394d367622db086dcd5de97b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        495,
+        215
+      ],
+      "originalRGBA": [
+        246,
+        210,
+        211,
+        253
+      ],
+      "recipientRGBA": [
+        246,
+        210,
+        211,
+        253
+      ],
+      "exactRGBASha256": "867cadec9254917c90b0abf3a21383e4470372ccce09ad3f23b9f244ed597d9d"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        500,
+        220
+      ],
+      "originalRGBA": [
+        254,
+        220,
+        210,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        220,
+        210,
+        253
+      ],
+      "exactRGBASha256": "b4e7d5f1b0dd23f9546504380eb1c0f1b84f37a2551f601ebe8a452678633366"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        501,
+        220
+      ],
+      "originalRGBA": [
+        253,
+        218,
+        208,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        218,
+        208,
+        253
+      ],
+      "exactRGBASha256": "be53998c3e26eeff01816f41af2ecb66f7a652b704c028d2a5cfc06b5d24adfc"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        502,
+        220
+      ],
+      "originalRGBA": [
+        252,
+        215,
+        206,
+        253
+      ],
+      "recipientRGBA": [
+        252,
+        215,
+        206,
+        253
+      ],
+      "exactRGBASha256": "4798428d15e92f3ad634a543dbe8fab411154143de4224ea118795ff5c45ceb0"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        501,
+        221
+      ],
+      "originalRGBA": [
+        254,
+        221,
+        210,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        221,
+        210,
+        253
+      ],
+      "exactRGBASha256": "263d0e0f89c97e89794b3ab06e60837b90bea004fc9e994ffac7ab4ca6d39e20"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        502,
+        221
+      ],
+      "originalRGBA": [
+        253,
+        220,
+        209,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        220,
+        209,
+        253
+      ],
+      "exactRGBASha256": "59c6f66ff9eb50043ac0ca56f0fabee3c8cff61c66c4384bae4a04eb384b6a9f"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        503,
+        221
+      ],
+      "originalRGBA": [
+        253,
+        219,
+        209,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        219,
+        209,
+        253
+      ],
+      "exactRGBASha256": "6ca3492228f6c610dbcebacea4da89cefcfd8b998ac36bf84d88fb6068c41219"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        504,
+        221
+      ],
+      "originalRGBA": [
+        253,
+        220,
+        210,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        220,
+        210,
+        253
+      ],
+      "exactRGBASha256": "bad47724f4ff9c86f8c024b32660ec98ec9961ee27ae6c940e1b1355600dfe29"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        505,
+        221
+      ],
+      "originalRGBA": [
+        253,
+        218,
+        210,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        218,
+        210,
+        253
+      ],
+      "exactRGBASha256": "7599441aeaf11fcc8ffefc84db875a0275a9417cf16f6dd97e313bf7a261826b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        501,
+        222
+      ],
+      "originalRGBA": [
+        254,
+        221,
+        211,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        221,
+        211,
+        253
+      ],
+      "exactRGBASha256": "c4e5a30b1bc321d881c563c97c74bdd94622224dde93970ebbe8bd5fac0d6738"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        502,
+        222
+      ],
+      "originalRGBA": [
+        253,
+        220,
+        210,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        220,
+        210,
+        253
+      ],
+      "exactRGBASha256": "bad47724f4ff9c86f8c024b32660ec98ec9961ee27ae6c940e1b1355600dfe29"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        503,
+        222
+      ],
+      "originalRGBA": [
+        253,
+        220,
+        210,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        220,
+        210,
+        253
+      ],
+      "exactRGBASha256": "bad47724f4ff9c86f8c024b32660ec98ec9961ee27ae6c940e1b1355600dfe29"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        504,
+        222
+      ],
+      "originalRGBA": [
+        252,
+        218,
+        208,
+        253
+      ],
+      "recipientRGBA": [
+        252,
+        218,
+        208,
+        253
+      ],
+      "exactRGBASha256": "42e44ee1e9d0d8882e243b16d370460fd13ed31607e5aa0aa6dfc16a8a3255f3"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        505,
+        222
+      ],
+      "originalRGBA": [
+        253,
+        218,
+        209,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        218,
+        209,
+        253
+      ],
+      "exactRGBASha256": "9d96e4119a285f43750f5f5fabc32c16a83d5fee9c7c1c1557361a7efcde4b01"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        506,
+        222
+      ],
+      "originalRGBA": [
+        253,
+        220,
+        210,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        220,
+        210,
+        253
+      ],
+      "exactRGBASha256": "bad47724f4ff9c86f8c024b32660ec98ec9961ee27ae6c940e1b1355600dfe29"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        507,
+        222
+      ],
+      "originalRGBA": [
+        254,
+        220,
+        211,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        220,
+        211,
+        253
+      ],
+      "exactRGBASha256": "fd8774e999af2605ddcdfa4d81e4fd44638544219bb9c37af17fed967bb616c7"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        508,
+        222
+      ],
+      "originalRGBA": [
+        252,
+        215,
+        210,
+        253
+      ],
+      "recipientRGBA": [
+        252,
+        215,
+        210,
+        253
+      ],
+      "exactRGBASha256": "9e95f4e1b6f6c01f11029cecd7c340554ff3dfdd2700794c87b2d515d14495ab"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        502,
+        223
+      ],
+      "originalRGBA": [
+        253,
+        221,
+        212,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        221,
+        212,
+        253
+      ],
+      "exactRGBASha256": "193fc47182bc21a34264b575ed79168e0d2f1010b92d183abf528b0b5c7f9b0c"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        503,
+        223
+      ],
+      "originalRGBA": [
+        252,
+        218,
+        210,
+        253
+      ],
+      "recipientRGBA": [
+        252,
+        218,
+        210,
+        253
+      ],
+      "exactRGBASha256": "d5842f9b8e6fef74f2043334d5f63e061d6d137f933bdbc9afbcf96850ddd3ae"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        504,
+        223
+      ],
+      "originalRGBA": [
+        253,
+        219,
+        210,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        219,
+        210,
+        253
+      ],
+      "exactRGBASha256": "8c711be25b83cd5c05ad111d1e2537297c8d70bf8d5dae866cd30e409bd8a8ea"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        505,
+        223
+      ],
+      "originalRGBA": [
+        253,
+        217,
+        209,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        217,
+        209,
+        253
+      ],
+      "exactRGBASha256": "30179349290c82c29ffa9dfa3620a6886ad85d76cb462acae9deb5002f302116"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        506,
+        223
+      ],
+      "originalRGBA": [
+        254,
+        220,
+        210,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        220,
+        210,
+        253
+      ],
+      "exactRGBASha256": "b4e7d5f1b0dd23f9546504380eb1c0f1b84f37a2551f601ebe8a452678633366"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        507,
+        223
+      ],
+      "originalRGBA": [
+        253,
+        218,
+        209,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        218,
+        209,
+        253
+      ],
+      "exactRGBASha256": "9d96e4119a285f43750f5f5fabc32c16a83d5fee9c7c1c1557361a7efcde4b01"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        508,
+        223
+      ],
+      "originalRGBA": [
+        254,
+        219,
+        210,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        219,
+        210,
+        253
+      ],
+      "exactRGBASha256": "1ede1f8e8653ea4f305ac74e07b65e9576c873dbf6fd5eca9a3bd739621edf9d"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        510,
+        223
+      ],
+      "originalRGBA": [
+        252,
+        218,
+        210,
+        253
+      ],
+      "recipientRGBA": [
+        252,
+        218,
+        210,
+        253
+      ],
+      "exactRGBASha256": "d5842f9b8e6fef74f2043334d5f63e061d6d137f933bdbc9afbcf96850ddd3ae"
+    },
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        504,
+        224
+      ],
+      "originalRGBA": [
+        253,
+        220,
+        210,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        220,
+        210,
+        253
+      ],
+      "exactRGBASha256": "bad47724f4ff9c86f8c024b32660ec98ec9961ee27ae6c940e1b1355600dfe29"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        505,
+        224
+      ],
+      "originalRGBA": [
+        254,
+        221,
+        211,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        221,
+        211,
+        253
+      ],
+      "exactRGBASha256": "c4e5a30b1bc321d881c563c97c74bdd94622224dde93970ebbe8bd5fac0d6738"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        506,
+        224
+      ],
+      "originalRGBA": [
+        254,
+        220,
+        210,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        220,
+        210,
+        253
+      ],
+      "exactRGBASha256": "b4e7d5f1b0dd23f9546504380eb1c0f1b84f37a2551f601ebe8a452678633366"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        507,
+        224
+      ],
+      "originalRGBA": [
+        254,
+        219,
+        209,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        219,
+        209,
+        253
+      ],
+      "exactRGBASha256": "b1422be65a0fbe125955b34ec9c2f89cb1e366cbb654877b7d2bb4012e1a897f"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        508,
+        224
+      ],
+      "originalRGBA": [
+        254,
+        219,
+        209,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        219,
+        209,
+        253
+      ],
+      "exactRGBASha256": "b1422be65a0fbe125955b34ec9c2f89cb1e366cbb654877b7d2bb4012e1a897f"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        509,
+        224
+      ],
+      "originalRGBA": [
+        253,
+        219,
+        210,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        219,
+        210,
+        253
+      ],
+      "exactRGBASha256": "8c711be25b83cd5c05ad111d1e2537297c8d70bf8d5dae866cd30e409bd8a8ea"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        513,
+        224
+      ],
+      "originalRGBA": [
+        250,
+        221,
+        209,
+        253
+      ],
+      "recipientRGBA": [
+        250,
+        221,
+        209,
+        253
+      ],
+      "exactRGBASha256": "1699439e1231cc3edd3618f48bfc79198cff366f70fac5be1b00a184b9ab09e5"
+    },
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        507,
+        225
+      ],
+      "originalRGBA": [
+        254,
+        219,
+        208,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        219,
+        208,
+        253
+      ],
+      "exactRGBASha256": "4adb66b78e65ada1236dc3196fe731dbaa455c84fb72b8d5d5dd1fb520c0b238"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        508,
+        225
+      ],
+      "originalRGBA": [
+        254,
+        220,
+        209,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        220,
+        209,
+        253
+      ],
+      "exactRGBASha256": "f34ca3dacf46eb21af8eb91d2cc4aaee11d22abe9592ca4a5d8a8fa793d4621c"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        509,
+        225
+      ],
+      "originalRGBA": [
+        253,
+        219,
+        209,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        219,
+        209,
+        253
+      ],
+      "exactRGBASha256": "6ca3492228f6c610dbcebacea4da89cefcfd8b998ac36bf84d88fb6068c41219"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        510,
+        225
+      ],
+      "originalRGBA": [
+        254,
+        221,
+        211,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        221,
+        211,
+        253
+      ],
+      "exactRGBASha256": "c4e5a30b1bc321d881c563c97c74bdd94622224dde93970ebbe8bd5fac0d6738"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        511,
+        225
+      ],
+      "originalRGBA": [
+        253,
+        220,
+        211,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        220,
+        211,
+        253
+      ],
+      "exactRGBASha256": "1a60c22ca593209ec3d0c4a539444e5006776caacb92604051cb1ba406f1c1a8"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        518,
+        225
+      ],
+      "originalRGBA": [
+        243,
+        216,
+        210,
+        253
+      ],
+      "recipientRGBA": [
+        243,
+        216,
+        210,
+        253
+      ],
+      "exactRGBASha256": "861dec0b4625d25f7fabb243a7c48f55fad8845fd77f2659531638400999e1d3"
+    },
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        511,
+        226
+      ],
+      "originalRGBA": [
+        254,
+        221,
+        212,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        221,
+        212,
+        253
+      ],
+      "exactRGBASha256": "440ebcb1f9d4cee9071a77b337208e0e83dded9963038f0997f28161bd8e7966"
+    },
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_left_lower_lid_rim",
+      "sourceXY": [
+        519,
+        226
+      ],
+      "originalRGBA": [
+        247,
+        221,
+        217,
+        253
+      ],
+      "recipientRGBA": [
+        247,
+        221,
+        217,
+        253
+      ],
+      "exactRGBASha256": "50529e278c6dee92feb5aabc52302292a2ae963b4c78bd1954c4da0223884ed6"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        497,
+        200
+      ],
+      "originalRGBA": [
+        226,
+        210,
+        210,
+        253
+      ],
+      "recipientRGBA": [
+        226,
+        210,
+        210,
+        253
+      ],
+      "exactRGBASha256": "30a994576ea9002d1a1017721d71eee52bbae810846d0f491054974e5cc26a13"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        528,
+        202
+      ],
+      "originalRGBA": [
+        232,
+        222,
+        234,
+        253
+      ],
+      "recipientRGBA": [
+        232,
+        222,
+        234,
+        253
+      ],
+      "exactRGBASha256": "2821b539584f224becd37b451ead3204b6eae4a493a9d074f4a0a2851b0b8659"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        529,
+        203
+      ],
+      "originalRGBA": [
+        219,
+        208,
+        222,
+        253
+      ],
+      "recipientRGBA": [
+        219,
+        208,
+        222,
+        253
+      ],
+      "exactRGBASha256": "98faf6b78cacf05f20ef0a4405886c349a21262d547d896bb43780382b3f478f"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        495,
+        206
+      ],
+      "originalRGBA": [
+        238,
+        214,
+        226,
+        253
+      ],
+      "recipientRGBA": [
+        238,
+        214,
+        226,
+        253
+      ],
+      "exactRGBASha256": "ef76921e71af4630555ea0ea43559289174b6e286bd8b71df9d5fdc440ed0078"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        531,
+        206
+      ],
+      "originalRGBA": [
+        218,
+        198,
+        202,
+        253
+      ],
+      "recipientRGBA": [
+        218,
+        198,
+        202,
+        253
+      ],
+      "exactRGBASha256": "a3f82f204ddd9930709e65f049a32a830bad382ff9b82780aa20e0b7ad340df6"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        495,
+        208
+      ],
+      "originalRGBA": [
+        242,
+        224,
+        229,
+        253
+      ],
+      "recipientRGBA": [
+        242,
+        224,
+        229,
+        253
+      ],
+      "exactRGBASha256": "be72d18b745f557c7e8a0e6d650ae404c91350e03c6f278fd14416eb266357c4"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        528,
+        208
+      ],
+      "originalRGBA": [
+        247,
+        246,
+        245,
+        253
+      ],
+      "recipientRGBA": [
+        247,
+        246,
+        245,
+        253
+      ],
+      "exactRGBASha256": "4be4d3c030fe9ef9013424c8d331d9fd0105fb52b66a0efa241f4f33b21db099"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        531,
+        208
+      ],
+      "originalRGBA": [
+        212,
+        192,
+        201,
+        253
+      ],
+      "recipientRGBA": [
+        212,
+        192,
+        201,
+        253
+      ],
+      "exactRGBASha256": "06ff6d6eb115f79b43b4638a4a6c12cd19f16f2d44a8ba81280412023e889968"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        495,
+        209
+      ],
+      "originalRGBA": [
+        243,
+        223,
+        228,
+        253
+      ],
+      "recipientRGBA": [
+        243,
+        223,
+        228,
+        253
+      ],
+      "exactRGBASha256": "7099a55702ee1f12848dba0c6675104480b691389e43e014922346cfc657a333"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        528,
+        209
+      ],
+      "originalRGBA": [
+        248,
+        247,
+        246,
+        253
+      ],
+      "recipientRGBA": [
+        248,
+        247,
+        246,
+        253
+      ],
+      "exactRGBASha256": "6a8ddb247d75c3e43d5831fe7a7bfb371bd170e4cd6309c49a662f8eb58dd249"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        528,
+        210
+      ],
+      "originalRGBA": [
+        251,
+        252,
+        250,
+        253
+      ],
+      "recipientRGBA": [
+        251,
+        252,
+        250,
+        253
+      ],
+      "exactRGBASha256": "5276fa265d7a3070133f64ef63630f4661fc15358787e339fd13e648e11a7ac9"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        530,
+        211
+      ],
+      "originalRGBA": [
+        253,
+        248,
+        247,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        248,
+        247,
+        253
+      ],
+      "exactRGBASha256": "8c0429b4d5d2e7644af7a1eb6278c1478b0ea3caed1eba4987246e465e2f5073"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        531,
+        211
+      ],
+      "originalRGBA": [
+        242,
+        228,
+        228,
+        253
+      ],
+      "recipientRGBA": [
+        242,
+        228,
+        228,
+        253
+      ],
+      "exactRGBASha256": "c8f813caecae7976e58fd40f7c55ef47d7526da8881d8dcb69c2c680acf1af57"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        532,
+        212
+      ],
+      "originalRGBA": [
+        255,
+        255,
+        254,
+        253
+      ],
+      "recipientRGBA": [
+        255,
+        255,
+        254,
+        253
+      ],
+      "exactRGBASha256": "fd8a2d0e5416a670ae1d4aad02ecdd3ef9f1391b034948d12e7c1ba54a1c4d01"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        533,
+        213
+      ],
+      "originalRGBA": [
+        254,
+        251,
+        248,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        251,
+        248,
+        253
+      ],
+      "exactRGBASha256": "6afbb62e72c41a2f4c9d3e8315229abf88a34c7737e3371e7fe31b5e1f44297b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        529,
+        214
+      ],
+      "originalRGBA": [
+        254,
+        255,
+        254,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        255,
+        254,
+        253
+      ],
+      "exactRGBASha256": "d1c1578420e5762400ec953516cc1e51caae140257938f45f667431025beff8a"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        533,
+        214
+      ],
+      "originalRGBA": [
+        254,
+        249,
+        247,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        249,
+        247,
+        253
+      ],
+      "exactRGBASha256": "9da65ed4f4c374bb175f1bfbe144b52afb88f6157b84d63e1640c52629f72130"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        530,
+        215
+      ],
+      "originalRGBA": [
+        254,
+        253,
+        252,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        253,
+        252,
+        253
+      ],
+      "exactRGBASha256": "0e4867662e7af72784934cfaa4ae8e563dc2466dc789ead3475bf8c190f7e26b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        531,
+        215
+      ],
+      "originalRGBA": [
+        254,
+        251,
+        250,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        251,
+        250,
+        253
+      ],
+      "exactRGBASha256": "dc6615722c261ca8d5835f3b350d77e133946ded1ef0a2f84a0a6dbca0aa5a79"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        532,
+        215
+      ],
+      "originalRGBA": [
+        253,
+        250,
+        249,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        250,
+        249,
+        253
+      ],
+      "exactRGBASha256": "510e9daa12e46c63d6d4ccee7705bef05ca77ec309c8ca4bdd4d0e72fcd3c0bd"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        533,
+        215
+      ],
+      "originalRGBA": [
+        254,
+        247,
+        244,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        247,
+        244,
+        253
+      ],
+      "exactRGBASha256": "eb3d6cac39181f1298a0a0b161768a616f06d42d7b6d3604421e778290b2fba2"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        529,
+        216
+      ],
+      "originalRGBA": [
+        254,
+        253,
+        252,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        253,
+        252,
+        253
+      ],
+      "exactRGBASha256": "0e4867662e7af72784934cfaa4ae8e563dc2466dc789ead3475bf8c190f7e26b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        530,
+        216
+      ],
+      "originalRGBA": [
+        255,
+        252,
+        251,
+        253
+      ],
+      "recipientRGBA": [
+        255,
+        252,
+        251,
+        253
+      ],
+      "exactRGBASha256": "cf4c57462b8608dda63eef19ed4e15dd070f94d7cc743425f795252dfa1a1cb2"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        531,
+        216
+      ],
+      "originalRGBA": [
+        254,
+        251,
+        250,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        251,
+        250,
+        253
+      ],
+      "exactRGBASha256": "dc6615722c261ca8d5835f3b350d77e133946ded1ef0a2f84a0a6dbca0aa5a79"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        532,
+        216
+      ],
+      "originalRGBA": [
+        254,
+        250,
+        247,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        250,
+        247,
+        253
+      ],
+      "exactRGBASha256": "494c08fa10bc7228179fb16f1ff52803fbd3f318931f42e220d4cbc0aefca102"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        531,
+        217
+      ],
+      "originalRGBA": [
+        255,
+        250,
+        249,
+        253
+      ],
+      "recipientRGBA": [
+        255,
+        250,
+        249,
+        253
+      ],
+      "exactRGBASha256": "6991fc7934c3205211da0019d788abea11fb2c0f2f4db5c729670ddfdebfbe52"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        532,
+        217
+      ],
+      "originalRGBA": [
+        254,
+        248,
+        246,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        248,
+        246,
+        253
+      ],
+      "exactRGBASha256": "24e326f4a50b10f64b71d3db87ae2ad79d73ba087855b91ece25d0cea3cad3e0"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        531,
+        218
+      ],
+      "originalRGBA": [
+        254,
+        249,
+        248,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        249,
+        248,
+        253
+      ],
+      "exactRGBASha256": "032ad1d8890cc0fc56235d7a5e47e270a1f6f2d0e10d086e16bf1943982402f9"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        530,
+        219
+      ],
+      "originalRGBA": [
+        254,
+        251,
+        250,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        251,
+        250,
+        253
+      ],
+      "exactRGBASha256": "dc6615722c261ca8d5835f3b350d77e133946ded1ef0a2f84a0a6dbca0aa5a79"
+    },
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        531,
+        219
+      ],
+      "originalRGBA": [
+        254,
+        247,
+        245,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        247,
+        245,
+        253
+      ],
+      "exactRGBASha256": "52aa1747c03d92e9ebc548f0173163e6393c7ba928fd2cbc03afea6209dc24b4"
+    },
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        530,
+        220
+      ],
+      "originalRGBA": [
+        254,
+        248,
+        246,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        248,
+        246,
+        253
+      ],
+      "exactRGBASha256": "24e326f4a50b10f64b71d3db87ae2ad79d73ba087855b91ece25d0cea3cad3e0"
+    },
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        529,
+        221
+      ],
+      "originalRGBA": [
+        253,
+        247,
+        244,
+        254
+      ],
+      "recipientRGBA": [
+        253,
+        247,
+        244,
+        254
+      ],
+      "exactRGBASha256": "d3539ccba074d26c79360aadaa19b8daa145788e089e2f325355fbde7efe8937"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        525,
+        222
+      ],
+      "originalRGBA": [
+        253,
+        253,
+        252,
+        254
+      ],
+      "recipientRGBA": [
+        253,
+        253,
+        252,
+        254
+      ],
+      "exactRGBASha256": "0086fdd980dd79eb6b6af659d9db9e08f0c63ea6939a2bae91fdfcde7f8b917f"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        527,
+        222
+      ],
+      "originalRGBA": [
+        254,
+        250,
+        249,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        250,
+        249,
+        253
+      ],
+      "exactRGBASha256": "c890ca748b98151ac6c20c042819f42bb40b546d912fe7e94b3bab1e904666cf"
+    },
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        528,
+        222
+      ],
+      "originalRGBA": [
+        254,
+        246,
+        243,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        246,
+        243,
+        253
+      ],
+      "exactRGBASha256": "33a4e9cecf181ff6146ea58544e6c58a79eda8d7844ad38be351e53a93a6d273"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        524,
+        223
+      ],
+      "originalRGBA": [
+        254,
+        253,
+        251,
+        254
+      ],
+      "recipientRGBA": [
+        254,
+        253,
+        251,
+        254
+      ],
+      "exactRGBASha256": "f996e99dbc1a273612573e2228051ee5bc594bd3e7952b0645c46cfd580c23d8"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        516,
+        224
+      ],
+      "originalRGBA": [
+        241,
+        224,
+        226,
+        253
+      ],
+      "recipientRGBA": [
+        241,
+        224,
+        226,
+        253
+      ],
+      "exactRGBASha256": "3fc7f89b6de9a286ab45871e78cd6cf6d9d4ca401a70105da0ec388e798f8a37"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        517,
+        224
+      ],
+      "originalRGBA": [
+        250,
+        240,
+        239,
+        253
+      ],
+      "recipientRGBA": [
+        250,
+        240,
+        239,
+        253
+      ],
+      "exactRGBASha256": "1d668d1e044c1c8bbcfb8d90e4d23116d76815c820ecd119b1e521b431e8ecc4"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        518,
+        224
+      ],
+      "originalRGBA": [
+        255,
+        254,
+        252,
+        253
+      ],
+      "recipientRGBA": [
+        255,
+        254,
+        252,
+        253
+      ],
+      "exactRGBASha256": "25a005dc1a2a42147cb5b7c82bba9ff9775e1d853c56b251cb18e55443c3153a"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        522,
+        224
+      ],
+      "originalRGBA": [
+        253,
+        251,
+        250,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        251,
+        250,
+        253
+      ],
+      "exactRGBASha256": "487cac01768dd3021be7371c6bbffd1acac68dd838abd29277472ceb3fc4f567"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        523,
+        224
+      ],
+      "originalRGBA": [
+        254,
+        250,
+        247,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        250,
+        247,
+        253
+      ],
+      "exactRGBASha256": "494c08fa10bc7228179fb16f1ff52803fbd3f318931f42e220d4cbc0aefca102"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        520,
+        225
+      ],
+      "originalRGBA": [
+        252,
+        242,
+        239,
+        254
+      ],
+      "recipientRGBA": [
+        252,
+        242,
+        239,
+        254
+      ],
+      "exactRGBASha256": "87bd3ad5102e0c8bebb4e5e1f5eddc5e435774310126a2cb9c905227135729e5"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "sourceXY": [
+        521,
+        225
+      ],
+      "originalRGBA": [
+        254,
+        251,
+        248,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        251,
+        248,
+        253
+      ],
+      "exactRGBASha256": "6afbb62e72c41a2f4c9d3e8315229abf88a34c7737e3371e7fe31b5e1f44297b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        508,
+        187
+      ],
+      "originalRGBA": [
+        220,
+        168,
+        140,
+        253
+      ],
+      "recipientRGBA": [
+        220,
+        168,
+        140,
+        253
+      ],
+      "exactRGBASha256": "2008e641c3768154ef42b24d398bcb85a32ed7eeacb813dab94e3e1d0b1e327f"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        509,
+        187
+      ],
+      "originalRGBA": [
+        227,
+        176,
+        151,
+        253
+      ],
+      "recipientRGBA": [
+        227,
+        176,
+        151,
+        253
+      ],
+      "exactRGBASha256": "88da2cd742ecdf88992e107c697a0ea7e0170aa7b26936afec8737615003d588"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        510,
+        187
+      ],
+      "originalRGBA": [
+        224,
+        178,
+        156,
+        253
+      ],
+      "recipientRGBA": [
+        224,
+        178,
+        156,
+        253
+      ],
+      "exactRGBASha256": "7eca9245461799fd07b968ab77d368b137cc4cb8e8fd3c40a12ed08797a26781"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        511,
+        187
+      ],
+      "originalRGBA": [
+        213,
+        164,
+        150,
+        253
+      ],
+      "recipientRGBA": [
+        213,
+        164,
+        150,
+        253
+      ],
+      "exactRGBASha256": "d33071b2883106517aa745004b1463caf3438ebc4ba05fe19cca5bb17490d3f1"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        512,
+        187
+      ],
+      "originalRGBA": [
+        217,
+        171,
+        158,
+        253
+      ],
+      "recipientRGBA": [
+        217,
+        171,
+        158,
+        253
+      ],
+      "exactRGBASha256": "e8ba4100ed9933b54629e40ea903bc3944f723df40c9c302db81877b930334fa"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        507,
+        188
+      ],
+      "originalRGBA": [
+        223,
+        173,
+        151,
+        253
+      ],
+      "recipientRGBA": [
+        223,
+        173,
+        151,
+        253
+      ],
+      "exactRGBASha256": "cd60d253f6d1c0be1e01628dfd415f0bfdd4c525274391b09496a754381e7e9a"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        508,
+        188
+      ],
+      "originalRGBA": [
+        228,
+        182,
+        162,
+        253
+      ],
+      "recipientRGBA": [
+        228,
+        182,
+        162,
+        253
+      ],
+      "exactRGBASha256": "254c723f5c702cdfeab2bec28e810d4727aa5752882d119d5a640c1caaecb97e"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        509,
+        188
+      ],
+      "originalRGBA": [
+        226,
+        182,
+        164,
+        253
+      ],
+      "recipientRGBA": [
+        226,
+        182,
+        164,
+        253
+      ],
+      "exactRGBASha256": "b5871a0e0f45fcb913292a848c36c426ed0890292598e882188f5123c771dcd7"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        510,
+        188
+      ],
+      "originalRGBA": [
+        233,
+        196,
+        175,
+        253
+      ],
+      "recipientRGBA": [
+        233,
+        196,
+        175,
+        253
+      ],
+      "exactRGBASha256": "48935dcaa130cb080f6d17f8c4dfe5782fae9550f67b0f3a61ebc1685bea029b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        511,
+        189
+      ],
+      "originalRGBA": [
+        170,
+        131,
+        138,
+        253
+      ],
+      "recipientRGBA": [
+        170,
+        131,
+        138,
+        253
+      ],
+      "exactRGBASha256": "171ca696d579af5242120599a59a895f47a403e3bcd5a061cbe8ae0534470aa3"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        512,
+        189
+      ],
+      "originalRGBA": [
+        206,
+        170,
+        168,
+        253
+      ],
+      "recipientRGBA": [
+        206,
+        170,
+        168,
+        253
+      ],
+      "exactRGBASha256": "2803b5b20167d985461dd33335754bd86a4774429486f68936a1ad67820634d1"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        503,
+        190
+      ],
+      "originalRGBA": [
+        216,
+        173,
+        139,
+        253
+      ],
+      "recipientRGBA": [
+        216,
+        173,
+        139,
+        253
+      ],
+      "exactRGBASha256": "ef4d830ffdc51dd6b68c959ad7d6a9efc954e02070a4e662f0b39a6b7b9f30f6"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        512,
+        190
+      ],
+      "originalRGBA": [
+        103,
+        68,
+        89,
+        253
+      ],
+      "recipientRGBA": [
+        103,
+        68,
+        89,
+        253
+      ],
+      "exactRGBASha256": "636134773dc89f8cb7a61b082510ea298790e959083c95c3eb643690ec6ccf98"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        513,
+        190
+      ],
+      "originalRGBA": [
+        119,
+        80,
+        101,
+        253
+      ],
+      "recipientRGBA": [
+        119,
+        80,
+        101,
+        253
+      ],
+      "exactRGBASha256": "0d46ec43870d904fb0468e684c1818391b52b3fad20f2fa925d5a8ef2a240bef"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        514,
+        190
+      ],
+      "originalRGBA": [
+        164,
+        125,
+        139,
+        253
+      ],
+      "recipientRGBA": [
+        164,
+        125,
+        139,
+        253
+      ],
+      "exactRGBASha256": "c2077bead4543cca29afd63da0abb8b77c8494d6c47b9527c1f4a4e29e56e6b9"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        515,
+        190
+      ],
+      "originalRGBA": [
+        213,
+        188,
+        185,
+        253
+      ],
+      "recipientRGBA": [
+        213,
+        188,
+        185,
+        253
+      ],
+      "exactRGBASha256": "72c8634582abd0ff9b94d9fa5a7313143475ece8511aea219a5d6e4e51be0a19"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        517,
+        190
+      ],
+      "originalRGBA": [
+        210,
+        178,
+        168,
+        253
+      ],
+      "recipientRGBA": [
+        210,
+        178,
+        168,
+        253
+      ],
+      "exactRGBASha256": "89245d8ef4484d430a0e8b652c0f8798db038c79df12d0bd892ba85038aa39bd"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        518,
+        190
+      ],
+      "originalRGBA": [
+        221,
+        181,
+        161,
+        253
+      ],
+      "recipientRGBA": [
+        221,
+        181,
+        161,
+        253
+      ],
+      "exactRGBASha256": "5435dd749a558ca8457f00c7fac5c2475f37b6ee737ff9cd7ef7f2cc95cd33e4"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        501,
+        191
+      ],
+      "originalRGBA": [
+        222,
+        185,
+        148,
+        253
+      ],
+      "recipientRGBA": [
+        222,
+        185,
+        148,
+        253
+      ],
+      "exactRGBASha256": "27eedd69d46bd7cea9875aab7ddb691c4f32803df29db672bc2f4a4e9a611bf9"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        514,
+        191
+      ],
+      "originalRGBA": [
+        100,
+        62,
+        91,
+        253
+      ],
+      "recipientRGBA": [
+        100,
+        62,
+        91,
+        253
+      ],
+      "exactRGBASha256": "33d2756af83578ac5701f935cd4450d6507e60fa91e1513c161190b96c709fe2"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        515,
+        191
+      ],
+      "originalRGBA": [
+        111,
+        76,
+        94,
+        253
+      ],
+      "recipientRGBA": [
+        111,
+        76,
+        94,
+        253
+      ],
+      "exactRGBASha256": "2c1927047fb0c97ff21f3bb27a69c3b78f8601299d5b202ddfa66de5934eea12"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        516,
+        191
+      ],
+      "originalRGBA": [
+        123,
+        84,
+        102,
+        253
+      ],
+      "recipientRGBA": [
+        123,
+        84,
+        102,
+        253
+      ],
+      "exactRGBASha256": "01553dcc35ee6666b64f06a01ebaf2fa6527432535f829e94f8446257d179a3a"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        517,
+        191
+      ],
+      "originalRGBA": [
+        134,
+        87,
+        99,
+        253
+      ],
+      "recipientRGBA": [
+        134,
+        87,
+        99,
+        253
+      ],
+      "exactRGBASha256": "ba4ea57fb8bad6a0c8ba70cc624685c64e3380331af3b701ee95a93f0e6a23b8"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        518,
+        191
+      ],
+      "originalRGBA": [
+        189,
+        140,
+        130,
+        253
+      ],
+      "recipientRGBA": [
+        189,
+        140,
+        130,
+        253
+      ],
+      "exactRGBASha256": "5b6dc87c1c7087545c5effea2364966b7974cdfe462c9085bb53d43913e0ea9b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        498,
+        192
+      ],
+      "originalRGBA": [
+        228,
+        198,
+        163,
+        253
+      ],
+      "recipientRGBA": [
+        228,
+        198,
+        163,
+        253
+      ],
+      "exactRGBASha256": "41f2aa8358777a54f5c9e889912189d5fad9a5d5e5cd18446a54b299ffa72c17"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        499,
+        192
+      ],
+      "originalRGBA": [
+        219,
+        189,
+        149,
+        253
+      ],
+      "recipientRGBA": [
+        219,
+        189,
+        149,
+        253
+      ],
+      "exactRGBASha256": "b15d542596ad0cb2be4b75f374e5a9df4b293f87f11fdefa03736e6b86a3c1a1"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        522,
+        192
+      ],
+      "originalRGBA": [
+        128,
+        80,
+        74,
+        253
+      ],
+      "recipientRGBA": [
+        128,
+        80,
+        74,
+        253
+      ],
+      "exactRGBASha256": "c360f186d4c87cce5c188a18fc853737a26aafc8ae0ca598ce3ffa9ce9486696"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        523,
+        192
+      ],
+      "originalRGBA": [
+        145,
+        97,
+        84,
+        253
+      ],
+      "recipientRGBA": [
+        145,
+        97,
+        84,
+        253
+      ],
+      "exactRGBASha256": "51982f94e0f5a247a41c7e6a75eb157595e2c8a37d12308e56e6354d95c9c2df"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        524,
+        192
+      ],
+      "originalRGBA": [
+        194,
+        148,
+        124,
+        253
+      ],
+      "recipientRGBA": [
+        194,
+        148,
+        124,
+        253
+      ],
+      "exactRGBASha256": "9d12dd73b944da16df4e1724ad0e20221beb8e150da75bd9ceffa53340e40d56"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        516,
+        193
+      ],
+      "originalRGBA": [
+        231,
+        192,
+        186,
+        253
+      ],
+      "recipientRGBA": [
+        231,
+        192,
+        186,
+        253
+      ],
+      "exactRGBASha256": "b4aa6626d34c9137d8f5bd6adaa687bd3883838da68fbf5c8ab69c4b4cd8f4f5"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        524,
+        193
+      ],
+      "originalRGBA": [
+        118,
+        70,
+        63,
+        253
+      ],
+      "recipientRGBA": [
+        118,
+        70,
+        63,
+        253
+      ],
+      "exactRGBASha256": "d3709862e7ad43598a0bf6c55a99639914e2064fd9b888c0146603f14f1434af"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        525,
+        193
+      ],
+      "originalRGBA": [
+        141,
+        86,
+        77,
+        253
+      ],
+      "recipientRGBA": [
+        141,
+        86,
+        77,
+        253
+      ],
+      "exactRGBASha256": "7b30892b5956949ec4a2927a57af4c5bf1aeda31c9119b2be68a2c85cbbea1b4"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        526,
+        193
+      ],
+      "originalRGBA": [
+        215,
+        175,
+        152,
+        253
+      ],
+      "recipientRGBA": [
+        215,
+        175,
+        152,
+        253
+      ],
+      "exactRGBASha256": "402843d75ec18280d478a2fa9116d19098129f20d8826704dcc99f10a77c760b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        515,
+        194
+      ],
+      "originalRGBA": [
+        215,
+        178,
+        182,
+        253
+      ],
+      "recipientRGBA": [
+        215,
+        178,
+        182,
+        253
+      ],
+      "exactRGBASha256": "52b93a3a2b711b921858a8112a50bf6b309a07011e210c01c764d8c57eee29a0"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        526,
+        194
+      ],
+      "originalRGBA": [
+        162,
+        99,
+        87,
+        253
+      ],
+      "recipientRGBA": [
+        162,
+        99,
+        87,
+        253
+      ],
+      "exactRGBASha256": "e6065d0350393a8264e1bf6b40b636b0947c1a663c24790c7ca295425daa6221"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        527,
+        194
+      ],
+      "originalRGBA": [
+        186,
+        124,
+        113,
+        253
+      ],
+      "recipientRGBA": [
+        186,
+        124,
+        113,
+        253
+      ],
+      "exactRGBASha256": "2907c60ac7aba131307cac09b255f0b56484702a0968807bd64dcc95199d0b30"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        528,
+        194
+      ],
+      "originalRGBA": [
+        233,
+        189,
+        169,
+        253
+      ],
+      "recipientRGBA": [
+        233,
+        189,
+        169,
+        253
+      ],
+      "exactRGBASha256": "8ec0003a281e4b3889880f6998f0f38ca9da79224bfd1689ce70ca8d6ba7d0b4"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        529,
+        195
+      ],
+      "originalRGBA": [
+        182,
+        115,
+        111,
+        253
+      ],
+      "recipientRGBA": [
+        182,
+        115,
+        111,
+        253
+      ],
+      "exactRGBASha256": "371551eff8d41fe557bd53d9f63835318def169edef3f0e873c2a56373d8a5dc"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        530,
+        195
+      ],
+      "originalRGBA": [
+        185,
+        125,
+        122,
+        253
+      ],
+      "recipientRGBA": [
+        185,
+        125,
+        122,
+        253
+      ],
+      "exactRGBASha256": "e33697d40961353bc38d2962acfb992cb10f5f410dc03e18690eebb11dc8b9a4"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        531,
+        195
+      ],
+      "originalRGBA": [
+        221,
+        181,
+        170,
+        253
+      ],
+      "recipientRGBA": [
+        221,
+        181,
+        170,
+        253
+      ],
+      "exactRGBASha256": "64c42d837d5e37568a47bafc91dcd1349239de1426d807eb251536bd206e899a"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        526,
+        196
+      ],
+      "originalRGBA": [
+        230,
+        185,
+        161,
+        253
+      ],
+      "recipientRGBA": [
+        230,
+        185,
+        161,
+        253
+      ],
+      "exactRGBASha256": "8c1c99474b7e1ea2fabc39c0d6553e4adc313b719c5ce116b4abbcd2c53601a0"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        532,
+        196
+      ],
+      "originalRGBA": [
+        209,
+        164,
+        155,
+        253
+      ],
+      "recipientRGBA": [
+        209,
+        164,
+        155,
+        253
+      ],
+      "exactRGBASha256": "f1e4efd9e28e1efeef4b32b3c4db94d67748dc2063cb7bf432c9f2a4ec078edd"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        517,
+        197
+      ],
+      "originalRGBA": [
+        136,
+        87,
+        126,
+        253
+      ],
+      "recipientRGBA": [
+        136,
+        87,
+        126,
+        253
+      ],
+      "exactRGBASha256": "3b0c150c6594e40113f21a9a176efcf881d8995b0099028e179e5cb68d5268b8"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        518,
+        197
+      ],
+      "originalRGBA": [
+        121,
+        71,
+        98,
+        253
+      ],
+      "recipientRGBA": [
+        121,
+        71,
+        98,
+        253
+      ],
+      "exactRGBASha256": "0e48ec5a80fe7cffd5731553e2f6fad790dcdfceff8d9b88dc1bab4caebaa19a"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        519,
+        197
+      ],
+      "originalRGBA": [
+        106,
+        49,
+        76,
+        253
+      ],
+      "recipientRGBA": [
+        106,
+        49,
+        76,
+        253
+      ],
+      "exactRGBASha256": "ed28f0df2b229a8b69f8b1cf8a10202b407080f207320eb17c81e5cc150afb8e"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        533,
+        197
+      ],
+      "originalRGBA": [
+        194,
+        146,
+        140,
+        253
+      ],
+      "recipientRGBA": [
+        194,
+        146,
+        140,
+        253
+      ],
+      "exactRGBASha256": "9f896787913ede7102623d2f01bfaa526af2f25a25775377bd60fe625bcccd2e"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        522,
+        198
+      ],
+      "originalRGBA": [
+        112,
+        68,
+        105,
+        253
+      ],
+      "recipientRGBA": [
+        112,
+        68,
+        105,
+        253
+      ],
+      "exactRGBASha256": "44bcbb3c7fe8de0e4590e7fcdf406bff067a4fcd5619479acf11a06ea7936a77"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        523,
+        198
+      ],
+      "originalRGBA": [
+        71,
+        27,
+        58,
+        253
+      ],
+      "recipientRGBA": [
+        71,
+        27,
+        58,
+        253
+      ],
+      "exactRGBASha256": "33d6c8e041010e36547cd39acb343b1a181012a6dc73913a4eeab16ae56c3718"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        524,
+        198
+      ],
+      "originalRGBA": [
+        116,
+        70,
+        84,
+        253
+      ],
+      "recipientRGBA": [
+        116,
+        70,
+        84,
+        253
+      ],
+      "exactRGBASha256": "8e4f6348fd2281c43b86b0b539dd26ab3cd39f557cb1c7de188957c4211dc7ec"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        497,
+        199
+      ],
+      "originalRGBA": [
+        220,
+        190,
+        184,
+        253
+      ],
+      "recipientRGBA": [
+        220,
+        190,
+        184,
+        253
+      ],
+      "exactRGBASha256": "db3aa642bb84167c106eed993eb7cfcd3e0dee37cb78f620899965d34e0ffa17"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        524,
+        199
+      ],
+      "originalRGBA": [
+        63,
+        35,
+        83,
+        253
+      ],
+      "recipientRGBA": [
+        63,
+        35,
+        83,
+        253
+      ],
+      "exactRGBASha256": "77889d17bf662768d5e0cdac369b8efa7813a046107ae89478a8d6524d24aeef"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        525,
+        199
+      ],
+      "originalRGBA": [
+        103,
+        62,
+        102,
+        253
+      ],
+      "recipientRGBA": [
+        103,
+        62,
+        102,
+        253
+      ],
+      "exactRGBASha256": "265e598577f19bbf8aa7fbae623c58ac4b2de19f049316e15836c87b633a45f1"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        526,
+        199
+      ],
+      "originalRGBA": [
+        105,
+        60,
+        98,
+        253
+      ],
+      "recipientRGBA": [
+        105,
+        60,
+        98,
+        253
+      ],
+      "exactRGBASha256": "f3eb3a61ac8f64520d5300b463298859db52ed77fa2564e236f89e7d9f1766ee"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        496,
+        200
+      ],
+      "originalRGBA": [
+        224,
+        187,
+        187,
+        253
+      ],
+      "recipientRGBA": [
+        224,
+        187,
+        187,
+        253
+      ],
+      "exactRGBASha256": "d4511ca88649695c8d2a646a08ff6fc4e120d10c07b51df294300f6916ac9519"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        525,
+        200
+      ],
+      "originalRGBA": [
+        86,
+        57,
+        110,
+        253
+      ],
+      "recipientRGBA": [
+        86,
+        57,
+        110,
+        253
+      ],
+      "exactRGBASha256": "f78d339b7f6e89bcd9939264b9349afd4b8689af8067e62279b1f47a0a4e5afd"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        526,
+        200
+      ],
+      "originalRGBA": [
+        147,
+        119,
+        157,
+        253
+      ],
+      "recipientRGBA": [
+        147,
+        119,
+        157,
+        253
+      ],
+      "exactRGBASha256": "5cacacc75eced17bce9d26e1df44ee9dd848cfe1c903103ada9160b73fae2a21"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        527,
+        200
+      ],
+      "originalRGBA": [
+        108,
+        81,
+        117,
+        253
+      ],
+      "recipientRGBA": [
+        108,
+        81,
+        117,
+        253
+      ],
+      "exactRGBASha256": "1a969591715cc231766923207130ac58a57a9dffeab3c6c29231585558f893c4"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        528,
+        200
+      ],
+      "originalRGBA": [
+        89,
+        55,
+        79,
+        253
+      ],
+      "recipientRGBA": [
+        89,
+        55,
+        79,
+        253
+      ],
+      "exactRGBASha256": "a353a9dfee9971c74e887a6a9b8af44370f1175b91046272deb469fa858c2f4b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        536,
+        200
+      ],
+      "originalRGBA": [
+        192,
+        129,
+        114,
+        253
+      ],
+      "recipientRGBA": [
+        192,
+        129,
+        114,
+        253
+      ],
+      "exactRGBASha256": "123b1b41db2fcd5e1e7ac0656a024e931cb26c389d905be3265af1ccfde5acc3"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        489,
+        201
+      ],
+      "originalRGBA": [
+        222,
+        177,
+        157,
+        253
+      ],
+      "recipientRGBA": [
+        222,
+        177,
+        157,
+        253
+      ],
+      "exactRGBASha256": "21b99a37a8c07ae954bd436db633c847306a87931c47474f054b8d8695bb3ec7"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        496,
+        201
+      ],
+      "originalRGBA": [
+        216,
+        190,
+        197,
+        253
+      ],
+      "recipientRGBA": [
+        216,
+        190,
+        197,
+        253
+      ],
+      "exactRGBASha256": "baedf5ca98f47890f6d13503313124c5a74c9b469bf9455aad6207551b5197cf"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        526,
+        201
+      ],
+      "originalRGBA": [
+        137,
+        113,
+        152,
+        253
+      ],
+      "recipientRGBA": [
+        137,
+        113,
+        152,
+        253
+      ],
+      "exactRGBASha256": "e8a11225b1a571bb6470f57ba23e801d0110a13f56e002d390763831b52e8ab9"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        527,
+        201
+      ],
+      "originalRGBA": [
+        215,
+        200,
+        220,
+        253
+      ],
+      "recipientRGBA": [
+        215,
+        200,
+        220,
+        253
+      ],
+      "exactRGBASha256": "0c4ed6f647ad826de0a79e19024edade4f6fb747bc48844e0b8a40243848defb"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        528,
+        201
+      ],
+      "originalRGBA": [
+        113,
+        92,
+        116,
+        253
+      ],
+      "recipientRGBA": [
+        113,
+        92,
+        116,
+        253
+      ],
+      "exactRGBASha256": "254a5a334e10c0b18f328d985aa0a1d8ff51cc01ea24b3ea904bf52007f7894b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        529,
+        201
+      ],
+      "originalRGBA": [
+        74,
+        43,
+        73,
+        253
+      ],
+      "recipientRGBA": [
+        74,
+        43,
+        73,
+        253
+      ],
+      "exactRGBASha256": "a655611fc46b604cf30c4ae5e5aa62bc639b61046aec1208b9db482942db7eb0"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        530,
+        201
+      ],
+      "originalRGBA": [
+        132,
+        93,
+        109,
+        253
+      ],
+      "recipientRGBA": [
+        132,
+        93,
+        109,
+        253
+      ],
+      "exactRGBASha256": "5a2298dd084e9d3478b68a858545965d8ab93028ac212c7cc447d5fa63577fa7"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        537,
+        201
+      ],
+      "originalRGBA": [
+        206,
+        144,
+        131,
+        253
+      ],
+      "recipientRGBA": [
+        206,
+        144,
+        131,
+        253
+      ],
+      "exactRGBASha256": "36e7f5edf436787ee0b5c4b53d9ffc68dafd35baee4def07b86df5eb4d337686"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        488,
+        202
+      ],
+      "originalRGBA": [
+        189,
+        137,
+        108,
+        253
+      ],
+      "recipientRGBA": [
+        189,
+        137,
+        108,
+        253
+      ],
+      "exactRGBASha256": "32013345d4172078eedc041cf3ce11f996eee042faf0753eece31ec1a900be61"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        489,
+        202
+      ],
+      "originalRGBA": [
+        229,
+        189,
+        169,
+        253
+      ],
+      "recipientRGBA": [
+        229,
+        189,
+        169,
+        253
+      ],
+      "exactRGBASha256": "fea2e3cb8de21b230613bec3e854b52871392f94cb0c2464975b1838d743075a"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        529,
+        202
+      ],
+      "originalRGBA": [
+        103,
+        84,
+        112,
+        253
+      ],
+      "recipientRGBA": [
+        103,
+        84,
+        112,
+        253
+      ],
+      "exactRGBASha256": "b319ada106c4e6a4a7918c8f31fae1c3e7c163c41f09e6ed3d968c92d3b6bf8c"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        530,
+        202
+      ],
+      "originalRGBA": [
+        77,
+        53,
+        74,
+        253
+      ],
+      "recipientRGBA": [
+        77,
+        53,
+        74,
+        253
+      ],
+      "exactRGBASha256": "4c44774f49c6ace3e77145e9cfa299ed318b22684de0e95da144394885e90ee9"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        531,
+        202
+      ],
+      "originalRGBA": [
+        116,
+        77,
+        93,
+        253
+      ],
+      "recipientRGBA": [
+        116,
+        77,
+        93,
+        253
+      ],
+      "exactRGBASha256": "3ac7777d6024a44546a7e4f1a4cd1cff92b7b4c332e2d19c6c543bd7660d7156"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        488,
+        203
+      ],
+      "originalRGBA": [
+        190,
+        135,
+        106,
+        253
+      ],
+      "recipientRGBA": [
+        190,
+        135,
+        106,
+        253
+      ],
+      "exactRGBASha256": "a8ebf9e2b99a5de27c8948fc882d3e526523d217399241e8754104ba9c9f7e12"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        489,
+        203
+      ],
+      "originalRGBA": [
+        234,
+        195,
+        177,
+        253
+      ],
+      "recipientRGBA": [
+        234,
+        195,
+        177,
+        253
+      ],
+      "exactRGBASha256": "c2426c73697cb06b79727bbcc0fb95259cd2eaf1cf664ca40706a429ed9f2ba4"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        491,
+        203
+      ],
+      "originalRGBA": [
+        233,
+        190,
+        177,
+        253
+      ],
+      "recipientRGBA": [
+        233,
+        190,
+        177,
+        253
+      ],
+      "exactRGBASha256": "a9492d3d720bb97c58ca434fb7f24b0fbe3f00e3cddb383853aa01ebf85d74c0"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        530,
+        203
+      ],
+      "originalRGBA": [
+        99,
+        82,
+        102,
+        253
+      ],
+      "recipientRGBA": [
+        99,
+        82,
+        102,
+        253
+      ],
+      "exactRGBASha256": "df206d191d6e6cf6539ffff41a57939ab301ea29f6412d444a2a0083aa7994c1"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        531,
+        203
+      ],
+      "originalRGBA": [
+        73,
+        51,
+        70,
+        253
+      ],
+      "recipientRGBA": [
+        73,
+        51,
+        70,
+        253
+      ],
+      "exactRGBASha256": "fdf484dd1d6df95c3a09c98ee3476c06b03ea8db2751dec604240dabcb906632"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        532,
+        203
+      ],
+      "originalRGBA": [
+        128,
+        95,
+        98,
+        253
+      ],
+      "recipientRGBA": [
+        128,
+        95,
+        98,
+        253
+      ],
+      "exactRGBASha256": "a71fecbf204ab6baf3194467eb5d1e05a328756b350daad6453d334754b75f35"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        488,
+        204
+      ],
+      "originalRGBA": [
+        193,
+        135,
+        106,
+        253
+      ],
+      "recipientRGBA": [
+        193,
+        135,
+        106,
+        253
+      ],
+      "exactRGBASha256": "f98206d0a46c4f2ec42c85fa5d0973414521115c462343dc9173ce86a165e0cb"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        495,
+        204
+      ],
+      "originalRGBA": [
+        222,
+        183,
+        200,
+        253
+      ],
+      "recipientRGBA": [
+        222,
+        183,
+        200,
+        253
+      ],
+      "exactRGBASha256": "f7299f204c3c9e33a0f700c77b881f563b9415583cced7efbcd6289518c0d578"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        531,
+        204
+      ],
+      "originalRGBA": [
+        124,
+        103,
+        114,
+        253
+      ],
+      "recipientRGBA": [
+        124,
+        103,
+        114,
+        253
+      ],
+      "exactRGBASha256": "c9ff0d1c7f20cf440c129e55ae14bb9d7578f32d303b692950d0acfb4840bbe5"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        532,
+        204
+      ],
+      "originalRGBA": [
+        107,
+        75,
+        82,
+        253
+      ],
+      "recipientRGBA": [
+        107,
+        75,
+        82,
+        253
+      ],
+      "exactRGBASha256": "bda139faf394c0b841b6dc635f837e9ae3cdd01da0de338d53d4aad56bd657c7"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        538,
+        204
+      ],
+      "originalRGBA": [
+        232,
+        189,
+        167,
+        253
+      ],
+      "recipientRGBA": [
+        232,
+        189,
+        167,
+        253
+      ],
+      "exactRGBASha256": "6037a749ca3df18ce8a1af3020854c3be8e95caf4763da44f1a64f3d53ffd89b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        488,
+        205
+      ],
+      "originalRGBA": [
+        192,
+        135,
+        105,
+        253
+      ],
+      "recipientRGBA": [
+        192,
+        135,
+        105,
+        253
+      ],
+      "exactRGBASha256": "4b614558b911d37b995b1f5722ebef65bd7903168f107c265cb21543b9c071f4"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        494,
+        205
+      ],
+      "originalRGBA": [
+        220,
+        169,
+        184,
+        253
+      ],
+      "recipientRGBA": [
+        220,
+        169,
+        184,
+        253
+      ],
+      "exactRGBASha256": "22b0d8e1fbac2a226b862c7bdf8e373a15a9ed35ef0ff97fcaa902a89a805b87"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        495,
+        205
+      ],
+      "originalRGBA": [
+        227,
+        194,
+        213,
+        253
+      ],
+      "recipientRGBA": [
+        227,
+        194,
+        213,
+        253
+      ],
+      "exactRGBASha256": "8f6e3ef9757a58602a8b62c3b7d92d672a82ddef2f856c795f69a3f08495c1a1"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        532,
+        205
+      ],
+      "originalRGBA": [
+        176,
+        142,
+        143,
+        253
+      ],
+      "recipientRGBA": [
+        176,
+        142,
+        143,
+        253
+      ],
+      "exactRGBASha256": "62a1ce94a2cbc0c669c10a592618349a09e77e6ec9f61d56ee42aaa90baa553e"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        533,
+        205
+      ],
+      "originalRGBA": [
+        176,
+        125,
+        115,
+        253
+      ],
+      "recipientRGBA": [
+        176,
+        125,
+        115,
+        253
+      ],
+      "exactRGBASha256": "e842ba28b8bb5e646a2f7b74fcc6430fce90af8b63e91f40ecf933c07803db78"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        534,
+        205
+      ],
+      "originalRGBA": [
+        234,
+        173,
+        138,
+        253
+      ],
+      "recipientRGBA": [
+        234,
+        173,
+        138,
+        253
+      ],
+      "exactRGBASha256": "61f6314c3dd6301dd4d85048633d29d3fb6fa9a4a19a17015e5f51e0d5d2a369"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        488,
+        206
+      ],
+      "originalRGBA": [
+        192,
+        137,
+        107,
+        253
+      ],
+      "recipientRGBA": [
+        192,
+        137,
+        107,
+        253
+      ],
+      "exactRGBASha256": "c5ab4b26cf3428bf555195f61d1bcc4c124cf29862d698f36b695a4083a684d7"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        493,
+        206
+      ],
+      "originalRGBA": [
+        223,
+        167,
+        176,
+        253
+      ],
+      "recipientRGBA": [
+        223,
+        167,
+        176,
+        253
+      ],
+      "exactRGBASha256": "d4bf1410e0859267d7778d103b688a26676ecbe56153438706197d58c76077bd"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        494,
+        206
+      ],
+      "originalRGBA": [
+        234,
+        194,
+        207,
+        253
+      ],
+      "recipientRGBA": [
+        234,
+        194,
+        207,
+        253
+      ],
+      "exactRGBASha256": "ec1514615dd9988314d55506e43700242b497f769eec0e5c34c99dc241ebb869"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        533,
+        206
+      ],
+      "originalRGBA": [
+        218,
+        179,
+        159,
+        253
+      ],
+      "recipientRGBA": [
+        218,
+        179,
+        159,
+        253
+      ],
+      "exactRGBASha256": "836a5eb60d1d7a429347d9444e56d159ea2d3110ac10dab11915fd71c3905d03"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        534,
+        206
+      ],
+      "originalRGBA": [
+        208,
+        148,
+        131,
+        253
+      ],
+      "recipientRGBA": [
+        208,
+        148,
+        131,
+        253
+      ],
+      "exactRGBASha256": "3ad81694dcff7b97b444c43abfec668c1dfa869a8cc26e9a0499251b3d54d464"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        536,
+        206
+      ],
+      "originalRGBA": [
+        224,
+        160,
+        129,
+        253
+      ],
+      "recipientRGBA": [
+        224,
+        160,
+        129,
+        253
+      ],
+      "exactRGBASha256": "a2fc6ef4ac9b375081aa0f623733e5cbef6ec6fbed0dc89024b3595a86d23017"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        537,
+        206
+      ],
+      "originalRGBA": [
+        224,
+        154,
+        118,
+        253
+      ],
+      "recipientRGBA": [
+        224,
+        154,
+        118,
+        253
+      ],
+      "exactRGBASha256": "dc6a0128dd865fcf1440782cc4bfafca4e5534e6759f7e3e740925ee9986d6c5"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        539,
+        206
+      ],
+      "originalRGBA": [
+        233,
+        181,
+        150,
+        253
+      ],
+      "recipientRGBA": [
+        233,
+        181,
+        150,
+        253
+      ],
+      "exactRGBASha256": "fb02e5834b569ee754dfc1a74a61145f95a59951c29419732db588452b63e553"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        533,
+        207
+      ],
+      "originalRGBA": [
+        230,
+        195,
+        180,
+        253
+      ],
+      "recipientRGBA": [
+        230,
+        195,
+        180,
+        253
+      ],
+      "exactRGBASha256": "10ebda6ca8b87fd33b1c2ddc9bcd88e37a2dc65eb0faef23f619c99290fac553"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        534,
+        207
+      ],
+      "originalRGBA": [
+        229,
+        184,
+        170,
+        253
+      ],
+      "recipientRGBA": [
+        229,
+        184,
+        170,
+        253
+      ],
+      "exactRGBASha256": "0781616c812a42bbc28ae9ef28b6d1980a9f24129f91d888567d6b08e5a337bf"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        535,
+        207
+      ],
+      "originalRGBA": [
+        231,
+        190,
+        171,
+        253
+      ],
+      "recipientRGBA": [
+        231,
+        190,
+        171,
+        253
+      ],
+      "exactRGBASha256": "e908ef19209213bc39ab5a3cba2b6aad3c3101aac0c712dc3091b44903afaed6"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        536,
+        207
+      ],
+      "originalRGBA": [
+        231,
+        182,
+        154,
+        253
+      ],
+      "recipientRGBA": [
+        231,
+        182,
+        154,
+        253
+      ],
+      "exactRGBASha256": "19d4f66b47ddc124eba38f2285ea7390e9e7e7ceef01a53e4b68955eabf93c3c"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        537,
+        207
+      ],
+      "originalRGBA": [
+        201,
+        125,
+        102,
+        253
+      ],
+      "recipientRGBA": [
+        201,
+        125,
+        102,
+        253
+      ],
+      "exactRGBASha256": "714e5c29da3f0e56580a66f264869993987ba0b8487b0be3087bead4248e76b6"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        538,
+        207
+      ],
+      "originalRGBA": [
+        213,
+        140,
+        110,
+        253
+      ],
+      "recipientRGBA": [
+        213,
+        140,
+        110,
+        253
+      ],
+      "exactRGBASha256": "55dbe22ead831987e01749aeb3460bbdc4f10331ea86b8de0f7d465a2a4613d5"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        537,
+        208
+      ],
+      "originalRGBA": [
+        222,
+        164,
+        144,
+        253
+      ],
+      "recipientRGBA": [
+        222,
+        164,
+        144,
+        253
+      ],
+      "exactRGBASha256": "8108eb2042160330e4f7039f83b754ea82cb324f9225208ed980855ac677f1a3"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "sourceXY": [
+        538,
+        208
+      ],
+      "originalRGBA": [
+        203,
+        126,
+        94,
+        253
+      ],
+      "recipientRGBA": [
+        203,
+        126,
+        94,
+        253
+      ],
+      "exactRGBASha256": "2f2e145867c218bfc4219c14464d55dd5214e5c6a58c5ae3e02703683c90ed29"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "sourceXY": [
+        569,
+        230
+      ],
+      "originalRGBA": [
+        153,
+        113,
+        158,
+        253
+      ],
+      "recipientRGBA": [
+        153,
+        113,
+        158,
+        253
+      ],
+      "exactRGBASha256": "68429715945856db30ecbc3f69dd22fff32bb5e8ad96441ac0a25ab329412815"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "sourceXY": [
+        586,
+        231
+      ],
+      "originalRGBA": [
+        117,
+        78,
+        168,
+        253
+      ],
+      "recipientRGBA": [
+        117,
+        78,
+        168,
+        253
+      ],
+      "exactRGBASha256": "74da6721c0c08184451ad2bfe9692cf1ad73fa5eb555325833c502af3747abd1"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "sourceXY": [
+        587,
+        231
+      ],
+      "originalRGBA": [
+        78,
+        47,
+        111,
+        253
+      ],
+      "recipientRGBA": [
+        78,
+        47,
+        111,
+        253
+      ],
+      "exactRGBASha256": "ab6aa042f9db9d41da21475ad5f368a62ccdf45fd110f995cd517245edc61918"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "sourceXY": [
+        588,
+        231
+      ],
+      "originalRGBA": [
+        196,
+        179,
+        196,
+        253
+      ],
+      "recipientRGBA": [
+        196,
+        179,
+        196,
+        253
+      ],
+      "exactRGBASha256": "c955015f76e873c4ed1a8d2bf47c2dedd4e98b2779391a3edb10671359ec057b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "sourceXY": [
+        587,
+        232
+      ],
+      "originalRGBA": [
+        83,
+        53,
+        116,
+        253
+      ],
+      "recipientRGBA": [
+        83,
+        53,
+        116,
+        253
+      ],
+      "exactRGBASha256": "ab6ca6adfc58c35f6face94714554b3c35611fe7b16aaa3d8bcc1f698e27361a"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "sourceXY": [
+        588,
+        232
+      ],
+      "originalRGBA": [
+        168,
+        148,
+        173,
+        253
+      ],
+      "recipientRGBA": [
+        168,
+        148,
+        173,
+        253
+      ],
+      "exactRGBASha256": "46e24fe2ad280a5066d53bd1a670048879f4336d25b95c655795b84934d23d08"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "sourceXY": [
+        589,
+        232
+      ],
+      "originalRGBA": [
+        229,
+        217,
+        225,
+        253
+      ],
+      "recipientRGBA": [
+        229,
+        217,
+        225,
+        253
+      ],
+      "exactRGBASha256": "8ac7cc4ffa971156c56bdb9eba9eb465923b169edb7c9ceffea4c2fd0c6bb6cb"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "sourceXY": [
+        587,
+        233
+      ],
+      "originalRGBA": [
+        75,
+        45,
+        110,
+        253
+      ],
+      "recipientRGBA": [
+        75,
+        45,
+        110,
+        253
+      ],
+      "exactRGBASha256": "88fb83bfb31acff9ca05508b0b180242917450699280c74b8219f86a126106a2"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "sourceXY": [
+        588,
+        233
+      ],
+      "originalRGBA": [
+        146,
+        120,
+        157,
+        253
+      ],
+      "recipientRGBA": [
+        146,
+        120,
+        157,
+        253
+      ],
+      "exactRGBASha256": "09258dd169610583536effd81db5b0f3c629217a8d6916faad7f7cf9e16aa87f"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "sourceXY": [
+        587,
+        234
+      ],
+      "originalRGBA": [
+        78,
+        52,
+        116,
+        253
+      ],
+      "recipientRGBA": [
+        78,
+        52,
+        116,
+        253
+      ],
+      "exactRGBASha256": "5ba1c4714171c3ae0c26041b5c90e557dc67e24ff73dfbfbeefe8c22335e2114"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "sourceXY": [
+        588,
+        234
+      ],
+      "originalRGBA": [
+        166,
+        144,
+        178,
+        253
+      ],
+      "recipientRGBA": [
+        166,
+        144,
+        178,
+        253
+      ],
+      "exactRGBASha256": "911b44d1eb8582feb6a3718ae75dff7ae9fdaaee6cca326032e8a39a0bf52ae3"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "sourceXY": [
+        586,
+        235
+      ],
+      "originalRGBA": [
+        92,
+        57,
+        144,
+        253
+      ],
+      "recipientRGBA": [
+        92,
+        57,
+        144,
+        253
+      ],
+      "exactRGBASha256": "915758c4ca48e244d2238675867d6d42dc5d4371e8bbcf83b08b8ed48dd8ec0b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "sourceXY": [
+        587,
+        235
+      ],
+      "originalRGBA": [
+        85,
+        61,
+        123,
+        253
+      ],
+      "recipientRGBA": [
+        85,
+        61,
+        123,
+        253
+      ],
+      "exactRGBASha256": "7231a2eb48bbde80c1e30d510b782b1b78632dd688c4f3cb21334fa037100d89"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "sourceXY": [
+        586,
+        236
+      ],
+      "originalRGBA": [
+        87,
+        55,
+        135,
+        253
+      ],
+      "recipientRGBA": [
+        87,
+        55,
+        135,
+        253
+      ],
+      "exactRGBASha256": "d19bb3571da1ac7392885abb2cce488e34ffef405b452783d554d84a338a3864"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "sourceXY": [
+        587,
+        236
+      ],
+      "originalRGBA": [
+        144,
+        125,
+        172,
+        253
+      ],
+      "recipientRGBA": [
+        144,
+        125,
+        172,
+        253
+      ],
+      "exactRGBASha256": "c57fab29b82a864d49393d9fcac2461c88049203f21c9d396f9a5e4aad8ec2fa"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "sourceXY": [
+        586,
+        237
+      ],
+      "originalRGBA": [
+        92,
+        63,
+        138,
+        253
+      ],
+      "recipientRGBA": [
+        92,
+        63,
+        138,
+        253
+      ],
+      "exactRGBASha256": "a62c0082dd06f6c8602f631f0e194d8712bbc895e15fd51b3e927ba68ed61045"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "sourceXY": [
+        586,
+        238
+      ],
+      "originalRGBA": [
+        136,
+        112,
+        168,
+        253
+      ],
+      "recipientRGBA": [
+        136,
+        112,
+        168,
+        253
+      ],
+      "exactRGBASha256": "46613292b7ef4db00809bafba255a651a2b5459b518cf272013102b927af6149"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "sourceXY": [
+        585,
+        239
+      ],
+      "originalRGBA": [
+        100,
+        72,
+        146,
+        253
+      ],
+      "recipientRGBA": [
+        100,
+        72,
+        146,
+        253
+      ],
+      "exactRGBASha256": "923f4a7b8930159e79295169362c4bb89601b60a5cff3e5bf706893007d40190"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "sourceXY": [
+        585,
+        240
+      ],
+      "originalRGBA": [
+        142,
+        116,
+        176,
+        253
+      ],
+      "recipientRGBA": [
+        142,
+        116,
+        176,
+        253
+      ],
+      "exactRGBASha256": "e714555d3242ed8f1d3da6950553115d9edeb566d484cfead1cd36d83796ce7b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "sourceXY": [
+        584,
+        241
+      ],
+      "originalRGBA": [
+        111,
+        80,
+        161,
+        253
+      ],
+      "recipientRGBA": [
+        111,
+        80,
+        161,
+        253
+      ],
+      "exactRGBASha256": "cb00ef754ee27ff7bf5c4dbdb9ae20f96eb0e74c10bbef5403aa8e040a78dfef"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "sourceXY": [
+        583,
+        243
+      ],
+      "originalRGBA": [
+        138,
+        117,
+        183,
+        253
+      ],
+      "recipientRGBA": [
+        138,
+        117,
+        183,
+        253
+      ],
+      "exactRGBASha256": "c9e30da3caf84db8b4db7993521841633dd76a8464c15087c290ba515e659e75"
+    },
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        564,
+        247
+      ],
+      "originalRGBA": [
+        249,
+        216,
+        211,
+        253
+      ],
+      "recipientRGBA": [
+        249,
+        216,
+        211,
+        253
+      ],
+      "exactRGBASha256": "9315fbed055b4be722738a5a6c406d0b2d98ce535891a7bec207e079bdd6f35d"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        574,
+        253
+      ],
+      "originalRGBA": [
+        246,
+        218,
+        213,
+        253
+      ],
+      "recipientRGBA": [
+        246,
+        218,
+        213,
+        253
+      ],
+      "exactRGBASha256": "86a0ef9a965d62116ab54d1ff25181fabd821477f66f724268cd52a54a1de005"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        575,
+        253
+      ],
+      "originalRGBA": [
+        245,
+        221,
+        217,
+        253
+      ],
+      "recipientRGBA": [
+        245,
+        221,
+        217,
+        253
+      ],
+      "exactRGBASha256": "cccd98dcd91e7909e956e2cdfc3f67bc5edcf34fc81f8f0428a128237eff0102"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        578,
+        254
+      ],
+      "originalRGBA": [
+        249,
+        220,
+        215,
+        253
+      ],
+      "recipientRGBA": [
+        249,
+        220,
+        215,
+        253
+      ],
+      "exactRGBASha256": "36ec09bd16cf062a7ad61529129f1ee96f952a19cd32a41544cf43f1e8385c4d"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        580,
+        255
+      ],
+      "originalRGBA": [
+        245,
+        213,
+        206,
+        253
+      ],
+      "recipientRGBA": [
+        245,
+        213,
+        206,
+        253
+      ],
+      "exactRGBASha256": "29b3744cd70e7a006bb02bb9a1b531d55dc1b2500310ec29a72cf648aeca383a"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        581,
+        256
+      ],
+      "originalRGBA": [
+        228,
+        190,
+        183,
+        253
+      ],
+      "recipientRGBA": [
+        228,
+        190,
+        183,
+        253
+      ],
+      "exactRGBASha256": "04b01957388d907b98dc2709dc48ac7c6a267afd12c498dbd59ef23e4235b366"
+    },
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        580,
+        257
+      ],
+      "originalRGBA": [
+        248,
+        216,
+        208,
+        253
+      ],
+      "recipientRGBA": [
+        248,
+        216,
+        208,
+        253
+      ],
+      "exactRGBASha256": "fd73dc1573d63e90867e753ceb053d2d4774474b9c41a76b735bff06baf9e4b1"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        583,
+        257
+      ],
+      "originalRGBA": [
+        226,
+        176,
+        168,
+        253
+      ],
+      "recipientRGBA": [
+        226,
+        176,
+        168,
+        253
+      ],
+      "exactRGBASha256": "d5abdb78646fd9068235926b252d938e293ad9e4a7be7aa60a4aa8a92b680d19"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        588,
+        257
+      ],
+      "originalRGBA": [
+        232,
+        180,
+        161,
+        253
+      ],
+      "recipientRGBA": [
+        232,
+        180,
+        161,
+        253
+      ],
+      "exactRGBASha256": "a53fe22876b6225afc3b50308c8a8c48adb2e7c824fccf37ff50ec60f4b77d96"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        590,
+        258
+      ],
+      "originalRGBA": [
+        226,
+        153,
+        101,
+        253
+      ],
+      "recipientRGBA": [
+        226,
+        153,
+        101,
+        253
+      ],
+      "exactRGBASha256": "dba2f554f925266de6297521abc3fcdda7ca528e7385d19f44a93afdafdabffb"
+    },
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        581,
+        259
+      ],
+      "originalRGBA": [
+        238,
+        198,
+        188,
+        253
+      ],
+      "recipientRGBA": [
+        238,
+        198,
+        188,
+        253
+      ],
+      "exactRGBASha256": "2fb8f84e32e5a17713b7b5cd7543a0d05f96d82e751fefaf82ec7e94939584c4"
+    },
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        583,
+        259
+      ],
+      "originalRGBA": [
+        251,
+        214,
+        194,
+        253
+      ],
+      "recipientRGBA": [
+        251,
+        214,
+        194,
+        253
+      ],
+      "exactRGBASha256": "e17f2551833ee5a43566f093735416429760b399b9bfce47aa19765643ec544e"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        589,
+        259
+      ],
+      "originalRGBA": [
+        235,
+        165,
+        116,
+        253
+      ],
+      "recipientRGBA": [
+        235,
+        165,
+        116,
+        253
+      ],
+      "exactRGBASha256": "23b0968553f27a973cc037698e082285a7dc7a1d588c78452ad3c7cfa73813de"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        590,
+        259
+      ],
+      "originalRGBA": [
+        224,
+        153,
+        101,
+        253
+      ],
+      "recipientRGBA": [
+        224,
+        153,
+        101,
+        253
+      ],
+      "exactRGBASha256": "708698d7b276360ca0e7eed22767a22bb810a62c79456a8faa19d83f39e8b9d4"
+    },
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        582,
+        260
+      ],
+      "originalRGBA": [
+        246,
+        209,
+        196,
+        253
+      ],
+      "recipientRGBA": [
+        246,
+        209,
+        196,
+        253
+      ],
+      "exactRGBASha256": "5358d7d429ca5be6a4550e18406e1cb882f3c5e18183b1bd7bf3fdc53bc24816"
+    },
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        583,
+        260
+      ],
+      "originalRGBA": [
+        240,
+        200,
+        186,
+        253
+      ],
+      "recipientRGBA": [
+        240,
+        200,
+        186,
+        253
+      ],
+      "exactRGBASha256": "4542a4eed4543c6ed70bfce9ef004ce67be2519066c0c004c517fdc7f12a33af"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        589,
+        260
+      ],
+      "originalRGBA": [
+        210,
+        151,
+        107,
+        253
+      ],
+      "recipientRGBA": [
+        210,
+        151,
+        107,
+        253
+      ],
+      "exactRGBASha256": "003a019547b2d304e7d948770b49ed131b4d43ee6d3b391fc5d3438c31d3717a"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        590,
+        260
+      ],
+      "originalRGBA": [
+        205,
+        137,
+        88,
+        253
+      ],
+      "recipientRGBA": [
+        205,
+        137,
+        88,
+        253
+      ],
+      "exactRGBASha256": "5b3c7e749d1807fa644fdb42794e9fa00501485273f79dce9a6a0fe784a621ee"
+    },
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        583,
+        261
+      ],
+      "originalRGBA": [
+        249,
+        219,
+        207,
+        253
+      ],
+      "recipientRGBA": [
+        249,
+        219,
+        207,
+        253
+      ],
+      "exactRGBASha256": "0eea64b2a0d7caa8fb16b327a6d2d2c565062a5ee768cb6294cc690bbbb3d6ab"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        585,
+        261
+      ],
+      "originalRGBA": [
+        226,
+        188,
+        174,
+        253
+      ],
+      "recipientRGBA": [
+        226,
+        188,
+        174,
+        253
+      ],
+      "exactRGBASha256": "f4327dd8aa770d71e3f83183d77a60b88f914b683f672f885d6c22cfa93e2a25"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        586,
+        261
+      ],
+      "originalRGBA": [
+        192,
+        130,
+        105,
+        253
+      ],
+      "recipientRGBA": [
+        192,
+        130,
+        105,
+        253
+      ],
+      "exactRGBASha256": "290daaac90a2d6026919faa511a01b4968fed8233c5c3a529bee955820472474"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        587,
+        261
+      ],
+      "originalRGBA": [
+        229,
+        174,
+        136,
+        253
+      ],
+      "recipientRGBA": [
+        229,
+        174,
+        136,
+        253
+      ],
+      "exactRGBASha256": "44c4565b8d4e5efa580bb832acd9fb23b57e2612a1355d7f0f901141ed4ac7ef"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        588,
+        261
+      ],
+      "originalRGBA": [
+        250,
+        219,
+        182,
+        253
+      ],
+      "recipientRGBA": [
+        250,
+        219,
+        182,
+        253
+      ],
+      "exactRGBASha256": "b373e0659c4f9e54bc613f2e7a863c502ddece7d17ff9def1bdab619c7ee26d0"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_lower_lid_rim",
+      "sourceXY": [
+        585,
+        262
+      ],
+      "originalRGBA": [
+        166,
+        108,
+        85,
+        253
+      ],
+      "recipientRGBA": [
+        166,
+        108,
+        85,
+        253
+      ],
+      "exactRGBASha256": "7d6f3cb8a48d338330828439396dff1139c77d666ba2c1616051c883a086f7a6"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        570,
+        228
+      ],
+      "originalRGBA": [
+        251,
+        238,
+        236,
+        253
+      ],
+      "recipientRGBA": [
+        251,
+        238,
+        236,
+        253
+      ],
+      "exactRGBASha256": "519a5404dbcf68c33003b35704d6c754e3b9401db86f377007fd958459e0efd5"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        588,
+        229
+      ],
+      "originalRGBA": [
+        230,
+        208,
+        217,
+        253
+      ],
+      "recipientRGBA": [
+        230,
+        208,
+        217,
+        253
+      ],
+      "exactRGBASha256": "c7920d083fa419244bbb8f0f21f90d7d885516a33cebcc5b286f9f0cd787bf68"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        588,
+        230
+      ],
+      "originalRGBA": [
+        245,
+        238,
+        241,
+        253
+      ],
+      "recipientRGBA": [
+        245,
+        238,
+        241,
+        253
+      ],
+      "exactRGBASha256": "81b7abd0d7a281fbed306634f6efeaa70ba5a5d11685d0e96e7922da1ec21f2a"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        589,
+        230
+      ],
+      "originalRGBA": [
+        231,
+        218,
+        217,
+        253
+      ],
+      "recipientRGBA": [
+        231,
+        218,
+        217,
+        253
+      ],
+      "exactRGBASha256": "a9626e4b3e585368153cece9ab3089c975a793884db5f9eb9c7b2ba1f959587b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        567,
+        231
+      ],
+      "originalRGBA": [
+        253,
+        241,
+        240,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        241,
+        240,
+        253
+      ],
+      "exactRGBASha256": "ee4f10db66b0e8699cce191d300cfe9aed616bbf40db6c7c742a58e27910d649"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        589,
+        231
+      ],
+      "originalRGBA": [
+        241,
+        229,
+        231,
+        253
+      ],
+      "recipientRGBA": [
+        241,
+        229,
+        231,
+        253
+      ],
+      "exactRGBASha256": "56b9ab7e580415714eeedbd2d53d9e515a9f0ab26f8b347708cb8eb9c9d75964"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        567,
+        232
+      ],
+      "originalRGBA": [
+        252,
+        237,
+        242,
+        253
+      ],
+      "recipientRGBA": [
+        252,
+        237,
+        242,
+        253
+      ],
+      "exactRGBASha256": "69f423987e70f50d5b19bc76d26f3d08245dd34514042877ac1112f7c63812c8"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        590,
+        232
+      ],
+      "originalRGBA": [
+        217,
+        205,
+        213,
+        253
+      ],
+      "recipientRGBA": [
+        217,
+        205,
+        213,
+        253
+      ],
+      "exactRGBASha256": "1ef5384c32fec8f40e241cbd5e80454fea07034af440024fc43fdf727bc8d171"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        566,
+        233
+      ],
+      "originalRGBA": [
+        254,
+        249,
+        249,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        249,
+        249,
+        253
+      ],
+      "exactRGBASha256": "d1bd7ff6b7a9ac8ca2b16b85284fb360d270f0d874ebfd6aa07911e7842e22ff"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        591,
+        233
+      ],
+      "originalRGBA": [
+        219,
+        207,
+        217,
+        253
+      ],
+      "recipientRGBA": [
+        219,
+        207,
+        217,
+        253
+      ],
+      "exactRGBASha256": "37fc355d41741ad7ff870d440f6a8e36ebdbfb885ec3d7732e13cdec8b405ac9"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        592,
+        233
+      ],
+      "originalRGBA": [
+        229,
+        216,
+        220,
+        253
+      ],
+      "recipientRGBA": [
+        229,
+        216,
+        220,
+        253
+      ],
+      "exactRGBASha256": "cc922a117411e364588ce10a159e11a0a24bcb4b3bf103f241560f6ccda83e7b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        565,
+        234
+      ],
+      "originalRGBA": [
+        255,
+        253,
+        252,
+        253
+      ],
+      "recipientRGBA": [
+        255,
+        253,
+        252,
+        253
+      ],
+      "exactRGBASha256": "333e5e29a18e3e7729bfa6f9057447446a4987cabe3da8ebdde111ceb1b9c50c"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        592,
+        234
+      ],
+      "originalRGBA": [
+        224,
+        214,
+        218,
+        253
+      ],
+      "recipientRGBA": [
+        224,
+        214,
+        218,
+        253
+      ],
+      "exactRGBASha256": "33b714ca0e53b9f4168aeb94bf776074d8c084ab0c2406faf4f040137a896900"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        563,
+        235
+      ],
+      "originalRGBA": [
+        251,
+        244,
+        242,
+        253
+      ],
+      "recipientRGBA": [
+        251,
+        244,
+        242,
+        253
+      ],
+      "exactRGBASha256": "0561ded5cfc6fce4d8b006c1ef1a181e0423ddd19c5e5dea6763c8b4fe9583ac"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        564,
+        235
+      ],
+      "originalRGBA": [
+        254,
+        252,
+        249,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        252,
+        249,
+        253
+      ],
+      "exactRGBASha256": "b352a21d36c3058552cd7a24bec1cc8ecf36643c00b44b9a8bea521ffb66af68"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        565,
+        235
+      ],
+      "originalRGBA": [
+        251,
+        234,
+        242,
+        253
+      ],
+      "recipientRGBA": [
+        251,
+        234,
+        242,
+        253
+      ],
+      "exactRGBASha256": "92bb04fbee5ece6fb3951c0ed489cf744322f6181211d9fc7cecf8332b13c4ed"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        593,
+        235
+      ],
+      "originalRGBA": [
+        232,
+        217,
+        219,
+        253
+      ],
+      "recipientRGBA": [
+        232,
+        217,
+        219,
+        253
+      ],
+      "exactRGBASha256": "c506af2e03cab32e44cc4d4e3f3a7c8b40cc4c53b7457a36f91b71ce44efd33a"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        563,
+        236
+      ],
+      "originalRGBA": [
+        251,
+        246,
+        243,
+        253
+      ],
+      "recipientRGBA": [
+        251,
+        246,
+        243,
+        253
+      ],
+      "exactRGBASha256": "c442a26442ebd8feb89256664ac448805afec5497b597f692fd5c6554d09c800"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        564,
+        236
+      ],
+      "originalRGBA": [
+        255,
+        255,
+        255,
+        253
+      ],
+      "recipientRGBA": [
+        255,
+        255,
+        255,
+        253
+      ],
+      "exactRGBASha256": "0bb1e1322a1ae02761b81c8d67d7b50ae18421c20bc9b5df51a117cd79aa9c60"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        593,
+        236
+      ],
+      "originalRGBA": [
+        224,
+        212,
+        213,
+        253
+      ],
+      "recipientRGBA": [
+        224,
+        212,
+        213,
+        253
+      ],
+      "exactRGBASha256": "ef36f8784cddb3d747091026fc0df3f08daf65a915f54f80db088bd1fb649096"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        564,
+        237
+      ],
+      "originalRGBA": [
+        255,
+        250,
+        250,
+        253
+      ],
+      "recipientRGBA": [
+        255,
+        250,
+        250,
+        253
+      ],
+      "exactRGBASha256": "6b96044980a84f5cb378b4709714306a82931d3788579d1e515f69008be59b5b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        563,
+        239
+      ],
+      "originalRGBA": [
+        255,
+        255,
+        252,
+        253
+      ],
+      "recipientRGBA": [
+        255,
+        255,
+        252,
+        253
+      ],
+      "exactRGBASha256": "432829a0bfc83deb19743d2a4c438b84749085e5dbd480b6e08a2203f9fdead6"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        588,
+        240
+      ],
+      "originalRGBA": [
+        251,
+        250,
+        248,
+        253
+      ],
+      "recipientRGBA": [
+        251,
+        250,
+        248,
+        253
+      ],
+      "exactRGBASha256": "11555acb5837fe3467e2ab397e9620e4a78b788a50251e8e13a2344e6945d866"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        589,
+        240
+      ],
+      "originalRGBA": [
+        252,
+        249,
+        247,
+        253
+      ],
+      "recipientRGBA": [
+        252,
+        249,
+        247,
+        253
+      ],
+      "exactRGBASha256": "f5d8f48b23bfe0f49a300a2a5e7524232ece36f03a7bf07788be84e7d4820323"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        589,
+        241
+      ],
+      "originalRGBA": [
+        253,
+        251,
+        249,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        251,
+        249,
+        253
+      ],
+      "exactRGBASha256": "d312319a772eb4472cf803f4f6278f0f0e241c82ffa654d9db43ca0bc22f4d8d"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        590,
+        241
+      ],
+      "originalRGBA": [
+        253,
+        250,
+        248,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        250,
+        248,
+        253
+      ],
+      "exactRGBASha256": "33a30cbf056e5328ad7a18bf0e44a2a0f901e38f7c8dbaebf52653b99da17a34"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        593,
+        241
+      ],
+      "originalRGBA": [
+        205,
+        179,
+        192,
+        253
+      ],
+      "recipientRGBA": [
+        205,
+        179,
+        192,
+        253
+      ],
+      "exactRGBASha256": "5f44e6245339d5f5f1cb99f59d6f38cdf3956d1d6dfa1ec1c78e91fed13efb4c"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        589,
+        242
+      ],
+      "originalRGBA": [
+        253,
+        252,
+        250,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        252,
+        250,
+        253
+      ],
+      "exactRGBASha256": "6ea7860f9550229c736b283748b5dda8abbb5623ab9239b594d4060365bb5881"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        590,
+        242
+      ],
+      "originalRGBA": [
+        253,
+        252,
+        251,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        252,
+        251,
+        253
+      ],
+      "exactRGBASha256": "6b418540fabd538775ed63d32d7abf83f62c5b7ea893bb3a8d67770ae51497ae"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        588,
+        243
+      ],
+      "originalRGBA": [
+        253,
+        253,
+        252,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        253,
+        252,
+        253
+      ],
+      "exactRGBASha256": "ed7cf1f18fb3874d06ac97afd62a8aa1b0e4109485a304145f23d407cad81e93"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        589,
+        243
+      ],
+      "originalRGBA": [
+        253,
+        252,
+        251,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        252,
+        251,
+        253
+      ],
+      "exactRGBASha256": "6b418540fabd538775ed63d32d7abf83f62c5b7ea893bb3a8d67770ae51497ae"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        587,
+        244
+      ],
+      "originalRGBA": [
+        253,
+        252,
+        251,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        252,
+        251,
+        253
+      ],
+      "exactRGBASha256": "6b418540fabd538775ed63d32d7abf83f62c5b7ea893bb3a8d67770ae51497ae"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        588,
+        244
+      ],
+      "originalRGBA": [
+        254,
+        253,
+        251,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        253,
+        251,
+        253
+      ],
+      "exactRGBASha256": "85932ca93c147d0435395054a1f2b47d1857dff2dec7ab6442a6412340bb31a2"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        589,
+        244
+      ],
+      "originalRGBA": [
+        254,
+        252,
+        251,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        252,
+        251,
+        253
+      ],
+      "exactRGBASha256": "8366ffd86ccf25b6ae01b0e1a423be9977af14575a32351290680ed0ae90299a"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        591,
+        244
+      ],
+      "originalRGBA": [
+        252,
+        249,
+        248,
+        253
+      ],
+      "recipientRGBA": [
+        252,
+        249,
+        248,
+        253
+      ],
+      "exactRGBASha256": "efa81eeaab1f42a3db5822f13e001e31fb441add882b36ef348b49898995a0f7"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        592,
+        244
+      ],
+      "originalRGBA": [
+        252,
+        242,
+        241,
+        253
+      ],
+      "recipientRGBA": [
+        252,
+        242,
+        241,
+        253
+      ],
+      "exactRGBASha256": "635c1b102e06b2827d2cca39b57ed7817667313805bd24c7cf031600dbd59e59"
+    },
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        563,
+        245
+      ],
+      "originalRGBA": [
+        239,
+        220,
+        224,
+        253
+      ],
+      "recipientRGBA": [
+        239,
+        220,
+        224,
+        253
+      ],
+      "exactRGBASha256": "7d6d12f2b2967ce6f728e1a911f9687a40ac3326608e59133ab776a1721f6b2a"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        587,
+        245
+      ],
+      "originalRGBA": [
+        253,
+        252,
+        250,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        252,
+        250,
+        253
+      ],
+      "exactRGBASha256": "6ea7860f9550229c736b283748b5dda8abbb5623ab9239b594d4060365bb5881"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        588,
+        245
+      ],
+      "originalRGBA": [
+        254,
+        251,
+        249,
+        254
+      ],
+      "recipientRGBA": [
+        254,
+        251,
+        249,
+        254
+      ],
+      "exactRGBASha256": "cf0a85da13f7a0dc2fbc6ce29889070fe24a88e6104dd84e01610f70ce248316"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        589,
+        245
+      ],
+      "originalRGBA": [
+        254,
+        250,
+        249,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        250,
+        249,
+        253
+      ],
+      "exactRGBASha256": "c890ca748b98151ac6c20c042819f42bb40b546d912fe7e94b3bab1e904666cf"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        590,
+        245
+      ],
+      "originalRGBA": [
+        254,
+        251,
+        250,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        251,
+        250,
+        253
+      ],
+      "exactRGBASha256": "dc6615722c261ca8d5835f3b350d77e133946ded1ef0a2f84a0a6dbca0aa5a79"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        591,
+        245
+      ],
+      "originalRGBA": [
+        253,
+        246,
+        243,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        246,
+        243,
+        253
+      ],
+      "exactRGBASha256": "6488326fb2ea3bccfbf423e1a1af6797dd9fc0b2f57c6fea79d6fa4b9153ac4f"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        585,
+        246
+      ],
+      "originalRGBA": [
+        250,
+        250,
+        248,
+        253
+      ],
+      "recipientRGBA": [
+        250,
+        250,
+        248,
+        253
+      ],
+      "exactRGBASha256": "58a9d4402115e695b020fbfe72e7a46e6e464edaee7139c521102dab75cc3067"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        588,
+        246
+      ],
+      "originalRGBA": [
+        254,
+        251,
+        248,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        251,
+        248,
+        253
+      ],
+      "exactRGBASha256": "6afbb62e72c41a2f4c9d3e8315229abf88a34c7737e3371e7fe31b5e1f44297b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        589,
+        246
+      ],
+      "originalRGBA": [
+        254,
+        249,
+        247,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        249,
+        247,
+        253
+      ],
+      "exactRGBASha256": "9da65ed4f4c374bb175f1bfbe144b52afb88f6157b84d63e1640c52629f72130"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        590,
+        246
+      ],
+      "originalRGBA": [
+        254,
+        246,
+        244,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        246,
+        244,
+        253
+      ],
+      "exactRGBASha256": "4e40c01242ff9c5c33b72dd5477c41f9a7c4efaf4d7dbcc8418658966d9fbef1"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        584,
+        247
+      ],
+      "originalRGBA": [
+        251,
+        250,
+        248,
+        253
+      ],
+      "recipientRGBA": [
+        251,
+        250,
+        248,
+        253
+      ],
+      "exactRGBASha256": "11555acb5837fe3467e2ab397e9620e4a78b788a50251e8e13a2344e6945d866"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        595,
+        247
+      ],
+      "originalRGBA": [
+        252,
+        247,
+        245,
+        253
+      ],
+      "recipientRGBA": [
+        252,
+        247,
+        245,
+        253
+      ],
+      "exactRGBASha256": "a1dfb88a66d7440d8c35b7755dfd2aa5047c229a6cef0e0139407a820233f9a0"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        584,
+        248
+      ],
+      "originalRGBA": [
+        252,
+        251,
+        248,
+        253
+      ],
+      "recipientRGBA": [
+        252,
+        251,
+        248,
+        253
+      ],
+      "exactRGBASha256": "b83ff253ef532d81050929a7a9ab55f738b7ebc8fdea3001ac2550f7d72b2d8b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        580,
+        249
+      ],
+      "originalRGBA": [
+        252,
+        252,
+        251,
+        253
+      ],
+      "recipientRGBA": [
+        252,
+        252,
+        251,
+        253
+      ],
+      "exactRGBASha256": "9733b2724dcd88520bae57578142854e659af86e301faccad8f22fac6b82225c"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        581,
+        249
+      ],
+      "originalRGBA": [
+        252,
+        252,
+        250,
+        253
+      ],
+      "recipientRGBA": [
+        252,
+        252,
+        250,
+        253
+      ],
+      "exactRGBASha256": "b49fa751a0fe112b9e04edb0f440dfbd691475307d15b96013be7ff94cfb440b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        582,
+        249
+      ],
+      "originalRGBA": [
+        252,
+        251,
+        249,
+        253
+      ],
+      "recipientRGBA": [
+        252,
+        251,
+        249,
+        253
+      ],
+      "exactRGBASha256": "bc942437cf665a4a86ea50f6d5d9c792cc767f167b900cf0cda741375aefa2e5"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        583,
+        249
+      ],
+      "originalRGBA": [
+        252,
+        249,
+        248,
+        253
+      ],
+      "recipientRGBA": [
+        252,
+        249,
+        248,
+        253
+      ],
+      "exactRGBASha256": "efa81eeaab1f42a3db5822f13e001e31fb441add882b36ef348b49898995a0f7"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        584,
+        249
+      ],
+      "originalRGBA": [
+        252,
+        250,
+        247,
+        253
+      ],
+      "recipientRGBA": [
+        252,
+        250,
+        247,
+        253
+      ],
+      "exactRGBASha256": "c6fb03bae370e29a70aab77f3bb622f4f4fd73558e426b49f6307cb1ff135e7e"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        578,
+        250
+      ],
+      "originalRGBA": [
+        255,
+        254,
+        252,
+        253
+      ],
+      "recipientRGBA": [
+        255,
+        254,
+        252,
+        253
+      ],
+      "exactRGBASha256": "25a005dc1a2a42147cb5b7c82bba9ff9775e1d853c56b251cb18e55443c3153a"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        583,
+        250
+      ],
+      "originalRGBA": [
+        253,
+        249,
+        246,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        249,
+        246,
+        253
+      ],
+      "exactRGBASha256": "58f0f5172489747ecb13f8e7ff807858c3166c7f577a375f10861405626a3afb"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        584,
+        250
+      ],
+      "originalRGBA": [
+        253,
+        248,
+        245,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        248,
+        245,
+        253
+      ],
+      "exactRGBASha256": "9b003a398a1779fc6b4b297ef244d01f2820a336f639b6e052d16f64c235a655"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        585,
+        250
+      ],
+      "originalRGBA": [
+        253,
+        248,
+        245,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        248,
+        245,
+        253
+      ],
+      "exactRGBASha256": "9b003a398a1779fc6b4b297ef244d01f2820a336f639b6e052d16f64c235a655"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        586,
+        250
+      ],
+      "originalRGBA": [
+        254,
+        248,
+        245,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        248,
+        245,
+        253
+      ],
+      "exactRGBASha256": "dce4397fd14130bedf63c08d41f3136d30fcf1d1e12c361257cd0092085ae003"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        577,
+        251
+      ],
+      "originalRGBA": [
+        255,
+        255,
+        254,
+        253
+      ],
+      "recipientRGBA": [
+        255,
+        255,
+        254,
+        253
+      ],
+      "exactRGBASha256": "fd8a2d0e5416a670ae1d4aad02ecdd3ef9f1391b034948d12e7c1ba54a1c4d01"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        578,
+        251
+      ],
+      "originalRGBA": [
+        255,
+        255,
+        254,
+        253
+      ],
+      "recipientRGBA": [
+        255,
+        255,
+        254,
+        253
+      ],
+      "exactRGBASha256": "fd8a2d0e5416a670ae1d4aad02ecdd3ef9f1391b034948d12e7c1ba54a1c4d01"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        580,
+        251
+      ],
+      "originalRGBA": [
+        253,
+        253,
+        252,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        253,
+        252,
+        253
+      ],
+      "exactRGBASha256": "ed7cf1f18fb3874d06ac97afd62a8aa1b0e4109485a304145f23d407cad81e93"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        583,
+        251
+      ],
+      "originalRGBA": [
+        254,
+        248,
+        245,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        248,
+        245,
+        253
+      ],
+      "exactRGBASha256": "dce4397fd14130bedf63c08d41f3136d30fcf1d1e12c361257cd0092085ae003"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        574,
+        252
+      ],
+      "originalRGBA": [
+        253,
+        243,
+        242,
+        253
+      ],
+      "recipientRGBA": [
+        253,
+        243,
+        242,
+        253
+      ],
+      "exactRGBASha256": "4d9fc199cd28b0ffc73fea884254ff6c88210145bb16d990a4974725362dc9e3"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        579,
+        252
+      ],
+      "originalRGBA": [
+        254,
+        253,
+        252,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        253,
+        252,
+        253
+      ],
+      "exactRGBASha256": "0e4867662e7af72784934cfaa4ae8e563dc2466dc789ead3475bf8c190f7e26b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "sourceXY": [
+        580,
+        252
+      ],
+      "originalRGBA": [
+        254,
+        252,
+        250,
+        253
+      ],
+      "recipientRGBA": [
+        254,
+        252,
+        250,
+        253
+      ],
+      "exactRGBASha256": "f201cbc402e9edc391e71a10200500186f1e032a2892252fc331a2581ef60036"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        583,
+        221
+      ],
+      "originalRGBA": [
+        232,
+        183,
+        162,
+        253
+      ],
+      "recipientRGBA": [
+        232,
+        183,
+        162,
+        253
+      ],
+      "exactRGBASha256": "eca610fe055a19481905ef4e679241e3c6c6fb675447386313aab71f29099027"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        577,
+        222
+      ],
+      "originalRGBA": [
+        223,
+        181,
+        158,
+        253
+      ],
+      "recipientRGBA": [
+        223,
+        181,
+        158,
+        253
+      ],
+      "exactRGBASha256": "62a2f36653a31be5bcf79694ca250ff8985480859c26722d15a4650bd6567d8c"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        581,
+        222
+      ],
+      "originalRGBA": [
+        226,
+        181,
+        160,
+        253
+      ],
+      "recipientRGBA": [
+        226,
+        181,
+        160,
+        253
+      ],
+      "exactRGBASha256": "06c15065e2ba300a793b7a39a7cb43d8a315bb58624099f175cb6fbfa0aafec8"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        584,
+        222
+      ],
+      "originalRGBA": [
+        192,
+        142,
+        132,
+        253
+      ],
+      "recipientRGBA": [
+        192,
+        142,
+        132,
+        253
+      ],
+      "exactRGBASha256": "2c496753a332a6c610be626f2dcc3fafd7fd8b7a73999bd5b97faf95d555a7bc"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        585,
+        222
+      ],
+      "originalRGBA": [
+        203,
+        160,
+        155,
+        253
+      ],
+      "recipientRGBA": [
+        203,
+        160,
+        155,
+        253
+      ],
+      "exactRGBASha256": "ec306914f3474313dd73ba3d1169bbffbc9e5ffa12c0aa6e9dfc5e1e39808d27"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        586,
+        222
+      ],
+      "originalRGBA": [
+        226,
+        192,
+        186,
+        253
+      ],
+      "recipientRGBA": [
+        226,
+        192,
+        186,
+        253
+      ],
+      "exactRGBASha256": "d04d94cffe4be4456c66626727d05b0b22cad5b7a83aba8ca2bb258a64d442f0"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        575,
+        223
+      ],
+      "originalRGBA": [
+        224,
+        181,
+        165,
+        253
+      ],
+      "recipientRGBA": [
+        224,
+        181,
+        165,
+        253
+      ],
+      "exactRGBASha256": "42cac0d09324ba4db11e8cef59024e52b46b36d72bfded4c29e19f942fdbdc8f"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        585,
+        223
+      ],
+      "originalRGBA": [
+        166,
+        105,
+        114,
+        253
+      ],
+      "recipientRGBA": [
+        166,
+        105,
+        114,
+        253
+      ],
+      "exactRGBASha256": "788db5e884e49db7da0526070ae5301d2bc989597cf7aa426e63f390ebfe73a6"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        586,
+        223
+      ],
+      "originalRGBA": [
+        170,
+        115,
+        119,
+        253
+      ],
+      "recipientRGBA": [
+        170,
+        115,
+        119,
+        253
+      ],
+      "exactRGBASha256": "405b46e70a07556525bc74306d8eff558110f368ef73bd0586c52a36b0e3b2f6"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        587,
+        223
+      ],
+      "originalRGBA": [
+        166,
+        111,
+        119,
+        253
+      ],
+      "recipientRGBA": [
+        166,
+        111,
+        119,
+        253
+      ],
+      "exactRGBASha256": "ec1c98011d14161bc928f24bd1783a16dfd4beceb03c2eefa1daa86ff74483cb"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        588,
+        223
+      ],
+      "originalRGBA": [
+        175,
+        129,
+        132,
+        253
+      ],
+      "recipientRGBA": [
+        175,
+        129,
+        132,
+        253
+      ],
+      "exactRGBASha256": "d5664230a47e3b473cc138897835b5bc580b68b3948aadccd691d5b61cbd7c8e"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        589,
+        223
+      ],
+      "originalRGBA": [
+        196,
+        159,
+        159,
+        253
+      ],
+      "recipientRGBA": [
+        196,
+        159,
+        159,
+        253
+      ],
+      "exactRGBASha256": "449dee3ce69b1998bab2d549dc248e3d95317cea101cd9b120930cb4a2f2ee48"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        590,
+        223
+      ],
+      "originalRGBA": [
+        224,
+        198,
+        196,
+        253
+      ],
+      "recipientRGBA": [
+        224,
+        198,
+        196,
+        253
+      ],
+      "exactRGBASha256": "81a03b916c81ba4c84dd861ec93909cb41c5eb919e0726bbc281f85a2c98f607"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        573,
+        224
+      ],
+      "originalRGBA": [
+        199,
+        154,
+        139,
+        253
+      ],
+      "recipientRGBA": [
+        199,
+        154,
+        139,
+        253
+      ],
+      "exactRGBASha256": "731e6d8dcbd504ab6c8906888bd37a46e3bbcbae3603716ec7802e82e40f9a2d"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        586,
+        224
+      ],
+      "originalRGBA": [
+        190,
+        132,
+        137,
+        253
+      ],
+      "recipientRGBA": [
+        190,
+        132,
+        137,
+        253
+      ],
+      "exactRGBASha256": "7f86a8812fb03fc76547db89c667637516a13bcf29bb5d386faf716ee9996366"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        587,
+        224
+      ],
+      "originalRGBA": [
+        177,
+        115,
+        131,
+        253
+      ],
+      "recipientRGBA": [
+        177,
+        115,
+        131,
+        253
+      ],
+      "exactRGBASha256": "333d8b4535fbdbd88f764f120b301d97a74a05b80033b9ca7788743f712442c1"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        588,
+        224
+      ],
+      "originalRGBA": [
+        163,
+        104,
+        116,
+        253
+      ],
+      "recipientRGBA": [
+        163,
+        104,
+        116,
+        253
+      ],
+      "exactRGBASha256": "14b910f25150c083d671420f696bfe02456e1246bb1b557d68ed764efb624531"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        589,
+        224
+      ],
+      "originalRGBA": [
+        142,
+        87,
+        99,
+        253
+      ],
+      "recipientRGBA": [
+        142,
+        87,
+        99,
+        253
+      ],
+      "exactRGBASha256": "ffafba3004973532e1d0790ec800fba8316378b427a9eb57d7c04c82d6533933"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        590,
+        224
+      ],
+      "originalRGBA": [
+        136,
+        84,
+        93,
+        253
+      ],
+      "recipientRGBA": [
+        136,
+        84,
+        93,
+        253
+      ],
+      "exactRGBASha256": "4e364a0f796dd3d9a23cbc0c3824d1ecef95e4a5002841f3b51ecfc0d13aba2b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        591,
+        224
+      ],
+      "originalRGBA": [
+        141,
+        94,
+        97,
+        253
+      ],
+      "recipientRGBA": [
+        141,
+        94,
+        97,
+        253
+      ],
+      "exactRGBASha256": "50b2e6d6fc667ba51c9991d2059a4b38152a8d61e543cf806575a0f01eb3bc6a"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        592,
+        224
+      ],
+      "originalRGBA": [
+        180,
+        138,
+        137,
+        253
+      ],
+      "recipientRGBA": [
+        180,
+        138,
+        137,
+        253
+      ],
+      "exactRGBASha256": "7f9fcc1fb4c3563a11b2032e7fd938b9ed2558310c8ac12b722f65a3939e5dc3"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        571,
+        225
+      ],
+      "originalRGBA": [
+        222,
+        180,
+        164,
+        253
+      ],
+      "recipientRGBA": [
+        222,
+        180,
+        164,
+        253
+      ],
+      "exactRGBASha256": "c2df2af58735db3f83d6d5d350bd1c0fdd750a53de9cda06cb9ab94acf71dbe3"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        592,
+        225
+      ],
+      "originalRGBA": [
+        111,
+        65,
+        75,
+        253
+      ],
+      "recipientRGBA": [
+        111,
+        65,
+        75,
+        253
+      ],
+      "exactRGBASha256": "8021c4892016d14f351d5ef4a55a8955a82a21a07a0f57211b9d060c7872338f"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        593,
+        225
+      ],
+      "originalRGBA": [
+        112,
+        66,
+        73,
+        253
+      ],
+      "recipientRGBA": [
+        112,
+        66,
+        73,
+        253
+      ],
+      "exactRGBASha256": "aedcb39e06a4533da1f262e4c04c560610641a8d80c0c524e0e8de496cf41a5d"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        594,
+        225
+      ],
+      "originalRGBA": [
+        166,
+        127,
+        124,
+        253
+      ],
+      "recipientRGBA": [
+        166,
+        127,
+        124,
+        253
+      ],
+      "exactRGBASha256": "95717fb7d2df9e5cc2ab427e0f1dcf00f13ad800c09eab233c82a3781ad0c1a0"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        593,
+        226
+      ],
+      "originalRGBA": [
+        108,
+        65,
+        75,
+        253
+      ],
+      "recipientRGBA": [
+        108,
+        65,
+        75,
+        253
+      ],
+      "exactRGBASha256": "552497fda31534aecc57abdd75f3cc3a6be1dd60a5fa75e0b6fad77df458dd8c"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        594,
+        226
+      ],
+      "originalRGBA": [
+        104,
+        65,
+        63,
+        253
+      ],
+      "recipientRGBA": [
+        104,
+        65,
+        63,
+        253
+      ],
+      "exactRGBASha256": "a90bc1ba0c83bdf9f54ec355169524b0712d721e71cd4bfda959f7e9538762c3"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        595,
+        226
+      ],
+      "originalRGBA": [
+        141,
+        101,
+        88,
+        253
+      ],
+      "recipientRGBA": [
+        141,
+        101,
+        88,
+        253
+      ],
+      "exactRGBASha256": "5f4bf22c75df42a88c6860ccbd3b2de8968df91a22c655c3acde3f4e497504f8"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        596,
+        226
+      ],
+      "originalRGBA": [
+        224,
+        189,
+        168,
+        253
+      ],
+      "recipientRGBA": [
+        224,
+        189,
+        168,
+        253
+      ],
+      "exactRGBASha256": "5e293ae8b9df4779dbb2535eda681d2f3c285beda76e42d70735a68375475888"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        594,
+        227
+      ],
+      "originalRGBA": [
+        105,
+        68,
+        72,
+        253
+      ],
+      "recipientRGBA": [
+        105,
+        68,
+        72,
+        253
+      ],
+      "exactRGBASha256": "bc04cf746e42338c6000f6ea1ea97d83f4fdd3115062ea2b5bfc08e0ddd01352"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        595,
+        227
+      ],
+      "originalRGBA": [
+        122,
+        82,
+        73,
+        253
+      ],
+      "recipientRGBA": [
+        122,
+        82,
+        73,
+        253
+      ],
+      "exactRGBASha256": "0b30334c10531d2e939ad398a0c8d2761a429b8253cc415d861ed5deb8968fc3"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        596,
+        227
+      ],
+      "originalRGBA": [
+        183,
+        139,
+        120,
+        253
+      ],
+      "recipientRGBA": [
+        183,
+        139,
+        120,
+        253
+      ],
+      "exactRGBASha256": "341c91ad2349beae45ba5692df60d44ef72310149ec6ecbd3458388a1126daee"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        597,
+        227
+      ],
+      "originalRGBA": [
+        214,
+        171,
+        151,
+        253
+      ],
+      "recipientRGBA": [
+        214,
+        171,
+        151,
+        253
+      ],
+      "exactRGBASha256": "bb9e435007bc214e2bee42efa6a41c3369ccd37ea5ca790e09b45c24f727085a"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        571,
+        228
+      ],
+      "originalRGBA": [
+        226,
+        196,
+        203,
+        253
+      ],
+      "recipientRGBA": [
+        226,
+        196,
+        203,
+        253
+      ],
+      "exactRGBASha256": "9adc7fa874a422ce19b08d605333b67dfaddb5718ad5b21fd47cf033c29addfa"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        595,
+        228
+      ],
+      "originalRGBA": [
+        150,
+        108,
+        89,
+        253
+      ],
+      "recipientRGBA": [
+        150,
+        108,
+        89,
+        253
+      ],
+      "exactRGBASha256": "2035d0d2ac9680a10130001f5d9902bb39386f3be8529ad5ec9356981487ddc7"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        595,
+        229
+      ],
+      "originalRGBA": [
+        221,
+        187,
+        154,
+        253
+      ],
+      "recipientRGBA": [
+        221,
+        187,
+        154,
+        253
+      ],
+      "exactRGBASha256": "775f1bad32bc1e2a3a593fd8abd82763a9a8b4c888515c60c0b549208fe78f05"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        597,
+        229
+      ],
+      "originalRGBA": [
+        188,
+        152,
+        138,
+        253
+      ],
+      "recipientRGBA": [
+        188,
+        152,
+        138,
+        253
+      ],
+      "exactRGBASha256": "831df502ada88c9fa647c40c0220c68f2b31dc882098d466134eb55f1030f4c8"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        598,
+        229
+      ],
+      "originalRGBA": [
+        113,
+        82,
+        80,
+        253
+      ],
+      "recipientRGBA": [
+        113,
+        82,
+        80,
+        253
+      ],
+      "exactRGBASha256": "7d87cdb920c569a9a1a6f69655eea670d21369cb2725e5baf960fca16fba7960"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        595,
+        230
+      ],
+      "originalRGBA": [
+        212,
+        178,
+        151,
+        253
+      ],
+      "recipientRGBA": [
+        212,
+        178,
+        151,
+        253
+      ],
+      "exactRGBASha256": "53e9f13ea1fcb502c4859b7da6a0ea8e443b9bf83179f687ace5d77bb22e3808"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        596,
+        230
+      ],
+      "originalRGBA": [
+        152,
+        118,
+        104,
+        253
+      ],
+      "recipientRGBA": [
+        152,
+        118,
+        104,
+        253
+      ],
+      "exactRGBASha256": "25da50da7b7f56d38655ca9a4783074e304935c84ea534d5c28f5f758b207f9e"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        597,
+        230
+      ],
+      "originalRGBA": [
+        107,
+        76,
+        73,
+        253
+      ],
+      "recipientRGBA": [
+        107,
+        76,
+        73,
+        253
+      ],
+      "exactRGBASha256": "497e9bea2c2b8597aad221d3f8999afc5744255925950db4f423e44637528b74"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        598,
+        230
+      ],
+      "originalRGBA": [
+        118,
+        87,
+        89,
+        253
+      ],
+      "recipientRGBA": [
+        118,
+        87,
+        89,
+        253
+      ],
+      "exactRGBASha256": "4338f838de2b5789284f6ebae1b0a0fd5805a8b97bd92a91fa6dcf2acc563fd7"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        599,
+        230
+      ],
+      "originalRGBA": [
+        110,
+        78,
+        75,
+        253
+      ],
+      "recipientRGBA": [
+        110,
+        78,
+        75,
+        253
+      ],
+      "exactRGBASha256": "e9f5f738c8e4e57f5d233d72eadb1121addfc168f5353f4323bffbccdebcd872"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        597,
+        231
+      ],
+      "originalRGBA": [
+        105,
+        78,
+        81,
+        253
+      ],
+      "recipientRGBA": [
+        105,
+        78,
+        81,
+        253
+      ],
+      "exactRGBASha256": "4bb540c4bcd4ff84c4a66ce258416638dfc24ad700e0fccf0c2a8f6875277c2b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        598,
+        231
+      ],
+      "originalRGBA": [
+        115,
+        88,
+        87,
+        253
+      ],
+      "recipientRGBA": [
+        115,
+        88,
+        87,
+        253
+      ],
+      "exactRGBASha256": "2d7b88712a40287335eb61306e197813080f354303e8e3329347e2b62e856cda"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        599,
+        231
+      ],
+      "originalRGBA": [
+        115,
+        81,
+        83,
+        253
+      ],
+      "recipientRGBA": [
+        115,
+        81,
+        83,
+        253
+      ],
+      "exactRGBASha256": "d0540703e6806cdcfff382e626b83539253c6e6241661ded7ea6702ac21d964b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        591,
+        232
+      ],
+      "originalRGBA": [
+        208,
+        192,
+        200,
+        253
+      ],
+      "recipientRGBA": [
+        208,
+        192,
+        200,
+        253
+      ],
+      "exactRGBASha256": "3a8de8296b0c04f4f8276c8afb5ec69d9231fe055889bbb9c4accc8436eacbf6"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        598,
+        232
+      ],
+      "originalRGBA": [
+        113,
+        91,
+        86,
+        253
+      ],
+      "recipientRGBA": [
+        113,
+        91,
+        86,
+        253
+      ],
+      "exactRGBASha256": "462601b1e0d5c9fcf6eede21df0d02f4bf9aabae3f19dd2dddebcf98daa99f94"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        599,
+        232
+      ],
+      "originalRGBA": [
+        117,
+        86,
+        85,
+        253
+      ],
+      "recipientRGBA": [
+        117,
+        86,
+        85,
+        253
+      ],
+      "exactRGBASha256": "99ffb2e242678c7db91569cfd6ea79dfe694c2ed18e9e396ba9bdf94519700b2"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        600,
+        232
+      ],
+      "originalRGBA": [
+        124,
+        85,
+        82,
+        253
+      ],
+      "recipientRGBA": [
+        124,
+        85,
+        82,
+        253
+      ],
+      "exactRGBASha256": "1e46eb3f6b7590ec5adbd3efff0fe45eae645ad15ca568adac71b49f3c5d69f8"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        598,
+        233
+      ],
+      "originalRGBA": [
+        100,
+        75,
+        78,
+        253
+      ],
+      "recipientRGBA": [
+        100,
+        75,
+        78,
+        253
+      ],
+      "exactRGBASha256": "d76cccd979e8aff0c22054676bab300a494668f97859196d5f583865b27b05e2"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        599,
+        233
+      ],
+      "originalRGBA": [
+        113,
+        88,
+        84,
+        253
+      ],
+      "recipientRGBA": [
+        113,
+        88,
+        84,
+        253
+      ],
+      "exactRGBASha256": "36d2a831fc0612b87b66032f31d6c72d78e141a97ff374568d57b364b94dc934"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        600,
+        233
+      ],
+      "originalRGBA": [
+        138,
+        102,
+        95,
+        253
+      ],
+      "recipientRGBA": [
+        138,
+        102,
+        95,
+        253
+      ],
+      "exactRGBASha256": "80a6ec493b353550b981e9844abc9fdfa0fd27305861d5c16d8e1080210c199b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        593,
+        234
+      ],
+      "originalRGBA": [
+        216,
+        199,
+        202,
+        253
+      ],
+      "recipientRGBA": [
+        216,
+        199,
+        202,
+        253
+      ],
+      "exactRGBASha256": "fb7b9f29480c114b02497c734c7a6b7d91bd82025a9de7842a6ed300aeade7af"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        599,
+        234
+      ],
+      "originalRGBA": [
+        95,
+        67,
+        73,
+        253
+      ],
+      "recipientRGBA": [
+        95,
+        67,
+        73,
+        253
+      ],
+      "exactRGBASha256": "058ed3a1860d752f4d54a344139e0aefaa8674c7b96e6ca43fdb57c5cea8a771"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        600,
+        234
+      ],
+      "originalRGBA": [
+        135,
+        93,
+        92,
+        253
+      ],
+      "recipientRGBA": [
+        135,
+        93,
+        92,
+        253
+      ],
+      "exactRGBASha256": "5751c7713fcda9a25dcba1d9931d75fe79bb1fca6063c5305655a1121deb8be4"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        599,
+        235
+      ],
+      "originalRGBA": [
+        95,
+        68,
+        72,
+        253
+      ],
+      "recipientRGBA": [
+        95,
+        68,
+        72,
+        253
+      ],
+      "exactRGBASha256": "70826eaa895971017524b2ae92fef5bf0e30176ec5d3d53246c3f0ca7a4b1adb"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        600,
+        235
+      ],
+      "originalRGBA": [
+        161,
+        121,
+        110,
+        253
+      ],
+      "recipientRGBA": [
+        161,
+        121,
+        110,
+        253
+      ],
+      "exactRGBASha256": "20e6cd85dd43c303737ef6b46b5668356997f46192ffea2f01c2f34878ea89fd"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        594,
+        236
+      ],
+      "originalRGBA": [
+        201,
+        183,
+        181,
+        253
+      ],
+      "recipientRGBA": [
+        201,
+        183,
+        181,
+        253
+      ],
+      "exactRGBASha256": "40532f0e23c1ed0bc306f85b1d0db97858c6aa2990f38360a8b752c56249f3d6"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        600,
+        236
+      ],
+      "originalRGBA": [
+        233,
+        201,
+        175,
+        253
+      ],
+      "recipientRGBA": [
+        233,
+        201,
+        175,
+        253
+      ],
+      "exactRGBASha256": "40bb641004846744b1905e2cfadb8848343bf3830e1c2448dead744d319998d9"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        601,
+        236
+      ],
+      "originalRGBA": [
+        231,
+        178,
+        141,
+        253
+      ],
+      "recipientRGBA": [
+        231,
+        178,
+        141,
+        253
+      ],
+      "exactRGBASha256": "576b06cb9874a702cc010e4256017e86ddd54dbf0e354cfaff2aed322d8c1ca4"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        594,
+        237
+      ],
+      "originalRGBA": [
+        203,
+        184,
+        186,
+        253
+      ],
+      "recipientRGBA": [
+        203,
+        184,
+        186,
+        253
+      ],
+      "exactRGBASha256": "5bb53071c5f1d51533c6cd020c3c5b4c6410c1282982fa5fe715631a1ab1569b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        593,
+        238
+      ],
+      "originalRGBA": [
+        212,
+        198,
+        200,
+        253
+      ],
+      "recipientRGBA": [
+        212,
+        198,
+        200,
+        253
+      ],
+      "exactRGBASha256": "02973fda5ac45fa5d005e38eacaf74472550693ee849765376a0c201fbcf52b9"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        594,
+        238
+      ],
+      "originalRGBA": [
+        202,
+        182,
+        184,
+        253
+      ],
+      "recipientRGBA": [
+        202,
+        182,
+        184,
+        253
+      ],
+      "exactRGBASha256": "5b7c17e49d2032abd8f84a21fd6ed00454cc507ea5f4c47faed4241990ab1a80"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        600,
+        238
+      ],
+      "originalRGBA": [
+        208,
+        152,
+        130,
+        253
+      ],
+      "recipientRGBA": [
+        208,
+        152,
+        130,
+        253
+      ],
+      "exactRGBASha256": "dbf8ef6b05462177667130ec81d180be03a85a94170c4975d234070651cc1500"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        593,
+        239
+      ],
+      "originalRGBA": [
+        210,
+        193,
+        197,
+        253
+      ],
+      "recipientRGBA": [
+        210,
+        193,
+        197,
+        253
+      ],
+      "exactRGBASha256": "0e27f16bbd9241bc7d93b8ead37a475ab0777728436f2ed5395e01235a5723c1"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        600,
+        239
+      ],
+      "originalRGBA": [
+        143,
+        80,
+        68,
+        253
+      ],
+      "recipientRGBA": [
+        143,
+        80,
+        68,
+        253
+      ],
+      "exactRGBASha256": "4525c5bcc4f779c63afce3573c0b7bef84ebe5a6d625a30fbcdf568166784c42"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        601,
+        239
+      ],
+      "originalRGBA": [
+        216,
+        130,
+        104,
+        253
+      ],
+      "recipientRGBA": [
+        216,
+        130,
+        104,
+        253
+      ],
+      "exactRGBASha256": "086556db0a1347f87531916ea03f96efa43505a1578c47cffe55d4a6312c695c"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        593,
+        240
+      ],
+      "originalRGBA": [
+        202,
+        183,
+        190,
+        253
+      ],
+      "recipientRGBA": [
+        202,
+        183,
+        190,
+        253
+      ],
+      "exactRGBASha256": "e622e16b662cbbba142c96f2c5027a53abdca51c7d63a4093bf53995c18525e4"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        594,
+        240
+      ],
+      "originalRGBA": [
+        200,
+        175,
+        175,
+        253
+      ],
+      "recipientRGBA": [
+        200,
+        175,
+        175,
+        253
+      ],
+      "exactRGBASha256": "9fc70ab52d67efdd0f4440a0577d182c7aee2cc50ba9eae9eac33d5c84d3f68c"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        600,
+        240
+      ],
+      "originalRGBA": [
+        136,
+        76,
+        62,
+        253
+      ],
+      "recipientRGBA": [
+        136,
+        76,
+        62,
+        253
+      ],
+      "exactRGBASha256": "6a33b7749790983652936378f2066d84eb41070b912992603d17a9e0ed406c26"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        601,
+        240
+      ],
+      "originalRGBA": [
+        223,
+        138,
+        105,
+        253
+      ],
+      "recipientRGBA": [
+        223,
+        138,
+        105,
+        253
+      ],
+      "exactRGBASha256": "aff3241e42ec7486e14b007646e2ad17043ca61fa67355562efd54887eb8bc66"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        602,
+        240
+      ],
+      "originalRGBA": [
+        222,
+        142,
+        103,
+        253
+      ],
+      "recipientRGBA": [
+        222,
+        142,
+        103,
+        253
+      ],
+      "exactRGBASha256": "107f42a2ccdfe6a03d9879d985bdf0112137cfd65f9d2c9704df48b27006dea0"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        600,
+        241
+      ],
+      "originalRGBA": [
+        141,
+        76,
+        67,
+        253
+      ],
+      "recipientRGBA": [
+        141,
+        76,
+        67,
+        253
+      ],
+      "exactRGBASha256": "842054fd9e7b64dc4d67d4a2d0f06a5dc78241fcb7dd4e8b7bf5df4cd860b2ed"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        602,
+        241
+      ],
+      "originalRGBA": [
+        212,
+        128,
+        91,
+        253
+      ],
+      "recipientRGBA": [
+        212,
+        128,
+        91,
+        253
+      ],
+      "exactRGBASha256": "df76f71e1662969ef18e04f174437dec385ccbb7bd60b1d301ac66732e3c0282"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        603,
+        241
+      ],
+      "originalRGBA": [
+        218,
+        141,
+        100,
+        253
+      ],
+      "recipientRGBA": [
+        218,
+        141,
+        100,
+        253
+      ],
+      "exactRGBASha256": "c35d6b697039541bbe479cf412292daf958952dc45be4a94986a63749bb655d3"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        594,
+        242
+      ],
+      "originalRGBA": [
+        216,
+        176,
+        175,
+        253
+      ],
+      "recipientRGBA": [
+        216,
+        176,
+        175,
+        253
+      ],
+      "exactRGBASha256": "3331deeab19a91a6df03911ff947342717263530ca92b9d8d9f9c640e4aa09ee"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        601,
+        242
+      ],
+      "originalRGBA": [
+        170,
+        91,
+        75,
+        253
+      ],
+      "recipientRGBA": [
+        170,
+        91,
+        75,
+        253
+      ],
+      "exactRGBASha256": "8b83377775e523821cb527a580e5e84cc8c78ce993dd4857b95a31ab58859a01"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        602,
+        242
+      ],
+      "originalRGBA": [
+        156,
+        69,
+        50,
+        253
+      ],
+      "recipientRGBA": [
+        156,
+        69,
+        50,
+        253
+      ],
+      "exactRGBASha256": "4708fab2710af08d19bfb5833ef1282f4b8118d70edddfb66ce22f2651f460ee"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        603,
+        242
+      ],
+      "originalRGBA": [
+        180,
+        100,
+        66,
+        253
+      ],
+      "recipientRGBA": [
+        180,
+        100,
+        66,
+        253
+      ],
+      "exactRGBASha256": "588b9a20c9b98f42550708c7b1abe85d4f9bea74038c153442f86c4563b4f7ee"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        604,
+        242
+      ],
+      "originalRGBA": [
+        196,
+        121,
+        81,
+        253
+      ],
+      "recipientRGBA": [
+        196,
+        121,
+        81,
+        253
+      ],
+      "exactRGBASha256": "179d37f59c37b6123ec72e484e82c9944d5040fcf2c77e26ca46128a5b9e41fa"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        602,
+        243
+      ],
+      "originalRGBA": [
+        141,
+        63,
+        52,
+        253
+      ],
+      "recipientRGBA": [
+        141,
+        63,
+        52,
+        253
+      ],
+      "exactRGBASha256": "9c0efdb55a883a2c4cf42997847d49cd4c9cfa02935dceac0fc5bf676935102b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        603,
+        243
+      ],
+      "originalRGBA": [
+        188,
+        118,
+        87,
+        253
+      ],
+      "recipientRGBA": [
+        188,
+        118,
+        87,
+        253
+      ],
+      "exactRGBASha256": "3ae9b3407fcfb962e9ac7e4adcd6899f82d4a8e03cee315959dad7a8736c064a"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        603,
+        244
+      ],
+      "originalRGBA": [
+        150,
+        88,
+        68,
+        253
+      ],
+      "recipientRGBA": [
+        150,
+        88,
+        68,
+        253
+      ],
+      "exactRGBASha256": "1603964896064000d4ccd94c3f675c015b68af984d1cf9801a2e2766f19cff1a"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        604,
+        244
+      ],
+      "originalRGBA": [
+        155,
+        95,
+        68,
+        253
+      ],
+      "recipientRGBA": [
+        155,
+        95,
+        68,
+        253
+      ],
+      "exactRGBASha256": "25a6ab228493de923847da6d328f894b5fa5202b00e521a91772e98dca770392"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        605,
+        244
+      ],
+      "originalRGBA": [
+        156,
+        96,
+        67,
+        253
+      ],
+      "recipientRGBA": [
+        156,
+        96,
+        67,
+        253
+      ],
+      "exactRGBASha256": "f7091d64cb2c9b32f80ab96a7d8736b753761b48431b78fde84e52b36e5baa75"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        605,
+        245
+      ],
+      "originalRGBA": [
+        143,
+        89,
+        63,
+        253
+      ],
+      "recipientRGBA": [
+        143,
+        89,
+        63,
+        253
+      ],
+      "exactRGBASha256": "f1648755176d97494ba0fb0f96a38749ee9303b31d29d0770700c38080036bdd"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        597,
+        246
+      ],
+      "originalRGBA": [
+        225,
+        183,
+        168,
+        253
+      ],
+      "recipientRGBA": [
+        225,
+        183,
+        168,
+        253
+      ],
+      "exactRGBASha256": "247f73899f85a39b4b2849154ad77d403b03eaf6ceb8513a71a0118bffa7028f"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        603,
+        246
+      ],
+      "originalRGBA": [
+        188,
+        129,
+        92,
+        253
+      ],
+      "recipientRGBA": [
+        188,
+        129,
+        92,
+        253
+      ],
+      "exactRGBASha256": "f50424bc5b9305b8d7f4499552c2f1bd606a90aad769cf9a76ea4eff9eecd346"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        592,
+        247
+      ],
+      "originalRGBA": [
+        200,
+        128,
+        120,
+        253
+      ],
+      "recipientRGBA": [
+        200,
+        128,
+        120,
+        253
+      ],
+      "exactRGBASha256": "234e8aab7ee4de2ced9df4b78eb84fddc5728a793c2fb2cce5bbea73cf6a6ec0"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        594,
+        248
+      ],
+      "originalRGBA": [
+        234,
+        199,
+        193,
+        253
+      ],
+      "recipientRGBA": [
+        234,
+        199,
+        193,
+        253
+      ],
+      "exactRGBASha256": "a39441d1b9b6786f6551cedba7d2ce2cdcdced908f8f47376d813f3bf929ebe1"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        595,
+        248
+      ],
+      "originalRGBA": [
+        227,
+        187,
+        175,
+        253
+      ],
+      "recipientRGBA": [
+        227,
+        187,
+        175,
+        253
+      ],
+      "exactRGBASha256": "76fe3e1704b2c8f9ff977189cc050960b6a85b5e4ed6bc289f87e34f3055aebe"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        598,
+        248
+      ],
+      "originalRGBA": [
+        164,
+        79,
+        53,
+        253
+      ],
+      "recipientRGBA": [
+        164,
+        79,
+        53,
+        253
+      ],
+      "exactRGBASha256": "2747613c037836a569b728b09795e775b3fab3800793c21d4bc01fd9b2bd4d35"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        599,
+        248
+      ],
+      "originalRGBA": [
+        218,
+        143,
+        103,
+        253
+      ],
+      "recipientRGBA": [
+        218,
+        143,
+        103,
+        253
+      ],
+      "exactRGBASha256": "b5280544c2784b8f98186679e027be2355273722f12df554db90f983901a8815"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        597,
+        249
+      ],
+      "originalRGBA": [
+        175,
+        84,
+        58,
+        253
+      ],
+      "recipientRGBA": [
+        175,
+        84,
+        58,
+        253
+      ],
+      "exactRGBASha256": "dc54402c06271d3d681dd9c8a4845f7806edc6a2d729dd2dbaa43d2574c41b7a"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        598,
+        249
+      ],
+      "originalRGBA": [
+        221,
+        148,
+        104,
+        253
+      ],
+      "recipientRGBA": [
+        221,
+        148,
+        104,
+        253
+      ],
+      "exactRGBASha256": "a5656b1fd496ba8ceb349539c13df40004c1273c5c3ee0ed287d245ffaed1251"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        596,
+        250
+      ],
+      "originalRGBA": [
+        185,
+        90,
+        68,
+        253
+      ],
+      "recipientRGBA": [
+        185,
+        90,
+        68,
+        253
+      ],
+      "exactRGBASha256": "db7031f6ba546ba728a5fff004ce3613fdaec97cd7adda749eb7b4d72aa9fdc3"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        597,
+        250
+      ],
+      "originalRGBA": [
+        214,
+        138,
+        96,
+        253
+      ],
+      "recipientRGBA": [
+        214,
+        138,
+        96,
+        253
+      ],
+      "exactRGBASha256": "ecf5b39b7dda4a7d8a384b23f8649de4c16add1be0371013a9f40b7a9031503d"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        595,
+        251
+      ],
+      "originalRGBA": [
+        200,
+        110,
+        82,
+        253
+      ],
+      "recipientRGBA": [
+        200,
+        110,
+        82,
+        253
+      ],
+      "exactRGBASha256": "78258c6a3fae169c54b303fa4be16276119f56df376da4fba88d98e2a808fe15"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        596,
+        251
+      ],
+      "originalRGBA": [
+        221,
+        137,
+        95,
+        253
+      ],
+      "recipientRGBA": [
+        221,
+        137,
+        95,
+        253
+      ],
+      "exactRGBASha256": "95b35517e8612554cafbbb36c33cecd7026f54de9b8f4653a6c65bd4d8451ea5"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        597,
+        251
+      ],
+      "originalRGBA": [
+        220,
+        150,
+        97,
+        253
+      ],
+      "recipientRGBA": [
+        220,
+        150,
+        97,
+        253
+      ],
+      "exactRGBASha256": "4087a9b6f194cbda213def92c3a7786311bf77e0a36f772b96c7f23af9de925f"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        592,
+        252
+      ],
+      "originalRGBA": [
+        231,
+        181,
+        164,
+        253
+      ],
+      "recipientRGBA": [
+        231,
+        181,
+        164,
+        253
+      ],
+      "exactRGBASha256": "143fed8416b4dff238bdc7b05c3f48a8a99144c6bb3ba09242d1cd04ec3f599e"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        594,
+        252
+      ],
+      "originalRGBA": [
+        199,
+        111,
+        78,
+        253
+      ],
+      "recipientRGBA": [
+        199,
+        111,
+        78,
+        253
+      ],
+      "exactRGBASha256": "b6778cdc96728db3384a9bddfd883ba96210bf2d13f51f91659b8788395e696c"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        595,
+        252
+      ],
+      "originalRGBA": [
+        233,
+        153,
+        103,
+        253
+      ],
+      "recipientRGBA": [
+        233,
+        153,
+        103,
+        253
+      ],
+      "exactRGBASha256": "7bdc8d5cb0e26e879e83cbfaee84f1e23795eae6b51c4ac3f0fddac087d1a69b"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        596,
+        252
+      ],
+      "originalRGBA": [
+        221,
+        144,
+        92,
+        253
+      ],
+      "recipientRGBA": [
+        221,
+        144,
+        92,
+        253
+      ],
+      "exactRGBASha256": "c810fdf480b3bd9bf1498d6cf954d6e7214943a9c0f86d26b092d76950328138"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        593,
+        253
+      ],
+      "originalRGBA": [
+        195,
+        108,
+        76,
+        253
+      ],
+      "recipientRGBA": [
+        195,
+        108,
+        76,
+        253
+      ],
+      "exactRGBASha256": "1a0baf1b8d0d56d9f046b39a313bb09c20351ec119a95c6026c051567a628025"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        594,
+        253
+      ],
+      "originalRGBA": [
+        231,
+        154,
+        104,
+        253
+      ],
+      "recipientRGBA": [
+        231,
+        154,
+        104,
+        253
+      ],
+      "exactRGBASha256": "02d2aa5b5fb0964bdde1a82d0b489cd4369daecca50fef9e66a36d560fc3713f"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        595,
+        253
+      ],
+      "originalRGBA": [
+        218,
+        145,
+        89,
+        253
+      ],
+      "recipientRGBA": [
+        218,
+        145,
+        89,
+        253
+      ],
+      "exactRGBASha256": "47f36ca8dc5ea3ba60fe278e4609020a2cf6f48068bf159db1809068711e2145"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        591,
+        254
+      ],
+      "originalRGBA": [
+        187,
+        112,
+        90,
+        253
+      ],
+      "recipientRGBA": [
+        187,
+        112,
+        90,
+        253
+      ],
+      "exactRGBASha256": "b39eed3cd3d276e607a22ccce688416e61d160dd0bce728932dd798bae0609bc"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        592,
+        254
+      ],
+      "originalRGBA": [
+        189,
+        102,
+        70,
+        253
+      ],
+      "recipientRGBA": [
+        189,
+        102,
+        70,
+        253
+      ],
+      "exactRGBASha256": "60917700389351998980b0858d4a8b38ad794887607650996e26ef4da438f0ab"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        593,
+        254
+      ],
+      "originalRGBA": [
+        231,
+        151,
+        104,
+        253
+      ],
+      "recipientRGBA": [
+        231,
+        151,
+        104,
+        253
+      ],
+      "exactRGBASha256": "1a9cf45b45baa01d6b31208cc9dbbcb4c1fd43e11a2d1ec72bf6787846006122"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        594,
+        254
+      ],
+      "originalRGBA": [
+        221,
+        147,
+        91,
+        253
+      ],
+      "recipientRGBA": [
+        221,
+        147,
+        91,
+        253
+      ],
+      "exactRGBASha256": "0c5771112ba21b68ba287b8617227b11dad72c93017e9c50212deea86df149de"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        590,
+        255
+      ],
+      "originalRGBA": [
+        208,
+        140,
+        117,
+        253
+      ],
+      "recipientRGBA": [
+        208,
+        140,
+        117,
+        253
+      ],
+      "exactRGBASha256": "a79b24b4a6adb720b04ade2c4bf0a679c4a83d3f0ee71310ddd852dcbad91dc7"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        591,
+        255
+      ],
+      "originalRGBA": [
+        183,
+        95,
+        66,
+        253
+      ],
+      "recipientRGBA": [
+        183,
+        95,
+        66,
+        253
+      ],
+      "exactRGBASha256": "4aaf30685e64fcd6d2fb0d0b19874aa80e5fc983fca11c3485dc09fa422a8b68"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        592,
+        255
+      ],
+      "originalRGBA": [
+        230,
+        151,
+        105,
+        253
+      ],
+      "recipientRGBA": [
+        230,
+        151,
+        105,
+        253
+      ],
+      "exactRGBASha256": "5a2ed0bbab843886e36fcf7cf77b2695649d0c087977d382eee683ec5d7ad889"
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "sourceXY": [
+        593,
+        255
+      ],
+      "originalRGBA": [
+        221,
+        146,
+        93,
+        253
+      ],
+      "recipientRGBA": [
+        221,
+        146,
+        93,
+        253
+      ],
+      "exactRGBASha256": "6a338e35751ac84c9fb03eb0b381e2ea08401e7030bc97f1b4beab23cf5d0ac4"
+    }
+  ],
+  "helperSourceChain": "Six helpers are separate additions to form80; the current 6dd4 two-mask repair is verified by approved-helper-source-2026-10-18.json and its independent 78-layer unchanged proof."
+}

@@ -1,0 +1,19 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "standing-native-2026-10-18.moc3",
+		"Textures": [
+			"standing-native-2026-10-18.4096/texture_00.png",
+			"standing-native-2026-10-18.4096/texture_01.png"
+		],
+		"Physics": "standing-native-2026-10-18.physics3.json",
+		"DisplayInfo": "standing-native-2026-10-18.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		}
+	]
+}

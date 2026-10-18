@@ -1,15 +1,17 @@
-/* Genuine Cubism model renderer. No automatic gaze, drag, blink or head motion.
- * App-owned state may opt into copied-vertex gaze for the detailed standing
- * model; native parameters and drawable buffers remain independently owned.
+/* Genuine Cubism renderer with optional official motion/expression playback.
+ * Native eye rigs require a hash-bound contract and measurable Core changes.
+ * Legacy copied-vertex gaze is used only without that explicit native contract.
  * Framework/Core retain their own Live2D licenses; see vendor/licenses/.
  */
 import { cameraMatrix, assetURL } from './camera-math.mjs';
 import { validatePhysicsSettings } from './physics-validation.mjs';
 import { createStandingGaze } from './standing-gaze.mjs';
+import { createAnimationPlayback } from './animation-playback.mjs';
 
 let corePromise;
 let frameworkPromise;
 let CubismFramework, CubismMoc, CubismMatrix44, CubismRenderer_WebGL, CubismShaderManager_WebGL, CubismPhysics;
+let animationFramework;
 let users = 0;
 let ownsFramework = false;
 const activeCanvases = new WeakSet();
@@ -69,6 +71,7 @@ export async function createLive2DRenderer(options) {
   // Import it only after the Core script has initialized, including cold loads.
   if (!frameworkPromise) frameworkPromise = import('./vendor/cubism-framework-5-r.5.mjs').then(module => {
     ({ CubismFramework, CubismMoc, CubismMatrix44, CubismRenderer_WebGL, CubismShaderManager_WebGL, CubismPhysics } = module);
+    animationFramework = module;
   }).catch(error => { frameworkPromise = null; throw error; });
   await frameworkPromise;
   // Reserve after awaiting Core so concurrent calls cannot claim one canvas.
@@ -90,7 +93,8 @@ class Live2DRenderer {
     this.abortController = new AbortController();
     this.textures = []; this.textureDimensions = []; this.defaultMapping = null;
     this.moc = null; this.model = null; this.renderer = null; this.physics = null;
-    this.gaze = null; this.physicsEnabled = true;
+    this.gaze = null; this.nativeRig = null; this.nativeGaze = null; this.blinkAmount = 0;
+    this.animation = null; this.baseParameterValues = new Map(); this.layerParameterIds = new Set(); this.disabledAnimatedParameters = new Set(); this.physicsEnabled = true;
     this.physicsInfo = { loaded: false, reason: 'No Physics reference in model3.', inputIds: [], outputIds: [], evaluations: 0 };
     this.retained = false; this.disposed = false;
     this.parameterIndices = new Map(); this.partIndices = new Map();
@@ -120,6 +124,11 @@ class Live2DRenderer {
     const refs = settings?.FileReferences;
     if (settings?.Version !== 3 || !refs || !Array.isArray(refs.Textures) || !refs.Textures.length) throw new Error('Expected model3 Version 3 with Moc and Textures.');
     const mocBytes = await readBuffer(assetURL(refs.Moc, url.href), signal);
+    if (this.options.nativeRig) {
+      if (!/^[a-f\d]{64}$/i.test(this.options.nativeRig.mocSha256 || '')) throw new Error('Native eye rig requires the exported MOC3 SHA-256.');
+      const actual = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', mocBytes)), value => value.toString(16).padStart(2, '0')).join('');
+      if (actual !== this.options.nativeRig.mocSha256.toLowerCase()) throw new Error('Native eye rig contract does not match this MOC3.');
+    }
     const core = globalThis.Live2DCubismCore;
     const mocVersion = core.Version.csmGetMocVersion(mocBytes);
     const latestMocVersion = core.Version.csmGetLatestMocVersion();
@@ -133,6 +142,7 @@ class Live2DRenderer {
     for (const key of ['CanvasWidth', 'CanvasHeight', 'CanvasOriginX', 'CanvasOriginY', 'PixelsPerUnit']) this.info[key] = nativeModel.canvasinfo[key];
     this.camera.focus = [this.info.CanvasWidth / 2, this.info.CanvasHeight / 2];
     nativeModel.parameters.ids.forEach((id, index) => this.parameterIndices.set(id, index));
+    nativeModel.parameters.ids.forEach((id, index) => this.baseParameterValues.set(id, this.model.getParameterValueByIndex(index)));
     nativeModel.parts.ids.forEach((id, index) => this.partIndices.set(id, index));
     nativeModel.drawables.ids.forEach((id, index) => this.drawableIndices.set(id, index));
     // App appearance factors are applied at the Framework accessor. Core's
@@ -189,13 +199,16 @@ class Live2DRenderer {
       indices: Array.from(this.model.getDrawableVertexIndices(drawable.index)),
     }));
     await this.loadPhysics(refs, url.href, signal);
-    this.gaze = createStandingGaze({ model: this.model, canvasInfo: this.info });
+    this.animation = await createAnimationPlayback({ framework: animationFramework, model: this.model,
+      parameters: this.getParameters(), references: refs, modelUrl: url.href, readBuffer, signal });
+    for (const id of this.animation.parameterIds) this.layerParameterIds.add(id);
+    if (this.options.nativeRig) this.configureNativeRig(this.options.nativeRig);
+    else this.gaze = createStandingGaze({ model: this.model, canvasInfo: this.info });
     Object.assign(this.status, { phase: 'ready', modelLoaded: true, shadersReady: true,
       mocVersion, latestMocVersion, drawableCount: this.model.getDrawableCount(),
       textureCount: this.textures.length, parameterCount: this.parameterIndices.size,
       partCount: this.partIndices.size,
-      // Loading these optional assets or choosing their behaviour belongs to the app.
-      optionalReferencesNotPlayed: Object.keys(refs).filter(key => !['Moc', 'Textures', 'DisplayInfo', 'UserData', 'Physics'].includes(key)),
+      optionalReferencesNotPlayed: Object.keys(refs).filter(key => !['Moc', 'Textures', 'DisplayInfo', 'UserData', 'Physics', 'Motions', 'Expressions'].includes(key)),
     });
   }
 
@@ -238,12 +251,93 @@ class Live2DRenderer {
 
   setGaze(x, y, options = {}) {
     this.assertModel();
+    if (this.nativeRig) {
+      const enabled = options.enabled ?? true, strength = options.strength ?? 1;
+      if (![x, y, strength].every(Number.isFinite) || typeof enabled !== 'boolean') throw new TypeError('Native gaze requires finite coordinates/strength and boolean enabled.');
+      if (!enabled && (this.nativeGaze.enabled || !this.nativeGaze.commanded)) {
+        for (const id of [this.nativeRig.gaze.x, this.nativeRig.gaze.y]) this.setParameterById(id, this.model.getParameterDefaultValue(this.parameterIndices.get(id)));
+      }
+      this.nativeGaze = { enabled, strength: Math.max(0, Math.min(1, strength)),
+        commanded: true, input: enabled ? [Math.max(-1, Math.min(1, x)), Math.max(-1, Math.min(1, y))] : [0, 0] };
+      this.status.gazeTracking = enabled && strength > 0; return true;
+    }
     const supported = this.gaze?.set(x, y, options) ?? false;
     this.status.gazeTracking = this.gaze?.getStatus().enabled ?? false;
     return supported;
   }
 
-  getGazeStatus() { return this.gaze?.getStatus() ?? { supported: false, enabled: false }; }
+  getGazeStatus() {
+    if (this.nativeRig) return { supported: true, ...this.nativeGaze, nativeEyeBallParametersUsed: true,
+      nativeBuffersModified: false, method: 'Hash-verified native Cubism EyeBall parameters',
+      parameterIds: { ...this.nativeRig.gaze }, bindingEvidence: structuredClone(this.nativeRig.bindingEvidence) };
+    return this.gaze?.getStatus() ?? { supported: false, enabled: false };
+  }
+
+  configureNativeRig(contract) {
+    const ids = [contract.gaze?.x, contract.gaze?.y, contract.blink?.left, contract.blink?.right];
+    if (ids.some(id => typeof id !== 'string' || !this.parameterIndices.has(id)) || new Set(ids).size !== 4) throw new Error('Native rig requires four distinct existing eye parameters.');
+    const saved = this.getParameters(), evidence = {};
+    const capture = () => this.getDrawables({ vertices: true });
+    const restore = () => { for (const item of saved) this.model.setParameterValueByIndex(this.parameterIndices.get(item.id), item.value); this.model.update(); };
+    try {
+      for (const id of ids) {
+        const index = this.parameterIndices.get(id), min = this.model.getParameterMinimumValue(index), max = this.model.getParameterMaximumValue(index);
+        if (min >= max) throw new Error('Native eye parameter has no range: ' + id);
+        restore(); const baseline = capture(); let vertexDelta = 0, opacityDelta = 0;
+        for (const value of [min, max]) {
+          this.model.setParameterValueByIndex(index, value); this.model.update();
+          const changed = capture();
+          for (let d = 0; d < changed.length; d++) {
+            opacityDelta = Math.max(opacityDelta, Math.abs(changed[d].opacity - baseline[d].opacity));
+            for (let v = 0; v < changed[d].vertices.length; v++) vertexDelta = Math.max(vertexDelta, Math.abs(changed[d].vertices[v] - baseline[d].vertices[v]));
+          }
+        }
+        const gazeParameter = id === contract.gaze.x || id === contract.gaze.y;
+        if (vertexDelta < 1e-7 && (gazeParameter || opacityDelta < 1e-5)) throw new Error('Native eye parameter is present but has no measurable binding: ' + id);
+        evidence[id] = { vertexDelta, opacityDelta, min, max };
+      }
+    } finally { restore(); }
+    this.nativeRig = { mocSha256: contract.mocSha256.toLowerCase(), gaze: { ...contract.gaze }, blink: { ...contract.blink }, bindingEvidence: evidence };
+    this.nativeGaze = { enabled: false, strength: 1, commanded: false, input: [0, 0] };
+    for (const id of ids) this.layerParameterIds.add(id);
+  }
+
+  setBlink(amount) {
+    this.assertModel();
+    if (!Number.isFinite(amount)) throw new TypeError('Blink amount must be finite.');
+    if (!this.nativeRig) return false;
+    this.blinkAmount = Math.max(0, Math.min(1, amount)); return true;
+  }
+
+  applyNativeEyes() {
+    if (!this.nativeRig) return;
+    const gaze = this.nativeGaze;
+    for (const [id, input] of gaze.enabled ? [[this.nativeRig.gaze.x, gaze.input[0]], [this.nativeRig.gaze.y, -gaze.input[1]]] : []) {
+      const index = this.parameterIndices.get(id), center = this.model.getParameterDefaultValue(index);
+      const direction = gaze.enabled ? input * gaze.strength : 0;
+      const span = direction >= 0 ? this.model.getParameterMaximumValue(index) - center : center - this.model.getParameterMinimumValue(index);
+      this.model.setParameterValueByIndex(index, center + direction * span);
+    }
+    for (const id of [this.nativeRig.blink.left, this.nativeRig.blink.right]) {
+      const index = this.parameterIndices.get(id), min = this.model.getParameterMinimumValue(index);
+      const current = this.model.getParameterValueByIndex(index);
+      this.model.setParameterValueByIndex(index, min + (current - min) * (1 - this.blinkAmount));
+    }
+  }
+
+  playMotion(group, index = 0, options = {}) { this.assertModel(); return this.animation.playMotion(group, index, options); }
+  stopMotions() { this.assertModel(); this.animation.stopMotions(); return this; }
+  setExpression(name) { this.assertModel(); this.animation.setExpression(name); return this; }
+  setAutoIdle(enabled, options = {}) { this.assertModel(); this.animation.setAutoIdle(enabled, options); return this; }
+  setAnimationEnabled(enabled) { this.assertModel(); this.animation.setEnabled(enabled); return this; }
+  setAnimatedParameterEnabled(id, enabled) {
+    this.assertModel();
+    if (typeof enabled !== 'boolean') throw new TypeError('Animated parameter enabled must be boolean.');
+    if (!this.parameterIndices.has(id)) return false;
+    if (enabled) this.disabledAnimatedParameters.delete(id); else this.disabledAnimatedParameters.add(id);
+    return true;
+  }
+  getAnimationStatus() { return { ...(this.animation?.getStatus() ?? { loaded: false }), disabledAnimatedParameters: [...this.disabledAnimatedParameters] }; }
 
   resetPhysics() {
     this.assertModel();
@@ -276,7 +370,8 @@ class Live2DRenderer {
     if (!Number.isFinite(value)) throw new TypeError('Parameter value must be finite.');
     const index = this.parameterIndices.get(id);
     if (index === undefined) return false;
-    this.model.setParameterValueByIndex(index, Math.max(this.model.getParameterMinimumValue(index), Math.min(this.model.getParameterMaximumValue(index), value)));
+    const bounded = Math.max(this.model.getParameterMinimumValue(index), Math.min(this.model.getParameterMaximumValue(index), value));
+    this.baseParameterValues.set(id, bounded); this.model.setParameterValueByIndex(index, bounded);
     return true;
   }
 
@@ -366,7 +461,7 @@ class Live2DRenderer {
   }
 
   getStatus() {
-    return { ...this.status, gaze: this.getGazeStatus(), canvasInfo: this.info ? { ...this.info } : null,
+    return { ...this.status, gaze: this.getGazeStatus(), animation: this.getAnimationStatus(), nativeRig: this.nativeRig ? structuredClone(this.nativeRig) : null, canvasInfo: this.info ? { ...this.info } : null,
       modelUrl: this.modelUrl, camera: { ...this.camera, focus: [...this.camera.focus], offset: [...this.camera.offset] },
       optionalReferencesNotPlayed: [...(this.status.optionalReferencesNotPlayed || [])] };
   }
@@ -377,7 +472,14 @@ class Live2DRenderer {
 
   update(deltaSeconds = 1 / 60) {
     this.assertModel();
-    if (!Number.isFinite(deltaSeconds) || deltaSeconds < 0 || deltaSeconds > 0.25) throw new RangeError('Physics step must be 0..0.25 seconds; subdivide long frames.');
+    if (!Number.isFinite(deltaSeconds) || deltaSeconds < 0 || deltaSeconds > 0.25) throw new RangeError('Animation/physics step must be 0..0.25 seconds; subdivide long frames.');
+    // Restore only parameters controlled by animation/eyes. Host-provided base
+    // values survive, additive expressions cannot accumulate across frames,
+    // and existing physics-only parameters preserve their previous behaviour.
+    for (const id of this.layerParameterIds) this.model.setParameterValueByIndex(this.parameterIndices.get(id), this.baseParameterValues.get(id));
+    this.animation?.update(deltaSeconds);
+    for (const id of this.disabledAnimatedParameters) this.model.setParameterValueByIndex(this.parameterIndices.get(id), this.baseParameterValues.get(id));
+    this.applyNativeEyes();
     if (this.physics && this.physicsEnabled && deltaSeconds > 0) {
       this.physics.evaluate(this.model, deltaSeconds);
       this.physicsInfo.evaluations++;
@@ -406,7 +508,9 @@ class Live2DRenderer {
     this.canvas.removeEventListener('webglcontextlost', this.onContextLost);
     this.canvas.removeEventListener('webglcontextrestored', this.onContextRestored);
     this.physics?.release(); this.physics = null;
+    this.animation?.dispose(); this.animation = null;
     this.gaze?.dispose(); this.gaze = null;
+    this.nativeRig = this.nativeGaze = null;
     this.renderer?.release(); this.renderer = null;
     for (const texture of this.textures) this.gl.deleteTexture(texture);
     this.textures.length = 0;

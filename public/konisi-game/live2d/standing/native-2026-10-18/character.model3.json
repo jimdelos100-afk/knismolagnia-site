@@ -1,0 +1,69 @@
+{
+  "Version": 3,
+  "FileReferences": {
+    "Moc": "standing-native-2026-10-18.moc3",
+    "Textures": [
+      "standing-native-2026-10-18.4096/texture_00.png",
+      "standing-native-2026-10-18.4096/texture_01.png"
+    ],
+    "Physics": "standing-native-2026-10-18.physics3.json",
+    "DisplayInfo": "standing-native-2026-10-18.cdi3.json",
+    "Motions": {
+      "Idle": [
+        {
+          "File": "motions/idle.motion3.json"
+        }
+      ],
+      "TapBody": [
+        {
+          "File": "motions/tap.motion3.json"
+        }
+      ],
+      "Pat": [
+        {
+          "File": "motions/pat.motion3.json"
+        }
+      ],
+      "Poke": [
+        {
+          "File": "motions/poke.motion3.json"
+        }
+      ],
+      "Pinch": [
+        {
+          "File": "motions/pinch.motion3.json"
+        }
+      ],
+      "Rub": [
+        {
+          "File": "motions/rub.motion3.json"
+        }
+      ],
+      "Tickle": [
+        {
+          "File": "motions/tickle.motion3.json"
+        }
+      ]
+    },
+    "Expressions": [
+      {
+        "Name": "neutral",
+        "File": "expressions/neutral.exp3.json"
+      },
+      {
+        "Name": "blink",
+        "File": "expressions/blink.exp3.json"
+      }
+    ]
+  },
+  "Groups": [
+    {
+      "Target": "Parameter",
+      "Name": "EyeBlink",
+      "Ids": [
+        "ParamEyeLOpen",
+        "ParamEyeROpen"
+      ]
+    }
+  ]
+}

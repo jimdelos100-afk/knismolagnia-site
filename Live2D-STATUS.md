@@ -1,17 +1,29 @@
-# V8 精细站姿网站交付
+# V8 原生 Live2D 验收记录 · 2026-10-18
 
-首页公共全身看板娘和独立站姿页已使用精细 Cubism 站姿。其源稿包含 75 层、精细五官拆分与遮挡补绘；运行时使用 136 个 Drawable、63 个参数、六组发丝物理、36 个骨骼输出、42 个物理粒子。模型与独立阶段最终验收的 MOC SHA256 相同。
+正式站姿使用本轮新导出的用户模型：63 个参数、142 个 Drawable，MOC SHA-256 为 `cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c`。模型含原生九层目光、双眼眨眼与真实裁剪 mask；六组发丝物理保持原文件。neutral、blink 使用原生 exp3；其余五种网页表情保留 V8 兼容方式。独立 idle、tap、pat、poke、pinch、rub、tickle 动作已在当前模型验收。
 
-左右长发各 7 段，左右侧发各 5 段，左外刘海 7 段、右外刘海 5 段。原生物理固定 60fps；网页传入真实经过时间，首页约 30fps 的刷新也不会改变物理速度。站姿网页输入限制在已检查的小幅范围 ±21；自然头动由时间驱动，公共站姿看板娘现在启用网页眼部网格的小幅目光跟随；头部仍只做自然动作。Level 1/2 页面角色的目光保持关闭。
+完整证据随包放在 `verification/native-live2d-2026-10-18/`。下列交付检查均针对冻结运行源码完成，报告非空，检查项通过；原始零差异比较的失败结果另以 strictOriginalResult.pass:false 明确保留。模型报告绑定当前 MOC，helper、接受参考回归及网站报告还绑定本轮源码快照 SHA。
 
-精细站姿保留原 V8 眨眼、表情和换装：采用明确的身体/脸部/眼部像素遮罩和局部图集更新；原五官会按表情或眨眼状态切换可见性。发束、遮挡补绘和帽饰仍由真实网格绘制，不参加外观覆贴。中性状态恢复导出的原始图集。
+- `native-core-and-assets.json`：59 项通过。
+- `native-browser.json`：279 项通过。
+- `native-neutral-vs-original.json`：12 项通过。
+- `native-neutral-pixels.json`：11 项通过。
+- `native-eye-coverage.json`：38 项通过。
+- `native-helper-coverage.json`：39 项通过。
+- `native-accepted-appearance-regression.json`：7 项通过。
+- `native-accepted-appearance-negative-controls.json`：13 项通过。
+- `website/website-native-pet.json`：56 项通过。
+- `website/legacy-main/website-detailed-integration.json`：32 项通过。
+- `website/legacy-texture/standing-detailed-texture-variants.json`：301 项通过。
+- `website/native-expression-transition-diagnostic.json`：3 项通过。
+- `website/next/next-candidate-report.json`：31 项通过。
+- `website/next/next-outfits-report.json`：9 项通过。
+- `build-checks.json`：5 项通过。
 
-Level 1 的坐姿和 Level 2 的跪姿、各自模型与素材保持原版本。三种姿态使用不同 MOC；Level 2 五种互动、换装及视角控制继续保留。共享渲染模块增加了原生物理加载，坐姿/跪姿没有物理引用时仍按原基础模型行为更新。
+原始同相机 1024×1536 对比没有达到零 RGBA 差异：2404 个眼部像素不同，其中339个像素 alpha 不同，眼区外严格0差异。用户明确答复“接受图中眼部画面，保留真实差异记录”，接受的仅是图中这一版 export04 眼部画面。对用户接受的冻结参考进行回归仍要求严格0新增差异；批准图、精确模型/纹理合同及原始严格比较失败报告随包保留。此授权没有扩大全局像素或几何容差。
 
-完成的模型阶段是可见原像素拆分、隐藏补绘、发丝物理及小幅自然头动；网页表情和眨眼兼容并非新增完整 Cubism 表情/闭眼参数。模型使用原图分辨率，完整口腔、大角度转头、大幅甩发需要后续制作。
+眼区迁移像素、重建网格及六个 helper 另有图集与三角形覆盖检查。中性像素、模型结构和浏览器过渡检查为不同证据，不互相替代。第二页图集的47个源低 alpha 点经 Cubism 官方 PNG 替换后保存、重开和真实导出；该页已锁定，不要随意解锁重排。修复输入PNG及逐点证据位于独立工程包。
 
-本包的构建、模型结构、真实 WebGL 沙盒、三姿态控制、手机布局和精细站姿外观检查证据在 `verification/detailed-website/`。精细模型阶段的最终验收摘要也随该目录保留。实际通过项目数以对应 JSON 为准。
+首页保持全身透明桌宠，默认启用可关闭的目光。动作、头动、眨眼和发丝物理独立控制；最小化、页面隐藏、恢复和持久化偏好经过浏览器测试。Level 1 坐姿、Level 2 跪姿、两关互动/换装/视角行为保持；154 个业务、Level 与素材文件逐字节受保护。
 
-构建只使用进程内占位配置，不含真实密钥。账号、权限、投稿、后台、聊天和数据库迁移文件与此前交付包逐字节比较；在线账号与数据库业务未重新验收。此包尚未提交 GitHub 或发布线上网站。
-
-本次透明桌宠更新仅调整看板娘容器、首页角色页面及共享渲染控制：移除 iframe 内外底色与外框，设置默认收起；自动待机默认启用、偏好持久化、收起/页面隐藏时暂停、恢复时继续。新增目光通过九个眼层的 Framework 顶点副本偏移实现（X ≤0.9px、Y ≤0.4px），原生未绑定的 EyeBall 参数及 MOC 保持原文件。发丝物理可独立暂停。新验收证据保存在 `verification/transparent-pet/`。
+未制作的原生能力仍包括完整嘴型、呼吸及大角度 AngleX/Y。构建使用进程内占位配置，不包含真实密钥；本轮未登录真实账号、操作数据库、推送仓库或部署线上。

@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-18T13:37:34.477Z",
+  "testedSourceSnapshotSha256": "34940dc0e295882a3a0442825e48bcff3503546a705f7af4b6e2af0da54a2975",
+  "scope": "Actual Next Level1/2 outfit controls using existing local-design sample data; no real auth/database verification or deployment.",
+  "checks": [
+    {
+      "name": "real Next Level 1 exposes three outfits",
+      "pass": true,
+      "detail": [
+        "original",
+        "tights",
+        "overknee"
+      ]
+    },
+    {
+      "name": "real Next Level 1 selects original",
+      "pass": true,
+      "detail": {
+        "pose": "seated",
+        "outfit": "original",
+        "frames": 5
+      }
+    },
+    {
+      "name": "real Next Level 1 selects tights",
+      "pass": true,
+      "detail": {
+        "pose": "seated",
+        "outfit": "tights",
+        "frames": 9
+      }
+    },
+    {
+      "name": "real Next Level 1 selects overknee",
+      "pass": true,
+      "detail": {
+        "pose": "seated",
+        "outfit": "overknee",
+        "frames": 13
+      }
+    },
+    {
+      "name": "real Next Level 2 exposes three outfits",
+      "pass": true,
+      "detail": [
+        "tights",
+        "shortsocks",
+        "barefoot"
+      ]
+    },
+    {
+      "name": "real Next Level 2 selects tights",
+      "pass": true,
+      "detail": {
+        "pose": "kneeling",
+        "outfit": "tights",
+        "frames": 5
+      }
+    },
+    {
+      "name": "real Next Level 2 selects shortsocks",
+      "pass": true,
+      "detail": {
+        "pose": "kneeling",
+        "outfit": "shortsocks",
+        "frames": 10
+      }
+    },
+    {
+      "name": "real Next Level 2 selects barefoot",
+      "pass": true,
+      "detail": {
+        "pose": "kneeling",
+        "outfit": "barefoot",
+        "frames": 14
+      }
+    },
+    {
+      "name": "real Next outfit changes produce no JavaScript exceptions",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

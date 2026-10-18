@@ -1,0 +1,362 @@
+{
+  "date": "2026-10-18T13:32:39.773Z",
+  "scope": "Protected existing Level 1 seated and Level 2 kneeling standalone characters in opaque sandboxed iframe, temporary 127.0.0.1 HTTP server. Original controls, no tracking, mobile, all five Level 2 reactions and missing-model/retry. New standing is covered separately by native pet and native texture suites. Login/database/Next routes not exercised.",
+  "checks": [
+    {
+      "name": "seated loads actual Cubism in opaque iframe",
+      "pass": true,
+      "detail": {
+        "url": "http://127.0.0.1:14935/konisi-game/live2d/seated/character.model3.json",
+        "drawables": 1,
+        "core": 100663297
+      }
+    },
+    {
+      "name": "seated natural parameter changes actual mesh",
+      "pass": true,
+      "detail": {
+        "angle": [
+          1.6738274097442627,
+          8.162235260009766
+        ],
+        "maxVertexDelta": 0.003930334001779556
+      }
+    },
+    {
+      "name": "Level1 preserves no action buttons",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "seated pointer does not affect head or camera",
+      "pass": true,
+      "detail": {
+        "angle": 0,
+        "delta": 0
+      }
+    },
+    {
+      "name": "seated outfit original selected",
+      "pass": true,
+      "detail": {
+        "pixels": 822665435,
+        "opacities": [
+          [
+            "ArtMesh10",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "name": "seated outfit tights selected",
+      "pass": true,
+      "detail": {
+        "pixels": 2479951678,
+        "opacities": [
+          [
+            "ArtMesh10",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "name": "seated outfit overknee selected",
+      "pass": true,
+      "detail": {
+        "pixels": 2925851793,
+        "opacities": [
+          [
+            "ArtMesh10",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "name": "seated every outfit changes pixels",
+      "pass": true,
+      "detail": [
+        822665435,
+        2479951678,
+        2925851793
+      ]
+    },
+    {
+      "name": "seated zoom pan reset",
+      "pass": true,
+      "detail": {
+        "z": 1.2,
+        "pan": [
+          422.7565104166667,
+          825.5
+        ],
+        "reset": {
+          "focus": [
+            476.5,
+            825.5
+          ],
+          "zoom": 1,
+          "padding": 0.96,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "name": "kneeling loads actual Cubism in opaque iframe",
+      "pass": true,
+      "detail": {
+        "url": "http://127.0.0.1:14935/konisi-game/live2d/kneeling/character.model3.json",
+        "drawables": 4,
+        "core": 100663297
+      }
+    },
+    {
+      "name": "kneeling natural parameter changes actual mesh",
+      "pass": true,
+      "detail": {
+        "angle": [
+          1.4098652601242065,
+          8.036275863647461
+        ],
+        "maxVertexDelta": 0.003765041008591652
+      }
+    },
+    {
+      "name": "Level2 preserves five actions",
+      "pass": true,
+      "detail": 5
+    },
+    {
+      "name": "kneeling pointer does not affect head or camera",
+      "pass": true,
+      "detail": {
+        "angle": 0,
+        "delta": 0
+      }
+    },
+    {
+      "name": "kneeling outfit tights selected",
+      "pass": true,
+      "detail": {
+        "pixels": 3739452910,
+        "opacities": [
+          [
+            "ArtMesh9",
+            0
+          ],
+          [
+            "ArtMesh10",
+            0
+          ],
+          [
+            "ArtMesh11",
+            1
+          ],
+          [
+            "ArtMesh12",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "name": "kneeling outfit shortsocks selected",
+      "pass": true,
+      "detail": {
+        "pixels": 41305874,
+        "opacities": [
+          [
+            "ArtMesh9",
+            0
+          ],
+          [
+            "ArtMesh10",
+            1
+          ],
+          [
+            "ArtMesh11",
+            0
+          ],
+          [
+            "ArtMesh12",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "name": "kneeling outfit barefoot selected",
+      "pass": true,
+      "detail": {
+        "pixels": 506641279,
+        "opacities": [
+          [
+            "ArtMesh9",
+            1
+          ],
+          [
+            "ArtMesh10",
+            0
+          ],
+          [
+            "ArtMesh11",
+            0
+          ],
+          [
+            "ArtMesh12",
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "name": "kneeling every outfit changes pixels",
+      "pass": true,
+      "detail": [
+        3739452910,
+        41305874,
+        506641279
+      ]
+    },
+    {
+      "name": "kneeling zoom pan reset",
+      "pass": true,
+      "detail": {
+        "z": 1.2,
+        "pan": [
+          462,
+          768
+        ],
+        "reset": {
+          "focus": [
+            512,
+            768
+          ],
+          "zoom": 1,
+          "padding": 0.96,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "name": "kneeling pat expression and actual mesh motion then reset",
+      "pass": true,
+      "detail": {
+        "expression": "wink",
+        "angle": 0.10046909004449844,
+        "end": "neutral",
+        "measurement": "Actual active-frame snapshot with unchanged >0.01 AngleZ gate; avoids sampling only an arbitrary zero crossing."
+      }
+    },
+    {
+      "name": "kneeling poke expression and actual mesh motion then reset",
+      "pass": true,
+      "detail": {
+        "expression": "startled",
+        "angle": 0.2661251723766327,
+        "end": "neutral",
+        "measurement": "Actual active-frame snapshot with unchanged >0.01 AngleZ gate; avoids sampling only an arbitrary zero crossing."
+      }
+    },
+    {
+      "name": "kneeling pinch expression and actual mesh motion then reset",
+      "pass": true,
+      "detail": {
+        "expression": "pout",
+        "angle": 0.5346164107322693,
+        "end": "neutral",
+        "measurement": "Actual active-frame snapshot with unchanged >0.01 AngleZ gate; avoids sampling only an arbitrary zero crossing."
+      }
+    },
+    {
+      "name": "kneeling rub expression and actual mesh motion then reset",
+      "pass": true,
+      "detail": {
+        "expression": "puzzled",
+        "angle": 0.22406229376792908,
+        "end": "neutral",
+        "measurement": "Actual active-frame snapshot with unchanged >0.01 AngleZ gate; avoids sampling only an arbitrary zero crossing."
+      }
+    },
+    {
+      "name": "kneeling tickle expression and actual mesh motion then reset",
+      "pass": true,
+      "detail": {
+        "expression": "laugh",
+        "angle": 3.249783992767334,
+        "end": "neutral",
+        "measurement": "Actual active-frame snapshot with unchanged >0.01 AngleZ gate; avoids sampling only an arbitrary zero crossing."
+      }
+    },
+    {
+      "name": "seated mobile reduced motion starts still with controls visible",
+      "pass": true,
+      "detail": {
+        "angle": 0,
+        "motion": false,
+        "headMotion": false
+      }
+    },
+    {
+      "name": "seated mobile layout fits viewport",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "canvas": 390
+      }
+    },
+    {
+      "name": "kneeling mobile reduced motion starts still with controls visible",
+      "pass": true,
+      "detail": {
+        "angle": 0,
+        "motion": false,
+        "headMotion": false
+      }
+    },
+    {
+      "name": "kneeling mobile layout fits viewport",
+      "pass": true,
+      "detail": {
+        "width": 390,
+        "scroll": 390,
+        "canvas": 390
+      }
+    },
+    {
+      "name": "Level2 touch reaction retains expression with reduced head motion",
+      "pass": true,
+      "detail": {
+        "expression": "laugh",
+        "angle": 0
+      }
+    },
+    {
+      "name": "Level2 touch reaction resets",
+      "pass": true
+    },
+    {
+      "name": "missing model clearly fails without fake fallback",
+      "pass": true
+    },
+    {
+      "name": "load retry recovers actual renderer",
+      "pass": true
+    },
+    {
+      "name": "no JS errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

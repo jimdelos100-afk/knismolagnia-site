@@ -1,0 +1,15 @@
+{
+  "shownReviewFile": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-18\\live2d-v8-cubism-zip-c-users\\outputs\\候选模型画面审查\\原版与新候选眼部对照.png",
+  "shownReviewSha256": "06cdd29030b0ef00f17b90bc4ab5824a48a69fd963c41211ca2fc76d25beab24",
+  "shownReviewByteExactToOriginalExport03Review": true,
+  "export03AndExport04NeutralRGBAExact": true,
+  "freshActualRuntimeRenderPNGByteExactToExport04Reference": true,
+  "acceptedNeutralPNGFile": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\native-live2d-2026-10-15-qa\\accepted-eye-reference-2026-10-18\\accepted-neutral-reference.png",
+  "acceptedNeutralPNGSha256": "1531f1c64f9ba6a08b4284454e5a4db168467f59ee0a02a28e551304013a780f",
+  "acceptedNeutralRawGzipFile": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\native-live2d-2026-10-15-qa\\accepted-eye-reference-2026-10-18\\accepted-neutral-reference.rgba.gz",
+  "acceptedNeutralRawGzipSha256": "b92a403ad93e8a86ffda435426b5d897853034a045711415d1a8752bb6ae1aa6",
+  "acceptedNeutralRawRGBASha256": "7249825e67517c258a3e687ad36a4c090a917db68cf38535b6c647e8a1d1ec53",
+  "snapshotFile": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\outputs\\native-live2d-2026-10-15-verification\\tested-source-snapshot.json",
+  "snapshotSha256": "34940dc0e295882a3a0442825e48bcff3503546a705f7af4b6e2af0da54a2975",
+  "runtimeFileMismatches": []
+}

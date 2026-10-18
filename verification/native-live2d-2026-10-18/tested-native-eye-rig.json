@@ -1,0 +1,11 @@
+{
+  "mocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+  "gaze": {
+    "x": "ParamEyeBallX",
+    "y": "ParamEyeBallY"
+  },
+  "blink": {
+    "left": "ParamEyeLOpen",
+    "right": "ParamEyeROpen"
+  }
+}

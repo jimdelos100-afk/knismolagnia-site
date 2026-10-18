@@ -1,10 +1,9 @@
 {
   "version": 1,
-  "sourceMocSha256": "0e496d30e887f48e5daf432556ccaf1be0726a2617a2485d91703ac60f065e46",
+  "sourceMocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
   "minimumGroupCount": 6,
   "requireOcclusionBindings": true,
-  "stage": "Standing artwork and six native hair chains completed; final raster, geometry and physics checks passed.",
-  "pendingWork": [],
+  "stage": "Native eye export and retained six-chain hair rig: structural declaration only.",
   "groups": [
     {
       "id": "hair_long_left_outer",
@@ -387,13 +386,5 @@
     }
   ],
   "requiresVisualReview": true,
-  "visualReviewPassed": true,
-  "physicsBehaviorVerified": true,
-  "actualHairRigVerified": true,
-  "visualReviewEvidence": {
-    "summary": "../../../verification/final-verification-summary.json",
-    "neutralImageSha256": "f7dffa54b343d470147af310e6f881124c14cd51460af9383d50181e97d3226a",
-    "missingOpaqueReferencePixels": 0,
-    "alphaThreshold": "PSD alpha >=250 and neutral runtime alpha <128"
-  }
+  "verificationScope": "This contract declares hair groups and source identity. Acceptance is recorded by the separate final Core, coverage, pixels, browser and website reports."
 }

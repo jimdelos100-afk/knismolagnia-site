@@ -1,0 +1,31 @@
+✔ complete structure returns 0 but never claims runtime validity (146.5262ms)
+✔ missing all three models is blocked and CLI exits 2 with JSON (130.4638ms)
+✔ pose mappings cannot be swapped (21.771ms)
+✔ different pose settings cannot share one MOC file (24.8202ms)
+✔ empty MOC fails (20.1908ms)
+✔ renamed PNG as MOC fails (19.0051ms)
+✔ header-only MOC fails (18.2681ms)
+✔ empty texture fails (21.69ms)
+✔ HTML error page as PNG fails (23.4852ms)
+✔ header-only PNG fails (22.021ms)
+✔ non-PNG texture format is explicitly unsupported (21.3355ms)
+✔ wrong model JSON version and missing required references fail (22.9285ms)
+✔ all optional references, including sound, are required when declared (56.5438ms)
+✔ reject unsafe reference ../../outside.moc3 (21.6258ms)
+✔ reject unsafe reference https://example.test/model.moc3 (20.2206ms)
+✔ reject unsafe reference C:/outside.moc3 (18.8825ms)
+✔ reject unsafe reference %2e%2e/outside.moc3 (23.0838ms)
+✔ reject unsafe reference /outside.moc3 (21.8547ms)
+✔ symlink or junction cannot escape package directory (25.4938ms)
+✔ malformed JSON and JSON null cannot pass as model settings (20.7416ms)
+✔ unsupported manifest version is blocked (26.3812ms)
+✔ file references cannot point to a directory (19.7898ms)
+✔ CLI usage errors exit 1 (102.0196ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 856.7497

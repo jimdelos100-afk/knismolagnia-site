@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-18T13:37:38.721Z",
+  "newMocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+  "testedSourceSnapshotSha256": "34940dc0e295882a3a0442825e48bcff3503546a705f7af4b6e2af0da54a2975",
+  "modelFileSha256": "10b97f28ee2883f904684c1bea88dd0122f72a2e9ae06f5a7ee53212cf9dbaa5",
+  "textures": [
+    {
+      "file": "native-2026-10-18/standing-native-2026-10-18.4096/texture_00.png",
+      "sha256": "90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30"
+    },
+    {
+      "file": "native-2026-10-18/standing-native-2026-10-18.4096/texture_01.png",
+      "sha256": "61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7"
+    }
+  ],
+  "scope": "Targeted current-resource native blink/neutral transition test in actual HomeCharacter and CharacterFrame source fixture; not the full website suite and not strict original-artwork acceptance.",
+  "checks": [
+    {
+      "name": "native blink expression reaches exact zero without duplicate blink",
+      "pass": true,
+      "detail": {
+        "elapsedWallMilliseconds": 326,
+        "openness": [
+          0,
+          0
+        ],
+        "nativeExpression": "blink"
+      }
+    },
+    {
+      "name": "neutral expression restores both native eyes to exact one",
+      "pass": true,
+      "detail": {
+        "restored": [
+          {
+            "id": "ParamEyeLOpen",
+            "value": 1,
+            "min": 0,
+            "max": 1,
+            "default": 1
+          },
+          {
+            "id": "ParamEyeROpen",
+            "value": 1,
+            "min": 0,
+            "max": 1,
+            "default": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "native expression transition has no JavaScript exceptions",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

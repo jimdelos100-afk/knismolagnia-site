@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "date": "2026-10-18T13:31:24.775073+00:00",
+  "scope": "A single explicitly accepted eye rendering, not a global pixel or geometry tolerance. Later candidates require exactly the same approved model/Atlas identity and exact zero RGBA regression to the frozen actual WebGL reference.",
+  "authorization": {
+    "question": "上图左侧是旧版，中央是当前真实新模型。是否接受新模型眼部更锐的渲染？交接要求默认画面0像素差异，当前尚有2404个眼部像素差异；选择接受才会据实调整这一项验收标准。",
+    "answer": "接受图中眼部画面，保留真实差异记录",
+    "provenance": "Direct human answer relayed by parent root in this task; original displayed image identified by root.",
+    "doesNotAuthorize": "Unseen model versions, non-eye changes, arbitrary global geometry changes, or additional pixel differences."
+  },
+  "newMocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+  "textureSha256": [
+    "90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30",
+    "61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7"
+  ],
+  "sourceCmoSha256": "d604fc6a7f2bac64ca033fbe21974ccde9f3ceff29be0132e4fd4425b4ce1988",
+  "originalMocSha256": "0e496d30e887f48e5daf432556ccaf1be0726a2617a2485d91703ac60f065e46",
+  "originalDifference": {
+    "changedRGBAPixels": 2404,
+    "maximumChannelError": 93,
+    "alphaChanged": 339,
+    "totalChannelError": 59042,
+    "changedBounds": {
+      "left": 487,
+      "top": 187,
+      "right": 605,
+      "bottom": 262
+    },
+    "representation": "premultiplied WebGL framebuffer RGBA from actual gl.readPixels unsigned bytes"
+  },
+  "acceptedEyeRectangleHalfOpen": [
+    475,
+    180,
+    615,
+    270
+  ],
+  "strictOutsideEyeChangedRGBAPixels": 0,
+  "strictAcceptedReferenceChangedRGBAPixels": 0,
+  "historicalStrictOriginalResult": {
+    "pass": false,
+    "reason": "Original zero-RGBA comparison failed before the human explicitly accepted this precise eye rendering.",
+    "report": "work/accepted-eye-review-2026-10-18/before-user-acceptance/strict-export04-diagnostic/native-neutral-pixels.json",
+    "sha256": "9a356fb6273a11f11a44f5e45d09cd8e3a1b3165fef964ecc0fc920e3f0395e5"
+  },
+  "shownReviewFile": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-18\\live2d-v8-cubism-zip-c-users\\outputs\\候选模型画面审查\\原版与新候选眼部对照.png",
+  "shownReviewSha256": "06cdd29030b0ef00f17b90bc4ab5824a48a69fd963c41211ca2fc76d25beab24",
+  "reviewSourceExport03AndCurrentExport04NeutralRGBAExactlyEqual": true,
+  "referencePNG": {
+    "file": "work/native-live2d-2026-10-15-qa/accepted-eye-reference-2026-10-18/accepted-neutral-reference.png",
+    "sha256": "1531f1c64f9ba6a08b4284454e5a4db168467f59ee0a02a28e551304013a780f"
+  },
+  "referenceRawRGBA": {
+    "file": "work/native-live2d-2026-10-15-qa/accepted-eye-reference-2026-10-18/accepted-neutral-reference.rgba.gz",
+    "sha256": "b92a403ad93e8a86ffda435426b5d897853034a045711415d1a8752bb6ae1aa6",
+    "decompressedSha256": "7249825e67517c258a3e687ad36a4c090a917db68cf38535b6c647e8a1d1ec53",
+    "width": 1024,
+    "height": 1536,
+    "rowOrder": "WebGL readPixels bottom-to-top, RGBA unsigned bytes"
+  },
+  "geometryEvidence": {
+    "file": "work/native-live2d-2026-10-15-qa/accepted-eye-reference-2026-10-18/accepted-geometry-evidence.json",
+    "sha256": "1abdf82a0c3ddccec573473d77c25333d674b928cb1da420432d706e56ac6af4"
+  },
+  "frozenFiles": [
+    {
+      "role": "user-approved displayed review",
+      "file": "work/native-live2d-2026-10-15-qa/accepted-eye-reference-2026-10-18/accepted-user-review.png",
+      "sha256": "06cdd29030b0ef00f17b90bc4ab5824a48a69fd963c41211ca2fc76d25beab24"
+    },
+    {
+      "role": "accepted full neutral PNG",
+      "file": "work/native-live2d-2026-10-15-qa/accepted-eye-reference-2026-10-18/accepted-neutral-reference.png",
+      "sha256": "1531f1c64f9ba6a08b4284454e5a4db168467f59ee0a02a28e551304013a780f"
+    },
+    {
+      "role": "accepted actual WebGL RGBA reference",
+      "file": "work/native-live2d-2026-10-15-qa/accepted-eye-reference-2026-10-18/accepted-neutral-reference.rgba.gz",
+      "sha256": "b92a403ad93e8a86ffda435426b5d897853034a045711415d1a8752bb6ae1aa6"
+    },
+    {
+      "role": "reference image and export03/export04 equality evidence",
+      "file": "work/native-live2d-2026-10-15-qa/accepted-eye-reference-2026-10-18/reference-freeze-evidence.json",
+      "sha256": "a22c98f45ba46e6e44d8ac086c930b4988a3b363279c5a24f3eea5a26f22e66f"
+    },
+    {
+      "role": "per-ID geometry and editing evidence",
+      "file": "work/native-live2d-2026-10-15-qa/accepted-eye-reference-2026-10-18/accepted-geometry-evidence.json",
+      "sha256": "1abdf82a0c3ddccec573473d77c25333d674b928cb1da420432d706e56ac6af4"
+    },
+    {
+      "role": "historical strict export04 failure",
+      "file": "work/accepted-eye-review-2026-10-18/before-user-acceptance/strict-export04-diagnostic/native-neutral-pixels.json",
+      "sha256": "9a356fb6273a11f11a44f5e45d09cd8e3a1b3165fef964ecc0fc920e3f0395e5"
+    }
+  ],
+  "originalPNGStraightDifference": {
+    "representation": "straight (unpremultiplied) RGBA decoded from original and accepted neutral PNGs",
+    "changedRGBAPixels": 2404,
+    "maximumChannelError": 96,
+    "alphaChanged": 339,
+    "totalChannelError": 58099,
+    "changedBounds": {
+      "left": 487,
+      "top": 187,
+      "right": 605,
+      "bottom": 262
+    },
+    "bothAlphaZeroRGBDifferencePixels": 0
+  },
+  "metricRepresentationNote": "The displayed/approved PNG uses straight RGBA (max96,total58099). The WebGL framebuffer uses premultiplied RGBA (max93,total59042). Both contain exactly 2404 changed pixels and 339 alpha differences. Neither metric is a general tolerance; exact fixed image/raw-reference hashes determine acceptance. Both-alpha-zero PNG RGB has zero differences and is not part of the exception."
+}

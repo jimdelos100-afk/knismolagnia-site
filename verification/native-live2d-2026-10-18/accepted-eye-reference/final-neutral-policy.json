@@ -1,0 +1,89 @@
+{
+  "version": 2,
+  "authorization": "Specific implementation edits remain per-ID and evidence-bound. The human accepted only the displayed exact export04 eye rendering; original strict-zero failure is preserved, eyes outside the accepted rectangle and all regression to the accepted reference retain zero tolerance.",
+  "originalMocSha256": "0e496d30e887f48e5daf432556ccaf1be0726a2617a2485d91703ac60f065e46",
+  "roundingMaximumSourcePixels": 0.000244140625,
+  "roundingEvidence": {
+    "checkpointMocSha256": "44f9c75d98c749c9e24a476fc96df61690e364cfc92a1eb1d99756cf6e396010",
+    "measuredMaximumSourcePixels": 0.0001220703125,
+    "checkpointWebGLChangedRGBAPixels": 0,
+    "reason": "Reparenting nine gaze children to new native warps introduces floating-point evaluation rounding. Limit is 1/4096 source pixel; checkpoint maximum was 1/8192."
+  },
+  "roundingDrawableIds": [
+    "eye_left_iris",
+    "eye_left_pupil_visible_rim",
+    "eye_left_highlight_upper",
+    "eye_left_highlight_center",
+    "iris_left_occlusion",
+    "eye_right_iris",
+    "eye_right_highlight_upper",
+    "eye_right_highlight_secondary",
+    "iris_right_occlusion",
+    "eye_right_upper_lash",
+    "eye_left_upper_lash",
+    "eye_left_sclera_visible",
+    "eye_left_lower_lid_rim",
+    "sclera_right_occlusion",
+    "sclera_left_occlusion"
+  ],
+  "remeshDrawableIds": [
+    "eye_right_upper_lash",
+    "eye_right_sclera_visible",
+    "eye_right_lower_lid_rim",
+    "eye_right_iris",
+    "eye_left_lower_lid_rim"
+  ],
+  "remeshReason": "The five existing eye mesh IDs are individually identified in the hash-bound Core and editing evidence. Two new aperture masks are separately recorded. Every other original mesh stays exact except the explicitly listed parent-float IDs, whose 1/4096-source-pixel limit remains unchanged.",
+  "rasterTransferDrawableIds": [
+    "eye_left_iris",
+    "eye_left_lower_lid_rim",
+    "eye_left_sclera_visible",
+    "eye_left_upper_lash",
+    "eye_right_iris",
+    "eye_right_lower_lid_rim",
+    "eye_right_sclera_visible",
+    "eye_right_upper_lash",
+    "face_skin_local_visible",
+    "face_visible_residual"
+  ],
+  "sourcePixelTransferManifest": "work/standing-native-gaze-2026-10-15/artwork-repair/base74-pixel-transfers-verification.json",
+  "sourcePixelTransferManifestSha256": "ff33d120fe61712097c160514bd41562599987d019b37dc2aaf8d965cff21b22",
+  "originalBasePSDSha256": "14f898110aba5ca8176804f64fc143e84d43cdd29c78fbca05bbbebd64be25f8",
+  "updatedBasePSDSha256": "848f09f3004831eb099d726d10ffc622ced36a5f3eba4d614c06b85318c2fe81",
+  "updatedBaseWithHelpersPSDSha256": "2095d39dc35006763e5d21807d839555aa61149d9200a87016e00496ce90c736",
+  "updatedPSDManifest": "work/standing-native-gaze-2026-10-15/artwork-repair/base74-update-verification.json",
+  "originalCoverageManifest": "work/standing-native-gaze-2026-10-15/artwork-repair/eye-mesh-coverage.json",
+  "requiredCompanionReports": [
+    "native-eye-coverage.json",
+    "native-helper-coverage.json",
+    "native-neutral-pixels.json",
+    "native-accepted-appearance-regression.json"
+  ],
+  "strictFinalWebGLChangedRGBAPixels": 0,
+  "strictSourceCompositeChangedRGBAPixels": 0,
+  "newMaskRemeshDrawableIds": [
+    "eye_left_aperture_mask",
+    "eye_right_aperture_mask"
+  ],
+  "additionalParentFloatDrawableIds": [
+    "eye_right_upper_lash",
+    "eye_left_upper_lash",
+    "eye_left_sclera_visible",
+    "eye_left_lower_lid_rim",
+    "sclera_right_occlusion",
+    "sclera_left_occlusion"
+  ],
+  "acceptedAppearanceContract": {
+    "file": "work/native-live2d-2026-10-15-qa/accepted-eye-reference-2026-10-18/accepted-appearance-contract.json",
+    "sha256": "db4f7d4484b4f837c0cef4cf3694b700de40fa55acd58d9e2010040ea904fc63"
+  },
+  "geometryEvidence": {
+    "file": "work/native-live2d-2026-10-15-qa/accepted-eye-reference-2026-10-18/accepted-geometry-evidence.json",
+    "sha256": "1abdf82a0c3ddccec573473d77c25333d674b928cb1da420432d706e56ac6af4"
+  },
+  "historicalSourcePixelTransferManifest": {
+    "file": "work/standing-native-gaze-2026-10-15/artwork-repair/verification.json",
+    "sha256": "953016861550c1f4206ef243a426a893dfe69548aa266af7b57d4d968e9b1770",
+    "scope": "Historical 75-layer research-list provenance only. Not an active PSD input or proof for current source74/source80."
+  }
+}

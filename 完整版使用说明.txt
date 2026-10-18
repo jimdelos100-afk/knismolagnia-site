@@ -1,17 +1,11 @@
-雪糕少女汉化组官网 · V8 精细 Live2D 版
+雪糕少女汉化组官网 · V8 原生 Live2D 桌宠版（2026-10-18）
 
-本包是已经接入新首页模型的完整网站源码。首页为全身精细站姿，包含自然头动、眨眼、遮挡补绘与六组发丝物理；Level 1 保持坐姿，Level 2 保持跪姿。眼球、目光和头部均不跟随鼠标。
+首页为透明全身站姿，启用可关闭的原生目光、连续眨眼、自然头动与发丝物理。Level 1 保持坐姿，Level 2 保持跪姿及既有功能。
 
-部署方法
-1. 将压缩包中 knismolagnia-site 文件夹里的全部内容放到原 GitHub 仓库根目录，覆盖同名源码。
-   仓库根目录直接有 package.json、src、public、supabase，不能再套一层 knismolagnia-site。
-2. 保留原托管平台的环境变量及原 Supabase 项目。本包没有真实密钥，无需重建数据库或重新跑迁移。
-3. 沿用原 Next.js 部署方式：npm ci 安装，npm run build 构建；普通 Node 托管使用 npm start。
-   已绑定 GitHub 的平台可以按原流程提交后部署。网站有账号与服务端功能，不是 GitHub Pages 静态站点。
+部署时将 knismolagnia-site 内全部内容放到原 GitHub 仓库根目录，保留原托管平台环境变量和原数据库项目。npm ci 安装、npm run build 构建；普通 Node 托管运行 npm start。网站含服务端账号功能，沿用原 Next.js 部署方式。
 
-PSD、Cubism 工程及制作参考不需要上传网站；本包只提供网站源码、必要模型资源及验证记录。
-Level 1/2 的换装、互动、缩放和复位保留。暂停或减少动态效果时，发丝也会停稳。
-账号、Level 3—6、后台、投稿、聊天和数据库逻辑沿用此前网站。
+网站包不含真实 .env、node_modules、.next、PSD 或 Cubism 工程；编辑工程单独交付。本轮没有替你推送 GitHub 或部署线上。
 
-部署前验证记录在 verification/detailed-website，详细说明见 README.md 与 Live2D-STATUS.md。
-本包没有替你提交 GitHub 或发布线上网站；不要上传真实 .env、node_modules 或 .next。
+neutral、blink 为原生表情，其余五种表情仍兼容原网页素材；未新增嘴型、呼吸或大角度转头。完整验收证据位于 verification/native-live2d-2026-10-18/，详情见 README.md 与 Live2D-STATUS.md。在线真实账号与数据库未重新验收。
+
+原始同相机 1024×1536 对比没有达到零 RGBA 差异：2404 个眼部像素不同，其中339个像素 alpha 不同，眼区外严格0差异。用户明确答复“接受图中眼部画面，保留真实差异记录”，接受的仅是图中这一版 export04 眼部画面。对用户接受的冻结参考进行回归仍要求严格0新增差异；批准图、精确模型/纹理合同及原始严格比较失败报告随包保留。此授权没有扩大全局像素或几何容差。

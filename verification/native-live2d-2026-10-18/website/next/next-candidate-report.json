@@ -1,0 +1,211 @@
+{
+  "date": "2026-10-18T13:36:36.008Z",
+  "candidateOnly": true,
+  "finalModelAcceptancePassed": false,
+  "mocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+  "testedSourceSnapshotSha256": "34940dc0e295882a3a0442825e48bcff3503546a705f7af4b6e2af0da54a2975",
+  "scope": "Website integration QA against the frozen export04 runtime; model visual acceptance is recorded separately. Actual Next development routes, real components and model resources; Level sample data via existing LOCAL_DESIGN_MODE. No real account/database operation or deployment.",
+  "checks": [
+    {
+      "name": "real Next Level 1 returns local preview with actual page components",
+      "pass": true
+    },
+    {
+      "name": "real Next Level 1 keeps original pose and gaze disabled",
+      "pass": true,
+      "detail": {
+        "pose": "seated",
+        "gaze": false
+      }
+    },
+    {
+      "name": "real Next serves unchanged Level 1 MOC",
+      "pass": true,
+      "detail": {
+        "sha256": "b811dc80c699e4546648bd5d60ca23e54028b98fddb5b72addc776e88585db94"
+      }
+    },
+    {
+      "name": "real Next Level 1 exposes all three existing outfits",
+      "pass": true
+    },
+    {
+      "name": "real Next Level 1 outfit original",
+      "pass": true
+    },
+    {
+      "name": "real Next Level 1 outfit tights",
+      "pass": true
+    },
+    {
+      "name": "real Next Level 1 outfit overknee",
+      "pass": true
+    },
+    {
+      "name": "real Next Level 1 zoom works",
+      "pass": true
+    },
+    {
+      "name": "real Next Level 1 reset works",
+      "pass": true
+    },
+    {
+      "name": "real Next Level 2 returns local preview with actual page components",
+      "pass": true
+    },
+    {
+      "name": "real Next Level 2 keeps original pose and gaze disabled",
+      "pass": true,
+      "detail": {
+        "pose": "kneeling",
+        "gaze": false
+      }
+    },
+    {
+      "name": "real Next serves unchanged Level 2 MOC",
+      "pass": true,
+      "detail": {
+        "sha256": "e792bfb6cb3850ea29e6093d65e4477cf654c974d2be4337cb242e4d20661515"
+      }
+    },
+    {
+      "name": "real Next Level 2 exposes all three existing outfits",
+      "pass": true
+    },
+    {
+      "name": "real Next Level 2 outfit tights",
+      "pass": true
+    },
+    {
+      "name": "real Next Level 2 outfit shortsocks",
+      "pass": true
+    },
+    {
+      "name": "real Next Level 2 outfit barefoot",
+      "pass": true
+    },
+    {
+      "name": "real Next Level 2 zoom works",
+      "pass": true
+    },
+    {
+      "name": "real Next Level 2 reset works",
+      "pass": true
+    },
+    {
+      "name": "real Next Level 2 action pat triggers",
+      "pass": true,
+      "detail": {
+        "active": "pat"
+      }
+    },
+    {
+      "name": "real Next Level 2 action poke triggers",
+      "pass": true,
+      "detail": {
+        "active": "poke"
+      }
+    },
+    {
+      "name": "real Next Level 2 action pinch triggers",
+      "pass": true,
+      "detail": {
+        "active": "pinch"
+      }
+    },
+    {
+      "name": "real Next Level 2 action rub triggers",
+      "pass": true,
+      "detail": {
+        "active": "rub"
+      }
+    },
+    {
+      "name": "real Next Level 2 action tickle triggers",
+      "pass": true,
+      "detail": {
+        "active": "tickle"
+      }
+    },
+    {
+      "name": "real Next home responds",
+      "pass": true
+    },
+    {
+      "name": "real Next home loads actual new native candidate",
+      "pass": true,
+      "detail": {
+        "nativeRig": {
+          "mocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+          "gaze": {
+            "x": "ParamEyeBallX",
+            "y": "ParamEyeBallY"
+          },
+          "blink": {
+            "left": "ParamEyeLOpen",
+            "right": "ParamEyeROpen"
+          },
+          "bindingEvidence": {
+            "ParamEyeBallX": {
+              "vertexDelta": 0.003956221044063568,
+              "opacityDelta": 0,
+              "min": -1,
+              "max": 1
+            },
+            "ParamEyeBallY": {
+              "vertexDelta": 0.00308990478515625,
+              "opacityDelta": 0,
+              "min": -1,
+              "max": 1
+            },
+            "ParamEyeLOpen": {
+              "vertexDelta": 0.03885340690612793,
+              "opacityDelta": 1,
+              "min": 0,
+              "max": 1
+            },
+            "ParamEyeROpen": {
+              "vertexDelta": 0.039648473262786865,
+              "opacityDelta": 1,
+              "min": 0,
+              "max": 1
+            }
+          }
+        },
+        "pose": "standing"
+      }
+    },
+    {
+      "name": "real Next serves exact candidate MOC and anonymous CORS",
+      "pass": true,
+      "detail": {
+        "sha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+        "cors": "*"
+      }
+    },
+    {
+      "name": "real Next home gaze switch disables native following",
+      "pass": true
+    },
+    {
+      "name": "real Next home gaze switch restores native following",
+      "pass": true
+    },
+    {
+      "name": "real Next home minimize and restore controls remain visible",
+      "pass": true
+    },
+    {
+      "name": "real Next pages produce no JavaScript exceptions",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "local Level preview does not call account database",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "externalRequests": []
+}

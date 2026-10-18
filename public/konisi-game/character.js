@@ -8,9 +8,10 @@
   const W = model.width, H = model.height;
   const outfits = model.outfits || { original:'原装', tights:'白色裤袜', overknee:'过膝白丝' };
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  const state = { expression:'neutral', outfit:model.defaultOutfit || 'original', focus:model.full.slice(0,2), zoom:companion?1.0:model.full[2], headMotion:companion||!reduced.matches, motion:companion||!reduced.matches, gaze:companion, blink:true, hairPhysics:true, gazeInput:[0,0], gazeTarget:[0,0], preferredExpression:'neutral', headInput:[0,0], target:[0,0], shake:[0,0], shakeTarget:[0,0], nextShake:0, time:0, blinkAt:-100, nextBlink:2.5, reaction:null, reactionStart:0, reactionDuration:0 };
+  const state = { expression:'neutral', outfit:model.defaultOutfit || 'original', focus:model.full.slice(0,2), zoom:companion?1.0:model.full[2], headMotion:companion||!reduced.matches, motion:companion||!reduced.matches, gaze:companion, blink:true, hairPhysics:true, gazeInput:[0,0], gazeTarget:[0,0], preferredExpression:'neutral', headInput:[0,0], target:[0,0], shake:[0,0], shakeTarget:[0,0], nextShake:0, time:0, blinkAt:-100, nextBlink:2.5, reaction:null, reactionStart:0, reactionElapsed:0, reactionDuration:0 };
   const canvas = $('character'), scene = $('scene');
   let live2d, compositor, maxHeadInput=30, frame=0, lastTime=0, lastDraw=0, visible=true, intersectionVisible=true, parentVisible=true, ready=false, metrics, controlsAttached=false, loading=false;
+  let nativeMode=false,nativeRig=null,nativeAnimation=null,nativeWasAnimating=null;
   const images = new Map();
   const pointers=new Map();let gesture=null;
   const expressionOptions=['neutral','happy','shy','surprised','angry','sad','blink'];
@@ -47,12 +48,54 @@
     document.documentElement.dataset.expression=state.expression; document.documentElement.dataset.outfit=state.outfit;
   }
   function compose() {
-    compositor?.setAppearance({ outfit:state.outfit, expression:state.expression });
+    if(nativeMode)syncNativeAnimation();
+    compositor?.setAppearance({ outfit:state.outfit, expression:state.expression, nativeFace:isNativeFace(state.expression) });
     feedback(); requestFrame();
+  }
+  function isNativeFace(expression){return nativeMode&&(expression==='neutral'||nativeAnimation?.nativeOnly.has(expression));}
+  function syncNativeAnimation(){
+    if(!nativeAnimation||!live2d)return;
+    live2d.setAnimationEnabled(state.motion);
+    live2d.setAnimatedParameterEnabled('ParamAngleZ',state.headMotion);
+    const nativeFace=isNativeFace(state.expression);
+    // While a V8 face patch is visible, suppress exp3 eye-open fades as well:
+    // its painted eyes must not inherit a closing native eyelid underneath.
+    for(const id of [nativeRig.blink.left,nativeRig.blink.right])live2d.setAnimatedParameterEnabled(id,nativeFace);
+    if(!state.motion&&nativeWasAnimating!==false)live2d.stopMotions();
+    live2d.setAutoIdle(state.motion&&state.headMotion,{group:nativeAnimation.idleGroup});
+    // Web-only expressions retain their V8 face patch. Their hidden native eyes
+    // stay neutral, instead of applying an unrelated partial native expression.
+    const expression=nativeFace?nativeAnimation.expressionMap[state.expression]:nativeAnimation.expressionMap.neutral;
+    live2d.setExpression(expression??null);
+    nativeWasAnimating=state.motion;
+  }
+  function configureNativeAnimation(pose){
+    const loaded=live2d.getAnimationStatus(),config=pose.nativeAnimation||{};
+    const idleGroup=config.idleGroup||'Idle';
+    if(!loaded.groups[idleGroup]?.length)throw new Error('Native model requires an exported Idle motion group.');
+    const names=new Set(loaded.expressionNames),expressionMap={};
+    for(const expression of expressionOptions){
+      const mapped=config.expressionMap?.[expression];
+      if(mapped!==undefined&&!names.has(mapped))throw new Error('Native expression mapping is missing: '+mapped);
+      if(mapped!==undefined)expressionMap[expression]=mapped;else if(names.has(expression))expressionMap[expression]=expression;
+    }
+    const nativeOnly=new Set(['neutral']);
+    for(const expression of config.nativeOnlyExpressions||['neutral','blink']){
+      if(expression!=='neutral'&&expressionMap[expression])nativeOnly.add(expression);
+      else if(expression!=='neutral'&&config.nativeOnlyExpressions)throw new Error('Native-only expression has no exported exp3: '+expression);
+    }
+    const reactionMotions={};
+    for(const kind of Object.keys(reactions)){
+      const ref=config.reactionMotions?.[kind]||{group:'TapBody',index:0};
+      const index=ref.index??0,record=loaded.groups[ref.group]?.[index];
+      if(!Number.isInteger(index)||!record)throw new Error('Native interaction requires a real motion: '+kind);
+      reactionMotions[kind]={group:ref.group,index,duration:record.duration};
+    }
+    nativeAnimation={idleGroup,expressionMap,nativeOnly,reactionMotions};
   }
   async function initializeRenderer() {
     const [{ createLive2DRenderer }, { createTextureCompositor }, response] = await Promise.all([
-      import(new URL('./live2d/renderer.mjs?v=20261014-pet2',document.baseURI).href), import(new URL('./live2d/texture-compositor.mjs',document.baseURI).href),
+      import(new URL('./live2d/renderer.mjs?v=20261015-native',document.baseURI).href), import(new URL('./live2d/texture-compositor.mjs',document.baseURI).href),
       fetch('./live2d/manifest.json', { cache:'no-cache' })
     ]);
     if(!response.ok) throw new Error('Live2D manifest HTTP '+response.status);
@@ -61,10 +104,12 @@
     maxHeadInput=Number.isFinite(pose.maxHeadInput)?pose.maxHeadInput:30;
     const modelUrl=new URL(pose.model,new URL('./live2d/manifest.json',document.baseURI)).href;
     const r=scene.getBoundingClientRect();
-    live2d=await createLive2DRenderer({canvas,modelUrl,width:Math.max(1,r.width),height:Math.max(1,r.height)});
+    live2d=await createLive2DRenderer({canvas,modelUrl,width:Math.max(1,r.width),height:Math.max(1,r.height),nativeRig:pose.nativeRig});
+    nativeMode=!!pose.nativeRig;nativeRig=nativeMode?live2d.getStatus().nativeRig:null;
+    if(nativeMode)configureNativeAnimation(pose);
     if(pose.appearance==='standing-detailed') {
-      const {createStandingAppearance}=await import(new URL('./live2d/standing-appearance.mjs',document.baseURI).href);
-      compositor=await createStandingAppearance({mapping:live2d.getTextureMapping(),model,images,modelUrl});
+      const {createStandingAppearance}=await import(new URL('./live2d/standing-appearance.mjs?v=20261015-native',document.baseURI).href);
+      compositor=await createStandingAppearance({mapping:live2d.getTextureMapping(),model,images,modelUrl,nativeEyes:nativeMode});
     } else {
       compositor=await createTextureCompositor({mapping:live2d.getTextureMapping(),model,images,modelUrl,drawableRoles:pose.drawableRoles});
     }
@@ -89,7 +134,7 @@
     if(companion&&!state.reaction&&lastDraw&&ts-lastDraw<32){requestFrame();return;}
     lastDraw=ts;
     const dt=lastTime?Math.min((ts-lastTime)/1000,.05):0;lastTime=ts;if(state.motion)state.time+=dt;
-    state.target=window.KONISI_IDLE_HEAD.sample(state.time,state.motion&&state.headMotion);
+    state.target=nativeMode?[0,0]:window.KONISI_IDLE_HEAD.sample(state.time,state.motion&&state.headMotion);
     const smooth=1-Math.exp(-dt/0.105);for(let i=0;i<2;i++)state.headInput[i]+=(state.target[i]-state.headInput[i])*smooth;
     if(state.motion&&state.blink&&state.time>state.nextBlink){state.blinkAt=state.time;state.nextBlink=state.time+3.4+Math.random()*2.2;}
     const age=state.time-state.blinkAt;
@@ -97,12 +142,19 @@
     if(!state.blink||!state.motion||['happy','laugh','blink'].includes(state.expression))blink=0;
     let reactT=0;
     if(state.reaction){
-      if(!state.reactionStart)state.reactionStart=ts;
-      reactT=Math.min(1,(ts-state.reactionStart)/state.reactionDuration);
+      if(nativeMode){
+        // Native animation time stops while hidden/minimized. Keep its reaction
+        // face and controls on the same clock when the iframe is restored.
+        if(state.motion)state.reactionElapsed+=dt*1000;
+        reactT=Math.min(1,state.reactionElapsed/state.reactionDuration);
+      }else{
+        if(!state.reactionStart)state.reactionStart=ts;
+        reactT=Math.min(1,(ts-state.reactionStart)/state.reactionDuration);
+      }
       if(reactT>=1){state.reaction=null;state.reactionStart=0;state.expression=state.preferredExpression;delete document.documentElement.dataset.reaction;document.querySelectorAll('[data-action]').forEach(button=>button.classList.remove('is-active'));compose();reactT=0;}
     }
     const amplitudes=model.amplitudes || {pat:4.5,poke:8,pinch:6.5,rub:10};
-    const shaking=state.motion||state.reaction;
+    const shaking=!nativeMode&&(state.motion||state.reaction);
     if(shaking&&ts>=state.nextShake){const amplitude=state.reaction?amplitudes[state.reaction]:1.8,angle=Math.random()*Math.PI*2,strength=amplitude*(.35+Math.random()*.65);state.shakeTarget=[Math.cos(angle)*strength,Math.sin(angle)*strength];state.nextShake=ts+(state.reaction?45+Math.random()*65:170+Math.random()*240);}
     if(!shaking)state.shakeTarget=[0,0];
     const shakeSmooth=1-Math.exp(-dt/(state.reaction ? .045 : .11));for(let i=0;i<2;i++)state.shake[i]+=(state.shakeTarget[i]-state.shake[i])*shakeSmooth;
@@ -110,18 +162,26 @@
     // These values drive the real ParamAngleZ keys bound in Cubism Editor.
     // The source expression and outfit patches follow that model's UV mapping.
     const cycles={pat:1,poke:2,pinch:1.5,rub:3,tickle:5};
-    const reactionAngle=state.reaction&&(companion||!reduced.matches)
+    const reactionAngle=!nativeMode&&state.reaction&&(companion||!reduced.matches)
       ? Math.sin(Math.PI*reactT)*Math.sin(reactT*Math.PI*2*(cycles[state.reaction]||1))*20 : 0;
     try {
-      live2d.setParameterById('ParamAngleZ',Math.max(-maxHeadInput,Math.min(maxHeadInput,state.headInput[0]*70+reactionAngle)));
+      if(nativeMode){
+        syncNativeAnimation();
+        // Motion files own AngleZ; host baselines provide neutral eyes before
+        // native exp3 blending. Native eye-open is never simulated with PNGs.
+        live2d.setParameterById('ParamAngleZ',0);
+        for(const id of [nativeRig.blink.left,nativeRig.blink.right])live2d.setParameterById(id,1);
+      }else live2d.setParameterById('ParamAngleZ',Math.max(-maxHeadInput,Math.min(maxHeadInput,state.headInput[0]*70+reactionAngle)));
       live2d.setCamera({focus:state.focus,zoom:state.zoom,offset:state.shake});
-      compositor.apply(live2d,blink);
+      const nativeFace=isNativeFace(state.expression);
+      compositor.apply(live2d,nativeFace?0:blink);
+      if(nativeMode)live2d.setBlink(nativeFace?blink:0);
       const gazeEnabled=companion&&state.gaze&&state.motion&&state.expression==='neutral';
       for(let i=0;i<2;i++)state.gazeInput[i]+=((gazeEnabled?state.gazeTarget[i]:0)-state.gazeInput[i])*smooth;
       live2d.setGaze?.(state.gazeInput[0],state.gazeInput[1],{enabled:gazeEnabled,strength:1-blink});
       live2d.setPhysicsEnabled?.(state.hairPhysics);
 
-      if(!state.motion&&!state.reaction) {
+      if(!state.motion&&(nativeMode||!state.reaction)) {
         // Paused/reduced motion stays still, including native hair inertia.
         live2d.resetPhysics();
         live2d.update(0);
@@ -146,7 +206,12 @@
   };
   function react(kind,button){
     const reaction=reactions[kind];if(!reaction||model.id==='seated')return;
-    state.reaction=kind;state.reactionStart=0;state.reactionDuration=reaction.duration;state.expression=reaction.mood;state.blinkAt=-100;
+    state.reaction=kind;state.reactionStart=0;state.reactionElapsed=0;state.reactionDuration=reaction.duration;state.expression=reaction.mood;state.blinkAt=-100;
+    if(nativeMode&&state.motion){
+      const motion=nativeAnimation.reactionMotions[kind];
+      state.reactionDuration=Math.max(state.reactionDuration,motion.duration*1000);
+      live2d.playMotion(motion.group,motion.index,{priority:3});
+    }
     delete document.documentElement.dataset.reaction;void document.documentElement.offsetWidth;document.documentElement.dataset.reaction=kind;
     document.querySelectorAll('[data-action]').forEach(item=>item.classList.toggle('is-active',item===button));
     compose();$('speaker').textContent='柯妮丝';$('dialogue').textContent=reaction.line;requestFrame();
@@ -202,7 +267,7 @@
       scene.addEventListener('keydown',e=>{if(e.target===scene&&['Enter',' '].includes(e.key)){e.preventDefault();react('pat',scene);}});
     }
     $('headMotion').addEventListener('click',()=>{state.headMotion=!state.headMotion;settleHead();feedback();publishPreferences();});
-    $('motion').addEventListener('click',()=>{state.motion=!state.motion;state.blinkAt=-100;lastTime=0;feedback();requestFrame();publishPreferences();});
+    $('motion').addEventListener('click',()=>{state.motion=!state.motion;state.blinkAt=-100;lastTime=0;if(nativeMode&&!state.motion){state.reaction=null;state.reactionStart=0;state.expression=state.preferredExpression;delete document.documentElement.dataset.reaction;document.querySelectorAll('[data-action]').forEach(button=>button.classList.remove('is-active'));compose();}feedback();requestFrame();publishPreferences();});
     document.querySelectorAll('[data-action]').forEach(button=>button.addEventListener('click',()=>react(button.dataset.action,button)));
     // Level poses keep their original camera controls. Homepage input only follows eyes.
     new ResizeObserver(()=>{updateMetrics();settleHead();requestFrame();}).observe(scene);
@@ -227,7 +292,7 @@
   async function load() {
     if(loading)return;loading=true;ready=false;setControlsDisabled(true);
     $('loading').hidden=false;$('loadingText').textContent='正在准备角色…';$('retry').hidden=true;
-    live2d?.dispose();live2d=null;compositor=null;
+    live2d?.dispose();live2d=null;compositor=null;nativeMode=false;nativeRig=null;nativeAnimation=null;nativeWasAnimating=null;
     const assets=[model.base,...Object.values(model.expressions),...Object.values(model.wardrobe),...model.blinkEyes];
     try {
       await Promise.all(assets.map(asset=>images.has(asset.src)?Promise.resolve():new Promise((resolve,reject)=>{
@@ -246,7 +311,11 @@
     pose:model.id,ready,time:state.time,zoom:state.zoom,focus:[...state.focus],gazeTracking:companion&&state.gaze,gaze:[...state.gazeInput],pointerTarget:[...state.gazeTarget],blinkEnabled:state.blink,hairPhysics:state.hairPhysics,preferences:preferences(),headMotion:state.headMotion,motion:state.motion,expression:state.expression,outfit:state.outfit,
     status:live2d?.getStatus()||null,parameters:ready?live2d.getParameters():[],
     drawables:ready?live2d.getDrawables({vertices}):[],appearance:compositor?.getStatus()||null,
-    physics:ready?live2d.getPhysicsStatus():null
+    physics:ready?live2d.getPhysicsStatus():null,
+    animation:ready?{...live2d.getAnimationStatus(),nativeMode,
+      facialMode:isNativeFace(state.expression)?'native':'V8 appearance compatibility',
+      nativeExpression:nativeAnimation?(isNativeFace(state.expression)?nativeAnimation.expressionMap[state.expression]:nativeAnimation.expressionMap.neutral)??null:null,
+      webExpression:isNativeFace(state.expression)?null:state.expression}:null
   })})});
   $('retry').addEventListener('click',load);load();
 })();

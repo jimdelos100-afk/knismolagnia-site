@@ -1,0 +1,1813 @@
+{
+  "date": "2026-10-18T12:30:01.882Z",
+  "selfTest": false,
+  "scope": "Independent default Core geometry rendered through the same SDK/WebGL settings. No host appearance layers, mouse offsets, automatic blink, motions, or physics. Strict zero changed RGBA pixels; source-composite evidence is separately checked against the same exported MOC.",
+  "policy": {
+    "version": 1,
+    "authorization": "Root explicitly authorized these limited native-eye implementation changes; no other original geometry is exempt.",
+    "originalMocSha256": "0e496d30e887f48e5daf432556ccaf1be0726a2617a2485d91703ac60f065e46",
+    "roundingMaximumSourcePixels": 0.000244140625,
+    "roundingEvidence": {
+      "checkpointMocSha256": "44f9c75d98c749c9e24a476fc96df61690e364cfc92a1eb1d99756cf6e396010",
+      "measuredMaximumSourcePixels": 0.0001220703125,
+      "checkpointWebGLChangedRGBAPixels": 0,
+      "reason": "Reparenting nine gaze children to new native warps introduces floating-point evaluation rounding. Limit is 1/4096 source pixel; checkpoint maximum was 1/8192."
+    },
+    "roundingDrawableIds": [
+      "eye_left_iris",
+      "eye_left_pupil_visible_rim",
+      "eye_left_highlight_upper",
+      "eye_left_highlight_center",
+      "iris_left_occlusion",
+      "eye_right_iris",
+      "eye_right_highlight_upper",
+      "eye_right_highlight_secondary",
+      "iris_right_occlusion"
+    ],
+    "remeshDrawableIds": [
+      "eye_right_sclera_visible",
+      "eye_right_lower_lid_rim"
+    ],
+    "remeshReason": "Original triangles miss newly reassigned alpha253 pixels at (570,228) and (575,253), respectively. Only these two meshes may change default geometry/topology; coverage and visible composite must be verified separately.",
+    "rasterTransferDrawableIds": [
+      "eye_left_iris",
+      "eye_left_lower_lid_rim",
+      "eye_left_sclera_visible",
+      "eye_left_upper_lash",
+      "eye_right_iris",
+      "eye_right_lower_lid_rim",
+      "eye_right_sclera_visible",
+      "eye_right_upper_lash",
+      "face_skin_local_visible",
+      "face_visible_residual"
+    ],
+    "sourcePixelTransferManifest": "work/standing-native-gaze-2026-10-15/artwork-repair/verification.json",
+    "sourcePixelTransferManifestSha256": "953016861550c1f4206ef243a426a893dfe69548aa266af7b57d4d968e9b1770",
+    "originalBasePSDSha256": "14f898110aba5ca8176804f64fc143e84d43cdd29c78fbca05bbbebd64be25f8",
+    "updatedBasePSDSha256": "848f09f3004831eb099d726d10ffc622ced36a5f3eba4d614c06b85318c2fe81",
+    "updatedBaseWithHelpersPSDSha256": "2095d39dc35006763e5d21807d839555aa61149d9200a87016e00496ce90c736",
+    "updatedPSDManifest": "work/standing-native-gaze-2026-10-15/artwork-repair/base74-update-verification.json",
+    "originalCoverageManifest": "work/standing-native-gaze-2026-10-15/artwork-repair/eye-mesh-coverage.json",
+    "requiredCompanionReports": [
+      "native-eye-coverage.json",
+      "native-neutral-pixels.json"
+    ],
+    "strictFinalWebGLChangedRGBAPixels": 0,
+    "strictSourceCompositeChangedRGBAPixels": 0
+  },
+  "originalModel": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\native-live2d-2026-10-15-qa\\original-detailed-baseline\\character.model3.json",
+  "newModel": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\standing-native-export-2026-10-18\\export-04\\standing-native-2026-10-18.model3.json",
+  "checks": [
+    {
+      "name": "original is the frozen detailed model",
+      "pass": true,
+      "detail": "0e496d30e887f48e5daf432556ccaf1be0726a2617a2485d91703ac60f065e46"
+    },
+    {
+      "name": "source-pixel coverage evidence passes for this same exported MOC",
+      "pass": true,
+      "detail": {
+        "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\new-export-diagnostic-2026-10-18\\export04\\native-eye-coverage.json",
+        "sha256": "57eaf64d7dc191e726f8448e70db88d4264f32fd5dff00493f7eafc2f5a01a4f",
+        "newMocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+        "sourceCompositeChangedRGBAPixels": 0
+      }
+    },
+    {
+      "name": "updated source PSD neutral merge is exactly the original",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "both neutral models render nonempty artwork",
+      "pass": true,
+      "detail": {
+        "width": 1024,
+        "height": 1536,
+        "exactPixelMatch": false,
+        "changedRGBAPixels": 2404,
+        "maximumChannelError": 93,
+        "totalChannelError": 59042,
+        "alphaChanged": 339,
+        "oldNontransparent": 608859,
+        "newNontransparent": 608859,
+        "changedBounds": {
+          "left": 487,
+          "top": 187,
+          "right": 605,
+          "bottom": 262
+        },
+        "examples": [
+          {
+            "x": 582,
+            "y": 262,
+            "original": [
+              252,
+              228,
+              218,
+              255
+            ],
+            "candidate": [
+              251,
+              226,
+              215,
+              255
+            ]
+          },
+          {
+            "x": 583,
+            "y": 262,
+            "original": [
+              252,
+              231,
+              219,
+              255
+            ],
+            "candidate": [
+              251,
+              230,
+              217,
+              255
+            ]
+          },
+          {
+            "x": 585,
+            "y": 262,
+            "original": [
+              168,
+              110,
+              87,
+              255
+            ],
+            "candidate": [
+              170,
+              112,
+              90,
+              255
+            ]
+          },
+          {
+            "x": 586,
+            "y": 262,
+            "original": [
+              233,
+              176,
+              137,
+              255
+            ],
+            "candidate": [
+              232,
+              175,
+              136,
+              255
+            ]
+          },
+          {
+            "x": 581,
+            "y": 261,
+            "original": [
+              253,
+              227,
+              216,
+              255
+            ],
+            "candidate": [
+              253,
+              228,
+              217,
+              255
+            ]
+          },
+          {
+            "x": 582,
+            "y": 261,
+            "original": [
+              251,
+              222,
+              210,
+              255
+            ],
+            "candidate": [
+              238,
+              203,
+              190,
+              254
+            ]
+          },
+          {
+            "x": 583,
+            "y": 261,
+            "original": [
+              247,
+              217,
+              205,
+              255
+            ],
+            "candidate": [
+              248,
+              217,
+              205,
+              255
+            ]
+          },
+          {
+            "x": 584,
+            "y": 261,
+            "original": [
+              249,
+              227,
+              215,
+              254
+            ],
+            "candidate": [
+              251,
+              233,
+              220,
+              254
+            ]
+          },
+          {
+            "x": 585,
+            "y": 261,
+            "original": [
+              225,
+              187,
+              173,
+              255
+            ],
+            "candidate": [
+              226,
+              189,
+              175,
+              255
+            ]
+          },
+          {
+            "x": 586,
+            "y": 261,
+            "original": [
+              197,
+              136,
+              112,
+              255
+            ],
+            "candidate": [
+              193,
+              132,
+              107,
+              255
+            ]
+          },
+          {
+            "x": 587,
+            "y": 261,
+            "original": [
+              228,
+              172,
+              136,
+              255
+            ],
+            "candidate": [
+              228,
+              174,
+              135,
+              255
+            ]
+          },
+          {
+            "x": 588,
+            "y": 261,
+            "original": [
+              243,
+              205,
+              168,
+              255
+            ],
+            "candidate": [
+              245,
+              210,
+              173,
+              255
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "default WebGL neutral RGBA is exactly original at source resolution",
+      "pass": false,
+      "detail": {
+        "width": 1024,
+        "height": 1536,
+        "exactPixelMatch": false,
+        "changedRGBAPixels": 2404,
+        "maximumChannelError": 93,
+        "totalChannelError": 59042,
+        "alphaChanged": 339,
+        "oldNontransparent": 608859,
+        "newNontransparent": 608859,
+        "changedBounds": {
+          "left": 487,
+          "top": 187,
+          "right": 605,
+          "bottom": 262
+        },
+        "examples": [
+          {
+            "x": 582,
+            "y": 262,
+            "original": [
+              252,
+              228,
+              218,
+              255
+            ],
+            "candidate": [
+              251,
+              226,
+              215,
+              255
+            ]
+          },
+          {
+            "x": 583,
+            "y": 262,
+            "original": [
+              252,
+              231,
+              219,
+              255
+            ],
+            "candidate": [
+              251,
+              230,
+              217,
+              255
+            ]
+          },
+          {
+            "x": 585,
+            "y": 262,
+            "original": [
+              168,
+              110,
+              87,
+              255
+            ],
+            "candidate": [
+              170,
+              112,
+              90,
+              255
+            ]
+          },
+          {
+            "x": 586,
+            "y": 262,
+            "original": [
+              233,
+              176,
+              137,
+              255
+            ],
+            "candidate": [
+              232,
+              175,
+              136,
+              255
+            ]
+          },
+          {
+            "x": 581,
+            "y": 261,
+            "original": [
+              253,
+              227,
+              216,
+              255
+            ],
+            "candidate": [
+              253,
+              228,
+              217,
+              255
+            ]
+          },
+          {
+            "x": 582,
+            "y": 261,
+            "original": [
+              251,
+              222,
+              210,
+              255
+            ],
+            "candidate": [
+              238,
+              203,
+              190,
+              254
+            ]
+          },
+          {
+            "x": 583,
+            "y": 261,
+            "original": [
+              247,
+              217,
+              205,
+              255
+            ],
+            "candidate": [
+              248,
+              217,
+              205,
+              255
+            ]
+          },
+          {
+            "x": 584,
+            "y": 261,
+            "original": [
+              249,
+              227,
+              215,
+              254
+            ],
+            "candidate": [
+              251,
+              233,
+              220,
+              254
+            ]
+          },
+          {
+            "x": 585,
+            "y": 261,
+            "original": [
+              225,
+              187,
+              173,
+              255
+            ],
+            "candidate": [
+              226,
+              189,
+              175,
+              255
+            ]
+          },
+          {
+            "x": 586,
+            "y": 261,
+            "original": [
+              197,
+              136,
+              112,
+              255
+            ],
+            "candidate": [
+              193,
+              132,
+              107,
+              255
+            ]
+          },
+          {
+            "x": 587,
+            "y": 261,
+            "original": [
+              228,
+              172,
+              136,
+              255
+            ],
+            "candidate": [
+              228,
+              174,
+              135,
+              255
+            ]
+          },
+          {
+            "x": 588,
+            "y": 261,
+            "original": [
+              243,
+              205,
+              168,
+              255
+            ],
+            "candidate": [
+              245,
+              210,
+              173,
+              255
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "default opacity coverage is exactly original",
+      "pass": false,
+      "detail": 339
+    },
+    {
+      "name": "no browser JavaScript or resource errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "originalMocSha256": "0e496d30e887f48e5daf432556ccaf1be0726a2617a2485d91703ac60f065e46",
+  "originalTextureSha256": [
+    "5e2bb36f32a65ecf0cfd1183e28ef9a5467394a5b9c5ca634322c060eef41453"
+  ],
+  "newMocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+  "newTextureSha256": [
+    "90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30",
+    "61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7"
+  ],
+  "coverageEvidence": {
+    "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\new-export-diagnostic-2026-10-18\\export04\\native-eye-coverage.json",
+    "sha256": "57eaf64d7dc191e726f8448e70db88d4264f32fd5dff00493f7eafc2f5a01a4f",
+    "newMocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+    "sourceCompositeChangedRGBAPixels": 0
+  },
+  "comparison": {
+    "width": 1024,
+    "height": 1536,
+    "exactPixelMatch": false,
+    "changedRGBAPixels": 2404,
+    "maximumChannelError": 93,
+    "totalChannelError": 59042,
+    "alphaChanged": 339,
+    "oldNontransparent": 608859,
+    "newNontransparent": 608859,
+    "changedBounds": {
+      "left": 487,
+      "top": 187,
+      "right": 605,
+      "bottom": 262
+    },
+    "examples": [
+      {
+        "x": 582,
+        "y": 262,
+        "original": [
+          252,
+          228,
+          218,
+          255
+        ],
+        "candidate": [
+          251,
+          226,
+          215,
+          255
+        ]
+      },
+      {
+        "x": 583,
+        "y": 262,
+        "original": [
+          252,
+          231,
+          219,
+          255
+        ],
+        "candidate": [
+          251,
+          230,
+          217,
+          255
+        ]
+      },
+      {
+        "x": 585,
+        "y": 262,
+        "original": [
+          168,
+          110,
+          87,
+          255
+        ],
+        "candidate": [
+          170,
+          112,
+          90,
+          255
+        ]
+      },
+      {
+        "x": 586,
+        "y": 262,
+        "original": [
+          233,
+          176,
+          137,
+          255
+        ],
+        "candidate": [
+          232,
+          175,
+          136,
+          255
+        ]
+      },
+      {
+        "x": 581,
+        "y": 261,
+        "original": [
+          253,
+          227,
+          216,
+          255
+        ],
+        "candidate": [
+          253,
+          228,
+          217,
+          255
+        ]
+      },
+      {
+        "x": 582,
+        "y": 261,
+        "original": [
+          251,
+          222,
+          210,
+          255
+        ],
+        "candidate": [
+          238,
+          203,
+          190,
+          254
+        ]
+      },
+      {
+        "x": 583,
+        "y": 261,
+        "original": [
+          247,
+          217,
+          205,
+          255
+        ],
+        "candidate": [
+          248,
+          217,
+          205,
+          255
+        ]
+      },
+      {
+        "x": 584,
+        "y": 261,
+        "original": [
+          249,
+          227,
+          215,
+          254
+        ],
+        "candidate": [
+          251,
+          233,
+          220,
+          254
+        ]
+      },
+      {
+        "x": 585,
+        "y": 261,
+        "original": [
+          225,
+          187,
+          173,
+          255
+        ],
+        "candidate": [
+          226,
+          189,
+          175,
+          255
+        ]
+      },
+      {
+        "x": 586,
+        "y": 261,
+        "original": [
+          197,
+          136,
+          112,
+          255
+        ],
+        "candidate": [
+          193,
+          132,
+          107,
+          255
+        ]
+      },
+      {
+        "x": 587,
+        "y": 261,
+        "original": [
+          228,
+          172,
+          136,
+          255
+        ],
+        "candidate": [
+          228,
+          174,
+          135,
+          255
+        ]
+      },
+      {
+        "x": 588,
+        "y": 261,
+        "original": [
+          243,
+          205,
+          168,
+          255
+        ],
+        "candidate": [
+          245,
+          210,
+          173,
+          255
+        ]
+      }
+    ]
+  },
+  "rendererStatus": [
+    {
+      "phase": "ready",
+      "coreLoaded": true,
+      "modelLoaded": true,
+      "shadersReady": true,
+      "framesDrawn": 1,
+      "visualVerified": false,
+      "gazeTracking": false,
+      "automaticAnimation": false,
+      "sdkVersion": "5-r.5",
+      "coreVersion": 100663297,
+      "mocVersion": 6,
+      "latestMocVersion": 6,
+      "drawableCount": 136,
+      "textureCount": 1,
+      "parameterCount": 63,
+      "partCount": 56,
+      "optionalReferencesNotPlayed": [],
+      "gaze": {
+        "supported": true,
+        "enabled": false,
+        "strength": 1,
+        "input": [
+          0,
+          0
+        ],
+        "offsetPixels": [
+          0,
+          0
+        ],
+        "limits": {
+          "xPixels": 0.9,
+          "yPixels": 0.4,
+          "radialPixels": 1
+        },
+        "method": "Copied Framework vertices; original native EyeBall parameters remain unbound",
+        "nativeBuffersModified": false,
+        "nativeEyeBallParametersUsed": false,
+        "movedDrawableIds": [
+          "eye_left_iris",
+          "eye_right_iris",
+          "eye_left_pupil_visible_rim",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_left_occlusion",
+          "iris_right_occlusion"
+        ],
+        "apertureProtection": "Conservative subpixel clamp verified against original eye/sclera/lid masks; no new texture or native clipping mask"
+      },
+      "animation": {
+        "loaded": true,
+        "framework": "Official CubismMotionManager + CubismExpressionMotionManager",
+        "paused": true,
+        "time": 0,
+        "autoIdle": false,
+        "idleGroup": "Idle",
+        "groups": {},
+        "expressionNames": [],
+        "activeMotion": null,
+        "activeExpression": null,
+        "parameterIds": [],
+        "disabledAnimatedParameters": []
+      },
+      "nativeRig": null,
+      "canvasInfo": {
+        "CanvasWidth": 1024,
+        "CanvasHeight": 1536,
+        "CanvasOriginX": 512,
+        "CanvasOriginY": 768,
+        "PixelsPerUnit": 1024
+      },
+      "modelUrl": "http://127.0.0.1:1788/old/character.model3.json",
+      "camera": {
+        "focus": [
+          512,
+          768
+        ],
+        "zoom": 1,
+        "padding": 1,
+        "offset": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "phase": "ready",
+      "coreLoaded": true,
+      "modelLoaded": true,
+      "shadersReady": true,
+      "framesDrawn": 1,
+      "visualVerified": false,
+      "gazeTracking": false,
+      "automaticAnimation": false,
+      "sdkVersion": "5-r.5",
+      "coreVersion": 100663297,
+      "mocVersion": 6,
+      "latestMocVersion": 6,
+      "drawableCount": 142,
+      "textureCount": 2,
+      "parameterCount": 63,
+      "partCount": 59,
+      "optionalReferencesNotPlayed": [],
+      "gaze": {
+        "supported": true,
+        "enabled": false,
+        "strength": 1,
+        "input": [
+          0,
+          0
+        ],
+        "offsetPixels": [
+          0,
+          0
+        ],
+        "limits": {
+          "xPixels": 0.9,
+          "yPixels": 0.4,
+          "radialPixels": 1
+        },
+        "method": "Copied Framework vertices; original native EyeBall parameters remain unbound",
+        "nativeBuffersModified": false,
+        "nativeEyeBallParametersUsed": false,
+        "movedDrawableIds": [
+          "eye_left_iris",
+          "eye_right_iris",
+          "eye_left_pupil_visible_rim",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_left_occlusion",
+          "iris_right_occlusion"
+        ],
+        "apertureProtection": "Conservative subpixel clamp verified against original eye/sclera/lid masks; no new texture or native clipping mask"
+      },
+      "animation": {
+        "loaded": true,
+        "framework": "Official CubismMotionManager + CubismExpressionMotionManager",
+        "paused": true,
+        "time": 0,
+        "autoIdle": false,
+        "idleGroup": "Idle",
+        "groups": {},
+        "expressionNames": [],
+        "activeMotion": null,
+        "activeExpression": null,
+        "parameterIds": [],
+        "disabledAnimatedParameters": []
+      },
+      "nativeRig": null,
+      "canvasInfo": {
+        "CanvasWidth": 1024,
+        "CanvasHeight": 1536,
+        "CanvasOriginX": 512,
+        "CanvasOriginY": 768,
+        "PixelsPerUnit": 1024
+      },
+      "modelUrl": "http://127.0.0.1:1788/candidate/standing-native-2026-10-18.model3.json",
+      "camera": {
+        "focus": [
+          512,
+          768
+        ],
+        "zoom": 1,
+        "padding": 1,
+        "offset": [
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "parameters": [
+    [
+      {
+        "id": "ParamAngleX",
+        "value": 0,
+        "min": -30,
+        "max": 30,
+        "default": 0
+      },
+      {
+        "id": "ParamAngleY",
+        "value": 0,
+        "min": -30,
+        "max": 30,
+        "default": 0
+      },
+      {
+        "id": "ParamAngleZ",
+        "value": 0,
+        "min": -30,
+        "max": 30,
+        "default": 0
+      },
+      {
+        "id": "ParamEyeLOpen",
+        "value": 1,
+        "min": 0,
+        "max": 1,
+        "default": 1
+      },
+      {
+        "id": "ParamEyeLSmile",
+        "value": 0,
+        "min": 0,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamEyeROpen",
+        "value": 1,
+        "min": 0,
+        "max": 1,
+        "default": 1
+      },
+      {
+        "id": "ParamEyeRSmile",
+        "value": 0,
+        "min": 0,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamEyeBallX",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamEyeBallY",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowLY",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowRY",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowLX",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowRX",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowLAngle",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowRAngle",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowLForm",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowRForm",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamMouthForm",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamMouthOpenY",
+        "value": 0,
+        "min": 0,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamCheek",
+        "value": 0,
+        "min": 0,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBodyAngleX",
+        "value": 0,
+        "min": -10,
+        "max": 10,
+        "default": 0
+      },
+      {
+        "id": "ParamBodyAngleY",
+        "value": 0,
+        "min": -10,
+        "max": 10,
+        "default": 0
+      },
+      {
+        "id": "ParamBodyAngleZ",
+        "value": 0,
+        "min": -10,
+        "max": 10,
+        "default": 0
+      },
+      {
+        "id": "ParamBreath",
+        "value": 0,
+        "min": 0,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamHairFront",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamHairSide",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamHairBack",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_long_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_long_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_long_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_long_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_long_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_6_hair_long_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_7_hair_long_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_long_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_long_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_long_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_long_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_long_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_6_hair_long_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_7_hair_long_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_side_left",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_side_left",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_side_left",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_side_left",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_side_left",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_side_right",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_side_right",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_side_right",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_side_right",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_side_right",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_bang_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_bang_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_bang_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_bang_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_bang_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_6_hair_bang_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_7_hair_bang_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_bang_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_bang_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_bang_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_bang_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_bang_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      }
+    ],
+    [
+      {
+        "id": "ParamAngleX",
+        "value": 0,
+        "min": -30,
+        "max": 30,
+        "default": 0
+      },
+      {
+        "id": "ParamAngleY",
+        "value": 0,
+        "min": -30,
+        "max": 30,
+        "default": 0
+      },
+      {
+        "id": "ParamAngleZ",
+        "value": 0,
+        "min": -30,
+        "max": 30,
+        "default": 0
+      },
+      {
+        "id": "ParamEyeLOpen",
+        "value": 1,
+        "min": 0,
+        "max": 1,
+        "default": 1
+      },
+      {
+        "id": "ParamEyeLSmile",
+        "value": 0,
+        "min": 0,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamEyeROpen",
+        "value": 1,
+        "min": 0,
+        "max": 1,
+        "default": 1
+      },
+      {
+        "id": "ParamEyeRSmile",
+        "value": 0,
+        "min": 0,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamEyeBallX",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamEyeBallY",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowLY",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowRY",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowLX",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowRX",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowLAngle",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowRAngle",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowLForm",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowRForm",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamMouthForm",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamMouthOpenY",
+        "value": 0,
+        "min": 0,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamCheek",
+        "value": 0,
+        "min": 0,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBodyAngleX",
+        "value": 0,
+        "min": -10,
+        "max": 10,
+        "default": 0
+      },
+      {
+        "id": "ParamBodyAngleY",
+        "value": 0,
+        "min": -10,
+        "max": 10,
+        "default": 0
+      },
+      {
+        "id": "ParamBodyAngleZ",
+        "value": 0,
+        "min": -10,
+        "max": 10,
+        "default": 0
+      },
+      {
+        "id": "ParamBreath",
+        "value": 0,
+        "min": 0,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamHairFront",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamHairSide",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamHairBack",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_long_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_long_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_long_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_long_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_long_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_6_hair_long_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_7_hair_long_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_long_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_long_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_long_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_long_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_long_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_6_hair_long_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_7_hair_long_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_side_left",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_side_left",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_side_left",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_side_left",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_side_left",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_side_right",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_side_right",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_side_right",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_side_right",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_side_right",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_bang_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_bang_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_bang_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_bang_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_bang_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_6_hair_bang_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_7_hair_bang_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_bang_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_bang_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_bang_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_bang_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_bang_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      }
+    ]
+  ]
+}
