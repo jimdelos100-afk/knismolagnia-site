@@ -495,7 +495,7 @@ html[data-theme="dark"] .theme-toggle.compact { background: #18212a66; border-co
 .site-companion.is-route-hidden { display: none; }
 .site-companion-minimize { position:absolute; top:4px; right:4px; z-index:2; display:grid; place-items:center; width:30px; height:30px; padding:0; border:1px solid #d6b6cc80; border-radius:50%; background:#fff8fcbd; color:#80506f; box-shadow:0 2px 9px #44263b12; cursor:pointer; font:22px/1 Arial,sans-serif; pointer-events:auto; }
 .site-companion-minimize:hover { background:#ffe7f4; }
-.site-companion-frame { display:block; width:100%; height:min(54svh,430px); min-height:285px; border:0; border-radius:0; background:transparent; pointer-events:auto; }
+.site-companion-frame { display:block; width:100%; height:min(54svh,430px); min-height:285px; border:0; border-radius:0; background:transparent; color-scheme:light; pointer-events:auto; }
 /* The site home and account pages show a larger, uncropped full-body companion. */
 .site-companion.is-home-route { width:clamp(315px,28vw,365px); }
 .site-companion.is-home-route .site-companion-frame { height:min(70svh,560px); min-height:350px; }

@@ -1,4 +1,5 @@
 # 雪糕少女汉化组官网 · V8 原生 Live2D 桌宠版
+本版追加首页深色模式透明背景修复。原生模型、纹理、动作和业务代码均沿用已交付版本；唯一运行源码变化是 `.site-companion-frame` 增加 `color-scheme: light`。旧包在深色首页会因父 iframe 与子页配色模式不一致出现白底，这项遗漏已补测。新增验证及精确差分见 `verification/iframe-transparency-2026-10-18/`。
 
 本包是 2026-10-18 的完整 Next.js 网站源码。首页全身站姿采用本轮 Cubism 导出的真实模型，原生眼球、连续眨眼、自然头动和六组发丝物理均已通过本包对应的本地验收。Level 1 坐姿、Level 2 跪姿及网站业务沿用 V8。
 
@@ -24,7 +25,7 @@ Level 1 保留坐姿换装、拖动、双指/滚轮缩放、复位和暂停。Le
 
 使用 Node.js 20 或更新版本，配置原环境变量后运行 `npm ci` 与 `npm run dev`。资源需通过 HTTP(S) 访问。`npm run dev:design` 仅用于本地预览。
 
-本包构建及 TypeScript 检查通过，原生模型、图集、完整眨眼过渡、WebGL、透明桌宠、开关、动作/表情、手机及 Level 回归证据在 `verification/native-live2d-2026-10-18/`，实际检查数量见 `Live2D-STATUS.md`。154 个受保护文件与此前网站包逐字节相同。未用真实账号或数据库重新验收在线业务。
+本修复版重新完成构建与 TypeScript 检查，配色模式、实际浏览器透明合成和手机专项结果见 `verification/iframe-transparency-2026-10-18/`。此前 895 项检查报告原字节保留在 `verification/native-live2d-2026-10-18/`，它们属于修复前冻结源码的历史基线，并非本修复版全部重跑。154 个保护项中仅 `src/app/globals.css` 按精确差分增加一条配色声明，另外153项逐字节不变；完整成员差分及新文件索引见新增验证目录。未用真实账号或数据库重新验收在线业务。
 
 站姿 MOC SHA-256：`cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c`。
 

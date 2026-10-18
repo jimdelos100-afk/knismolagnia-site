@@ -1,0 +1,97 @@
+{
+  "checkedAt": "2026-10-18T14:15:37.833Z",
+  "configuration": "Process-only placeholder Supabase settings; no account/database requests, credentials or deployment.",
+  "testedBuildInputHashes": {
+    "middleware.ts": "ef94fed03410525f352757dc6e392c002baa8bf99d66e14a00253ae5737d24d1",
+    "next-env.d.ts": "85ae5aee75f011967cf2d25cbc342f62d69314e9d925f7f4aa3456fc2cffcca6",
+    "next.config.mjs": "0250fa251afa68a5fcd141a06f76e49bf909bd98888ec5c7960f63f2f58e0bb2",
+    "package-lock.json": "ecb23b022cbdc286317dd361d9cd21bfe96021ad876d3a4246eb6de38686ab14",
+    "package.json": "67056fd23fad4c665bc906a6ee8df94ce480332983ae1a680533f71c4855570b",
+    "src/app/account/DeleteAccount.tsx": "8171167980db8ee261a6c29031a771fbb3bb29d3e9c5bc800a506857fccb088b",
+    "src/app/account/ProfileEditor.tsx": "87872200d342b05bc755eefc345979b3e5292485af1533b896b9e0d7646314b5",
+    "src/app/account/VerificationForm.tsx": "5b95561f2fb012534d6f29b1dc69c431b54b99aca99f59c01b41547bdc951b56",
+    "src/app/account/page.tsx": "8ff3870b07b6187ea7465ea970576c89535121998fd57b2e822ae1c6876421d2",
+    "src/app/admin/content/ContentManager.tsx": "a88a4869fe686cc8000958665f785d77cee035f6ef520678c40bd3d6367411c0",
+    "src/app/admin/content/page.tsx": "6328fe1c6a06ad2e782656a2c3f7a9778d21f36dc03aee84041ae27dad02198e",
+    "src/app/admin/discussion/ChatManager.tsx": "faf4f1645e9b073c7e4ca0e331d372cc4d86ff3ae8f808ac0995befe1739d403",
+    "src/app/admin/discussion/page.tsx": "03cbf02da52454a5fed1bb4aed74af38c46d71173732ee6ee5c09db960bfe922",
+    "src/app/admin/layout.tsx": "620d4a569f94c07b965d514ef2337fe96450cb69f3332bd1094f7211e9b41126",
+    "src/app/admin/messages/MessageManager.tsx": "0e23071c7468eaa934a28c19a3836064c948afd944441b5eaf8165f40c475be2",
+    "src/app/admin/messages/page.tsx": "ea83bb679cad6d8f5de5f94352494af48231873e72e49a8bc9253fa5b2d29d67",
+    "src/app/admin/page.tsx": "d5d57625832d5f2f65f729d01103bd791d32bb801c16e70a8bc6d43aac7123e9",
+    "src/app/admin/profile-changes/ProfileChangeManager.tsx": "c01503979fd76804b68aed36f00df0f568a179b055ab245864f00b89ee412a31",
+    "src/app/admin/profile-changes/page.tsx": "fd97bea23a82863f2e79f5204eafa57c4216ccfae269373b1001bf88feeb9d29",
+    "src/app/admin/submissions/SubmissionManager.tsx": "eec8cd7cfe91b5ddb2a3b334eea75a278c2a7e4036798ff98ffaa1b6e3e460b5",
+    "src/app/admin/submissions/page.tsx": "e9c5b7b07d45d336c4305439069dd0022ba26dd14e874491dc1272ec8be03b47",
+    "src/app/admin/users/UserManager.tsx": "171980b0f38fdea3016cde411aecf99d8dceba5ac7558e3f8a4df911afaf309c",
+    "src/app/admin/users/page.tsx": "c1c81f910a7ed0a5a9a80945b1e076ba2a636073e95397a45364918686e9f47e",
+    "src/app/admin/verification/VerificationManager.tsx": "758d741bed7754d90c59dd25847f2343b52292b21dce512e710e1ff890dc3a0e",
+    "src/app/admin/verification/page.tsx": "c265674f21a7a803689e644311ecf2948f30df8a5c51fbb62549b5e3ae026ea6",
+    "src/app/auth/callback/route.ts": "9dd5ba7b15471583f62aff944a1ead2fbadb0300107c578848415ee68f1f17a2",
+    "src/app/globals.css": "cf9a7121b0c0d4d5230ecccc6f245cb6346271c4211eff3e7a2a48a91cf2b6be",
+    "src/app/layout.tsx": "bd00856ecec164def226eaf66dd221be20fafd636acc3fbab5589596d4848767",
+    "src/app/level/2/members/FollowButton.tsx": "226e94391a793f8d65d77ebc0b59e0a60e73fac3dd62e8e40d8645b24e58342a",
+    "src/app/level/2/members/MemberDirectory.tsx": "9bb20f677ee35a4e919b56cda2cfbc0e669e45e97eb92cf07763857b2818c167",
+    "src/app/level/2/members/[id]/page.tsx": "c3af19c48342f309d27bc56b3d6c6edf03913a7e12a55792117bebe929194b7e",
+    "src/app/level/2/members/page.tsx": "1cf35dd2d44b62f19ca095973454b72d583109e4ed2da44de22142750a7fba07",
+    "src/app/level/[level]/ContentFeed.tsx": "026c9000306528d670abd4082cf0e29b1c47b1afff9d3b4c2d76a460b180c94a",
+    "src/app/level/[level]/LevelHeading.tsx": "caca06385f74f25e7d861b4e1392e78933a9bebdaeb43856ba268b63e41e03e8",
+    "src/app/level/[level]/LocalLevelPreview.tsx": "8a9a7bef2d946d743fd8c615184476ac88cb049d5b5a2447450274814686d542",
+    "src/app/level/[level]/PrivateMessageBox.tsx": "ae3ebe3c3a6103e2ecbf410b8a4d232798b5f1f4dba0cf8a061b4a4a6aef5e9a",
+    "src/app/level/[level]/WorkTemplateExample.tsx": "c241056ac6d9f84e87dc25cd4a055cb34453e0ec3d7318c57f17c746b3a9be3d",
+    "src/app/level/[level]/page.tsx": "b1bf0f02de144da4b53f88ec5fa31656b79db45d785d13c55fe5a7321224175d",
+    "src/app/login/LoginForm.tsx": "7474a33e145e5a9f2be2019c063534170a5ceae3e6675f6f93746fdf5967089e",
+    "src/app/login/page.tsx": "0e1a7e7da4e5605cae475684694576d69425d694fbedc9148ea15af917c28106",
+    "src/app/page.tsx": "fca44601c7be6f304e4cc8e88a1baf56e73ad7a839c85031b8d18366a5d76d26",
+    "src/components/CharacterFrame.tsx": "1c1319188fa9b65ec81146d409671b8db8a52f3df9e6520abd6ece40627be230",
+    "src/components/DiscussionRoom.tsx": "7888f0d4cdbf95628d68cef0900ba36247badfd983789dc47d8909bed5a31043",
+    "src/components/HomeCharacter.tsx": "72663827ea929a1d737a95565dc3af998141a157e78d710be6954107103bac20",
+    "src/components/KonisiCharacterGame.tsx": "9ab62d37edba324624c8ab0a3f0ec23cf450048e214e7bffcd321b2dc937092c",
+    "src/components/LogoutButton.tsx": "785cdb308b3bce54cd59a00aba58c6edfca5d0dfeb3bdff1de17a87b668d5036",
+    "src/components/SiteHeader.tsx": "c22deaf2abe316f74d36472dfbef9d1395ff04690f7b8d208bf1ed8d44ab40fe",
+    "src/components/SubmissionBox.tsx": "f211073b651254a6308c85e0c14b8b087edbbc611ee9c012e5cf93238f4c0264",
+    "src/components/ThemeToggle.tsx": "47426f7fb48e99f670ac27f22be73890297f91d51870b1119313668b2a0ac8b8",
+    "src/lib/auth.ts": "ec72cae240edb70d3e6b6511a6b8ce13be1a40824b26cfbae2b53e9f48c0dcde",
+    "src/lib/local-design-mode.ts": "6a9754f5304130b7a07dc9934ba586d0d92b5aeee677c78c5a18b86d22a60ea5",
+    "src/lib/supabase/client.ts": "223528371e71d1007c769935520714a2d0b4b599cf81064c240ed4a3beda1856",
+    "src/lib/supabase/middleware.ts": "3c02e68ae843183a613acb6e61fb018c092b1f38a1f403bf635f32f8058ffecb",
+    "src/lib/supabase/server.ts": "515ad9d51c9b32514a9e7e8aecdb112d6699fe01334701868bd35b3d4c2e20ac",
+    "tsconfig.json": "8fbea2b3421d523bb35af3cd6ff9545c6d9a611862ea49936879ffcb17a06eb3"
+  },
+  "isolatedByteIdenticalSourceCopy": true,
+  "buildDirectory": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-18\\live2d-v8-cubism-zip-c-users\\work\\iframe-transparency-hotfix-2026-10-18\\native-release-build-2026-10-18T14-15-17-603Z",
+  "checks": [
+    {
+      "name": "Project Live2D structural check",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "name": "Project Live2D checker regression tests",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "name": "Next.js production build",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "name": "TypeScript source check",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "name": "Build did not alter application source",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "logs": [
+    "project-live2d-structure.log",
+    "project-live2d-tests.log",
+    "next-build-native.log",
+    "typescript-native.log"
+  ],
+  "nativeModelVerified": false
+}

@@ -1,0 +1,44 @@
+
+> knismolagnia-club@5.7.0 build
+> next build
+
+   ▲ Next.js 15.5.25
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 5.6s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/6) ...
+   Generating static pages (1/6) 
+   Generating static pages (2/6) 
+   Generating static pages (4/6) 
+ ✓ Generating static pages (6/6)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ƒ /                                    21.1 kB         132 kB
+├ ○ /_not-found                            987 B         103 kB
+├ ƒ /account                             4.41 kB         183 kB
+├ ƒ /admin                                 126 B         102 kB
+├ ƒ /admin/content                       3.53 kB         174 kB
+├ ƒ /admin/discussion                    1.46 kB         172 kB
+├ ƒ /admin/messages                      1.11 kB         171 kB
+├ ƒ /admin/profile-changes               1.57 kB         172 kB
+├ ƒ /admin/submissions                   2.18 kB         178 kB
+├ ƒ /admin/users                         1.93 kB         172 kB
+├ ƒ /admin/verification                  1.44 kB         172 kB
+├ ƒ /auth/callback                         126 B         102 kB
+├ ƒ /level/[level]                        6.5 kB         185 kB
+├ ƒ /level/2/members                     1.62 kB         180 kB
+├ ƒ /level/2/members/[id]                  974 B         180 kB
+└ ƒ /login                               2.04 kB         181 kB
++ First Load JS shared by all             102 kB
+  ├ chunks/431-5ac67dbd0cf75777.js       46.1 kB
+  ├ chunks/f9d5fbc3-5c679e8b6af08e08.js  54.2 kB
+  └ other shared chunks (total)          1.99 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

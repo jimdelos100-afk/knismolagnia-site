@@ -1,0 +1,1572 @@
+[
+  {
+    "path": ".gitignore",
+    "bytes": 130,
+    "sha256": "d6e3e0663fc508ddb72a514b1def4fcc1f59e663800d365680e0613876b63a3d"
+  },
+  {
+    "path": "Live2D-STATUS.md",
+    "bytes": 4322,
+    "sha256": "88b71dddac38919d15ab1f79bbc934293c4ba19017906bce0a8f28d098dd9ac3"
+  },
+  {
+    "path": "README.md",
+    "bytes": 5123,
+    "sha256": "a096273239a5eaf7377948aac2587b3ac8899009b713e2e2e4b8aa206ce01837"
+  },
+  {
+    "path": "middleware.ts",
+    "bytes": 1651,
+    "sha256": "ef94fed03410525f352757dc6e392c002baa8bf99d66e14a00253ae5737d24d1"
+  },
+  {
+    "path": "next-env.d.ts",
+    "bytes": 262,
+    "sha256": "85ae5aee75f011967cf2d25cbc342f62d69314e9d925f7f4aa3456fc2cffcca6"
+  },
+  {
+    "path": "next.config.mjs",
+    "bytes": 684,
+    "sha256": "0250fa251afa68a5fcd141a06f76e49bf909bd98888ec5c7960f63f2f58e0bb2"
+  },
+  {
+    "path": "package-lock.json",
+    "bytes": 38963,
+    "sha256": "ecb23b022cbdc286317dd361d9cd21bfe96021ad876d3a4246eb6de38686ab14"
+  },
+  {
+    "path": "package.json",
+    "bytes": 590,
+    "sha256": "67056fd23fad4c665bc906a6ee8df94ce480332983ae1a680533f71c4855570b"
+  },
+  {
+    "path": "public/konisi-game/assets/bg_scene.png",
+    "bytes": 116672,
+    "sha256": "5df2d18ef604bcc281c87fb17434c14567abac5b1ff1b19bc0e24dd4e28de0a9"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/angry/angry_eye_left.png",
+    "bytes": 23302,
+    "sha256": "20db6b8944d116bec2759eb1ecc963bcc1804146c640b9822b2280399e5bb08e"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/angry/angry_eye_right.png",
+    "bytes": 19927,
+    "sha256": "c60c16f80b3af95470abafa2f132a4db86b0eff946c0fe3ac8562964bac1cd3f"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/angry/angry_mouth.png",
+    "bytes": 9446,
+    "sha256": "67103e7280b4006d708298118723950ca9389d404a0ac63e31d8b38c4a204bc5"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/angry/angry_skin.png",
+    "bytes": 15626,
+    "sha256": "dd373ed093f333b8c223219fa5b315e00e11b8d30b784e6653538bd0cf536998"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/blink/blink_eye_left.png",
+    "bytes": 22225,
+    "sha256": "33665d7c6566513f7d572d7a1c4b751ed5b1f8023f653a4431451f5225b5e1f7"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/blink/blink_eye_right.png",
+    "bytes": 19271,
+    "sha256": "96a9da4e9ae29b3d5be17d38ca979b8501cfff7372754f7e34bc07455f56ce84"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/blink/blink_mouth.png",
+    "bytes": 9462,
+    "sha256": "f5745bee40820cd6d10efb3ddd5d0d06c40c493f2fb775b06b9c6ea5f6fab0a5"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/blink/blink_skin.png",
+    "bytes": 15671,
+    "sha256": "2ad31ca06f3e10a328a0d2e9b6fa714089da08787b4bbe11afad00ab5f7a6861"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/happy/happy_eye_left.png",
+    "bytes": 22311,
+    "sha256": "9d7982ebfdf1e2530cfb8ed3c842f558032ec60526d07f06f14e3095f2d6650b"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/happy/happy_eye_right.png",
+    "bytes": 19065,
+    "sha256": "46dcedc96957ce0611d52afe965c233c2aad93ab1f230273ad40219636eeba39"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/happy/happy_mouth.png",
+    "bytes": 10286,
+    "sha256": "ae9b4cec918a9e8ed80429cf2381cc7456696866092068a38e95cf70de3e9da8"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/happy/happy_skin.png",
+    "bytes": 15636,
+    "sha256": "ef08c5d3be204c5a264f39b0cbaef6c286ee4e0f573e8c22fabd260f16b32454"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/neutral/neutral_eye_left.png",
+    "bytes": 22758,
+    "sha256": "cccf03c102cf348669c0caf5c4219a8e5537442246f0cdf48c351a83f2d410cd"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/neutral/neutral_eye_right.png",
+    "bytes": 19742,
+    "sha256": "ffd12cd51d81a35c698c9b91903959a8c729826ced56a2d726ae373fc099dd21"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/neutral/neutral_mouth.png",
+    "bytes": 8493,
+    "sha256": "34347b75a8763ec6f818277322c6d5931634c4491fe9e27724ba3a57e520e122"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/neutral/neutral_skin.png",
+    "bytes": 15573,
+    "sha256": "62345af71161d2959efac740be9cb6e8a21bc671caaeb1f446b82d8d0056a3ab"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/sad/sad_eye_left.png",
+    "bytes": 23318,
+    "sha256": "5d691c1295cadea425d8e29f66bc7f01d97f7d82a0686197ea77248777a7285b"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/sad/sad_eye_right.png",
+    "bytes": 20101,
+    "sha256": "d4e5035d3427c0df10b7740aa742f00ca6d5cf7fce9670f80fa3046fe8c4f2d4"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/sad/sad_mouth.png",
+    "bytes": 9498,
+    "sha256": "5081411c2fb876481d4724103c870a76944163a4582653bd9a4088a2a9100724"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/sad/sad_skin.png",
+    "bytes": 15710,
+    "sha256": "eccdc998ad75302edc5ba7a5cc3f2ff341fce04f2ee79e71690706c4e9911990"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/shy/shy_eye_left.png",
+    "bytes": 23234,
+    "sha256": "d9fd1bda3807e8d7688cd5e7cbd57d8a9c70b30eaf3bb185a35c05266d2ecc05"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/shy/shy_eye_right.png",
+    "bytes": 19987,
+    "sha256": "8053ed8915abd894ac9032a8c086dfed94c060ad1db4ce334f071395ed97a361"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/shy/shy_mouth.png",
+    "bytes": 9246,
+    "sha256": "2500bb1d5700dc46b70d68a88d7176b56a6aa257d63e80392e9978afee9c7562"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/shy/shy_skin.png",
+    "bytes": 15636,
+    "sha256": "45eac8bfab8a5dfdc56f93b57d1364aec8737e802f4075c61c1cb6a231d8ebbd"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/surprised/surprised_eye_left.png",
+    "bytes": 23026,
+    "sha256": "39c4b7afdf0c47bb817036ed694f48cc95efa5e7ca3b119bd5048c9ba06835d3"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/surprised/surprised_eye_right.png",
+    "bytes": 19680,
+    "sha256": "a9ea34402ccea126d233bc0cb94966a770b5097185c577f8d455071e38622e2f"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/surprised/surprised_mouth.png",
+    "bytes": 9576,
+    "sha256": "d1b1435ede0d5f55902d6ac57035c8faa40c21c331f0c32a661c83d7bff2e6c8"
+  },
+  {
+    "path": "public/konisi-game/assets/expressions/surprised/surprised_skin.png",
+    "bytes": 15589,
+    "sha256": "986112fd7d8a67efb7f63f45b959bf8b32165cbf6b6ce396ae2768fca892112e"
+  },
+  {
+    "path": "public/konisi-game/assets/kneeling/barefoot.webp",
+    "bytes": 147324,
+    "sha256": "0903e2d894004afd3e7b20dc9e0a0fb3f514d9eb63164b1441c97446509c5933"
+  },
+  {
+    "path": "public/konisi-game/assets/kneeling/base.webp",
+    "bytes": 818496,
+    "sha256": "72b80c1ee329efa941de62a50b0ad34725c0273f61d540f5a2f3696fa4319616"
+  },
+  {
+    "path": "public/konisi-game/assets/kneeling/blink-left.webp",
+    "bytes": 7694,
+    "sha256": "651ae00fa21435e0be5d7b4d4da5579cc574ec36b593eb0d8a7574f1730fde13"
+  },
+  {
+    "path": "public/konisi-game/assets/kneeling/blink-right.webp",
+    "bytes": 8822,
+    "sha256": "66dcccd23692a831b9ac33f5029d38f9f99ccc5529ea661dbcb3674f07f5e6bd"
+  },
+  {
+    "path": "public/konisi-game/assets/kneeling/face-blink.webp",
+    "bytes": 21372,
+    "sha256": "562fe168d37346fd4759921ee7cfc4100d59596dd52aea698663bd1591ae3cd2"
+  },
+  {
+    "path": "public/konisi-game/assets/kneeling/face-laugh.webp",
+    "bytes": 21218,
+    "sha256": "69d7df2d953d6510ad8e6bcb51cb2f02b7078bbfcf53d381134e7a381d7c7009"
+  },
+  {
+    "path": "public/konisi-game/assets/kneeling/face-neutral.webp",
+    "bytes": 34514,
+    "sha256": "08956d7217d7c31ca5c0af09d5999a92a81c6df525086ba4e5f1e35f616a0266"
+  },
+  {
+    "path": "public/konisi-game/assets/kneeling/face-pout.webp",
+    "bytes": 22762,
+    "sha256": "7cdd29aeb2c141476564944feca551370c77e4fa53c7dbd7aae2c600128bc0cb"
+  },
+  {
+    "path": "public/konisi-game/assets/kneeling/face-puzzled.webp",
+    "bytes": 22912,
+    "sha256": "f45b05cf11366c49effea979c0670426a42565eb5380b68b657ae5b0dfc6feec"
+  },
+  {
+    "path": "public/konisi-game/assets/kneeling/face-sleepy.webp",
+    "bytes": 22048,
+    "sha256": "ece82cc618719765055155e3d23be81ff83b77f7add7f556f75318c39694397c"
+  },
+  {
+    "path": "public/konisi-game/assets/kneeling/face-startled.webp",
+    "bytes": 23140,
+    "sha256": "984c66d9a1bb74a3bfdcfec62f075d5362b0f353468ca825e5c66de43f2911b6"
+  },
+  {
+    "path": "public/konisi-game/assets/kneeling/face-wink.webp",
+    "bytes": 22196,
+    "sha256": "1921d5f39e02faec9899648b99562e00d1e9fc996024acdc138e73aba4cbfd8c"
+  },
+  {
+    "path": "public/konisi-game/assets/kneeling/shortsocks.webp",
+    "bytes": 144288,
+    "sha256": "d489ab5d3514a00dc6d2b7e8c5d54a7b28134934d0c3b4afa589475a9a40fb4a"
+  },
+  {
+    "path": "public/konisi-game/assets/kneeling/tights.webp",
+    "bytes": 144988,
+    "sha256": "0981233362b02ebb9426da5e7419bd9d33419327a7b1d94be66d1d2b820635c2"
+  },
+  {
+    "path": "public/konisi-game/assets/parts/part_arm_left.png",
+    "bytes": 32150,
+    "sha256": "c7686c5ae0ef98f0d60c916c4aeaa7b1adacf04167bcaf6a1f5553f984182155"
+  },
+  {
+    "path": "public/konisi-game/assets/parts/part_arm_right.png",
+    "bytes": 23428,
+    "sha256": "349a167650d2be6bcc1ab5f71b3b90bd85a2cf2364f8a1820299722812e6671c"
+  },
+  {
+    "path": "public/konisi-game/assets/parts/part_body.png",
+    "bytes": 438029,
+    "sha256": "588c1c7624c693967ba8779f8fc58fd963e8ee48f0fe8aab8631283cd367924e"
+  },
+  {
+    "path": "public/konisi-game/assets/parts/part_hair_left.png",
+    "bytes": 251467,
+    "sha256": "7db230c59e8e4fde268a4862782ad6f24c0b8324cf46c5c98dcbae8d1a8df5b6"
+  },
+  {
+    "path": "public/konisi-game/assets/parts/part_hair_right.png",
+    "bytes": 204063,
+    "sha256": "da0ddc864ba384db6467226127b720e7fa1ead51343dd47c7da8a429ee9d69e0"
+  },
+  {
+    "path": "public/konisi-game/assets/parts/part_head.png",
+    "bytes": 170470,
+    "sha256": "099d29324c3e26b4a36d184b4c84e033f68a9ac7cf0be203115462beebdd84ef"
+  },
+  {
+    "path": "public/konisi-game/assets/parts/part_leg_left.png",
+    "bytes": 61091,
+    "sha256": "3e029e4118111a1f8b13b649207b46ad49a8f75a962af504ccf0b5d439b3a456"
+  },
+  {
+    "path": "public/konisi-game/assets/parts/part_leg_right.png",
+    "bytes": 69168,
+    "sha256": "0fda46dd79e51ad9f8a37eb87d638b5cc1c2602c2a4f6077d82dec59139334b2"
+  },
+  {
+    "path": "public/konisi-game/assets/seated/base.webp",
+    "bytes": 800012,
+    "sha256": "46337c91959fbf9fa92c55632041f53966ad2291ea317428cb56d4b4a8322e1c"
+  },
+  {
+    "path": "public/konisi-game/assets/seated/blink-left.webp",
+    "bytes": 10296,
+    "sha256": "8b4922b0db60b8fb0f851352c00b88c564a9d80ea4728d264d87f5ce2f18b133"
+  },
+  {
+    "path": "public/konisi-game/assets/seated/blink-right.webp",
+    "bytes": 8818,
+    "sha256": "585af4ba123fc2c81ccb1d6c76a272dd1e1211760c697fb7888c2964c529a892"
+  },
+  {
+    "path": "public/konisi-game/assets/seated/face-angry.webp",
+    "bytes": 27588,
+    "sha256": "0d7349127dcdc4f66603b0ac25e9481eaf1261d380d5ff24d8e1345df27dad3d"
+  },
+  {
+    "path": "public/konisi-game/assets/seated/face-blink.webp",
+    "bytes": 25556,
+    "sha256": "cefb8f59d58bdf87a8d2be2e81c006e35122e28dc146078ff49b46803ff5901c"
+  },
+  {
+    "path": "public/konisi-game/assets/seated/face-happy.webp",
+    "bytes": 26460,
+    "sha256": "1351b829651702a4ea94a525d7dd9693e832673df5565dd8c747a3cd3baf5930"
+  },
+  {
+    "path": "public/konisi-game/assets/seated/face-neutral.webp",
+    "bytes": 26916,
+    "sha256": "c42ea33080354054d671529c56eaa881d821fda2b58612e28f41054a28d292cf"
+  },
+  {
+    "path": "public/konisi-game/assets/seated/face-sad.webp",
+    "bytes": 28126,
+    "sha256": "72d75d9f24b9286849a0704dcd06a457670d1f2bb6c6455113f8833b1df124aa"
+  },
+  {
+    "path": "public/konisi-game/assets/seated/face-shy.webp",
+    "bytes": 28364,
+    "sha256": "a38de7f298cacb7d6dc3da1c53217a0cc42275c8aaea3a5470d336b324e49f8e"
+  },
+  {
+    "path": "public/konisi-game/assets/seated/face-surprised.webp",
+    "bytes": 27270,
+    "sha256": "a5bdc02b72d6e5e11da67e7ec032900063b9fd9c440fa86de7ca8105ea36d7de"
+  },
+  {
+    "path": "public/konisi-game/assets/seated/overknee.webp",
+    "bytes": 60160,
+    "sha256": "b0e4eddd04662f87f42d48389cc3cdbd2a545557cf3b93cb4a99d83e0e68519b"
+  },
+  {
+    "path": "public/konisi-game/assets/seated/tights.webp",
+    "bytes": 57840,
+    "sha256": "7e42e64260073ec3f6dfc2083912d5807e219ff020e23f7f04b08f68ce2eda06"
+  },
+  {
+    "path": "public/konisi-game/assets/standing/base.webp",
+    "bytes": 788488,
+    "sha256": "5bae5de2c73b1c0f992ede478b81aeb6b491a9865c1ec12fcec0eace6f95793e"
+  },
+  {
+    "path": "public/konisi-game/assets/standing/blink-left.webp",
+    "bytes": 10256,
+    "sha256": "90051a9084d9cd049107d009d5a03084015e8bd78cd4b4416a0de4b4a193a14c"
+  },
+  {
+    "path": "public/konisi-game/assets/standing/blink-right.webp",
+    "bytes": 8182,
+    "sha256": "0f1ed9bcedbf2516f73ad6305c8af2cc12081b7921de7961ce9806f3e02b29ae"
+  },
+  {
+    "path": "public/konisi-game/assets/standing/face-angry.webp",
+    "bytes": 27000,
+    "sha256": "b7f0aa4c94898e7773562d8b9480a403d9328770a8e667fe0ff0cf3ea5ff687c"
+  },
+  {
+    "path": "public/konisi-game/assets/standing/face-blink.webp",
+    "bytes": 25592,
+    "sha256": "6d8ed01b30f4e7c121d6689d4ab88e758a9893439d0448873ac8255ee2cda068"
+  },
+  {
+    "path": "public/konisi-game/assets/standing/face-happy.webp",
+    "bytes": 26290,
+    "sha256": "813e170e9d1b228c31d032c8b01e4a97f6d60d5b088610e91df5b567e0501bf1"
+  },
+  {
+    "path": "public/konisi-game/assets/standing/face-neutral.webp",
+    "bytes": 25890,
+    "sha256": "fac9f9dbf07799d43960973e3e6c84ca1477270a1cb6ef34128bff334e45a7ce"
+  },
+  {
+    "path": "public/konisi-game/assets/standing/face-sad.webp",
+    "bytes": 27464,
+    "sha256": "ff6c5aff8404f8b287f70469b16d914c4dc82a333112a4b0915134c2459f2ceb"
+  },
+  {
+    "path": "public/konisi-game/assets/standing/face-shy.webp",
+    "bytes": 26860,
+    "sha256": "8c3510703a97a0fbbb70a4ccd8dfced833139469e613a2a674dd93bbab06e567"
+  },
+  {
+    "path": "public/konisi-game/assets/standing/face-surprised.webp",
+    "bytes": 26896,
+    "sha256": "4a1bc9412a53cda883b3830106bc4e253839dc4208576730a4c19b748fd7985b"
+  },
+  {
+    "path": "public/konisi-game/assets/standing/overknee.webp",
+    "bytes": 69276,
+    "sha256": "a5ce1a623657222734282392ccec238d772918d3464b2dbb54b14809cb4ab3f6"
+  },
+  {
+    "path": "public/konisi-game/assets/standing/tights.webp",
+    "bytes": 71954,
+    "sha256": "11a2b76537cf33aa9bc87eb7a3bc2a92182f82bfb9b1a6ebe16ad82d9955505a"
+  },
+  {
+    "path": "public/konisi-game/assets/wardrobe/overknee/overknee_left.png",
+    "bytes": 61319,
+    "sha256": "341ebe77fb7c68114216c2948d0d96f05519e2f264a270703867077b74c9607c"
+  },
+  {
+    "path": "public/konisi-game/assets/wardrobe/overknee/overknee_right.png",
+    "bytes": 70373,
+    "sha256": "e5936b955a6dd465c4d4cdc0b3a33d749fab72a5329bc9d92aac056f40f521b2"
+  },
+  {
+    "path": "public/konisi-game/assets/wardrobe/tights/tights_left.png",
+    "bytes": 64402,
+    "sha256": "e6ebbc977b8e0d169d214fb8f27594df5f90975f51f44c45a9511ddff4552629"
+  },
+  {
+    "path": "public/konisi-game/assets/wardrobe/tights/tights_right.png",
+    "bytes": 74363,
+    "sha256": "d8153011d2e6c68e068d728dc1d6f705b025222f3932d542f5d917a926f17e6e"
+  },
+  {
+    "path": "public/konisi-game/character.css",
+    "bytes": 10584,
+    "sha256": "ec8ea79f2acd14f08f8c0414362d18648f3de442a3f34a6cfe58e3534aaaf8ce"
+  },
+  {
+    "path": "public/konisi-game/character.js",
+    "bytes": 27041,
+    "sha256": "06be64915fe6d99b45b402459326a81f50b32d1a26ed3d39bfca4578bbbe2bee"
+  },
+  {
+    "path": "public/konisi-game/home.html",
+    "bytes": 3291,
+    "sha256": "34cd64f92303bc318bf9fe10ac6fd3cdfc1a54ec9dc84054dea66e54bdc03012"
+  },
+  {
+    "path": "public/konisi-game/idle-head.js",
+    "bytes": 360,
+    "sha256": "f667629d1d3fe15db9835a3308eb7bed003790267c801d2a7ce0c766a4443184"
+  },
+  {
+    "path": "public/konisi-game/index.html",
+    "bytes": 2757,
+    "sha256": "6524f41c94a98ebd3ce4bc4de270d51e6aaf06824173b9c055e6bc86d2fdad36"
+  },
+  {
+    "path": "public/konisi-game/kneeling.html",
+    "bytes": 2821,
+    "sha256": "fbe627781207e60c8350a53b29684f297f9402c202d4fa03c594242cb4ca9792"
+  },
+  {
+    "path": "public/konisi-game/live2d/INTEGRATION.md",
+    "bytes": 4570,
+    "sha256": "b5567c8cbed4c0096564ea1231bcab25b8df8aa25ada8d28640f6c22dab68f55"
+  },
+  {
+    "path": "public/konisi-game/live2d/README.md",
+    "bytes": 2260,
+    "sha256": "5480a8186a6ebc41800dcb4f64dd68acc0ae73d3169614fb23988c26a6ad877c"
+  },
+  {
+    "path": "public/konisi-game/live2d/animation-playback.mjs",
+    "bytes": 12162,
+    "sha256": "c4a89546b3ec381dbafb8c4324ffc5058092c2c253bf279de0a16c9aac13cd8e"
+  },
+  {
+    "path": "public/konisi-game/live2d/camera-math.mjs",
+    "bytes": 1579,
+    "sha256": "b92f68644995fab4b3e938158427a05af476d9bc9055be2a58d237841a891281"
+  },
+  {
+    "path": "public/konisi-game/live2d/kneeling/character.model3.json",
+    "bytes": 212,
+    "sha256": "ebb92b7b0bfd9fd873030c7052a15a4d5cd88c54d93ece5a5229c6aa15168fc6"
+  },
+  {
+    "path": "public/konisi-game/live2d/kneeling/kneeling-source-materials.2048/texture_00.png",
+    "bytes": 2638104,
+    "sha256": "473561f8d5b90eb87d0042f8670d2fec62a9c4a1662f02601315f549dc4e7044"
+  },
+  {
+    "path": "public/konisi-game/live2d/kneeling/kneeling-source-materials.cdi3.json",
+    "bytes": 2198,
+    "sha256": "8869283efc9f60d57a1e2faccf8c8a8fb91db5ef1981e0bf80410d09f5298c64"
+  },
+  {
+    "path": "public/konisi-game/live2d/kneeling/kneeling-source-materials.moc3",
+    "bytes": 22528,
+    "sha256": "e792bfb6cb3850ea29e6093d65e4477cf654c974d2be4337cb242e4d20661515"
+  },
+  {
+    "path": "public/konisi-game/live2d/manifest.json",
+    "bytes": 1799,
+    "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4"
+  },
+  {
+    "path": "public/konisi-game/live2d/physics-validation.mjs",
+    "bytes": 3479,
+    "sha256": "ba40bfc7d8da6062499f371292f9709a4d19cbb5966f0b2251dc1e65b9c37899"
+  },
+  {
+    "path": "public/konisi-game/live2d/renderer.mjs",
+    "bytes": 30836,
+    "sha256": "1f925b4f34b91e5504d3f40ee75adaf046a6f883cd6e061e80c704335346bb71"
+  },
+  {
+    "path": "public/konisi-game/live2d/seated/character.model3.json",
+    "bytes": 206,
+    "sha256": "bcb377da3fe9ce22b3374ed6449fc7d9e50650184333c0b74813078c13e81b75"
+  },
+  {
+    "path": "public/konisi-game/live2d/seated/seated-source-materials.2048/texture_00.png",
+    "bytes": 1623780,
+    "sha256": "0bd8a713fcba6d2118ff4921a198db5a91d0896c7ef1753f7e03d8cefc0c07d4"
+  },
+  {
+    "path": "public/konisi-game/live2d/seated/seated-source-materials.cdi3.json",
+    "bytes": 2198,
+    "sha256": "8869283efc9f60d57a1e2faccf8c8a8fb91db5ef1981e0bf80410d09f5298c64"
+  },
+  {
+    "path": "public/konisi-game/live2d/seated/seated-source-materials.moc3",
+    "bytes": 17664,
+    "sha256": "b811dc80c699e4546648bd5d60ca23e54028b98fddb5b72addc776e88585db94"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing-appearance.mjs",
+    "bytes": 15393,
+    "sha256": "b5b4c5026b8015e29648995d468fe6f210653c1b30fcb1e494459bd20275b847"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing-gaze.mjs",
+    "bytes": 5567,
+    "sha256": "ea09d1d0a6d4cb00516b7ff22a3955d4dc83502fffe937825eb27b05ec545271"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/appearance-body-mask.png",
+    "bytes": 37854,
+    "sha256": "ce9e2c7542f447fc08cd4b6e623524706e9137acd369f1c5b127510ed228716e"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/appearance-eye-mask.png",
+    "bytes": 801,
+    "sha256": "63fc2f072ee815a0f2ac952d2a87ab286110e3ae2c4da924fcc82c9d1b153ef3"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/appearance-face-mask.png",
+    "bytes": 2757,
+    "sha256": "2c473a6f02726e4e285b6e794d170bcd6279cc41dd28971f7a32ff309be1d793"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/appearance-masks.json",
+    "bytes": 3131,
+    "sha256": "f47a40700d79edd5df33678681afcf920e39d4f2e394193b2b5eb4d7098b34bd"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/character.model3.json",
+    "bytes": 1626,
+    "sha256": "10b97f28ee2883f904684c1bea88dd0122f72a2e9ae06f5a7ee53212cf9dbaa5"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/detailed/character.model3.json",
+    "bytes": 354,
+    "sha256": "f4fa7c5e35be6fa3bedca6ff8a35c62ff46496f47cec5fc939bc97a7bbdc591c"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/detailed/rig-contract.json",
+    "bytes": 10531,
+    "sha256": "580d1e64378b330040b4e00297d7b674b2c1ccb7577ab71239b695e35f4561cc"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/detailed/standing-detailed.4096/texture_00.png",
+    "bytes": 3188567,
+    "sha256": "5e2bb36f32a65ecf0cfd1183e28ef9a5467394a5b9c5ca634322c060eef41453"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/detailed/standing-detailed.cdi3.json",
+    "bytes": 11106,
+    "sha256": "098fe2d511d6d5f3e0410262163ab49f12a368f20f2b78c95cb961ac952f7f11"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/detailed/standing-detailed.moc3",
+    "bytes": 131328,
+    "sha256": "0e496d30e887f48e5daf432556ccaf1be0726a2617a2485d91703ac60f065e46"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/detailed/standing-detailed.model3.json",
+    "bytes": 323,
+    "sha256": "6bd34476200dbedea469c1ed15c4b16ff4a9fd1de1cb2928d764211269a277a5"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/detailed/standing-detailed.physics3.json",
+    "bytes": 18369,
+    "sha256": "70d2f649d0692e0fc23f0a0fed3c6ff998bc075063da9258d82e1ffdd81f7c40"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/native-2026-10-18/character.model3.json",
+    "bytes": 1374,
+    "sha256": "04d6e91315284e3a1f393cef0269c4b0dd6e963885c10956b7dc2de669103da2"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/native-2026-10-18/cubism-export.model3.json",
+    "bytes": 412,
+    "sha256": "55d3c2a11083ef9e88ab3fb4875747483d5ec65b3e94fafa7bd9aa78a22ad94b"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/native-2026-10-18/expressions/blink.exp3.json",
+    "bytes": 230,
+    "sha256": "ab1ed90a19c487eeba40e91226c22684dd4c1594eb52cc7afe122b058a8597a6"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/native-2026-10-18/expressions/neutral.exp3.json",
+    "bytes": 230,
+    "sha256": "2402406b6c21a56e7724632a6bdbeeb4418b68ad19acf98626a12070e1cb72f6"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/native-2026-10-18/motions/idle.motion3.json",
+    "bytes": 829,
+    "sha256": "6d01f8b2c4239ce4c83193b56b0055cc70ac2415ed751f7825506a3b314df80e"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/native-2026-10-18/motions/pat.motion3.json",
+    "bytes": 828,
+    "sha256": "18730db087039da31dc76a4d2af5c5f864f96a92a8961205789b03aac86e8dc7"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/native-2026-10-18/motions/pinch.motion3.json",
+    "bytes": 950,
+    "sha256": "876b3d804096f21485ba3cfdd998a2a462aa19f834cbbaf4feff2201f813ef98"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/native-2026-10-18/motions/poke.motion3.json",
+    "bytes": 920,
+    "sha256": "9b87dde872f11fe81bd6b3ff15407b4ebacc6792974b158c89043f0633387ea2"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/native-2026-10-18/motions/rub.motion3.json",
+    "bytes": 1137,
+    "sha256": "f63df999142d47fb1b935fae70e45154677734afbdd3d5aa093cb82828c4d0ad"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/native-2026-10-18/motions/tap.motion3.json",
+    "bytes": 815,
+    "sha256": "e16e460660f5f479486c2fcc13441b8e4cd2aba761f32cb4a3e99261da0e2eac"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/native-2026-10-18/motions/tickle.motion3.json",
+    "bytes": 1308,
+    "sha256": "fb44b831d8f52ad99ad8821d67bae41dcdbb7b9b6b4917b6ed59946c602a1b0d"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.4096/texture_00.png",
+    "bytes": 3195709,
+    "sha256": "90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.4096/texture_01.png",
+    "bytes": 21869,
+    "sha256": "61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.cdi3.json",
+    "bytes": 11344,
+    "sha256": "03aba1480ab632b11a8c6d79fb9ec0b779190ccb7acccb7640b7794d039ca267"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.moc3",
+    "bytes": 144192,
+    "sha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.physics3.json",
+    "bytes": 18369,
+    "sha256": "70d2f649d0692e0fc23f0a0fed3c6ff998bc075063da9258d82e1ffdd81f7c40"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/standing-rough-parts.2048/texture_00.png",
+    "bytes": 1594927,
+    "sha256": "587b00ffb1a68edb18af92ce6e464160d27a333f1ad10896bfc3edb442b5865c"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/standing-rough-parts.cdi3.json",
+    "bytes": 2198,
+    "sha256": "8869283efc9f60d57a1e2faccf8c8a8fb91db5ef1981e0bf80410d09f5298c64"
+  },
+  {
+    "path": "public/konisi-game/live2d/standing/standing-rough-parts.moc3",
+    "bytes": 20672,
+    "sha256": "db816fa04fff6240a591c574193ce3bf58472058115a1cae02bc56312491a7bc"
+  },
+  {
+    "path": "public/konisi-game/live2d/texture-compositor.mjs",
+    "bytes": 13693,
+    "sha256": "1a8a9000a2779e1568af37a835e82f68ed6a382c04ff4c4703210a2a861461fd"
+  },
+  {
+    "path": "public/konisi-game/live2d/vendor/cubism-framework-5-r.5.mjs",
+    "bytes": 173045,
+    "sha256": "e5ede280b79096cd8cde05ba6207e11758441ece25d311bafef75804ef38561a"
+  },
+  {
+    "path": "public/konisi-game/live2d/vendor/licenses/CORE-LICENSE.md",
+    "bytes": 520,
+    "sha256": "b81e37048010ef1d336106151201a0323c3309cae44aecdedf57831fe88fa991"
+  },
+  {
+    "path": "public/konisi-game/live2d/vendor/licenses/CORE-RedistributableFiles.txt",
+    "bytes": 205,
+    "sha256": "d16c123688299e1e69a7f5ebc01b3bd75a8d408c024002a7d35b2aae94003f8c"
+  },
+  {
+    "path": "public/konisi-game/live2d/vendor/licenses/FRAMEWORK-LICENSE.md",
+    "bytes": 2234,
+    "sha256": "7ed849bff1e6499aa7cd882e47d246ddbbe06817c1e84cb974df949488302614"
+  },
+  {
+    "path": "public/konisi-game/live2d/vendor/licenses/SDK-LICENSE.md",
+    "bytes": 3042,
+    "sha256": "787a7d1454240865420b96ea9a20ab5e1a5ec3c1abced2e308288c2de8aac991"
+  },
+  {
+    "path": "public/konisi-game/live2d/vendor/live2dcubismcore.d.ts",
+    "bytes": 15015,
+    "sha256": "25fcaa2a6dfe311db95ad1795a2a7e6286d9192719df4e2c3e634915dc050334"
+  },
+  {
+    "path": "public/konisi-game/live2d/vendor/live2dcubismcore.min.js",
+    "bytes": 228042,
+    "sha256": "8741f739779b5d5210872bd3d7d99f0f1e56e6c87409e7d26d6bb4b80aa1ef47"
+  },
+  {
+    "path": "public/konisi-game/live2d/vendor/provenance.json",
+    "bytes": 947,
+    "sha256": "95885106674cb09a2de4ff6a822b9f7f0f5e7a471ccb800cba0909543fc48b1c"
+  },
+  {
+    "path": "public/konisi-game/live2d/vendor/shaders/fragshadersrcalphablend.frag",
+    "bytes": 2189,
+    "sha256": "855b247f02042a808a41e282ee4d7de7cc4533abeb5032b4ab8fe84f7dec107f"
+  },
+  {
+    "path": "public/konisi-game/live2d/vendor/shaders/fragshadersrccolorblend.frag",
+    "bytes": 7525,
+    "sha256": "01d4bf6a14b4a738976e9a538767a21da0defa8816f3845a7df08a7713327538"
+  },
+  {
+    "path": "public/konisi-game/live2d/vendor/shaders/fragshadersrccopy.frag",
+    "bytes": 429,
+    "sha256": "15c67a4ec3adda4c849aff2a8319a3f6aceef8a84d5e5e1f3fb7fd9cd681193c"
+  },
+  {
+    "path": "public/konisi-game/live2d/vendor/shaders/fragshadersrcmaskinvertedpremultipliedalpha.frag",
+    "bytes": 1051,
+    "sha256": "1005cff8113de587cf1c0e295288d04d85f0f4ebc223684c8340e017fd8fc788"
+  },
+  {
+    "path": "public/konisi-game/live2d/vendor/shaders/fragshadersrcmaskpremultipliedalpha.frag",
+    "bytes": 1043,
+    "sha256": "f84ff615393d26ea6ab7c28747803db6472524c92567c0ad01e8225fbab36a3b"
+  },
+  {
+    "path": "public/konisi-game/live2d/vendor/shaders/fragshadersrcpremultipliedalpha.frag",
+    "bytes": 747,
+    "sha256": "c93abe215357cc782a25fc4ef20f5fe1f34e2cc193ee23d763b56b81fae5fce1"
+  },
+  {
+    "path": "public/konisi-game/live2d/vendor/shaders/fragshadersrcpremultipliedalphablend.frag",
+    "bytes": 2038,
+    "sha256": "2155076275199a2946959838391dfb856e9d1db91b6ca3abd19ed70d4ff27e15"
+  },
+  {
+    "path": "public/konisi-game/live2d/vendor/shaders/fragshadersrcsetupmask.frag",
+    "bytes": 736,
+    "sha256": "3cccc0b68a56cfbf4bd4841b0a759431dd159812c38dc280981ba633fa0afe7a"
+  },
+  {
+    "path": "public/konisi-game/live2d/vendor/shaders/vertshadersrc.vert",
+    "bytes": 465,
+    "sha256": "291ed3f35f71f1e71e6df33fb055f009a8a9b36ee664f74f24f6cefef0c4029b"
+  },
+  {
+    "path": "public/konisi-game/live2d/vendor/shaders/vertshadersrcblend.vert",
+    "bytes": 738,
+    "sha256": "2589837bd7a6a550a1c3af41b4fa776011e6e71f2531320fa39afcb83b209bf4"
+  },
+  {
+    "path": "public/konisi-game/live2d/vendor/shaders/vertshadersrccopy.vert",
+    "bytes": 392,
+    "sha256": "b7bc4ba7517f405af4812ac47d99bc2b633c99f463c1224029556b00e8dff3cf"
+  },
+  {
+    "path": "public/konisi-game/live2d/vendor/shaders/vertshadersrcmasked.vert",
+    "bytes": 559,
+    "sha256": "6704a9df2e6d3ee5176c72fca4ba59358ba4827a07054b1e0a72a3c574e281fd"
+  },
+  {
+    "path": "public/konisi-game/live2d/vendor/shaders/vertshadersrcsetupmask.vert",
+    "bytes": 536,
+    "sha256": "649aad2f6c0af55a7a4adcf33dbf78937ef9d77ed6ba917fd716176adce25afe"
+  },
+  {
+    "path": "public/konisi-game/models.js",
+    "bytes": 10976,
+    "sha256": "6395920ca2ec9ef1109b9602fc929afdb0b74d98c959bf0ac1dd38dd99f3a73e"
+  },
+  {
+    "path": "public/konisi-game/seated.html",
+    "bytes": 2647,
+    "sha256": "418bbec61f1db9cf7d72a16efbdbacdecb722e3c0dc6540bc6d60d1f28611e20"
+  },
+  {
+    "path": "public/konisi-game/角色完整原画.png",
+    "bytes": 1130582,
+    "sha256": "01834834828b5d06f7d6bb161f1179347efead885bbafa4406e75231e98119d1"
+  },
+  {
+    "path": "public/logo-girl.png",
+    "bytes": 1708158,
+    "sha256": "fbac0babf1edd314eb6ff531d855162b0cd23beaff642476d6986ca7a80a1008"
+  },
+  {
+    "path": "scripts/check-live2d.mjs",
+    "bytes": 10299,
+    "sha256": "b9d4fe00eccb4018ff6141d761d3c876f2846f8551bab3d41e9165c66fa70343"
+  },
+  {
+    "path": "scripts/dev-design.mjs",
+    "bytes": 761,
+    "sha256": "2f19f27de437cf98bdf16055dedd086751a280d4f81405db66527ff56a7cc682"
+  },
+  {
+    "path": "scripts/test-live2d-check.mjs",
+    "bytes": 8466,
+    "sha256": "4a8b6869683b7991980f9f179ea529788b31b3feb5cd3de4af67cf3899bcc101"
+  },
+  {
+    "path": "src/app/account/DeleteAccount.tsx",
+    "bytes": 2112,
+    "sha256": "8171167980db8ee261a6c29031a771fbb3bb29d3e9c5bc800a506857fccb088b"
+  },
+  {
+    "path": "src/app/account/ProfileEditor.tsx",
+    "bytes": 8786,
+    "sha256": "87872200d342b05bc755eefc345979b3e5292485af1533b896b9e0d7646314b5"
+  },
+  {
+    "path": "src/app/account/VerificationForm.tsx",
+    "bytes": 2481,
+    "sha256": "5b95561f2fb012534d6f29b1dc69c431b54b99aca99f59c01b41547bdc951b56"
+  },
+  {
+    "path": "src/app/account/page.tsx",
+    "bytes": 5952,
+    "sha256": "8ff3870b07b6187ea7465ea970576c89535121998fd57b2e822ae1c6876421d2"
+  },
+  {
+    "path": "src/app/admin/content/ContentManager.tsx",
+    "bytes": 11121,
+    "sha256": "a88a4869fe686cc8000958665f785d77cee035f6ef520678c40bd3d6367411c0"
+  },
+  {
+    "path": "src/app/admin/content/page.tsx",
+    "bytes": 1001,
+    "sha256": "6328fe1c6a06ad2e782656a2c3f7a9778d21f36dc03aee84041ae27dad02198e"
+  },
+  {
+    "path": "src/app/admin/discussion/ChatManager.tsx",
+    "bytes": 4332,
+    "sha256": "faf4f1645e9b073c7e4ca0e331d372cc4d86ff3ae8f808ac0995befe1739d403"
+  },
+  {
+    "path": "src/app/admin/discussion/page.tsx",
+    "bytes": 1696,
+    "sha256": "03cbf02da52454a5fed1bb4aed74af38c46d71173732ee6ee5c09db960bfe922"
+  },
+  {
+    "path": "src/app/admin/layout.tsx",
+    "bytes": 1238,
+    "sha256": "620d4a569f94c07b965d514ef2337fe96450cb69f3332bd1094f7211e9b41126"
+  },
+  {
+    "path": "src/app/admin/messages/MessageManager.tsx",
+    "bytes": 1573,
+    "sha256": "0e23071c7468eaa934a28c19a3836064c948afd944441b5eaf8165f40c475be2"
+  },
+  {
+    "path": "src/app/admin/messages/page.tsx",
+    "bytes": 812,
+    "sha256": "ea83bb679cad6d8f5de5f94352494af48231873e72e49a8bc9253fa5b2d29d67"
+  },
+  {
+    "path": "src/app/admin/page.tsx",
+    "bytes": 1707,
+    "sha256": "d5d57625832d5f2f65f729d01103bd791d32bb801c16e70a8bc6d43aac7123e9"
+  },
+  {
+    "path": "src/app/admin/profile-changes/ProfileChangeManager.tsx",
+    "bytes": 4457,
+    "sha256": "c01503979fd76804b68aed36f00df0f568a179b055ab245864f00b89ee412a31"
+  },
+  {
+    "path": "src/app/admin/profile-changes/page.tsx",
+    "bytes": 1605,
+    "sha256": "fd97bea23a82863f2e79f5204eafa57c4216ccfae269373b1001bf88feeb9d29"
+  },
+  {
+    "path": "src/app/admin/submissions/SubmissionManager.tsx",
+    "bytes": 4143,
+    "sha256": "eec8cd7cfe91b5ddb2a3b334eea75a278c2a7e4036798ff98ffaa1b6e3e460b5"
+  },
+  {
+    "path": "src/app/admin/submissions/page.tsx",
+    "bytes": 1831,
+    "sha256": "e9c5b7b07d45d336c4305439069dd0022ba26dd14e874491dc1272ec8be03b47"
+  },
+  {
+    "path": "src/app/admin/users/UserManager.tsx",
+    "bytes": 5624,
+    "sha256": "171980b0f38fdea3016cde411aecf99d8dceba5ac7558e3f8a4df911afaf309c"
+  },
+  {
+    "path": "src/app/admin/users/page.tsx",
+    "bytes": 1774,
+    "sha256": "c1c81f910a7ed0a5a9a80945b1e076ba2a636073e95397a45364918686e9f47e"
+  },
+  {
+    "path": "src/app/admin/verification/VerificationManager.tsx",
+    "bytes": 3174,
+    "sha256": "758d741bed7754d90c59dd25847f2343b52292b21dce512e710e1ff890dc3a0e"
+  },
+  {
+    "path": "src/app/admin/verification/page.tsx",
+    "bytes": 1192,
+    "sha256": "c265674f21a7a803689e644311ecf2948f30df8a5c51fbb62549b5e3ae026ea6"
+  },
+  {
+    "path": "src/app/auth/callback/route.ts",
+    "bytes": 400,
+    "sha256": "9dd5ba7b15471583f62aff944a1ead2fbadb0300107c578848415ee68f1f17a2"
+  },
+  {
+    "path": "src/app/globals.css",
+    "bytes": 38532,
+    "sha256": "cf9a7121b0c0d4d5230ecccc6f245cb6346271c4211eff3e7a2a48a91cf2b6be"
+  },
+  {
+    "path": "src/app/layout.tsx",
+    "bytes": 722,
+    "sha256": "bd00856ecec164def226eaf66dd221be20fafd636acc3fbab5589596d4848767"
+  },
+  {
+    "path": "src/app/level/2/members/FollowButton.tsx",
+    "bytes": 973,
+    "sha256": "226e94391a793f8d65d77ebc0b59e0a60e73fac3dd62e8e40d8645b24e58342a"
+  },
+  {
+    "path": "src/app/level/2/members/MemberDirectory.tsx",
+    "bytes": 2407,
+    "sha256": "9bb20f677ee35a4e919b56cda2cfbc0e669e45e97eb92cf07763857b2818c167"
+  },
+  {
+    "path": "src/app/level/2/members/[id]/page.tsx",
+    "bytes": 2656,
+    "sha256": "c3af19c48342f309d27bc56b3d6c6edf03913a7e12a55792117bebe929194b7e"
+  },
+  {
+    "path": "src/app/level/2/members/page.tsx",
+    "bytes": 1800,
+    "sha256": "1cf35dd2d44b62f19ca095973454b72d583109e4ed2da44de22142750a7fba07"
+  },
+  {
+    "path": "src/app/level/[level]/ContentFeed.tsx",
+    "bytes": 3480,
+    "sha256": "026c9000306528d670abd4082cf0e29b1c47b1afff9d3b4c2d76a460b180c94a"
+  },
+  {
+    "path": "src/app/level/[level]/LevelHeading.tsx",
+    "bytes": 748,
+    "sha256": "caca06385f74f25e7d861b4e1392e78933a9bebdaeb43856ba268b63e41e03e8"
+  },
+  {
+    "path": "src/app/level/[level]/LocalLevelPreview.tsx",
+    "bytes": 3068,
+    "sha256": "8a9a7bef2d946d743fd8c615184476ac88cb049d5b5a2447450274814686d542"
+  },
+  {
+    "path": "src/app/level/[level]/PrivateMessageBox.tsx",
+    "bytes": 1360,
+    "sha256": "ae3ebe3c3a6103e2ecbf410b8a4d232798b5f1f4dba0cf8a061b4a4a6aef5e9a"
+  },
+  {
+    "path": "src/app/level/[level]/WorkTemplateExample.tsx",
+    "bytes": 719,
+    "sha256": "c241056ac6d9f84e87dc25cd4a055cb34453e0ec3d7318c57f17c746b3a9be3d"
+  },
+  {
+    "path": "src/app/level/[level]/page.tsx",
+    "bytes": 4746,
+    "sha256": "b1bf0f02de144da4b53f88ec5fa31656b79db45d785d13c55fe5a7321224175d"
+  },
+  {
+    "path": "src/app/login/LoginForm.tsx",
+    "bytes": 4424,
+    "sha256": "7474a33e145e5a9f2be2019c063534170a5ceae3e6675f6f93746fdf5967089e"
+  },
+  {
+    "path": "src/app/login/page.tsx",
+    "bytes": 391,
+    "sha256": "0e1a7e7da4e5605cae475684694576d69425d694fbedc9148ea15af917c28106"
+  },
+  {
+    "path": "src/app/page.tsx",
+    "bytes": 3127,
+    "sha256": "fca44601c7be6f304e4cc8e88a1baf56e73ad7a839c85031b8d18366a5d76d26"
+  },
+  {
+    "path": "src/components/CharacterFrame.tsx",
+    "bytes": 387,
+    "sha256": "1c1319188fa9b65ec81146d409671b8db8a52f3df9e6520abd6ece40627be230"
+  },
+  {
+    "path": "src/components/DiscussionRoom.tsx",
+    "bytes": 12859,
+    "sha256": "7888f0d4cdbf95628d68cef0900ba36247badfd983789dc47d8909bed5a31043"
+  },
+  {
+    "path": "src/components/HomeCharacter.tsx",
+    "bytes": 6401,
+    "sha256": "72663827ea929a1d737a95565dc3af998141a157e78d710be6954107103bac20"
+  },
+  {
+    "path": "src/components/KonisiCharacterGame.tsx",
+    "bytes": 1190,
+    "sha256": "9ab62d37edba324624c8ab0a3f0ec23cf450048e214e7bffcd321b2dc937092c"
+  },
+  {
+    "path": "src/components/LogoutButton.tsx",
+    "bytes": 381,
+    "sha256": "785cdb308b3bce54cd59a00aba58c6edfca5d0dfeb3bdff1de17a87b668d5036"
+  },
+  {
+    "path": "src/components/SiteHeader.tsx",
+    "bytes": 1464,
+    "sha256": "c22deaf2abe316f74d36472dfbef9d1395ff04690f7b8d208bf1ed8d44ab40fe"
+  },
+  {
+    "path": "src/components/SubmissionBox.tsx",
+    "bytes": 5032,
+    "sha256": "f211073b651254a6308c85e0c14b8b087edbbc611ee9c012e5cf93238f4c0264"
+  },
+  {
+    "path": "src/components/ThemeToggle.tsx",
+    "bytes": 936,
+    "sha256": "47426f7fb48e99f670ac27f22be73890297f91d51870b1119313668b2a0ac8b8"
+  },
+  {
+    "path": "src/lib/auth.ts",
+    "bytes": 1842,
+    "sha256": "ec72cae240edb70d3e6b6511a6b8ce13be1a40824b26cfbae2b53e9f48c0dcde"
+  },
+  {
+    "path": "src/lib/local-design-mode.ts",
+    "bytes": 792,
+    "sha256": "6a9754f5304130b7a07dc9934ba586d0d92b5aeee677c78c5a18b86d22a60ea5"
+  },
+  {
+    "path": "src/lib/supabase/client.ts",
+    "bytes": 218,
+    "sha256": "223528371e71d1007c769935520714a2d0b4b599cf81064c240ed4a3beda1856"
+  },
+  {
+    "path": "src/lib/supabase/middleware.ts",
+    "bytes": 790,
+    "sha256": "3c02e68ae843183a613acb6e61fb018c092b1f38a1f403bf635f32f8058ffecb"
+  },
+  {
+    "path": "src/lib/supabase/server.ts",
+    "bytes": 569,
+    "sha256": "515ad9d51c9b32514a9e7e8aecdb112d6699fe01334701868bd35b3d4c2e20ac"
+  },
+  {
+    "path": "supabase/migrations/001_initial.sql",
+    "bytes": 11795,
+    "sha256": "b01618d64e7db33ace1dc4c948d54167eb06f2a68860b846a8f70169f50f7f64"
+  },
+  {
+    "path": "supabase/migrations/002_member_social_and_verification.sql",
+    "bytes": 10331,
+    "sha256": "b861f74dfb78bd76a87ad526f001456118fdeb4d348941f0eff8e45f15c6c9fa"
+  },
+  {
+    "path": "supabase/migrations/003_admin_member_directory_tools.sql",
+    "bytes": 2021,
+    "sha256": "ea95a4b5c7deed4abde5a12b1fe32aaba8f9cf704b322ed5f1d81022cd8509b2"
+  },
+  {
+    "path": "supabase/migrations/004_chat_member_profiles.sql",
+    "bytes": 1401,
+    "sha256": "00aa52cb8d2a929b8f9639668d4e14389f730e6d8258bf5bd62f000e19de45e1"
+  },
+  {
+    "path": "supabase/migrations/005_chat_comments_and_level_labels.sql",
+    "bytes": 4174,
+    "sha256": "ee8081ce37f72c9ffd51ce77e6f22d745bbeb07fe7b8207de7c80da558da0a44"
+  },
+  {
+    "path": "supabase/migrations/006_chat_comments_privilege_hardening.sql",
+    "bytes": 218,
+    "sha256": "9bb0eda9b2fe5235b5d1c70355233ba2dc07249ee55a0f341dd943ad855b0ce3"
+  },
+  {
+    "path": "supabase/migrations/007_profile_locks_verification_id_and_performance.sql",
+    "bytes": 11448,
+    "sha256": "4f8f67f804f62dc91310d0746772812e105aa645a235a8ed87be7a8f103d216a"
+  },
+  {
+    "path": "supabase/migrations/008_performance_indexes.sql",
+    "bytes": 1330,
+    "sha256": "3061c7ee5de3202175ad18fd366b13d84e814d693ed78f551b28d87a3cd823cb"
+  },
+  {
+    "path": "supabase/migrations/009_admin_security_private_messages_and_verified_accounts.sql",
+    "bytes": 8676,
+    "sha256": "a1eed1a9931bd1c2a415b0feeb9a5918adf8c69edf5fce47af89377969ac9525"
+  },
+  {
+    "path": "supabase/migrations/20260918003533_profile_review_and_work_catalog.sql",
+    "bytes": 8311,
+    "sha256": "075aef2a044b8e39ea481ea5a1dff47099ae9ab05bbbe1ceb4ae0ae64722b539"
+  },
+  {
+    "path": "tsconfig.json",
+    "bytes": 560,
+    "sha256": "8fbea2b3421d523bb35af3cd6ff9545c6d9a611862ea49936879ffcb17a06eb3"
+  },
+  {
+    "path": "verification/iframe-transparency-2026-10-18/authorized-css-delta.json",
+    "bytes": 41320,
+    "sha256": "009785b7a0dd1140b4a4ff09a6e4b496f1d5608651de78717c09ba91b02a35f3"
+  },
+  {
+    "path": "verification/iframe-transparency-2026-10-18/browser-fix-verification.json",
+    "bytes": 21601,
+    "sha256": "bcf34d9376ebcc8e2192dfc66ffb8ae29d91dcb8a60ba66bfbdda56b48178506"
+  },
+  {
+    "path": "verification/iframe-transparency-2026-10-18/build/build-checks.json",
+    "bytes": 7009,
+    "sha256": "690b0bc4c1aec22c58a452c49298b215bb75439ed7cdf005786a6420451e0735"
+  },
+  {
+    "path": "verification/iframe-transparency-2026-10-18/build/next-build-native.log",
+    "bytes": 1900,
+    "sha256": "b08fce0d5f762d94a6d3a7b6769b196993572ebe52c52af704a9b7958f7652fc"
+  },
+  {
+    "path": "verification/iframe-transparency-2026-10-18/build/project-live2d-structure.log",
+    "bytes": 1124,
+    "sha256": "bfcff88a95f0ad32715d39ad6a701fc0a07c2b84911f116329fe9757085ff921"
+  },
+  {
+    "path": "verification/iframe-transparency-2026-10-18/build/project-live2d-tests.log",
+    "bytes": 1446,
+    "sha256": "c1ceb188ffa8b7565d21be4c6215b5185c21b4058b9f98869628a84cac9f6f16"
+  },
+  {
+    "path": "verification/iframe-transparency-2026-10-18/build/typescript-native.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/iframe-transparency-2026-10-18/images/chrome-phone.png",
+    "bytes": 461046,
+    "sha256": "32d409cb1adbc7f2e28b654471b99190ec7e7a0f5f0eba51223d86e9ddb0d816"
+  },
+  {
+    "path": "verification/iframe-transparency-2026-10-18/images/edge-phone.png",
+    "bytes": 461056,
+    "sha256": "9858d0493653b40404cbc8fa75178181c1a65c4a1406231e731603e4224596d3"
+  },
+  {
+    "path": "verification/iframe-transparency-2026-10-18/images/fixed-desktop.png",
+    "bytes": 305104,
+    "sha256": "a672d12d0e1fa48297981d3e09de9b176f3f0cbf5475f1962b34b0f1b8558fab"
+  },
+  {
+    "path": "verification/iframe-transparency-2026-10-18/images/remote-after.png",
+    "bytes": 302421,
+    "sha256": "08cffea5e1ffb7e78a9636dc7a354d7499576bdd7ba3974bddc4ad49d6bf1fe9"
+  },
+  {
+    "path": "verification/iframe-transparency-2026-10-18/images/remote-before.png",
+    "bytes": 295823,
+    "sha256": "7c3a7431a69cb287725986840cbd0f0b521fb5baee53e3226f31669f1798c49b"
+  },
+  {
+    "path": "verification/iframe-transparency-2026-10-18/production-compiled-css.json",
+    "bytes": 1173,
+    "sha256": "d744a7ac59bf285487d9ef976edbe045b009651f1da9e24d04c3e000c3afdaac"
+  },
+  {
+    "path": "verification/iframe-transparency-2026-10-18/raw/css-delta.json",
+    "bytes": 41320,
+    "sha256": "009785b7a0dd1140b4a4ff09a6e4b496f1d5608651de78717c09ba91b02a35f3"
+  },
+  {
+    "path": "verification/iframe-transparency-2026-10-18/raw/local.json",
+    "bytes": 34636,
+    "sha256": "1355c13951f75dddde7c46e3877298124fc98af254c033858564f99077df10d3"
+  },
+  {
+    "path": "verification/iframe-transparency-2026-10-18/raw/remote.json",
+    "bytes": 35184,
+    "sha256": "39db0a513bb131744b0e1e26ac1e9d666f8e0b2762ec68eabc1a0da68c42b9cd"
+  },
+  {
+    "path": "verification/iframe-transparency-2026-10-18/raw/run1.json",
+    "bytes": 44525,
+    "sha256": "d2a56cb8492e9278b0bbe539e7f02efc201011ce471241fe3ddafb1b428e8762"
+  },
+  {
+    "path": "verification/iframe-transparency-2026-10-18/raw/run2.json",
+    "bytes": 11638,
+    "sha256": "766b07eb9291e5e9dee3505b60344771f1d8d3707522bc99dc52c9a6b9a101e1"
+  },
+  {
+    "path": "verification/iframe-transparency-2026-10-18/raw/version.json",
+    "bytes": 2743,
+    "sha256": "372cd955a0f044ff236cf4232881e742780c5ecfc5969c8c2080baf9e99bf16d"
+  },
+  {
+    "path": "verification/iframe-transparency-2026-10-18/source-comparison.json",
+    "bytes": 42193,
+    "sha256": "de83f341922dbe2c4b3865f57862fb4307cb9b58cced1ff6ae4b736b929b0bf4"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/accepted-eye-reference/accepted-appearance-contract.json",
+    "bytes": 6042,
+    "sha256": "db4f7d4484b4f837c0cef4cf3694b700de40fa55acd58d9e2010040ea904fc63"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/accepted-eye-reference/accepted-geometry-evidence.json",
+    "bytes": 97194,
+    "sha256": "1abdf82a0c3ddccec573473d77c25333d674b928cb1da420432d706e56ac6af4"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/accepted-eye-reference/accepted-neutral-reference.png",
+    "bytes": 1347899,
+    "sha256": "1531f1c64f9ba6a08b4284454e5a4db168467f59ee0a02a28e551304013a780f"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/accepted-eye-reference/accepted-neutral-reference.rgba.gz",
+    "bytes": 1473566,
+    "sha256": "b92a403ad93e8a86ffda435426b5d897853034a045711415d1a8752bb6ae1aa6"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/accepted-eye-reference/accepted-user-review.png",
+    "bytes": 66829,
+    "sha256": "06cdd29030b0ef00f17b90bc4ab5824a48a69fd963c41211ca2fc76d25beab24"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/accepted-eye-reference/base74-pixel-transfers-verification.json",
+    "bytes": 196828,
+    "sha256": "ff33d120fe61712097c160514bd41562599987d019b37dc2aaf8d965cff21b22"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/accepted-eye-reference/final-neutral-policy.json",
+    "bytes": 4364,
+    "sha256": "44707e98164944aef1e5b85573fb638f85de570e434201abdd5c4b7e675ff790"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/accepted-eye-reference/historical-strict-original-failure.json",
+    "bytes": 40028,
+    "sha256": "9a356fb6273a11f11a44f5e45d09cd8e3a1b3165fef964ecc0fc920e3f0395e5"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/accepted-eye-reference/reference-freeze-evidence.json",
+    "bytes": 1517,
+    "sha256": "a22c98f45ba46e6e44d8ac086c930b4988a3b363279c5a24f3eea5a26f22e66f"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/build-checks.json",
+    "bytes": 6984,
+    "sha256": "fa3b8e0949a9bb53964292b976a8be03ed449734ebc04e5140f2c515f5be6892"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/model-qa-final-summary.json",
+    "bytes": 9833,
+    "sha256": "63ba3e26de071c55236c5bea14a18483d97116f664e447f17b18fa8af7128254"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/native-accepted-appearance-negative-controls.json",
+    "bytes": 3554,
+    "sha256": "6494cbce6ba35cd923556879ba148ee95d6a9b811c7237a3905f061fa0662d95"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/native-accepted-appearance-regression.json",
+    "bytes": 13514,
+    "sha256": "2877348750dada171e8f7f64b9b5099171ccb63f5e5cf873afbb2debe19399de"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/native-browser.json",
+    "bytes": 166530,
+    "sha256": "cd2dfa462902bba41e5d986fb997af5a6a1e4bcb19da56a5e5eea771ac4d4ee2"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/native-core-and-assets.json",
+    "bytes": 152435,
+    "sha256": "32c37d921dc1a4ca4b8b467e1dc920d575c8a618f8623c2d0c29f811cd9fdcae"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/native-eye-coverage.json",
+    "bytes": 84657,
+    "sha256": "afe61af15024681c117eaef0c2ccf91eae41da7da36aae89d49653b1a694ec04"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/native-gaze-27-grid.png",
+    "bytes": 259249,
+    "sha256": "be704752e8c180c8ca986d6f4bbbe763d085514bfa7ab9c1c31450817d6c84fb"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/native-gaze-center.png",
+    "bytes": 1347899,
+    "sha256": "1531f1c64f9ba6a08b4284454e5a4db168467f59ee0a02a28e551304013a780f"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/native-gaze-left.png",
+    "bytes": 1348220,
+    "sha256": "aec861d121c144b559a76b9dbb8d9f63bf3ac07381fb68f0a4025c2fc5ee794b"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/native-gaze-right.png",
+    "bytes": 1347691,
+    "sha256": "45ca131498dfd98553f8c5aa4541d8e8b90d19dae9c50d9216ae3cd9c0d65850"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/native-helper-coverage.json",
+    "bytes": 43398,
+    "sha256": "ed797e20a22d862d0e4f2720f72781631dd0d5e4b552a5227540bb07f88d09c3"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/native-neutral-comparison.png",
+    "bytes": 291515,
+    "sha256": "c76a3c24a12ff3052803798c9780093db214307e9907220f20bf1a98c54ea820"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/native-neutral-difference.png",
+    "bytes": 43549,
+    "sha256": "0ddfe0323e2cb3538d1ec3970aae0a2810eec1dd0b71c8863e9a8c043ba09591"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/native-neutral-final.png",
+    "bytes": 1347899,
+    "sha256": "1531f1c64f9ba6a08b4284454e5a4db168467f59ee0a02a28e551304013a780f"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/native-neutral-original.png",
+    "bytes": 1347609,
+    "sha256": "f7dffa54b343d470147af310e6f881124c14cd51460af9383d50181e97d3226a"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/native-neutral-pixels.json",
+    "bytes": 53269,
+    "sha256": "cf5d2e59aa088daf85b63df742a83caa6b1e833b31a27afc3fbd2a7751717f1a"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/native-neutral-vs-original.json",
+    "bytes": 165317,
+    "sha256": "d79391a25fb971b3f0128afa46d86276174eb50ef741211f07412e98b74ad903"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/next-build-native.log",
+    "bytes": 2109,
+    "sha256": "5f2f1ceaa7b9126b8637996e29d6772196f90276d417044d37255155baa24486"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/project-live2d-structure.log",
+    "bytes": 1099,
+    "sha256": "5ac0f93e3e9c3211ef3c0c39f3cd05711ac021649dab60fe6d993ad16bbc9016"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/project-live2d-tests.log",
+    "bytes": 1443,
+    "sha256": "2beb461f9175aa5737da98bb1e3eaa926cb4695b8eadce57e6b0895665e3c616"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/qa-source/README.zh-CN.txt",
+    "bytes": 495,
+    "sha256": "83b09e09e9cbc54d3d898ea965b36e4e30c683d248f065f4ce5dea2eeee17240"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/qa-source/accepted-appearance-contract.cjs",
+    "bytes": 3255,
+    "sha256": "9ae3b3eb29dafa5aa7e6178af9730d0a64920450abbeead07031584a067165a4"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/qa-source/compare-native-neutral.cjs",
+    "bytes": 17426,
+    "sha256": "b9f19466d710577e1cb0edc43a2daf7624e3af661f8e05740098e58f02e2de57"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/qa-source/test-accepted-appearance-contract.cjs",
+    "bytes": 3725,
+    "sha256": "95dd04eb9b05c9b1dfccf489a8c4f7fe5552a04d4e573dbeb84092233342fce0"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/qa-source/verify-correct-base74-transfers-2026-10-18.py",
+    "bytes": 5450,
+    "sha256": "30d33c225d9681934baa607a46624ec7a3132bbb9fbd4d9e40f77479d9a83df9"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/qa-source/verify-native-neutral-pixels.cjs",
+    "bytes": 14798,
+    "sha256": "fe17eefc15abc741e510dfe403af80fd25852691fb900f21c571fdab3c243b91"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/source-comparison.json",
+    "bytes": 9419,
+    "sha256": "07059a014b3743d330246760dba0334ac15e26a4a139fef8172b970d172a3f42"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/source-files.sha256.json",
+    "bytes": 53077,
+    "sha256": "88f93758782ee5f2adbb906998b748c92e9a6779c5331fb8f73196cfc161d9ec"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/tested-native-eye-rig.json",
+    "bytes": 230,
+    "sha256": "91870239544da9ac218d642adf64c4908e784fbc3a043d5cf425a49daf887d0c"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/tested-source-snapshot.json",
+    "bytes": 40408,
+    "sha256": "34940dc0e295882a3a0442825e48bcff3503546a705f7af4b6e2af0da54a2975"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/typescript-native.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/website/legacy-main/live2d-kneeling-desktop.png",
+    "bytes": 415545,
+    "sha256": "401ea3780793c89a38969da3f852c52448c163157f4609b1ffbdc6540946b0b9"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/website/legacy-main/live2d-kneeling-mobile.png",
+    "bytes": 252214,
+    "sha256": "7b8f3b3cbf963de71238f836a0127064149c9508ac76cbd8be5c38491750ed81"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/website/legacy-main/live2d-seated-desktop.png",
+    "bytes": 349582,
+    "sha256": "0f9a650e8027497384c1db3ff3098c0b259b895c009ccf9d816f7f3548e6947c"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/website/legacy-main/live2d-seated-mobile.png",
+    "bytes": 218897,
+    "sha256": "d2f21b0a4276ac347bd0868cd4a615638327db767b2352b46e66e94128f0600b"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/website/legacy-main/website-detailed-integration.json",
+    "bytes": 8251,
+    "sha256": "0423fa4067c0704f80660d0af631ed4f693a2f54c48a665bb3add09543a8a716"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/website/legacy-texture/standing-detailed-reference-blink-overknee.png",
+    "bytes": 311086,
+    "sha256": "22cc376d6a469e6ddacf2f5378857e2172f8d9aa6f57992e79f7249f7f4b831d"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/website/legacy-texture/standing-detailed-reference-happy-tights.png",
+    "bytes": 497564,
+    "sha256": "b9f4e23cba0f7c966603b7d1b1f99b68aad984f2a23d1b36739af99205f64b10"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/website/legacy-texture/standing-detailed-reference-neutral.png",
+    "bytes": 289188,
+    "sha256": "de284604ec5cf93781d88c37e4b45ca1c22d9651d3881533c5a2a9d80a1a47b7"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/website/legacy-texture/standing-detailed-texture-variants.json",
+    "bytes": 247236,
+    "sha256": "a4990d6cce2efa017593aac2a22d55e176b210aad7ab2705607d082e4c93d3c8"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/website/native-expression-transition-diagnostic.json",
+    "bytes": 1807,
+    "sha256": "64af7f5727cd71218d9e63cc5de8c43fa12a725a62c3f171237fc6c4d021f466"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/website/native-pet-gaze-left.png",
+    "bytes": 143799,
+    "sha256": "6c9caab21bf1af5537077d40f524b5f2120917acc82ba59400e7a1c9c06db609"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/website/native-pet-gaze-right.png",
+    "bytes": 143797,
+    "sha256": "8e1da23dcd2b46b07883624ee788b6a3d7cd49a602ee821fa2279ba5e471a1c6"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/website/next/next-candidate-report.json",
+    "bytes": 5448,
+    "sha256": "2008d4c1fe88e24e6246f8cc251587906c353b9325e734944b5ae0a367e67016"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/website/next/next-home-native-candidate.png",
+    "bytes": 333747,
+    "sha256": "9d6c84346f309024a1e558a86dee124990cdc71358a5a15ae4e63de3a528cdfe"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/website/next/next-level-1.png",
+    "bytes": 477154,
+    "sha256": "dec2a64ee2dc2d5055b41ef2263997d8d4ce65ef50a477b858c77ccf80a5ecd7"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/website/next/next-level-2.png",
+    "bytes": 574893,
+    "sha256": "54fa1a902e16b0d0f2f738a966e8ff83aafa1a6da9ff3a09ee50eb0feeeb7d22"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/website/next/next-outfits-report.json",
+    "bytes": 1919,
+    "sha256": "04068fa35abef933784e0cf7e7a5169fcdc3f7cb112d971af1ff8e20963af1ee"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/website/pet-settings-desktop.png",
+    "bytes": 56483,
+    "sha256": "8ee39a4efab045e7ae2cee087a58c95aace9747e75408d87d4f4cf29898c1158"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/website/pet-settings-mobile.png",
+    "bytes": 23416,
+    "sha256": "e9364bc791e5c28fc27feefb2395d1308f32785e91db8a787cf61d5eab4dfcf0"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/website/pet-transparent-desktop.png",
+    "bytes": 143739,
+    "sha256": "3a31f5227ef723d123e9c6ee0a5b8b3d5ea0637201f6c13d464d470d458e9368"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/website/pet-transparent-mobile.png",
+    "bytes": 60806,
+    "sha256": "2a344ed838de467ebdeb536eeb07f9c8d46f1631415d354f56a20e2132061c66"
+  },
+  {
+    "path": "verification/native-live2d-2026-10-18/website/website-native-pet.json",
+    "bytes": 26324,
+    "sha256": "5f3c45ab8f23d0c6d8a3e2a6e6639adaab46bcc9ad1dcf40e6c6af39a533c546"
+  },
+  {
+    "path": "完整版使用说明.txt",
+    "bytes": 1460,
+    "sha256": "86def2b53bd677c2c2586ba263442afb6e6cdfedea77f91c3d86c967feafe967"
+  }
+]

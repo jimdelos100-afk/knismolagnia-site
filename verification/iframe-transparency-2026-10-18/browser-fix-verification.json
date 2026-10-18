@@ -1,0 +1,554 @@
+{
+  "date": "2026-10-18T14:22:56.188359+00:00",
+  "scope": "CSS-only companion iframe color-scheme repair. Actual composited screenshot pixels over the real parent page are checked, not only CSS background or canvas alpha. No model/head/gaze edit and no remote deployment.",
+  "serverMode": "Existing Next development preview at http://127.0.0.1:3210/. Production compilation is recorded separately by root; no new production browser server was started.",
+  "testedCssSha256": "cf9a7121b0c0d4d5230ecccc6f245cb6346271c4211eff3e7a2a48a91cf2b6be",
+  "originalCssSha256": "d856270350ea780c334142e5f5548027c16dd6b660ec27893d9623d080cd4a59",
+  "checks": [
+    {
+      "name": "chrome155-page-light-os-light-initial-theme",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": [],
+        "iframeScheme": "light",
+        "childScheme": "light",
+        "framebufferCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "actualNonzeroAlphaPixels": 71613,
+        "lifecycle": {
+          "scenario": "initial-theme",
+          "initialTheme": "light"
+        }
+      }
+    },
+    {
+      "name": "chrome155-page-light-os-dark-initial-theme",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": [],
+        "iframeScheme": "light",
+        "childScheme": "light",
+        "framebufferCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "actualNonzeroAlphaPixels": 71613,
+        "lifecycle": {
+          "scenario": "initial-theme",
+          "initialTheme": "light"
+        }
+      }
+    },
+    {
+      "name": "chrome155-page-dark-os-light-initial-theme",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": [],
+        "iframeScheme": "light",
+        "childScheme": "light",
+        "framebufferCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "actualNonzeroAlphaPixels": 71613,
+        "lifecycle": {
+          "scenario": "initial-theme",
+          "initialTheme": "dark"
+        }
+      }
+    },
+    {
+      "name": "chrome155-page-dark-os-dark-initial-theme",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": [],
+        "iframeScheme": "light",
+        "childScheme": "light",
+        "framebufferCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "actualNonzeroAlphaPixels": 71613,
+        "lifecycle": {
+          "scenario": "initial-theme",
+          "initialTheme": "dark"
+        }
+      }
+    },
+    {
+      "name": "chrome155-page-light-os-dark-theme-toggle",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": [],
+        "iframeScheme": "light",
+        "childScheme": "light",
+        "framebufferCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "actualNonzeroAlphaPixels": 71613,
+        "lifecycle": {
+          "scenario": "theme-toggle",
+          "initialTheme": "light",
+          "themeAfterToggle": "dark"
+        }
+      }
+    },
+    {
+      "name": "chrome155-page-dark-os-light-theme-toggle",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": [],
+        "iframeScheme": "light",
+        "childScheme": "light",
+        "framebufferCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "actualNonzeroAlphaPixels": 71613,
+        "lifecycle": {
+          "scenario": "theme-toggle",
+          "initialTheme": "dark",
+          "themeAfterToggle": "light"
+        }
+      }
+    },
+    {
+      "name": "chrome155-page-dark-os-dark-minimize-restore",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": [],
+        "iframeScheme": "light",
+        "childScheme": "light",
+        "framebufferCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "actualNonzeroAlphaPixels": 71613,
+        "lifecycle": {
+          "scenario": "minimize-restore",
+          "initialTheme": "dark",
+          "minimized": true,
+          "restored": true
+        }
+      }
+    },
+    {
+      "name": "chrome155-page-dark-os-dark-mobile",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 173396,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": [],
+        "iframeScheme": "light",
+        "childScheme": "light",
+        "framebufferCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "actualNonzeroAlphaPixels": 24827,
+        "lifecycle": {
+          "scenario": "mobile",
+          "initialTheme": "dark"
+        }
+      }
+    },
+    {
+      "name": "edge139-page-light-os-light-initial-theme",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": [],
+        "iframeScheme": "light",
+        "childScheme": "light",
+        "framebufferCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "actualNonzeroAlphaPixels": 71613,
+        "lifecycle": {
+          "scenario": "initial-theme",
+          "initialTheme": "light"
+        }
+      }
+    },
+    {
+      "name": "edge139-page-light-os-dark-initial-theme",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": [],
+        "iframeScheme": "light",
+        "childScheme": "light",
+        "framebufferCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "actualNonzeroAlphaPixels": 71613,
+        "lifecycle": {
+          "scenario": "initial-theme",
+          "initialTheme": "light"
+        }
+      }
+    },
+    {
+      "name": "edge139-page-dark-os-light-initial-theme",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": [],
+        "iframeScheme": "light",
+        "childScheme": "light",
+        "framebufferCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "actualNonzeroAlphaPixels": 71613,
+        "lifecycle": {
+          "scenario": "initial-theme",
+          "initialTheme": "dark"
+        }
+      }
+    },
+    {
+      "name": "edge139-page-dark-os-dark-initial-theme",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": [],
+        "iframeScheme": "light",
+        "childScheme": "light",
+        "framebufferCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "actualNonzeroAlphaPixels": 71613,
+        "lifecycle": {
+          "scenario": "initial-theme",
+          "initialTheme": "dark"
+        }
+      }
+    },
+    {
+      "name": "edge139-page-light-os-dark-theme-toggle",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": [],
+        "iframeScheme": "light",
+        "childScheme": "light",
+        "framebufferCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "actualNonzeroAlphaPixels": 71613,
+        "lifecycle": {
+          "scenario": "theme-toggle",
+          "initialTheme": "light",
+          "themeAfterToggle": "dark"
+        }
+      }
+    },
+    {
+      "name": "edge139-page-dark-os-light-theme-toggle",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": [],
+        "iframeScheme": "light",
+        "childScheme": "light",
+        "framebufferCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "actualNonzeroAlphaPixels": 71613,
+        "lifecycle": {
+          "scenario": "theme-toggle",
+          "initialTheme": "dark",
+          "themeAfterToggle": "light"
+        }
+      }
+    },
+    {
+      "name": "edge139-page-dark-os-dark-minimize-restore",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": [],
+        "iframeScheme": "light",
+        "childScheme": "light",
+        "framebufferCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "actualNonzeroAlphaPixels": 71613,
+        "lifecycle": {
+          "scenario": "minimize-restore",
+          "initialTheme": "dark",
+          "minimized": true,
+          "restored": true
+        }
+      }
+    },
+    {
+      "name": "edge139-page-dark-os-dark-mobile",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 173396,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": [],
+        "iframeScheme": "light",
+        "childScheme": "light",
+        "framebufferCornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "actualNonzeroAlphaPixels": 24827,
+        "lifecycle": {
+          "scenario": "mobile",
+          "initialTheme": "dark"
+        }
+      }
+    },
+    {
+      "name": "Only the one authorized CSS declaration changed against the original delivered ZIP",
+      "pass": true
+    },
+    {
+      "name": "154 protected files retain the exact CSS exception and 153 other original hashes",
+      "pass": true
+    },
+    {
+      "name": "Standing MOC, all referenced assets, and final CMO hashes are unchanged",
+      "pass": true
+    },
+    {
+      "name": "All 16 completed cases used actual source CSS without temporary style injection",
+      "pass": true
+    },
+    {
+      "name": "All original 15 reports and their source snapshot remain byte-exact historical evidence",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "completedBrowserCases": 16,
+  "singleRun16PassClaim": false,
+  "executionHistory": [
+    {
+      "run": "first browser-context batch",
+      "passedCases": 13,
+      "reportFile": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\white-background-diagnostic-2026-10-18\\fixed\\first-context-batch-partial.json",
+      "reportSha256": "d2a56cb8492e9278b0bbe539e7f02efc201011ce471241fe3ddafb1b428e8762",
+      "errors": [
+        "frame.waitForFunction: Timeout 90000ms exceeded.\n    at one (C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\diagnose-companion-white-background-2026-10-18.cjs:46:14)\n    at async C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\diagnose-companion-white-background-2026-10-18.cjs:85:419"
+      ],
+      "note": "The sixth Edge context did not become ready within the unchanged 90-second limit. The cause was not established; this is preserved as a real observed timeout, not silently classified as harness-only."
+    },
+    {
+      "run": "remaining three Edge cases in separate fresh browsers",
+      "passedCases": 3,
+      "reportFile": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\white-background-diagnostic-2026-10-18\\fixed-remaining-edge\\actual-next-color-scheme-matrix.json",
+      "reportSha256": "766b07eb9291e5e9dee3505b60344771f1d8d3707522bc99dc52c9a6b9a101e1",
+      "errors": [],
+      "note": "No product or timeout change between runs. The timeout did not recur in these fresh runs. These actual measurements complete the required 16 scenarios; this does not prove why the earlier startup stalled."
+    }
+  ],
+  "protectedOriginalFiles": 154,
+  "unchangedOriginalFiles": 153,
+  "sourceCmoSha256": "d604fc6a7f2bac64ca033fbe21974ccde9f3ceff29be0132e4fd4425b4ce1988",
+  "standingModelFiles": {
+    "model": "public/konisi-game/live2d/standing/character.model3.json",
+    "mocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+    "files": {
+      "public/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.moc3": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+      "public/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.4096/texture_00.png": "90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30",
+      "public/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.4096/texture_01.png": "61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7",
+      "public/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.cdi3.json": "03aba1480ab632b11a8c6d79fb9ec0b779190ccb7acccb7640b7794d039ca267",
+      "public/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.physics3.json": "70d2f649d0692e0fc23f0a0fed3c6ff998bc075063da9258d82e1ffdd81f7c40",
+      "public/konisi-game/live2d/standing/native-2026-10-18/motions/idle.motion3.json": "6d01f8b2c4239ce4c83193b56b0055cc70ac2415ed751f7825506a3b314df80e",
+      "public/konisi-game/live2d/standing/native-2026-10-18/motions/tap.motion3.json": "e16e460660f5f479486c2fcc13441b8e4cd2aba761f32cb4a3e99261da0e2eac",
+      "public/konisi-game/live2d/standing/native-2026-10-18/motions/pat.motion3.json": "18730db087039da31dc76a4d2af5c5f864f96a92a8961205789b03aac86e8dc7",
+      "public/konisi-game/live2d/standing/native-2026-10-18/motions/poke.motion3.json": "9b87dde872f11fe81bd6b3ff15407b4ebacc6792974b158c89043f0633387ea2",
+      "public/konisi-game/live2d/standing/native-2026-10-18/motions/pinch.motion3.json": "876b3d804096f21485ba3cfdd998a2a462aa19f834cbbaf4feff2201f813ef98",
+      "public/konisi-game/live2d/standing/native-2026-10-18/motions/rub.motion3.json": "f63df999142d47fb1b935fae70e45154677734afbdd3d5aa093cb82828c4d0ad",
+      "public/konisi-game/live2d/standing/native-2026-10-18/motions/tickle.motion3.json": "fb44b831d8f52ad99ad8821d67bae41dcdbb7b9b6b4917b6ed59946c602a1b0d",
+      "public/konisi-game/live2d/standing/native-2026-10-18/expressions/neutral.exp3.json": "2402406b6c21a56e7724632a6bdbeeb4418b68ad19acf98626a12070e1cb72f6",
+      "public/konisi-game/live2d/standing/native-2026-10-18/expressions/blink.exp3.json": "ab1ed90a19c487eeba40e91226c22684dd4c1594eb52cc7afe122b058a8597a6"
+    }
+  },
+  "noTemporaryStylesInjected": true,
+  "remoteDeploymentPerformed": false,
+  "accountsDatabaseVerified": false,
+  "files": [
+    {
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\white-background-diagnostic-2026-10-18\\local\\actual-next-color-scheme-matrix.json",
+      "relativeToProject": "work/white-background-diagnostic-2026-10-18/local/actual-next-color-scheme-matrix.json",
+      "bytes": 34636,
+      "sha256": "1355c13951f75dddde7c46e3877298124fc98af254c033858564f99077df10d3"
+    },
+    {
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\white-background-diagnostic-2026-10-18\\remote\\actual-next-color-scheme-matrix.json",
+      "relativeToProject": "work/white-background-diagnostic-2026-10-18/remote/actual-next-color-scheme-matrix.json",
+      "bytes": 35184,
+      "sha256": "39db0a513bb131744b0e1e26ac1e9d666f8e0b2762ec68eabc1a0da68c42b9cd"
+    },
+    {
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\white-background-diagnostic-2026-10-18\\remote-version-comparison.json",
+      "relativeToProject": "work/white-background-diagnostic-2026-10-18/remote-version-comparison.json",
+      "bytes": 2743,
+      "sha256": "372cd955a0f044ff236cf4232881e742780c5ecfc5969c8c2080baf9e99bf16d"
+    },
+    {
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\white-background-diagnostic-2026-10-18\\fixed\\first-context-batch-partial.json",
+      "relativeToProject": "work/white-background-diagnostic-2026-10-18/fixed/first-context-batch-partial.json",
+      "bytes": 44525,
+      "sha256": "d2a56cb8492e9278b0bbe539e7f02efc201011ce471241fe3ddafb1b428e8762"
+    },
+    {
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\white-background-diagnostic-2026-10-18\\fixed-remaining-edge\\actual-next-color-scheme-matrix.json",
+      "relativeToProject": "work/white-background-diagnostic-2026-10-18/fixed-remaining-edge/actual-next-color-scheme-matrix.json",
+      "bytes": 11638,
+      "sha256": "766b07eb9291e5e9dee3505b60344771f1d8d3707522bc99dc52c9a6b9a101e1"
+    },
+    {
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\white-background-fix-2026-10-18\\authorized-css-delta.json",
+      "relativeToProject": "work/white-background-fix-2026-10-18/authorized-css-delta.json",
+      "bytes": 41320,
+      "sha256": "009785b7a0dd1140b4a4ff09a6e4b496f1d5608651de78717c09ba91b02a35f3"
+    },
+    {
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\white-background-diagnostic-2026-10-18\\remote\\chrome155-page-dark-os-light-before.png",
+      "relativeToProject": "work/white-background-diagnostic-2026-10-18/remote/chrome155-page-dark-os-light-before.png",
+      "bytes": 295823,
+      "sha256": "7c3a7431a69cb287725986840cbd0f0b521fb5baee53e3226f31669f1798c49b"
+    },
+    {
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\white-background-diagnostic-2026-10-18\\remote\\chrome155-page-dark-os-light-after-parent-iframe-light.png",
+      "relativeToProject": "work/white-background-diagnostic-2026-10-18/remote/chrome155-page-dark-os-light-after-parent-iframe-light.png",
+      "bytes": 302421,
+      "sha256": "08cffea5e1ffb7e78a9636dc7a354d7499576bdd7ba3974bddc4ad49d6bf1fe9"
+    },
+    {
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\white-background-diagnostic-2026-10-18\\fixed\\chrome155-page-dark-os-light-initial-theme-before.png",
+      "relativeToProject": "work/white-background-diagnostic-2026-10-18/fixed/chrome155-page-dark-os-light-initial-theme-before.png",
+      "bytes": 305104,
+      "sha256": "a672d12d0e1fa48297981d3e09de9b176f3f0cbf5475f1962b34b0f1b8558fab"
+    },
+    {
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\white-background-diagnostic-2026-10-18\\fixed\\chrome155-page-dark-os-dark-mobile-before.png",
+      "relativeToProject": "work/white-background-diagnostic-2026-10-18/fixed/chrome155-page-dark-os-dark-mobile-before.png",
+      "bytes": 461046,
+      "sha256": "32d409cb1adbc7f2e28b654471b99190ec7e7a0f5f0eba51223d86e9ddb0d816"
+    },
+    {
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\white-background-diagnostic-2026-10-18\\fixed-remaining-edge\\edge139-page-dark-os-dark-mobile-before.png",
+      "relativeToProject": "work/white-background-diagnostic-2026-10-18/fixed-remaining-edge/edge139-page-dark-os-dark-mobile-before.png",
+      "bytes": 461056,
+      "sha256": "9858d0493653b40404cbc8fa75178181c1a65c4a1406231e731603e4224596d3"
+    }
+  ]
+}

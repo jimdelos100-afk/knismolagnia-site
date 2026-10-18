@@ -1,0 +1,1397 @@
+{
+  "date": "2026-10-18T14:10:17.878Z",
+  "url": "http://127.0.0.1:3210",
+  "scope": "Actual Next homepage, two installed browsers, two explicit page themes and emulated OS preferences. Only temporary page CSS changed; screenshots compare actual composited parent pixels against the same page with the iframe hidden. WebGL sampled after the actual next model draw, then original getError restored. No product/ZIP/server edit.",
+  "sourceBefore": {
+    "src/app/globals.css": "d856270350ea780c334142e5f5548027c16dd6b660ec27893d9623d080cd4a59",
+    "src/components/HomeCharacter.tsx": "72663827ea929a1d737a95565dc3af998141a157e78d710be6954107103bac20",
+    "public/konisi-game/home.html": "34cd64f92303bc318bf9fe10ac6fd3cdfc1a54ec9dc84054dea66e54bdc03012",
+    "public/konisi-game/character.css": "ec8ea79f2acd14f08f8c0414362d18648f3de442a3f34a6cfe58e3534aaaf8ce",
+    "public/konisi-game/character.js": "06be64915fe6d99b45b402459326a81f50b32d1a26ed3d39bfca4578bbbe2bee",
+    "public/konisi-game/live2d/manifest.json": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4"
+  },
+  "sourceAfter": {
+    "src/app/globals.css": "d856270350ea780c334142e5f5548027c16dd6b660ec27893d9623d080cd4a59",
+    "src/components/HomeCharacter.tsx": "72663827ea929a1d737a95565dc3af998141a157e78d710be6954107103bac20",
+    "public/konisi-game/home.html": "34cd64f92303bc318bf9fe10ac6fd3cdfc1a54ec9dc84054dea66e54bdc03012",
+    "public/konisi-game/character.css": "ec8ea79f2acd14f08f8c0414362d18648f3de442a3f34a6cfe58e3534aaaf8ce",
+    "public/konisi-game/character.js": "06be64915fe6d99b45b402459326a81f50b32d1a26ed3d39bfca4578bbbe2bee",
+    "public/konisi-game/live2d/manifest.json": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4"
+  },
+  "sourceUnchanged": true,
+  "results": [
+    {
+      "name": "chrome155-page-light-os-light",
+      "browserVersion": "155.0.8059.84",
+      "pageTheme": "light",
+      "osPreference": "light",
+      "parent": {
+        "theme": "light",
+        "rootScheme": "light",
+        "bodyScheme": "light",
+        "iframeScheme": "light",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": false,
+        "rect": {
+          "x": 1049,
+          "y": 428,
+          "width": 365,
+          "height": 560
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 365,
+        "height": 560,
+        "nonzeroAlphaPixels": 71613,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 365,
+          "height": 560
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 91022,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "34cd64f92303bc318bf9fe10ac6fd3cdfc1a54ec9dc84054dea66e54bdc03012",
+          "cacheControl": "public, max-age=0"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "ec8ea79f2acd14f08f8c0414362d18648f3de442a3f34a6cfe58e3534aaaf8ce",
+          "cacheControl": "public, max-age=0"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "06be64915fe6d99b45b402459326a81f50b32d1a26ed3d39bfca4578bbbe2bee",
+          "cacheControl": "public, max-age=0"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "chrome155-page-light-os-dark",
+      "browserVersion": "155.0.8059.84",
+      "pageTheme": "light",
+      "osPreference": "dark",
+      "parent": {
+        "theme": "light",
+        "rootScheme": "light",
+        "bodyScheme": "light",
+        "iframeScheme": "light",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": true,
+        "rect": {
+          "x": 1049,
+          "y": 428,
+          "width": 365,
+          "height": 560
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 365,
+        "height": 560,
+        "nonzeroAlphaPixels": 71613,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 365,
+          "height": 560
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 91022,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "34cd64f92303bc318bf9fe10ac6fd3cdfc1a54ec9dc84054dea66e54bdc03012",
+          "cacheControl": "public, max-age=0"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "ec8ea79f2acd14f08f8c0414362d18648f3de442a3f34a6cfe58e3534aaaf8ce",
+          "cacheControl": "public, max-age=0"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "06be64915fe6d99b45b402459326a81f50b32d1a26ed3d39bfca4578bbbe2bee",
+          "cacheControl": "public, max-age=0"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "chrome155-page-dark-os-light",
+      "browserVersion": "155.0.8059.84",
+      "pageTheme": "dark",
+      "osPreference": "light",
+      "parent": {
+        "theme": "dark",
+        "rootScheme": "dark",
+        "bodyScheme": "dark",
+        "iframeScheme": "dark",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": false,
+        "rect": {
+          "x": 1049,
+          "y": 428,
+          "width": 365,
+          "height": 560
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 365,
+        "height": 560,
+        "nonzeroAlphaPixels": 71613,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 365,
+          "height": 560
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 91022,
+        "beforeDifferentPixels": 91022,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 91022,
+        "afterWhitePixels": 0,
+        "examples": [
+          {
+            "xy": [
+              1059,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          },
+          {
+            "xy": [
+              1060,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          },
+          {
+            "xy": [
+              1061,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          },
+          {
+            "xy": [
+              1062,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          },
+          {
+            "xy": [
+              1063,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          },
+          {
+            "xy": [
+              1064,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          }
+        ]
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "34cd64f92303bc318bf9fe10ac6fd3cdfc1a54ec9dc84054dea66e54bdc03012",
+          "cacheControl": "public, max-age=0"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "ec8ea79f2acd14f08f8c0414362d18648f3de442a3f34a6cfe58e3534aaaf8ce",
+          "cacheControl": "public, max-age=0"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "06be64915fe6d99b45b402459326a81f50b32d1a26ed3d39bfca4578bbbe2bee",
+          "cacheControl": "public, max-age=0"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "chrome155-page-dark-os-dark",
+      "browserVersion": "155.0.8059.84",
+      "pageTheme": "dark",
+      "osPreference": "dark",
+      "parent": {
+        "theme": "dark",
+        "rootScheme": "dark",
+        "bodyScheme": "dark",
+        "iframeScheme": "dark",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": true,
+        "rect": {
+          "x": 1049,
+          "y": 428,
+          "width": 365,
+          "height": 560
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 365,
+        "height": 560,
+        "nonzeroAlphaPixels": 71613,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 365,
+          "height": 560
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 91022,
+        "beforeDifferentPixels": 91022,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 91022,
+        "afterWhitePixels": 0,
+        "examples": [
+          {
+            "xy": [
+              1059,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          },
+          {
+            "xy": [
+              1060,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          },
+          {
+            "xy": [
+              1061,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          },
+          {
+            "xy": [
+              1062,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          },
+          {
+            "xy": [
+              1063,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          },
+          {
+            "xy": [
+              1064,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          }
+        ]
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "34cd64f92303bc318bf9fe10ac6fd3cdfc1a54ec9dc84054dea66e54bdc03012",
+          "cacheControl": "public, max-age=0"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "ec8ea79f2acd14f08f8c0414362d18648f3de442a3f34a6cfe58e3534aaaf8ce",
+          "cacheControl": "public, max-age=0"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "06be64915fe6d99b45b402459326a81f50b32d1a26ed3d39bfca4578bbbe2bee",
+          "cacheControl": "public, max-age=0"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "edge139-page-light-os-light",
+      "browserVersion": "139.0.3405.102",
+      "pageTheme": "light",
+      "osPreference": "light",
+      "parent": {
+        "theme": "light",
+        "rootScheme": "light",
+        "bodyScheme": "light",
+        "iframeScheme": "light",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": false,
+        "rect": {
+          "x": 1049,
+          "y": 428,
+          "width": 365,
+          "height": 560
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 365,
+        "height": 560,
+        "nonzeroAlphaPixels": 71613,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 365,
+          "height": 560
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 91022,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "34cd64f92303bc318bf9fe10ac6fd3cdfc1a54ec9dc84054dea66e54bdc03012",
+          "cacheControl": "public, max-age=0"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "ec8ea79f2acd14f08f8c0414362d18648f3de442a3f34a6cfe58e3534aaaf8ce",
+          "cacheControl": "public, max-age=0"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "06be64915fe6d99b45b402459326a81f50b32d1a26ed3d39bfca4578bbbe2bee",
+          "cacheControl": "public, max-age=0"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "edge139-page-light-os-dark",
+      "browserVersion": "139.0.3405.102",
+      "pageTheme": "light",
+      "osPreference": "dark",
+      "parent": {
+        "theme": "light",
+        "rootScheme": "light",
+        "bodyScheme": "light",
+        "iframeScheme": "light",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": true,
+        "rect": {
+          "x": 1049,
+          "y": 428,
+          "width": 365,
+          "height": 560
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 365,
+        "height": 560,
+        "nonzeroAlphaPixels": 71613,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 365,
+          "height": 560
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 91022,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "34cd64f92303bc318bf9fe10ac6fd3cdfc1a54ec9dc84054dea66e54bdc03012",
+          "cacheControl": "public, max-age=0"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "ec8ea79f2acd14f08f8c0414362d18648f3de442a3f34a6cfe58e3534aaaf8ce",
+          "cacheControl": "public, max-age=0"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "06be64915fe6d99b45b402459326a81f50b32d1a26ed3d39bfca4578bbbe2bee",
+          "cacheControl": "public, max-age=0"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "edge139-page-dark-os-light",
+      "browserVersion": "139.0.3405.102",
+      "pageTheme": "dark",
+      "osPreference": "light",
+      "parent": {
+        "theme": "dark",
+        "rootScheme": "dark",
+        "bodyScheme": "dark",
+        "iframeScheme": "dark",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": false,
+        "rect": {
+          "x": 1049,
+          "y": 428,
+          "width": 365,
+          "height": 560
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 365,
+        "height": 560,
+        "nonzeroAlphaPixels": 71613,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 365,
+          "height": 560
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 91022,
+        "beforeDifferentPixels": 91022,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 91022,
+        "afterWhitePixels": 0,
+        "examples": [
+          {
+            "xy": [
+              1059,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          },
+          {
+            "xy": [
+              1060,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          },
+          {
+            "xy": [
+              1061,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          },
+          {
+            "xy": [
+              1062,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          },
+          {
+            "xy": [
+              1063,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          },
+          {
+            "xy": [
+              1064,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          }
+        ]
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "34cd64f92303bc318bf9fe10ac6fd3cdfc1a54ec9dc84054dea66e54bdc03012",
+          "cacheControl": "public, max-age=0"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "ec8ea79f2acd14f08f8c0414362d18648f3de442a3f34a6cfe58e3534aaaf8ce",
+          "cacheControl": "public, max-age=0"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "06be64915fe6d99b45b402459326a81f50b32d1a26ed3d39bfca4578bbbe2bee",
+          "cacheControl": "public, max-age=0"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "edge139-page-dark-os-dark",
+      "browserVersion": "139.0.3405.102",
+      "pageTheme": "dark",
+      "osPreference": "dark",
+      "parent": {
+        "theme": "dark",
+        "rootScheme": "dark",
+        "bodyScheme": "dark",
+        "iframeScheme": "dark",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": true,
+        "rect": {
+          "x": 1049,
+          "y": 428,
+          "width": 365,
+          "height": 560
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 365,
+        "height": 560,
+        "nonzeroAlphaPixels": 71613,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 365,
+          "height": 560
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 91022,
+        "beforeDifferentPixels": 91022,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 91022,
+        "afterWhitePixels": 0,
+        "examples": [
+          {
+            "xy": [
+              1059,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          },
+          {
+            "xy": [
+              1060,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          },
+          {
+            "xy": [
+              1061,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          },
+          {
+            "xy": [
+              1062,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          },
+          {
+            "xy": [
+              1063,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          },
+          {
+            "xy": [
+              1064,
+              438
+            ],
+            "before": [
+              255,
+              255,
+              255,
+              255
+            ],
+            "parentWithoutIframe": [
+              32,
+              40,
+              51,
+              255
+            ],
+            "after": [
+              32,
+              40,
+              51,
+              255
+            ]
+          }
+        ]
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "34cd64f92303bc318bf9fe10ac6fd3cdfc1a54ec9dc84054dea66e54bdc03012",
+          "cacheControl": "public, max-age=0"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "ec8ea79f2acd14f08f8c0414362d18648f3de442a3f34a6cfe58e3534aaaf8ce",
+          "cacheControl": "public, max-age=0"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "06be64915fe6d99b45b402459326a81f50b32d1a26ed3d39bfca4578bbbe2bee",
+          "cacheControl": "public, max-age=0"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0"
+        }
+      },
+      "pageErrors": []
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-18T14:17:05.059Z",
+  "url": "https://knismolagnia.club",
+  "originalWebsiteZipSha256": "d82d05e61ead909f65de07c6ba6a96f308c314344ce6fac85bd52a0bf1e7ba31",
+  "assets": [
+    {
+      "file": "home.html",
+      "localSha256": "34cd64f92303bc318bf9fe10ac6fd3cdfc1a54ec9dc84054dea66e54bdc03012",
+      "localLfNormalizedSha256": "78933544903a9b6b375f04ad433dc67388d9528716ece7b54c01bcdb2bab8317",
+      "remoteSha256": "78933544903a9b6b375f04ad433dc67388d9528716ece7b54c01bcdb2bab8317",
+      "all8RemoteResponsesStatus200": true,
+      "all8MatchLocalExactOrOnlyCRLFNormalization": true
+    },
+    {
+      "file": "character.css",
+      "localSha256": "ec8ea79f2acd14f08f8c0414362d18648f3de442a3f34a6cfe58e3534aaaf8ce",
+      "localLfNormalizedSha256": "a443b21fa16b6e07bcfc204027c1d2a663a7ab454b1c4604926de6e63c8c76ae",
+      "remoteSha256": "a443b21fa16b6e07bcfc204027c1d2a663a7ab454b1c4604926de6e63c8c76ae",
+      "all8RemoteResponsesStatus200": true,
+      "all8MatchLocalExactOrOnlyCRLFNormalization": true
+    },
+    {
+      "file": "character.js",
+      "localSha256": "06be64915fe6d99b45b402459326a81f50b32d1a26ed3d39bfca4578bbbe2bee",
+      "localLfNormalizedSha256": "3b3c1fa2a3c470e190b0bab22c99489df3dbbef4fded614f353121831fd588c7",
+      "remoteSha256": "3b3c1fa2a3c470e190b0bab22c99489df3dbbef4fded614f353121831fd588c7",
+      "all8RemoteResponsesStatus200": true,
+      "all8MatchLocalExactOrOnlyCRLFNormalization": true
+    },
+    {
+      "file": "live2d/manifest.json",
+      "localSha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+      "localLfNormalizedSha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+      "remoteSha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+      "all8RemoteResponsesStatus200": true,
+      "all8MatchLocalExactOrOnlyCRLFNormalization": true
+    }
+  ],
+  "allAssetsMatch": true,
+  "all8ActualMocSha256": [
+    "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+    "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+    "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+    "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+    "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+    "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+    "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+    "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+  ],
+  "scope": "Read-only online responses versus local original delivered static files. HTML/CSS/JS differ only by CRLF to LF normalization; manifest exact. This does not imply the new CSS fix is already deployed."
+}

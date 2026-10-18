@@ -1,0 +1,23 @@
+{
+  "scope": "Read compiled production CSS. Browser matrix uses the existing Next dev preview.",
+  "files": [
+    {
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-18\\live2d-v8-cubism-zip-c-users\\work\\iframe-transparency-hotfix-2026-10-18\\native-release-build-2026-10-18T14-15-17-603Z\\.next\\static\\css\\c8898797bfca7164.css",
+      "sha256": "f441409c082edf7e3b3080d045713bb3b5db34961522e72461487480b2c2ed74",
+      "rules": [
+        ".site-companion-frame{display:block;width:100%;height:min(54svh,430px);min-height:285px;border:0;border-radius:0;background:transparent;color-scheme:light;pointer-events:auto}",
+        ".site-companion-frame{height:min(70svh,560px);min-height:350px}",
+        ".site-companion-frame{height:min(49svh,340px);min-height:205px}",
+        ".site-companion-frame{height:min(61svh,445px);min-height:260px}",
+        ".site-companion-frame{height:min(56vh,290px);min-height:175px}",
+        ".site-companion-frame{height:min(65svh,330px);min-height:170px}"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "Production CSS contains the transparent iframe scheme fix",
+      "pass": true
+    }
+  ]
+}
