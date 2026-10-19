@@ -1,0 +1,51 @@
+   ▲ Next.js 15.5.25
+   - Local:        http://127.0.0.1:3210
+   - Network:      http://127.0.0.1:3210
+
+ ✓ Starting...
+ ✓ Ready in 2.2s
+ ○ Compiling / ...
+ ✓ Compiled / in 7.4s (1156 modules)
+ GET /?white-background-audit=chrome155-page-light-os-light-initial-theme 200 in 8172ms
+ GET / 200 in 8337ms
+ GET / 200 in 126ms
+ GET /?white-background-audit=chrome155-page-light-os-dark-initial-theme 200 in 92ms
+ GET /?white-background-audit=chrome155-page-dark-os-light-initial-theme 200 in 97ms
+ GET /?white-background-audit=chrome155-page-dark-os-dark-initial-theme 200 in 81ms
+ GET /?white-background-audit=chrome155-page-light-os-dark-theme-toggle 200 in 67ms
+ GET /?white-background-audit=chrome155-page-dark-os-light-theme-toggle 200 in 67ms
+ GET /?white-background-audit=chrome155-page-dark-os-dark-minimize-restore 200 in 83ms
+ GET /?white-background-audit=chrome155-page-dark-os-dark-mobile 200 in 69ms
+ GET /?white-background-audit=edge139-page-light-os-light-initial-theme 200 in 71ms
+ ○ Compiling /login ...
+ ✓ Compiled /login in 1531ms (1263 modules)
+ GET /login 200 in 1891ms
+ GET /?white-background-audit=edge139-page-light-os-dark-initial-theme 200 in 726ms
+ ✓ Compiled /level/[level] in 483ms (1291 modules)
+ GET /?white-background-audit=edge139-page-dark-os-light-initial-theme 200 in 253ms
+ GET /level/1 200 in 1866ms
+ GET /level/2 200 in 164ms
+ GET /?white-background-audit=edge139-page-dark-os-dark-initial-theme 200 in 175ms
+ GET / 200 in 91ms
+ GET /?white-background-audit=edge139-page-light-os-dark-theme-toggle 200 in 81ms
+ GET / 200 in 75ms
+ GET /?white-background-audit=edge139-page-dark-os-light-theme-toggle 200 in 66ms
+ GET /?white-background-audit=edge139-page-dark-os-dark-minimize-restore 200 in 72ms
+ GET /?white-background-audit=edge139-page-dark-os-dark-mobile 200 in 71ms
+ GET / 200 in 91ms
+ GET / 200 in 101ms
+ GET /login 200 in 44ms
+ GET /level/1 200 in 102ms
+ GET /level/2 200 in 91ms
+ GET / 200 in 62ms
+ GET / 200 in 76ms
+ GET /login 200 in 33ms
+ GET /level/1 200 in 113ms
+ GET /level/2 200 in 180ms
+ GET / 200 in 60ms
+ GET / 200 in 74ms
+ GET /login 200 in 24ms
+ GET /level/1 200 in 89ms
+ GET /level/2 200 in 129ms
+
+QA launcher child exit 1

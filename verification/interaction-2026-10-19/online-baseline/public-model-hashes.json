@@ -1,0 +1,23 @@
+[
+  {
+    "file": "native-2026-10-18/standing-native-2026-10-18.moc3",
+    "url": "https://knismolagnia.club/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.moc3",
+    "status": 200,
+    "bytes": 144192,
+    "sha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+  },
+  {
+    "file": "native-2026-10-18/standing-native-2026-10-18.4096/texture_00.png",
+    "url": "https://knismolagnia.club/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.4096/texture_00.png",
+    "status": 200,
+    "bytes": 3195709,
+    "sha256": "90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30"
+  },
+  {
+    "file": "native-2026-10-18/standing-native-2026-10-18.4096/texture_01.png",
+    "url": "https://knismolagnia.club/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.4096/texture_01.png",
+    "status": 200,
+    "bytes": 21869,
+    "sha256": "61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7"
+  }
+]

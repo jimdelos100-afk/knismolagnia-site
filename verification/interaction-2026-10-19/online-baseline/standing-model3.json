@@ -1,0 +1,69 @@
+{
+  "Version": 3,
+  "FileReferences": {
+    "Moc": "native-2026-10-18/standing-native-2026-10-18.moc3",
+    "Textures": [
+      "native-2026-10-18/standing-native-2026-10-18.4096/texture_00.png",
+      "native-2026-10-18/standing-native-2026-10-18.4096/texture_01.png"
+    ],
+    "Physics": "native-2026-10-18/standing-native-2026-10-18.physics3.json",
+    "DisplayInfo": "native-2026-10-18/standing-native-2026-10-18.cdi3.json",
+    "Motions": {
+      "Idle": [
+        {
+          "File": "native-2026-10-18/motions/idle.motion3.json"
+        }
+      ],
+      "TapBody": [
+        {
+          "File": "native-2026-10-18/motions/tap.motion3.json"
+        }
+      ],
+      "Pat": [
+        {
+          "File": "native-2026-10-18/motions/pat.motion3.json"
+        }
+      ],
+      "Poke": [
+        {
+          "File": "native-2026-10-18/motions/poke.motion3.json"
+        }
+      ],
+      "Pinch": [
+        {
+          "File": "native-2026-10-18/motions/pinch.motion3.json"
+        }
+      ],
+      "Rub": [
+        {
+          "File": "native-2026-10-18/motions/rub.motion3.json"
+        }
+      ],
+      "Tickle": [
+        {
+          "File": "native-2026-10-18/motions/tickle.motion3.json"
+        }
+      ]
+    },
+    "Expressions": [
+      {
+        "Name": "neutral",
+        "File": "native-2026-10-18/expressions/neutral.exp3.json"
+      },
+      {
+        "Name": "blink",
+        "File": "native-2026-10-18/expressions/blink.exp3.json"
+      }
+    ]
+  },
+  "Groups": [
+    {
+      "Target": "Parameter",
+      "Name": "EyeBlink",
+      "Ids": [
+        "ParamEyeLOpen",
+        "ParamEyeROpen"
+      ]
+    }
+  ]
+}

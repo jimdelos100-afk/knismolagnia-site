@@ -1,0 +1,209 @@
+{
+  "date": "2026-10-19T04:53:17.411Z",
+  "scope": "Fresh nine-stage actual new model QA plus strict-zero adapter controls and actual SDK contact sheet. Website interaction and root visual acceptance are separate; this is not final release acceptance.",
+  "newMocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+  "sourceCmoSha256": "2bd397f25d5aa511cd45ce956927e3d06410bbc756bf807b71de9dc21a920650",
+  "testedSourceSnapshotSha256": "a565134a78dce22cc80e005c2090bb248e36acf6f3396f408f8e2761837a7d91",
+  "modelSubsetPassed": true,
+  "formalReleaseAcceptancePerformed": false,
+  "checks": [
+    {
+      "name": "Fresh source/model-bound report: native-core-and-assets.json",
+      "pass": true
+    },
+    {
+      "name": "Fresh source/model-bound report: native-eye-coverage.json",
+      "pass": true
+    },
+    {
+      "name": "Fresh source/model-bound report: native-helper-coverage.json",
+      "pass": true
+    },
+    {
+      "name": "Fresh source/model-bound report: native-neutral-pixels.json",
+      "pass": true
+    },
+    {
+      "name": "Fresh source/model-bound report: native-accepted-appearance-regression.json",
+      "pass": true
+    },
+    {
+      "name": "Fresh source/model-bound report: native-default-vs-accepted-core.json",
+      "pass": true
+    },
+    {
+      "name": "Fresh source/model-bound report: native-head-neck.json",
+      "pass": true
+    },
+    {
+      "name": "Fresh source/model-bound report: native-browser.json",
+      "pass": true
+    },
+    {
+      "name": "Fresh source/model-bound report: native-appearance-binding-negative-controls.json",
+      "pass": true
+    },
+    {
+      "name": "Fresh source/model-bound report: neck-seam-contact-sheet.json",
+      "pass": true
+    },
+    {
+      "name": "Frozen complete source still exact",
+      "pass": true
+    },
+    {
+      "name": "Final saved CMO still exact",
+      "pass": true
+    },
+    {
+      "name": "Actual accepted export02 and integrated runtime files remain exact",
+      "pass": true
+    },
+    {
+      "name": "Final nine-stage model QA execution passed",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "reports": [
+    {
+      "name": "native-core-and-assets.json",
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-19\\live2d-v8-cubism-c-users-daisy\\work\\interaction-2026-10-19\\verification\\native-core-and-assets.json",
+      "sha256": "462ba90ab912ffc6b4e5ce96f4f7782813d196f820681dff1bed47f8741ebb42",
+      "checks": 59,
+      "pass": true
+    },
+    {
+      "name": "native-eye-coverage.json",
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-19\\live2d-v8-cubism-c-users-daisy\\work\\interaction-2026-10-19\\verification\\native-eye-coverage.json",
+      "sha256": "2c152e2fb513025e66ab73d7c72a8bd6d185eb8bcaa85d6293d4ee1ec80084da",
+      "checks": 38,
+      "pass": true
+    },
+    {
+      "name": "native-helper-coverage.json",
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-19\\live2d-v8-cubism-c-users-daisy\\work\\interaction-2026-10-19\\verification\\native-helper-coverage.json",
+      "sha256": "5b2a50597f0a11a38e509a7f4c0523b9f32a08500ff3b03243a2d791f3c6cd85",
+      "checks": 39,
+      "pass": true
+    },
+    {
+      "name": "native-neutral-pixels.json",
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-19\\live2d-v8-cubism-c-users-daisy\\work\\interaction-2026-10-19\\verification\\native-neutral-pixels.json",
+      "sha256": "d2af4c27f6c6f5f86b03a32f6484bef4a03ff1a220cb75eecd9eb118381b2b66",
+      "checks": 11,
+      "pass": true
+    },
+    {
+      "name": "native-accepted-appearance-regression.json",
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-19\\live2d-v8-cubism-c-users-daisy\\work\\interaction-2026-10-19\\verification\\native-accepted-appearance-regression.json",
+      "sha256": "5d08ca78ba9a2416d889bc555f4d228274e5faab5a7cc6212ae251e182889a2d",
+      "checks": 7,
+      "pass": true
+    },
+    {
+      "name": "native-default-vs-accepted-core.json",
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-19\\live2d-v8-cubism-c-users-daisy\\work\\interaction-2026-10-19\\verification\\native-default-vs-accepted-core.json",
+      "sha256": "ff734c54e5d90533d01bae91eb3f70335611add5b34b558a5d841d44f519a68e",
+      "checks": 11,
+      "pass": true
+    },
+    {
+      "name": "native-head-neck.json",
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-19\\live2d-v8-cubism-c-users-daisy\\work\\interaction-2026-10-19\\verification\\native-head-neck.json",
+      "sha256": "05f9d2fd8debf512373c3f6eec06250d07723675b7c85d30672bb1a3d53e5cc9",
+      "checks": 8,
+      "pass": true
+    },
+    {
+      "name": "native-browser.json",
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-19\\live2d-v8-cubism-c-users-daisy\\work\\interaction-2026-10-19\\verification\\native-browser.json",
+      "sha256": "7190723a3bf4b88cae52526a254a14e6afed1393ba3443f408ab33a6afda0a7a",
+      "checks": 279,
+      "pass": true
+    },
+    {
+      "name": "native-appearance-binding-negative-controls.json",
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-19\\live2d-v8-cubism-c-users-daisy\\work\\interaction-2026-10-19\\verification\\native-appearance-binding-negative-controls.json",
+      "sha256": "1622045514135279d1945f1a9bd703f27348be30cbea7134c4024de30c841327",
+      "checks": 16,
+      "pass": true
+    },
+    {
+      "name": "neck-seam-contact-sheet.json",
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-19\\live2d-v8-cubism-c-users-daisy\\work\\interaction-2026-10-19\\verification\\neck-seam-contact-sheet.json",
+      "sha256": "3cae651d957cadd9ff5ed521228159428fd83ee6d779e2aab01ab71808268bf6",
+      "checks": 5,
+      "pass": true
+    }
+  ],
+  "reportedChecksTotal": 473,
+  "executionHistory": [
+    {
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-19\\live2d-v8-cubism-c-users-daisy\\work\\interaction-2026-10-19\\verification\\runs\\2026-10-19T04-52-03-574Z\\model-qa-run.json",
+      "sha256": "52a7ecafe4f1cdb4e507ad5b7213c085e7250d23459d8b38d0285d3ef4872431",
+      "checks": [
+        {
+          "name": "core",
+          "pass": true,
+          "exitCode": 0,
+          "log": "runs/2026-10-19T04-52-03-574Z/core.log"
+        },
+        {
+          "name": "eye-extraction",
+          "pass": true,
+          "exitCode": 0,
+          "log": "runs/2026-10-19T04-52-03-574Z/eye-extraction.log"
+        },
+        {
+          "name": "eye-coverage",
+          "pass": true,
+          "exitCode": 0,
+          "log": "runs/2026-10-19T04-52-03-574Z/eye-coverage.log"
+        },
+        {
+          "name": "helper-extraction",
+          "pass": true,
+          "exitCode": 0,
+          "log": "runs/2026-10-19T04-52-03-574Z/helper-extraction.log"
+        },
+        {
+          "name": "helper-coverage",
+          "pass": true,
+          "exitCode": 0,
+          "log": "runs/2026-10-19T04-52-03-574Z/helper-coverage.log"
+        },
+        {
+          "name": "neutral-pixels",
+          "pass": true,
+          "exitCode": 0,
+          "log": "runs/2026-10-19T04-52-03-574Z/neutral-pixels.log"
+        },
+        {
+          "name": "default-core",
+          "pass": true,
+          "exitCode": 0,
+          "log": "runs/2026-10-19T04-52-03-574Z/default-core.log"
+        },
+        {
+          "name": "head-neck",
+          "pass": true,
+          "exitCode": 0,
+          "log": "runs/2026-10-19T04-52-03-574Z/head-neck.log"
+        },
+        {
+          "name": "native-browser",
+          "pass": true,
+          "exitCode": 0,
+          "log": "runs/2026-10-19T04-52-03-574Z/native-browser.log"
+        },
+        {
+          "name": "Frozen runtime unchanged during model QA",
+          "pass": true
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "executionHistoryNote": "All runs listed for this frozen candidate passed. The earlier r1 sharp dependency failure and all r1 results are preserved separately under revisions/r1-a9d317; they are not labelled as a failure in this new candidate."
+}

@@ -1,0 +1,12 @@
+PASS original is the frozen detailed model
+PASS actual new candidate identity and immutable historical approval references are bound
+PASS source-pixel coverage evidence passes for this same exported MOC
+PASS updated source PSD neutral merge is exactly the original
+PASS both neutral models render nonempty artwork
+PASS measured original difference is exactly the disclosed user-accepted eye difference
+PASS displayed PNG straight RGBA difference is separately disclosed exactly
+PASS every RGBA channel outside the accepted eye rectangle stays exactly original
+PASS actual WebGL RGBA is exactly the frozen accepted reference with zero additional changes
+PASS neutral PNG is byte-exact to the frozen user-accepted neutral snapshot
+PASS no browser JavaScript or resource errors
+{"report":"C:\\Users\\daisy\\Documents\\Codex\\2026-10-19\\live2d-v8-cubism-c-users-daisy\\work\\interaction-2026-10-19\\verification\\native-neutral-pixels.json","checks":11,"failed":[],"errors":0}

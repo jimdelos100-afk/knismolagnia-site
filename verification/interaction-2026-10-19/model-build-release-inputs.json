@@ -1,0 +1,135 @@
+{
+  "date": "2026-10-19T04:53:29.436Z",
+  "scope": "Actual r2 model + isolated build report paths for root to assemble the final release acceptance. This index does not claim website or package acceptance.",
+  "newMocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+  "sourceCmoSha256": "2bd397f25d5aa511cd45ce956927e3d06410bbc756bf807b71de9dc21a920650",
+  "testedSourceSnapshotSha256": "a565134a78dce22cc80e005c2090bb248e36acf6f3396f408f8e2761837a7d91",
+  "reports": {
+    "core": "native-core-and-assets.json",
+    "eyeCoverage": "native-eye-coverage.json",
+    "helperCoverage": "native-helper-coverage.json",
+    "neutralPixels": "native-neutral-pixels.json",
+    "acceptedAppearance": "native-accepted-appearance-regression.json",
+    "defaultGeometry": "native-default-vs-accepted-core.json",
+    "headNeck": "native-head-neck.json",
+    "nativeBrowser": "native-browser.json",
+    "build": "build-2026-10-19T04-52-03-505Z/build-checks.json"
+  },
+  "records": [
+    {
+      "category": "core",
+      "path": "native-core-and-assets.json",
+      "checks": 59,
+      "sha256": "462ba90ab912ffc6b4e5ce96f4f7782813d196f820681dff1bed47f8741ebb42",
+      "pass": true
+    },
+    {
+      "category": "eyeCoverage",
+      "path": "native-eye-coverage.json",
+      "checks": 38,
+      "sha256": "2c152e2fb513025e66ab73d7c72a8bd6d185eb8bcaa85d6293d4ee1ec80084da",
+      "pass": true
+    },
+    {
+      "category": "helperCoverage",
+      "path": "native-helper-coverage.json",
+      "checks": 39,
+      "sha256": "5b2a50597f0a11a38e509a7f4c0523b9f32a08500ff3b03243a2d791f3c6cd85",
+      "pass": true
+    },
+    {
+      "category": "neutralPixels",
+      "path": "native-neutral-pixels.json",
+      "checks": 11,
+      "sha256": "d2af4c27f6c6f5f86b03a32f6484bef4a03ff1a220cb75eecd9eb118381b2b66",
+      "pass": true
+    },
+    {
+      "category": "acceptedAppearance",
+      "path": "native-accepted-appearance-regression.json",
+      "checks": 7,
+      "sha256": "5d08ca78ba9a2416d889bc555f4d228274e5faab5a7cc6212ae251e182889a2d",
+      "pass": true
+    },
+    {
+      "category": "defaultGeometry",
+      "path": "native-default-vs-accepted-core.json",
+      "checks": 11,
+      "sha256": "ff734c54e5d90533d01bae91eb3f70335611add5b34b558a5d841d44f519a68e",
+      "pass": true
+    },
+    {
+      "category": "headNeck",
+      "path": "native-head-neck.json",
+      "checks": 8,
+      "sha256": "05f9d2fd8debf512373c3f6eec06250d07723675b7c85d30672bb1a3d53e5cc9",
+      "pass": true
+    },
+    {
+      "category": "nativeBrowser",
+      "path": "native-browser.json",
+      "checks": 279,
+      "sha256": "7190723a3bf4b88cae52526a254a14e6afed1393ba3443f408ab33a6afda0a7a",
+      "pass": true
+    },
+    {
+      "category": "build",
+      "path": "build-2026-10-19T04-52-03-505Z/build-checks.json",
+      "checks": 5,
+      "sha256": "d1e6bef787245095eb75b025ff684af101694fa834c7ddbbb24dff0abd2f8cf4",
+      "pass": true
+    }
+  ],
+  "additionalReports": {
+    "candidateBindingNegativeControls": {
+      "path": "native-appearance-binding-negative-controls.json",
+      "checks": 16
+    },
+    "actualSdkContactSheet": {
+      "path": "neck-seam-contact-sheet.json",
+      "checks": 5
+    },
+    "modelSummary": {
+      "path": "native-model-qa-summary.json"
+    }
+  },
+  "checks": [
+    {
+      "name": "core report passes and binds current frozen identity",
+      "pass": true
+    },
+    {
+      "name": "eyeCoverage report passes and binds current frozen identity",
+      "pass": true
+    },
+    {
+      "name": "helperCoverage report passes and binds current frozen identity",
+      "pass": true
+    },
+    {
+      "name": "neutralPixels report passes and binds current frozen identity",
+      "pass": true
+    },
+    {
+      "name": "acceptedAppearance report passes and binds current frozen identity",
+      "pass": true
+    },
+    {
+      "name": "defaultGeometry report passes and binds current frozen identity",
+      "pass": true
+    },
+    {
+      "name": "headNeck report passes and binds current frozen identity",
+      "pass": true
+    },
+    {
+      "name": "nativeBrowser report passes and binds current frozen identity",
+      "pass": true
+    },
+    {
+      "name": "build report passes and binds current frozen identity",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

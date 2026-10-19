@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="zh-CN" data-mode="companion"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>柯妮丝 · 透明看板娘</title><link rel="stylesheet" href="character.css?v=20261014-pet2"><script src="models.js?v=20261014-pet2" defer></script><script src="idle-head.js?v=20261014-pet2" defer></script><script src="character.js?v=20261014-pet2" defer></script></head>
+<html lang="zh-CN" data-mode="companion"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>柯妮丝 · 透明看板娘</title><link rel="stylesheet" href="character.css?v=20261019-interaction1"><script src="models.js?v=20261014-pet2" defer></script><script src="idle-head.js?v=20261014-pet2" defer></script><script src="character.js?v=20261019-interaction1" defer></script></head>
 <body data-pose="standing" data-mode="companion"><main class="shell">
 <section class="interaction" aria-label="柯妮丝互动场景">
-<div class="character-pane" id="scene" tabindex="0" role="button" aria-label="摸摸柯妮丝的头"><canvas class="stage" id="character" aria-hidden="true"></canvas><span class="status" id="appearance">原装</span><div class="loading" id="loading" role="status"><span id="loadingText">正在准备角色…</span><button type="button" id="retry" hidden>重新加载</button></div></div>
+<div class="character-pane" id="scene" tabindex="0" role="button" aria-label="点按摸头，拖动移动柯妮丝"><canvas class="stage" id="character" aria-hidden="true"></canvas><span class="status" id="appearance">原装</span><div class="loading" id="loading" role="status"><span id="loadingText">正在准备角色…</span><button type="button" id="retry" hidden>重新加载</button></div></div>
 <button type="button" id="settingsToggle" class="pet-settings-toggle" aria-label="角色设置" aria-expanded="false" aria-controls="petSettings" title="角色设置">⚙</button>
 <aside class="control-panel pet-settings" id="petSettings" aria-label="角色设置" hidden>
 <div class="pet-settings-heading"><strong>角色设置</strong><button id="settingsClose" type="button" aria-label="关闭角色设置">×</button></div>
@@ -10,7 +10,7 @@
 <label for="expression">表情</label><select id="expression"><option value="neutral">自然</option><option value="happy">开心</option><option value="shy">害羞</option><option value="surprised">惊讶</option><option value="angry">生气</option><option value="sad">难过</option><option value="blink">闭眼</option></select>
 <button id="motion" type="button" aria-pressed="true">暂停动作</button><button id="headMotion" type="button" aria-pressed="true">暂停自然头动</button><button id="gaze" type="button" aria-pressed="true">关闭目光跟随</button><button id="blink" type="button" aria-pressed="true">关闭自动眨眼</button><button id="hairPhysics" type="button" aria-pressed="true">关闭发丝物理</button><button id="reset" type="button">回到初始位置</button></div>
 <div class="zoom-tools"><button id="zoomOut" type="button" aria-label="缩小角色">−</button><span id="zoomLevel">100%</span><button id="zoomIn" type="button" aria-label="放大角色">+</button></div>
-<div class="action-grid"><button type="button" data-action="pat">摸头</button><button type="button" data-action="poke">戳一戳</button><button type="button" data-action="pinch">捏脸</button><button type="button" data-action="rub">揉头发</button></div>
+<div class="action-grid"><button type="button" data-action="pat">摸头</button><button type="button" data-action="poke">戳一戳</button><button type="button" data-action="pinch">捏脸</button><button type="button" data-action="rub">揉头发</button><button type="button" data-action="tickle">挠痒痒</button></div>
 <p class="pet-help">设置会记住。暂停动作可让角色静止。</p></aside>
 <section class="dialogue-wrap" aria-label="动作回应"><span id="speaker" class="sr-only">柯妮丝</span><p class="dialogue" id="dialogue" aria-live="polite"></p></section>
 </section><span class="sr-only" id="renderNote">自然头动与眨眼</span></main></body></html>

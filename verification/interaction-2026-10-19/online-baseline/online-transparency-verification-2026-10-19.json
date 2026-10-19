@@ -1,0 +1,471 @@
+{
+  "dateUTC": "2026-10-19T04:13:43.524Z",
+  "dateShanghai": "2026-10-19 12:13:43",
+  "target": "https://knismolagnia.club/",
+  "pass": true,
+  "checks": {
+    "allHttpResponses200": true,
+    "exactR2CompiledCss": true,
+    "testedPublicSourceMatchesR2AfterNewlineNormalization": true,
+    "nativeModelMatchesR2": true,
+    "sixteenBrowserScenariosPass": true,
+    "noTemporaryStyleInjected": true,
+    "noBrowserPageErrors": true,
+    "noTransparentPixelMismatch": true,
+    "noAuditErrors": true
+  },
+  "scope": "Read-only public deployment verification. Dedicated fresh Chrome and Edge sessions. No deployment, repository push, account login or database operation. The only page mutations were temporary iframe visibility during background measurement, local theme/preferences controls, and local minimize/restore.",
+  "method": "Read actual WebGL alpha on a fresh render. Select pixels with alpha zero in a 5×5 neighborhood, excluding iframe controls and edges. Compare page screenshot against same parent with iframe temporarily hidden. Repeat screenshot after restoring visibility. No CSS fix is injected.",
+  "fileNamingNote": "The reused diagnostic names repeated restored screenshots *-after-parent-iframe-light.png. In this run --verify-fixed bypassed addStyleTag; these files are repeated live captures, not browser-injected fixes.",
+  "versions": [
+    "155.0.8059.84",
+    "139.0.3405.102"
+  ],
+  "compiledCss": {
+    "url": "https://knismolagnia.club/_next/static/css/c8898797bfca7164.css",
+    "status": 200,
+    "sha256": "f441409c082edf7e3b3080d045713bb3b5db34961522e72461487480b2c2ed74",
+    "bytes": 33469,
+    "headers": {
+      "access-control-allow-origin": "*",
+      "age": "0",
+      "cache-control": "public,max-age=31536000,immutable",
+      "content-disposition": "inline; filename=\"c8898797bfca7164.css\"",
+      "content-encoding": "br",
+      "content-type": "text/css; charset=utf-8",
+      "date": "Mon, 19 Oct 2026 04:10:30 GMT",
+      "etag": "W/\"44272f2945e986da59f3dcf8c889248d\"",
+      "last-modified": "Mon, 19 Oct 2026 04:10:30 GMT",
+      "server": "Vercel",
+      "strict-transport-security": "max-age=63072000",
+      "transfer-encoding": "chunked",
+      "x-matched-path": "/_next/static/css/c8898797bfca7164.css",
+      "x-vercel-cache": "MISS",
+      "x-vercel-id": "hkg1::mqc5f-1792383030304-ff401795050b"
+    }
+  },
+  "model": [
+    {
+      "file": "native-2026-10-18/standing-native-2026-10-18.moc3",
+      "url": "https://knismolagnia.club/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.moc3",
+      "status": 200,
+      "bytes": 144192,
+      "sha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+    },
+    {
+      "file": "native-2026-10-18/standing-native-2026-10-18.4096/texture_00.png",
+      "url": "https://knismolagnia.club/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.4096/texture_00.png",
+      "status": 200,
+      "bytes": 3195709,
+      "sha256": "90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30"
+    },
+    {
+      "file": "native-2026-10-18/standing-native-2026-10-18.4096/texture_01.png",
+      "url": "https://knismolagnia.club/konisi-game/live2d/standing/native-2026-10-18/standing-native-2026-10-18.4096/texture_01.png",
+      "status": 200,
+      "bytes": 21869,
+      "sha256": "61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7"
+    }
+  ],
+  "sourceComparison": [
+    {
+      "file": "home.html",
+      "localBytes": 3291,
+      "remoteBytes": 3275,
+      "localSha256": "34cd64f92303bc318bf9fe10ac6fd3cdfc1a54ec9dc84054dea66e54bdc03012",
+      "remoteSha256": "78933544903a9b6b375f04ad433dc67388d9528716ece7b54c01bcdb2bab8317",
+      "equal": false,
+      "equalAfterNewlineNormalization": true
+    },
+    {
+      "file": "character.css",
+      "localBytes": 10584,
+      "remoteBytes": 10545,
+      "localSha256": "ec8ea79f2acd14f08f8c0414362d18648f3de442a3f34a6cfe58e3534aaaf8ce",
+      "remoteSha256": "a443b21fa16b6e07bcfc204027c1d2a663a7ab454b1c4604926de6e63c8c76ae",
+      "equal": false,
+      "equalAfterNewlineNormalization": true
+    },
+    {
+      "file": "character.js",
+      "localBytes": 27041,
+      "remoteBytes": 26720,
+      "localSha256": "06be64915fe6d99b45b402459326a81f50b32d1a26ed3d39bfca4578bbbe2bee",
+      "remoteSha256": "3b3c1fa2a3c470e190b0bab22c99489df3dbbef4fded614f353121831fd588c7",
+      "equal": false,
+      "equalAfterNewlineNormalization": true
+    },
+    {
+      "file": "live2d/manifest.json",
+      "localBytes": 1799,
+      "remoteBytes": 1799,
+      "localSha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+      "remoteSha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+      "equal": true,
+      "equalAfterNewlineNormalization": true
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "chrome155-page-light-os-light-initial-theme",
+      "pass": true,
+      "theme": "light",
+      "osPreference": "light",
+      "iframeScheme": "light",
+      "childScheme": "light",
+      "transparentPixels": 91034,
+      "differentFromParent": 0,
+      "repeatedCaptureDifferentFromParent": 0,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lifecycle": {
+        "scenario": "initial-theme",
+        "initialTheme": "light"
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "chrome155-page-light-os-dark-initial-theme",
+      "pass": true,
+      "theme": "light",
+      "osPreference": "dark",
+      "iframeScheme": "light",
+      "childScheme": "light",
+      "transparentPixels": 91034,
+      "differentFromParent": 0,
+      "repeatedCaptureDifferentFromParent": 0,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lifecycle": {
+        "scenario": "initial-theme",
+        "initialTheme": "light"
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "chrome155-page-dark-os-light-initial-theme",
+      "pass": true,
+      "theme": "dark",
+      "osPreference": "light",
+      "iframeScheme": "light",
+      "childScheme": "light",
+      "transparentPixels": 91034,
+      "differentFromParent": 0,
+      "repeatedCaptureDifferentFromParent": 0,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lifecycle": {
+        "scenario": "initial-theme",
+        "initialTheme": "dark"
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "chrome155-page-dark-os-dark-initial-theme",
+      "pass": true,
+      "theme": "dark",
+      "osPreference": "dark",
+      "iframeScheme": "light",
+      "childScheme": "light",
+      "transparentPixels": 91034,
+      "differentFromParent": 0,
+      "repeatedCaptureDifferentFromParent": 0,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lifecycle": {
+        "scenario": "initial-theme",
+        "initialTheme": "dark"
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "chrome155-page-light-os-dark-theme-toggle",
+      "pass": true,
+      "theme": "dark",
+      "osPreference": "dark",
+      "iframeScheme": "light",
+      "childScheme": "light",
+      "transparentPixels": 91034,
+      "differentFromParent": 0,
+      "repeatedCaptureDifferentFromParent": 0,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lifecycle": {
+        "scenario": "theme-toggle",
+        "initialTheme": "light",
+        "themeAfterToggle": "dark"
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "chrome155-page-dark-os-light-theme-toggle",
+      "pass": true,
+      "theme": "light",
+      "osPreference": "light",
+      "iframeScheme": "light",
+      "childScheme": "light",
+      "transparentPixels": 91034,
+      "differentFromParent": 0,
+      "repeatedCaptureDifferentFromParent": 0,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lifecycle": {
+        "scenario": "theme-toggle",
+        "initialTheme": "dark",
+        "themeAfterToggle": "light"
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "chrome155-page-dark-os-dark-minimize-restore",
+      "pass": true,
+      "theme": "dark",
+      "osPreference": "dark",
+      "iframeScheme": "light",
+      "childScheme": "light",
+      "transparentPixels": 91034,
+      "differentFromParent": 0,
+      "repeatedCaptureDifferentFromParent": 0,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lifecycle": {
+        "scenario": "minimize-restore",
+        "initialTheme": "dark",
+        "minimized": true,
+        "restored": true
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "chrome155-page-dark-os-dark-mobile",
+      "pass": true,
+      "theme": "dark",
+      "osPreference": "dark",
+      "iframeScheme": "light",
+      "childScheme": "light",
+      "transparentPixels": 173396,
+      "differentFromParent": 0,
+      "repeatedCaptureDifferentFromParent": 0,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lifecycle": {
+        "scenario": "mobile",
+        "initialTheme": "dark"
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "edge139-page-light-os-light-initial-theme",
+      "pass": true,
+      "theme": "light",
+      "osPreference": "light",
+      "iframeScheme": "light",
+      "childScheme": "light",
+      "transparentPixels": 91034,
+      "differentFromParent": 0,
+      "repeatedCaptureDifferentFromParent": 0,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lifecycle": {
+        "scenario": "initial-theme",
+        "initialTheme": "light"
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "edge139-page-light-os-dark-initial-theme",
+      "pass": true,
+      "theme": "light",
+      "osPreference": "dark",
+      "iframeScheme": "light",
+      "childScheme": "light",
+      "transparentPixels": 91034,
+      "differentFromParent": 0,
+      "repeatedCaptureDifferentFromParent": 0,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lifecycle": {
+        "scenario": "initial-theme",
+        "initialTheme": "light"
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "edge139-page-dark-os-light-initial-theme",
+      "pass": true,
+      "theme": "dark",
+      "osPreference": "light",
+      "iframeScheme": "light",
+      "childScheme": "light",
+      "transparentPixels": 91034,
+      "differentFromParent": 0,
+      "repeatedCaptureDifferentFromParent": 0,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lifecycle": {
+        "scenario": "initial-theme",
+        "initialTheme": "dark"
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "edge139-page-dark-os-dark-initial-theme",
+      "pass": true,
+      "theme": "dark",
+      "osPreference": "dark",
+      "iframeScheme": "light",
+      "childScheme": "light",
+      "transparentPixels": 91034,
+      "differentFromParent": 0,
+      "repeatedCaptureDifferentFromParent": 0,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lifecycle": {
+        "scenario": "initial-theme",
+        "initialTheme": "dark"
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "edge139-page-light-os-dark-theme-toggle",
+      "pass": true,
+      "theme": "dark",
+      "osPreference": "dark",
+      "iframeScheme": "light",
+      "childScheme": "light",
+      "transparentPixels": 91034,
+      "differentFromParent": 0,
+      "repeatedCaptureDifferentFromParent": 0,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lifecycle": {
+        "scenario": "theme-toggle",
+        "initialTheme": "light",
+        "themeAfterToggle": "dark"
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "edge139-page-dark-os-light-theme-toggle",
+      "pass": true,
+      "theme": "light",
+      "osPreference": "light",
+      "iframeScheme": "light",
+      "childScheme": "light",
+      "transparentPixels": 91034,
+      "differentFromParent": 0,
+      "repeatedCaptureDifferentFromParent": 0,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lifecycle": {
+        "scenario": "theme-toggle",
+        "initialTheme": "dark",
+        "themeAfterToggle": "light"
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "edge139-page-dark-os-dark-minimize-restore",
+      "pass": true,
+      "theme": "dark",
+      "osPreference": "dark",
+      "iframeScheme": "light",
+      "childScheme": "light",
+      "transparentPixels": 91034,
+      "differentFromParent": 0,
+      "repeatedCaptureDifferentFromParent": 0,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lifecycle": {
+        "scenario": "minimize-restore",
+        "initialTheme": "dark",
+        "minimized": true,
+        "restored": true
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "edge139-page-dark-os-dark-mobile",
+      "pass": true,
+      "theme": "dark",
+      "osPreference": "dark",
+      "iframeScheme": "light",
+      "childScheme": "light",
+      "transparentPixels": 173396,
+      "differentFromParent": 0,
+      "repeatedCaptureDifferentFromParent": 0,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "lifecycle": {
+        "scenario": "mobile",
+        "initialTheme": "dark"
+      },
+      "pageErrors": []
+    }
+  ],
+  "limitations": "This verifies public homepage transparency, deployed r2 compiled CSS and standing export04 assets at the recorded time. It is not a verification of authenticated business flows or new local features."
+}

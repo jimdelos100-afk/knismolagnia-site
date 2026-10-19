@@ -1,0 +1,631 @@
+{
+  "date": "2026-10-19T04:52:16.153Z",
+  "scope": "Independent actual new MOC neck meshes must move under small native AngleZ and differ from prior real model at the same angle. Finite extreme combinations and exact neutral restoration. Visual seams/occlusion require separate actual editor and browser acceptance.",
+  "newMocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+  "sourceCmoSha256": "2bd397f25d5aa511cd45ce956927e3d06410bbc756bf807b71de9dc21a920650",
+  "testedSourceSnapshotSha256": "a565134a78dce22cc80e005c2090bb248e36acf6f3396f408f8e2761837a7d91",
+  "headNeckContractFile": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-19\\live2d-v8-cubism-c-users-daisy\\work\\interaction-2026-10-19\\model\\head-neck-contract.json",
+  "headNeckContractSha256": "2050e43a1047c453e638af3589900d9fa64526f12c24218c304c1e745cc35af7",
+  "contract": {
+    "parameterId": "ParamAngleZ",
+    "smallAngle": 3,
+    "targetDrawableIds": [
+      "neck_visible",
+      "neck_occlusion_underpaint"
+    ],
+    "sourceMocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+    "scope": "Real export02 small head-neck deformation. Root operated official Cubism Apply Deformer to Child Elements and Copy/Paste Form at neutral from frozen original; no default geometric tolerance was added."
+  },
+  "checks": [
+    {
+      "name": "declared actual neck mesh exists: neck_visible",
+      "pass": true
+    },
+    {
+      "name": "declared actual neck mesh exists: neck_occlusion_underpaint",
+      "pass": true
+    },
+    {
+      "name": "actual new neck deformation at -3 degrees: neck_visible",
+      "pass": true,
+      "detail": {
+        "motionSourcePixels": 0.07753372192382812,
+        "newVersusPriorSourcePixels": 0.07753372192382812
+      }
+    },
+    {
+      "name": "actual new neck deformation at -3 degrees: neck_occlusion_underpaint",
+      "pass": true,
+      "detail": {
+        "motionSourcePixels": 0.12905120849609375,
+        "newVersusPriorSourcePixels": 0.12905120849609375
+      }
+    },
+    {
+      "name": "actual new neck deformation at 3 degrees: neck_visible",
+      "pass": true,
+      "detail": {
+        "motionSourcePixels": 0.07756423950195312,
+        "newVersusPriorSourcePixels": 0.07756423950195312
+      }
+    },
+    {
+      "name": "actual new neck deformation at 3 degrees: neck_occlusion_underpaint",
+      "pass": true,
+      "detail": {
+        "motionSourcePixels": 0.129058837890625,
+        "newVersusPriorSourcePixels": 0.129058837890625
+      }
+    },
+    {
+      "name": "head/neck, gaze and continuous eyelids remain finite across actual Core matrix",
+      "pass": true,
+      "detail": {
+        "sampleCount": 75,
+        "failed": []
+      }
+    },
+    {
+      "name": "native head-neck test restores exact default vertices and opacity",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "samples": [
+    {
+      "angle": -3,
+      "id": "neck_visible",
+      "motionSourcePixels": 0.07753372192382812,
+      "newVersusPriorSourcePixels": 0.07753372192382812,
+      "verticesSha256": "f04f3387fc6150b3d55496173233a6e216702ec1c6964ddc077f535dbf2c1e56"
+    },
+    {
+      "angle": -3,
+      "id": "neck_occlusion_underpaint",
+      "motionSourcePixels": 0.12905120849609375,
+      "newVersusPriorSourcePixels": 0.12905120849609375,
+      "verticesSha256": "fc1262e71ff73b431b11d3881f425e138269be9ee39882b44109c71419ccc6ea"
+    },
+    {
+      "angle": 3,
+      "id": "neck_visible",
+      "motionSourcePixels": 0.07756423950195312,
+      "newVersusPriorSourcePixels": 0.07756423950195312,
+      "verticesSha256": "66158135be5c86d09a8c07029d6e7074cf28cb2c885bbb5eb82e5cb1e7aefb67"
+    },
+    {
+      "angle": 3,
+      "id": "neck_occlusion_underpaint",
+      "motionSourcePixels": 0.129058837890625,
+      "newVersusPriorSourcePixels": 0.129058837890625,
+      "verticesSha256": "ac2faa3e352c467524517e019dec9e0641fa3cf87aeb4dd64256aa687d811662"
+    }
+  ],
+  "matrix": [
+    {
+      "head": -15,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 0,
+      "finite": true
+    },
+    {
+      "head": -15,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 0.25,
+      "finite": true
+    },
+    {
+      "head": -15,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 0.5,
+      "finite": true
+    },
+    {
+      "head": -15,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 0.75,
+      "finite": true
+    },
+    {
+      "head": -15,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 1,
+      "finite": true
+    },
+    {
+      "head": -15,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 0,
+      "finite": true
+    },
+    {
+      "head": -15,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 0.25,
+      "finite": true
+    },
+    {
+      "head": -15,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 0.5,
+      "finite": true
+    },
+    {
+      "head": -15,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 0.75,
+      "finite": true
+    },
+    {
+      "head": -15,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 1,
+      "finite": true
+    },
+    {
+      "head": -15,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 0,
+      "finite": true
+    },
+    {
+      "head": -15,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 0.25,
+      "finite": true
+    },
+    {
+      "head": -15,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 0.5,
+      "finite": true
+    },
+    {
+      "head": -15,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 0.75,
+      "finite": true
+    },
+    {
+      "head": -15,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 1,
+      "finite": true
+    },
+    {
+      "head": -3,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 0,
+      "finite": true
+    },
+    {
+      "head": -3,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 0.25,
+      "finite": true
+    },
+    {
+      "head": -3,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 0.5,
+      "finite": true
+    },
+    {
+      "head": -3,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 0.75,
+      "finite": true
+    },
+    {
+      "head": -3,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 1,
+      "finite": true
+    },
+    {
+      "head": -3,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 0,
+      "finite": true
+    },
+    {
+      "head": -3,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 0.25,
+      "finite": true
+    },
+    {
+      "head": -3,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 0.5,
+      "finite": true
+    },
+    {
+      "head": -3,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 0.75,
+      "finite": true
+    },
+    {
+      "head": -3,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 1,
+      "finite": true
+    },
+    {
+      "head": -3,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 0,
+      "finite": true
+    },
+    {
+      "head": -3,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 0.25,
+      "finite": true
+    },
+    {
+      "head": -3,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 0.5,
+      "finite": true
+    },
+    {
+      "head": -3,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 0.75,
+      "finite": true
+    },
+    {
+      "head": -3,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 1,
+      "finite": true
+    },
+    {
+      "head": 0,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 0,
+      "finite": true
+    },
+    {
+      "head": 0,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 0.25,
+      "finite": true
+    },
+    {
+      "head": 0,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 0.5,
+      "finite": true
+    },
+    {
+      "head": 0,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 0.75,
+      "finite": true
+    },
+    {
+      "head": 0,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 1,
+      "finite": true
+    },
+    {
+      "head": 0,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 0,
+      "finite": true
+    },
+    {
+      "head": 0,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 0.25,
+      "finite": true
+    },
+    {
+      "head": 0,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 0.5,
+      "finite": true
+    },
+    {
+      "head": 0,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 0.75,
+      "finite": true
+    },
+    {
+      "head": 0,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 1,
+      "finite": true
+    },
+    {
+      "head": 0,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 0,
+      "finite": true
+    },
+    {
+      "head": 0,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 0.25,
+      "finite": true
+    },
+    {
+      "head": 0,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 0.5,
+      "finite": true
+    },
+    {
+      "head": 0,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 0.75,
+      "finite": true
+    },
+    {
+      "head": 0,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 1,
+      "finite": true
+    },
+    {
+      "head": 3,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 0,
+      "finite": true
+    },
+    {
+      "head": 3,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 0.25,
+      "finite": true
+    },
+    {
+      "head": 3,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 0.5,
+      "finite": true
+    },
+    {
+      "head": 3,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 0.75,
+      "finite": true
+    },
+    {
+      "head": 3,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 1,
+      "finite": true
+    },
+    {
+      "head": 3,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 0,
+      "finite": true
+    },
+    {
+      "head": 3,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 0.25,
+      "finite": true
+    },
+    {
+      "head": 3,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 0.5,
+      "finite": true
+    },
+    {
+      "head": 3,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 0.75,
+      "finite": true
+    },
+    {
+      "head": 3,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 1,
+      "finite": true
+    },
+    {
+      "head": 3,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 0,
+      "finite": true
+    },
+    {
+      "head": 3,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 0.25,
+      "finite": true
+    },
+    {
+      "head": 3,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 0.5,
+      "finite": true
+    },
+    {
+      "head": 3,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 0.75,
+      "finite": true
+    },
+    {
+      "head": 3,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 1,
+      "finite": true
+    },
+    {
+      "head": 15,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 0,
+      "finite": true
+    },
+    {
+      "head": 15,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 0.25,
+      "finite": true
+    },
+    {
+      "head": 15,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 0.5,
+      "finite": true
+    },
+    {
+      "head": 15,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 0.75,
+      "finite": true
+    },
+    {
+      "head": 15,
+      "eyeX": -1,
+      "eyeY": -1,
+      "open": 1,
+      "finite": true
+    },
+    {
+      "head": 15,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 0,
+      "finite": true
+    },
+    {
+      "head": 15,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 0.25,
+      "finite": true
+    },
+    {
+      "head": 15,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 0.5,
+      "finite": true
+    },
+    {
+      "head": 15,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 0.75,
+      "finite": true
+    },
+    {
+      "head": 15,
+      "eyeX": 0,
+      "eyeY": 0,
+      "open": 1,
+      "finite": true
+    },
+    {
+      "head": 15,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 0,
+      "finite": true
+    },
+    {
+      "head": 15,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 0.25,
+      "finite": true
+    },
+    {
+      "head": 15,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 0.5,
+      "finite": true
+    },
+    {
+      "head": 15,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 0.75,
+      "finite": true
+    },
+    {
+      "head": 15,
+      "eyeX": 1,
+      "eyeY": 1,
+      "open": 1,
+      "finite": true
+    }
+  ]
+}

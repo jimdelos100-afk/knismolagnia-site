@@ -1,0 +1,162 @@
+{
+  "date": "2026-10-19T04:10:30.886Z",
+  "entries": [
+    {
+      "url": "https://knismolagnia.club/",
+      "status": 200,
+      "sha256": "6a55de41e4830cf9f9c398bd43aba3ffc584fa7c44e522919f4bef153f38d2b1",
+      "bytes": 15975,
+      "headers": {
+        "age": "0",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Mon, 19 Oct 2026 04:10:30 GMT",
+        "link": "</_next/static/css/c8898797bfca7164.css>; rel=preload; as=\"style\"",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+        "x-matched-path": "/",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "hkg1::sin1::p9fbb-1792383029141-cc11d4bfd561"
+      }
+    },
+    {
+      "url": "https://knismolagnia.club/_next/static/css/c8898797bfca7164.css",
+      "status": 200,
+      "sha256": "f441409c082edf7e3b3080d045713bb3b5db34961522e72461487480b2c2ed74",
+      "bytes": 33469,
+      "headers": {
+        "access-control-allow-origin": "*",
+        "age": "0",
+        "cache-control": "public,max-age=31536000,immutable",
+        "content-disposition": "inline; filename=\"c8898797bfca7164.css\"",
+        "content-encoding": "br",
+        "content-type": "text/css; charset=utf-8",
+        "date": "Mon, 19 Oct 2026 04:10:30 GMT",
+        "etag": "W/\"44272f2945e986da59f3dcf8c889248d\"",
+        "last-modified": "Mon, 19 Oct 2026 04:10:30 GMT",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "x-matched-path": "/_next/static/css/c8898797bfca7164.css",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "hkg1::mqc5f-1792383030304-ff401795050b"
+      }
+    },
+    {
+      "url": "https://knismolagnia.club/konisi-game/home.html",
+      "status": 200,
+      "sha256": "78933544903a9b6b375f04ad433dc67388d9528716ece7b54c01bcdb2bab8317",
+      "bytes": 3275,
+      "headers": {
+        "access-control-allow-origin": "*",
+        "age": "45486",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-disposition": "inline; filename=\"home.html\"",
+        "content-encoding": "br",
+        "content-type": "text/html; charset=utf-8",
+        "date": "Mon, 19 Oct 2026 04:10:31 GMT",
+        "etag": "W/\"9ada9ddf7ebec74ce522797378c32bd6\"",
+        "last-modified": "Sun, 18 Oct 2026 15:32:24 GMT",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "x-matched-path": "/konisi-game/home.html",
+        "x-vercel-cache": "HIT",
+        "x-vercel-id": "hkg1::lg8dt-1792383030923-ebaa340ec468"
+      }
+    },
+    {
+      "url": "https://knismolagnia.club/konisi-game/character.css",
+      "status": 200,
+      "sha256": "a443b21fa16b6e07bcfc204027c1d2a663a7ab454b1c4604926de6e63c8c76ae",
+      "bytes": 10545,
+      "headers": {
+        "access-control-allow-origin": "*",
+        "age": "0",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-disposition": "inline; filename=\"character.css\"",
+        "content-encoding": "br",
+        "content-type": "text/css; charset=utf-8",
+        "date": "Mon, 19 Oct 2026 04:10:31 GMT",
+        "etag": "W/\"dc9b81d0d884d8ebab0882c1a4be8eee\"",
+        "last-modified": "Mon, 19 Oct 2026 04:10:31 GMT",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "x-matched-path": "/konisi-game/character.css",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "hkg1::gdlzc-1792383031226-6e7ffd707ad7"
+      }
+    },
+    {
+      "url": "https://knismolagnia.club/konisi-game/character.js",
+      "status": 200,
+      "sha256": "3b3c1fa2a3c470e190b0bab22c99489df3dbbef4fded614f353121831fd588c7",
+      "bytes": 26720,
+      "headers": {
+        "access-control-allow-origin": "*",
+        "age": "0",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-disposition": "inline; filename=\"character.js\"",
+        "content-encoding": "br",
+        "content-type": "application/javascript; charset=utf-8",
+        "date": "Mon, 19 Oct 2026 04:10:32 GMT",
+        "etag": "W/\"1c9d18465e8cfefb8417ced7326db07d\"",
+        "last-modified": "Mon, 19 Oct 2026 04:10:32 GMT",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "x-matched-path": "/konisi-game/character.js",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "hkg1::qfwdc-1792383031842-aae3d217fe1c"
+      }
+    },
+    {
+      "url": "https://knismolagnia.club/konisi-game/live2d/manifest.json",
+      "status": 200,
+      "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+      "bytes": 1799,
+      "headers": {
+        "access-control-allow-origin": "*",
+        "age": "0",
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-disposition": "inline; filename=\"manifest.json\"",
+        "content-encoding": "br",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Mon, 19 Oct 2026 04:10:32 GMT",
+        "etag": "W/\"db2cd4ac7ff19e4b58cfb7d796bf5d85\"",
+        "last-modified": "Mon, 19 Oct 2026 04:10:32 GMT",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "transfer-encoding": "chunked",
+        "x-matched-path": "/konisi-game/live2d/manifest.json",
+        "x-vercel-cache": "MISS",
+        "x-vercel-id": "hkg1::gdlzc-1792383032165-629d791fc988"
+      }
+    }
+  ],
+  "cssLinks": [
+    "/_next/static/css/c8898797bfca7164.css"
+  ],
+  "schemeDeclaration": [
+    {
+      "file": "character.css",
+      "frameSchemeRule": null
+    },
+    {
+      "file": "online-0.css",
+      "frameSchemeRule": [
+        ".site-companion-frame{display:block;width:100%;height:min(54svh,430px);min-height:285px;border:0;border-radius:0;background:transparent;color-scheme:light;pointer-events:auto}",
+        ".site-companion.is-home-route .site-companion-frame{height:min(70svh,560px);min-height:350px}",
+        ".site-companion.is-minimized .site-companion-frame,.site-companion.is-minimized .site-companion-minimize{display:none}",
+        ".site-companion-frame{height:min(49svh,340px);min-height:205px}",
+        ".site-companion.is-home-route .site-companion-frame{height:min(61svh,445px);min-height:260px}",
+        ".site-companion-frame{height:min(56vh,290px);min-height:175px}",
+        ".site-companion.is-home-route .site-companion-frame{height:min(65svh,330px);min-height:170px}"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1787 @@
+{
+  "date": "2026-10-19T04:55:54.612Z",
+  "testedSourceSnapshotSha256": "a565134a78dce22cc80e005c2090bb248e36acf6f3396f408f8e2761837a7d91",
+  "newMocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+  "sourceBrowserReport": "raw/interaction-browser-qa.json",
+  "sourceBrowserReportSha256": "42454a3599d906891ea2b7630f2eb429bb4cbc52e22d710ef7889ce7ac7c9f29",
+  "errors": [],
+  "scope": "Independent report extracted from actual completed browser costume cases. Host original/tights/overknee, expressions and five actions were executed; Level 1/2 option lists were actually selected and each resulting outfit asserted in the browser.",
+  "checks": [
+    {
+      "name": "chrome-desktop-mouse / standing host wardrobe and reactions",
+      "pass": true,
+      "detail": {
+        "poses": [
+          {
+            "outfit": "tights",
+            "appearance": {
+              "method": "V8 patches clipped to detailed original body/face ownership; native hair atlas untouched",
+              "expressionParametersRigged": false,
+              "nativeEyes": true,
+              "facialMode": "native Cubism parameters",
+              "blinkMethod": "native EyeOpen parameters; no blink texture or eye opacity override",
+              "current": {
+                "outfit": "tights",
+                "expression": "neutral",
+                "nativeFace": true
+              },
+              "blink": 0,
+              "maxMappingError": 0,
+              "roles": {
+                "bodyHost": "body_visible_fixed",
+                "faceHost": "face_visible_residual",
+                "facialOriginal": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "brow_left_visible",
+                  "brow_right_visible",
+                  "nose_visible_mark",
+                  "mouth_visible_line",
+                  "face_skin_local_visible"
+                ],
+                "facialOcclusion": [
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion",
+                  "brow_left_occlusion",
+                  "brow_right_occlusion"
+                ],
+                "blinkFade": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion"
+                ]
+              },
+              "drawableOpacities": {
+                "eye_left_highlight_upper": 1,
+                "eye_left_highlight_center": 1,
+                "eye_right_highlight_upper": 1,
+                "eye_right_highlight_secondary": 1,
+                "eye_left_pupil_visible_rim": 1,
+                "eye_left_upper_lash": 1,
+                "eye_right_upper_lash": 1,
+                "eye_left_iris": 1,
+                "eye_right_iris": 1,
+                "eye_left_sclera_visible": 1,
+                "eye_right_sclera_visible": 1,
+                "eye_left_lower_lid_rim": 1,
+                "eye_right_lower_lid_rim": 1,
+                "brow_left_visible": 1,
+                "brow_right_visible": 1,
+                "nose_visible_mark": 1,
+                "mouth_visible_line": 1,
+                "face_skin_local_visible": 1,
+                "iris_left_occlusion": 1,
+                "iris_right_occlusion": 1,
+                "sclera_left_occlusion": 1,
+                "sclera_right_occlusion": 1,
+                "brow_left_occlusion": 1,
+                "brow_right_occlusion": 1
+              },
+              "emptyDrawablesSkipped": [
+                "hair_side_right_occlusion3",
+                "hair_side_right_occlusion4",
+                "hair_side_right_occlusion5",
+                "hair_side_right_occlusion6",
+                "hair_side_left_occlusion3",
+                "hair_side_left_occlusion4",
+                "hair_side_left_occlusion5",
+                "hair_side_left_occlusion6",
+                "hair_long_left_outer_occlusion3",
+                "hair_long_left_outer_occlusion4",
+                "hair_long_left_outer_occlusion8",
+                "hair_bang_left_outer_occlusion3",
+                "hair_bang_left_outer_occlusion4",
+                "hair_bang_left_outer_occlusion5",
+                "hair_bang_left_outer_occlusion6",
+                "hair_bang_left_outer_occlusion7",
+                "hair_bang_left_outer_occlusion8",
+                "hair_bang_right_outer_occlusion3",
+                "hair_bang_right_outer_occlusion4",
+                "hair_bang_right_outer_occlusion5",
+                "hair_bang_right_outer_occlusion6",
+                "hair_long_right_outer_occlusion2",
+                "hair_long_right_outer_occlusion3",
+                "hair_long_right_outer_occlusion4"
+              ],
+              "wardrobeDrawables": {},
+              "originalAtlasPreservedWhenNeutral": true,
+              "patchRegions": [
+                {
+                  "textureIndex": 0,
+                  "x": 1173,
+                  "y": 489,
+                  "width": 284,
+                  "height": 533
+                }
+              ],
+              "blinkRegions": []
+            }
+          },
+          {
+            "outfit": "overknee",
+            "appearance": {
+              "method": "V8 patches clipped to detailed original body/face ownership; native hair atlas untouched",
+              "expressionParametersRigged": false,
+              "nativeEyes": true,
+              "facialMode": "native Cubism parameters",
+              "blinkMethod": "native EyeOpen parameters; no blink texture or eye opacity override",
+              "current": {
+                "outfit": "overknee",
+                "expression": "neutral",
+                "nativeFace": true
+              },
+              "blink": 0,
+              "maxMappingError": 0,
+              "roles": {
+                "bodyHost": "body_visible_fixed",
+                "faceHost": "face_visible_residual",
+                "facialOriginal": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "brow_left_visible",
+                  "brow_right_visible",
+                  "nose_visible_mark",
+                  "mouth_visible_line",
+                  "face_skin_local_visible"
+                ],
+                "facialOcclusion": [
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion",
+                  "brow_left_occlusion",
+                  "brow_right_occlusion"
+                ],
+                "blinkFade": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion"
+                ]
+              },
+              "drawableOpacities": {
+                "eye_left_highlight_upper": 1,
+                "eye_left_highlight_center": 1,
+                "eye_right_highlight_upper": 1,
+                "eye_right_highlight_secondary": 1,
+                "eye_left_pupil_visible_rim": 1,
+                "eye_left_upper_lash": 1,
+                "eye_right_upper_lash": 1,
+                "eye_left_iris": 1,
+                "eye_right_iris": 1,
+                "eye_left_sclera_visible": 1,
+                "eye_right_sclera_visible": 1,
+                "eye_left_lower_lid_rim": 1,
+                "eye_right_lower_lid_rim": 1,
+                "brow_left_visible": 1,
+                "brow_right_visible": 1,
+                "nose_visible_mark": 1,
+                "mouth_visible_line": 1,
+                "face_skin_local_visible": 1,
+                "iris_left_occlusion": 1,
+                "iris_right_occlusion": 1,
+                "sclera_left_occlusion": 1,
+                "sclera_right_occlusion": 1,
+                "brow_left_occlusion": 1,
+                "brow_right_occlusion": 1
+              },
+              "emptyDrawablesSkipped": [
+                "hair_side_right_occlusion3",
+                "hair_side_right_occlusion4",
+                "hair_side_right_occlusion5",
+                "hair_side_right_occlusion6",
+                "hair_side_left_occlusion3",
+                "hair_side_left_occlusion4",
+                "hair_side_left_occlusion5",
+                "hair_side_left_occlusion6",
+                "hair_long_left_outer_occlusion3",
+                "hair_long_left_outer_occlusion4",
+                "hair_long_left_outer_occlusion8",
+                "hair_bang_left_outer_occlusion3",
+                "hair_bang_left_outer_occlusion4",
+                "hair_bang_left_outer_occlusion5",
+                "hair_bang_left_outer_occlusion6",
+                "hair_bang_left_outer_occlusion7",
+                "hair_bang_left_outer_occlusion8",
+                "hair_bang_right_outer_occlusion3",
+                "hair_bang_right_outer_occlusion4",
+                "hair_bang_right_outer_occlusion5",
+                "hair_bang_right_outer_occlusion6",
+                "hair_long_right_outer_occlusion2",
+                "hair_long_right_outer_occlusion3",
+                "hair_long_right_outer_occlusion4"
+              ],
+              "wardrobeDrawables": {},
+              "originalAtlasPreservedWhenNeutral": true,
+              "patchRegions": [
+                {
+                  "textureIndex": 0,
+                  "x": 1174,
+                  "y": 489,
+                  "width": 283,
+                  "height": 533
+                }
+              ],
+              "blinkRegions": []
+            }
+          },
+          {
+            "outfit": "original",
+            "appearance": {
+              "method": "V8 patches clipped to detailed original body/face ownership; native hair atlas untouched",
+              "expressionParametersRigged": false,
+              "nativeEyes": true,
+              "facialMode": "native Cubism parameters",
+              "blinkMethod": "native EyeOpen parameters; no blink texture or eye opacity override",
+              "current": {
+                "outfit": "original",
+                "expression": "neutral",
+                "nativeFace": true
+              },
+              "blink": 0,
+              "maxMappingError": 0,
+              "roles": {
+                "bodyHost": "body_visible_fixed",
+                "faceHost": "face_visible_residual",
+                "facialOriginal": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "brow_left_visible",
+                  "brow_right_visible",
+                  "nose_visible_mark",
+                  "mouth_visible_line",
+                  "face_skin_local_visible"
+                ],
+                "facialOcclusion": [
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion",
+                  "brow_left_occlusion",
+                  "brow_right_occlusion"
+                ],
+                "blinkFade": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion"
+                ]
+              },
+              "drawableOpacities": {
+                "eye_left_highlight_upper": 1,
+                "eye_left_highlight_center": 1,
+                "eye_right_highlight_upper": 1,
+                "eye_right_highlight_secondary": 1,
+                "eye_left_pupil_visible_rim": 1,
+                "eye_left_upper_lash": 1,
+                "eye_right_upper_lash": 1,
+                "eye_left_iris": 1,
+                "eye_right_iris": 1,
+                "eye_left_sclera_visible": 1,
+                "eye_right_sclera_visible": 1,
+                "eye_left_lower_lid_rim": 1,
+                "eye_right_lower_lid_rim": 1,
+                "brow_left_visible": 1,
+                "brow_right_visible": 1,
+                "nose_visible_mark": 1,
+                "mouth_visible_line": 1,
+                "face_skin_local_visible": 1,
+                "iris_left_occlusion": 1,
+                "iris_right_occlusion": 1,
+                "sclera_left_occlusion": 1,
+                "sclera_right_occlusion": 1,
+                "brow_left_occlusion": 1,
+                "brow_right_occlusion": 1
+              },
+              "emptyDrawablesSkipped": [
+                "hair_side_right_occlusion3",
+                "hair_side_right_occlusion4",
+                "hair_side_right_occlusion5",
+                "hair_side_right_occlusion6",
+                "hair_side_left_occlusion3",
+                "hair_side_left_occlusion4",
+                "hair_side_left_occlusion5",
+                "hair_side_left_occlusion6",
+                "hair_long_left_outer_occlusion3",
+                "hair_long_left_outer_occlusion4",
+                "hair_long_left_outer_occlusion8",
+                "hair_bang_left_outer_occlusion3",
+                "hair_bang_left_outer_occlusion4",
+                "hair_bang_left_outer_occlusion5",
+                "hair_bang_left_outer_occlusion6",
+                "hair_bang_left_outer_occlusion7",
+                "hair_bang_left_outer_occlusion8",
+                "hair_bang_right_outer_occlusion3",
+                "hair_bang_right_outer_occlusion4",
+                "hair_bang_right_outer_occlusion5",
+                "hair_bang_right_outer_occlusion6",
+                "hair_long_right_outer_occlusion2",
+                "hair_long_right_outer_occlusion3",
+                "hair_long_right_outer_occlusion4"
+              ],
+              "wardrobeDrawables": {},
+              "originalAtlasPreservedWhenNeutral": true,
+              "patchRegions": [],
+              "blinkRegions": []
+            }
+          }
+        ],
+        "reactions": [
+          {
+            "label": "摸头",
+            "reaction": "pat"
+          },
+          {
+            "label": "戳一戳",
+            "reaction": "poke"
+          },
+          {
+            "label": "捏脸",
+            "reaction": "pinch"
+          },
+          {
+            "label": "揉头发",
+            "reaction": "rub"
+          },
+          {
+            "label": "挠痒痒",
+            "reaction": "tickle"
+          }
+        ]
+      }
+    },
+    {
+      "name": "chrome-mobile-touch / standing host wardrobe and reactions",
+      "pass": true,
+      "detail": {
+        "poses": [
+          {
+            "outfit": "tights",
+            "appearance": {
+              "method": "V8 patches clipped to detailed original body/face ownership; native hair atlas untouched",
+              "expressionParametersRigged": false,
+              "nativeEyes": true,
+              "facialMode": "native Cubism parameters",
+              "blinkMethod": "native EyeOpen parameters; no blink texture or eye opacity override",
+              "current": {
+                "outfit": "tights",
+                "expression": "neutral",
+                "nativeFace": true
+              },
+              "blink": 0,
+              "maxMappingError": 0,
+              "roles": {
+                "bodyHost": "body_visible_fixed",
+                "faceHost": "face_visible_residual",
+                "facialOriginal": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "brow_left_visible",
+                  "brow_right_visible",
+                  "nose_visible_mark",
+                  "mouth_visible_line",
+                  "face_skin_local_visible"
+                ],
+                "facialOcclusion": [
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion",
+                  "brow_left_occlusion",
+                  "brow_right_occlusion"
+                ],
+                "blinkFade": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion"
+                ]
+              },
+              "drawableOpacities": {
+                "eye_left_highlight_upper": 1,
+                "eye_left_highlight_center": 1,
+                "eye_right_highlight_upper": 1,
+                "eye_right_highlight_secondary": 1,
+                "eye_left_pupil_visible_rim": 1,
+                "eye_left_upper_lash": 1,
+                "eye_right_upper_lash": 1,
+                "eye_left_iris": 1,
+                "eye_right_iris": 1,
+                "eye_left_sclera_visible": 1,
+                "eye_right_sclera_visible": 1,
+                "eye_left_lower_lid_rim": 1,
+                "eye_right_lower_lid_rim": 1,
+                "brow_left_visible": 1,
+                "brow_right_visible": 1,
+                "nose_visible_mark": 1,
+                "mouth_visible_line": 1,
+                "face_skin_local_visible": 1,
+                "iris_left_occlusion": 1,
+                "iris_right_occlusion": 1,
+                "sclera_left_occlusion": 1,
+                "sclera_right_occlusion": 1,
+                "brow_left_occlusion": 1,
+                "brow_right_occlusion": 1
+              },
+              "emptyDrawablesSkipped": [
+                "hair_side_right_occlusion3",
+                "hair_side_right_occlusion4",
+                "hair_side_right_occlusion5",
+                "hair_side_right_occlusion6",
+                "hair_side_left_occlusion3",
+                "hair_side_left_occlusion4",
+                "hair_side_left_occlusion5",
+                "hair_side_left_occlusion6",
+                "hair_long_left_outer_occlusion3",
+                "hair_long_left_outer_occlusion4",
+                "hair_long_left_outer_occlusion8",
+                "hair_bang_left_outer_occlusion3",
+                "hair_bang_left_outer_occlusion4",
+                "hair_bang_left_outer_occlusion5",
+                "hair_bang_left_outer_occlusion6",
+                "hair_bang_left_outer_occlusion7",
+                "hair_bang_left_outer_occlusion8",
+                "hair_bang_right_outer_occlusion3",
+                "hair_bang_right_outer_occlusion4",
+                "hair_bang_right_outer_occlusion5",
+                "hair_bang_right_outer_occlusion6",
+                "hair_long_right_outer_occlusion2",
+                "hair_long_right_outer_occlusion3",
+                "hair_long_right_outer_occlusion4"
+              ],
+              "wardrobeDrawables": {},
+              "originalAtlasPreservedWhenNeutral": true,
+              "patchRegions": [
+                {
+                  "textureIndex": 0,
+                  "x": 1173,
+                  "y": 489,
+                  "width": 284,
+                  "height": 533
+                }
+              ],
+              "blinkRegions": []
+            }
+          },
+          {
+            "outfit": "overknee",
+            "appearance": {
+              "method": "V8 patches clipped to detailed original body/face ownership; native hair atlas untouched",
+              "expressionParametersRigged": false,
+              "nativeEyes": true,
+              "facialMode": "native Cubism parameters",
+              "blinkMethod": "native EyeOpen parameters; no blink texture or eye opacity override",
+              "current": {
+                "outfit": "overknee",
+                "expression": "neutral",
+                "nativeFace": true
+              },
+              "blink": 0,
+              "maxMappingError": 0,
+              "roles": {
+                "bodyHost": "body_visible_fixed",
+                "faceHost": "face_visible_residual",
+                "facialOriginal": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "brow_left_visible",
+                  "brow_right_visible",
+                  "nose_visible_mark",
+                  "mouth_visible_line",
+                  "face_skin_local_visible"
+                ],
+                "facialOcclusion": [
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion",
+                  "brow_left_occlusion",
+                  "brow_right_occlusion"
+                ],
+                "blinkFade": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion"
+                ]
+              },
+              "drawableOpacities": {
+                "eye_left_highlight_upper": 1,
+                "eye_left_highlight_center": 1,
+                "eye_right_highlight_upper": 1,
+                "eye_right_highlight_secondary": 1,
+                "eye_left_pupil_visible_rim": 1,
+                "eye_left_upper_lash": 1,
+                "eye_right_upper_lash": 1,
+                "eye_left_iris": 1,
+                "eye_right_iris": 1,
+                "eye_left_sclera_visible": 1,
+                "eye_right_sclera_visible": 1,
+                "eye_left_lower_lid_rim": 1,
+                "eye_right_lower_lid_rim": 1,
+                "brow_left_visible": 1,
+                "brow_right_visible": 1,
+                "nose_visible_mark": 1,
+                "mouth_visible_line": 1,
+                "face_skin_local_visible": 1,
+                "iris_left_occlusion": 1,
+                "iris_right_occlusion": 1,
+                "sclera_left_occlusion": 1,
+                "sclera_right_occlusion": 1,
+                "brow_left_occlusion": 1,
+                "brow_right_occlusion": 1
+              },
+              "emptyDrawablesSkipped": [
+                "hair_side_right_occlusion3",
+                "hair_side_right_occlusion4",
+                "hair_side_right_occlusion5",
+                "hair_side_right_occlusion6",
+                "hair_side_left_occlusion3",
+                "hair_side_left_occlusion4",
+                "hair_side_left_occlusion5",
+                "hair_side_left_occlusion6",
+                "hair_long_left_outer_occlusion3",
+                "hair_long_left_outer_occlusion4",
+                "hair_long_left_outer_occlusion8",
+                "hair_bang_left_outer_occlusion3",
+                "hair_bang_left_outer_occlusion4",
+                "hair_bang_left_outer_occlusion5",
+                "hair_bang_left_outer_occlusion6",
+                "hair_bang_left_outer_occlusion7",
+                "hair_bang_left_outer_occlusion8",
+                "hair_bang_right_outer_occlusion3",
+                "hair_bang_right_outer_occlusion4",
+                "hair_bang_right_outer_occlusion5",
+                "hair_bang_right_outer_occlusion6",
+                "hair_long_right_outer_occlusion2",
+                "hair_long_right_outer_occlusion3",
+                "hair_long_right_outer_occlusion4"
+              ],
+              "wardrobeDrawables": {},
+              "originalAtlasPreservedWhenNeutral": true,
+              "patchRegions": [
+                {
+                  "textureIndex": 0,
+                  "x": 1174,
+                  "y": 489,
+                  "width": 283,
+                  "height": 533
+                }
+              ],
+              "blinkRegions": []
+            }
+          },
+          {
+            "outfit": "original",
+            "appearance": {
+              "method": "V8 patches clipped to detailed original body/face ownership; native hair atlas untouched",
+              "expressionParametersRigged": false,
+              "nativeEyes": true,
+              "facialMode": "native Cubism parameters",
+              "blinkMethod": "native EyeOpen parameters; no blink texture or eye opacity override",
+              "current": {
+                "outfit": "original",
+                "expression": "neutral",
+                "nativeFace": true
+              },
+              "blink": 0,
+              "maxMappingError": 0,
+              "roles": {
+                "bodyHost": "body_visible_fixed",
+                "faceHost": "face_visible_residual",
+                "facialOriginal": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "brow_left_visible",
+                  "brow_right_visible",
+                  "nose_visible_mark",
+                  "mouth_visible_line",
+                  "face_skin_local_visible"
+                ],
+                "facialOcclusion": [
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion",
+                  "brow_left_occlusion",
+                  "brow_right_occlusion"
+                ],
+                "blinkFade": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion"
+                ]
+              },
+              "drawableOpacities": {
+                "eye_left_highlight_upper": 1,
+                "eye_left_highlight_center": 1,
+                "eye_right_highlight_upper": 1,
+                "eye_right_highlight_secondary": 1,
+                "eye_left_pupil_visible_rim": 1,
+                "eye_left_upper_lash": 1,
+                "eye_right_upper_lash": 1,
+                "eye_left_iris": 1,
+                "eye_right_iris": 1,
+                "eye_left_sclera_visible": 1,
+                "eye_right_sclera_visible": 1,
+                "eye_left_lower_lid_rim": 1,
+                "eye_right_lower_lid_rim": 1,
+                "brow_left_visible": 1,
+                "brow_right_visible": 1,
+                "nose_visible_mark": 1,
+                "mouth_visible_line": 1,
+                "face_skin_local_visible": 1,
+                "iris_left_occlusion": 1,
+                "iris_right_occlusion": 1,
+                "sclera_left_occlusion": 1,
+                "sclera_right_occlusion": 1,
+                "brow_left_occlusion": 1,
+                "brow_right_occlusion": 1
+              },
+              "emptyDrawablesSkipped": [
+                "hair_side_right_occlusion3",
+                "hair_side_right_occlusion4",
+                "hair_side_right_occlusion5",
+                "hair_side_right_occlusion6",
+                "hair_side_left_occlusion3",
+                "hair_side_left_occlusion4",
+                "hair_side_left_occlusion5",
+                "hair_side_left_occlusion6",
+                "hair_long_left_outer_occlusion3",
+                "hair_long_left_outer_occlusion4",
+                "hair_long_left_outer_occlusion8",
+                "hair_bang_left_outer_occlusion3",
+                "hair_bang_left_outer_occlusion4",
+                "hair_bang_left_outer_occlusion5",
+                "hair_bang_left_outer_occlusion6",
+                "hair_bang_left_outer_occlusion7",
+                "hair_bang_left_outer_occlusion8",
+                "hair_bang_right_outer_occlusion3",
+                "hair_bang_right_outer_occlusion4",
+                "hair_bang_right_outer_occlusion5",
+                "hair_bang_right_outer_occlusion6",
+                "hair_long_right_outer_occlusion2",
+                "hair_long_right_outer_occlusion3",
+                "hair_long_right_outer_occlusion4"
+              ],
+              "wardrobeDrawables": {},
+              "originalAtlasPreservedWhenNeutral": true,
+              "patchRegions": [],
+              "blinkRegions": []
+            }
+          }
+        ],
+        "reactions": [
+          {
+            "label": "摸头",
+            "reaction": "pat"
+          },
+          {
+            "label": "戳一戳",
+            "reaction": "poke"
+          },
+          {
+            "label": "捏脸",
+            "reaction": "pinch"
+          },
+          {
+            "label": "揉头发",
+            "reaction": "rub"
+          },
+          {
+            "label": "挠痒痒",
+            "reaction": "tickle"
+          }
+        ]
+      }
+    },
+    {
+      "name": "edge-desktop-mouse / standing host wardrobe and reactions",
+      "pass": true,
+      "detail": {
+        "poses": [
+          {
+            "outfit": "tights",
+            "appearance": {
+              "method": "V8 patches clipped to detailed original body/face ownership; native hair atlas untouched",
+              "expressionParametersRigged": false,
+              "nativeEyes": true,
+              "facialMode": "native Cubism parameters",
+              "blinkMethod": "native EyeOpen parameters; no blink texture or eye opacity override",
+              "current": {
+                "outfit": "tights",
+                "expression": "neutral",
+                "nativeFace": true
+              },
+              "blink": 0,
+              "maxMappingError": 0,
+              "roles": {
+                "bodyHost": "body_visible_fixed",
+                "faceHost": "face_visible_residual",
+                "facialOriginal": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "brow_left_visible",
+                  "brow_right_visible",
+                  "nose_visible_mark",
+                  "mouth_visible_line",
+                  "face_skin_local_visible"
+                ],
+                "facialOcclusion": [
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion",
+                  "brow_left_occlusion",
+                  "brow_right_occlusion"
+                ],
+                "blinkFade": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion"
+                ]
+              },
+              "drawableOpacities": {
+                "eye_left_highlight_upper": 1,
+                "eye_left_highlight_center": 1,
+                "eye_right_highlight_upper": 1,
+                "eye_right_highlight_secondary": 1,
+                "eye_left_pupil_visible_rim": 1,
+                "eye_left_upper_lash": 1,
+                "eye_right_upper_lash": 1,
+                "eye_left_iris": 1,
+                "eye_right_iris": 1,
+                "eye_left_sclera_visible": 1,
+                "eye_right_sclera_visible": 1,
+                "eye_left_lower_lid_rim": 1,
+                "eye_right_lower_lid_rim": 1,
+                "brow_left_visible": 1,
+                "brow_right_visible": 1,
+                "nose_visible_mark": 1,
+                "mouth_visible_line": 1,
+                "face_skin_local_visible": 1,
+                "iris_left_occlusion": 1,
+                "iris_right_occlusion": 1,
+                "sclera_left_occlusion": 1,
+                "sclera_right_occlusion": 1,
+                "brow_left_occlusion": 1,
+                "brow_right_occlusion": 1
+              },
+              "emptyDrawablesSkipped": [
+                "hair_side_right_occlusion3",
+                "hair_side_right_occlusion4",
+                "hair_side_right_occlusion5",
+                "hair_side_right_occlusion6",
+                "hair_side_left_occlusion3",
+                "hair_side_left_occlusion4",
+                "hair_side_left_occlusion5",
+                "hair_side_left_occlusion6",
+                "hair_long_left_outer_occlusion3",
+                "hair_long_left_outer_occlusion4",
+                "hair_long_left_outer_occlusion8",
+                "hair_bang_left_outer_occlusion3",
+                "hair_bang_left_outer_occlusion4",
+                "hair_bang_left_outer_occlusion5",
+                "hair_bang_left_outer_occlusion6",
+                "hair_bang_left_outer_occlusion7",
+                "hair_bang_left_outer_occlusion8",
+                "hair_bang_right_outer_occlusion3",
+                "hair_bang_right_outer_occlusion4",
+                "hair_bang_right_outer_occlusion5",
+                "hair_bang_right_outer_occlusion6",
+                "hair_long_right_outer_occlusion2",
+                "hair_long_right_outer_occlusion3",
+                "hair_long_right_outer_occlusion4"
+              ],
+              "wardrobeDrawables": {},
+              "originalAtlasPreservedWhenNeutral": true,
+              "patchRegions": [
+                {
+                  "textureIndex": 0,
+                  "x": 1173,
+                  "y": 489,
+                  "width": 284,
+                  "height": 533
+                }
+              ],
+              "blinkRegions": []
+            }
+          },
+          {
+            "outfit": "overknee",
+            "appearance": {
+              "method": "V8 patches clipped to detailed original body/face ownership; native hair atlas untouched",
+              "expressionParametersRigged": false,
+              "nativeEyes": true,
+              "facialMode": "native Cubism parameters",
+              "blinkMethod": "native EyeOpen parameters; no blink texture or eye opacity override",
+              "current": {
+                "outfit": "overknee",
+                "expression": "neutral",
+                "nativeFace": true
+              },
+              "blink": 0,
+              "maxMappingError": 0,
+              "roles": {
+                "bodyHost": "body_visible_fixed",
+                "faceHost": "face_visible_residual",
+                "facialOriginal": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "brow_left_visible",
+                  "brow_right_visible",
+                  "nose_visible_mark",
+                  "mouth_visible_line",
+                  "face_skin_local_visible"
+                ],
+                "facialOcclusion": [
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion",
+                  "brow_left_occlusion",
+                  "brow_right_occlusion"
+                ],
+                "blinkFade": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion"
+                ]
+              },
+              "drawableOpacities": {
+                "eye_left_highlight_upper": 1,
+                "eye_left_highlight_center": 1,
+                "eye_right_highlight_upper": 1,
+                "eye_right_highlight_secondary": 1,
+                "eye_left_pupil_visible_rim": 1,
+                "eye_left_upper_lash": 1,
+                "eye_right_upper_lash": 1,
+                "eye_left_iris": 1,
+                "eye_right_iris": 1,
+                "eye_left_sclera_visible": 1,
+                "eye_right_sclera_visible": 1,
+                "eye_left_lower_lid_rim": 1,
+                "eye_right_lower_lid_rim": 1,
+                "brow_left_visible": 1,
+                "brow_right_visible": 1,
+                "nose_visible_mark": 1,
+                "mouth_visible_line": 1,
+                "face_skin_local_visible": 1,
+                "iris_left_occlusion": 1,
+                "iris_right_occlusion": 1,
+                "sclera_left_occlusion": 1,
+                "sclera_right_occlusion": 1,
+                "brow_left_occlusion": 1,
+                "brow_right_occlusion": 1
+              },
+              "emptyDrawablesSkipped": [
+                "hair_side_right_occlusion3",
+                "hair_side_right_occlusion4",
+                "hair_side_right_occlusion5",
+                "hair_side_right_occlusion6",
+                "hair_side_left_occlusion3",
+                "hair_side_left_occlusion4",
+                "hair_side_left_occlusion5",
+                "hair_side_left_occlusion6",
+                "hair_long_left_outer_occlusion3",
+                "hair_long_left_outer_occlusion4",
+                "hair_long_left_outer_occlusion8",
+                "hair_bang_left_outer_occlusion3",
+                "hair_bang_left_outer_occlusion4",
+                "hair_bang_left_outer_occlusion5",
+                "hair_bang_left_outer_occlusion6",
+                "hair_bang_left_outer_occlusion7",
+                "hair_bang_left_outer_occlusion8",
+                "hair_bang_right_outer_occlusion3",
+                "hair_bang_right_outer_occlusion4",
+                "hair_bang_right_outer_occlusion5",
+                "hair_bang_right_outer_occlusion6",
+                "hair_long_right_outer_occlusion2",
+                "hair_long_right_outer_occlusion3",
+                "hair_long_right_outer_occlusion4"
+              ],
+              "wardrobeDrawables": {},
+              "originalAtlasPreservedWhenNeutral": true,
+              "patchRegions": [
+                {
+                  "textureIndex": 0,
+                  "x": 1174,
+                  "y": 489,
+                  "width": 283,
+                  "height": 533
+                }
+              ],
+              "blinkRegions": []
+            }
+          },
+          {
+            "outfit": "original",
+            "appearance": {
+              "method": "V8 patches clipped to detailed original body/face ownership; native hair atlas untouched",
+              "expressionParametersRigged": false,
+              "nativeEyes": true,
+              "facialMode": "native Cubism parameters",
+              "blinkMethod": "native EyeOpen parameters; no blink texture or eye opacity override",
+              "current": {
+                "outfit": "original",
+                "expression": "neutral",
+                "nativeFace": true
+              },
+              "blink": 0,
+              "maxMappingError": 0,
+              "roles": {
+                "bodyHost": "body_visible_fixed",
+                "faceHost": "face_visible_residual",
+                "facialOriginal": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "brow_left_visible",
+                  "brow_right_visible",
+                  "nose_visible_mark",
+                  "mouth_visible_line",
+                  "face_skin_local_visible"
+                ],
+                "facialOcclusion": [
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion",
+                  "brow_left_occlusion",
+                  "brow_right_occlusion"
+                ],
+                "blinkFade": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion"
+                ]
+              },
+              "drawableOpacities": {
+                "eye_left_highlight_upper": 1,
+                "eye_left_highlight_center": 1,
+                "eye_right_highlight_upper": 1,
+                "eye_right_highlight_secondary": 1,
+                "eye_left_pupil_visible_rim": 1,
+                "eye_left_upper_lash": 1,
+                "eye_right_upper_lash": 1,
+                "eye_left_iris": 1,
+                "eye_right_iris": 1,
+                "eye_left_sclera_visible": 1,
+                "eye_right_sclera_visible": 1,
+                "eye_left_lower_lid_rim": 1,
+                "eye_right_lower_lid_rim": 1,
+                "brow_left_visible": 1,
+                "brow_right_visible": 1,
+                "nose_visible_mark": 1,
+                "mouth_visible_line": 1,
+                "face_skin_local_visible": 1,
+                "iris_left_occlusion": 1,
+                "iris_right_occlusion": 1,
+                "sclera_left_occlusion": 1,
+                "sclera_right_occlusion": 1,
+                "brow_left_occlusion": 1,
+                "brow_right_occlusion": 1
+              },
+              "emptyDrawablesSkipped": [
+                "hair_side_right_occlusion3",
+                "hair_side_right_occlusion4",
+                "hair_side_right_occlusion5",
+                "hair_side_right_occlusion6",
+                "hair_side_left_occlusion3",
+                "hair_side_left_occlusion4",
+                "hair_side_left_occlusion5",
+                "hair_side_left_occlusion6",
+                "hair_long_left_outer_occlusion3",
+                "hair_long_left_outer_occlusion4",
+                "hair_long_left_outer_occlusion8",
+                "hair_bang_left_outer_occlusion3",
+                "hair_bang_left_outer_occlusion4",
+                "hair_bang_left_outer_occlusion5",
+                "hair_bang_left_outer_occlusion6",
+                "hair_bang_left_outer_occlusion7",
+                "hair_bang_left_outer_occlusion8",
+                "hair_bang_right_outer_occlusion3",
+                "hair_bang_right_outer_occlusion4",
+                "hair_bang_right_outer_occlusion5",
+                "hair_bang_right_outer_occlusion6",
+                "hair_long_right_outer_occlusion2",
+                "hair_long_right_outer_occlusion3",
+                "hair_long_right_outer_occlusion4"
+              ],
+              "wardrobeDrawables": {},
+              "originalAtlasPreservedWhenNeutral": true,
+              "patchRegions": [],
+              "blinkRegions": []
+            }
+          }
+        ],
+        "reactions": [
+          {
+            "label": "摸头",
+            "reaction": "pat"
+          },
+          {
+            "label": "戳一戳",
+            "reaction": "poke"
+          },
+          {
+            "label": "捏脸",
+            "reaction": "pinch"
+          },
+          {
+            "label": "揉头发",
+            "reaction": "rub"
+          },
+          {
+            "label": "挠痒痒",
+            "reaction": "tickle"
+          }
+        ]
+      }
+    },
+    {
+      "name": "edge-mobile-touch / standing host wardrobe and reactions",
+      "pass": true,
+      "detail": {
+        "poses": [
+          {
+            "outfit": "tights",
+            "appearance": {
+              "method": "V8 patches clipped to detailed original body/face ownership; native hair atlas untouched",
+              "expressionParametersRigged": false,
+              "nativeEyes": true,
+              "facialMode": "native Cubism parameters",
+              "blinkMethod": "native EyeOpen parameters; no blink texture or eye opacity override",
+              "current": {
+                "outfit": "tights",
+                "expression": "neutral",
+                "nativeFace": true
+              },
+              "blink": 0,
+              "maxMappingError": 0,
+              "roles": {
+                "bodyHost": "body_visible_fixed",
+                "faceHost": "face_visible_residual",
+                "facialOriginal": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "brow_left_visible",
+                  "brow_right_visible",
+                  "nose_visible_mark",
+                  "mouth_visible_line",
+                  "face_skin_local_visible"
+                ],
+                "facialOcclusion": [
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion",
+                  "brow_left_occlusion",
+                  "brow_right_occlusion"
+                ],
+                "blinkFade": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion"
+                ]
+              },
+              "drawableOpacities": {
+                "eye_left_highlight_upper": 1,
+                "eye_left_highlight_center": 1,
+                "eye_right_highlight_upper": 1,
+                "eye_right_highlight_secondary": 1,
+                "eye_left_pupil_visible_rim": 1,
+                "eye_left_upper_lash": 1,
+                "eye_right_upper_lash": 1,
+                "eye_left_iris": 1,
+                "eye_right_iris": 1,
+                "eye_left_sclera_visible": 1,
+                "eye_right_sclera_visible": 1,
+                "eye_left_lower_lid_rim": 1,
+                "eye_right_lower_lid_rim": 1,
+                "brow_left_visible": 1,
+                "brow_right_visible": 1,
+                "nose_visible_mark": 1,
+                "mouth_visible_line": 1,
+                "face_skin_local_visible": 1,
+                "iris_left_occlusion": 1,
+                "iris_right_occlusion": 1,
+                "sclera_left_occlusion": 1,
+                "sclera_right_occlusion": 1,
+                "brow_left_occlusion": 1,
+                "brow_right_occlusion": 1
+              },
+              "emptyDrawablesSkipped": [
+                "hair_side_right_occlusion3",
+                "hair_side_right_occlusion4",
+                "hair_side_right_occlusion5",
+                "hair_side_right_occlusion6",
+                "hair_side_left_occlusion3",
+                "hair_side_left_occlusion4",
+                "hair_side_left_occlusion5",
+                "hair_side_left_occlusion6",
+                "hair_long_left_outer_occlusion3",
+                "hair_long_left_outer_occlusion4",
+                "hair_long_left_outer_occlusion8",
+                "hair_bang_left_outer_occlusion3",
+                "hair_bang_left_outer_occlusion4",
+                "hair_bang_left_outer_occlusion5",
+                "hair_bang_left_outer_occlusion6",
+                "hair_bang_left_outer_occlusion7",
+                "hair_bang_left_outer_occlusion8",
+                "hair_bang_right_outer_occlusion3",
+                "hair_bang_right_outer_occlusion4",
+                "hair_bang_right_outer_occlusion5",
+                "hair_bang_right_outer_occlusion6",
+                "hair_long_right_outer_occlusion2",
+                "hair_long_right_outer_occlusion3",
+                "hair_long_right_outer_occlusion4"
+              ],
+              "wardrobeDrawables": {},
+              "originalAtlasPreservedWhenNeutral": true,
+              "patchRegions": [
+                {
+                  "textureIndex": 0,
+                  "x": 1173,
+                  "y": 489,
+                  "width": 284,
+                  "height": 533
+                }
+              ],
+              "blinkRegions": []
+            }
+          },
+          {
+            "outfit": "overknee",
+            "appearance": {
+              "method": "V8 patches clipped to detailed original body/face ownership; native hair atlas untouched",
+              "expressionParametersRigged": false,
+              "nativeEyes": true,
+              "facialMode": "native Cubism parameters",
+              "blinkMethod": "native EyeOpen parameters; no blink texture or eye opacity override",
+              "current": {
+                "outfit": "overknee",
+                "expression": "neutral",
+                "nativeFace": true
+              },
+              "blink": 0,
+              "maxMappingError": 0,
+              "roles": {
+                "bodyHost": "body_visible_fixed",
+                "faceHost": "face_visible_residual",
+                "facialOriginal": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "brow_left_visible",
+                  "brow_right_visible",
+                  "nose_visible_mark",
+                  "mouth_visible_line",
+                  "face_skin_local_visible"
+                ],
+                "facialOcclusion": [
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion",
+                  "brow_left_occlusion",
+                  "brow_right_occlusion"
+                ],
+                "blinkFade": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion"
+                ]
+              },
+              "drawableOpacities": {
+                "eye_left_highlight_upper": 1,
+                "eye_left_highlight_center": 1,
+                "eye_right_highlight_upper": 1,
+                "eye_right_highlight_secondary": 1,
+                "eye_left_pupil_visible_rim": 1,
+                "eye_left_upper_lash": 1,
+                "eye_right_upper_lash": 1,
+                "eye_left_iris": 1,
+                "eye_right_iris": 1,
+                "eye_left_sclera_visible": 1,
+                "eye_right_sclera_visible": 1,
+                "eye_left_lower_lid_rim": 1,
+                "eye_right_lower_lid_rim": 1,
+                "brow_left_visible": 1,
+                "brow_right_visible": 1,
+                "nose_visible_mark": 1,
+                "mouth_visible_line": 1,
+                "face_skin_local_visible": 1,
+                "iris_left_occlusion": 1,
+                "iris_right_occlusion": 1,
+                "sclera_left_occlusion": 1,
+                "sclera_right_occlusion": 1,
+                "brow_left_occlusion": 1,
+                "brow_right_occlusion": 1
+              },
+              "emptyDrawablesSkipped": [
+                "hair_side_right_occlusion3",
+                "hair_side_right_occlusion4",
+                "hair_side_right_occlusion5",
+                "hair_side_right_occlusion6",
+                "hair_side_left_occlusion3",
+                "hair_side_left_occlusion4",
+                "hair_side_left_occlusion5",
+                "hair_side_left_occlusion6",
+                "hair_long_left_outer_occlusion3",
+                "hair_long_left_outer_occlusion4",
+                "hair_long_left_outer_occlusion8",
+                "hair_bang_left_outer_occlusion3",
+                "hair_bang_left_outer_occlusion4",
+                "hair_bang_left_outer_occlusion5",
+                "hair_bang_left_outer_occlusion6",
+                "hair_bang_left_outer_occlusion7",
+                "hair_bang_left_outer_occlusion8",
+                "hair_bang_right_outer_occlusion3",
+                "hair_bang_right_outer_occlusion4",
+                "hair_bang_right_outer_occlusion5",
+                "hair_bang_right_outer_occlusion6",
+                "hair_long_right_outer_occlusion2",
+                "hair_long_right_outer_occlusion3",
+                "hair_long_right_outer_occlusion4"
+              ],
+              "wardrobeDrawables": {},
+              "originalAtlasPreservedWhenNeutral": true,
+              "patchRegions": [
+                {
+                  "textureIndex": 0,
+                  "x": 1174,
+                  "y": 489,
+                  "width": 283,
+                  "height": 533
+                }
+              ],
+              "blinkRegions": []
+            }
+          },
+          {
+            "outfit": "original",
+            "appearance": {
+              "method": "V8 patches clipped to detailed original body/face ownership; native hair atlas untouched",
+              "expressionParametersRigged": false,
+              "nativeEyes": true,
+              "facialMode": "native Cubism parameters",
+              "blinkMethod": "native EyeOpen parameters; no blink texture or eye opacity override",
+              "current": {
+                "outfit": "original",
+                "expression": "neutral",
+                "nativeFace": true
+              },
+              "blink": 0,
+              "maxMappingError": 0,
+              "roles": {
+                "bodyHost": "body_visible_fixed",
+                "faceHost": "face_visible_residual",
+                "facialOriginal": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "brow_left_visible",
+                  "brow_right_visible",
+                  "nose_visible_mark",
+                  "mouth_visible_line",
+                  "face_skin_local_visible"
+                ],
+                "facialOcclusion": [
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion",
+                  "brow_left_occlusion",
+                  "brow_right_occlusion"
+                ],
+                "blinkFade": [
+                  "eye_left_highlight_upper",
+                  "eye_left_highlight_center",
+                  "eye_right_highlight_upper",
+                  "eye_right_highlight_secondary",
+                  "eye_left_pupil_visible_rim",
+                  "eye_left_upper_lash",
+                  "eye_right_upper_lash",
+                  "eye_left_iris",
+                  "eye_right_iris",
+                  "eye_left_sclera_visible",
+                  "eye_right_sclera_visible",
+                  "eye_left_lower_lid_rim",
+                  "eye_right_lower_lid_rim",
+                  "iris_left_occlusion",
+                  "iris_right_occlusion",
+                  "sclera_left_occlusion",
+                  "sclera_right_occlusion"
+                ]
+              },
+              "drawableOpacities": {
+                "eye_left_highlight_upper": 1,
+                "eye_left_highlight_center": 1,
+                "eye_right_highlight_upper": 1,
+                "eye_right_highlight_secondary": 1,
+                "eye_left_pupil_visible_rim": 1,
+                "eye_left_upper_lash": 1,
+                "eye_right_upper_lash": 1,
+                "eye_left_iris": 1,
+                "eye_right_iris": 1,
+                "eye_left_sclera_visible": 1,
+                "eye_right_sclera_visible": 1,
+                "eye_left_lower_lid_rim": 1,
+                "eye_right_lower_lid_rim": 1,
+                "brow_left_visible": 1,
+                "brow_right_visible": 1,
+                "nose_visible_mark": 1,
+                "mouth_visible_line": 1,
+                "face_skin_local_visible": 1,
+                "iris_left_occlusion": 1,
+                "iris_right_occlusion": 1,
+                "sclera_left_occlusion": 1,
+                "sclera_right_occlusion": 1,
+                "brow_left_occlusion": 1,
+                "brow_right_occlusion": 1
+              },
+              "emptyDrawablesSkipped": [
+                "hair_side_right_occlusion3",
+                "hair_side_right_occlusion4",
+                "hair_side_right_occlusion5",
+                "hair_side_right_occlusion6",
+                "hair_side_left_occlusion3",
+                "hair_side_left_occlusion4",
+                "hair_side_left_occlusion5",
+                "hair_side_left_occlusion6",
+                "hair_long_left_outer_occlusion3",
+                "hair_long_left_outer_occlusion4",
+                "hair_long_left_outer_occlusion8",
+                "hair_bang_left_outer_occlusion3",
+                "hair_bang_left_outer_occlusion4",
+                "hair_bang_left_outer_occlusion5",
+                "hair_bang_left_outer_occlusion6",
+                "hair_bang_left_outer_occlusion7",
+                "hair_bang_left_outer_occlusion8",
+                "hair_bang_right_outer_occlusion3",
+                "hair_bang_right_outer_occlusion4",
+                "hair_bang_right_outer_occlusion5",
+                "hair_bang_right_outer_occlusion6",
+                "hair_long_right_outer_occlusion2",
+                "hair_long_right_outer_occlusion3",
+                "hair_long_right_outer_occlusion4"
+              ],
+              "wardrobeDrawables": {},
+              "originalAtlasPreservedWhenNeutral": true,
+              "patchRegions": [],
+              "blinkRegions": []
+            }
+          }
+        ],
+        "reactions": [
+          {
+            "label": "摸头",
+            "reaction": "pat"
+          },
+          {
+            "label": "戳一戳",
+            "reaction": "poke"
+          },
+          {
+            "label": "捏脸",
+            "reaction": "pinch"
+          },
+          {
+            "label": "揉头发",
+            "reaction": "rub"
+          },
+          {
+            "label": "挠痒痒",
+            "reaction": "tickle"
+          }
+        ]
+      }
+    },
+    {
+      "name": "chrome-desktop-mouse / Level 1 seated remains live with wardrobe/camera / actual outfit selections",
+      "pass": true,
+      "detail": {
+        "pose": "seated",
+        "outfitOptionsActuallySelected": [
+          "original",
+          "tights",
+          "overknee"
+        ],
+        "actualMoc": "b811dc80c699e4546648bd5d60ca23e54028b98fddb5b72addc776e88585db94"
+      }
+    },
+    {
+      "name": "chrome-desktop-mouse / Level 2 kneeling remains live with wardrobe/camera / actual outfit selections",
+      "pass": true,
+      "detail": {
+        "pose": "kneeling",
+        "outfitOptionsActuallySelected": [
+          "tights",
+          "shortsocks",
+          "barefoot"
+        ],
+        "actualMoc": "e792bfb6cb3850ea29e6093d65e4477cf654c974d2be4337cb242e4d20661515"
+      }
+    },
+    {
+      "name": "chrome-mobile-touch / Level 1 seated remains live with wardrobe/camera / actual outfit selections",
+      "pass": true,
+      "detail": {
+        "pose": "seated",
+        "outfitOptionsActuallySelected": [
+          "original",
+          "tights",
+          "overknee"
+        ],
+        "actualMoc": "b811dc80c699e4546648bd5d60ca23e54028b98fddb5b72addc776e88585db94"
+      }
+    },
+    {
+      "name": "chrome-mobile-touch / Level 2 kneeling remains live with wardrobe/camera / actual outfit selections",
+      "pass": true,
+      "detail": {
+        "pose": "kneeling",
+        "outfitOptionsActuallySelected": [
+          "tights",
+          "shortsocks",
+          "barefoot"
+        ],
+        "actualMoc": "e792bfb6cb3850ea29e6093d65e4477cf654c974d2be4337cb242e4d20661515"
+      }
+    },
+    {
+      "name": "edge-desktop-mouse / Level 1 seated remains live with wardrobe/camera / actual outfit selections",
+      "pass": true,
+      "detail": {
+        "pose": "seated",
+        "outfitOptionsActuallySelected": [
+          "original",
+          "tights",
+          "overknee"
+        ],
+        "actualMoc": "b811dc80c699e4546648bd5d60ca23e54028b98fddb5b72addc776e88585db94"
+      }
+    },
+    {
+      "name": "edge-desktop-mouse / Level 2 kneeling remains live with wardrobe/camera / actual outfit selections",
+      "pass": true,
+      "detail": {
+        "pose": "kneeling",
+        "outfitOptionsActuallySelected": [
+          "tights",
+          "shortsocks",
+          "barefoot"
+        ],
+        "actualMoc": "e792bfb6cb3850ea29e6093d65e4477cf654c974d2be4337cb242e4d20661515"
+      }
+    },
+    {
+      "name": "edge-mobile-touch / Level 1 seated remains live with wardrobe/camera / actual outfit selections",
+      "pass": true,
+      "detail": {
+        "pose": "seated",
+        "outfitOptionsActuallySelected": [
+          "original",
+          "tights",
+          "overknee"
+        ],
+        "actualMoc": "b811dc80c699e4546648bd5d60ca23e54028b98fddb5b72addc776e88585db94"
+      }
+    },
+    {
+      "name": "edge-mobile-touch / Level 2 kneeling remains live with wardrobe/camera / actual outfit selections",
+      "pass": true,
+      "detail": {
+        "pose": "kneeling",
+        "outfitOptionsActuallySelected": [
+          "tights",
+          "shortsocks",
+          "barefoot"
+        ],
+        "actualMoc": "e792bfb6cb3850ea29e6093d65e4477cf654c974d2be4337cb242e4d20661515"
+      }
+    }
+  ]
+}

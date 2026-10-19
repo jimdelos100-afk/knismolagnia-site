@@ -1,0 +1,38 @@
+[
+  {
+    "file": "home.html",
+    "localBytes": 3291,
+    "remoteBytes": 3275,
+    "localSha256": "34cd64f92303bc318bf9fe10ac6fd3cdfc1a54ec9dc84054dea66e54bdc03012",
+    "remoteSha256": "78933544903a9b6b375f04ad433dc67388d9528716ece7b54c01bcdb2bab8317",
+    "equal": false,
+    "equalAfterNewlineNormalization": true
+  },
+  {
+    "file": "character.css",
+    "localBytes": 10584,
+    "remoteBytes": 10545,
+    "localSha256": "ec8ea79f2acd14f08f8c0414362d18648f3de442a3f34a6cfe58e3534aaaf8ce",
+    "remoteSha256": "a443b21fa16b6e07bcfc204027c1d2a663a7ab454b1c4604926de6e63c8c76ae",
+    "equal": false,
+    "equalAfterNewlineNormalization": true
+  },
+  {
+    "file": "character.js",
+    "localBytes": 27041,
+    "remoteBytes": 26720,
+    "localSha256": "06be64915fe6d99b45b402459326a81f50b32d1a26ed3d39bfca4578bbbe2bee",
+    "remoteSha256": "3b3c1fa2a3c470e190b0bab22c99489df3dbbef4fded614f353121831fd588c7",
+    "equal": false,
+    "equalAfterNewlineNormalization": true
+  },
+  {
+    "file": "live2d/manifest.json",
+    "localBytes": 1799,
+    "remoteBytes": 1799,
+    "localSha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+    "remoteSha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+    "equal": true,
+    "equalAfterNewlineNormalization": true
+  }
+]

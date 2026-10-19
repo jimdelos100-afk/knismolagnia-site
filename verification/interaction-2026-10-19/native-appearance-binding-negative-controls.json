@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-19T04:52:21.126Z",
+  "scope": "Comparator/binding controls only. Synthetic one-byte buffer mutations are in memory; no model, texture, frozen contract or reference file is changed. These controls do not replace actual rendered-pixel QA.",
+  "newMocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+  "testedSourceSnapshotSha256": "a565134a78dce22cc80e005c2090bb248e36acf6f3396f408f8e2761837a7d91",
+  "checks": [
+    {
+      "name": "actual new candidate identity is separately recognized",
+      "pass": true
+    },
+    {
+      "name": "historical old MOC cannot substitute for actual new candidate",
+      "pass": true
+    },
+    {
+      "name": "wrong MOC hash rejected",
+      "pass": true
+    },
+    {
+      "name": "missing atlas rejected",
+      "pass": true
+    },
+    {
+      "name": "swapped atlas order rejected",
+      "pass": true
+    },
+    {
+      "name": "one altered atlas hash rejected",
+      "pass": true
+    },
+    {
+      "name": "exact frozen raw compares at strict zero",
+      "pass": true
+    },
+    {
+      "name": "one extra eye RGBA channel is rejected by approved-reference zero comparator",
+      "pass": true
+    },
+    {
+      "name": "one outside-eye RGBA channel is rejected by outside-eye zero comparator",
+      "pass": true
+    },
+    {
+      "name": "inside-eye exclusion never substitutes for full approved-reference regression",
+      "pass": true
+    },
+    {
+      "name": "original exact disclosed metric tuple is recognized",
+      "pass": true
+    },
+    {
+      "name": "altered original changedRGBAPixels disclosure is rejected",
+      "pass": true
+    },
+    {
+      "name": "altered original maximumChannelError disclosure is rejected",
+      "pass": true
+    },
+    {
+      "name": "altered original alphaChanged disclosure is rejected",
+      "pass": true
+    },
+    {
+      "name": "altered original totalChannelError disclosure is rejected",
+      "pass": true
+    },
+    {
+      "name": "historical acceptance contract bytes remain immutable",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

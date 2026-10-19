@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-19T04:52:40.221Z",
+  "newMocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+  "testedSourceSnapshotSha256": "a565134a78dce22cc80e005c2090bb248e36acf6f3396f408f8e2761837a7d91",
+  "checks": [
+    {
+      "name": "core",
+      "pass": true,
+      "exitCode": 0,
+      "log": "runs/2026-10-19T04-52-03-574Z/core.log"
+    },
+    {
+      "name": "eye-extraction",
+      "pass": true,
+      "exitCode": 0,
+      "log": "runs/2026-10-19T04-52-03-574Z/eye-extraction.log"
+    },
+    {
+      "name": "eye-coverage",
+      "pass": true,
+      "exitCode": 0,
+      "log": "runs/2026-10-19T04-52-03-574Z/eye-coverage.log"
+    },
+    {
+      "name": "helper-extraction",
+      "pass": true,
+      "exitCode": 0,
+      "log": "runs/2026-10-19T04-52-03-574Z/helper-extraction.log"
+    },
+    {
+      "name": "helper-coverage",
+      "pass": true,
+      "exitCode": 0,
+      "log": "runs/2026-10-19T04-52-03-574Z/helper-coverage.log"
+    },
+    {
+      "name": "neutral-pixels",
+      "pass": true,
+      "exitCode": 0,
+      "log": "runs/2026-10-19T04-52-03-574Z/neutral-pixels.log"
+    },
+    {
+      "name": "default-core",
+      "pass": true,
+      "exitCode": 0,
+      "log": "runs/2026-10-19T04-52-03-574Z/default-core.log"
+    },
+    {
+      "name": "head-neck",
+      "pass": true,
+      "exitCode": 0,
+      "log": "runs/2026-10-19T04-52-03-574Z/head-neck.log"
+    },
+    {
+      "name": "native-browser",
+      "pass": true,
+      "exitCode": 0,
+      "log": "runs/2026-10-19T04-52-03-574Z/native-browser.log"
+    },
+    {
+      "name": "Frozen runtime unchanged during model QA",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,2422 @@
+{
+  "date": "2026-10-19T04:52:07.491328+00:00",
+  "newMocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+  "scope": "Read-only actual final Core triangle coverage and inverse-UV alpha bake for pinned original-pixel transfers; no host appearance adaptation. All discriminating atlas texels must reproduce new alpha within original-calibrated 2/255 and reject old; every moved source pixel needs >=1/8 supporting weight. RGB ownership is proved in pinned PSD transfers, and exact final visible RGBA is separately required by native-neutral-pixels. Old alpha holes are disclosed; no new alpha omissions are accepted.",
+  "policy": {
+    "version": 2,
+    "authorization": "Specific implementation edits remain per-ID and evidence-bound. The human accepted only the displayed exact export04 eye rendering; original strict-zero failure is preserved, eyes outside the accepted rectangle and all regression to the accepted reference retain zero tolerance.",
+    "originalMocSha256": "0e496d30e887f48e5daf432556ccaf1be0726a2617a2485d91703ac60f065e46",
+    "roundingMaximumSourcePixels": 0.000244140625,
+    "roundingEvidence": {
+      "checkpointMocSha256": "44f9c75d98c749c9e24a476fc96df61690e364cfc92a1eb1d99756cf6e396010",
+      "measuredMaximumSourcePixels": 0.0001220703125,
+      "checkpointWebGLChangedRGBAPixels": 0,
+      "reason": "Reparenting nine gaze children to new native warps introduces floating-point evaluation rounding. Limit is 1/4096 source pixel; checkpoint maximum was 1/8192."
+    },
+    "roundingDrawableIds": [
+      "eye_left_iris",
+      "eye_left_pupil_visible_rim",
+      "eye_left_highlight_upper",
+      "eye_left_highlight_center",
+      "iris_left_occlusion",
+      "eye_right_iris",
+      "eye_right_highlight_upper",
+      "eye_right_highlight_secondary",
+      "iris_right_occlusion",
+      "eye_right_upper_lash",
+      "eye_left_upper_lash",
+      "eye_left_sclera_visible",
+      "eye_left_lower_lid_rim",
+      "sclera_right_occlusion",
+      "sclera_left_occlusion"
+    ],
+    "remeshDrawableIds": [
+      "eye_right_upper_lash",
+      "eye_right_sclera_visible",
+      "eye_right_lower_lid_rim",
+      "eye_right_iris",
+      "eye_left_lower_lid_rim"
+    ],
+    "remeshReason": "The five existing eye mesh IDs are individually identified in the hash-bound Core and editing evidence. Two new aperture masks are separately recorded. Every other original mesh stays exact except the explicitly listed parent-float IDs, whose 1/4096-source-pixel limit remains unchanged.",
+    "rasterTransferDrawableIds": [
+      "eye_left_iris",
+      "eye_left_lower_lid_rim",
+      "eye_left_sclera_visible",
+      "eye_left_upper_lash",
+      "eye_right_iris",
+      "eye_right_lower_lid_rim",
+      "eye_right_sclera_visible",
+      "eye_right_upper_lash",
+      "face_skin_local_visible",
+      "face_visible_residual"
+    ],
+    "sourcePixelTransferManifest": "work/standing-native-gaze-2026-10-15/artwork-repair/base74-pixel-transfers-verification.json",
+    "sourcePixelTransferManifestSha256": "ff33d120fe61712097c160514bd41562599987d019b37dc2aaf8d965cff21b22",
+    "originalBasePSDSha256": "14f898110aba5ca8176804f64fc143e84d43cdd29c78fbca05bbbebd64be25f8",
+    "updatedBasePSDSha256": "848f09f3004831eb099d726d10ffc622ced36a5f3eba4d614c06b85318c2fe81",
+    "updatedBaseWithHelpersPSDSha256": "2095d39dc35006763e5d21807d839555aa61149d9200a87016e00496ce90c736",
+    "updatedPSDManifest": "work/standing-native-gaze-2026-10-15/artwork-repair/base74-update-verification.json",
+    "originalCoverageManifest": "work/standing-native-gaze-2026-10-15/artwork-repair/eye-mesh-coverage.json",
+    "requiredCompanionReports": [
+      "native-eye-coverage.json",
+      "native-helper-coverage.json",
+      "native-neutral-pixels.json",
+      "native-accepted-appearance-regression.json"
+    ],
+    "strictFinalWebGLChangedRGBAPixels": 0,
+    "strictSourceCompositeChangedRGBAPixels": 0,
+    "newMaskRemeshDrawableIds": [
+      "eye_left_aperture_mask",
+      "eye_right_aperture_mask"
+    ],
+    "additionalParentFloatDrawableIds": [
+      "eye_right_upper_lash",
+      "eye_left_upper_lash",
+      "eye_left_sclera_visible",
+      "eye_left_lower_lid_rim",
+      "sclera_right_occlusion",
+      "sclera_left_occlusion"
+    ],
+    "acceptedAppearanceContract": {
+      "file": "work/native-live2d-2026-10-15-qa/accepted-eye-reference-2026-10-18/accepted-appearance-contract.json",
+      "sha256": "db4f7d4484b4f837c0cef4cf3694b700de40fa55acd58d9e2010040ea904fc63"
+    },
+    "geometryEvidence": {
+      "file": "work/native-live2d-2026-10-15-qa/accepted-eye-reference-2026-10-18/accepted-geometry-evidence.json",
+      "sha256": "1abdf82a0c3ddccec573473d77c25333d674b928cb1da420432d706e56ac6af4"
+    },
+    "historicalSourcePixelTransferManifest": {
+      "file": "work/standing-native-gaze-2026-10-15/artwork-repair/verification.json",
+      "sha256": "953016861550c1f4206ef243a426a893dfe69548aa266af7b57d4d968e9b1770",
+      "scope": "Historical 75-layer research-list provenance only. Not an active PSD input or proof for current source74/source80."
+    }
+  },
+  "sourcePSD": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\standing-detail-v2\\repair-artwork\\history\\standing-detailed-74-layer-before-head-edges.psd",
+  "updatedPSD": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\standing-native-gaze-2026-10-15\\artwork-repair\\standing-base74-eye-update.psd",
+  "sourcePSDSha256": "14f898110aba5ca8176804f64fc143e84d43cdd29c78fbca05bbbebd64be25f8",
+  "updatedPSDSha256": "848f09f3004831eb099d726d10ffc622ced36a5f3eba4d614c06b85318c2fe81",
+  "sourceCompositeChangedRGBAPixels": 0,
+  "checks": [
+    {
+      "name": "original and repaired base PSD inputs are the approved exact files",
+      "pass": true,
+      "detail": {
+        "original": "14f898110aba5ca8176804f64fc143e84d43cdd29c78fbca05bbbebd64be25f8",
+        "updated": "848f09f3004831eb099d726d10ffc622ced36a5f3eba4d614c06b85318c2fe81"
+      }
+    },
+    {
+      "name": "source-pixel transfer manifest is the approved exact file",
+      "pass": true,
+      "detail": "ff33d120fe61712097c160514bd41562599987d019b37dc2aaf8d965cff21b22"
+    },
+    {
+      "name": "historical pre-mask 80-layer intermediary is the approved exact source-chain file",
+      "pass": true,
+      "detail": "2095d39dc35006763e5d21807d839555aa61149d9200a87016e00496ce90c736"
+    },
+    {
+      "name": "all ten authorized source-transfer layers have actual native drawables",
+      "pass": true,
+      "detail": [
+        "eye_left_iris",
+        "eye_left_lower_lid_rim",
+        "eye_left_sclera_visible",
+        "eye_left_upper_lash",
+        "eye_right_iris",
+        "eye_right_lower_lid_rim",
+        "eye_right_sclera_visible",
+        "eye_right_upper_lash",
+        "face_skin_local_visible",
+        "face_visible_residual"
+      ]
+    },
+    {
+      "name": "eye_left_iris new original alpha centers are all covered",
+      "pass": true,
+      "detail": {
+        "id": "eye_left_iris",
+        "oldRasterBounds": [
+          497,
+          197,
+          525,
+          224
+        ],
+        "newRasterBounds": [
+          497,
+          197,
+          527,
+          224
+        ],
+        "nativeVertices": 7,
+        "nativeTriangles": 7,
+        "transferredAlphaPixels": 42,
+        "uncoveredTransferredPixelCenters": 0,
+        "newlyUncoveredAlphaPixelCenters": 0,
+        "preexistingUncoveredAlphaPixelCenters": 0,
+        "mappedSamples": 573,
+        "atlasSourceRGBAChangedSamples": 0,
+        "maximumAtlasSourceChannelError": 0,
+        "uvOutOfRange": 0,
+        "uncoveredExamples": [],
+        "atlasMismatchExamples": [],
+        "atlasSourceRGBADiagnosticOnly": "Cubism export resamples and extends RGB into transparent texels; direct nearest RGBA-to-PSD comparison fails even for frozen original. Alpha bake below is calibrated on original atlas. Final WebGL separately requires the exact user-accepted reference with zero extra differences and strict original RGBA outside the eye rectangle; the original strict-zero failure remains disclosed.",
+        "originalAlphaBakeCalibration": {
+          "affineFitTexels": 0.00011775420398407732,
+          "discriminatingTexels": 69,
+          "increasedAlphaTexels": 69,
+          "decreasedAlphaTexels": 0,
+          "maximumExpectedAlphaError": 1.4749594436781592,
+          "alphaErrorGreaterThan2": 0,
+          "allDiscriminatingTexelsRejectOpposite": true,
+          "sourceChangedAlphaPixels": 42,
+          "minimumSupportingBilinearWeight": 0.48002290346878007,
+          "unverifiedChangedSourcePixels": [],
+          "examples": []
+        },
+        "candidateAlphaBake": {
+          "affineFitTexels": 0.0001693025469649001,
+          "discriminatingTexels": 42,
+          "increasedAlphaTexels": 42,
+          "decreasedAlphaTexels": 0,
+          "maximumExpectedAlphaError": 0.03355979406501319,
+          "alphaErrorGreaterThan2": 0,
+          "allDiscriminatingTexelsRejectOpposite": true,
+          "sourceChangedAlphaPixels": 42,
+          "minimumSupportingBilinearWeight": 0.9998613930499463,
+          "unverifiedChangedSourcePixels": [],
+          "examples": []
+        }
+      }
+    },
+    {
+      "name": "eye_left_iris original atlas validates the alpha-bake reference within calibrated two units",
+      "pass": true,
+      "detail": {
+        "affineFitTexels": 0.00011775420398407732,
+        "discriminatingTexels": 69,
+        "increasedAlphaTexels": 69,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 1.4749594436781592,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 42,
+        "minimumSupportingBilinearWeight": 0.48002290346878007,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "name": "eye_left_iris actual atlas proves revised alpha ownership and rejects old texture",
+      "pass": true,
+      "detail": {
+        "affineFitTexels": 0.0001693025469649001,
+        "discriminatingTexels": 42,
+        "increasedAlphaTexels": 42,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.03355979406501319,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 42,
+        "minimumSupportingBilinearWeight": 0.9998613930499463,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "name": "eye_left_lower_lid_rim new original alpha centers are all covered",
+      "pass": true,
+      "detail": {
+        "id": "eye_left_lower_lid_rim",
+        "oldRasterBounds": [
+          496,
+          215,
+          518,
+          226
+        ],
+        "newRasterBounds": [
+          495,
+          215,
+          520,
+          227
+        ],
+        "nativeVertices": 13,
+        "nativeTriangles": 14,
+        "transferredAlphaPixels": 40,
+        "uncoveredTransferredPixelCenters": 0,
+        "newlyUncoveredAlphaPixelCenters": 0,
+        "preexistingUncoveredAlphaPixelCenters": 0,
+        "mappedSamples": 67,
+        "atlasSourceRGBAChangedSamples": 0,
+        "maximumAtlasSourceChannelError": 0,
+        "uvOutOfRange": 0,
+        "uncoveredExamples": [],
+        "atlasMismatchExamples": [],
+        "atlasSourceRGBADiagnosticOnly": "Cubism export resamples and extends RGB into transparent texels; direct nearest RGBA-to-PSD comparison fails even for frozen original. Alpha bake below is calibrated on original atlas. Final WebGL separately requires the exact user-accepted reference with zero extra differences and strict original RGBA outside the eye rectangle; the original strict-zero failure remains disclosed.",
+        "originalAlphaBakeCalibration": {
+          "affineFitTexels": 0.00012300333628445514,
+          "discriminatingTexels": 73,
+          "increasedAlphaTexels": 73,
+          "decreasedAlphaTexels": 0,
+          "maximumExpectedAlphaError": 0.6521838773213204,
+          "alphaErrorGreaterThan2": 0,
+          "allDiscriminatingTexelsRejectOpposite": true,
+          "sourceChangedAlphaPixels": 40,
+          "minimumSupportingBilinearWeight": 0.33458955143695074,
+          "unverifiedChangedSourcePixels": [],
+          "examples": []
+        },
+        "candidateAlphaBake": {
+          "affineFitTexels": 9.877810339276039e-05,
+          "discriminatingTexels": 40,
+          "increasedAlphaTexels": 40,
+          "decreasedAlphaTexels": 0,
+          "maximumExpectedAlphaError": 0.013341477092922105,
+          "alphaErrorGreaterThan2": 0,
+          "allDiscriminatingTexelsRejectOpposite": true,
+          "sourceChangedAlphaPixels": 40,
+          "minimumSupportingBilinearWeight": 0.9999472668889607,
+          "unverifiedChangedSourcePixels": [],
+          "examples": []
+        }
+      }
+    },
+    {
+      "name": "eye_left_lower_lid_rim original atlas validates the alpha-bake reference within calibrated two units",
+      "pass": true,
+      "detail": {
+        "affineFitTexels": 0.00012300333628445514,
+        "discriminatingTexels": 73,
+        "increasedAlphaTexels": 73,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.6521838773213204,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 40,
+        "minimumSupportingBilinearWeight": 0.33458955143695074,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "name": "eye_left_lower_lid_rim actual atlas proves revised alpha ownership and rejects old texture",
+      "pass": true,
+      "detail": {
+        "affineFitTexels": 9.877810339276039e-05,
+        "discriminatingTexels": 40,
+        "increasedAlphaTexels": 40,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.013341477092922105,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 40,
+        "minimumSupportingBilinearWeight": 0.9999472668889607,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "name": "eye_left_sclera_visible new original alpha centers are all covered",
+      "pass": true,
+      "detail": {
+        "id": "eye_left_sclera_visible",
+        "oldRasterBounds": [
+          495,
+          199,
+          533,
+          225
+        ],
+        "newRasterBounds": [
+          495,
+          199,
+          534,
+          226
+        ],
+        "nativeVertices": 14,
+        "nativeTriangles": 13,
+        "transferredAlphaPixels": 43,
+        "uncoveredTransferredPixelCenters": 0,
+        "newlyUncoveredAlphaPixelCenters": 0,
+        "preexistingUncoveredAlphaPixelCenters": 2,
+        "mappedSamples": 205,
+        "atlasSourceRGBAChangedSamples": 0,
+        "maximumAtlasSourceChannelError": 0,
+        "uvOutOfRange": 0,
+        "uncoveredExamples": [],
+        "atlasMismatchExamples": [],
+        "atlasSourceRGBADiagnosticOnly": "Cubism export resamples and extends RGB into transparent texels; direct nearest RGBA-to-PSD comparison fails even for frozen original. Alpha bake below is calibrated on original atlas. Final WebGL separately requires the exact user-accepted reference with zero extra differences and strict original RGBA outside the eye rectangle; the original strict-zero failure remains disclosed.",
+        "originalAlphaBakeCalibration": {
+          "affineFitTexels": 0.00018861540820580558,
+          "discriminatingTexels": 94,
+          "increasedAlphaTexels": 94,
+          "decreasedAlphaTexels": 0,
+          "maximumExpectedAlphaError": 0.8901729615245983,
+          "alphaErrorGreaterThan2": 0,
+          "allDiscriminatingTexelsRejectOpposite": true,
+          "sourceChangedAlphaPixels": 43,
+          "minimumSupportingBilinearWeight": 0.5599724222516816,
+          "unverifiedChangedSourcePixels": [],
+          "examples": []
+        },
+        "candidateAlphaBake": {
+          "affineFitTexels": 0.0001434989835615852,
+          "discriminatingTexels": 43,
+          "increasedAlphaTexels": 43,
+          "decreasedAlphaTexels": 0,
+          "maximumExpectedAlphaError": 0.01689450959040073,
+          "alphaErrorGreaterThan2": 0,
+          "allDiscriminatingTexelsRejectOpposite": true,
+          "sourceChangedAlphaPixels": 43,
+          "minimumSupportingBilinearWeight": 0.9998996314654438,
+          "unverifiedChangedSourcePixels": [],
+          "examples": []
+        }
+      }
+    },
+    {
+      "name": "eye_left_sclera_visible original atlas validates the alpha-bake reference within calibrated two units",
+      "pass": true,
+      "detail": {
+        "affineFitTexels": 0.00018861540820580558,
+        "discriminatingTexels": 94,
+        "increasedAlphaTexels": 94,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.8901729615245983,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 43,
+        "minimumSupportingBilinearWeight": 0.5599724222516816,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "name": "eye_left_sclera_visible actual atlas proves revised alpha ownership and rejects old texture",
+      "pass": true,
+      "detail": {
+        "affineFitTexels": 0.0001434989835615852,
+        "discriminatingTexels": 43,
+        "increasedAlphaTexels": 43,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.01689450959040073,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 43,
+        "minimumSupportingBilinearWeight": 0.9998996314654438,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "name": "eye_left_upper_lash new original alpha centers are all covered",
+      "pass": true,
+      "detail": {
+        "id": "eye_left_upper_lash",
+        "oldRasterBounds": [
+          488,
+          189,
+          539,
+          207
+        ],
+        "newRasterBounds": [
+          488,
+          187,
+          540,
+          209
+        ],
+        "nativeVertices": 13,
+        "nativeTriangles": 14,
+        "transferredAlphaPixels": 105,
+        "uncoveredTransferredPixelCenters": 0,
+        "newlyUncoveredAlphaPixelCenters": 0,
+        "preexistingUncoveredAlphaPixelCenters": 0,
+        "mappedSamples": 430,
+        "atlasSourceRGBAChangedSamples": 0,
+        "maximumAtlasSourceChannelError": 0,
+        "uvOutOfRange": 0,
+        "uncoveredExamples": [],
+        "atlasMismatchExamples": [],
+        "atlasSourceRGBADiagnosticOnly": "Cubism export resamples and extends RGB into transparent texels; direct nearest RGBA-to-PSD comparison fails even for frozen original. Alpha bake below is calibrated on original atlas. Final WebGL separately requires the exact user-accepted reference with zero extra differences and strict original RGBA outside the eye rectangle; the original strict-zero failure remains disclosed.",
+        "originalAlphaBakeCalibration": {
+          "affineFitTexels": 0.00012194157807243755,
+          "discriminatingTexels": 212,
+          "increasedAlphaTexels": 212,
+          "decreasedAlphaTexels": 0,
+          "maximumExpectedAlphaError": 0.9629309021367476,
+          "alphaErrorGreaterThan2": 0,
+          "allDiscriminatingTexelsRejectOpposite": true,
+          "sourceChangedAlphaPixels": 105,
+          "minimumSupportingBilinearWeight": 0.5328654347275578,
+          "unverifiedChangedSourcePixels": [],
+          "examples": []
+        },
+        "candidateAlphaBake": {
+          "affineFitTexels": 0.0001173466212094354,
+          "discriminatingTexels": 105,
+          "increasedAlphaTexels": 105,
+          "decreasedAlphaTexels": 0,
+          "maximumExpectedAlphaError": 0.013514780513077085,
+          "alphaErrorGreaterThan2": 0,
+          "allDiscriminatingTexelsRejectOpposite": true,
+          "sourceChangedAlphaPixels": 105,
+          "minimumSupportingBilinearWeight": 0.9999450246232445,
+          "unverifiedChangedSourcePixels": [],
+          "examples": []
+        }
+      }
+    },
+    {
+      "name": "eye_left_upper_lash original atlas validates the alpha-bake reference within calibrated two units",
+      "pass": true,
+      "detail": {
+        "affineFitTexels": 0.00012194157807243755,
+        "discriminatingTexels": 212,
+        "increasedAlphaTexels": 212,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.9629309021367476,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 105,
+        "minimumSupportingBilinearWeight": 0.5328654347275578,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "name": "eye_left_upper_lash actual atlas proves revised alpha ownership and rejects old texture",
+      "pass": true,
+      "detail": {
+        "affineFitTexels": 0.0001173466212094354,
+        "discriminatingTexels": 105,
+        "increasedAlphaTexels": 105,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.013514780513077085,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 105,
+        "minimumSupportingBilinearWeight": 0.9999450246232445,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "name": "eye_right_iris new original alpha centers are all covered",
+      "pass": true,
+      "detail": {
+        "id": "eye_right_iris",
+        "oldRasterBounds": [
+          564,
+          228,
+          587,
+          253
+        ],
+        "newRasterBounds": [
+          564,
+          228,
+          590,
+          253
+        ],
+        "nativeVertices": 13,
+        "nativeTriangles": 14,
+        "transferredAlphaPixels": 21,
+        "uncoveredTransferredPixelCenters": 0,
+        "newlyUncoveredAlphaPixelCenters": 0,
+        "preexistingUncoveredAlphaPixelCenters": 0,
+        "mappedSamples": 405,
+        "atlasSourceRGBAChangedSamples": 0,
+        "maximumAtlasSourceChannelError": 0,
+        "uvOutOfRange": 0,
+        "uncoveredExamples": [],
+        "atlasMismatchExamples": [],
+        "atlasSourceRGBADiagnosticOnly": "Cubism export resamples and extends RGB into transparent texels; direct nearest RGBA-to-PSD comparison fails even for frozen original. Alpha bake below is calibrated on original atlas. Final WebGL separately requires the exact user-accepted reference with zero extra differences and strict original RGBA outside the eye rectangle; the original strict-zero failure remains disclosed.",
+        "originalAlphaBakeCalibration": {
+          "affineFitTexels": 0.00011731070503628871,
+          "discriminatingTexels": 34,
+          "increasedAlphaTexels": 34,
+          "decreasedAlphaTexels": 0,
+          "maximumExpectedAlphaError": 1.2991532966349268,
+          "alphaErrorGreaterThan2": 0,
+          "allDiscriminatingTexelsRejectOpposite": true,
+          "sourceChangedAlphaPixels": 21,
+          "minimumSupportingBilinearWeight": 0.7985711943539235,
+          "unverifiedChangedSourcePixels": [],
+          "examples": []
+        },
+        "candidateAlphaBake": {
+          "affineFitTexels": 0.00012921175334668078,
+          "discriminatingTexels": 21,
+          "increasedAlphaTexels": 21,
+          "decreasedAlphaTexels": 0,
+          "maximumExpectedAlphaError": 0.006794832118458771,
+          "alphaErrorGreaterThan2": 0,
+          "allDiscriminatingTexelsRejectOpposite": true,
+          "sourceChangedAlphaPixels": 21,
+          "minimumSupportingBilinearWeight": 0.9999711887321321,
+          "unverifiedChangedSourcePixels": [],
+          "examples": []
+        }
+      }
+    },
+    {
+      "name": "eye_right_iris original atlas validates the alpha-bake reference within calibrated two units",
+      "pass": true,
+      "detail": {
+        "affineFitTexels": 0.00011731070503628871,
+        "discriminatingTexels": 34,
+        "increasedAlphaTexels": 34,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 1.2991532966349268,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 21,
+        "minimumSupportingBilinearWeight": 0.7985711943539235,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "name": "eye_right_iris actual atlas proves revised alpha ownership and rejects old texture",
+      "pass": true,
+      "detail": {
+        "affineFitTexels": 0.00012921175334668078,
+        "discriminatingTexels": 21,
+        "increasedAlphaTexels": 21,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.006794832118458771,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 21,
+        "minimumSupportingBilinearWeight": 0.9999711887321321,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "name": "eye_right_lower_lid_rim new original alpha centers are all covered",
+      "pass": true,
+      "detail": {
+        "id": "eye_right_lower_lid_rim",
+        "oldRasterBounds": [
+          564,
+          246,
+          590,
+          261
+        ],
+        "newRasterBounds": [
+          564,
+          246,
+          591,
+          263
+        ],
+        "nativeVertices": 13,
+        "nativeTriangles": 14,
+        "transferredAlphaPixels": 24,
+        "uncoveredTransferredPixelCenters": 0,
+        "newlyUncoveredAlphaPixelCenters": 0,
+        "preexistingUncoveredAlphaPixelCenters": 0,
+        "mappedSamples": 56,
+        "atlasSourceRGBAChangedSamples": 0,
+        "maximumAtlasSourceChannelError": 0,
+        "uvOutOfRange": 0,
+        "uncoveredExamples": [],
+        "atlasMismatchExamples": [],
+        "atlasSourceRGBADiagnosticOnly": "Cubism export resamples and extends RGB into transparent texels; direct nearest RGBA-to-PSD comparison fails even for frozen original. Alpha bake below is calibrated on original atlas. Final WebGL separately requires the exact user-accepted reference with zero extra differences and strict original RGBA outside the eye rectangle; the original strict-zero failure remains disclosed.",
+        "originalAlphaBakeCalibration": {
+          "affineFitTexels": 0.000123689692827611,
+          "discriminatingTexels": 65,
+          "increasedAlphaTexels": 65,
+          "decreasedAlphaTexels": 0,
+          "maximumExpectedAlphaError": 1.0888919661858552,
+          "alphaErrorGreaterThan2": 0,
+          "allDiscriminatingTexelsRejectOpposite": true,
+          "sourceChangedAlphaPixels": 24,
+          "minimumSupportingBilinearWeight": 0.3599696968837566,
+          "unverifiedChangedSourcePixels": [],
+          "examples": []
+        },
+        "candidateAlphaBake": {
+          "affineFitTexels": 0.00014904216459399322,
+          "discriminatingTexels": 24,
+          "increasedAlphaTexels": 24,
+          "decreasedAlphaTexels": 0,
+          "maximumExpectedAlphaError": 0.02192593881909488,
+          "alphaErrorGreaterThan2": 0,
+          "allDiscriminatingTexelsRejectOpposite": true,
+          "sourceChangedAlphaPixels": 24,
+          "minimumSupportingBilinearWeight": 0.9999080096180515,
+          "unverifiedChangedSourcePixels": [],
+          "examples": []
+        }
+      }
+    },
+    {
+      "name": "eye_right_lower_lid_rim original atlas validates the alpha-bake reference within calibrated two units",
+      "pass": true,
+      "detail": {
+        "affineFitTexels": 0.000123689692827611,
+        "discriminatingTexels": 65,
+        "increasedAlphaTexels": 65,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 1.0888919661858552,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 24,
+        "minimumSupportingBilinearWeight": 0.3599696968837566,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "name": "eye_right_lower_lid_rim actual atlas proves revised alpha ownership and rejects old texture",
+      "pass": true,
+      "detail": {
+        "affineFitTexels": 0.00014904216459399322,
+        "discriminatingTexels": 24,
+        "increasedAlphaTexels": 24,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.02192593881909488,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 24,
+        "minimumSupportingBilinearWeight": 0.9999080096180515,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "name": "eye_right_sclera_visible new original alpha centers are all covered",
+      "pass": true,
+      "detail": {
+        "id": "eye_right_sclera_visible",
+        "oldRasterBounds": [
+          563,
+          233,
+          594,
+          253
+        ],
+        "newRasterBounds": [
+          563,
+          228,
+          596,
+          253
+        ],
+        "nativeVertices": 14,
+        "nativeTriangles": 14,
+        "transferredAlphaPixels": 66,
+        "uncoveredTransferredPixelCenters": 0,
+        "newlyUncoveredAlphaPixelCenters": 0,
+        "preexistingUncoveredAlphaPixelCenters": 0,
+        "mappedSamples": 162,
+        "atlasSourceRGBAChangedSamples": 0,
+        "maximumAtlasSourceChannelError": 0,
+        "uvOutOfRange": 0,
+        "uncoveredExamples": [],
+        "atlasMismatchExamples": [],
+        "atlasSourceRGBADiagnosticOnly": "Cubism export resamples and extends RGB into transparent texels; direct nearest RGBA-to-PSD comparison fails even for frozen original. Alpha bake below is calibrated on original atlas. Final WebGL separately requires the exact user-accepted reference with zero extra differences and strict original RGBA outside the eye rectangle; the original strict-zero failure remains disclosed.",
+        "originalAlphaBakeCalibration": {
+          "affineFitTexels": 0.00014739232983629336,
+          "discriminatingTexels": 150,
+          "increasedAlphaTexels": 150,
+          "decreasedAlphaTexels": 0,
+          "maximumExpectedAlphaError": 1.0823860450412894,
+          "alphaErrorGreaterThan2": 0,
+          "allDiscriminatingTexelsRejectOpposite": true,
+          "sourceChangedAlphaPixels": 66,
+          "minimumSupportingBilinearWeight": 0.24000312559132364,
+          "unverifiedChangedSourcePixels": [],
+          "examples": []
+        },
+        "candidateAlphaBake": {
+          "affineFitTexels": 9.298366421717219e-05,
+          "discriminatingTexels": 66,
+          "increasedAlphaTexels": 66,
+          "decreasedAlphaTexels": 0,
+          "maximumExpectedAlphaError": 0.019223452213452674,
+          "alphaErrorGreaterThan2": 0,
+          "allDiscriminatingTexelsRejectOpposite": true,
+          "sourceChangedAlphaPixels": 66,
+          "minimumSupportingBilinearWeight": 0.999924017975441,
+          "unverifiedChangedSourcePixels": [],
+          "examples": []
+        }
+      }
+    },
+    {
+      "name": "eye_right_sclera_visible original atlas validates the alpha-bake reference within calibrated two units",
+      "pass": true,
+      "detail": {
+        "affineFitTexels": 0.00014739232983629336,
+        "discriminatingTexels": 150,
+        "increasedAlphaTexels": 150,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 1.0823860450412894,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 66,
+        "minimumSupportingBilinearWeight": 0.24000312559132364,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "name": "eye_right_sclera_visible actual atlas proves revised alpha ownership and rejects old texture",
+      "pass": true,
+      "detail": {
+        "affineFitTexels": 9.298366421717219e-05,
+        "discriminatingTexels": 66,
+        "increasedAlphaTexels": 66,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.019223452213452674,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 66,
+        "minimumSupportingBilinearWeight": 0.999924017975441,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "name": "eye_right_upper_lash new original alpha centers are all covered",
+      "pass": true,
+      "detail": {
+        "id": "eye_right_upper_lash",
+        "oldRasterBounds": [
+          570,
+          222,
+          605,
+          254
+        ],
+        "newRasterBounds": [
+          570,
+          221,
+          606,
+          256
+        ],
+        "nativeVertices": 13,
+        "nativeTriangles": 14,
+        "transferredAlphaPixels": 116,
+        "uncoveredTransferredPixelCenters": 0,
+        "newlyUncoveredAlphaPixelCenters": 0,
+        "preexistingUncoveredAlphaPixelCenters": 0,
+        "mappedSamples": 347,
+        "atlasSourceRGBAChangedSamples": 0,
+        "maximumAtlasSourceChannelError": 0,
+        "uvOutOfRange": 0,
+        "uncoveredExamples": [],
+        "atlasMismatchExamples": [],
+        "atlasSourceRGBADiagnosticOnly": "Cubism export resamples and extends RGB into transparent texels; direct nearest RGBA-to-PSD comparison fails even for frozen original. Alpha bake below is calibrated on original atlas. Final WebGL separately requires the exact user-accepted reference with zero extra differences and strict original RGBA outside the eye rectangle; the original strict-zero failure remains disclosed.",
+        "originalAlphaBakeCalibration": {
+          "affineFitTexels": 0.00013491258687281515,
+          "discriminatingTexels": 240,
+          "increasedAlphaTexels": 240,
+          "decreasedAlphaTexels": 0,
+          "maximumExpectedAlphaError": 0.7517568860922097,
+          "alphaErrorGreaterThan2": 0,
+          "allDiscriminatingTexelsRejectOpposite": true,
+          "sourceChangedAlphaPixels": 116,
+          "minimumSupportingBilinearWeight": 0.2504869476957689,
+          "unverifiedChangedSourcePixels": [],
+          "examples": []
+        },
+        "candidateAlphaBake": {
+          "affineFitTexels": 0.00016671570074322517,
+          "discriminatingTexels": 116,
+          "increasedAlphaTexels": 116,
+          "decreasedAlphaTexels": 0,
+          "maximumExpectedAlphaError": 0.02277334721469515,
+          "alphaErrorGreaterThan2": 0,
+          "allDiscriminatingTexelsRejectOpposite": true,
+          "sourceChangedAlphaPixels": 116,
+          "minimumSupportingBilinearWeight": 0.9999096064117905,
+          "unverifiedChangedSourcePixels": [],
+          "examples": []
+        }
+      }
+    },
+    {
+      "name": "eye_right_upper_lash original atlas validates the alpha-bake reference within calibrated two units",
+      "pass": true,
+      "detail": {
+        "affineFitTexels": 0.00013491258687281515,
+        "discriminatingTexels": 240,
+        "increasedAlphaTexels": 240,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.7517568860922097,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 116,
+        "minimumSupportingBilinearWeight": 0.2504869476957689,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "name": "eye_right_upper_lash actual atlas proves revised alpha ownership and rejects old texture",
+      "pass": true,
+      "detail": {
+        "affineFitTexels": 0.00016671570074322517,
+        "discriminatingTexels": 116,
+        "increasedAlphaTexels": 116,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.02277334721469515,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 116,
+        "minimumSupportingBilinearWeight": 0.9999096064117905,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "name": "face_skin_local_visible new original alpha centers are all covered",
+      "pass": true,
+      "detail": {
+        "id": "face_skin_local_visible",
+        "oldRasterBounds": [
+          490,
+          216,
+          585,
+          289
+        ],
+        "newRasterBounds": [
+          490,
+          216,
+          585,
+          289
+        ],
+        "nativeVertices": 14,
+        "nativeTriangles": 18,
+        "transferredAlphaPixels": 0,
+        "uncoveredTransferredPixelCenters": 0,
+        "newlyUncoveredAlphaPixelCenters": 0,
+        "preexistingUncoveredAlphaPixelCenters": 0,
+        "mappedSamples": 4113,
+        "atlasSourceRGBAChangedSamples": 498,
+        "maximumAtlasSourceChannelError": 71,
+        "uvOutOfRange": 0,
+        "uncoveredExamples": [],
+        "atlasMismatchExamples": [
+          {
+            "x": 534,
+            "y": 216,
+            "expected": [
+              254,
+              242,
+              234,
+              253
+            ],
+            "atlas": [
+              254,
+              242,
+              235,
+              183
+            ],
+            "uv": [
+              0.15616948902606964,
+              0.46102838446242794
+            ]
+          },
+          {
+            "x": 533,
+            "y": 217,
+            "expected": [
+              253,
+              244,
+              238,
+              253
+            ],
+            "atlas": [
+              254,
+              245,
+              240,
+              183
+            ],
+            "uv": [
+              0.15592534840106967,
+              0.4607842421966807
+            ]
+          },
+          {
+            "x": 534,
+            "y": 217,
+            "expected": [
+              254,
+              240,
+              233,
+              253
+            ],
+            "atlas": [
+              254,
+              241,
+              234,
+              247
+            ],
+            "uv": [
+              0.15616948902606964,
+              0.46078424342443636
+            ]
+          },
+          {
+            "x": 535,
+            "y": 217,
+            "expected": [
+              254,
+              239,
+              231,
+              253
+            ],
+            "atlas": [
+              254,
+              239,
+              231,
+              226
+            ],
+            "uv": [
+              0.15641362965106964,
+              0.46078424465219203
+            ]
+          },
+          {
+            "x": 532,
+            "y": 218,
+            "expected": [
+              254,
+              246,
+              242,
+              253
+            ],
+            "atlas": [
+              254,
+              247,
+              242,
+              183
+            ],
+            "uv": [
+              0.15568120777606964,
+              0.46054009993093326
+            ]
+          },
+          {
+            "x": 533,
+            "y": 218,
+            "expected": [
+              253,
+              242,
+              235,
+              253
+            ],
+            "atlas": [
+              253,
+              243,
+              236,
+              247
+            ],
+            "uv": [
+              0.15592534840106964,
+              0.460540101158689
+            ]
+          },
+          {
+            "x": 536,
+            "y": 218,
+            "expected": [
+              254,
+              239,
+              231,
+              253
+            ],
+            "atlas": [
+              254,
+              239,
+              231,
+              226
+            ],
+            "uv": [
+              0.15665777027606964,
+              0.46054010484195607
+            ]
+          },
+          {
+            "x": 537,
+            "y": 218,
+            "expected": [
+              254,
+              238,
+              230,
+              253
+            ],
+            "atlas": [
+              254,
+              238,
+              230,
+              220
+            ],
+            "uv": [
+              0.15690191090106964,
+              0.46054010606971185
+            ]
+          }
+        ],
+        "atlasSourceRGBADiagnosticOnly": "Cubism export resamples and extends RGB into transparent texels; direct nearest RGBA-to-PSD comparison fails even for frozen original. Alpha bake below is calibrated on original atlas. Final WebGL separately requires the exact user-accepted reference with zero extra differences and strict original RGBA outside the eye rectangle; the original strict-zero failure remains disclosed.",
+        "originalAlphaBakeCalibration": {
+          "affineFitTexels": 0.00013038511633567396,
+          "discriminatingTexels": 31,
+          "increasedAlphaTexels": 0,
+          "decreasedAlphaTexels": 31,
+          "maximumExpectedAlphaError": 0.8474735070944917,
+          "alphaErrorGreaterThan2": 0,
+          "allDiscriminatingTexelsRejectOpposite": true,
+          "sourceChangedAlphaPixels": 16,
+          "minimumSupportingBilinearWeight": 0.7238071678728405,
+          "unverifiedChangedSourcePixels": [],
+          "examples": []
+        },
+        "candidateAlphaBake": {
+          "affineFitTexels": 0.00013038511633567396,
+          "discriminatingTexels": 31,
+          "increasedAlphaTexels": 0,
+          "decreasedAlphaTexels": 31,
+          "maximumExpectedAlphaError": 0.8473340219732108,
+          "alphaErrorGreaterThan2": 0,
+          "allDiscriminatingTexelsRejectOpposite": true,
+          "sourceChangedAlphaPixels": 16,
+          "minimumSupportingBilinearWeight": 0.7238071678728405,
+          "unverifiedChangedSourcePixels": [],
+          "examples": []
+        }
+      }
+    },
+    {
+      "name": "face_skin_local_visible original atlas validates the alpha-bake reference within calibrated two units",
+      "pass": true,
+      "detail": {
+        "affineFitTexels": 0.00013038511633567396,
+        "discriminatingTexels": 31,
+        "increasedAlphaTexels": 0,
+        "decreasedAlphaTexels": 31,
+        "maximumExpectedAlphaError": 0.8474735070944917,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 16,
+        "minimumSupportingBilinearWeight": 0.7238071678728405,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "name": "face_skin_local_visible actual atlas proves revised alpha ownership and rejects old texture",
+      "pass": true,
+      "detail": {
+        "affineFitTexels": 0.00013038511633567396,
+        "discriminatingTexels": 31,
+        "increasedAlphaTexels": 0,
+        "decreasedAlphaTexels": 31,
+        "maximumExpectedAlphaError": 0.8473340219732108,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 16,
+        "minimumSupportingBilinearWeight": 0.7238071678728405,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "name": "face_visible_residual new original alpha centers are all covered",
+      "pass": true,
+      "detail": {
+        "id": "face_visible_residual",
+        "oldRasterBounds": [
+          446,
+          80,
+          671,
+          296
+        ],
+        "newRasterBounds": [
+          446,
+          80,
+          671,
+          296
+        ],
+        "nativeVertices": 4,
+        "nativeTriangles": 2,
+        "transferredAlphaPixels": 0,
+        "uncoveredTransferredPixelCenters": 0,
+        "newlyUncoveredAlphaPixelCenters": 0,
+        "preexistingUncoveredAlphaPixelCenters": 0,
+        "mappedSamples": 5466,
+        "atlasSourceRGBAChangedSamples": 782,
+        "maximumAtlasSourceChannelError": 175,
+        "uvOutOfRange": 0,
+        "uncoveredExamples": [],
+        "atlasMismatchExamples": [
+          {
+            "x": 619,
+            "y": 87,
+            "expected": [
+              131,
+              128,
+              143,
+              84
+            ],
+            "atlas": [
+              131,
+              127,
+              143,
+              84
+            ],
+            "uv": [
+              0.2464599609375,
+              0.6553955078125
+            ]
+          },
+          {
+            "x": 620,
+            "y": 87,
+            "expected": [
+              128,
+              128,
+              128,
+              2
+            ],
+            "atlas": [
+              131,
+              127,
+              143,
+              2
+            ],
+            "uv": [
+              0.2467041015625,
+              0.6553955078125
+            ]
+          },
+          {
+            "x": 620,
+            "y": 88,
+            "expected": [
+              128,
+              128,
+              128,
+              2
+            ],
+            "atlas": [
+              140,
+              136,
+              147,
+              2
+            ],
+            "uv": [
+              0.2467041015625,
+              0.6551513671875
+            ]
+          },
+          {
+            "x": 621,
+            "y": 88,
+            "expected": [
+              191,
+              128,
+              128,
+              4
+            ],
+            "atlas": [
+              140,
+              136,
+              147,
+              4
+            ],
+            "uv": [
+              0.2469482421875,
+              0.6551513671875
+            ]
+          },
+          {
+            "x": 622,
+            "y": 88,
+            "expected": [
+              255,
+              255,
+              255,
+              1
+            ],
+            "atlas": [
+              140,
+              136,
+              147,
+              1
+            ],
+            "uv": [
+              0.2471923828125,
+              0.6551513671875
+            ]
+          },
+          {
+            "x": 623,
+            "y": 88,
+            "expected": [
+              255,
+              255,
+              255,
+              1
+            ],
+            "atlas": [
+              140,
+              136,
+              147,
+              1
+            ],
+            "uv": [
+              0.2474365234375,
+              0.6551513671875
+            ]
+          },
+          {
+            "x": 620,
+            "y": 89,
+            "expected": [
+              153,
+              153,
+              153,
+              5
+            ],
+            "atlas": [
+              151,
+              147,
+              151,
+              5
+            ],
+            "uv": [
+              0.2467041015625,
+              0.6549072265625
+            ]
+          },
+          {
+            "x": 621,
+            "y": 89,
+            "expected": [
+              191,
+              128,
+              128,
+              4
+            ],
+            "atlas": [
+              151,
+              147,
+              151,
+              4
+            ],
+            "uv": [
+              0.24694824218750003,
+              0.6549072265625001
+            ]
+          }
+        ],
+        "atlasSourceRGBADiagnosticOnly": "Cubism export resamples and extends RGB into transparent texels; direct nearest RGBA-to-PSD comparison fails even for frozen original. Alpha bake below is calibrated on original atlas. Final WebGL separately requires the exact user-accepted reference with zero extra differences and strict original RGBA outside the eye rectangle; the original strict-zero failure remains disclosed.",
+        "originalAlphaBakeCalibration": {
+          "affineFitTexels": 1.3642420526593924e-12,
+          "discriminatingTexels": 441,
+          "increasedAlphaTexels": 0,
+          "decreasedAlphaTexels": 441,
+          "maximumExpectedAlphaError": 3.595346242946107e-10,
+          "alphaErrorGreaterThan2": 0,
+          "allDiscriminatingTexelsRejectOpposite": true,
+          "sourceChangedAlphaPixels": 441,
+          "minimumSupportingBilinearWeight": 0.9999999999985789,
+          "unverifiedChangedSourcePixels": [],
+          "examples": []
+        },
+        "candidateAlphaBake": {
+          "affineFitTexels": 1.3642420526593924e-12,
+          "discriminatingTexels": 441,
+          "increasedAlphaTexels": 0,
+          "decreasedAlphaTexels": 441,
+          "maximumExpectedAlphaError": 3.5953462429451753e-10,
+          "alphaErrorGreaterThan2": 0,
+          "allDiscriminatingTexelsRejectOpposite": true,
+          "sourceChangedAlphaPixels": 441,
+          "minimumSupportingBilinearWeight": 0.9999999999985789,
+          "unverifiedChangedSourcePixels": [],
+          "examples": []
+        }
+      }
+    },
+    {
+      "name": "face_visible_residual original atlas validates the alpha-bake reference within calibrated two units",
+      "pass": true,
+      "detail": {
+        "affineFitTexels": 1.3642420526593924e-12,
+        "discriminatingTexels": 441,
+        "increasedAlphaTexels": 0,
+        "decreasedAlphaTexels": 441,
+        "maximumExpectedAlphaError": 3.595346242946107e-10,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 441,
+        "minimumSupportingBilinearWeight": 0.9999999999985789,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "name": "face_visible_residual actual atlas proves revised alpha ownership and rejects old texture",
+      "pass": true,
+      "detail": {
+        "affineFitTexels": 1.3642420526593924e-12,
+        "discriminatingTexels": 441,
+        "increasedAlphaTexels": 0,
+        "decreasedAlphaTexels": 441,
+        "maximumExpectedAlphaError": 3.5953462429451753e-10,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 441,
+        "minimumSupportingBilinearWeight": 0.9999999999985789,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "name": "every declared donor-to-eye transfer preserves exact original RGBA at the same source coordinate",
+      "pass": true,
+      "detail": [
+        {
+          "from": "face_skin_local_visible",
+          "to": "eye_left_lower_lid_rim",
+          "pixels": 4,
+          "actualExactRGBATransfers": 4
+        },
+        {
+          "from": "face_skin_local_visible",
+          "to": "eye_left_sclera_visible",
+          "pixels": 4,
+          "actualExactRGBATransfers": 4
+        },
+        {
+          "from": "face_skin_local_visible",
+          "to": "eye_right_lower_lid_rim",
+          "pixels": 7,
+          "actualExactRGBATransfers": 7
+        },
+        {
+          "from": "face_skin_local_visible",
+          "to": "eye_right_sclera_visible",
+          "pixels": 1,
+          "actualExactRGBATransfers": 1
+        },
+        {
+          "from": "face_visible_residual",
+          "to": "eye_left_iris",
+          "pixels": 42,
+          "actualExactRGBATransfers": 42
+        },
+        {
+          "from": "face_visible_residual",
+          "to": "eye_left_lower_lid_rim",
+          "pixels": 36,
+          "actualExactRGBATransfers": 36
+        },
+        {
+          "from": "face_visible_residual",
+          "to": "eye_left_sclera_visible",
+          "pixels": 39,
+          "actualExactRGBATransfers": 39
+        },
+        {
+          "from": "face_visible_residual",
+          "to": "eye_left_upper_lash",
+          "pixels": 105,
+          "actualExactRGBATransfers": 105
+        },
+        {
+          "from": "face_visible_residual",
+          "to": "eye_right_iris",
+          "pixels": 21,
+          "actualExactRGBATransfers": 21
+        },
+        {
+          "from": "face_visible_residual",
+          "to": "eye_right_lower_lid_rim",
+          "pixels": 17,
+          "actualExactRGBATransfers": 17
+        },
+        {
+          "from": "face_visible_residual",
+          "to": "eye_right_sclera_visible",
+          "pixels": 65,
+          "actualExactRGBATransfers": 65
+        },
+        {
+          "from": "face_visible_residual",
+          "to": "eye_right_upper_lash",
+          "pixels": 116,
+          "actualExactRGBATransfers": 116
+        }
+      ]
+    },
+    {
+      "name": "original RGBA channels are conserved exactly across ten reassigned layers",
+      "pass": true,
+      "detail": {
+        "changedCanvasPixels": 0
+      }
+    },
+    {
+      "name": "all other base PSD layers retain exact RGBA and bounds",
+      "pass": true,
+      "detail": {
+        "count": 64,
+        "changed": []
+      }
+    },
+    {
+      "name": "updated source PSD neutral composite is byte-identical to original",
+      "pass": true,
+      "detail": {
+        "changedRGBAPixels": 0
+      }
+    }
+  ],
+  "errors": [],
+  "meshes": [
+    {
+      "id": "eye_left_iris",
+      "oldRasterBounds": [
+        497,
+        197,
+        525,
+        224
+      ],
+      "newRasterBounds": [
+        497,
+        197,
+        527,
+        224
+      ],
+      "nativeVertices": 7,
+      "nativeTriangles": 7,
+      "transferredAlphaPixels": 42,
+      "uncoveredTransferredPixelCenters": 0,
+      "newlyUncoveredAlphaPixelCenters": 0,
+      "preexistingUncoveredAlphaPixelCenters": 0,
+      "mappedSamples": 573,
+      "atlasSourceRGBAChangedSamples": 0,
+      "maximumAtlasSourceChannelError": 0,
+      "uvOutOfRange": 0,
+      "uncoveredExamples": [],
+      "atlasMismatchExamples": [],
+      "atlasSourceRGBADiagnosticOnly": "Cubism export resamples and extends RGB into transparent texels; direct nearest RGBA-to-PSD comparison fails even for frozen original. Alpha bake below is calibrated on original atlas. Final WebGL separately requires the exact user-accepted reference with zero extra differences and strict original RGBA outside the eye rectangle; the original strict-zero failure remains disclosed.",
+      "originalAlphaBakeCalibration": {
+        "affineFitTexels": 0.00011775420398407732,
+        "discriminatingTexels": 69,
+        "increasedAlphaTexels": 69,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 1.4749594436781592,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 42,
+        "minimumSupportingBilinearWeight": 0.48002290346878007,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      },
+      "candidateAlphaBake": {
+        "affineFitTexels": 0.0001693025469649001,
+        "discriminatingTexels": 42,
+        "increasedAlphaTexels": 42,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.03355979406501319,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 42,
+        "minimumSupportingBilinearWeight": 0.9998613930499463,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "id": "eye_left_lower_lid_rim",
+      "oldRasterBounds": [
+        496,
+        215,
+        518,
+        226
+      ],
+      "newRasterBounds": [
+        495,
+        215,
+        520,
+        227
+      ],
+      "nativeVertices": 13,
+      "nativeTriangles": 14,
+      "transferredAlphaPixels": 40,
+      "uncoveredTransferredPixelCenters": 0,
+      "newlyUncoveredAlphaPixelCenters": 0,
+      "preexistingUncoveredAlphaPixelCenters": 0,
+      "mappedSamples": 67,
+      "atlasSourceRGBAChangedSamples": 0,
+      "maximumAtlasSourceChannelError": 0,
+      "uvOutOfRange": 0,
+      "uncoveredExamples": [],
+      "atlasMismatchExamples": [],
+      "atlasSourceRGBADiagnosticOnly": "Cubism export resamples and extends RGB into transparent texels; direct nearest RGBA-to-PSD comparison fails even for frozen original. Alpha bake below is calibrated on original atlas. Final WebGL separately requires the exact user-accepted reference with zero extra differences and strict original RGBA outside the eye rectangle; the original strict-zero failure remains disclosed.",
+      "originalAlphaBakeCalibration": {
+        "affineFitTexels": 0.00012300333628445514,
+        "discriminatingTexels": 73,
+        "increasedAlphaTexels": 73,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.6521838773213204,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 40,
+        "minimumSupportingBilinearWeight": 0.33458955143695074,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      },
+      "candidateAlphaBake": {
+        "affineFitTexels": 9.877810339276039e-05,
+        "discriminatingTexels": 40,
+        "increasedAlphaTexels": 40,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.013341477092922105,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 40,
+        "minimumSupportingBilinearWeight": 0.9999472668889607,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "id": "eye_left_sclera_visible",
+      "oldRasterBounds": [
+        495,
+        199,
+        533,
+        225
+      ],
+      "newRasterBounds": [
+        495,
+        199,
+        534,
+        226
+      ],
+      "nativeVertices": 14,
+      "nativeTriangles": 13,
+      "transferredAlphaPixels": 43,
+      "uncoveredTransferredPixelCenters": 0,
+      "newlyUncoveredAlphaPixelCenters": 0,
+      "preexistingUncoveredAlphaPixelCenters": 2,
+      "mappedSamples": 205,
+      "atlasSourceRGBAChangedSamples": 0,
+      "maximumAtlasSourceChannelError": 0,
+      "uvOutOfRange": 0,
+      "uncoveredExamples": [],
+      "atlasMismatchExamples": [],
+      "atlasSourceRGBADiagnosticOnly": "Cubism export resamples and extends RGB into transparent texels; direct nearest RGBA-to-PSD comparison fails even for frozen original. Alpha bake below is calibrated on original atlas. Final WebGL separately requires the exact user-accepted reference with zero extra differences and strict original RGBA outside the eye rectangle; the original strict-zero failure remains disclosed.",
+      "originalAlphaBakeCalibration": {
+        "affineFitTexels": 0.00018861540820580558,
+        "discriminatingTexels": 94,
+        "increasedAlphaTexels": 94,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.8901729615245983,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 43,
+        "minimumSupportingBilinearWeight": 0.5599724222516816,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      },
+      "candidateAlphaBake": {
+        "affineFitTexels": 0.0001434989835615852,
+        "discriminatingTexels": 43,
+        "increasedAlphaTexels": 43,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.01689450959040073,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 43,
+        "minimumSupportingBilinearWeight": 0.9998996314654438,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "id": "eye_left_upper_lash",
+      "oldRasterBounds": [
+        488,
+        189,
+        539,
+        207
+      ],
+      "newRasterBounds": [
+        488,
+        187,
+        540,
+        209
+      ],
+      "nativeVertices": 13,
+      "nativeTriangles": 14,
+      "transferredAlphaPixels": 105,
+      "uncoveredTransferredPixelCenters": 0,
+      "newlyUncoveredAlphaPixelCenters": 0,
+      "preexistingUncoveredAlphaPixelCenters": 0,
+      "mappedSamples": 430,
+      "atlasSourceRGBAChangedSamples": 0,
+      "maximumAtlasSourceChannelError": 0,
+      "uvOutOfRange": 0,
+      "uncoveredExamples": [],
+      "atlasMismatchExamples": [],
+      "atlasSourceRGBADiagnosticOnly": "Cubism export resamples and extends RGB into transparent texels; direct nearest RGBA-to-PSD comparison fails even for frozen original. Alpha bake below is calibrated on original atlas. Final WebGL separately requires the exact user-accepted reference with zero extra differences and strict original RGBA outside the eye rectangle; the original strict-zero failure remains disclosed.",
+      "originalAlphaBakeCalibration": {
+        "affineFitTexels": 0.00012194157807243755,
+        "discriminatingTexels": 212,
+        "increasedAlphaTexels": 212,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.9629309021367476,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 105,
+        "minimumSupportingBilinearWeight": 0.5328654347275578,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      },
+      "candidateAlphaBake": {
+        "affineFitTexels": 0.0001173466212094354,
+        "discriminatingTexels": 105,
+        "increasedAlphaTexels": 105,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.013514780513077085,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 105,
+        "minimumSupportingBilinearWeight": 0.9999450246232445,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "id": "eye_right_iris",
+      "oldRasterBounds": [
+        564,
+        228,
+        587,
+        253
+      ],
+      "newRasterBounds": [
+        564,
+        228,
+        590,
+        253
+      ],
+      "nativeVertices": 13,
+      "nativeTriangles": 14,
+      "transferredAlphaPixels": 21,
+      "uncoveredTransferredPixelCenters": 0,
+      "newlyUncoveredAlphaPixelCenters": 0,
+      "preexistingUncoveredAlphaPixelCenters": 0,
+      "mappedSamples": 405,
+      "atlasSourceRGBAChangedSamples": 0,
+      "maximumAtlasSourceChannelError": 0,
+      "uvOutOfRange": 0,
+      "uncoveredExamples": [],
+      "atlasMismatchExamples": [],
+      "atlasSourceRGBADiagnosticOnly": "Cubism export resamples and extends RGB into transparent texels; direct nearest RGBA-to-PSD comparison fails even for frozen original. Alpha bake below is calibrated on original atlas. Final WebGL separately requires the exact user-accepted reference with zero extra differences and strict original RGBA outside the eye rectangle; the original strict-zero failure remains disclosed.",
+      "originalAlphaBakeCalibration": {
+        "affineFitTexels": 0.00011731070503628871,
+        "discriminatingTexels": 34,
+        "increasedAlphaTexels": 34,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 1.2991532966349268,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 21,
+        "minimumSupportingBilinearWeight": 0.7985711943539235,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      },
+      "candidateAlphaBake": {
+        "affineFitTexels": 0.00012921175334668078,
+        "discriminatingTexels": 21,
+        "increasedAlphaTexels": 21,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.006794832118458771,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 21,
+        "minimumSupportingBilinearWeight": 0.9999711887321321,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "id": "eye_right_lower_lid_rim",
+      "oldRasterBounds": [
+        564,
+        246,
+        590,
+        261
+      ],
+      "newRasterBounds": [
+        564,
+        246,
+        591,
+        263
+      ],
+      "nativeVertices": 13,
+      "nativeTriangles": 14,
+      "transferredAlphaPixels": 24,
+      "uncoveredTransferredPixelCenters": 0,
+      "newlyUncoveredAlphaPixelCenters": 0,
+      "preexistingUncoveredAlphaPixelCenters": 0,
+      "mappedSamples": 56,
+      "atlasSourceRGBAChangedSamples": 0,
+      "maximumAtlasSourceChannelError": 0,
+      "uvOutOfRange": 0,
+      "uncoveredExamples": [],
+      "atlasMismatchExamples": [],
+      "atlasSourceRGBADiagnosticOnly": "Cubism export resamples and extends RGB into transparent texels; direct nearest RGBA-to-PSD comparison fails even for frozen original. Alpha bake below is calibrated on original atlas. Final WebGL separately requires the exact user-accepted reference with zero extra differences and strict original RGBA outside the eye rectangle; the original strict-zero failure remains disclosed.",
+      "originalAlphaBakeCalibration": {
+        "affineFitTexels": 0.000123689692827611,
+        "discriminatingTexels": 65,
+        "increasedAlphaTexels": 65,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 1.0888919661858552,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 24,
+        "minimumSupportingBilinearWeight": 0.3599696968837566,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      },
+      "candidateAlphaBake": {
+        "affineFitTexels": 0.00014904216459399322,
+        "discriminatingTexels": 24,
+        "increasedAlphaTexels": 24,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.02192593881909488,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 24,
+        "minimumSupportingBilinearWeight": 0.9999080096180515,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "id": "eye_right_sclera_visible",
+      "oldRasterBounds": [
+        563,
+        233,
+        594,
+        253
+      ],
+      "newRasterBounds": [
+        563,
+        228,
+        596,
+        253
+      ],
+      "nativeVertices": 14,
+      "nativeTriangles": 14,
+      "transferredAlphaPixels": 66,
+      "uncoveredTransferredPixelCenters": 0,
+      "newlyUncoveredAlphaPixelCenters": 0,
+      "preexistingUncoveredAlphaPixelCenters": 0,
+      "mappedSamples": 162,
+      "atlasSourceRGBAChangedSamples": 0,
+      "maximumAtlasSourceChannelError": 0,
+      "uvOutOfRange": 0,
+      "uncoveredExamples": [],
+      "atlasMismatchExamples": [],
+      "atlasSourceRGBADiagnosticOnly": "Cubism export resamples and extends RGB into transparent texels; direct nearest RGBA-to-PSD comparison fails even for frozen original. Alpha bake below is calibrated on original atlas. Final WebGL separately requires the exact user-accepted reference with zero extra differences and strict original RGBA outside the eye rectangle; the original strict-zero failure remains disclosed.",
+      "originalAlphaBakeCalibration": {
+        "affineFitTexels": 0.00014739232983629336,
+        "discriminatingTexels": 150,
+        "increasedAlphaTexels": 150,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 1.0823860450412894,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 66,
+        "minimumSupportingBilinearWeight": 0.24000312559132364,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      },
+      "candidateAlphaBake": {
+        "affineFitTexels": 9.298366421717219e-05,
+        "discriminatingTexels": 66,
+        "increasedAlphaTexels": 66,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.019223452213452674,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 66,
+        "minimumSupportingBilinearWeight": 0.999924017975441,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "id": "eye_right_upper_lash",
+      "oldRasterBounds": [
+        570,
+        222,
+        605,
+        254
+      ],
+      "newRasterBounds": [
+        570,
+        221,
+        606,
+        256
+      ],
+      "nativeVertices": 13,
+      "nativeTriangles": 14,
+      "transferredAlphaPixels": 116,
+      "uncoveredTransferredPixelCenters": 0,
+      "newlyUncoveredAlphaPixelCenters": 0,
+      "preexistingUncoveredAlphaPixelCenters": 0,
+      "mappedSamples": 347,
+      "atlasSourceRGBAChangedSamples": 0,
+      "maximumAtlasSourceChannelError": 0,
+      "uvOutOfRange": 0,
+      "uncoveredExamples": [],
+      "atlasMismatchExamples": [],
+      "atlasSourceRGBADiagnosticOnly": "Cubism export resamples and extends RGB into transparent texels; direct nearest RGBA-to-PSD comparison fails even for frozen original. Alpha bake below is calibrated on original atlas. Final WebGL separately requires the exact user-accepted reference with zero extra differences and strict original RGBA outside the eye rectangle; the original strict-zero failure remains disclosed.",
+      "originalAlphaBakeCalibration": {
+        "affineFitTexels": 0.00013491258687281515,
+        "discriminatingTexels": 240,
+        "increasedAlphaTexels": 240,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.7517568860922097,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 116,
+        "minimumSupportingBilinearWeight": 0.2504869476957689,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      },
+      "candidateAlphaBake": {
+        "affineFitTexels": 0.00016671570074322517,
+        "discriminatingTexels": 116,
+        "increasedAlphaTexels": 116,
+        "decreasedAlphaTexels": 0,
+        "maximumExpectedAlphaError": 0.02277334721469515,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 116,
+        "minimumSupportingBilinearWeight": 0.9999096064117905,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "id": "face_skin_local_visible",
+      "oldRasterBounds": [
+        490,
+        216,
+        585,
+        289
+      ],
+      "newRasterBounds": [
+        490,
+        216,
+        585,
+        289
+      ],
+      "nativeVertices": 14,
+      "nativeTriangles": 18,
+      "transferredAlphaPixels": 0,
+      "uncoveredTransferredPixelCenters": 0,
+      "newlyUncoveredAlphaPixelCenters": 0,
+      "preexistingUncoveredAlphaPixelCenters": 0,
+      "mappedSamples": 4113,
+      "atlasSourceRGBAChangedSamples": 498,
+      "maximumAtlasSourceChannelError": 71,
+      "uvOutOfRange": 0,
+      "uncoveredExamples": [],
+      "atlasMismatchExamples": [
+        {
+          "x": 534,
+          "y": 216,
+          "expected": [
+            254,
+            242,
+            234,
+            253
+          ],
+          "atlas": [
+            254,
+            242,
+            235,
+            183
+          ],
+          "uv": [
+            0.15616948902606964,
+            0.46102838446242794
+          ]
+        },
+        {
+          "x": 533,
+          "y": 217,
+          "expected": [
+            253,
+            244,
+            238,
+            253
+          ],
+          "atlas": [
+            254,
+            245,
+            240,
+            183
+          ],
+          "uv": [
+            0.15592534840106967,
+            0.4607842421966807
+          ]
+        },
+        {
+          "x": 534,
+          "y": 217,
+          "expected": [
+            254,
+            240,
+            233,
+            253
+          ],
+          "atlas": [
+            254,
+            241,
+            234,
+            247
+          ],
+          "uv": [
+            0.15616948902606964,
+            0.46078424342443636
+          ]
+        },
+        {
+          "x": 535,
+          "y": 217,
+          "expected": [
+            254,
+            239,
+            231,
+            253
+          ],
+          "atlas": [
+            254,
+            239,
+            231,
+            226
+          ],
+          "uv": [
+            0.15641362965106964,
+            0.46078424465219203
+          ]
+        },
+        {
+          "x": 532,
+          "y": 218,
+          "expected": [
+            254,
+            246,
+            242,
+            253
+          ],
+          "atlas": [
+            254,
+            247,
+            242,
+            183
+          ],
+          "uv": [
+            0.15568120777606964,
+            0.46054009993093326
+          ]
+        },
+        {
+          "x": 533,
+          "y": 218,
+          "expected": [
+            253,
+            242,
+            235,
+            253
+          ],
+          "atlas": [
+            253,
+            243,
+            236,
+            247
+          ],
+          "uv": [
+            0.15592534840106964,
+            0.460540101158689
+          ]
+        },
+        {
+          "x": 536,
+          "y": 218,
+          "expected": [
+            254,
+            239,
+            231,
+            253
+          ],
+          "atlas": [
+            254,
+            239,
+            231,
+            226
+          ],
+          "uv": [
+            0.15665777027606964,
+            0.46054010484195607
+          ]
+        },
+        {
+          "x": 537,
+          "y": 218,
+          "expected": [
+            254,
+            238,
+            230,
+            253
+          ],
+          "atlas": [
+            254,
+            238,
+            230,
+            220
+          ],
+          "uv": [
+            0.15690191090106964,
+            0.46054010606971185
+          ]
+        }
+      ],
+      "atlasSourceRGBADiagnosticOnly": "Cubism export resamples and extends RGB into transparent texels; direct nearest RGBA-to-PSD comparison fails even for frozen original. Alpha bake below is calibrated on original atlas. Final WebGL separately requires the exact user-accepted reference with zero extra differences and strict original RGBA outside the eye rectangle; the original strict-zero failure remains disclosed.",
+      "originalAlphaBakeCalibration": {
+        "affineFitTexels": 0.00013038511633567396,
+        "discriminatingTexels": 31,
+        "increasedAlphaTexels": 0,
+        "decreasedAlphaTexels": 31,
+        "maximumExpectedAlphaError": 0.8474735070944917,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 16,
+        "minimumSupportingBilinearWeight": 0.7238071678728405,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      },
+      "candidateAlphaBake": {
+        "affineFitTexels": 0.00013038511633567396,
+        "discriminatingTexels": 31,
+        "increasedAlphaTexels": 0,
+        "decreasedAlphaTexels": 31,
+        "maximumExpectedAlphaError": 0.8473340219732108,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 16,
+        "minimumSupportingBilinearWeight": 0.7238071678728405,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    },
+    {
+      "id": "face_visible_residual",
+      "oldRasterBounds": [
+        446,
+        80,
+        671,
+        296
+      ],
+      "newRasterBounds": [
+        446,
+        80,
+        671,
+        296
+      ],
+      "nativeVertices": 4,
+      "nativeTriangles": 2,
+      "transferredAlphaPixels": 0,
+      "uncoveredTransferredPixelCenters": 0,
+      "newlyUncoveredAlphaPixelCenters": 0,
+      "preexistingUncoveredAlphaPixelCenters": 0,
+      "mappedSamples": 5466,
+      "atlasSourceRGBAChangedSamples": 782,
+      "maximumAtlasSourceChannelError": 175,
+      "uvOutOfRange": 0,
+      "uncoveredExamples": [],
+      "atlasMismatchExamples": [
+        {
+          "x": 619,
+          "y": 87,
+          "expected": [
+            131,
+            128,
+            143,
+            84
+          ],
+          "atlas": [
+            131,
+            127,
+            143,
+            84
+          ],
+          "uv": [
+            0.2464599609375,
+            0.6553955078125
+          ]
+        },
+        {
+          "x": 620,
+          "y": 87,
+          "expected": [
+            128,
+            128,
+            128,
+            2
+          ],
+          "atlas": [
+            131,
+            127,
+            143,
+            2
+          ],
+          "uv": [
+            0.2467041015625,
+            0.6553955078125
+          ]
+        },
+        {
+          "x": 620,
+          "y": 88,
+          "expected": [
+            128,
+            128,
+            128,
+            2
+          ],
+          "atlas": [
+            140,
+            136,
+            147,
+            2
+          ],
+          "uv": [
+            0.2467041015625,
+            0.6551513671875
+          ]
+        },
+        {
+          "x": 621,
+          "y": 88,
+          "expected": [
+            191,
+            128,
+            128,
+            4
+          ],
+          "atlas": [
+            140,
+            136,
+            147,
+            4
+          ],
+          "uv": [
+            0.2469482421875,
+            0.6551513671875
+          ]
+        },
+        {
+          "x": 622,
+          "y": 88,
+          "expected": [
+            255,
+            255,
+            255,
+            1
+          ],
+          "atlas": [
+            140,
+            136,
+            147,
+            1
+          ],
+          "uv": [
+            0.2471923828125,
+            0.6551513671875
+          ]
+        },
+        {
+          "x": 623,
+          "y": 88,
+          "expected": [
+            255,
+            255,
+            255,
+            1
+          ],
+          "atlas": [
+            140,
+            136,
+            147,
+            1
+          ],
+          "uv": [
+            0.2474365234375,
+            0.6551513671875
+          ]
+        },
+        {
+          "x": 620,
+          "y": 89,
+          "expected": [
+            153,
+            153,
+            153,
+            5
+          ],
+          "atlas": [
+            151,
+            147,
+            151,
+            5
+          ],
+          "uv": [
+            0.2467041015625,
+            0.6549072265625
+          ]
+        },
+        {
+          "x": 621,
+          "y": 89,
+          "expected": [
+            191,
+            128,
+            128,
+            4
+          ],
+          "atlas": [
+            151,
+            147,
+            151,
+            4
+          ],
+          "uv": [
+            0.24694824218750003,
+            0.6549072265625001
+          ]
+        }
+      ],
+      "atlasSourceRGBADiagnosticOnly": "Cubism export resamples and extends RGB into transparent texels; direct nearest RGBA-to-PSD comparison fails even for frozen original. Alpha bake below is calibrated on original atlas. Final WebGL separately requires the exact user-accepted reference with zero extra differences and strict original RGBA outside the eye rectangle; the original strict-zero failure remains disclosed.",
+      "originalAlphaBakeCalibration": {
+        "affineFitTexels": 1.3642420526593924e-12,
+        "discriminatingTexels": 441,
+        "increasedAlphaTexels": 0,
+        "decreasedAlphaTexels": 441,
+        "maximumExpectedAlphaError": 3.595346242946107e-10,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 441,
+        "minimumSupportingBilinearWeight": 0.9999999999985789,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      },
+      "candidateAlphaBake": {
+        "affineFitTexels": 1.3642420526593924e-12,
+        "discriminatingTexels": 441,
+        "increasedAlphaTexels": 0,
+        "decreasedAlphaTexels": 441,
+        "maximumExpectedAlphaError": 3.5953462429451753e-10,
+        "alphaErrorGreaterThan2": 0,
+        "allDiscriminatingTexelsRejectOpposite": true,
+        "sourceChangedAlphaPixels": 441,
+        "minimumSupportingBilinearWeight": 0.9999999999985789,
+        "unverifiedChangedSourcePixels": [],
+        "examples": []
+      }
+    }
+  ],
+  "transfers": [
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_left_lower_lid_rim",
+      "pixels": 4,
+      "actualExactRGBATransfers": 4
+    },
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_left_sclera_visible",
+      "pixels": 4,
+      "actualExactRGBATransfers": 4
+    },
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_right_lower_lid_rim",
+      "pixels": 7,
+      "actualExactRGBATransfers": 7
+    },
+    {
+      "from": "face_skin_local_visible",
+      "to": "eye_right_sclera_visible",
+      "pixels": 1,
+      "actualExactRGBATransfers": 1
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_iris",
+      "pixels": 42,
+      "actualExactRGBATransfers": 42
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_lower_lid_rim",
+      "pixels": 36,
+      "actualExactRGBATransfers": 36
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_sclera_visible",
+      "pixels": 39,
+      "actualExactRGBATransfers": 39
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_left_upper_lash",
+      "pixels": 105,
+      "actualExactRGBATransfers": 105
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_iris",
+      "pixels": 21,
+      "actualExactRGBATransfers": 21
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_lower_lid_rim",
+      "pixels": 17,
+      "actualExactRGBATransfers": 17
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_sclera_visible",
+      "pixels": 65,
+      "actualExactRGBATransfers": 65
+    },
+    {
+      "from": "face_visible_residual",
+      "to": "eye_right_upper_lash",
+      "pixels": 116,
+      "actualExactRGBATransfers": 116
+    }
+  ],
+  "sourceTransferManifest": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\standing-native-gaze-2026-10-15\\artwork-repair\\base74-pixel-transfers-verification.json",
+  "sourceTransferManifestSha256": "ff33d120fe61712097c160514bd41562599987d019b37dc2aaf8d965cff21b22",
+  "sourceTransferLayerCount": 74,
+  "sourceChainNote": "Coverage uses only original74 and repaired74. The pre-mask80 intermediary is historical source-chain evidence; current six-helper source80 is the separately approved 6dd4 mask repair, independently checked by native-helper-coverage.json. No abandoned75 research file is an active input.",
+  "testedSourceSnapshotSha256": "a565134a78dce22cc80e005c2090bb248e36acf6f3396f408f8e2761837a7d91",
+  "selfTest": false
+}

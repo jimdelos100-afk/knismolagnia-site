@@ -1,0 +1,6787 @@
+{
+  "date": "2026-10-19T04:52:39.632Z",
+  "scope": "Direct model viewer, renderer native access and actual Core buffers; no parent app logic.",
+  "modelFile": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\v8-source\\knismolagnia-site\\public\\konisi-game\\live2d\\standing\\character.model3.json",
+  "model3Sha256": "eee781d7c74cda3526a08ac663e33d110d5dc699d664b9be56d6d0e8a144b6ed",
+  "newMocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+  "textureSha256": [
+    "90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30",
+    "61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7"
+  ],
+  "testedSourceSnapshotSha256": "a565134a78dce22cc80e005c2090bb248e36acf6f3396f408f8e2761837a7d91",
+  "browser": "155.0.8059.84",
+  "checks": [
+    {
+      "name": "rendered vertices are genuine Core buffers without copied-gaze accessor",
+      "pass": true
+    },
+    {
+      "name": "transparent native viewer canvas has transparent corners",
+      "pass": true
+    },
+    {
+      "name": "native viewer renders direction -1,-1 head -15",
+      "pass": true,
+      "detail": {
+        "z": -15,
+        "x": -1,
+        "y": -1,
+        "maxNativeDeltaFromNeutralPixels": 8.927490234375,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction 0,-1 head -15",
+      "pass": true,
+      "detail": {
+        "z": -15,
+        "x": 0,
+        "y": -1,
+        "maxNativeDeltaFromNeutralPixels": 8.927490234375,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction 1,-1 head -15",
+      "pass": true,
+      "detail": {
+        "z": -15,
+        "x": 1,
+        "y": -1,
+        "maxNativeDeltaFromNeutralPixels": 8.927490234375,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction -1,0 head -15",
+      "pass": true,
+      "detail": {
+        "z": -15,
+        "x": -1,
+        "y": 0,
+        "maxNativeDeltaFromNeutralPixels": 8.927490234375,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction 0,0 head -15",
+      "pass": true,
+      "detail": {
+        "z": -15,
+        "x": 0,
+        "y": 0,
+        "maxNativeDeltaFromNeutralPixels": 8.927490234375,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction 1,0 head -15",
+      "pass": true,
+      "detail": {
+        "z": -15,
+        "x": 1,
+        "y": 0,
+        "maxNativeDeltaFromNeutralPixels": 8.927490234375,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction -1,1 head -15",
+      "pass": true,
+      "detail": {
+        "z": -15,
+        "x": -1,
+        "y": 1,
+        "maxNativeDeltaFromNeutralPixels": 8.927490234375,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction 0,1 head -15",
+      "pass": true,
+      "detail": {
+        "z": -15,
+        "x": 0,
+        "y": 1,
+        "maxNativeDeltaFromNeutralPixels": 8.927490234375,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction 1,1 head -15",
+      "pass": true,
+      "detail": {
+        "z": -15,
+        "x": 1,
+        "y": 1,
+        "maxNativeDeltaFromNeutralPixels": 8.927490234375,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction -1,-1 head 0",
+      "pass": true,
+      "detail": {
+        "z": 0,
+        "x": -1,
+        "y": -1,
+        "maxNativeDeltaFromNeutralPixels": 4.051170349121094,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction 0,-1 head 0",
+      "pass": true,
+      "detail": {
+        "z": 0,
+        "x": 0,
+        "y": -1,
+        "maxNativeDeltaFromNeutralPixels": 3.1640625,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction 1,-1 head 0",
+      "pass": true,
+      "detail": {
+        "z": 0,
+        "x": 1,
+        "y": -1,
+        "maxNativeDeltaFromNeutralPixels": 3.9611282348632812,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction -1,0 head 0",
+      "pass": true,
+      "detail": {
+        "z": 0,
+        "x": -1,
+        "y": 0,
+        "maxNativeDeltaFromNeutralPixels": 4.051170349121094,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction 0,0 head 0",
+      "pass": true,
+      "detail": {
+        "z": 0,
+        "x": 0,
+        "y": 0,
+        "maxNativeDeltaFromNeutralPixels": 0,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction 1,0 head 0",
+      "pass": true,
+      "detail": {
+        "z": 0,
+        "x": 1,
+        "y": 0,
+        "maxNativeDeltaFromNeutralPixels": 3.9611282348632812,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction -1,1 head 0",
+      "pass": true,
+      "detail": {
+        "z": 0,
+        "x": -1,
+        "y": 1,
+        "maxNativeDeltaFromNeutralPixels": 4.051168441772461,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction 0,1 head 0",
+      "pass": true,
+      "detail": {
+        "z": 0,
+        "x": 0,
+        "y": 1,
+        "maxNativeDeltaFromNeutralPixels": 3.16400146484375,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction 1,1 head 0",
+      "pass": true,
+      "detail": {
+        "z": 0,
+        "x": 1,
+        "y": 1,
+        "maxNativeDeltaFromNeutralPixels": 3.9611282348632812,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction -1,-1 head 15",
+      "pass": true,
+      "detail": {
+        "z": 15,
+        "x": -1,
+        "y": -1,
+        "maxNativeDeltaFromNeutralPixels": 8.9190673828125,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction 0,-1 head 15",
+      "pass": true,
+      "detail": {
+        "z": 15,
+        "x": 0,
+        "y": -1,
+        "maxNativeDeltaFromNeutralPixels": 8.9190673828125,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction 1,-1 head 15",
+      "pass": true,
+      "detail": {
+        "z": 15,
+        "x": 1,
+        "y": -1,
+        "maxNativeDeltaFromNeutralPixels": 8.9190673828125,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction -1,0 head 15",
+      "pass": true,
+      "detail": {
+        "z": 15,
+        "x": -1,
+        "y": 0,
+        "maxNativeDeltaFromNeutralPixels": 8.9190673828125,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction 0,0 head 15",
+      "pass": true,
+      "detail": {
+        "z": 15,
+        "x": 0,
+        "y": 0,
+        "maxNativeDeltaFromNeutralPixels": 8.9190673828125,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction 1,0 head 15",
+      "pass": true,
+      "detail": {
+        "z": 15,
+        "x": 1,
+        "y": 0,
+        "maxNativeDeltaFromNeutralPixels": 8.9190673828125,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction -1,1 head 15",
+      "pass": true,
+      "detail": {
+        "z": 15,
+        "x": -1,
+        "y": 1,
+        "maxNativeDeltaFromNeutralPixels": 8.9190673828125,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction 0,1 head 15",
+      "pass": true,
+      "detail": {
+        "z": 15,
+        "x": 0,
+        "y": 1,
+        "maxNativeDeltaFromNeutralPixels": 8.9190673828125,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "native viewer renders direction 1,1 head 15",
+      "pass": true,
+      "detail": {
+        "z": 15,
+        "x": 1,
+        "y": 1,
+        "maxNativeDeltaFromNeutralPixels": 8.9190673828125,
+        "allFinite": true
+      }
+    },
+    {
+      "name": "renderer gaze API drives native EyeBallX and actual Core vertices",
+      "pass": true,
+      "detail": {
+        "values": [
+          -1,
+          1
+        ],
+        "nativeOppositeExtremePixels": 8.012296676635742,
+        "status": {
+          "supported": true,
+          "enabled": true,
+          "strength": 1,
+          "commanded": true,
+          "input": [
+            1,
+            0
+          ],
+          "nativeEyeBallParametersUsed": true,
+          "nativeBuffersModified": false,
+          "method": "Hash-verified native Cubism EyeBall parameters",
+          "parameterIds": {
+            "x": "ParamEyeBallX",
+            "y": "ParamEyeBallY"
+          },
+          "bindingEvidence": {
+            "ParamEyeBallX": {
+              "vertexDelta": 0.003956221044063568,
+              "opacityDelta": 0,
+              "min": -1,
+              "max": 1
+            },
+            "ParamEyeBallY": {
+              "vertexDelta": 0.00308990478515625,
+              "opacityDelta": 0,
+              "min": -1,
+              "max": 1
+            },
+            "ParamEyeLOpen": {
+              "vertexDelta": 0.03885340690612793,
+              "opacityDelta": 1,
+              "min": 0,
+              "max": 1
+            },
+            "ParamEyeROpen": {
+              "vertexDelta": 0.039648473262786865,
+              "opacityDelta": 1,
+              "min": 0,
+              "max": 1
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "native viewer neutral redraw restores exact pixels",
+      "pass": true
+    },
+    {
+      "name": "moving iris layers are clipped by native masks",
+      "pass": true,
+      "detail": [
+        {
+          "masks": [
+            "eye_right_aperture_mask"
+          ],
+          "targets": [
+            "eye_right_iris",
+            "eye_right_highlight_upper",
+            "eye_right_highlight_secondary",
+            "iris_right_occlusion"
+          ]
+        },
+        {
+          "masks": [
+            "eye_left_aperture_mask"
+          ],
+          "targets": [
+            "eye_left_pupil_visible_rim",
+            "eye_left_iris",
+            "eye_left_highlight_upper",
+            "eye_left_highlight_center",
+            "iris_left_occlusion"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "real mask material reference is nonempty eye_right_iris",
+      "pass": true,
+      "detail": {
+        "legacyReferenceNontransparent": 0,
+        "directReferenceNontransparent": 1494
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0/0/-1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 232
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0 gaze -1,-1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": -1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 232
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_right_iris 0/-1,-1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": -1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 232
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0/0/0,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 247
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0 gaze 0,-1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 0,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 247
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_right_iris 0/0,-1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 0,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 247
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0/0/1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 247
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0 gaze 1,-1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 247
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_right_iris 0/1,-1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 247
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0/0/-1,0",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 194
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0 gaze -1,0 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": -1,
+        "y": 0,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 194
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_right_iris 0/-1,0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": -1,
+        "y": 0,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 194
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0/0/0,0",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 207
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0 gaze 0,0 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 0,
+        "y": 0,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 207
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_right_iris 0/0,0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 0,
+        "y": 0,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 207
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0/0/1,0",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 207
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0 gaze 1,0 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 1,
+        "y": 0,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 207
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_right_iris 0/1,0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 1,
+        "y": 0,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 207
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0/0/-1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 195
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0 gaze -1,1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": -1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 195
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_right_iris 0/-1,1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": -1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 195
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0/0/0,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 207
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0 gaze 0,1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 0,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 207
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_right_iris 0/0,1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 0,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 207
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0/0/1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 208
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0 gaze 1,1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 208
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_right_iris 0/1,1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 208
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0/-15/-1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 235
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0 gaze -1,-1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": -15,
+        "x": -1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 235
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_right_iris -15/-1,-1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": -15,
+        "x": -1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 235
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0/-15/-1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 234
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0 gaze -1,1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": -15,
+        "x": -1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 234
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_right_iris -15/-1,1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": -15,
+        "x": -1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 234
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0/-15/1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 245
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0 gaze 1,-1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": -15,
+        "x": 1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 245
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_right_iris -15/1,-1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": -15,
+        "x": 1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 245
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0/-15/1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 246
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0 gaze 1,1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": -15,
+        "x": 1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 246
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_right_iris -15/1,1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": -15,
+        "x": 1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 246
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0/15/-1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 234
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0 gaze -1,-1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 15,
+        "x": -1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 234
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_right_iris 15/-1,-1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 15,
+        "x": -1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 234
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0/15/-1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 234
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0 gaze -1,1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 15,
+        "x": -1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 234
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_right_iris 15/-1,1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 15,
+        "x": -1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 234
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0/15/1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 246
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0 gaze 1,-1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 15,
+        "x": 1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 246
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_right_iris 15/1,-1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 15,
+        "x": 1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 246
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0/15/1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 246
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0 gaze 1,1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 15,
+        "x": 1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 246
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_right_iris 15/1,1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0,
+        "z": 15,
+        "x": 1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 246
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0.5/0/-1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1232
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0.5 gaze -1,-1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0.5,
+        "z": 0,
+        "x": -1,
+        "y": -1,
+        "changed": 431,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1232
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0.5/0/0,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1283
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0.5 gaze 0,-1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0.5,
+        "z": 0,
+        "x": 0,
+        "y": -1,
+        "changed": 449,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1283
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0.5/0/1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1283
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0.5 gaze 1,-1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0.5,
+        "z": 0,
+        "x": 1,
+        "y": -1,
+        "changed": 448,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1283
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0.5/0/-1,0",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1261
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0.5 gaze -1,0 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0.5,
+        "z": 0,
+        "x": -1,
+        "y": 0,
+        "changed": 440,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1261
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0.5/0/0,0",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1316
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0.5 gaze 0,0 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0.5,
+        "z": 0,
+        "x": 0,
+        "y": 0,
+        "changed": 452,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1316
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0.5/0/1,0",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1317
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0.5 gaze 1,0 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0.5,
+        "z": 0,
+        "x": 1,
+        "y": 0,
+        "changed": 452,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1317
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0.5/0/-1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1266
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0.5 gaze -1,1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0.5,
+        "z": 0,
+        "x": -1,
+        "y": 1,
+        "changed": 433,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1266
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0.5/0/0,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1319
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0.5 gaze 0,1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0.5,
+        "z": 0,
+        "x": 0,
+        "y": 1,
+        "changed": 443,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1319
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0.5/0/1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1318
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0.5 gaze 1,1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0.5,
+        "z": 0,
+        "x": 1,
+        "y": 1,
+        "changed": 444,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1318
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0.5/-15/-1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1199
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0.5 gaze -1,-1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0.5,
+        "z": -15,
+        "x": -1,
+        "y": -1,
+        "changed": 429,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1199
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0.5/-15/-1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1268
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0.5 gaze -1,1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0.5,
+        "z": -15,
+        "x": -1,
+        "y": 1,
+        "changed": 436,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1268
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0.5/-15/1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1285
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0.5 gaze 1,-1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0.5,
+        "z": -15,
+        "x": 1,
+        "y": -1,
+        "changed": 449,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1285
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0.5/-15/1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1313
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0.5 gaze 1,1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0.5,
+        "z": -15,
+        "x": 1,
+        "y": 1,
+        "changed": 450,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1313
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0.5/15/-1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1244
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0.5 gaze -1,-1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0.5,
+        "z": 15,
+        "x": -1,
+        "y": -1,
+        "changed": 430,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1244
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0.5/15/-1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1290
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0.5 gaze -1,1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0.5,
+        "z": 15,
+        "x": -1,
+        "y": 1,
+        "changed": 440,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1290
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0.5/15/1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1274
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0.5 gaze 1,-1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0.5,
+        "z": 15,
+        "x": 1,
+        "y": -1,
+        "changed": 442,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1274
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 0.5/15/1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1324
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 0.5 gaze 1,1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 0.5,
+        "z": 15,
+        "x": 1,
+        "y": 1,
+        "changed": 450,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1324
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 1/0/-1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1511
+      }
+    },
+    {
+      "name": "outside assertion rejects an intentionally unclipped viewer-only negative control eye_right_iris",
+      "pass": true,
+      "detail": {
+        "rejectedOutside": 32,
+        "scope": "Disposable renderer bypass only; actual Core/MOC and normal clipping reference unchanged."
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 1 gaze -1,-1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 1,
+        "z": 0,
+        "x": -1,
+        "y": -1,
+        "changed": 816,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1511
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 1/0/0,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1573
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 1 gaze 0,-1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 1,
+        "z": 0,
+        "x": 0,
+        "y": -1,
+        "changed": 863,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1573
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 1/0/1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1567
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 1 gaze 1,-1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 1,
+        "z": 0,
+        "x": 1,
+        "y": -1,
+        "changed": 861,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1567
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 1/0/-1,0",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1507
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 1 gaze -1,0 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 1,
+        "z": 0,
+        "x": -1,
+        "y": 0,
+        "changed": 810,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1507
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 1/0/0,0",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1566
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 1 gaze 0,0 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 1,
+        "z": 0,
+        "x": 0,
+        "y": 0,
+        "changed": 861,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1566
+      }
+    },
+    {
+      "name": "isolated iris remains visible through open aperture eye_right_iris",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 1,
+        "z": 0,
+        "x": 0,
+        "y": 0,
+        "changed": 861,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1566
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 1/0/1,0",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1562
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 1 gaze 1,0 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 1,
+        "z": 0,
+        "x": 1,
+        "y": 0,
+        "changed": 858,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1562
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 1/0/-1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1510
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 1 gaze -1,1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 1,
+        "z": 0,
+        "x": -1,
+        "y": 1,
+        "changed": 768,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1510
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 1/0/0,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1570
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 1 gaze 0,1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 1,
+        "z": 0,
+        "x": 0,
+        "y": 1,
+        "changed": 822,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1570
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 1/0/1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1565
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 1 gaze 1,1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 1,
+        "z": 0,
+        "x": 1,
+        "y": 1,
+        "changed": 814,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1565
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 1/-15/-1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1470
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 1 gaze -1,-1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 1,
+        "z": -15,
+        "x": -1,
+        "y": -1,
+        "changed": 791,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1470
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 1/-15/-1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1476
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 1 gaze -1,1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 1,
+        "z": -15,
+        "x": -1,
+        "y": 1,
+        "changed": 766,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1476
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 1/-15/1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1525
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 1 gaze 1,-1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 1,
+        "z": -15,
+        "x": 1,
+        "y": -1,
+        "changed": 846,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1525
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 1/-15/1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1528
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 1 gaze 1,1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 1,
+        "z": -15,
+        "x": 1,
+        "y": 1,
+        "changed": 805,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1528
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 1/15/-1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1501
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 1 gaze -1,-1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 1,
+        "z": 15,
+        "x": -1,
+        "y": -1,
+        "changed": 814,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1501
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 1/15/-1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1496
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 1 gaze -1,1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 1,
+        "z": 15,
+        "x": -1,
+        "y": 1,
+        "changed": 743,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1496
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 1/15/1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1525
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 1 gaze 1,-1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 1,
+        "z": 15,
+        "x": 1,
+        "y": -1,
+        "changed": 852,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1525
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_right_iris 1/15/1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1534
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_right_iris open 1 gaze 1,1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ],
+        "open": 1,
+        "z": 15,
+        "x": 1,
+        "y": 1,
+        "changed": 805,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1534
+      }
+    },
+    {
+      "name": "mask reference leaves actual Core inputs unchanged eye_right_iris",
+      "pass": true,
+      "detail": [
+        {
+          "id": "eye_right_aperture_mask",
+          "coreOpacity": 0
+        }
+      ]
+    },
+    {
+      "name": "real mask material reference is nonempty eye_left_pupil_visible_rim",
+      "pass": true,
+      "detail": {
+        "legacyReferenceNontransparent": 0,
+        "directReferenceNontransparent": 1592
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0/0/-1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 222
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0 gaze -1,-1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": -1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 222
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_left_pupil_visible_rim 0/-1,-1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": -1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 222
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0/0/0,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 232
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0 gaze 0,-1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 0,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 232
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_left_pupil_visible_rim 0/0,-1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 0,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 232
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0/0/1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 232
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0 gaze 1,-1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 232
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_left_pupil_visible_rim 0/1,-1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 232
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0/0/-1,0",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 222
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0 gaze -1,0 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": -1,
+        "y": 0,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 222
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_left_pupil_visible_rim 0/-1,0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": -1,
+        "y": 0,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 222
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0/0/0,0",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 232
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0 gaze 0,0 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 0,
+        "y": 0,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 232
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_left_pupil_visible_rim 0/0,0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 0,
+        "y": 0,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 232
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0/0/1,0",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 232
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0 gaze 1,0 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 1,
+        "y": 0,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 232
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_left_pupil_visible_rim 0/1,0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 1,
+        "y": 0,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 232
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0/0/-1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 222
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0 gaze -1,1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": -1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 222
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_left_pupil_visible_rim 0/-1,1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": -1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 222
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0/0/0,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 232
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0 gaze 0,1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 0,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 232
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_left_pupil_visible_rim 0/0,1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 0,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 232
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0/0/1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 232
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0 gaze 1,1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 232
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_left_pupil_visible_rim 0/1,1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 0,
+        "x": 1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 232
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0/-15/-1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 223
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0 gaze -1,-1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": -15,
+        "x": -1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 223
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_left_pupil_visible_rim -15/-1,-1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": -15,
+        "x": -1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 223
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0/-15/-1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 223
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0 gaze -1,1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": -15,
+        "x": -1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 223
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_left_pupil_visible_rim -15/-1,1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": -15,
+        "x": -1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 223
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0/-15/1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 228
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0 gaze 1,-1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": -15,
+        "x": 1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 228
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_left_pupil_visible_rim -15/1,-1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": -15,
+        "x": 1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 228
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0/-15/1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 228
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0 gaze 1,1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": -15,
+        "x": 1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 228
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_left_pupil_visible_rim -15/1,1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": -15,
+        "x": 1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 228
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0/15/-1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 178
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0 gaze -1,-1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 15,
+        "x": -1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 178
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_left_pupil_visible_rim 15/-1,-1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 15,
+        "x": -1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 178
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0/15/-1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 178
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0 gaze -1,1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 15,
+        "x": -1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 178
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_left_pupil_visible_rim 15/-1,1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 15,
+        "x": -1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 178
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0/15/1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 227
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0 gaze 1,-1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 15,
+        "x": 1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 227
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_left_pupil_visible_rim 15/1,-1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 15,
+        "x": 1,
+        "y": -1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 227
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0/15/1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 182
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0 gaze 1,1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 15,
+        "x": 1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 182
+      }
+    },
+    {
+      "name": "fully closed eyelids hide iris pixels eye_left_pupil_visible_rim 15/1,1",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0,
+        "z": 15,
+        "x": 1,
+        "y": 1,
+        "changed": 0,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 182
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0.5/0/-1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1479
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0.5 gaze -1,-1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0.5,
+        "z": 0,
+        "x": -1,
+        "y": -1,
+        "changed": 548,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1479
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0.5/0/0,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1495
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0.5 gaze 0,-1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0.5,
+        "z": 0,
+        "x": 0,
+        "y": -1,
+        "changed": 562,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1495
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0.5/0/1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1504
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0.5 gaze 1,-1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0.5,
+        "z": 0,
+        "x": 1,
+        "y": -1,
+        "changed": 561,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1504
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0.5/0/-1,0",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1491
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0.5 gaze -1,0 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0.5,
+        "z": 0,
+        "x": -1,
+        "y": 0,
+        "changed": 550,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1491
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0.5/0/0,0",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1505
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0.5 gaze 0,0 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0.5,
+        "z": 0,
+        "x": 0,
+        "y": 0,
+        "changed": 562,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1505
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0.5/0/1,0",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1518
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0.5 gaze 1,0 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0.5,
+        "z": 0,
+        "x": 1,
+        "y": 0,
+        "changed": 561,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1518
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0.5/0/-1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1499
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0.5 gaze -1,1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0.5,
+        "z": 0,
+        "x": -1,
+        "y": 1,
+        "changed": 553,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1499
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0.5/0/0,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1512
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0.5 gaze 0,1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0.5,
+        "z": 0,
+        "x": 0,
+        "y": 1,
+        "changed": 561,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1512
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0.5/0/1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1525
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0.5 gaze 1,1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0.5,
+        "z": 0,
+        "x": 1,
+        "y": 1,
+        "changed": 561,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1525
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0.5/-15/-1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1447
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0.5 gaze -1,-1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0.5,
+        "z": -15,
+        "x": -1,
+        "y": -1,
+        "changed": 539,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1447
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0.5/-15/-1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1495
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0.5 gaze -1,1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0.5,
+        "z": -15,
+        "x": -1,
+        "y": 1,
+        "changed": 542,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1495
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0.5/-15/1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1495
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0.5 gaze 1,-1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0.5,
+        "z": -15,
+        "x": 1,
+        "y": -1,
+        "changed": 550,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1495
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0.5/-15/1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1537
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0.5 gaze 1,1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0.5,
+        "z": -15,
+        "x": 1,
+        "y": 1,
+        "changed": 551,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1537
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0.5/15/-1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1453
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0.5 gaze -1,-1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0.5,
+        "z": 15,
+        "x": -1,
+        "y": -1,
+        "changed": 536,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1453
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0.5/15/-1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1486
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0.5 gaze -1,1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0.5,
+        "z": 15,
+        "x": -1,
+        "y": 1,
+        "changed": 541,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1486
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0.5/15/1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1458
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0.5 gaze 1,-1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0.5,
+        "z": 15,
+        "x": 1,
+        "y": -1,
+        "changed": 556,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1458
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 0.5/15/1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1497
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 0.5 gaze 1,1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 0.5,
+        "z": 15,
+        "x": 1,
+        "y": 1,
+        "changed": 557,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1497
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 1/0/-1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1668
+      }
+    },
+    {
+      "name": "outside assertion rejects an intentionally unclipped viewer-only negative control eye_left_pupil_visible_rim",
+      "pass": true,
+      "detail": {
+        "rejectedOutside": 52,
+        "scope": "Disposable renderer bypass only; actual Core/MOC and normal clipping reference unchanged."
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 1 gaze -1,-1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 1,
+        "z": 0,
+        "x": -1,
+        "y": -1,
+        "changed": 1029,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1668
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 1/0/0,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1683
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 1 gaze 0,-1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 1,
+        "z": 0,
+        "x": 0,
+        "y": -1,
+        "changed": 1067,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1683
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 1/0/1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1696
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 1 gaze 1,-1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 1,
+        "z": 0,
+        "x": 1,
+        "y": -1,
+        "changed": 1069,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1696
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 1/0/-1,0",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1692
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 1 gaze -1,0 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 1,
+        "z": 0,
+        "x": -1,
+        "y": 0,
+        "changed": 1048,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1692
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 1/0/0,0",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1707
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 1 gaze 0,0 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 1,
+        "z": 0,
+        "x": 0,
+        "y": 0,
+        "changed": 1071,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1707
+      }
+    },
+    {
+      "name": "isolated iris remains visible through open aperture eye_left_pupil_visible_rim",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 1,
+        "z": 0,
+        "x": 0,
+        "y": 0,
+        "changed": 1071,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1707
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 1/0/1,0",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1722
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 1 gaze 1,0 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 1,
+        "z": 0,
+        "x": 1,
+        "y": 0,
+        "changed": 1060,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1722
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 1/0/-1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1691
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 1 gaze -1,1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 1,
+        "z": 0,
+        "x": -1,
+        "y": 1,
+        "changed": 1023,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1691
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 1/0/0,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1705
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 1 gaze 0,1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 1,
+        "z": 0,
+        "x": 0,
+        "y": 1,
+        "changed": 1043,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1705
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 1/0/1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1720
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 1 gaze 1,1 head 0",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 1,
+        "z": 0,
+        "x": 1,
+        "y": 1,
+        "changed": 1021,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1720
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 1/-15/-1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1653
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 1 gaze -1,-1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 1,
+        "z": -15,
+        "x": -1,
+        "y": -1,
+        "changed": 1023,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1653
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 1/-15/-1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1657
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 1 gaze -1,1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 1,
+        "z": -15,
+        "x": -1,
+        "y": 1,
+        "changed": 1017,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1657
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 1/-15/1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1675
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 1 gaze 1,-1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 1,
+        "z": -15,
+        "x": 1,
+        "y": -1,
+        "changed": 1056,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1675
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 1/-15/1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1668
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 1 gaze 1,1 head -15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 1,
+        "z": -15,
+        "x": 1,
+        "y": 1,
+        "changed": 1007,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1668
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 1/15/-1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1660
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 1 gaze -1,-1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 1,
+        "z": 15,
+        "x": -1,
+        "y": -1,
+        "changed": 1001,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1660
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 1/15/-1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1652
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 1 gaze -1,1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 1,
+        "z": 15,
+        "x": -1,
+        "y": 1,
+        "changed": 1029,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1652
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 1/15/1,-1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1663
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 1 gaze 1,-1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 1,
+        "z": 15,
+        "x": 1,
+        "y": -1,
+        "changed": 1060,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1663
+      }
+    },
+    {
+      "name": "actual mask reference is nonempty and spatially bounded eye_left_pupil_visible_rim 1/15/1,1",
+      "pass": true,
+      "detail": {
+        "maskReferenceNontransparent": 1677
+      }
+    },
+    {
+      "name": "rendered alpha clipping eye_left_pupil_visible_rim open 1 gaze 1,1 head 15",
+      "pass": true,
+      "detail": {
+        "targets": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ],
+        "open": 1,
+        "z": 15,
+        "x": 1,
+        "y": 1,
+        "changed": 1023,
+        "outside": 0,
+        "maximumOutside": 0,
+        "maskReferenceNontransparent": 1677
+      }
+    },
+    {
+      "name": "mask reference leaves actual Core inputs unchanged eye_left_pupil_visible_rim",
+      "pass": true,
+      "detail": [
+        {
+          "id": "eye_left_aperture_mask",
+          "coreOpacity": 0
+        }
+      ]
+    },
+    {
+      "name": "alpha-isolation checks restore exact native neutral pixels",
+      "pass": true
+    }
+  ],
+  "grid": [
+    {
+      "z": -15,
+      "x": -1,
+      "y": -1,
+      "maxNativeDeltaFromNeutralPixels": 8.927490234375,
+      "allFinite": true
+    },
+    {
+      "z": -15,
+      "x": 0,
+      "y": -1,
+      "maxNativeDeltaFromNeutralPixels": 8.927490234375,
+      "allFinite": true
+    },
+    {
+      "z": -15,
+      "x": 1,
+      "y": -1,
+      "maxNativeDeltaFromNeutralPixels": 8.927490234375,
+      "allFinite": true
+    },
+    {
+      "z": -15,
+      "x": -1,
+      "y": 0,
+      "maxNativeDeltaFromNeutralPixels": 8.927490234375,
+      "allFinite": true
+    },
+    {
+      "z": -15,
+      "x": 0,
+      "y": 0,
+      "maxNativeDeltaFromNeutralPixels": 8.927490234375,
+      "allFinite": true
+    },
+    {
+      "z": -15,
+      "x": 1,
+      "y": 0,
+      "maxNativeDeltaFromNeutralPixels": 8.927490234375,
+      "allFinite": true
+    },
+    {
+      "z": -15,
+      "x": -1,
+      "y": 1,
+      "maxNativeDeltaFromNeutralPixels": 8.927490234375,
+      "allFinite": true
+    },
+    {
+      "z": -15,
+      "x": 0,
+      "y": 1,
+      "maxNativeDeltaFromNeutralPixels": 8.927490234375,
+      "allFinite": true
+    },
+    {
+      "z": -15,
+      "x": 1,
+      "y": 1,
+      "maxNativeDeltaFromNeutralPixels": 8.927490234375,
+      "allFinite": true
+    },
+    {
+      "z": 0,
+      "x": -1,
+      "y": -1,
+      "maxNativeDeltaFromNeutralPixels": 4.051170349121094,
+      "allFinite": true
+    },
+    {
+      "z": 0,
+      "x": 0,
+      "y": -1,
+      "maxNativeDeltaFromNeutralPixels": 3.1640625,
+      "allFinite": true
+    },
+    {
+      "z": 0,
+      "x": 1,
+      "y": -1,
+      "maxNativeDeltaFromNeutralPixels": 3.9611282348632812,
+      "allFinite": true
+    },
+    {
+      "z": 0,
+      "x": -1,
+      "y": 0,
+      "maxNativeDeltaFromNeutralPixels": 4.051170349121094,
+      "allFinite": true
+    },
+    {
+      "z": 0,
+      "x": 0,
+      "y": 0,
+      "maxNativeDeltaFromNeutralPixels": 0,
+      "allFinite": true
+    },
+    {
+      "z": 0,
+      "x": 1,
+      "y": 0,
+      "maxNativeDeltaFromNeutralPixels": 3.9611282348632812,
+      "allFinite": true
+    },
+    {
+      "z": 0,
+      "x": -1,
+      "y": 1,
+      "maxNativeDeltaFromNeutralPixels": 4.051168441772461,
+      "allFinite": true
+    },
+    {
+      "z": 0,
+      "x": 0,
+      "y": 1,
+      "maxNativeDeltaFromNeutralPixels": 3.16400146484375,
+      "allFinite": true
+    },
+    {
+      "z": 0,
+      "x": 1,
+      "y": 1,
+      "maxNativeDeltaFromNeutralPixels": 3.9611282348632812,
+      "allFinite": true
+    },
+    {
+      "z": 15,
+      "x": -1,
+      "y": -1,
+      "maxNativeDeltaFromNeutralPixels": 8.9190673828125,
+      "allFinite": true
+    },
+    {
+      "z": 15,
+      "x": 0,
+      "y": -1,
+      "maxNativeDeltaFromNeutralPixels": 8.9190673828125,
+      "allFinite": true
+    },
+    {
+      "z": 15,
+      "x": 1,
+      "y": -1,
+      "maxNativeDeltaFromNeutralPixels": 8.9190673828125,
+      "allFinite": true
+    },
+    {
+      "z": 15,
+      "x": -1,
+      "y": 0,
+      "maxNativeDeltaFromNeutralPixels": 8.9190673828125,
+      "allFinite": true
+    },
+    {
+      "z": 15,
+      "x": 0,
+      "y": 0,
+      "maxNativeDeltaFromNeutralPixels": 8.9190673828125,
+      "allFinite": true
+    },
+    {
+      "z": 15,
+      "x": 1,
+      "y": 0,
+      "maxNativeDeltaFromNeutralPixels": 8.9190673828125,
+      "allFinite": true
+    },
+    {
+      "z": 15,
+      "x": -1,
+      "y": 1,
+      "maxNativeDeltaFromNeutralPixels": 8.9190673828125,
+      "allFinite": true
+    },
+    {
+      "z": 15,
+      "x": 0,
+      "y": 1,
+      "maxNativeDeltaFromNeutralPixels": 8.9190673828125,
+      "allFinite": true
+    },
+    {
+      "z": 15,
+      "x": 1,
+      "y": 1,
+      "maxNativeDeltaFromNeutralPixels": 8.9190673828125,
+      "allFinite": true
+    }
+  ],
+  "clipping": [
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0,
+      "z": 0,
+      "x": -1,
+      "y": -1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 232
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0,
+      "z": 0,
+      "x": 0,
+      "y": -1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 247
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0,
+      "z": 0,
+      "x": 1,
+      "y": -1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 247
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0,
+      "z": 0,
+      "x": -1,
+      "y": 0,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 194
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0,
+      "z": 0,
+      "x": 0,
+      "y": 0,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 207
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0,
+      "z": 0,
+      "x": 1,
+      "y": 0,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 207
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0,
+      "z": 0,
+      "x": -1,
+      "y": 1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 195
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0,
+      "z": 0,
+      "x": 0,
+      "y": 1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 207
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0,
+      "z": 0,
+      "x": 1,
+      "y": 1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 208
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0,
+      "z": -15,
+      "x": -1,
+      "y": -1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 235
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0,
+      "z": -15,
+      "x": -1,
+      "y": 1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 234
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0,
+      "z": -15,
+      "x": 1,
+      "y": -1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 245
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0,
+      "z": -15,
+      "x": 1,
+      "y": 1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 246
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0,
+      "z": 15,
+      "x": -1,
+      "y": -1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 234
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0,
+      "z": 15,
+      "x": -1,
+      "y": 1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 234
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0,
+      "z": 15,
+      "x": 1,
+      "y": -1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 246
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0,
+      "z": 15,
+      "x": 1,
+      "y": 1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 246
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0.5,
+      "z": 0,
+      "x": -1,
+      "y": -1,
+      "changed": 431,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1232
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0.5,
+      "z": 0,
+      "x": 0,
+      "y": -1,
+      "changed": 449,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1283
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0.5,
+      "z": 0,
+      "x": 1,
+      "y": -1,
+      "changed": 448,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1283
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0.5,
+      "z": 0,
+      "x": -1,
+      "y": 0,
+      "changed": 440,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1261
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0.5,
+      "z": 0,
+      "x": 0,
+      "y": 0,
+      "changed": 452,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1316
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0.5,
+      "z": 0,
+      "x": 1,
+      "y": 0,
+      "changed": 452,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1317
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0.5,
+      "z": 0,
+      "x": -1,
+      "y": 1,
+      "changed": 433,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1266
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0.5,
+      "z": 0,
+      "x": 0,
+      "y": 1,
+      "changed": 443,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1319
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0.5,
+      "z": 0,
+      "x": 1,
+      "y": 1,
+      "changed": 444,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1318
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0.5,
+      "z": -15,
+      "x": -1,
+      "y": -1,
+      "changed": 429,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1199
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0.5,
+      "z": -15,
+      "x": -1,
+      "y": 1,
+      "changed": 436,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1268
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0.5,
+      "z": -15,
+      "x": 1,
+      "y": -1,
+      "changed": 449,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1285
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0.5,
+      "z": -15,
+      "x": 1,
+      "y": 1,
+      "changed": 450,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1313
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0.5,
+      "z": 15,
+      "x": -1,
+      "y": -1,
+      "changed": 430,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1244
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0.5,
+      "z": 15,
+      "x": -1,
+      "y": 1,
+      "changed": 440,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1290
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0.5,
+      "z": 15,
+      "x": 1,
+      "y": -1,
+      "changed": 442,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1274
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 0.5,
+      "z": 15,
+      "x": 1,
+      "y": 1,
+      "changed": 450,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1324
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 1,
+      "z": 0,
+      "x": -1,
+      "y": -1,
+      "changed": 816,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1511
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 1,
+      "z": 0,
+      "x": 0,
+      "y": -1,
+      "changed": 863,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1573
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 1,
+      "z": 0,
+      "x": 1,
+      "y": -1,
+      "changed": 861,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1567
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 1,
+      "z": 0,
+      "x": -1,
+      "y": 0,
+      "changed": 810,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1507
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 1,
+      "z": 0,
+      "x": 0,
+      "y": 0,
+      "changed": 861,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1566
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 1,
+      "z": 0,
+      "x": 1,
+      "y": 0,
+      "changed": 858,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1562
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 1,
+      "z": 0,
+      "x": -1,
+      "y": 1,
+      "changed": 768,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1510
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 1,
+      "z": 0,
+      "x": 0,
+      "y": 1,
+      "changed": 822,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1570
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 1,
+      "z": 0,
+      "x": 1,
+      "y": 1,
+      "changed": 814,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1565
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 1,
+      "z": -15,
+      "x": -1,
+      "y": -1,
+      "changed": 791,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1470
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 1,
+      "z": -15,
+      "x": -1,
+      "y": 1,
+      "changed": 766,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1476
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 1,
+      "z": -15,
+      "x": 1,
+      "y": -1,
+      "changed": 846,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1525
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 1,
+      "z": -15,
+      "x": 1,
+      "y": 1,
+      "changed": 805,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1528
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 1,
+      "z": 15,
+      "x": -1,
+      "y": -1,
+      "changed": 814,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1501
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 1,
+      "z": 15,
+      "x": -1,
+      "y": 1,
+      "changed": 743,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1496
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 1,
+      "z": 15,
+      "x": 1,
+      "y": -1,
+      "changed": 852,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1525
+    },
+    {
+      "targets": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ],
+      "open": 1,
+      "z": 15,
+      "x": 1,
+      "y": 1,
+      "changed": 805,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1534
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0,
+      "z": 0,
+      "x": -1,
+      "y": -1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 222
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0,
+      "z": 0,
+      "x": 0,
+      "y": -1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 232
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0,
+      "z": 0,
+      "x": 1,
+      "y": -1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 232
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0,
+      "z": 0,
+      "x": -1,
+      "y": 0,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 222
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0,
+      "z": 0,
+      "x": 0,
+      "y": 0,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 232
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0,
+      "z": 0,
+      "x": 1,
+      "y": 0,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 232
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0,
+      "z": 0,
+      "x": -1,
+      "y": 1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 222
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0,
+      "z": 0,
+      "x": 0,
+      "y": 1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 232
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0,
+      "z": 0,
+      "x": 1,
+      "y": 1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 232
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0,
+      "z": -15,
+      "x": -1,
+      "y": -1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 223
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0,
+      "z": -15,
+      "x": -1,
+      "y": 1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 223
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0,
+      "z": -15,
+      "x": 1,
+      "y": -1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 228
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0,
+      "z": -15,
+      "x": 1,
+      "y": 1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 228
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0,
+      "z": 15,
+      "x": -1,
+      "y": -1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 178
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0,
+      "z": 15,
+      "x": -1,
+      "y": 1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 178
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0,
+      "z": 15,
+      "x": 1,
+      "y": -1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 227
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0,
+      "z": 15,
+      "x": 1,
+      "y": 1,
+      "changed": 0,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 182
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0.5,
+      "z": 0,
+      "x": -1,
+      "y": -1,
+      "changed": 548,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1479
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0.5,
+      "z": 0,
+      "x": 0,
+      "y": -1,
+      "changed": 562,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1495
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0.5,
+      "z": 0,
+      "x": 1,
+      "y": -1,
+      "changed": 561,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1504
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0.5,
+      "z": 0,
+      "x": -1,
+      "y": 0,
+      "changed": 550,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1491
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0.5,
+      "z": 0,
+      "x": 0,
+      "y": 0,
+      "changed": 562,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1505
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0.5,
+      "z": 0,
+      "x": 1,
+      "y": 0,
+      "changed": 561,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1518
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0.5,
+      "z": 0,
+      "x": -1,
+      "y": 1,
+      "changed": 553,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1499
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0.5,
+      "z": 0,
+      "x": 0,
+      "y": 1,
+      "changed": 561,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1512
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0.5,
+      "z": 0,
+      "x": 1,
+      "y": 1,
+      "changed": 561,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1525
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0.5,
+      "z": -15,
+      "x": -1,
+      "y": -1,
+      "changed": 539,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1447
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0.5,
+      "z": -15,
+      "x": -1,
+      "y": 1,
+      "changed": 542,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1495
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0.5,
+      "z": -15,
+      "x": 1,
+      "y": -1,
+      "changed": 550,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1495
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0.5,
+      "z": -15,
+      "x": 1,
+      "y": 1,
+      "changed": 551,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1537
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0.5,
+      "z": 15,
+      "x": -1,
+      "y": -1,
+      "changed": 536,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1453
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0.5,
+      "z": 15,
+      "x": -1,
+      "y": 1,
+      "changed": 541,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1486
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0.5,
+      "z": 15,
+      "x": 1,
+      "y": -1,
+      "changed": 556,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1458
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 0.5,
+      "z": 15,
+      "x": 1,
+      "y": 1,
+      "changed": 557,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1497
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 1,
+      "z": 0,
+      "x": -1,
+      "y": -1,
+      "changed": 1029,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1668
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 1,
+      "z": 0,
+      "x": 0,
+      "y": -1,
+      "changed": 1067,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1683
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 1,
+      "z": 0,
+      "x": 1,
+      "y": -1,
+      "changed": 1069,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1696
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 1,
+      "z": 0,
+      "x": -1,
+      "y": 0,
+      "changed": 1048,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1692
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 1,
+      "z": 0,
+      "x": 0,
+      "y": 0,
+      "changed": 1071,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1707
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 1,
+      "z": 0,
+      "x": 1,
+      "y": 0,
+      "changed": 1060,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1722
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 1,
+      "z": 0,
+      "x": -1,
+      "y": 1,
+      "changed": 1023,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1691
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 1,
+      "z": 0,
+      "x": 0,
+      "y": 1,
+      "changed": 1043,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1705
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 1,
+      "z": 0,
+      "x": 1,
+      "y": 1,
+      "changed": 1021,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1720
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 1,
+      "z": -15,
+      "x": -1,
+      "y": -1,
+      "changed": 1023,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1653
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 1,
+      "z": -15,
+      "x": -1,
+      "y": 1,
+      "changed": 1017,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1657
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 1,
+      "z": -15,
+      "x": 1,
+      "y": -1,
+      "changed": 1056,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1675
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 1,
+      "z": -15,
+      "x": 1,
+      "y": 1,
+      "changed": 1007,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1668
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 1,
+      "z": 15,
+      "x": -1,
+      "y": -1,
+      "changed": 1001,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1660
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 1,
+      "z": 15,
+      "x": -1,
+      "y": 1,
+      "changed": 1029,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1652
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 1,
+      "z": 15,
+      "x": 1,
+      "y": -1,
+      "changed": 1060,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1663
+    },
+    {
+      "targets": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ],
+      "open": 1,
+      "z": 15,
+      "x": 1,
+      "y": 1,
+      "changed": 1023,
+      "outside": 0,
+      "maximumOutside": 0,
+      "maskReferenceNontransparent": 1677
+    }
+  ],
+  "clippingReference": [
+    {
+      "maskIds": [
+        "eye_right_aperture_mask"
+      ],
+      "legacyReferenceNontransparent": 0,
+      "directReferenceNontransparent": 1494,
+      "method": "The real helper material is independently exposed through viewer-only SDK accessors. The clipping reference then samples the exact official SDK mask buffer, generated from that same real helper, with a viewer-only white quad and frozen setup. No Core/MOC inputs are changed.",
+      "actualMaskInputs": [
+        {
+          "id": "eye_right_aperture_mask",
+          "coreOpacity": 0,
+          "textureIndex": 1,
+          "vertices": [
+            0.052734375,
+            0.552734375,
+            0.083984375,
+            0.54296875,
+            0.099609375,
+            0.509765625,
+            0.078125,
+            0.484375,
+            0.052734375,
+            0.482421875,
+            0.029296875,
+            0.51953125,
+            0.07236379384994507,
+            0.5166997313499451,
+            0.05930459499359131,
+            0.5134061574935913,
+            0.061454057693481445,
+            0.5253212451934814
+          ],
+          "uvs": [
+            0.064453125,
+            0.7734375,
+            0.126953125,
+            0.75390625,
+            0.158203125,
+            0.6875,
+            0.115234375,
+            0.63671875,
+            0.064453125,
+            0.6328125,
+            0.017578125,
+            0.70703125,
+            0.10371196269989014,
+            0.7013682126998901,
+            0.07759356498718262,
+            0.6947810649871826,
+            0.08189249038696289,
+            0.7186112403869629
+          ],
+          "triangles": [
+            1,
+            6,
+            2,
+            6,
+            3,
+            2,
+            5,
+            4,
+            7,
+            7,
+            4,
+            3,
+            6,
+            7,
+            3,
+            7,
+            6,
+            8,
+            8,
+            6,
+            1,
+            0,
+            8,
+            1,
+            8,
+            0,
+            5,
+            7,
+            8,
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "maskIds": [
+        "eye_left_aperture_mask"
+      ],
+      "legacyReferenceNontransparent": 0,
+      "directReferenceNontransparent": 1592,
+      "method": "The real helper material is independently exposed through viewer-only SDK accessors. The clipping reference then samples the exact official SDK mask buffer, generated from that same real helper, with a viewer-only white quad and frozen setup. No Core/MOC inputs are changed.",
+      "actualMaskInputs": [
+        {
+          "id": "eye_left_aperture_mask",
+          "coreOpacity": 0,
+          "textureIndex": 1,
+          "vertices": [
+            0.0107421875,
+            0.5810546875,
+            0.0380859375,
+            0.5341796875,
+            0.0126953125,
+            0.5146484375,
+            -0.0146484375,
+            0.5166015625,
+            -0.0341796875,
+            0.5380859375,
+            -0.0380859375,
+            0.5615234375,
+            -0.0126953125,
+            0.5830078125,
+            0.007624626159667969,
+            0.548640251159668,
+            -0.005197584629058838,
+            0.5446071028709412,
+            -0.0023576319217681885,
+            0.5542830228805542
+          ],
+          "uvs": [
+            0.240234375,
+            0.978515625,
+            0.294921875,
+            0.884765625,
+            0.244140625,
+            0.845703125,
+            0.189453125,
+            0.849609375,
+            0.150390625,
+            0.892578125,
+            0.142578125,
+            0.939453125,
+            0.193359375,
+            0.982421875,
+            0.23399925231933594,
+            0.9136867523193359,
+            0.20835483074188232,
+            0.9056204557418823,
+            0.21403473615646362,
+            0.9249722361564636
+          ],
+          "triangles": [
+            7,
+            2,
+            1,
+            0,
+            7,
+            1,
+            4,
+            3,
+            8,
+            7,
+            8,
+            2,
+            8,
+            3,
+            2,
+            4,
+            8,
+            5,
+            8,
+            7,
+            9,
+            9,
+            7,
+            0,
+            6,
+            9,
+            0,
+            9,
+            6,
+            5,
+            8,
+            9,
+            5
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "status": {
+      "phase": "ready",
+      "coreLoaded": true,
+      "modelLoaded": true,
+      "shadersReady": true,
+      "framesDrawn": 240,
+      "visualVerified": false,
+      "gazeTracking": false,
+      "automaticAnimation": false,
+      "sdkVersion": "5-r.5",
+      "coreVersion": 100663297,
+      "mocVersion": 6,
+      "latestMocVersion": 6,
+      "drawableCount": 142,
+      "textureCount": 2,
+      "parameterCount": 63,
+      "partCount": 59,
+      "optionalReferencesNotPlayed": [],
+      "gaze": {
+        "supported": true,
+        "enabled": false,
+        "strength": 1,
+        "commanded": true,
+        "input": [
+          0,
+          0
+        ],
+        "nativeEyeBallParametersUsed": true,
+        "nativeBuffersModified": false,
+        "method": "Hash-verified native Cubism EyeBall parameters",
+        "parameterIds": {
+          "x": "ParamEyeBallX",
+          "y": "ParamEyeBallY"
+        },
+        "bindingEvidence": {
+          "ParamEyeBallX": {
+            "vertexDelta": 0.003956221044063568,
+            "opacityDelta": 0,
+            "min": -1,
+            "max": 1
+          },
+          "ParamEyeBallY": {
+            "vertexDelta": 0.00308990478515625,
+            "opacityDelta": 0,
+            "min": -1,
+            "max": 1
+          },
+          "ParamEyeLOpen": {
+            "vertexDelta": 0.03885340690612793,
+            "opacityDelta": 1,
+            "min": 0,
+            "max": 1
+          },
+          "ParamEyeROpen": {
+            "vertexDelta": 0.039648473262786865,
+            "opacityDelta": 1,
+            "min": 0,
+            "max": 1
+          }
+        }
+      },
+      "headFollow": {
+        "enabled": false,
+        "input": [
+          0,
+          0
+        ],
+        "angle": 0,
+        "appliedAngle": 0
+      },
+      "animation": {
+        "loaded": true,
+        "framework": "Official CubismMotionManager + CubismExpressionMotionManager",
+        "paused": true,
+        "time": 0,
+        "autoIdle": false,
+        "idleGroup": "Idle",
+        "groups": {
+          "Idle": [
+            {
+              "url": "http://127.0.0.1:7444/candidate/native-2026-10-18/motions/idle.motion3.json",
+              "duration": 8,
+              "loop": true,
+              "parameterIds": [
+                "ParamAngleZ"
+              ]
+            }
+          ],
+          "TapBody": [
+            {
+              "url": "http://127.0.0.1:7444/candidate/native-2026-10-18/motions/tap.motion3.json",
+              "duration": 1.8,
+              "loop": false,
+              "parameterIds": [
+                "ParamAngleZ"
+              ]
+            }
+          ],
+          "Pat": [
+            {
+              "url": "http://127.0.0.1:7444/candidate/native-2026-10-18/motions/pat.motion3.json",
+              "duration": 1.05,
+              "loop": false,
+              "parameterIds": [
+                "ParamAngleZ"
+              ]
+            }
+          ],
+          "Poke": [
+            {
+              "url": "http://127.0.0.1:7444/candidate/native-2026-10-18/motions/poke.motion3.json",
+              "duration": 0.9,
+              "loop": false,
+              "parameterIds": [
+                "ParamAngleZ"
+              ]
+            }
+          ],
+          "Pinch": [
+            {
+              "url": "http://127.0.0.1:7444/candidate/native-2026-10-18/motions/pinch.motion3.json",
+              "duration": 1.2,
+              "loop": false,
+              "parameterIds": [
+                "ParamAngleZ"
+              ]
+            }
+          ],
+          "Rub": [
+            {
+              "url": "http://127.0.0.1:7444/candidate/native-2026-10-18/motions/rub.motion3.json",
+              "duration": 1.36,
+              "loop": false,
+              "parameterIds": [
+                "ParamAngleZ"
+              ]
+            }
+          ],
+          "Tickle": [
+            {
+              "url": "http://127.0.0.1:7444/candidate/native-2026-10-18/motions/tickle.motion3.json",
+              "duration": 1.6,
+              "loop": false,
+              "parameterIds": [
+                "ParamAngleZ"
+              ]
+            }
+          ]
+        },
+        "expressionNames": [
+          "neutral",
+          "blink"
+        ],
+        "activeMotion": null,
+        "activeExpression": null,
+        "parameterIds": [
+          "ParamAngleZ",
+          "ParamEyeLOpen",
+          "ParamEyeROpen"
+        ],
+        "disabledAnimatedParameters": []
+      },
+      "nativeRig": {
+        "mocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+        "gaze": {
+          "x": "ParamEyeBallX",
+          "y": "ParamEyeBallY"
+        },
+        "blink": {
+          "left": "ParamEyeLOpen",
+          "right": "ParamEyeROpen"
+        },
+        "bindingEvidence": {
+          "ParamEyeBallX": {
+            "vertexDelta": 0.003956221044063568,
+            "opacityDelta": 0,
+            "min": -1,
+            "max": 1
+          },
+          "ParamEyeBallY": {
+            "vertexDelta": 0.00308990478515625,
+            "opacityDelta": 0,
+            "min": -1,
+            "max": 1
+          },
+          "ParamEyeLOpen": {
+            "vertexDelta": 0.03885340690612793,
+            "opacityDelta": 1,
+            "min": 0,
+            "max": 1
+          },
+          "ParamEyeROpen": {
+            "vertexDelta": 0.039648473262786865,
+            "opacityDelta": 1,
+            "min": 0,
+            "max": 1
+          }
+        }
+      },
+      "canvasInfo": {
+        "CanvasWidth": 1024,
+        "CanvasHeight": 1536,
+        "CanvasOriginX": 512,
+        "CanvasOriginY": 768,
+        "PixelsPerUnit": 1024
+      },
+      "modelUrl": "http://127.0.0.1:7444/candidate/character.model3.json",
+      "camera": {
+        "focus": [
+          512,
+          768
+        ],
+        "zoom": 1,
+        "padding": 1,
+        "offset": [
+          0,
+          0
+        ]
+      }
+    },
+    "parameters": [
+      {
+        "id": "ParamAngleX",
+        "value": 0,
+        "min": -30,
+        "max": 30,
+        "default": 0
+      },
+      {
+        "id": "ParamAngleY",
+        "value": 0,
+        "min": -30,
+        "max": 30,
+        "default": 0
+      },
+      {
+        "id": "ParamAngleZ",
+        "value": 0,
+        "min": -30,
+        "max": 30,
+        "default": 0
+      },
+      {
+        "id": "ParamEyeLOpen",
+        "value": 1,
+        "min": 0,
+        "max": 1,
+        "default": 1
+      },
+      {
+        "id": "ParamEyeLSmile",
+        "value": 0,
+        "min": 0,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamEyeROpen",
+        "value": 1,
+        "min": 0,
+        "max": 1,
+        "default": 1
+      },
+      {
+        "id": "ParamEyeRSmile",
+        "value": 0,
+        "min": 0,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamEyeBallX",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamEyeBallY",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowLY",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowRY",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowLX",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowRX",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowLAngle",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowRAngle",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowLForm",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowRForm",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamMouthForm",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamMouthOpenY",
+        "value": 0,
+        "min": 0,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamCheek",
+        "value": 0,
+        "min": 0,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBodyAngleX",
+        "value": 0,
+        "min": -10,
+        "max": 10,
+        "default": 0
+      },
+      {
+        "id": "ParamBodyAngleY",
+        "value": 0,
+        "min": -10,
+        "max": 10,
+        "default": 0
+      },
+      {
+        "id": "ParamBodyAngleZ",
+        "value": 0,
+        "min": -10,
+        "max": 10,
+        "default": 0
+      },
+      {
+        "id": "ParamBreath",
+        "value": 0,
+        "min": 0,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamHairFront",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamHairSide",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamHairBack",
+        "value": 0,
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_long_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_long_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_long_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_long_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_long_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_6_hair_long_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_7_hair_long_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_long_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_long_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_long_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_long_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_long_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_6_hair_long_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_7_hair_long_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_side_left",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_side_left",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_side_left",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_side_left",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_side_left",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_side_right",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_side_right",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_side_right",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_side_right",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_side_right",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_bang_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_bang_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_bang_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_bang_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_bang_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_6_hair_bang_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_7_hair_bang_left_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_bang_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_bang_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_bang_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_bang_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_bang_right_outer",
+        "value": 0,
+        "min": -45,
+        "max": 45,
+        "default": 0
+      }
+    ],
+    "masks": [
+      {
+        "id": "eye_right_iris",
+        "masks": [
+          "eye_right_aperture_mask"
+        ]
+      },
+      {
+        "id": "eye_right_highlight_upper",
+        "masks": [
+          "eye_right_aperture_mask"
+        ]
+      },
+      {
+        "id": "eye_right_highlight_secondary",
+        "masks": [
+          "eye_right_aperture_mask"
+        ]
+      },
+      {
+        "id": "eye_left_pupil_visible_rim",
+        "masks": [
+          "eye_left_aperture_mask"
+        ]
+      },
+      {
+        "id": "eye_left_iris",
+        "masks": [
+          "eye_left_aperture_mask"
+        ]
+      },
+      {
+        "id": "eye_left_highlight_upper",
+        "masks": [
+          "eye_left_aperture_mask"
+        ]
+      },
+      {
+        "id": "eye_left_highlight_center",
+        "masks": [
+          "eye_left_aperture_mask"
+        ]
+      },
+      {
+        "id": "iris_right_occlusion",
+        "masks": [
+          "eye_right_aperture_mask"
+        ]
+      },
+      {
+        "id": "iris_left_occlusion",
+        "masks": [
+          "eye_left_aperture_mask"
+        ]
+      }
+    ]
+  },
+  "errors": []
+}

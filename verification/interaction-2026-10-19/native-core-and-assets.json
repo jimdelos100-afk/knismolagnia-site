@@ -1,0 +1,5501 @@
+{
+  "timestamp": "2026-10-19T04:52:04.522Z",
+  "scope": "Independent official SDK/Core; no website renderer imported. Visual pixel/canvas clipping is verified separately.",
+  "newMocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+  "model3Sha256": "eee781d7c74cda3526a08ac663e33d110d5dc699d664b9be56d6d0e8a144b6ed",
+  "textureSha256": [
+    "90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30",
+    "61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7"
+  ],
+  "testedSourceSnapshotSha256": "a565134a78dce22cc80e005c2090bb248e36acf6f3396f408f8e2761837a7d91",
+  "metadata": {
+    "modelFile": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\v8-source\\knismolagnia-site\\public\\konisi-game\\live2d\\standing\\character.model3.json",
+    "mocFile": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\v8-source\\knismolagnia-site\\public\\konisi-game\\live2d\\standing\\native-2026-10-19\\standing-head-neck-2026-10-19.moc3",
+    "mocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+    "canvas": {
+      "CanvasWidth": 1024,
+      "CanvasHeight": 1536,
+      "CanvasOriginX": 512,
+      "CanvasOriginY": 768,
+      "PixelsPerUnit": 1024
+    },
+    "parameters": [
+      {
+        "id": "ParamAngleX",
+        "min": -30,
+        "max": 30,
+        "default": 0
+      },
+      {
+        "id": "ParamAngleY",
+        "min": -30,
+        "max": 30,
+        "default": 0
+      },
+      {
+        "id": "ParamAngleZ",
+        "min": -30,
+        "max": 30,
+        "default": 0
+      },
+      {
+        "id": "ParamEyeLOpen",
+        "min": 0,
+        "max": 1,
+        "default": 1
+      },
+      {
+        "id": "ParamEyeLSmile",
+        "min": 0,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamEyeROpen",
+        "min": 0,
+        "max": 1,
+        "default": 1
+      },
+      {
+        "id": "ParamEyeRSmile",
+        "min": 0,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamEyeBallX",
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamEyeBallY",
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowLY",
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowRY",
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowLX",
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowRX",
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowLAngle",
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowRAngle",
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowLForm",
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBrowRForm",
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamMouthForm",
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamMouthOpenY",
+        "min": 0,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamCheek",
+        "min": 0,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamBodyAngleX",
+        "min": -10,
+        "max": 10,
+        "default": 0
+      },
+      {
+        "id": "ParamBodyAngleY",
+        "min": -10,
+        "max": 10,
+        "default": 0
+      },
+      {
+        "id": "ParamBodyAngleZ",
+        "min": -10,
+        "max": 10,
+        "default": 0
+      },
+      {
+        "id": "ParamBreath",
+        "min": 0,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamHairFront",
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamHairSide",
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "ParamHairBack",
+        "min": -1,
+        "max": 1,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_long_left_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_long_left_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_long_left_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_long_left_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_long_left_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_6_hair_long_left_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_7_hair_long_left_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_long_right_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_long_right_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_long_right_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_long_right_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_long_right_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_6_hair_long_right_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_7_hair_long_right_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_side_left",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_side_left",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_side_left",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_side_left",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_side_left",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_side_right",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_side_right",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_side_right",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_side_right",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_side_right",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_bang_left_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_bang_left_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_bang_left_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_bang_left_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_bang_left_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_6_hair_bang_left_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_7_hair_bang_left_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_1_hair_bang_right_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_2_hair_bang_right_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_3_hair_bang_right_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_4_hair_bang_right_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      },
+      {
+        "id": "Param_Angle_Rotation_5_hair_bang_right_outer",
+        "min": -45,
+        "max": 45,
+        "default": 0
+      }
+    ],
+    "drawables": [
+      {
+        "id": "hat_flower",
+        "masks": []
+      },
+      {
+        "id": "hair_clip",
+        "masks": []
+      },
+      {
+        "id": "hair_long_right_outer_lower",
+        "masks": []
+      },
+      {
+        "id": "hair_long_right_middle",
+        "masks": []
+      },
+      {
+        "id": "hair_long_right_inner",
+        "masks": []
+      },
+      {
+        "id": "hair_long_left_middle",
+        "masks": []
+      },
+      {
+        "id": "hair_long_left_inner",
+        "masks": []
+      },
+      {
+        "id": "hair_left_upper_loop",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_right_inner",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_center_right",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_left_inner",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_center_left",
+        "masks": []
+      },
+      {
+        "id": "hair_bangs_base",
+        "masks": []
+      },
+      {
+        "id": "ribbon_tail_right",
+        "masks": []
+      },
+      {
+        "id": "ribbon_tail_left",
+        "masks": []
+      },
+      {
+        "id": "ribbon_bow_front",
+        "masks": []
+      },
+      {
+        "id": "ribbon_bow_back",
+        "masks": []
+      },
+      {
+        "id": "nose_visible_mark",
+        "masks": []
+      },
+      {
+        "id": "mouth_visible_line",
+        "masks": []
+      },
+      {
+        "id": "eye_right_upper_lash",
+        "masks": []
+      },
+      {
+        "id": "eye_right_sclera_visible",
+        "masks": []
+      },
+      {
+        "id": "eye_right_lower_lid_rim",
+        "masks": []
+      },
+      {
+        "id": "eye_right_iris",
+        "masks": [
+          "eye_right_aperture_mask"
+        ]
+      },
+      {
+        "id": "eye_right_highlight_upper",
+        "masks": [
+          "eye_right_aperture_mask"
+        ]
+      },
+      {
+        "id": "eye_right_highlight_secondary",
+        "masks": [
+          "eye_right_aperture_mask"
+        ]
+      },
+      {
+        "id": "eye_left_upper_lash",
+        "masks": []
+      },
+      {
+        "id": "eye_left_sclera_visible",
+        "masks": []
+      },
+      {
+        "id": "eye_left_pupil_visible_rim",
+        "masks": [
+          "eye_left_aperture_mask"
+        ]
+      },
+      {
+        "id": "eye_left_lower_lid_rim",
+        "masks": []
+      },
+      {
+        "id": "eye_left_iris",
+        "masks": [
+          "eye_left_aperture_mask"
+        ]
+      },
+      {
+        "id": "eye_left_highlight_upper",
+        "masks": [
+          "eye_left_aperture_mask"
+        ]
+      },
+      {
+        "id": "eye_left_highlight_center",
+        "masks": [
+          "eye_left_aperture_mask"
+        ]
+      },
+      {
+        "id": "brow_right_visible",
+        "masks": []
+      },
+      {
+        "id": "brow_left_visible",
+        "masks": []
+      },
+      {
+        "id": "face_visible_residual",
+        "masks": []
+      },
+      {
+        "id": "face_skin_local_visible",
+        "masks": []
+      },
+      {
+        "id": "neck_visible",
+        "masks": []
+      },
+      {
+        "id": "hair_back_right",
+        "masks": []
+      },
+      {
+        "id": "hair_back_left",
+        "masks": []
+      },
+      {
+        "id": "brow_right_occlusion",
+        "masks": []
+      },
+      {
+        "id": "brow_left_occlusion",
+        "masks": []
+      },
+      {
+        "id": "iris_right_occlusion",
+        "masks": [
+          "eye_right_aperture_mask"
+        ]
+      },
+      {
+        "id": "iris_left_occlusion",
+        "masks": [
+          "eye_left_aperture_mask"
+        ]
+      },
+      {
+        "id": "sclera_right_occlusion",
+        "masks": []
+      },
+      {
+        "id": "sclera_left_occlusion",
+        "masks": []
+      },
+      {
+        "id": "hair_long_right_outer_lower_occlusion",
+        "masks": []
+      },
+      {
+        "id": "hair_long_right_middle_occlusion",
+        "masks": []
+      },
+      {
+        "id": "hair_long_right_inner_occlusion",
+        "masks": []
+      },
+      {
+        "id": "hair_long_left_middle_occlusion",
+        "masks": []
+      },
+      {
+        "id": "hair_long_left_inner_occlusion",
+        "masks": []
+      },
+      {
+        "id": "hair_left_upper_loop_occlusion",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_right_inner_occlusion",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_center_right_occlusion",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_left_inner_occlusion",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_center_left_occlusion",
+        "masks": []
+      },
+      {
+        "id": "hair_bangs_base_occlusion",
+        "masks": []
+      },
+      {
+        "id": "hair_back_right_occlusion",
+        "masks": []
+      },
+      {
+        "id": "hair_back_left_occlusion",
+        "masks": []
+      },
+      {
+        "id": "neck_occlusion_underpaint",
+        "masks": []
+      },
+      {
+        "id": "face_occlusion_underpaint",
+        "masks": []
+      },
+      {
+        "id": "body_under_hair_occlusion",
+        "masks": []
+      },
+      {
+        "id": "hair_long_left_outer2",
+        "masks": []
+      },
+      {
+        "id": "hair_long_left_outer3",
+        "masks": []
+      },
+      {
+        "id": "hair_long_left_outer4",
+        "masks": []
+      },
+      {
+        "id": "hair_long_left_outer5",
+        "masks": []
+      },
+      {
+        "id": "hair_long_left_outer6",
+        "masks": []
+      },
+      {
+        "id": "hair_long_left_outer7",
+        "masks": []
+      },
+      {
+        "id": "hair_long_left_outer8",
+        "masks": []
+      },
+      {
+        "id": "hair_long_right_outer2",
+        "masks": []
+      },
+      {
+        "id": "hair_long_right_outer3",
+        "masks": []
+      },
+      {
+        "id": "hair_long_right_outer4",
+        "masks": []
+      },
+      {
+        "id": "hair_long_right_outer5",
+        "masks": []
+      },
+      {
+        "id": "hair_long_right_outer6",
+        "masks": []
+      },
+      {
+        "id": "hair_long_right_outer7",
+        "masks": []
+      },
+      {
+        "id": "hair_long_right_outer8",
+        "masks": []
+      },
+      {
+        "id": "hair_side_left2",
+        "masks": []
+      },
+      {
+        "id": "hair_side_left3",
+        "masks": []
+      },
+      {
+        "id": "hair_side_left4",
+        "masks": []
+      },
+      {
+        "id": "hair_side_left5",
+        "masks": []
+      },
+      {
+        "id": "hair_side_left6",
+        "masks": []
+      },
+      {
+        "id": "hair_side_right2",
+        "masks": []
+      },
+      {
+        "id": "hair_side_right3",
+        "masks": []
+      },
+      {
+        "id": "hair_side_right4",
+        "masks": []
+      },
+      {
+        "id": "hair_side_right5",
+        "masks": []
+      },
+      {
+        "id": "hair_side_right6",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_left_outer2",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_left_outer3",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_left_outer4",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_left_outer5",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_left_outer6",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_left_outer7",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_left_outer8",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_right_outer2",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_right_outer3",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_right_outer4",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_right_outer5",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_right_outer6",
+        "masks": []
+      },
+      {
+        "id": "hair_side_right_occlusion2",
+        "masks": []
+      },
+      {
+        "id": "hair_side_right_occlusion3",
+        "masks": []
+      },
+      {
+        "id": "hair_side_right_occlusion4",
+        "masks": []
+      },
+      {
+        "id": "hair_side_right_occlusion5",
+        "masks": []
+      },
+      {
+        "id": "hair_side_right_occlusion6",
+        "masks": []
+      },
+      {
+        "id": "hair_side_left_occlusion2",
+        "masks": []
+      },
+      {
+        "id": "hair_side_left_occlusion3",
+        "masks": []
+      },
+      {
+        "id": "hair_side_left_occlusion4",
+        "masks": []
+      },
+      {
+        "id": "hair_side_left_occlusion5",
+        "masks": []
+      },
+      {
+        "id": "hair_side_left_occlusion6",
+        "masks": []
+      },
+      {
+        "id": "hair_long_left_outer_occlusion2",
+        "masks": []
+      },
+      {
+        "id": "hair_long_left_outer_occlusion3",
+        "masks": []
+      },
+      {
+        "id": "hair_long_left_outer_occlusion4",
+        "masks": []
+      },
+      {
+        "id": "hair_long_left_outer_occlusion5",
+        "masks": []
+      },
+      {
+        "id": "hair_long_left_outer_occlusion6",
+        "masks": []
+      },
+      {
+        "id": "hair_long_left_outer_occlusion7",
+        "masks": []
+      },
+      {
+        "id": "hair_long_left_outer_occlusion8",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_left_outer_occlusion2",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_left_outer_occlusion3",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_left_outer_occlusion4",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_left_outer_occlusion5",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_left_outer_occlusion6",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_left_outer_occlusion7",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_left_outer_occlusion8",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_right_outer_occlusion2",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_right_outer_occlusion3",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_right_outer_occlusion4",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_right_outer_occlusion5",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_right_outer_occlusion6",
+        "masks": []
+      },
+      {
+        "id": "hair_long_right_outer_occlusion2",
+        "masks": []
+      },
+      {
+        "id": "hair_long_right_outer_occlusion3",
+        "masks": []
+      },
+      {
+        "id": "hair_long_right_outer_occlusion4",
+        "masks": []
+      },
+      {
+        "id": "hair_long_right_outer_occlusion5",
+        "masks": []
+      },
+      {
+        "id": "hair_long_right_outer_occlusion6",
+        "masks": []
+      },
+      {
+        "id": "hair_long_right_outer_occlusion7",
+        "masks": []
+      },
+      {
+        "id": "hair_long_right_outer_occlusion8",
+        "masks": []
+      },
+      {
+        "id": "head_edge_original",
+        "masks": []
+      },
+      {
+        "id": "body_visible_fixed",
+        "masks": []
+      },
+      {
+        "id": "hair_bang_left_outer9",
+        "masks": []
+      },
+      {
+        "id": "eye_right_closed_lash",
+        "masks": []
+      },
+      {
+        "id": "eye_right_closed_skin",
+        "masks": []
+      },
+      {
+        "id": "eye_right_aperture_mask",
+        "masks": []
+      },
+      {
+        "id": "eye_left_closed_lash",
+        "masks": []
+      },
+      {
+        "id": "eye_left_closed_skin",
+        "masks": []
+      },
+      {
+        "id": "eye_left_aperture_mask",
+        "masks": []
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "MOC contains real native eye and head parameter IDs",
+      "pass": true,
+      "detail": [
+        {
+          "id": "ParamAngleZ",
+          "min": -30,
+          "max": 30,
+          "default": 0
+        },
+        {
+          "id": "ParamEyeLOpen",
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "id": "ParamEyeLSmile",
+          "min": 0,
+          "max": 1,
+          "default": 0
+        },
+        {
+          "id": "ParamEyeROpen",
+          "min": 0,
+          "max": 1,
+          "default": 1
+        },
+        {
+          "id": "ParamEyeRSmile",
+          "min": 0,
+          "max": 1,
+          "default": 0
+        },
+        {
+          "id": "ParamEyeBallX",
+          "min": -1,
+          "max": 1,
+          "default": 0
+        },
+        {
+          "id": "ParamEyeBallY",
+          "min": -1,
+          "max": 1,
+          "default": 0
+        },
+        {
+          "id": "ParamBodyAngleZ",
+          "min": -10,
+          "max": 10,
+          "default": 0
+        }
+      ]
+    },
+    {
+      "name": "ParamEyeBallX is bound to native drawables",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 8.012296676635742,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 7.909870147705078,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 7.909858703613281,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 7.909881591796875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 8.012262225151062,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 8.012289047241211,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 8.01226806640625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 8.012263059616089,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 7.909873962402344,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 8.012296676635742,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "ParamEyeBallY is bound to native drawables",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 6.32794189453125,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 6.32794189453125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 6.327880859375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 6.32794189453125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 3.96112060546875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 3.961181640625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.961181640625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 3.961181640625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 6.32794189453125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 3.961181640625,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "ParamEyeLOpen is bound to native drawables",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 39.785888671875,
+        "changed": [
+          {
+            "id": "eye_left_upper_lash",
+            "maxVertexDeltaSourcePixels": 31.92962646484375,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_sclera_visible",
+            "maxVertexDeltaSourcePixels": 29.0213623046875,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 10.91015625,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_lower_lid_rim",
+            "maxVertexDeltaSourcePixels": 15.9503173828125,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 26.2091064453125,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 16.7052001953125,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 9.1409912109375,
+            "opacityDelta": 1
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 39.785888671875,
+            "opacityDelta": 1
+          },
+          {
+            "id": "sclera_left_occlusion",
+            "maxVertexDeltaSourcePixels": 34.54913330078125,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_closed_lash",
+            "maxVertexDeltaSourcePixels": 0,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_closed_skin",
+            "maxVertexDeltaSourcePixels": 0,
+            "opacityDelta": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "ParamEyeROpen is bound to native drawables",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 40.60003662109375,
+        "changed": [
+          {
+            "id": "eye_right_upper_lash",
+            "maxVertexDeltaSourcePixels": 33.9388427734375,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_right_sclera_visible",
+            "maxVertexDeltaSourcePixels": 31.04656982421875,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_right_lower_lid_rim",
+            "maxVertexDeltaSourcePixels": 17.93719482421875,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 23.608154296875,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 18.35601806640625,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 13.49249267578125,
+            "opacityDelta": 1
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 40.60003662109375,
+            "opacityDelta": 1
+          },
+          {
+            "id": "sclera_right_occlusion",
+            "maxVertexDeltaSourcePixels": 37.79583740234375,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_right_closed_lash",
+            "maxVertexDeltaSourcePixels": 0,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_right_closed_skin",
+            "maxVertexDeltaSourcePixels": 0,
+            "opacityDelta": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "ParamAngleZ is bound to native drawables",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 35.58160400390625,
+        "changed": [
+          {
+            "id": "hat_flower",
+            "maxVertexDeltaSourcePixels": 17.39183807373047,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_clip",
+            "maxVertexDeltaSourcePixels": 10.24029541015625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_right_outer_lower",
+            "maxVertexDeltaSourcePixels": 34.64794921875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_right_middle",
+            "maxVertexDeltaSourcePixels": 35.58160400390625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_right_inner",
+            "maxVertexDeltaSourcePixels": 31.481597900390625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_left_middle",
+            "maxVertexDeltaSourcePixels": 26.30181884765625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_left_inner",
+            "maxVertexDeltaSourcePixels": 34.832855224609375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_left_upper_loop",
+            "maxVertexDeltaSourcePixels": 14.771575927734375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_right_inner",
+            "maxVertexDeltaSourcePixels": 11.638351440429688,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_center_right",
+            "maxVertexDeltaSourcePixels": 12.5283203125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_left_inner",
+            "maxVertexDeltaSourcePixels": 12.687644958496094,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_center_left",
+            "maxVertexDeltaSourcePixels": 12.580772399902344,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bangs_base",
+            "maxVertexDeltaSourcePixels": 13.203521728515625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "ribbon_tail_right",
+            "maxVertexDeltaSourcePixels": 18.17144775390625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "ribbon_tail_left",
+            "maxVertexDeltaSourcePixels": 20.628570556640625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "ribbon_bow_front",
+            "maxVertexDeltaSourcePixels": 9.015213012695312,
+            "opacityDelta": 0
+          },
+          {
+            "id": "ribbon_bow_back",
+            "maxVertexDeltaSourcePixels": 10.271697998046875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "nose_visible_mark",
+            "maxVertexDeltaSourcePixels": 3.44476318359375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "mouth_visible_line",
+            "maxVertexDeltaSourcePixels": 3.0416364669799805,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_upper_lash",
+            "maxVertexDeltaSourcePixels": 5.3814697265625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_sclera_visible",
+            "maxVertexDeltaSourcePixels": 5.222175598144531,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_lower_lid_rim",
+            "maxVertexDeltaSourcePixels": 4.039836883544922,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 4.812507629394531,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 4.523258209228516,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 4.255393981933594,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_upper_lash",
+            "maxVertexDeltaSourcePixels": 6.98906135559082,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_sclera_visible",
+            "maxVertexDeltaSourcePixels": 6.832058429718018,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 5.8543126583099365,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_lower_lid_rim",
+            "maxVertexDeltaSourcePixels": 5.611264228820801,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 6.680233001708984,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 6.167162895202637,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 5.758804082870483,
+            "opacityDelta": 0
+          },
+          {
+            "id": "brow_right_visible",
+            "maxVertexDeltaSourcePixels": 6.1550445556640625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "brow_left_visible",
+            "maxVertexDeltaSourcePixels": 8.165352821350098,
+            "opacityDelta": 0
+          },
+          {
+            "id": "face_visible_residual",
+            "maxVertexDeltaSourcePixels": 12.418212890625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "face_skin_local_visible",
+            "maxVertexDeltaSourcePixels": 5.880664825439453,
+            "opacityDelta": 0
+          },
+          {
+            "id": "neck_visible",
+            "maxVertexDeltaSourcePixels": 1.55096435546875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_back_right",
+            "maxVertexDeltaSourcePixels": 35.223838806152344,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_back_left",
+            "maxVertexDeltaSourcePixels": 35.5379638671875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "brow_right_occlusion",
+            "maxVertexDeltaSourcePixels": 6.2784423828125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "brow_left_occlusion",
+            "maxVertexDeltaSourcePixels": 8.226322174072266,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 5.748329162597656,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 7.4131879806518555,
+            "opacityDelta": 0
+          },
+          {
+            "id": "sclera_right_occlusion",
+            "maxVertexDeltaSourcePixels": 5.5938873291015625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "sclera_left_occlusion",
+            "maxVertexDeltaSourcePixels": 7.130475997924805,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_right_outer_lower_occlusion",
+            "maxVertexDeltaSourcePixels": 28.158447265625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_right_middle_occlusion",
+            "maxVertexDeltaSourcePixels": 31.71807861328125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_right_inner_occlusion",
+            "maxVertexDeltaSourcePixels": 28.026947021484375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_left_middle_occlusion",
+            "maxVertexDeltaSourcePixels": 27.08447265625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_left_inner_occlusion",
+            "maxVertexDeltaSourcePixels": 28.156036376953125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_left_upper_loop_occlusion",
+            "maxVertexDeltaSourcePixels": 12.30426025390625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_right_inner_occlusion",
+            "maxVertexDeltaSourcePixels": 11.9993896484375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_center_right_occlusion",
+            "maxVertexDeltaSourcePixels": 12.931289672851562,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_left_inner_occlusion",
+            "maxVertexDeltaSourcePixels": 12.980140686035156,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_center_left_occlusion",
+            "maxVertexDeltaSourcePixels": 12.598594665527344,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bangs_base_occlusion",
+            "maxVertexDeltaSourcePixels": 12.522933959960938,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_back_right_occlusion",
+            "maxVertexDeltaSourcePixels": 28.91595458984375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_back_left_occlusion",
+            "maxVertexDeltaSourcePixels": 28.97039794921875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "neck_occlusion_underpaint",
+            "maxVertexDeltaSourcePixels": 2.5810546875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "face_occlusion_underpaint",
+            "maxVertexDeltaSourcePixels": 13.203527450561523,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_left_outer2",
+            "maxVertexDeltaSourcePixels": 10.90570068359375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_left_outer3",
+            "maxVertexDeltaSourcePixels": 15.01123046875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_left_outer4",
+            "maxVertexDeltaSourcePixels": 20.759063720703125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_left_outer5",
+            "maxVertexDeltaSourcePixels": 23.550857543945312,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_left_outer6",
+            "maxVertexDeltaSourcePixels": 26.92236328125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_left_outer7",
+            "maxVertexDeltaSourcePixels": 32.34173583984375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_left_outer8",
+            "maxVertexDeltaSourcePixels": 32.34173583984375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_right_outer2",
+            "maxVertexDeltaSourcePixels": 12.28790283203125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_right_outer3",
+            "maxVertexDeltaSourcePixels": 17.671905517578125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_right_outer4",
+            "maxVertexDeltaSourcePixels": 18.931304931640625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_right_outer5",
+            "maxVertexDeltaSourcePixels": 18.931304931640625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_right_outer6",
+            "maxVertexDeltaSourcePixels": 21.798316955566406,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_right_outer7",
+            "maxVertexDeltaSourcePixels": 24.598526000976562,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_right_outer8",
+            "maxVertexDeltaSourcePixels": 24.598526000976562,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_side_left2",
+            "maxVertexDeltaSourcePixels": 4.460422515869141,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_side_left3",
+            "maxVertexDeltaSourcePixels": 4.660552978515625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_side_left4",
+            "maxVertexDeltaSourcePixels": 4.660552978515625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_side_left5",
+            "maxVertexDeltaSourcePixels": 3.718170166015625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_side_left6",
+            "maxVertexDeltaSourcePixels": 3.392578125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_side_right2",
+            "maxVertexDeltaSourcePixels": 4.344268798828125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_side_right3",
+            "maxVertexDeltaSourcePixels": 4.134857177734375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_side_right4",
+            "maxVertexDeltaSourcePixels": 4.86785888671875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_side_right5",
+            "maxVertexDeltaSourcePixels": 5.810211181640625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_side_right6",
+            "maxVertexDeltaSourcePixels": 5.810211181640625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_left_outer2",
+            "maxVertexDeltaSourcePixels": 13.046466827392578,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_left_outer3",
+            "maxVertexDeltaSourcePixels": 12.522934913635254,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_left_outer4",
+            "maxVertexDeltaSourcePixels": 11.789997100830078,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_left_outer5",
+            "maxVertexDeltaSourcePixels": 10.219367980957031,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_left_outer6",
+            "maxVertexDeltaSourcePixels": 8.2298583984375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_left_outer7",
+            "maxVertexDeltaSourcePixels": 6.240406036376953,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_left_outer8",
+            "maxVertexDeltaSourcePixels": 4.909881591796875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_right_outer2",
+            "maxVertexDeltaSourcePixels": 9.53875732421875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_right_outer3",
+            "maxVertexDeltaSourcePixels": 8.103546142578125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_right_outer4",
+            "maxVertexDeltaSourcePixels": 6.7001953125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_right_outer5",
+            "maxVertexDeltaSourcePixels": 6.7001953125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_right_outer6",
+            "maxVertexDeltaSourcePixels": 6.07196044921875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_side_right_occlusion2",
+            "maxVertexDeltaSourcePixels": 5.051025390625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_side_right_occlusion3",
+            "maxVertexDeltaSourcePixels": 2.773681640625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_side_left_occlusion2",
+            "maxVertexDeltaSourcePixels": 5.298076629638672,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_side_left_occlusion3",
+            "maxVertexDeltaSourcePixels": 4.084686279296875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_left_outer_occlusion2",
+            "maxVertexDeltaSourcePixels": 9.621551513671875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_left_outer_occlusion3",
+            "maxVertexDeltaSourcePixels": 9.621551513671875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_left_outer_occlusion5",
+            "maxVertexDeltaSourcePixels": 21.995681762695312,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_left_outer_occlusion6",
+            "maxVertexDeltaSourcePixels": 25.621795654296875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_left_outer_occlusion7",
+            "maxVertexDeltaSourcePixels": 25.621795654296875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_left_outer_occlusion2",
+            "maxVertexDeltaSourcePixels": 13.674705505371094,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_left_outer_occlusion3",
+            "maxVertexDeltaSourcePixels": 12.627644062042236,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_right_outer_occlusion2",
+            "maxVertexDeltaSourcePixels": 10.93133544921875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_right_outer_occlusion3",
+            "maxVertexDeltaSourcePixels": 8.178604125976562,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_right_outer_occlusion4",
+            "maxVertexDeltaSourcePixels": 17.746978759765625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_right_outer_occlusion5",
+            "maxVertexDeltaSourcePixels": 18.47998046875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_right_outer_occlusion6",
+            "maxVertexDeltaSourcePixels": 19.108291625976562,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_right_outer_occlusion7",
+            "maxVertexDeltaSourcePixels": 23.39276123046875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_long_right_outer_occlusion8",
+            "maxVertexDeltaSourcePixels": 23.39276123046875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "head_edge_original",
+            "maxVertexDeltaSourcePixels": 15.02447509765625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "hair_bang_left_outer9",
+            "maxVertexDeltaSourcePixels": 6.24041748046875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_closed_lash",
+            "maxVertexDeltaSourcePixels": 4.14630126953125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_closed_skin",
+            "maxVertexDeltaSourcePixels": 5.298095703125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_aperture_mask",
+            "maxVertexDeltaSourcePixels": 5.978691101074219,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_closed_lash",
+            "maxVertexDeltaSourcePixels": 6.240459442138672,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_closed_skin",
+            "maxVertexDeltaSourcePixels": 7.025766372680664,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_aperture_mask",
+            "maxVertexDeltaSourcePixels": 7.601661682128906,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head -15 direction -1,-1",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 4.024900436401367,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.9132156372070312,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.9132156372070312,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.9132232666015625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 4.024875640869141,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 4.024890899658203,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 4.024879455566406,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 4.024876594543457,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.9132232666015625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 4.024900436401367,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head -15 direction -1,0",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 4.050823211669922,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.9546279907226562,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.9546279907226562,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.9546432495117188,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 4.050800323486328,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 4.050814628601074,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 4.050804138183594,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 4.0508012771606445,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.9546356201171875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 4.050823211669922,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head -15 direction -1,1",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 4.076749801635742,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.996044158935547,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.9960479736328125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.996063232421875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 4.076725959777832,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 4.076740264892578,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 4.076727867126465,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 4.076726913452148,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.9960479736328125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 4.076749801635742,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head -15 direction 0,-1",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 3.16375732421875,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.16375732421875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.1636962890625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.1636962890625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 1.98040771484375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 1.98040771484375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 1.9803466796875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 1.9803466796875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.16375732421875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 1.98040771484375,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head -15 direction 0,0",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 0,
+        "changed": []
+      }
+    },
+    {
+      "name": "native gaze grid head -15 direction 0,1",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 3.1636962890625,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.1636962890625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.1636962890625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.1636962890625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 1.98052978515625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 1.98052978515625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 1.98052978515625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 1.98046875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.1636962890625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 1.98052978515625,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head -15 direction 1,-1",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 3.995990753173828,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.9959869384765625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.995990753173828,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.9959869384765625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 3.986701250076294,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 3.9867115020751953,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.986705780029297,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 3.986703872680664,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.9959869384765625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 3.986715316772461,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head -15 direction 1,0",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 3.96079158782959,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.954570770263672,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.954570770263672,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.9545669555664062,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 3.9607770442962646,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 3.9607887268066406,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.960782051086426,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 3.9607791900634766,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.9545745849609375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 3.96079158782959,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head -15 direction 1,1",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 3.9348649978637695,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.913158416748047,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.913158416748047,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.9131546020507812,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 3.93485164642334,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 3.9348630905151367,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.934856414794922,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 3.9348535537719727,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.9131622314453125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 3.9348649978637695,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head 0 direction -1,-1",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 4.051170349121094,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.9549789428710938,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.9549713134765625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.9549789428710938,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 4.0511474609375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 4.0511627197265625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 4.051150321960449,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 4.051147937774658,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.954975128173828,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 4.051170349121094,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head 0 direction -1,0",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 4.051170349121094,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.9549789428710938,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.9549713134765625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.954986572265625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 4.0511474609375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 4.05116081237793,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 4.051150321960449,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 4.051147937774658,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.9549789428710938,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 4.051170349121094,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head 0 direction -1,1",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 4.051168441772461,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.9549789428710938,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.954967498779297,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.9549789428710938,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 4.0511474609375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 4.05116081237793,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 4.051150321960449,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 4.051147937774658,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.954975128173828,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 4.051168441772461,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head 0 direction 0,-1",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 3.1640625,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.16400146484375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.1640625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.16400146484375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 1.98052978515625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 1.9805908203125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 1.9805908203125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 1.9805908203125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.16400146484375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 1.9805908203125,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head 0 direction 0,0",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 0,
+        "changed": []
+      }
+    },
+    {
+      "name": "native gaze grid head 0 direction 0,1",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 3.16400146484375,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.1639404296875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.1639404296875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.1639404296875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 1.98065185546875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 1.98065185546875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 1.9805908203125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 1.9805908203125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.16400146484375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 1.98065185546875,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head 0 direction 1,-1",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 3.9611282348632812,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.954914093017578,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.9549026489257812,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.9549102783203125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 3.9611159563064575,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 3.9611282348632812,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.961122512817383,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 3.961118698120117,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.9549102783203125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 3.9611282348632812,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head 0 direction 1,0",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 3.9611282348632812,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.9549102783203125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.9549026489257812,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.9549102783203125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 3.961115598678589,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 3.9611282348632812,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.961122512817383,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 3.961118698120117,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.9549102783203125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 3.9611282348632812,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head 0 direction 1,1",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 3.9611282348632812,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.954914093017578,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.9549026489257812,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.9549102783203125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 3.961115598678589,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 3.9611282348632812,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.961122512817383,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 3.961118698120117,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.954914093017578,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 3.9611282348632812,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head 15 direction -1,-1",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 4.076745986938477,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.9960479736328125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.996044158935547,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.9960479736328125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 4.076725006103516,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 4.076738357543945,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 4.076727390289307,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 4.07672643661499,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.9960479736328125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 4.076745986938477,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head 15 direction -1,0",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 4.050823211669922,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.9546356201171875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.954631805419922,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.9546279907226562,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 4.05079984664917,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 4.050813674926758,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 4.050802230834961,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 4.050800323486328,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.9546279907226562,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 4.050823211669922,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head 15 direction -1,1",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 4.024896621704102,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.9132232666015625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.9132156372070312,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.9132156372070312,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 4.024875164031982,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 4.02488899230957,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 4.024878025054932,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 4.024875164031982,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.9132156372070312,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 4.024896621704102,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head 15 direction 0,-1",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 3.16375732421875,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.16375732421875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.1636962890625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.16375732421875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 1.98040771484375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 1.98040771484375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 1.98040771484375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 1.98040771484375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.16375732421875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 1.98040771484375,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head 15 direction 0,0",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 0,
+        "changed": []
+      }
+    },
+    {
+      "name": "native gaze grid head 15 direction 0,1",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 3.16375732421875,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.1636962890625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.1636962890625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.16375732421875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 1.98046875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 1.98046875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 1.98046875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 1.98052978515625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.1636962890625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 1.9805908203125,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head 15 direction 1,-1",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 3.9348669052124023,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.913166046142578,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.9131622314453125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.9131622314453125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 3.9348522424697876,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 3.9348630905151367,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.9348573684692383,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 3.9348554611206055,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.913166046142578,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 3.9348669052124023,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head 15 direction 1,0",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 3.960789680480957,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.9545745849609375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.9545745849609375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.9545745849609375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 3.9607760906219482,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 3.9607887268066406,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.960783004760742,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 3.960780143737793,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.954578399658203,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 3.960789680480957,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "native gaze grid head 15 direction 1,1",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 3.9959945678710938,
+        "changed": [
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 3.9959945678710938,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.9959869384765625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.9959869384765625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 3.986701726913452,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 3.986713409423828,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 3.9867076873779297,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 3.986705780029297,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 3.9959945678710938,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 3.9867143630981445,
+            "opacityDelta": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "eyelid openness 0 stays finite",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 40.60003662109375,
+        "changed": [
+          {
+            "id": "eye_right_upper_lash",
+            "maxVertexDeltaSourcePixels": 33.9388427734375,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_right_sclera_visible",
+            "maxVertexDeltaSourcePixels": 31.04656982421875,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_right_lower_lid_rim",
+            "maxVertexDeltaSourcePixels": 17.93719482421875,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 23.608154296875,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 18.35601806640625,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 13.49249267578125,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_upper_lash",
+            "maxVertexDeltaSourcePixels": 31.92962646484375,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_sclera_visible",
+            "maxVertexDeltaSourcePixels": 29.0213623046875,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 10.91015625,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_lower_lid_rim",
+            "maxVertexDeltaSourcePixels": 15.9503173828125,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 26.2091064453125,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 16.7052001953125,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 9.1409912109375,
+            "opacityDelta": 1
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 40.60003662109375,
+            "opacityDelta": 1
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 39.785888671875,
+            "opacityDelta": 1
+          },
+          {
+            "id": "sclera_right_occlusion",
+            "maxVertexDeltaSourcePixels": 37.79583740234375,
+            "opacityDelta": 1
+          },
+          {
+            "id": "sclera_left_occlusion",
+            "maxVertexDeltaSourcePixels": 34.54913330078125,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_right_closed_lash",
+            "maxVertexDeltaSourcePixels": 0,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_right_closed_skin",
+            "maxVertexDeltaSourcePixels": 0,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_closed_lash",
+            "maxVertexDeltaSourcePixels": 0,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_closed_skin",
+            "maxVertexDeltaSourcePixels": 0,
+            "opacityDelta": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "eyelid openness 0.25 stays finite",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 30.45001220703125,
+        "changed": [
+          {
+            "id": "eye_right_upper_lash",
+            "maxVertexDeltaSourcePixels": 25.45404052734375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_sclera_visible",
+            "maxVertexDeltaSourcePixels": 23.284912109375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_lower_lid_rim",
+            "maxVertexDeltaSourcePixels": 13.45294189453125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 17.70611572265625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 13.76702880859375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 10.119384765625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_upper_lash",
+            "maxVertexDeltaSourcePixels": 23.94720458984375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_sclera_visible",
+            "maxVertexDeltaSourcePixels": 21.7659912109375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 8.1826171875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_lower_lid_rim",
+            "maxVertexDeltaSourcePixels": 11.9627685546875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 19.65679931640625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 12.5289306640625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 6.85577392578125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 30.45001220703125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 29.83941650390625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "sclera_right_occlusion",
+            "maxVertexDeltaSourcePixels": 28.3468017578125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "sclera_left_occlusion",
+            "maxVertexDeltaSourcePixels": 25.91180419921875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_closed_skin",
+            "maxVertexDeltaSourcePixels": 0.00000762939453125,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_closed_skin",
+            "maxVertexDeltaSourcePixels": 0.00000762939453125,
+            "opacityDelta": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "eyelid openness 0.5 stays finite",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 20.300048828125,
+        "changed": [
+          {
+            "id": "eye_right_upper_lash",
+            "maxVertexDeltaSourcePixels": 16.9693603515625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_sclera_visible",
+            "maxVertexDeltaSourcePixels": 15.52325439453125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_lower_lid_rim",
+            "maxVertexDeltaSourcePixels": 8.968597412109375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 11.8040771484375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 9.177978515625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 6.74627685546875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_upper_lash",
+            "maxVertexDeltaSourcePixels": 15.96484375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_sclera_visible",
+            "maxVertexDeltaSourcePixels": 14.51068115234375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 5.455078125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_lower_lid_rim",
+            "maxVertexDeltaSourcePixels": 7.9752197265625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 13.10455322265625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 8.3525390625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 4.570556640625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 20.300048828125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 19.89288330078125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "sclera_right_occlusion",
+            "maxVertexDeltaSourcePixels": 18.89788818359375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "sclera_left_occlusion",
+            "maxVertexDeltaSourcePixels": 17.2745361328125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_closed_skin",
+            "maxVertexDeltaSourcePixels": 0,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_closed_skin",
+            "maxVertexDeltaSourcePixels": 0,
+            "opacityDelta": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "eyelid openness 0.75 stays finite",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 10.14996337890625,
+        "changed": [
+          {
+            "id": "eye_right_upper_lash",
+            "maxVertexDeltaSourcePixels": 8.48468017578125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_sclera_visible",
+            "maxVertexDeltaSourcePixels": 7.76165771484375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_lower_lid_rim",
+            "maxVertexDeltaSourcePixels": 4.48431396484375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 5.90203857421875,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 4.5889892578125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 3.3731689453125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_upper_lash",
+            "maxVertexDeltaSourcePixels": 7.98248291015625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_sclera_visible",
+            "maxVertexDeltaSourcePixels": 7.25531005859375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 2.7275390625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_lower_lid_rim",
+            "maxVertexDeltaSourcePixels": 3.98760986328125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 6.55230712890625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 4.17626953125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 2.2852783203125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 10.14996337890625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 9.946533203125,
+            "opacityDelta": 0
+          },
+          {
+            "id": "sclera_right_occlusion",
+            "maxVertexDeltaSourcePixels": 9.448974609375,
+            "opacityDelta": 0
+          },
+          {
+            "id": "sclera_left_occlusion",
+            "maxVertexDeltaSourcePixels": 8.6373291015625,
+            "opacityDelta": 0
+          },
+          {
+            "id": "eye_right_closed_skin",
+            "maxVertexDeltaSourcePixels": 0,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_closed_skin",
+            "maxVertexDeltaSourcePixels": 0,
+            "opacityDelta": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "eyelid openness 1 stays finite",
+      "pass": true,
+      "detail": {
+        "maximumPixels": 0,
+        "changed": []
+      }
+    },
+    {
+      "name": "neutral native model restores exactly",
+      "pass": true
+    },
+    {
+      "name": "native eye motion uses exported clipping masks",
+      "pass": true,
+      "detail": [
+        {
+          "id": "eye_right_iris",
+          "masks": [
+            "eye_right_aperture_mask"
+          ]
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "masks": [
+            "eye_right_aperture_mask"
+          ]
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "masks": [
+            "eye_right_aperture_mask"
+          ]
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "masks": [
+            "eye_left_aperture_mask"
+          ]
+        },
+        {
+          "id": "eye_left_iris",
+          "masks": [
+            "eye_left_aperture_mask"
+          ]
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "masks": [
+            "eye_left_aperture_mask"
+          ]
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "masks": [
+            "eye_left_aperture_mask"
+          ]
+        },
+        {
+          "id": "iris_right_occlusion",
+          "masks": [
+            "eye_right_aperture_mask"
+          ]
+        },
+        {
+          "id": "iris_left_occlusion",
+          "masks": [
+            "eye_left_aperture_mask"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "motion Idle/0 references native IDs",
+      "pass": true,
+      "detail": [
+        "ParamAngleZ"
+      ]
+    },
+    {
+      "name": "official SDK independently plays motion Idle/0",
+      "pass": true,
+      "detail": {
+        "peakVertexDeltaSourcePixels": 2.07708740234375,
+        "duration": 8,
+        "loop": true
+      }
+    },
+    {
+      "name": "motion TapBody/0 references native IDs",
+      "pass": true,
+      "detail": [
+        "ParamAngleZ"
+      ]
+    },
+    {
+      "name": "official SDK independently plays motion TapBody/0",
+      "pass": true,
+      "detail": {
+        "peakVertexDeltaSourcePixels": 3.560943603515625,
+        "duration": 1.8,
+        "loop": false
+      }
+    },
+    {
+      "name": "motion Pat/0 references native IDs",
+      "pass": true,
+      "detail": [
+        "ParamAngleZ"
+      ]
+    },
+    {
+      "name": "official SDK independently plays motion Pat/0",
+      "pass": true,
+      "detail": {
+        "peakVertexDeltaSourcePixels": 1.66009521484375,
+        "duration": 1.05,
+        "loop": false
+      }
+    },
+    {
+      "name": "motion Poke/0 references native IDs",
+      "pass": true,
+      "detail": [
+        "ParamAngleZ"
+      ]
+    },
+    {
+      "name": "official SDK independently plays motion Poke/0",
+      "pass": true,
+      "detail": {
+        "peakVertexDeltaSourcePixels": 2.664886474609375,
+        "duration": 0.9,
+        "loop": false
+      }
+    },
+    {
+      "name": "motion Pinch/0 references native IDs",
+      "pass": true,
+      "detail": [
+        "ParamAngleZ"
+      ]
+    },
+    {
+      "name": "official SDK independently plays motion Pinch/0",
+      "pass": true,
+      "detail": {
+        "peakVertexDeltaSourcePixels": 2.13494873046875,
+        "duration": 1.2,
+        "loop": false
+      }
+    },
+    {
+      "name": "motion Rub/0 references native IDs",
+      "pass": true,
+      "detail": [
+        "ParamAngleZ"
+      ]
+    },
+    {
+      "name": "official SDK independently plays motion Rub/0",
+      "pass": true,
+      "detail": {
+        "peakVertexDeltaSourcePixels": 2.472900390625,
+        "duration": 1.36,
+        "loop": false
+      }
+    },
+    {
+      "name": "motion Tickle/0 references native IDs",
+      "pass": true,
+      "detail": [
+        "ParamAngleZ"
+      ]
+    },
+    {
+      "name": "official SDK independently plays motion Tickle/0",
+      "pass": true,
+      "detail": {
+        "peakVertexDeltaSourcePixels": 2.2491455078125,
+        "duration": 1.6,
+        "loop": false
+      }
+    },
+    {
+      "name": "expression neutral references native IDs",
+      "pass": true,
+      "detail": [
+        {
+          "Id": "ParamEyeLOpen",
+          "Value": 1,
+          "Blend": "Overwrite"
+        },
+        {
+          "Id": "ParamEyeROpen",
+          "Value": 1,
+          "Blend": "Overwrite"
+        }
+      ]
+    },
+    {
+      "name": "official SDK independently applies expression neutral",
+      "pass": true,
+      "detail": {
+        "expectedChange": false,
+        "maximumPixels": 0,
+        "changed": []
+      }
+    },
+    {
+      "name": "expression blink references native IDs",
+      "pass": true,
+      "detail": [
+        {
+          "Id": "ParamEyeLOpen",
+          "Value": 0,
+          "Blend": "Overwrite"
+        },
+        {
+          "Id": "ParamEyeROpen",
+          "Value": 0,
+          "Blend": "Overwrite"
+        }
+      ]
+    },
+    {
+      "name": "official SDK independently applies expression blink",
+      "pass": true,
+      "detail": {
+        "expectedChange": true,
+        "maximumPixels": 40.60003662109375,
+        "changed": [
+          {
+            "id": "eye_right_upper_lash",
+            "maxVertexDeltaSourcePixels": 33.9388427734375,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_right_sclera_visible",
+            "maxVertexDeltaSourcePixels": 31.04656982421875,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_right_lower_lid_rim",
+            "maxVertexDeltaSourcePixels": 17.93719482421875,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_right_iris",
+            "maxVertexDeltaSourcePixels": 23.608154296875,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_right_highlight_upper",
+            "maxVertexDeltaSourcePixels": 18.35601806640625,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_right_highlight_secondary",
+            "maxVertexDeltaSourcePixels": 13.49249267578125,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_upper_lash",
+            "maxVertexDeltaSourcePixels": 31.92962646484375,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_sclera_visible",
+            "maxVertexDeltaSourcePixels": 29.0213623046875,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_pupil_visible_rim",
+            "maxVertexDeltaSourcePixels": 10.91015625,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_lower_lid_rim",
+            "maxVertexDeltaSourcePixels": 15.9503173828125,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_iris",
+            "maxVertexDeltaSourcePixels": 26.2091064453125,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_highlight_upper",
+            "maxVertexDeltaSourcePixels": 16.7052001953125,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_highlight_center",
+            "maxVertexDeltaSourcePixels": 9.1409912109375,
+            "opacityDelta": 1
+          },
+          {
+            "id": "iris_right_occlusion",
+            "maxVertexDeltaSourcePixels": 40.60003662109375,
+            "opacityDelta": 1
+          },
+          {
+            "id": "iris_left_occlusion",
+            "maxVertexDeltaSourcePixels": 39.785888671875,
+            "opacityDelta": 1
+          },
+          {
+            "id": "sclera_right_occlusion",
+            "maxVertexDeltaSourcePixels": 37.79583740234375,
+            "opacityDelta": 1
+          },
+          {
+            "id": "sclera_left_occlusion",
+            "maxVertexDeltaSourcePixels": 34.54913330078125,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_right_closed_lash",
+            "maxVertexDeltaSourcePixels": 0,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_right_closed_skin",
+            "maxVertexDeltaSourcePixels": 0,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_closed_lash",
+            "maxVertexDeltaSourcePixels": 0,
+            "opacityDelta": 1
+          },
+          {
+            "id": "eye_left_closed_skin",
+            "maxVertexDeltaSourcePixels": 0,
+            "opacityDelta": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "model3 contains reusable motion3 and exp3 assets",
+      "pass": true,
+      "detail": [
+        {
+          "kind": "motion",
+          "group": "Idle"
+        },
+        {
+          "kind": "motion",
+          "group": "TapBody"
+        },
+        {
+          "kind": "motion",
+          "group": "Pat"
+        },
+        {
+          "kind": "motion",
+          "group": "Poke"
+        },
+        {
+          "kind": "motion",
+          "group": "Pinch"
+        },
+        {
+          "kind": "motion",
+          "group": "Rub"
+        },
+        {
+          "kind": "motion",
+          "group": "Tickle"
+        },
+        {
+          "kind": "expression",
+          "name": "neutral"
+        },
+        {
+          "kind": "expression",
+          "name": "blink"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "grid": [
+    {
+      "head": -15,
+      "x": -1,
+      "y": -1,
+      "maximumPixels": 4.024900436401367,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.9132156372070312,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.9132156372070312,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.9132232666015625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 4.024875640869141,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 4.024890899658203,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 4.024879455566406,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 4.024876594543457,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.9132232666015625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 4.024900436401367,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": -15,
+      "x": -1,
+      "y": 0,
+      "maximumPixels": 4.050823211669922,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.9546279907226562,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.9546279907226562,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.9546432495117188,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 4.050800323486328,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 4.050814628601074,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 4.050804138183594,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 4.0508012771606445,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.9546356201171875,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 4.050823211669922,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": -15,
+      "x": -1,
+      "y": 1,
+      "maximumPixels": 4.076749801635742,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.996044158935547,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.9960479736328125,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.996063232421875,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 4.076725959777832,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 4.076740264892578,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 4.076727867126465,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 4.076726913452148,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.9960479736328125,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 4.076749801635742,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": -15,
+      "x": 0,
+      "y": -1,
+      "maximumPixels": 3.16375732421875,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.16375732421875,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.1636962890625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.1636962890625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 1.98040771484375,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 1.98040771484375,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 1.9803466796875,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 1.9803466796875,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.16375732421875,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 1.98040771484375,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": -15,
+      "x": 0,
+      "y": 0,
+      "maximumPixels": 0,
+      "changed": []
+    },
+    {
+      "head": -15,
+      "x": 0,
+      "y": 1,
+      "maximumPixels": 3.1636962890625,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.1636962890625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.1636962890625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.1636962890625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 1.98052978515625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 1.98052978515625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 1.98052978515625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 1.98046875,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.1636962890625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 1.98052978515625,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": -15,
+      "x": 1,
+      "y": -1,
+      "maximumPixels": 3.995990753173828,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.9959869384765625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.995990753173828,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.9959869384765625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 3.986701250076294,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 3.9867115020751953,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.986705780029297,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 3.986703872680664,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.9959869384765625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 3.986715316772461,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": -15,
+      "x": 1,
+      "y": 0,
+      "maximumPixels": 3.96079158782959,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.954570770263672,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.954570770263672,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.9545669555664062,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 3.9607770442962646,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 3.9607887268066406,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.960782051086426,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 3.9607791900634766,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.9545745849609375,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 3.96079158782959,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": -15,
+      "x": 1,
+      "y": 1,
+      "maximumPixels": 3.9348649978637695,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.913158416748047,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.913158416748047,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.9131546020507812,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 3.93485164642334,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 3.9348630905151367,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.934856414794922,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 3.9348535537719727,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.9131622314453125,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 3.9348649978637695,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": 0,
+      "x": -1,
+      "y": -1,
+      "maximumPixels": 4.051170349121094,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.9549789428710938,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.9549713134765625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.9549789428710938,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 4.0511474609375,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 4.0511627197265625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 4.051150321960449,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 4.051147937774658,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.954975128173828,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 4.051170349121094,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": 0,
+      "x": -1,
+      "y": 0,
+      "maximumPixels": 4.051170349121094,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.9549789428710938,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.9549713134765625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.954986572265625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 4.0511474609375,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 4.05116081237793,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 4.051150321960449,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 4.051147937774658,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.9549789428710938,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 4.051170349121094,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": 0,
+      "x": -1,
+      "y": 1,
+      "maximumPixels": 4.051168441772461,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.9549789428710938,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.954967498779297,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.9549789428710938,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 4.0511474609375,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 4.05116081237793,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 4.051150321960449,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 4.051147937774658,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.954975128173828,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 4.051168441772461,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": 0,
+      "x": 0,
+      "y": -1,
+      "maximumPixels": 3.1640625,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.16400146484375,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.1640625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.16400146484375,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 1.98052978515625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 1.9805908203125,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 1.9805908203125,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 1.9805908203125,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.16400146484375,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 1.9805908203125,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": 0,
+      "x": 0,
+      "y": 0,
+      "maximumPixels": 0,
+      "changed": []
+    },
+    {
+      "head": 0,
+      "x": 0,
+      "y": 1,
+      "maximumPixels": 3.16400146484375,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.1639404296875,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.1639404296875,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.1639404296875,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 1.98065185546875,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 1.98065185546875,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 1.9805908203125,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 1.9805908203125,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.16400146484375,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 1.98065185546875,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": 0,
+      "x": 1,
+      "y": -1,
+      "maximumPixels": 3.9611282348632812,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.954914093017578,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.9549026489257812,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.9549102783203125,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 3.9611159563064575,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 3.9611282348632812,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.961122512817383,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 3.961118698120117,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.9549102783203125,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 3.9611282348632812,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": 0,
+      "x": 1,
+      "y": 0,
+      "maximumPixels": 3.9611282348632812,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.9549102783203125,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.9549026489257812,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.9549102783203125,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 3.961115598678589,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 3.9611282348632812,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.961122512817383,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 3.961118698120117,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.9549102783203125,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 3.9611282348632812,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": 0,
+      "x": 1,
+      "y": 1,
+      "maximumPixels": 3.9611282348632812,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.954914093017578,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.9549026489257812,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.9549102783203125,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 3.961115598678589,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 3.9611282348632812,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.961122512817383,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 3.961118698120117,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.954914093017578,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 3.9611282348632812,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": 15,
+      "x": -1,
+      "y": -1,
+      "maximumPixels": 4.076745986938477,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.9960479736328125,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.996044158935547,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.9960479736328125,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 4.076725006103516,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 4.076738357543945,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 4.076727390289307,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 4.07672643661499,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.9960479736328125,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 4.076745986938477,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": 15,
+      "x": -1,
+      "y": 0,
+      "maximumPixels": 4.050823211669922,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.9546356201171875,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.954631805419922,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.9546279907226562,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 4.05079984664917,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 4.050813674926758,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 4.050802230834961,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 4.050800323486328,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.9546279907226562,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 4.050823211669922,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": 15,
+      "x": -1,
+      "y": 1,
+      "maximumPixels": 4.024896621704102,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.9132232666015625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.9132156372070312,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.9132156372070312,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 4.024875164031982,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 4.02488899230957,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 4.024878025054932,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 4.024875164031982,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.9132156372070312,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 4.024896621704102,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": 15,
+      "x": 0,
+      "y": -1,
+      "maximumPixels": 3.16375732421875,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.16375732421875,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.1636962890625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.16375732421875,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 1.98040771484375,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 1.98040771484375,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 1.98040771484375,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 1.98040771484375,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.16375732421875,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 1.98040771484375,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": 15,
+      "x": 0,
+      "y": 0,
+      "maximumPixels": 0,
+      "changed": []
+    },
+    {
+      "head": 15,
+      "x": 0,
+      "y": 1,
+      "maximumPixels": 3.16375732421875,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.1636962890625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.1636962890625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.16375732421875,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 1.98046875,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 1.98046875,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 1.98046875,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 1.98052978515625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.1636962890625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 1.9805908203125,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": 15,
+      "x": 1,
+      "y": -1,
+      "maximumPixels": 3.9348669052124023,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.913166046142578,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.9131622314453125,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.9131622314453125,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 3.9348522424697876,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 3.9348630905151367,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.9348573684692383,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 3.9348554611206055,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.913166046142578,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 3.9348669052124023,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": 15,
+      "x": 1,
+      "y": 0,
+      "maximumPixels": 3.960789680480957,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.9545745849609375,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.9545745849609375,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.9545745849609375,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 3.9607760906219482,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 3.9607887268066406,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.960783004760742,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 3.960780143737793,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.954578399658203,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 3.960789680480957,
+          "opacityDelta": 0
+        }
+      ]
+    },
+    {
+      "head": 15,
+      "x": 1,
+      "y": 1,
+      "maximumPixels": 3.9959945678710938,
+      "changed": [
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 3.9959945678710938,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.9959869384765625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 3.9959869384765625,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 3.986701726913452,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 3.986713409423828,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 3.9867076873779297,
+          "opacityDelta": 0
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 3.986705780029297,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 3.9959945678710938,
+          "opacityDelta": 0
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 3.9867143630981445,
+          "opacityDelta": 0
+        }
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "kind": "motion",
+      "group": "Idle",
+      "index": 0,
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\v8-source\\knismolagnia-site\\public\\konisi-game\\live2d\\standing\\native-2026-10-18\\motions\\idle.motion3.json",
+      "sha256": "6d01f8b2c4239ce4c83193b56b0055cc70ac2415ed751f7825506a3b314df80e",
+      "peak": 2.07708740234375
+    },
+    {
+      "kind": "motion",
+      "group": "TapBody",
+      "index": 0,
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\v8-source\\knismolagnia-site\\public\\konisi-game\\live2d\\standing\\native-2026-10-18\\motions\\tap.motion3.json",
+      "sha256": "e16e460660f5f479486c2fcc13441b8e4cd2aba761f32cb4a3e99261da0e2eac",
+      "peak": 3.560943603515625
+    },
+    {
+      "kind": "motion",
+      "group": "Pat",
+      "index": 0,
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\v8-source\\knismolagnia-site\\public\\konisi-game\\live2d\\standing\\native-2026-10-18\\motions\\pat.motion3.json",
+      "sha256": "18730db087039da31dc76a4d2af5c5f864f96a92a8961205789b03aac86e8dc7",
+      "peak": 1.66009521484375
+    },
+    {
+      "kind": "motion",
+      "group": "Poke",
+      "index": 0,
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\v8-source\\knismolagnia-site\\public\\konisi-game\\live2d\\standing\\native-2026-10-18\\motions\\poke.motion3.json",
+      "sha256": "9b87dde872f11fe81bd6b3ff15407b4ebacc6792974b158c89043f0633387ea2",
+      "peak": 2.664886474609375
+    },
+    {
+      "kind": "motion",
+      "group": "Pinch",
+      "index": 0,
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\v8-source\\knismolagnia-site\\public\\konisi-game\\live2d\\standing\\native-2026-10-18\\motions\\pinch.motion3.json",
+      "sha256": "876b3d804096f21485ba3cfdd998a2a462aa19f834cbbaf4feff2201f813ef98",
+      "peak": 2.13494873046875
+    },
+    {
+      "kind": "motion",
+      "group": "Rub",
+      "index": 0,
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\v8-source\\knismolagnia-site\\public\\konisi-game\\live2d\\standing\\native-2026-10-18\\motions\\rub.motion3.json",
+      "sha256": "f63df999142d47fb1b935fae70e45154677734afbdd3d5aa093cb82828c4d0ad",
+      "peak": 2.472900390625
+    },
+    {
+      "kind": "motion",
+      "group": "Tickle",
+      "index": 0,
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\v8-source\\knismolagnia-site\\public\\konisi-game\\live2d\\standing\\native-2026-10-18\\motions\\tickle.motion3.json",
+      "sha256": "fb44b831d8f52ad99ad8821d67bae41dcdbb7b9b6b4917b6ed59946c602a1b0d",
+      "peak": 2.2491455078125
+    },
+    {
+      "kind": "expression",
+      "name": "neutral",
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\v8-source\\knismolagnia-site\\public\\konisi-game\\live2d\\standing\\native-2026-10-18\\expressions\\neutral.exp3.json",
+      "sha256": "2402406b6c21a56e7724632a6bdbeeb4418b68ad19acf98626a12070e1cb72f6",
+      "maximumPixels": 0,
+      "changed": []
+    },
+    {
+      "kind": "expression",
+      "name": "blink",
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\v8-source\\knismolagnia-site\\public\\konisi-game\\live2d\\standing\\native-2026-10-18\\expressions\\blink.exp3.json",
+      "sha256": "ab1ed90a19c487eeba40e91226c22684dd4c1594eb52cc7afe122b058a8597a6",
+      "maximumPixels": 40.60003662109375,
+      "changed": [
+        {
+          "id": "eye_right_upper_lash",
+          "maxVertexDeltaSourcePixels": 33.9388427734375,
+          "opacityDelta": 1
+        },
+        {
+          "id": "eye_right_sclera_visible",
+          "maxVertexDeltaSourcePixels": 31.04656982421875,
+          "opacityDelta": 1
+        },
+        {
+          "id": "eye_right_lower_lid_rim",
+          "maxVertexDeltaSourcePixels": 17.93719482421875,
+          "opacityDelta": 1
+        },
+        {
+          "id": "eye_right_iris",
+          "maxVertexDeltaSourcePixels": 23.608154296875,
+          "opacityDelta": 1
+        },
+        {
+          "id": "eye_right_highlight_upper",
+          "maxVertexDeltaSourcePixels": 18.35601806640625,
+          "opacityDelta": 1
+        },
+        {
+          "id": "eye_right_highlight_secondary",
+          "maxVertexDeltaSourcePixels": 13.49249267578125,
+          "opacityDelta": 1
+        },
+        {
+          "id": "eye_left_upper_lash",
+          "maxVertexDeltaSourcePixels": 31.92962646484375,
+          "opacityDelta": 1
+        },
+        {
+          "id": "eye_left_sclera_visible",
+          "maxVertexDeltaSourcePixels": 29.0213623046875,
+          "opacityDelta": 1
+        },
+        {
+          "id": "eye_left_pupil_visible_rim",
+          "maxVertexDeltaSourcePixels": 10.91015625,
+          "opacityDelta": 1
+        },
+        {
+          "id": "eye_left_lower_lid_rim",
+          "maxVertexDeltaSourcePixels": 15.9503173828125,
+          "opacityDelta": 1
+        },
+        {
+          "id": "eye_left_iris",
+          "maxVertexDeltaSourcePixels": 26.2091064453125,
+          "opacityDelta": 1
+        },
+        {
+          "id": "eye_left_highlight_upper",
+          "maxVertexDeltaSourcePixels": 16.7052001953125,
+          "opacityDelta": 1
+        },
+        {
+          "id": "eye_left_highlight_center",
+          "maxVertexDeltaSourcePixels": 9.1409912109375,
+          "opacityDelta": 1
+        },
+        {
+          "id": "iris_right_occlusion",
+          "maxVertexDeltaSourcePixels": 40.60003662109375,
+          "opacityDelta": 1
+        },
+        {
+          "id": "iris_left_occlusion",
+          "maxVertexDeltaSourcePixels": 39.785888671875,
+          "opacityDelta": 1
+        },
+        {
+          "id": "sclera_right_occlusion",
+          "maxVertexDeltaSourcePixels": 37.79583740234375,
+          "opacityDelta": 1
+        },
+        {
+          "id": "sclera_left_occlusion",
+          "maxVertexDeltaSourcePixels": 34.54913330078125,
+          "opacityDelta": 1
+        },
+        {
+          "id": "eye_right_closed_lash",
+          "maxVertexDeltaSourcePixels": 0,
+          "opacityDelta": 1
+        },
+        {
+          "id": "eye_right_closed_skin",
+          "maxVertexDeltaSourcePixels": 0,
+          "opacityDelta": 1
+        },
+        {
+          "id": "eye_left_closed_lash",
+          "maxVertexDeltaSourcePixels": 0,
+          "opacityDelta": 1
+        },
+        {
+          "id": "eye_left_closed_skin",
+          "maxVertexDeltaSourcePixels": 0,
+          "opacityDelta": 1
+        }
+      ]
+    }
+  ]
+}

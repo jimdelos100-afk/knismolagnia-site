@@ -1,0 +1,33 @@
+Live2D 新版实际浏览器交互验收
+上海时间：2026-10-19 12:55:54
+总结果：通过
+冻结源码SHA256：a565134a78dce22cc80e005c2090bb248e36acf6f3396f408f8e2761837a7d91
+
+chrome-desktop-mouse：29项，失败0
+chrome-mobile-touch：29项，失败0
+edge-desktop-mouse：29项，失败0
+edge-mobile-touch：29项，失败0
+无页内异常：true
+
+覆盖真实鼠标/CDP触屏拖动、最终终点、取消、不误触摸头、刷新记忆、边界、横竖屏、四角设置避让、展开设置后拖动、全局Escape、失焦释放、正常文字按钮方向、左右翻转及中央缓冲、镜像与正常tap实际事件严格坐标反演、原生目光/头部/眨眼/发丝开关、暂停动作时禁反应但可拖、隐藏及最小化暂停和恢复、五动作、表情换装、Level1坐姿/Level2跪姿和镜头、脚本沙箱/来源白名单/非iframe消息忽略。
+
+透明区域使用实际WebGL alpha筛选，并与同一父页隐藏iframe后的真实背景逐像素对照；没有注入修复CSS。
+chrome-desktop-mouse：117609像素，差异0
+chrome-mobile-touch：244653像素，差异0
+edge-desktop-mouse：117609像素，差异0
+edge-mobile-touch：244653像素，差异0
+
+独立真实Core实例停止测试实例中的idle，测量头/颈真实顶点、眼虹膜原生参数方向及发丝physics输出；网页实例的正常交互另行完整实测。±4等强度是Cubism参数单位，报告另给真实几何测得角度，未冒称真实转脸或扩大原生眼动。
+新脖子真实形变要求与结果：true
+
+隔离：未复制/读取.env文件，仅使用占位环境；浏览器外网请求及服务端外网fetch均阻断。没有登录、真实账号DB操作、部署、推送。
+外观严格回归须以独立Core framebuffer报告为准；保留历史2404眼部像素差异记录；对批准参考与眼区外仍要求零新增差异，外观验收以独立Core逐像素回归为准。
+
+PASS All actual browser interaction cases pass
+PASS No browser page exceptions
+PASS Actual rendered transparent support matches parent in all four surfaces
+PASS Geometry and existing native physics probes pass in both actual browsers
+PASS Fresh real neck deformation is required and measured
+PASS Both reports bind to the same frozen final source snapshot
+PASS QA copy inputs remain identical to its captured source snapshot
+PASS Final actual product runtime files remain identical to tested QA copy

@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "poses": {
+    "standing": {
+      "model": "standing/character.model3.json",
+      "appearance": "standing-detailed",
+      "maxHeadInput": 21,
+      "rigContract": "standing/detailed/rig-contract.json",
+      "modelSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+      "nativeRig": {
+        "mocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+        "gaze": {
+          "x": "ParamEyeBallX",
+          "y": "ParamEyeBallY"
+        },
+        "blink": {
+          "left": "ParamEyeLOpen",
+          "right": "ParamEyeROpen"
+        }
+      },
+      "nativeAnimation": {
+        "idleGroup": "Idle",
+        "reactionMotions": {
+          "pat": {
+            "group": "Pat",
+            "index": 0
+          },
+          "poke": {
+            "group": "Poke",
+            "index": 0
+          },
+          "pinch": {
+            "group": "Pinch",
+            "index": 0
+          },
+          "rub": {
+            "group": "Rub",
+            "index": 0
+          },
+          "tickle": {
+            "group": "Tickle",
+            "index": 0
+          }
+        },
+        "expressionMap": {
+          "neutral": "neutral",
+          "blink": "blink"
+        },
+        "nativeOnlyExpressions": [
+          "neutral",
+          "blink"
+        ]
+      }
+    },
+    "seated": {
+      "model": "seated/character.model3.json",
+      "drawableRoles": {
+        "base": [
+          "ArtMesh10"
+        ]
+      }
+    },
+    "kneeling": {
+      "model": "kneeling/character.model3.json",
+      "drawableRoles": {
+        "base": [
+          "ArtMesh12"
+        ],
+        "wardrobe": {
+          "barefoot": "ArtMesh9",
+          "shortsocks": "ArtMesh10",
+          "tights": "ArtMesh11"
+        }
+      }
+    }
+  }
+}

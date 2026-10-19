@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-19T04:48:18.6834316Z",
+  "application": "Live2D Cubism Editor 5.3.04 PRO",
+  "sourceCmoFile": "model/standing-head-neck.cmo3",
+  "sourceCmoSha256": "2bd397f25d5aa511cd45ce956927e3d06410bbc756bf807b71de9dc21a920650",
+  "newMocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+  "savedReopenedTitle": "standing-head-neck.cmo3",
+  "noUnsavedMarkerObserved": true,
+  "neutralAngleZObserved": 0,
+  "leftEyeOpenObserved": 1,
+  "rightEyeOpenObserved": 1,
+  "initialEditorState": "No preexisting running Cubism process or open/unsaved project; launched clean editor before opening baseline copy.",
+  "edit": "Real neck_visible and neck_occlusion_underpaint native meshes gain ParamAngleZ -30/0/+30 keys, with neutral forms pasted from the accepted original in Cubism. Existing head side tilt and hair physics reused.",
+  "originalSourcesRetained": "Chose No in delete two unused PSD sources confirmation on every save.",
+  "reopenRoundTripFiles": [
+    {
+      "path": "standing-head-neck-2026-10-19.cdi3.json",
+      "sha256": "03aba1480ab632b11a8c6d79fb9ec0b779190ccb7acccb7640b7794d039ca267",
+      "reopenSha256": "03aba1480ab632b11a8c6d79fb9ec0b779190ccb7acccb7640b7794d039ca267",
+      "pass": true
+    },
+    {
+      "path": "standing-head-neck-2026-10-19.moc3",
+      "sha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+      "reopenSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+      "pass": true
+    },
+    {
+      "path": "standing-head-neck-2026-10-19.model3.json",
+      "sha256": "156034245357f04cc2a760b07138677625496f2fd92b3efceaaa7d0362aaf759",
+      "reopenSha256": "156034245357f04cc2a760b07138677625496f2fd92b3efceaaa7d0362aaf759",
+      "pass": true
+    },
+    {
+      "path": "standing-head-neck-2026-10-19.physics3.json",
+      "sha256": "70d2f649d0692e0fc23f0a0fed3c6ff998bc075063da9258d82e1ffdd81f7c40",
+      "reopenSha256": "70d2f649d0692e0fc23f0a0fed3c6ff998bc075063da9258d82e1ffdd81f7c40",
+      "pass": true
+    },
+    {
+      "path": "standing-head-neck-2026-10-19.4096/texture_00.png",
+      "sha256": "90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30",
+      "reopenSha256": "90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30",
+      "pass": true
+    },
+    {
+      "path": "standing-head-neck-2026-10-19.4096/texture_01.png",
+      "sha256": "61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7",
+      "reopenSha256": "61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7",
+      "pass": true
+    }
+  ],
+  "recoveryFile": "model/standing-head-neck-reopen-export-settings-recovery.cmo3",
+  "recoverySha256": "0c04fa04efbc04c3af9724c27073e26b69d26d7f200a7b043fa1a2bbf3bcd6b7",
+  "recoveryReason": "Only remembered export path changed during identical roundtrip export; preserved memory via separate Save As, then reopened exact formal frozen CMO.",
+  "screenshotFile": "model/cubism-final-reopened-saved.png",
+  "screenshotSha256": "709fddfdd87d4148aef93a226af1e2b6e1ae0e9de91b9dfae23ce72b5727b160",
+  "visualContactFile": "verification/neck-seam-contact-sheet.png",
+  "visualContactSha256": "702ec29ab41426dd20b6778f86e4789e98d8d98fb58e42cd2d77f118222fd3b6",
+  "visualInspection": "Root viewed original 2704x1236 actual SDK contact sheet: AngleZ -15,-4,0,4,15 with open and closed eyes; no exposed transparent neck/collar seam, detachment, or newly visible occlusion artifact seen. Preserves accepted eye images. This visual review is separate from strict pixel and geometry tests.",
+  "modelGeometryOrTextureBinaryPatched": false,
+  "remoteDeploymentPerformed": false,
+  "accountsDatabaseModified": false
+}

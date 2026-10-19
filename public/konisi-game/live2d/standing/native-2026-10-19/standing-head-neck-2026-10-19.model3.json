@@ -1,0 +1,19 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "standing-head-neck-2026-10-19.moc3",
+		"Textures": [
+			"standing-head-neck-2026-10-19.4096/texture_00.png",
+			"standing-head-neck-2026-10-19.4096/texture_01.png"
+		],
+		"Physics": "standing-head-neck-2026-10-19.physics3.json",
+		"DisplayInfo": "standing-head-neck-2026-10-19.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		}
+	]
+}

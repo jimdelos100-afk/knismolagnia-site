@@ -1,0 +1,1909 @@
+{
+  "date": "2026-10-19T04:13:23.116Z",
+  "url": "https://knismolagnia.club",
+  "verificationOfActualSourceFix": true,
+  "noTemporaryStyleInjected": true,
+  "scope": "Actual Next source CSS fix, no page.addStyleTag. Initial theme×OS matrix plus real theme button changes, minimize/restore and mobile DPR2. Screenshot pixels compare rendered transparent support against actual same-parent background with iframe hidden. No model/ZIP/remote edit.",
+  "sourceBefore": {
+    "src/app/globals.css": "cf9a7121b0c0d4d5230ecccc6f245cb6346271c4211eff3e7a2a48a91cf2b6be",
+    "src/components/HomeCharacter.tsx": "72663827ea929a1d737a95565dc3af998141a157e78d710be6954107103bac20",
+    "public/konisi-game/home.html": "34cd64f92303bc318bf9fe10ac6fd3cdfc1a54ec9dc84054dea66e54bdc03012",
+    "public/konisi-game/character.css": "ec8ea79f2acd14f08f8c0414362d18648f3de442a3f34a6cfe58e3534aaaf8ce",
+    "public/konisi-game/character.js": "06be64915fe6d99b45b402459326a81f50b32d1a26ed3d39bfca4578bbbe2bee",
+    "public/konisi-game/live2d/manifest.json": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4"
+  },
+  "sourceAfter": {
+    "src/app/globals.css": "cf9a7121b0c0d4d5230ecccc6f245cb6346271c4211eff3e7a2a48a91cf2b6be",
+    "src/components/HomeCharacter.tsx": "776e96b76f31d533218a7dbf20bbe12ce810ca8fcea7305a3f7967c464972739",
+    "public/konisi-game/home.html": "34cd64f92303bc318bf9fe10ac6fd3cdfc1a54ec9dc84054dea66e54bdc03012",
+    "public/konisi-game/character.css": "ec8ea79f2acd14f08f8c0414362d18648f3de442a3f34a6cfe58e3534aaaf8ce",
+    "public/konisi-game/character.js": "06be64915fe6d99b45b402459326a81f50b32d1a26ed3d39bfca4578bbbe2bee",
+    "public/konisi-game/live2d/manifest.json": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4"
+  },
+  "sourceUnchanged": false,
+  "checks": [
+    {
+      "name": "chrome155-page-light-os-light-initial-theme",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      }
+    },
+    {
+      "name": "chrome155-page-light-os-dark-initial-theme",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      }
+    },
+    {
+      "name": "chrome155-page-dark-os-light-initial-theme",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      }
+    },
+    {
+      "name": "chrome155-page-dark-os-dark-initial-theme",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      }
+    },
+    {
+      "name": "chrome155-page-light-os-dark-theme-toggle",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      }
+    },
+    {
+      "name": "chrome155-page-dark-os-light-theme-toggle",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      }
+    },
+    {
+      "name": "chrome155-page-dark-os-dark-minimize-restore",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      }
+    },
+    {
+      "name": "chrome155-page-dark-os-dark-mobile",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 173396,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      }
+    },
+    {
+      "name": "edge139-page-light-os-light-initial-theme",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      }
+    },
+    {
+      "name": "edge139-page-light-os-dark-initial-theme",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      }
+    },
+    {
+      "name": "edge139-page-dark-os-light-initial-theme",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      }
+    },
+    {
+      "name": "edge139-page-dark-os-dark-initial-theme",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      }
+    },
+    {
+      "name": "edge139-page-light-os-dark-theme-toggle",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      }
+    },
+    {
+      "name": "edge139-page-dark-os-light-theme-toggle",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      }
+    },
+    {
+      "name": "edge139-page-dark-os-dark-minimize-restore",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      }
+    },
+    {
+      "name": "edge139-page-dark-os-dark-mobile",
+      "pass": true,
+      "detail": {
+        "sampledTransparentPixels": 173396,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      }
+    }
+  ],
+  "results": [
+    {
+      "name": "chrome155-page-light-os-light-initial-theme",
+      "pass": true,
+      "browserVersion": "155.0.8059.84",
+      "pageTheme": "light",
+      "osPreference": "light",
+      "lifecycle": {
+        "scenario": "initial-theme",
+        "initialTheme": "light"
+      },
+      "parent": {
+        "theme": "light",
+        "rootScheme": "light",
+        "bodyScheme": "light",
+        "iframeScheme": "light",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": false,
+        "viewportWidth": 1440,
+        "rect": {
+          "x": 1049,
+          "y": 428,
+          "width": 365,
+          "height": 560
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 365,
+        "height": 560,
+        "nonzeroAlphaPixels": 71613,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 365,
+          "height": 560
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "78933544903a9b6b375f04ad433dc67388d9528716ece7b54c01bcdb2bab8317",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "a443b21fa16b6e07bcfc204027c1d2a663a7ab454b1c4604926de6e63c8c76ae",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "3b3c1fa2a3c470e190b0bab22c99489df3dbbef4fded614f353121831fd588c7",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "chrome155-page-light-os-dark-initial-theme",
+      "pass": true,
+      "browserVersion": "155.0.8059.84",
+      "pageTheme": "light",
+      "osPreference": "dark",
+      "lifecycle": {
+        "scenario": "initial-theme",
+        "initialTheme": "light"
+      },
+      "parent": {
+        "theme": "light",
+        "rootScheme": "light",
+        "bodyScheme": "light",
+        "iframeScheme": "light",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": true,
+        "viewportWidth": 1440,
+        "rect": {
+          "x": 1049,
+          "y": 428,
+          "width": 365,
+          "height": 560
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 365,
+        "height": 560,
+        "nonzeroAlphaPixels": 71613,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 365,
+          "height": 560
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "78933544903a9b6b375f04ad433dc67388d9528716ece7b54c01bcdb2bab8317",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "a443b21fa16b6e07bcfc204027c1d2a663a7ab454b1c4604926de6e63c8c76ae",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "3b3c1fa2a3c470e190b0bab22c99489df3dbbef4fded614f353121831fd588c7",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "chrome155-page-dark-os-light-initial-theme",
+      "pass": true,
+      "browserVersion": "155.0.8059.84",
+      "pageTheme": "dark",
+      "osPreference": "light",
+      "lifecycle": {
+        "scenario": "initial-theme",
+        "initialTheme": "dark"
+      },
+      "parent": {
+        "theme": "dark",
+        "rootScheme": "dark",
+        "bodyScheme": "dark",
+        "iframeScheme": "light",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": false,
+        "viewportWidth": 1440,
+        "rect": {
+          "x": 1049,
+          "y": 428,
+          "width": 365,
+          "height": 560
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 365,
+        "height": 560,
+        "nonzeroAlphaPixels": 71613,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 365,
+          "height": 560
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "78933544903a9b6b375f04ad433dc67388d9528716ece7b54c01bcdb2bab8317",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "a443b21fa16b6e07bcfc204027c1d2a663a7ab454b1c4604926de6e63c8c76ae",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "3b3c1fa2a3c470e190b0bab22c99489df3dbbef4fded614f353121831fd588c7",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "chrome155-page-dark-os-dark-initial-theme",
+      "pass": true,
+      "browserVersion": "155.0.8059.84",
+      "pageTheme": "dark",
+      "osPreference": "dark",
+      "lifecycle": {
+        "scenario": "initial-theme",
+        "initialTheme": "dark"
+      },
+      "parent": {
+        "theme": "dark",
+        "rootScheme": "dark",
+        "bodyScheme": "dark",
+        "iframeScheme": "light",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": true,
+        "viewportWidth": 1440,
+        "rect": {
+          "x": 1049,
+          "y": 428,
+          "width": 365,
+          "height": 560
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 365,
+        "height": 560,
+        "nonzeroAlphaPixels": 71613,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 365,
+          "height": 560
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "78933544903a9b6b375f04ad433dc67388d9528716ece7b54c01bcdb2bab8317",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "a443b21fa16b6e07bcfc204027c1d2a663a7ab454b1c4604926de6e63c8c76ae",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "3b3c1fa2a3c470e190b0bab22c99489df3dbbef4fded614f353121831fd588c7",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "chrome155-page-light-os-dark-theme-toggle",
+      "pass": true,
+      "browserVersion": "155.0.8059.84",
+      "pageTheme": "dark",
+      "osPreference": "dark",
+      "lifecycle": {
+        "scenario": "theme-toggle",
+        "initialTheme": "light",
+        "themeAfterToggle": "dark"
+      },
+      "parent": {
+        "theme": "dark",
+        "rootScheme": "dark",
+        "bodyScheme": "dark",
+        "iframeScheme": "light",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": true,
+        "viewportWidth": 1440,
+        "rect": {
+          "x": 1049,
+          "y": 428,
+          "width": 365,
+          "height": 560
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 365,
+        "height": 560,
+        "nonzeroAlphaPixels": 71613,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 365,
+          "height": 560
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "78933544903a9b6b375f04ad433dc67388d9528716ece7b54c01bcdb2bab8317",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "a443b21fa16b6e07bcfc204027c1d2a663a7ab454b1c4604926de6e63c8c76ae",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "3b3c1fa2a3c470e190b0bab22c99489df3dbbef4fded614f353121831fd588c7",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "chrome155-page-dark-os-light-theme-toggle",
+      "pass": true,
+      "browserVersion": "155.0.8059.84",
+      "pageTheme": "light",
+      "osPreference": "light",
+      "lifecycle": {
+        "scenario": "theme-toggle",
+        "initialTheme": "dark",
+        "themeAfterToggle": "light"
+      },
+      "parent": {
+        "theme": "light",
+        "rootScheme": "light",
+        "bodyScheme": "light",
+        "iframeScheme": "light",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": false,
+        "viewportWidth": 1440,
+        "rect": {
+          "x": 1049,
+          "y": 428,
+          "width": 365,
+          "height": 560
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 365,
+        "height": 560,
+        "nonzeroAlphaPixels": 71613,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 365,
+          "height": 560
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "78933544903a9b6b375f04ad433dc67388d9528716ece7b54c01bcdb2bab8317",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "a443b21fa16b6e07bcfc204027c1d2a663a7ab454b1c4604926de6e63c8c76ae",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "3b3c1fa2a3c470e190b0bab22c99489df3dbbef4fded614f353121831fd588c7",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "chrome155-page-dark-os-dark-minimize-restore",
+      "pass": true,
+      "browserVersion": "155.0.8059.84",
+      "pageTheme": "dark",
+      "osPreference": "dark",
+      "lifecycle": {
+        "scenario": "minimize-restore",
+        "initialTheme": "dark",
+        "minimized": true,
+        "restored": true
+      },
+      "parent": {
+        "theme": "dark",
+        "rootScheme": "dark",
+        "bodyScheme": "dark",
+        "iframeScheme": "light",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": true,
+        "viewportWidth": 1440,
+        "rect": {
+          "x": 1049,
+          "y": 428,
+          "width": 365,
+          "height": 560
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 365,
+        "height": 560,
+        "nonzeroAlphaPixels": 71613,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 365,
+          "height": 560
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "78933544903a9b6b375f04ad433dc67388d9528716ece7b54c01bcdb2bab8317",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "a443b21fa16b6e07bcfc204027c1d2a663a7ab454b1c4604926de6e63c8c76ae",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "3b3c1fa2a3c470e190b0bab22c99489df3dbbef4fded614f353121831fd588c7",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "chrome155-page-dark-os-dark-mobile",
+      "pass": true,
+      "browserVersion": "155.0.8059.84",
+      "pageTheme": "dark",
+      "osPreference": "dark",
+      "lifecycle": {
+        "scenario": "mobile",
+        "initialTheme": "dark"
+      },
+      "parent": {
+        "theme": "dark",
+        "rootScheme": "dark",
+        "bodyScheme": "dark",
+        "iframeScheme": "light",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": true,
+        "viewportWidth": 390,
+        "rect": {
+          "x": 167.5,
+          "y": 391,
+          "width": 214.5,
+          "height": 445
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 215,
+        "height": 445,
+        "nonzeroAlphaPixels": 24827,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 215,
+          "height": 445
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 173396,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "78933544903a9b6b375f04ad433dc67388d9528716ece7b54c01bcdb2bab8317",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "a443b21fa16b6e07bcfc204027c1d2a663a7ab454b1c4604926de6e63c8c76ae",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "3b3c1fa2a3c470e190b0bab22c99489df3dbbef4fded614f353121831fd588c7",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "edge139-page-light-os-light-initial-theme",
+      "pass": true,
+      "browserVersion": "139.0.3405.102",
+      "pageTheme": "light",
+      "osPreference": "light",
+      "lifecycle": {
+        "scenario": "initial-theme",
+        "initialTheme": "light"
+      },
+      "parent": {
+        "theme": "light",
+        "rootScheme": "light",
+        "bodyScheme": "light",
+        "iframeScheme": "light",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": false,
+        "viewportWidth": 1440,
+        "rect": {
+          "x": 1049,
+          "y": 428,
+          "width": 365,
+          "height": 560
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 365,
+        "height": 560,
+        "nonzeroAlphaPixels": 71613,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 365,
+          "height": 560
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "78933544903a9b6b375f04ad433dc67388d9528716ece7b54c01bcdb2bab8317",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "a443b21fa16b6e07bcfc204027c1d2a663a7ab454b1c4604926de6e63c8c76ae",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "3b3c1fa2a3c470e190b0bab22c99489df3dbbef4fded614f353121831fd588c7",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "edge139-page-light-os-dark-initial-theme",
+      "pass": true,
+      "browserVersion": "139.0.3405.102",
+      "pageTheme": "light",
+      "osPreference": "dark",
+      "lifecycle": {
+        "scenario": "initial-theme",
+        "initialTheme": "light"
+      },
+      "parent": {
+        "theme": "light",
+        "rootScheme": "light",
+        "bodyScheme": "light",
+        "iframeScheme": "light",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": true,
+        "viewportWidth": 1440,
+        "rect": {
+          "x": 1049,
+          "y": 428,
+          "width": 365,
+          "height": 560
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 365,
+        "height": 560,
+        "nonzeroAlphaPixels": 71613,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 365,
+          "height": 560
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "78933544903a9b6b375f04ad433dc67388d9528716ece7b54c01bcdb2bab8317",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "a443b21fa16b6e07bcfc204027c1d2a663a7ab454b1c4604926de6e63c8c76ae",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "3b3c1fa2a3c470e190b0bab22c99489df3dbbef4fded614f353121831fd588c7",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "edge139-page-dark-os-light-initial-theme",
+      "pass": true,
+      "browserVersion": "139.0.3405.102",
+      "pageTheme": "dark",
+      "osPreference": "light",
+      "lifecycle": {
+        "scenario": "initial-theme",
+        "initialTheme": "dark"
+      },
+      "parent": {
+        "theme": "dark",
+        "rootScheme": "dark",
+        "bodyScheme": "dark",
+        "iframeScheme": "light",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": false,
+        "viewportWidth": 1440,
+        "rect": {
+          "x": 1049,
+          "y": 428,
+          "width": 365,
+          "height": 560
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 365,
+        "height": 560,
+        "nonzeroAlphaPixels": 71613,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 365,
+          "height": 560
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "78933544903a9b6b375f04ad433dc67388d9528716ece7b54c01bcdb2bab8317",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "a443b21fa16b6e07bcfc204027c1d2a663a7ab454b1c4604926de6e63c8c76ae",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "3b3c1fa2a3c470e190b0bab22c99489df3dbbef4fded614f353121831fd588c7",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "edge139-page-dark-os-dark-initial-theme",
+      "pass": true,
+      "browserVersion": "139.0.3405.102",
+      "pageTheme": "dark",
+      "osPreference": "dark",
+      "lifecycle": {
+        "scenario": "initial-theme",
+        "initialTheme": "dark"
+      },
+      "parent": {
+        "theme": "dark",
+        "rootScheme": "dark",
+        "bodyScheme": "dark",
+        "iframeScheme": "light",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": true,
+        "viewportWidth": 1440,
+        "rect": {
+          "x": 1049,
+          "y": 428,
+          "width": 365,
+          "height": 560
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 365,
+        "height": 560,
+        "nonzeroAlphaPixels": 71613,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 365,
+          "height": 560
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "78933544903a9b6b375f04ad433dc67388d9528716ece7b54c01bcdb2bab8317",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "a443b21fa16b6e07bcfc204027c1d2a663a7ab454b1c4604926de6e63c8c76ae",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "3b3c1fa2a3c470e190b0bab22c99489df3dbbef4fded614f353121831fd588c7",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "edge139-page-light-os-dark-theme-toggle",
+      "pass": true,
+      "browserVersion": "139.0.3405.102",
+      "pageTheme": "dark",
+      "osPreference": "dark",
+      "lifecycle": {
+        "scenario": "theme-toggle",
+        "initialTheme": "light",
+        "themeAfterToggle": "dark"
+      },
+      "parent": {
+        "theme": "dark",
+        "rootScheme": "dark",
+        "bodyScheme": "dark",
+        "iframeScheme": "light",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": true,
+        "viewportWidth": 1440,
+        "rect": {
+          "x": 1049,
+          "y": 428,
+          "width": 365,
+          "height": 560
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 365,
+        "height": 560,
+        "nonzeroAlphaPixels": 71613,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 365,
+          "height": 560
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "78933544903a9b6b375f04ad433dc67388d9528716ece7b54c01bcdb2bab8317",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "a443b21fa16b6e07bcfc204027c1d2a663a7ab454b1c4604926de6e63c8c76ae",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "3b3c1fa2a3c470e190b0bab22c99489df3dbbef4fded614f353121831fd588c7",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "edge139-page-dark-os-light-theme-toggle",
+      "pass": true,
+      "browserVersion": "139.0.3405.102",
+      "pageTheme": "light",
+      "osPreference": "light",
+      "lifecycle": {
+        "scenario": "theme-toggle",
+        "initialTheme": "dark",
+        "themeAfterToggle": "light"
+      },
+      "parent": {
+        "theme": "light",
+        "rootScheme": "light",
+        "bodyScheme": "light",
+        "iframeScheme": "light",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": false,
+        "viewportWidth": 1440,
+        "rect": {
+          "x": 1049,
+          "y": 428,
+          "width": 365,
+          "height": 560
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 365,
+        "height": 560,
+        "nonzeroAlphaPixels": 71613,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 365,
+          "height": 560
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "78933544903a9b6b375f04ad433dc67388d9528716ece7b54c01bcdb2bab8317",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "a443b21fa16b6e07bcfc204027c1d2a663a7ab454b1c4604926de6e63c8c76ae",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "3b3c1fa2a3c470e190b0bab22c99489df3dbbef4fded614f353121831fd588c7",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "edge139-page-dark-os-dark-minimize-restore",
+      "pass": true,
+      "browserVersion": "139.0.3405.102",
+      "pageTheme": "dark",
+      "osPreference": "dark",
+      "lifecycle": {
+        "scenario": "minimize-restore",
+        "initialTheme": "dark",
+        "minimized": true,
+        "restored": true
+      },
+      "parent": {
+        "theme": "dark",
+        "rootScheme": "dark",
+        "bodyScheme": "dark",
+        "iframeScheme": "light",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": true,
+        "viewportWidth": 1440,
+        "rect": {
+          "x": 1049,
+          "y": 428,
+          "width": 365,
+          "height": 560
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 365,
+        "height": 560,
+        "nonzeroAlphaPixels": 71613,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 365,
+          "height": 560
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 91034,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "78933544903a9b6b375f04ad433dc67388d9528716ece7b54c01bcdb2bab8317",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "a443b21fa16b6e07bcfc204027c1d2a663a7ab454b1c4604926de6e63c8c76ae",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "3b3c1fa2a3c470e190b0bab22c99489df3dbbef4fded614f353121831fd588c7",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        }
+      },
+      "pageErrors": []
+    },
+    {
+      "name": "edge139-page-dark-os-dark-mobile",
+      "pass": true,
+      "browserVersion": "139.0.3405.102",
+      "pageTheme": "dark",
+      "osPreference": "dark",
+      "lifecycle": {
+        "scenario": "mobile",
+        "initialTheme": "dark"
+      },
+      "parent": {
+        "theme": "dark",
+        "rootScheme": "dark",
+        "bodyScheme": "dark",
+        "iframeScheme": "light",
+        "iframeBackground": "rgba(0, 0, 0, 0)",
+        "osDark": true,
+        "viewportWidth": 390,
+        "rect": {
+          "x": 167.5,
+          "y": 391,
+          "width": 214.5,
+          "height": 445
+        }
+      },
+      "childAndFramebuffer": {
+        "width": 215,
+        "height": 445,
+        "nonzeroAlphaPixels": 24827,
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "canvas": {
+          "x": 0,
+          "y": 0,
+          "width": 215,
+          "height": 445
+        },
+        "childRootScheme": "light",
+        "childBodyScheme": "light",
+        "childBackgrounds": [
+          {
+            "tag": "HTML",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "BODY",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "MAIN",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "SECTION",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          },
+          {
+            "tag": "CANVAS",
+            "background": "rgba(0, 0, 0, 0)",
+            "image": "none"
+          }
+        ],
+        "model": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c"
+      },
+      "afterIframeScheme": "light",
+      "comparison": {
+        "sampledTransparentPixels": 173396,
+        "beforeDifferentPixels": 0,
+        "afterDifferentPixels": 0,
+        "beforeWhitePixels": 0,
+        "afterWhitePixels": 0,
+        "examples": []
+      },
+      "actualSource": {
+        "home.html": {
+          "status": 200,
+          "sha256": "78933544903a9b6b375f04ad433dc67388d9528716ece7b54c01bcdb2bab8317",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.css": {
+          "status": 200,
+          "sha256": "a443b21fa16b6e07bcfc204027c1d2a663a7ab454b1c4604926de6e63c8c76ae",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "character.js": {
+          "status": 200,
+          "sha256": "3b3c1fa2a3c470e190b0bab22c99489df3dbbef4fded614f353121831fd588c7",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        },
+        "live2d/manifest.json": {
+          "status": 200,
+          "sha256": "a34330f27bc46cc0d639ef35117438d0ee626aad4c5871b5acb40423ad7e4fa4",
+          "cacheControl": "public, max-age=0, must-revalidate"
+        }
+      },
+      "pageErrors": []
+    }
+  ],
+  "errors": []
+}

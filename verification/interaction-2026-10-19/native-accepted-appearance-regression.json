@@ -1,0 +1,555 @@
+{
+  "date": "2026-10-19T04:52:14.998Z",
+  "scope": "User accepted only this exact displayed eye rendering. This report preserves the failed original strict-zero result, requires strict zero outside the eye rectangle and strict zero regression against a frozen actual GPU RGBA reference. It introduces no global tolerance. Premultiplied framebuffer and straight PNG metrics are named and recorded separately.",
+  "newMocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+  "textureSha256": [
+    "90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30",
+    "61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7"
+  ],
+  "testedSourceSnapshotSha256": "a565134a78dce22cc80e005c2090bb248e36acf6f3396f408f8e2761837a7d91",
+  "acceptedAppearance": {
+    "contractFile": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\native-live2d-2026-10-15-qa\\accepted-eye-reference-2026-10-18\\accepted-appearance-contract.json",
+    "contractSha256": "db4f7d4484b4f837c0cef4cf3694b700de40fa55acd58d9e2010040ea904fc63",
+    "bindingsValid": true,
+    "issues": [],
+    "authorization": {
+      "question": "上图左侧是旧版，中央是当前真实新模型。是否接受新模型眼部更锐的渲染？交接要求默认画面0像素差异，当前尚有2404个眼部像素差异；选择接受才会据实调整这一项验收标准。",
+      "answer": "接受图中眼部画面，保留真实差异记录",
+      "provenance": "Direct human answer relayed by parent root in this task; original displayed image identified by root.",
+      "doesNotAuthorize": "Unseen model versions, non-eye changes, arbitrary global geometry changes, or additional pixel differences."
+    }
+  },
+  "strictOriginalResult": {
+    "pass": false,
+    "opacityPass": false,
+    "comparison": {
+      "width": 1024,
+      "height": 1536,
+      "exactPixelMatch": false,
+      "changedRGBAPixels": 2404,
+      "maximumChannelError": 93,
+      "totalChannelError": 59042,
+      "alphaChanged": 339,
+      "oldNontransparent": 608859,
+      "newNontransparent": 608859,
+      "changedBounds": {
+        "left": 487,
+        "top": 187,
+        "right": 605,
+        "bottom": 262
+      },
+      "examples": [
+        {
+          "x": 582,
+          "y": 262,
+          "original": [
+            252,
+            228,
+            218,
+            255
+          ],
+          "candidate": [
+            251,
+            226,
+            215,
+            255
+          ]
+        },
+        {
+          "x": 583,
+          "y": 262,
+          "original": [
+            252,
+            231,
+            219,
+            255
+          ],
+          "candidate": [
+            251,
+            230,
+            217,
+            255
+          ]
+        },
+        {
+          "x": 585,
+          "y": 262,
+          "original": [
+            168,
+            110,
+            87,
+            255
+          ],
+          "candidate": [
+            170,
+            112,
+            90,
+            255
+          ]
+        },
+        {
+          "x": 586,
+          "y": 262,
+          "original": [
+            233,
+            176,
+            137,
+            255
+          ],
+          "candidate": [
+            232,
+            175,
+            136,
+            255
+          ]
+        },
+        {
+          "x": 581,
+          "y": 261,
+          "original": [
+            253,
+            227,
+            216,
+            255
+          ],
+          "candidate": [
+            253,
+            228,
+            217,
+            255
+          ]
+        },
+        {
+          "x": 582,
+          "y": 261,
+          "original": [
+            251,
+            222,
+            210,
+            255
+          ],
+          "candidate": [
+            238,
+            203,
+            190,
+            254
+          ]
+        },
+        {
+          "x": 583,
+          "y": 261,
+          "original": [
+            247,
+            217,
+            205,
+            255
+          ],
+          "candidate": [
+            248,
+            217,
+            205,
+            255
+          ]
+        },
+        {
+          "x": 584,
+          "y": 261,
+          "original": [
+            249,
+            227,
+            215,
+            254
+          ],
+          "candidate": [
+            251,
+            233,
+            220,
+            254
+          ]
+        },
+        {
+          "x": 585,
+          "y": 261,
+          "original": [
+            225,
+            187,
+            173,
+            255
+          ],
+          "candidate": [
+            226,
+            189,
+            175,
+            255
+          ]
+        },
+        {
+          "x": 586,
+          "y": 261,
+          "original": [
+            197,
+            136,
+            112,
+            255
+          ],
+          "candidate": [
+            193,
+            132,
+            107,
+            255
+          ]
+        },
+        {
+          "x": 587,
+          "y": 261,
+          "original": [
+            228,
+            172,
+            136,
+            255
+          ],
+          "candidate": [
+            228,
+            174,
+            135,
+            255
+          ]
+        },
+        {
+          "x": 588,
+          "y": 261,
+          "original": [
+            243,
+            205,
+            168,
+            255
+          ],
+          "candidate": [
+            245,
+            210,
+            173,
+            255
+          ]
+        }
+      ],
+      "representation": "premultiplied WebGL framebuffer RGBA from actual gl.readPixels unsigned bytes"
+    }
+  },
+  "pngStraightComparison": {
+    "representation": "straight (unpremultiplied) RGBA decoded from original and candidate neutral PNGs",
+    "exactPixelMatch": false,
+    "changedRGBAPixels": 2404,
+    "maximumChannelError": 96,
+    "totalChannelError": 58099,
+    "alphaChanged": 339,
+    "changedBounds": {
+      "left": 487,
+      "top": 187,
+      "right": 605,
+      "bottom": 262
+    }
+  },
+  "outsideEyeComparison": {
+    "exactPixelMatch": true,
+    "changedRGBAPixels": 0,
+    "maximumChannelError": 0,
+    "totalChannelError": 0,
+    "alphaChanged": 0,
+    "changedBounds": null
+  },
+  "acceptedReferenceRegression": {
+    "exactPixelMatch": true,
+    "changedRGBAPixels": 0,
+    "maximumChannelError": 0,
+    "totalChannelError": 0,
+    "alphaChanged": 0,
+    "changedBounds": null
+  },
+  "actualNeutralRawRGBASha256": "7249825e67517c258a3e687ad36a4c090a917db68cf38535b6c647e8a1d1ec53",
+  "checks": [
+    {
+      "name": "actual new candidate identity and immutable historical approval references are bound",
+      "pass": true,
+      "detail": {
+        "contractFile": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\native-live2d-2026-10-15-qa\\accepted-eye-reference-2026-10-18\\accepted-appearance-contract.json",
+        "contractSha256": "db4f7d4484b4f837c0cef4cf3694b700de40fa55acd58d9e2010040ea904fc63",
+        "bindingsValid": true,
+        "issues": [],
+        "authorization": {
+          "question": "上图左侧是旧版，中央是当前真实新模型。是否接受新模型眼部更锐的渲染？交接要求默认画面0像素差异，当前尚有2404个眼部像素差异；选择接受才会据实调整这一项验收标准。",
+          "answer": "接受图中眼部画面，保留真实差异记录",
+          "provenance": "Direct human answer relayed by parent root in this task; original displayed image identified by root.",
+          "doesNotAuthorize": "Unseen model versions, non-eye changes, arbitrary global geometry changes, or additional pixel differences."
+        }
+      }
+    },
+    {
+      "name": "measured original difference is exactly the disclosed user-accepted eye difference",
+      "pass": true,
+      "detail": {
+        "width": 1024,
+        "height": 1536,
+        "exactPixelMatch": false,
+        "changedRGBAPixels": 2404,
+        "maximumChannelError": 93,
+        "totalChannelError": 59042,
+        "alphaChanged": 339,
+        "oldNontransparent": 608859,
+        "newNontransparent": 608859,
+        "changedBounds": {
+          "left": 487,
+          "top": 187,
+          "right": 605,
+          "bottom": 262
+        },
+        "examples": [
+          {
+            "x": 582,
+            "y": 262,
+            "original": [
+              252,
+              228,
+              218,
+              255
+            ],
+            "candidate": [
+              251,
+              226,
+              215,
+              255
+            ]
+          },
+          {
+            "x": 583,
+            "y": 262,
+            "original": [
+              252,
+              231,
+              219,
+              255
+            ],
+            "candidate": [
+              251,
+              230,
+              217,
+              255
+            ]
+          },
+          {
+            "x": 585,
+            "y": 262,
+            "original": [
+              168,
+              110,
+              87,
+              255
+            ],
+            "candidate": [
+              170,
+              112,
+              90,
+              255
+            ]
+          },
+          {
+            "x": 586,
+            "y": 262,
+            "original": [
+              233,
+              176,
+              137,
+              255
+            ],
+            "candidate": [
+              232,
+              175,
+              136,
+              255
+            ]
+          },
+          {
+            "x": 581,
+            "y": 261,
+            "original": [
+              253,
+              227,
+              216,
+              255
+            ],
+            "candidate": [
+              253,
+              228,
+              217,
+              255
+            ]
+          },
+          {
+            "x": 582,
+            "y": 261,
+            "original": [
+              251,
+              222,
+              210,
+              255
+            ],
+            "candidate": [
+              238,
+              203,
+              190,
+              254
+            ]
+          },
+          {
+            "x": 583,
+            "y": 261,
+            "original": [
+              247,
+              217,
+              205,
+              255
+            ],
+            "candidate": [
+              248,
+              217,
+              205,
+              255
+            ]
+          },
+          {
+            "x": 584,
+            "y": 261,
+            "original": [
+              249,
+              227,
+              215,
+              254
+            ],
+            "candidate": [
+              251,
+              233,
+              220,
+              254
+            ]
+          },
+          {
+            "x": 585,
+            "y": 261,
+            "original": [
+              225,
+              187,
+              173,
+              255
+            ],
+            "candidate": [
+              226,
+              189,
+              175,
+              255
+            ]
+          },
+          {
+            "x": 586,
+            "y": 261,
+            "original": [
+              197,
+              136,
+              112,
+              255
+            ],
+            "candidate": [
+              193,
+              132,
+              107,
+              255
+            ]
+          },
+          {
+            "x": 587,
+            "y": 261,
+            "original": [
+              228,
+              172,
+              136,
+              255
+            ],
+            "candidate": [
+              228,
+              174,
+              135,
+              255
+            ]
+          },
+          {
+            "x": 588,
+            "y": 261,
+            "original": [
+              243,
+              205,
+              168,
+              255
+            ],
+            "candidate": [
+              245,
+              210,
+              173,
+              255
+            ]
+          }
+        ],
+        "representation": "premultiplied WebGL framebuffer RGBA from actual gl.readPixels unsigned bytes"
+      }
+    },
+    {
+      "name": "displayed PNG straight RGBA difference is separately disclosed exactly",
+      "pass": true,
+      "detail": {
+        "representation": "straight (unpremultiplied) RGBA decoded from original and candidate neutral PNGs",
+        "exactPixelMatch": false,
+        "changedRGBAPixels": 2404,
+        "maximumChannelError": 96,
+        "totalChannelError": 58099,
+        "alphaChanged": 339,
+        "changedBounds": {
+          "left": 487,
+          "top": 187,
+          "right": 605,
+          "bottom": 262
+        }
+      }
+    },
+    {
+      "name": "every RGBA channel outside the accepted eye rectangle stays exactly original",
+      "pass": true,
+      "detail": {
+        "exactPixelMatch": true,
+        "changedRGBAPixels": 0,
+        "maximumChannelError": 0,
+        "totalChannelError": 0,
+        "alphaChanged": 0,
+        "changedBounds": null
+      }
+    },
+    {
+      "name": "actual WebGL RGBA is exactly the frozen accepted reference with zero additional changes",
+      "pass": true,
+      "detail": {
+        "exactPixelMatch": true,
+        "changedRGBAPixels": 0,
+        "maximumChannelError": 0,
+        "totalChannelError": 0,
+        "alphaChanged": 0,
+        "changedBounds": null
+      }
+    },
+    {
+      "name": "neutral PNG is byte-exact to the frozen user-accepted neutral snapshot",
+      "pass": true
+    },
+    {
+      "name": "no browser JavaScript or resource errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,843 @@
+{
+  "date": "2026-10-19T04:55:54.612Z",
+  "testedSourceSnapshotSha256": "a565134a78dce22cc80e005c2090bb248e36acf6f3396f408f8e2761837a7d91",
+  "newMocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+  "sourceBrowserReport": "raw/interaction-browser-qa.json",
+  "sourceBrowserReportSha256": "42454a3599d906891ea2b7630f2eb429bb4cbc52e22d710ef7889ce7ac7c9f29",
+  "errors": [],
+  "scope": "Independent report extracted from actual completed Chrome/Edge desktop/mobile Level 1 and Level 2 browser cases, without rerun or pass changes. Each includes model readiness, actual HTTP MOC hash, all native costume options, camera zoom and reset.",
+  "checks": [
+    {
+      "name": "chrome-desktop-mouse / Level 1 seated remains live with wardrobe/camera",
+      "pass": true,
+      "detail": {
+        "pose": "seated",
+        "options": [
+          "original",
+          "tights",
+          "overknee"
+        ],
+        "zoom": [
+          1,
+          1.2
+        ],
+        "expectedMoc": "b811dc80c699e4546648bd5d60ca23e54028b98fddb5b72addc776e88585db94",
+        "actualMoc": "b811dc80c699e4546648bd5d60ca23e54028b98fddb5b72addc776e88585db94",
+        "status": {
+          "phase": "ready",
+          "coreLoaded": true,
+          "modelLoaded": true,
+          "shadersReady": true,
+          "framesDrawn": 24,
+          "visualVerified": false,
+          "gazeTracking": false,
+          "automaticAnimation": false,
+          "sdkVersion": "5-r.5",
+          "coreVersion": 100663297,
+          "mocVersion": 6,
+          "latestMocVersion": 6,
+          "drawableCount": 1,
+          "textureCount": 1,
+          "parameterCount": 27,
+          "partCount": 0,
+          "optionalReferencesNotPlayed": [],
+          "gaze": {
+            "supported": false,
+            "enabled": false,
+            "strength": 1,
+            "input": [
+              0,
+              0
+            ],
+            "offsetPixels": [
+              0,
+              0
+            ],
+            "limits": {
+              "xPixels": 0.9,
+              "yPixels": 0.4,
+              "radialPixels": 1
+            },
+            "method": "Unsupported pose; no gaze adapter installed",
+            "nativeBuffersModified": false,
+            "nativeEyeBallParametersUsed": false,
+            "movedDrawableIds": [],
+            "apertureProtection": "Conservative subpixel clamp verified against original eye/sclera/lid masks; no new texture or native clipping mask"
+          },
+          "headFollow": {
+            "enabled": false,
+            "input": [
+              0,
+              0
+            ],
+            "angle": 0,
+            "appliedAngle": 0
+          },
+          "animation": {
+            "loaded": true,
+            "framework": "Official CubismMotionManager + CubismExpressionMotionManager",
+            "paused": false,
+            "time": 0.4334000000000001,
+            "autoIdle": false,
+            "idleGroup": "Idle",
+            "groups": {},
+            "expressionNames": [],
+            "activeMotion": null,
+            "activeExpression": null,
+            "parameterIds": [],
+            "disabledAnimatedParameters": []
+          },
+          "nativeRig": null,
+          "canvasInfo": {
+            "CanvasWidth": 953,
+            "CanvasHeight": 1651,
+            "CanvasOriginX": 476.5,
+            "CanvasOriginY": 825.5,
+            "PixelsPerUnit": 953
+          },
+          "modelUrl": "http://127.0.0.1:3210/konisi-game/live2d/seated/character.model3.json",
+          "camera": {
+            "focus": [
+              476.5,
+              825.5
+            ],
+            "zoom": 1,
+            "padding": 0.96,
+            "offset": [
+              0.2843746375793019,
+              -0.21512212190532626
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "chrome-desktop-mouse / Level 2 kneeling remains live with wardrobe/camera",
+      "pass": true,
+      "detail": {
+        "pose": "kneeling",
+        "options": [
+          "tights",
+          "shortsocks",
+          "barefoot"
+        ],
+        "zoom": [
+          1,
+          1.2
+        ],
+        "expectedMoc": "e792bfb6cb3850ea29e6093d65e4477cf654c974d2be4337cb242e4d20661515",
+        "actualMoc": "e792bfb6cb3850ea29e6093d65e4477cf654c974d2be4337cb242e4d20661515",
+        "status": {
+          "phase": "ready",
+          "coreLoaded": true,
+          "modelLoaded": true,
+          "shadersReady": true,
+          "framesDrawn": 36,
+          "visualVerified": false,
+          "gazeTracking": false,
+          "automaticAnimation": false,
+          "sdkVersion": "5-r.5",
+          "coreVersion": 100663297,
+          "mocVersion": 6,
+          "latestMocVersion": 6,
+          "drawableCount": 4,
+          "textureCount": 1,
+          "parameterCount": 27,
+          "partCount": 0,
+          "optionalReferencesNotPlayed": [],
+          "gaze": {
+            "supported": false,
+            "enabled": false,
+            "strength": 1,
+            "input": [
+              0,
+              0
+            ],
+            "offsetPixels": [
+              0,
+              0
+            ],
+            "limits": {
+              "xPixels": 0.9,
+              "yPixels": 0.4,
+              "radialPixels": 1
+            },
+            "method": "Unsupported pose; no gaze adapter installed",
+            "nativeBuffersModified": false,
+            "nativeEyeBallParametersUsed": false,
+            "movedDrawableIds": [],
+            "apertureProtection": "Conservative subpixel clamp verified against original eye/sclera/lid masks; no new texture or native clipping mask"
+          },
+          "headFollow": {
+            "enabled": false,
+            "input": [
+              0,
+              0
+            ],
+            "angle": 0,
+            "appliedAngle": 0
+          },
+          "animation": {
+            "loaded": true,
+            "framework": "Official CubismMotionManager + CubismExpressionMotionManager",
+            "paused": false,
+            "time": 0.6332999999999999,
+            "autoIdle": false,
+            "idleGroup": "Idle",
+            "groups": {},
+            "expressionNames": [],
+            "activeMotion": null,
+            "activeExpression": null,
+            "parameterIds": [],
+            "disabledAnimatedParameters": []
+          },
+          "nativeRig": null,
+          "canvasInfo": {
+            "CanvasWidth": 1024,
+            "CanvasHeight": 1536,
+            "CanvasOriginX": 512,
+            "CanvasOriginY": 768,
+            "PixelsPerUnit": 1024
+          },
+          "modelUrl": "http://127.0.0.1:3210/konisi-game/live2d/kneeling/character.model3.json",
+          "camera": {
+            "focus": [
+              512,
+              768
+            ],
+            "zoom": 1.2,
+            "padding": 0.96,
+            "offset": [
+              -0.7401876212089759,
+              -0.4128242910350511
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "chrome-mobile-touch / Level 1 seated remains live with wardrobe/camera",
+      "pass": true,
+      "detail": {
+        "pose": "seated",
+        "options": [
+          "original",
+          "tights",
+          "overknee"
+        ],
+        "zoom": [
+          1,
+          1.2
+        ],
+        "expectedMoc": "b811dc80c699e4546648bd5d60ca23e54028b98fddb5b72addc776e88585db94",
+        "actualMoc": "b811dc80c699e4546648bd5d60ca23e54028b98fddb5b72addc776e88585db94",
+        "status": {
+          "phase": "ready",
+          "coreLoaded": true,
+          "modelLoaded": true,
+          "shadersReady": true,
+          "framesDrawn": 15,
+          "visualVerified": false,
+          "gazeTracking": false,
+          "automaticAnimation": false,
+          "sdkVersion": "5-r.5",
+          "coreVersion": 100663297,
+          "mocVersion": 6,
+          "latestMocVersion": 6,
+          "drawableCount": 1,
+          "textureCount": 1,
+          "parameterCount": 27,
+          "partCount": 0,
+          "optionalReferencesNotPlayed": [],
+          "gaze": {
+            "supported": false,
+            "enabled": false,
+            "strength": 1,
+            "input": [
+              0,
+              0
+            ],
+            "offsetPixels": [
+              0,
+              0
+            ],
+            "limits": {
+              "xPixels": 0.9,
+              "yPixels": 0.4,
+              "radialPixels": 1
+            },
+            "method": "Unsupported pose; no gaze adapter installed",
+            "nativeBuffersModified": false,
+            "nativeEyeBallParametersUsed": false,
+            "movedDrawableIds": [],
+            "apertureProtection": "Conservative subpixel clamp verified against original eye/sclera/lid masks; no new texture or native clipping mask"
+          },
+          "headFollow": {
+            "enabled": false,
+            "input": [
+              0,
+              0
+            ],
+            "angle": 0,
+            "appliedAngle": 0
+          },
+          "animation": {
+            "loaded": true,
+            "framework": "Official CubismMotionManager + CubismExpressionMotionManager",
+            "paused": false,
+            "time": 0.2665999999999999,
+            "autoIdle": false,
+            "idleGroup": "Idle",
+            "groups": {},
+            "expressionNames": [],
+            "activeMotion": null,
+            "activeExpression": null,
+            "parameterIds": [],
+            "disabledAnimatedParameters": []
+          },
+          "nativeRig": null,
+          "canvasInfo": {
+            "CanvasWidth": 953,
+            "CanvasHeight": 1651,
+            "CanvasOriginX": 476.5,
+            "CanvasOriginY": 825.5,
+            "PixelsPerUnit": 953
+          },
+          "modelUrl": "http://127.0.0.1:3210/konisi-game/live2d/seated/character.model3.json",
+          "camera": {
+            "focus": [
+              476.5,
+              825.5
+            ],
+            "zoom": 1,
+            "padding": 0.96,
+            "offset": [
+              0.4700252457305917,
+              -0.7339342805182153
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "chrome-mobile-touch / Level 2 kneeling remains live with wardrobe/camera",
+      "pass": true,
+      "detail": {
+        "pose": "kneeling",
+        "options": [
+          "tights",
+          "shortsocks",
+          "barefoot"
+        ],
+        "zoom": [
+          1,
+          1.2
+        ],
+        "expectedMoc": "e792bfb6cb3850ea29e6093d65e4477cf654c974d2be4337cb242e4d20661515",
+        "actualMoc": "e792bfb6cb3850ea29e6093d65e4477cf654c974d2be4337cb242e4d20661515",
+        "status": {
+          "phase": "ready",
+          "coreLoaded": true,
+          "modelLoaded": true,
+          "shadersReady": true,
+          "framesDrawn": 17,
+          "visualVerified": false,
+          "gazeTracking": false,
+          "automaticAnimation": false,
+          "sdkVersion": "5-r.5",
+          "coreVersion": 100663297,
+          "mocVersion": 6,
+          "latestMocVersion": 6,
+          "drawableCount": 4,
+          "textureCount": 1,
+          "parameterCount": 27,
+          "partCount": 0,
+          "optionalReferencesNotPlayed": [],
+          "gaze": {
+            "supported": false,
+            "enabled": false,
+            "strength": 1,
+            "input": [
+              0,
+              0
+            ],
+            "offsetPixels": [
+              0,
+              0
+            ],
+            "limits": {
+              "xPixels": 0.9,
+              "yPixels": 0.4,
+              "radialPixels": 1
+            },
+            "method": "Unsupported pose; no gaze adapter installed",
+            "nativeBuffersModified": false,
+            "nativeEyeBallParametersUsed": false,
+            "movedDrawableIds": [],
+            "apertureProtection": "Conservative subpixel clamp verified against original eye/sclera/lid masks; no new texture or native clipping mask"
+          },
+          "headFollow": {
+            "enabled": false,
+            "input": [
+              0,
+              0
+            ],
+            "angle": 0,
+            "appliedAngle": 0
+          },
+          "animation": {
+            "loaded": true,
+            "framework": "Official CubismMotionManager + CubismExpressionMotionManager",
+            "paused": false,
+            "time": 0.33350000000000024,
+            "autoIdle": false,
+            "idleGroup": "Idle",
+            "groups": {},
+            "expressionNames": [],
+            "activeMotion": null,
+            "activeExpression": null,
+            "parameterIds": [],
+            "disabledAnimatedParameters": []
+          },
+          "nativeRig": null,
+          "canvasInfo": {
+            "CanvasWidth": 1024,
+            "CanvasHeight": 1536,
+            "CanvasOriginX": 512,
+            "CanvasOriginY": 768,
+            "PixelsPerUnit": 1024
+          },
+          "modelUrl": "http://127.0.0.1:3210/konisi-game/live2d/kneeling/character.model3.json",
+          "camera": {
+            "focus": [
+              512,
+              768
+            ],
+            "zoom": 1.2,
+            "padding": 0.96,
+            "offset": [
+              1.2073620111466405,
+              0.5908174288076562
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "edge-desktop-mouse / Level 1 seated remains live with wardrobe/camera",
+      "pass": true,
+      "detail": {
+        "pose": "seated",
+        "options": [
+          "original",
+          "tights",
+          "overknee"
+        ],
+        "zoom": [
+          1,
+          1.2
+        ],
+        "expectedMoc": "b811dc80c699e4546648bd5d60ca23e54028b98fddb5b72addc776e88585db94",
+        "actualMoc": "b811dc80c699e4546648bd5d60ca23e54028b98fddb5b72addc776e88585db94",
+        "status": {
+          "phase": "ready",
+          "coreLoaded": true,
+          "modelLoaded": true,
+          "shadersReady": true,
+          "framesDrawn": 27,
+          "visualVerified": false,
+          "gazeTracking": false,
+          "automaticAnimation": false,
+          "sdkVersion": "5-r.5",
+          "coreVersion": 100663297,
+          "mocVersion": 6,
+          "latestMocVersion": 6,
+          "drawableCount": 1,
+          "textureCount": 1,
+          "parameterCount": 27,
+          "partCount": 0,
+          "optionalReferencesNotPlayed": [],
+          "gaze": {
+            "supported": false,
+            "enabled": false,
+            "strength": 1,
+            "input": [
+              0,
+              0
+            ],
+            "offsetPixels": [
+              0,
+              0
+            ],
+            "limits": {
+              "xPixels": 0.9,
+              "yPixels": 0.4,
+              "radialPixels": 1
+            },
+            "method": "Unsupported pose; no gaze adapter installed",
+            "nativeBuffersModified": false,
+            "nativeEyeBallParametersUsed": false,
+            "movedDrawableIds": [],
+            "apertureProtection": "Conservative subpixel clamp verified against original eye/sclera/lid masks; no new texture or native clipping mask"
+          },
+          "headFollow": {
+            "enabled": false,
+            "input": [
+              0,
+              0
+            ],
+            "angle": 0,
+            "appliedAngle": 0
+          },
+          "animation": {
+            "loaded": true,
+            "framework": "Official CubismMotionManager + CubismExpressionMotionManager",
+            "paused": false,
+            "time": 0.5333999999999999,
+            "autoIdle": false,
+            "idleGroup": "Idle",
+            "groups": {},
+            "expressionNames": [],
+            "activeMotion": null,
+            "activeExpression": null,
+            "parameterIds": [],
+            "disabledAnimatedParameters": []
+          },
+          "nativeRig": null,
+          "canvasInfo": {
+            "CanvasWidth": 953,
+            "CanvasHeight": 1651,
+            "CanvasOriginX": 476.5,
+            "CanvasOriginY": 825.5,
+            "PixelsPerUnit": 953
+          },
+          "modelUrl": "http://127.0.0.1:3210/konisi-game/live2d/seated/character.model3.json",
+          "camera": {
+            "focus": [
+              476.5,
+              825.5
+            ],
+            "zoom": 1.2,
+            "padding": 0.96,
+            "offset": [
+              0.18655361161201237,
+              -0.6396678365895784
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "edge-desktop-mouse / Level 2 kneeling remains live with wardrobe/camera",
+      "pass": true,
+      "detail": {
+        "pose": "kneeling",
+        "options": [
+          "tights",
+          "shortsocks",
+          "barefoot"
+        ],
+        "zoom": [
+          1,
+          1.2
+        ],
+        "expectedMoc": "e792bfb6cb3850ea29e6093d65e4477cf654c974d2be4337cb242e4d20661515",
+        "actualMoc": "e792bfb6cb3850ea29e6093d65e4477cf654c974d2be4337cb242e4d20661515",
+        "status": {
+          "phase": "ready",
+          "coreLoaded": true,
+          "modelLoaded": true,
+          "shadersReady": true,
+          "framesDrawn": 28,
+          "visualVerified": false,
+          "gazeTracking": false,
+          "automaticAnimation": false,
+          "sdkVersion": "5-r.5",
+          "coreVersion": 100663297,
+          "mocVersion": 6,
+          "latestMocVersion": 6,
+          "drawableCount": 4,
+          "textureCount": 1,
+          "parameterCount": 27,
+          "partCount": 0,
+          "optionalReferencesNotPlayed": [],
+          "gaze": {
+            "supported": false,
+            "enabled": false,
+            "strength": 1,
+            "input": [
+              0,
+              0
+            ],
+            "offsetPixels": [
+              0,
+              0
+            ],
+            "limits": {
+              "xPixels": 0.9,
+              "yPixels": 0.4,
+              "radialPixels": 1
+            },
+            "method": "Unsupported pose; no gaze adapter installed",
+            "nativeBuffersModified": false,
+            "nativeEyeBallParametersUsed": false,
+            "movedDrawableIds": [],
+            "apertureProtection": "Conservative subpixel clamp verified against original eye/sclera/lid masks; no new texture or native clipping mask"
+          },
+          "headFollow": {
+            "enabled": false,
+            "input": [
+              0,
+              0
+            ],
+            "angle": 0,
+            "appliedAngle": 0
+          },
+          "animation": {
+            "loaded": true,
+            "framework": "Official CubismMotionManager + CubismExpressionMotionManager",
+            "paused": false,
+            "time": 0.5499999999999999,
+            "autoIdle": false,
+            "idleGroup": "Idle",
+            "groups": {},
+            "expressionNames": [],
+            "activeMotion": null,
+            "activeExpression": null,
+            "parameterIds": [],
+            "disabledAnimatedParameters": []
+          },
+          "nativeRig": null,
+          "canvasInfo": {
+            "CanvasWidth": 1024,
+            "CanvasHeight": 1536,
+            "CanvasOriginX": 512,
+            "CanvasOriginY": 768,
+            "PixelsPerUnit": 1024
+          },
+          "modelUrl": "http://127.0.0.1:3210/konisi-game/live2d/kneeling/character.model3.json",
+          "camera": {
+            "focus": [
+              512,
+              768
+            ],
+            "zoom": 1.2,
+            "padding": 0.96,
+            "offset": [
+              0.6262669633613371,
+              -0.09158112464353393
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "edge-mobile-touch / Level 1 seated remains live with wardrobe/camera",
+      "pass": true,
+      "detail": {
+        "pose": "seated",
+        "options": [
+          "original",
+          "tights",
+          "overknee"
+        ],
+        "zoom": [
+          1,
+          1.2
+        ],
+        "expectedMoc": "b811dc80c699e4546648bd5d60ca23e54028b98fddb5b72addc776e88585db94",
+        "actualMoc": "b811dc80c699e4546648bd5d60ca23e54028b98fddb5b72addc776e88585db94",
+        "status": {
+          "phase": "ready",
+          "coreLoaded": true,
+          "modelLoaded": true,
+          "shadersReady": true,
+          "framesDrawn": 15,
+          "visualVerified": false,
+          "gazeTracking": false,
+          "automaticAnimation": false,
+          "sdkVersion": "5-r.5",
+          "coreVersion": 100663297,
+          "mocVersion": 6,
+          "latestMocVersion": 6,
+          "drawableCount": 1,
+          "textureCount": 1,
+          "parameterCount": 27,
+          "partCount": 0,
+          "optionalReferencesNotPlayed": [],
+          "gaze": {
+            "supported": false,
+            "enabled": false,
+            "strength": 1,
+            "input": [
+              0,
+              0
+            ],
+            "offsetPixels": [
+              0,
+              0
+            ],
+            "limits": {
+              "xPixels": 0.9,
+              "yPixels": 0.4,
+              "radialPixels": 1
+            },
+            "method": "Unsupported pose; no gaze adapter installed",
+            "nativeBuffersModified": false,
+            "nativeEyeBallParametersUsed": false,
+            "movedDrawableIds": [],
+            "apertureProtection": "Conservative subpixel clamp verified against original eye/sclera/lid masks; no new texture or native clipping mask"
+          },
+          "headFollow": {
+            "enabled": false,
+            "input": [
+              0,
+              0
+            ],
+            "angle": 0,
+            "appliedAngle": 0
+          },
+          "animation": {
+            "loaded": true,
+            "framework": "Official CubismMotionManager + CubismExpressionMotionManager",
+            "paused": false,
+            "time": 0.29990000000000006,
+            "autoIdle": false,
+            "idleGroup": "Idle",
+            "groups": {},
+            "expressionNames": [],
+            "activeMotion": null,
+            "activeExpression": null,
+            "parameterIds": [],
+            "disabledAnimatedParameters": []
+          },
+          "nativeRig": null,
+          "canvasInfo": {
+            "CanvasWidth": 953,
+            "CanvasHeight": 1651,
+            "CanvasOriginX": 476.5,
+            "CanvasOriginY": 825.5,
+            "PixelsPerUnit": 953
+          },
+          "modelUrl": "http://127.0.0.1:3210/konisi-game/live2d/seated/character.model3.json",
+          "camera": {
+            "focus": [
+              476.5,
+              825.5
+            ],
+            "zoom": 1.2,
+            "padding": 0.96,
+            "offset": [
+              -0.26573908197345664,
+              1.0416321937616007
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "edge-mobile-touch / Level 2 kneeling remains live with wardrobe/camera",
+      "pass": true,
+      "detail": {
+        "pose": "kneeling",
+        "options": [
+          "tights",
+          "shortsocks",
+          "barefoot"
+        ],
+        "zoom": [
+          1,
+          1.2
+        ],
+        "expectedMoc": "e792bfb6cb3850ea29e6093d65e4477cf654c974d2be4337cb242e4d20661515",
+        "actualMoc": "e792bfb6cb3850ea29e6093d65e4477cf654c974d2be4337cb242e4d20661515",
+        "status": {
+          "phase": "ready",
+          "coreLoaded": true,
+          "modelLoaded": true,
+          "shadersReady": true,
+          "framesDrawn": 18,
+          "visualVerified": false,
+          "gazeTracking": false,
+          "automaticAnimation": false,
+          "sdkVersion": "5-r.5",
+          "coreVersion": 100663297,
+          "mocVersion": 6,
+          "latestMocVersion": 6,
+          "drawableCount": 4,
+          "textureCount": 1,
+          "parameterCount": 27,
+          "partCount": 0,
+          "optionalReferencesNotPlayed": [],
+          "gaze": {
+            "supported": false,
+            "enabled": false,
+            "strength": 1,
+            "input": [
+              0,
+              0
+            ],
+            "offsetPixels": [
+              0,
+              0
+            ],
+            "limits": {
+              "xPixels": 0.9,
+              "yPixels": 0.4,
+              "radialPixels": 1
+            },
+            "method": "Unsupported pose; no gaze adapter installed",
+            "nativeBuffersModified": false,
+            "nativeEyeBallParametersUsed": false,
+            "movedDrawableIds": [],
+            "apertureProtection": "Conservative subpixel clamp verified against original eye/sclera/lid masks; no new texture or native clipping mask"
+          },
+          "headFollow": {
+            "enabled": false,
+            "input": [
+              0,
+              0
+            ],
+            "angle": 0,
+            "appliedAngle": 0
+          },
+          "animation": {
+            "loaded": true,
+            "framework": "Official CubismMotionManager + CubismExpressionMotionManager",
+            "paused": false,
+            "time": 0.35010000000000013,
+            "autoIdle": false,
+            "idleGroup": "Idle",
+            "groups": {},
+            "expressionNames": [],
+            "activeMotion": null,
+            "activeExpression": null,
+            "parameterIds": [],
+            "disabledAnimatedParameters": []
+          },
+          "nativeRig": null,
+          "canvasInfo": {
+            "CanvasWidth": 1024,
+            "CanvasHeight": 1536,
+            "CanvasOriginX": 512,
+            "CanvasOriginY": 768,
+            "PixelsPerUnit": 1024
+          },
+          "modelUrl": "http://127.0.0.1:3210/konisi-game/live2d/kneeling/character.model3.json",
+          "camera": {
+            "focus": [
+              512,
+              768
+            ],
+            "zoom": 1,
+            "padding": 0.96,
+            "offset": [
+              -1.0533230604058088,
+              -0.320883223208565
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+Live2D Cubism SDK Core Version 6.0.1
+PASS MOC contains real native eye and head parameter IDs
+PASS ParamEyeBallX is bound to native drawables
+PASS ParamEyeBallY is bound to native drawables
+PASS ParamEyeLOpen is bound to native drawables
+PASS ParamEyeROpen is bound to native drawables
+PASS ParamAngleZ is bound to native drawables
+PASS native gaze grid head -15 direction -1,-1
+PASS native gaze grid head -15 direction -1,0
+PASS native gaze grid head -15 direction -1,1
+PASS native gaze grid head -15 direction 0,-1
+PASS native gaze grid head -15 direction 0,0
+PASS native gaze grid head -15 direction 0,1
+PASS native gaze grid head -15 direction 1,-1
+PASS native gaze grid head -15 direction 1,0
+PASS native gaze grid head -15 direction 1,1
+PASS native gaze grid head 0 direction -1,-1
+PASS native gaze grid head 0 direction -1,0
+PASS native gaze grid head 0 direction -1,1
+PASS native gaze grid head 0 direction 0,-1
+PASS native gaze grid head 0 direction 0,0
+PASS native gaze grid head 0 direction 0,1
+PASS native gaze grid head 0 direction 1,-1
+PASS native gaze grid head 0 direction 1,0
+PASS native gaze grid head 0 direction 1,1
+PASS native gaze grid head 15 direction -1,-1
+PASS native gaze grid head 15 direction -1,0
+PASS native gaze grid head 15 direction -1,1
+PASS native gaze grid head 15 direction 0,-1
+PASS native gaze grid head 15 direction 0,0
+PASS native gaze grid head 15 direction 0,1
+PASS native gaze grid head 15 direction 1,-1
+PASS native gaze grid head 15 direction 1,0
+PASS native gaze grid head 15 direction 1,1
+PASS eyelid openness 0 stays finite
+PASS eyelid openness 0.25 stays finite
+PASS eyelid openness 0.5 stays finite
+PASS eyelid openness 0.75 stays finite
+PASS eyelid openness 1 stays finite
+PASS neutral native model restores exactly
+PASS native eye motion uses exported clipping masks
+PASS motion Idle/0 references native IDs
+PASS official SDK independently plays motion Idle/0
+PASS motion TapBody/0 references native IDs
+PASS official SDK independently plays motion TapBody/0
+PASS motion Pat/0 references native IDs
+PASS official SDK independently plays motion Pat/0
+PASS motion Poke/0 references native IDs
+PASS official SDK independently plays motion Poke/0
+PASS motion Pinch/0 references native IDs
+PASS official SDK independently plays motion Pinch/0
+PASS motion Rub/0 references native IDs
+PASS official SDK independently plays motion Rub/0
+PASS motion Tickle/0 references native IDs
+PASS official SDK independently plays motion Tickle/0
+PASS expression neutral references native IDs
+PASS official SDK independently applies expression neutral
+PASS expression blink references native IDs
+PASS official SDK independently applies expression blink
+PASS model3 contains reusable motion3 and exp3 assets

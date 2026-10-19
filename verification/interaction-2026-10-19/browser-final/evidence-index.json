@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-19T04:55:54.612Z",
+  "testedSourceSnapshotSha256": "a565134a78dce22cc80e005c2090bb248e36acf6f3396f408f8e2761837a7d91",
+  "newMocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+  "sourceBrowserReport": "raw/interaction-browser-qa.json",
+  "sourceBrowserReportSha256": "42454a3599d906891ea2b7630f2eb429bb4cbc52e22d710ef7889ce7ac7c9f29",
+  "errors": [],
+  "scope": "Fresh executed browser reports tied to final frozen source, with old online r2 audit stored separately and unchanged.",
+  "reports": [
+    {
+      "file": "interactions.json",
+      "sha256": "42454a3599d906891ea2b7630f2eb429bb4cbc52e22d710ef7889ce7ac7c9f29"
+    },
+    {
+      "file": "transparency.json",
+      "sha256": "6f5dd46e80c4b78ba68b2507ea16617ef9fce39651ac376611b535e06b6ff5da"
+    },
+    {
+      "file": "levels.json",
+      "sha256": "1b5263b8570c8f055e3e240b02a72894f892d97f2e8627f36d619ae18c107b7f"
+    },
+    {
+      "file": "outfits.json",
+      "sha256": "37d00ecabe5b250238df7c3c711cf61236117f8f5cbd12e87a44781d16d76c11"
+    },
+    {
+      "file": "rig.json",
+      "sha256": "c825c1d91ade497a36abca6dd953cad55af8847db46a6c18d1a9fdb58dcc891b"
+    },
+    {
+      "file": "short-viewport.json",
+      "sha256": "c5b57b2d9df324b14f9c13052d452ae728ce02012384d30cded6f54d3729e284"
+    }
+  ],
+  "actualCases": 116,
+  "transparentScenes": 16,
+  "tinyScenes": 12,
+  "checks": [
+    {
+      "name": "All six report categories passed their actual checks",
+      "pass": true
+    },
+    {
+      "name": "Actual product and frozen runtime match the tested browser copy",
+      "pass": true
+    }
+  ]
+}

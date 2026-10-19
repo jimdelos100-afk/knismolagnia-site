@@ -1,0 +1,1185 @@
+{
+  "date": "2026-10-19T04:52:10.094627+00:00",
+  "scope": "Supplementary six-helper QA using actual official Core triangles, their inverse UV mapping, and every in-triangle Atlas texel center. All nonzero pinned PSD alpha centers must be covered. Existing 2/255 alpha maximum retained. Fully opaque texels check bilinear RGB and all visible texels (predicted alpha >=32) check bilinear premultiplied RGB with a 2-unit maximum, excluding transparent RGB extension. Exact final visible RGBA is separately mandatory.",
+  "newMocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+  "modelFile": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\v8-source\\knismolagnia-site\\public\\konisi-game\\live2d\\standing\\character.model3.json",
+  "testedSourceSnapshotSha256": "a565134a78dce22cc80e005c2090bb248e36acf6f3396f408f8e2761837a7d91",
+  "sourcePSD": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\mask-repair-2026-10-18\\standing-base74-eye-update-with-helpers-mask-solid-halo1.psd",
+  "sourcePSDSha256": "6dd4f5b11addd1cd72ba312c3835d92f56373f844406d984f32941647f1cb52f",
+  "textures": [
+    {
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\v8-source\\knismolagnia-site\\public\\konisi-game\\live2d\\standing\\native-2026-10-19\\standing-head-neck-2026-10-19.4096\\texture_00.png",
+      "sha256": "90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30"
+    },
+    {
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\v8-source\\knismolagnia-site\\public\\konisi-game\\live2d\\standing\\native-2026-10-19\\standing-head-neck-2026-10-19.4096\\texture_01.png",
+      "sha256": "61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7"
+    }
+  ],
+  "maskSourceRepairEvidence": {
+    "contract": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-19\\live2d-v8-cubism-c-users-daisy\\work\\interaction-2026-10-19\\verification\\scratch\\approved-helper-source-2026-10-18.json",
+    "contractSha256": "c62b4d659827a0bc93c26574bca8a64ac32fe5521f27010ea41aff8e9df6de50",
+    "evidence": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\mask-repair-2026-10-18\\mask-repair-verification.json",
+    "evidenceSha256": "5f83389aebce908daadd6deabfcff3f4603de93250b3384d1e7289e88e2b6cc5",
+    "previousPSDSha256": "2095d39dc35006763e5d21807d839555aa61149d9200a87016e00496ce90c736",
+    "allowedChangedLayerIds": [
+      "eye_left_aperture_mask",
+      "eye_right_aperture_mask"
+    ]
+  },
+  "checks": [
+    {
+      "name": "approved 80-layer helper PSD bytes are unchanged",
+      "pass": true,
+      "detail": {
+        "source": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\mask-repair-2026-10-18\\standing-base74-eye-update-with-helpers-mask-solid-halo1.psd",
+        "sha256": "6dd4f5b11addd1cd72ba312c3835d92f56373f844406d984f32941647f1cb52f"
+      }
+    },
+    {
+      "name": "official Core remains the pinned vendor bytes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "extracted model and Atlas bytes remain current",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "mask-only source repair descends from the approved pinned PSD with exact evidence bytes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "all other 78 PSD layers remain independently exact in RGBA and bounds after mask repair",
+      "pass": true,
+      "detail": {
+        "unchangedCount": 78,
+        "unexpectedChanges": []
+      }
+    },
+    {
+      "name": "mask repair evidence preserves the other layer records and all canvas RGB",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "all six helpers exist as actual Core drawables and approved PSD layers",
+      "pass": true,
+      "detail": [
+        "eye_left_aperture_mask",
+        "eye_left_closed_lash",
+        "eye_left_closed_skin",
+        "eye_right_aperture_mask",
+        "eye_right_closed_lash",
+        "eye_right_closed_skin"
+      ]
+    },
+    {
+      "name": "eye_left_aperture_mask nonzero PSD alpha centers are covered by actual Core triangles",
+      "pass": true,
+      "detail": {
+        "id": "eye_left_aperture_mask",
+        "sourceBounds": [
+          489,
+          187,
+          539,
+          229
+        ],
+        "nativeVertexCount": 10,
+        "nativeTriangleCount": 11,
+        "sourceAlphaCenters": 1563,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 3731,
+        "strongExpectedAlphaTexels": 1563,
+        "maximumExpectedAlphaError": 0.0046253030039622445,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 1531,
+        "maximumOpaqueRGBChannelError": 0.00458305423666161,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 1563,
+        "maximumPremultipliedRGBChannelError": 0.00458305423666161,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ]
+      }
+    },
+    {
+      "name": "eye_left_aperture_mask actual triangle Atlas texels match pinned PSD alpha within two units",
+      "pass": true,
+      "detail": {
+        "id": "eye_left_aperture_mask",
+        "sourceBounds": [
+          489,
+          187,
+          539,
+          229
+        ],
+        "nativeVertexCount": 10,
+        "nativeTriangleCount": 11,
+        "sourceAlphaCenters": 1563,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 3731,
+        "strongExpectedAlphaTexels": 1563,
+        "maximumExpectedAlphaError": 0.0046253030039622445,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 1531,
+        "maximumOpaqueRGBChannelError": 0.00458305423666161,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 1563,
+        "maximumPremultipliedRGBChannelError": 0.00458305423666161,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ]
+      }
+    },
+    {
+      "name": "eye_left_aperture_mask any fully opaque Atlas RGB samples match the pinned helper material within two units",
+      "pass": true,
+      "detail": {
+        "id": "eye_left_aperture_mask",
+        "sourceBounds": [
+          489,
+          187,
+          539,
+          229
+        ],
+        "nativeVertexCount": 10,
+        "nativeTriangleCount": 11,
+        "sourceAlphaCenters": 1563,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 3731,
+        "strongExpectedAlphaTexels": 1563,
+        "maximumExpectedAlphaError": 0.0046253030039622445,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 1531,
+        "maximumOpaqueRGBChannelError": 0.00458305423666161,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 1563,
+        "maximumPremultipliedRGBChannelError": 0.00458305423666161,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ]
+      }
+    },
+    {
+      "name": "eye_left_aperture_mask visible Atlas premultiplied RGB matches the pinned helper material within two units",
+      "pass": true,
+      "detail": {
+        "id": "eye_left_aperture_mask",
+        "sourceBounds": [
+          489,
+          187,
+          539,
+          229
+        ],
+        "nativeVertexCount": 10,
+        "nativeTriangleCount": 11,
+        "sourceAlphaCenters": 1563,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 3731,
+        "strongExpectedAlphaTexels": 1563,
+        "maximumExpectedAlphaError": 0.0046253030039622445,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 1531,
+        "maximumOpaqueRGBChannelError": 0.00458305423666161,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 1563,
+        "maximumPremultipliedRGBChannelError": 0.00458305423666161,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": [
+          "eye_left_pupil_visible_rim",
+          "eye_left_iris",
+          "eye_left_highlight_upper",
+          "eye_left_highlight_center",
+          "iris_left_occlusion"
+        ]
+      }
+    },
+    {
+      "name": "eye_left_aperture_mask is a real native clipping mask for all intended gaze children",
+      "pass": true,
+      "detail": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ]
+    },
+    {
+      "name": "eye_left_aperture_mask remains hidden in the default visible artwork",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "eye_left_closed_skin nonzero PSD alpha centers are covered by actual Core triangles",
+      "pass": true,
+      "detail": {
+        "id": "eye_left_closed_skin",
+        "sourceBounds": [
+          484,
+          183,
+          544,
+          231
+        ],
+        "nativeVertexCount": 4,
+        "nativeTriangleCount": 2,
+        "sourceAlphaCenters": 2289,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 3100,
+        "strongExpectedAlphaTexels": 2092,
+        "maximumExpectedAlphaError": 1.2846612662542611e-11,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 1735,
+        "maximumOpaqueRGBChannelError": 1.4210854715202004e-13,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 2092,
+        "maximumPremultipliedRGBChannelError": 0.964705882351268,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": []
+      }
+    },
+    {
+      "name": "eye_left_closed_skin actual triangle Atlas texels match pinned PSD alpha within two units",
+      "pass": true,
+      "detail": {
+        "id": "eye_left_closed_skin",
+        "sourceBounds": [
+          484,
+          183,
+          544,
+          231
+        ],
+        "nativeVertexCount": 4,
+        "nativeTriangleCount": 2,
+        "sourceAlphaCenters": 2289,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 3100,
+        "strongExpectedAlphaTexels": 2092,
+        "maximumExpectedAlphaError": 1.2846612662542611e-11,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 1735,
+        "maximumOpaqueRGBChannelError": 1.4210854715202004e-13,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 2092,
+        "maximumPremultipliedRGBChannelError": 0.964705882351268,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": []
+      }
+    },
+    {
+      "name": "eye_left_closed_skin any fully opaque Atlas RGB samples match the pinned helper material within two units",
+      "pass": true,
+      "detail": {
+        "id": "eye_left_closed_skin",
+        "sourceBounds": [
+          484,
+          183,
+          544,
+          231
+        ],
+        "nativeVertexCount": 4,
+        "nativeTriangleCount": 2,
+        "sourceAlphaCenters": 2289,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 3100,
+        "strongExpectedAlphaTexels": 2092,
+        "maximumExpectedAlphaError": 1.2846612662542611e-11,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 1735,
+        "maximumOpaqueRGBChannelError": 1.4210854715202004e-13,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 2092,
+        "maximumPremultipliedRGBChannelError": 0.964705882351268,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": []
+      }
+    },
+    {
+      "name": "eye_left_closed_skin visible Atlas premultiplied RGB matches the pinned helper material within two units",
+      "pass": true,
+      "detail": {
+        "id": "eye_left_closed_skin",
+        "sourceBounds": [
+          484,
+          183,
+          544,
+          231
+        ],
+        "nativeVertexCount": 4,
+        "nativeTriangleCount": 2,
+        "sourceAlphaCenters": 2289,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 3100,
+        "strongExpectedAlphaTexels": 2092,
+        "maximumExpectedAlphaError": 1.2846612662542611e-11,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 1735,
+        "maximumOpaqueRGBChannelError": 1.4210854715202004e-13,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 2092,
+        "maximumPremultipliedRGBChannelError": 0.964705882351268,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": []
+      }
+    },
+    {
+      "name": "eye_left_closed_skin remains hidden in the default visible artwork",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "eye_left_closed_lash nonzero PSD alpha centers are covered by actual Core triangles",
+      "pass": true,
+      "detail": {
+        "id": "eye_left_closed_lash",
+        "sourceBounds": [
+          488,
+          198,
+          540,
+          218
+        ],
+        "nativeVertexCount": 4,
+        "nativeTriangleCount": 2,
+        "sourceAlphaCenters": 153,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 1188,
+        "strongExpectedAlphaTexels": 153,
+        "maximumExpectedAlphaError": 2.8762769943568856e-11,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 0,
+        "maximumOpaqueRGBChannelError": null,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 153,
+        "maximumPremultipliedRGBChannelError": 1.0828671292983927e-11,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": []
+      }
+    },
+    {
+      "name": "eye_left_closed_lash actual triangle Atlas texels match pinned PSD alpha within two units",
+      "pass": true,
+      "detail": {
+        "id": "eye_left_closed_lash",
+        "sourceBounds": [
+          488,
+          198,
+          540,
+          218
+        ],
+        "nativeVertexCount": 4,
+        "nativeTriangleCount": 2,
+        "sourceAlphaCenters": 153,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 1188,
+        "strongExpectedAlphaTexels": 153,
+        "maximumExpectedAlphaError": 2.8762769943568856e-11,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 0,
+        "maximumOpaqueRGBChannelError": null,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 153,
+        "maximumPremultipliedRGBChannelError": 1.0828671292983927e-11,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": []
+      }
+    },
+    {
+      "name": "eye_left_closed_lash any fully opaque Atlas RGB samples match the pinned helper material within two units",
+      "pass": true,
+      "detail": {
+        "id": "eye_left_closed_lash",
+        "sourceBounds": [
+          488,
+          198,
+          540,
+          218
+        ],
+        "nativeVertexCount": 4,
+        "nativeTriangleCount": 2,
+        "sourceAlphaCenters": 153,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 1188,
+        "strongExpectedAlphaTexels": 153,
+        "maximumExpectedAlphaError": 2.8762769943568856e-11,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 0,
+        "maximumOpaqueRGBChannelError": null,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 153,
+        "maximumPremultipliedRGBChannelError": 1.0828671292983927e-11,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": []
+      }
+    },
+    {
+      "name": "eye_left_closed_lash visible Atlas premultiplied RGB matches the pinned helper material within two units",
+      "pass": true,
+      "detail": {
+        "id": "eye_left_closed_lash",
+        "sourceBounds": [
+          488,
+          198,
+          540,
+          218
+        ],
+        "nativeVertexCount": 4,
+        "nativeTriangleCount": 2,
+        "sourceAlphaCenters": 153,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 1188,
+        "strongExpectedAlphaTexels": 153,
+        "maximumExpectedAlphaError": 2.8762769943568856e-11,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 0,
+        "maximumOpaqueRGBChannelError": null,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 153,
+        "maximumPremultipliedRGBChannelError": 1.0828671292983927e-11,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": []
+      }
+    },
+    {
+      "name": "eye_left_closed_lash remains hidden in the default visible artwork",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "eye_right_aperture_mask nonzero PSD alpha centers are covered by actual Core triangles",
+      "pass": true,
+      "detail": {
+        "id": "eye_right_aperture_mask",
+        "sourceBounds": [
+          558,
+          218,
+          601,
+          262
+        ],
+        "nativeVertexCount": 9,
+        "nativeTriangleCount": 10,
+        "sourceAlphaCenters": 1423,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 3374,
+        "strongExpectedAlphaTexels": 1423,
+        "maximumExpectedAlphaError": 3.623767952376511e-11,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 1423,
+        "maximumOpaqueRGBChannelError": 2.887645678129047e-11,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 1423,
+        "maximumPremultipliedRGBChannelError": 2.887645678129047e-11,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ]
+      }
+    },
+    {
+      "name": "eye_right_aperture_mask actual triangle Atlas texels match pinned PSD alpha within two units",
+      "pass": true,
+      "detail": {
+        "id": "eye_right_aperture_mask",
+        "sourceBounds": [
+          558,
+          218,
+          601,
+          262
+        ],
+        "nativeVertexCount": 9,
+        "nativeTriangleCount": 10,
+        "sourceAlphaCenters": 1423,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 3374,
+        "strongExpectedAlphaTexels": 1423,
+        "maximumExpectedAlphaError": 3.623767952376511e-11,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 1423,
+        "maximumOpaqueRGBChannelError": 2.887645678129047e-11,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 1423,
+        "maximumPremultipliedRGBChannelError": 2.887645678129047e-11,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ]
+      }
+    },
+    {
+      "name": "eye_right_aperture_mask any fully opaque Atlas RGB samples match the pinned helper material within two units",
+      "pass": true,
+      "detail": {
+        "id": "eye_right_aperture_mask",
+        "sourceBounds": [
+          558,
+          218,
+          601,
+          262
+        ],
+        "nativeVertexCount": 9,
+        "nativeTriangleCount": 10,
+        "sourceAlphaCenters": 1423,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 3374,
+        "strongExpectedAlphaTexels": 1423,
+        "maximumExpectedAlphaError": 3.623767952376511e-11,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 1423,
+        "maximumOpaqueRGBChannelError": 2.887645678129047e-11,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 1423,
+        "maximumPremultipliedRGBChannelError": 2.887645678129047e-11,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ]
+      }
+    },
+    {
+      "name": "eye_right_aperture_mask visible Atlas premultiplied RGB matches the pinned helper material within two units",
+      "pass": true,
+      "detail": {
+        "id": "eye_right_aperture_mask",
+        "sourceBounds": [
+          558,
+          218,
+          601,
+          262
+        ],
+        "nativeVertexCount": 9,
+        "nativeTriangleCount": 10,
+        "sourceAlphaCenters": 1423,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 3374,
+        "strongExpectedAlphaTexels": 1423,
+        "maximumExpectedAlphaError": 3.623767952376511e-11,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 1423,
+        "maximumOpaqueRGBChannelError": 2.887645678129047e-11,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 1423,
+        "maximumPremultipliedRGBChannelError": 2.887645678129047e-11,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": [
+          "eye_right_iris",
+          "eye_right_highlight_upper",
+          "eye_right_highlight_secondary",
+          "iris_right_occlusion"
+        ]
+      }
+    },
+    {
+      "name": "eye_right_aperture_mask is a real native clipping mask for all intended gaze children",
+      "pass": true,
+      "detail": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ]
+    },
+    {
+      "name": "eye_right_aperture_mask remains hidden in the default visible artwork",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "eye_right_closed_skin nonzero PSD alpha centers are covered by actual Core triangles",
+      "pass": true,
+      "detail": {
+        "id": "eye_right_closed_skin",
+        "sourceBounds": [
+          556,
+          216,
+          610,
+          267
+        ],
+        "nativeVertexCount": 4,
+        "nativeTriangleCount": 2,
+        "sourceAlphaCenters": 2113,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 2968,
+        "strongExpectedAlphaTexels": 1922,
+        "maximumExpectedAlphaError": 1.7848833522293717e-11,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 1587,
+        "maximumOpaqueRGBChannelError": 1.63140612130519e-11,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 1922,
+        "maximumPremultipliedRGBChannelError": 0.9529411764706026,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": []
+      }
+    },
+    {
+      "name": "eye_right_closed_skin actual triangle Atlas texels match pinned PSD alpha within two units",
+      "pass": true,
+      "detail": {
+        "id": "eye_right_closed_skin",
+        "sourceBounds": [
+          556,
+          216,
+          610,
+          267
+        ],
+        "nativeVertexCount": 4,
+        "nativeTriangleCount": 2,
+        "sourceAlphaCenters": 2113,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 2968,
+        "strongExpectedAlphaTexels": 1922,
+        "maximumExpectedAlphaError": 1.7848833522293717e-11,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 1587,
+        "maximumOpaqueRGBChannelError": 1.63140612130519e-11,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 1922,
+        "maximumPremultipliedRGBChannelError": 0.9529411764706026,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": []
+      }
+    },
+    {
+      "name": "eye_right_closed_skin any fully opaque Atlas RGB samples match the pinned helper material within two units",
+      "pass": true,
+      "detail": {
+        "id": "eye_right_closed_skin",
+        "sourceBounds": [
+          556,
+          216,
+          610,
+          267
+        ],
+        "nativeVertexCount": 4,
+        "nativeTriangleCount": 2,
+        "sourceAlphaCenters": 2113,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 2968,
+        "strongExpectedAlphaTexels": 1922,
+        "maximumExpectedAlphaError": 1.7848833522293717e-11,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 1587,
+        "maximumOpaqueRGBChannelError": 1.63140612130519e-11,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 1922,
+        "maximumPremultipliedRGBChannelError": 0.9529411764706026,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": []
+      }
+    },
+    {
+      "name": "eye_right_closed_skin visible Atlas premultiplied RGB matches the pinned helper material within two units",
+      "pass": true,
+      "detail": {
+        "id": "eye_right_closed_skin",
+        "sourceBounds": [
+          556,
+          216,
+          610,
+          267
+        ],
+        "nativeVertexCount": 4,
+        "nativeTriangleCount": 2,
+        "sourceAlphaCenters": 2113,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 2968,
+        "strongExpectedAlphaTexels": 1922,
+        "maximumExpectedAlphaError": 1.7848833522293717e-11,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 1587,
+        "maximumOpaqueRGBChannelError": 1.63140612130519e-11,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 1922,
+        "maximumPremultipliedRGBChannelError": 0.9529411764706026,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": []
+      }
+    },
+    {
+      "name": "eye_right_closed_skin remains hidden in the default visible artwork",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "name": "eye_right_closed_lash nonzero PSD alpha centers are covered by actual Core triangles",
+      "pass": true,
+      "detail": {
+        "id": "eye_right_closed_lash",
+        "sourceBounds": [
+          570,
+          238,
+          606,
+          252
+        ],
+        "nativeVertexCount": 4,
+        "nativeTriangleCount": 2,
+        "sourceAlphaCenters": 90,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 608,
+        "strongExpectedAlphaTexels": 90,
+        "maximumExpectedAlphaError": 2.8762769943568856e-11,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 0,
+        "maximumOpaqueRGBChannelError": null,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 90,
+        "maximumPremultipliedRGBChannelError": 1.8275159163749777e-11,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": []
+      }
+    },
+    {
+      "name": "eye_right_closed_lash actual triangle Atlas texels match pinned PSD alpha within two units",
+      "pass": true,
+      "detail": {
+        "id": "eye_right_closed_lash",
+        "sourceBounds": [
+          570,
+          238,
+          606,
+          252
+        ],
+        "nativeVertexCount": 4,
+        "nativeTriangleCount": 2,
+        "sourceAlphaCenters": 90,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 608,
+        "strongExpectedAlphaTexels": 90,
+        "maximumExpectedAlphaError": 2.8762769943568856e-11,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 0,
+        "maximumOpaqueRGBChannelError": null,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 90,
+        "maximumPremultipliedRGBChannelError": 1.8275159163749777e-11,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": []
+      }
+    },
+    {
+      "name": "eye_right_closed_lash any fully opaque Atlas RGB samples match the pinned helper material within two units",
+      "pass": true,
+      "detail": {
+        "id": "eye_right_closed_lash",
+        "sourceBounds": [
+          570,
+          238,
+          606,
+          252
+        ],
+        "nativeVertexCount": 4,
+        "nativeTriangleCount": 2,
+        "sourceAlphaCenters": 90,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 608,
+        "strongExpectedAlphaTexels": 90,
+        "maximumExpectedAlphaError": 2.8762769943568856e-11,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 0,
+        "maximumOpaqueRGBChannelError": null,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 90,
+        "maximumPremultipliedRGBChannelError": 1.8275159163749777e-11,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": []
+      }
+    },
+    {
+      "name": "eye_right_closed_lash visible Atlas premultiplied RGB matches the pinned helper material within two units",
+      "pass": true,
+      "detail": {
+        "id": "eye_right_closed_lash",
+        "sourceBounds": [
+          570,
+          238,
+          606,
+          252
+        ],
+        "nativeVertexCount": 4,
+        "nativeTriangleCount": 2,
+        "sourceAlphaCenters": 90,
+        "uncoveredSourceAlphaCenters": 0,
+        "alphaCentersOutsideActualAtlas": 0,
+        "uncoveredExamples": [],
+        "sampledActualTriangleAtlasTexels": 608,
+        "strongExpectedAlphaTexels": 90,
+        "maximumExpectedAlphaError": 2.8762769943568856e-11,
+        "alphaErrorGreaterThan2": 0,
+        "atlasMismatchExamples": [],
+        "opaqueExpectedRGBTexels": 0,
+        "maximumOpaqueRGBChannelError": null,
+        "opaqueRGBErrorGreaterThan2": 0,
+        "opaqueRGBMismatchExamples": [],
+        "premultipliedExpectedRGBTexels": 90,
+        "maximumPremultipliedRGBChannelError": 1.8275159163749777e-11,
+        "premultipliedRGBErrorGreaterThan2": 0,
+        "premultipliedRGBMismatchExamples": [],
+        "neutralOpacity": 0,
+        "usedAsMaskBy": []
+      }
+    },
+    {
+      "name": "eye_right_closed_lash remains hidden in the default visible artwork",
+      "pass": true,
+      "detail": 0
+    }
+  ],
+  "errors": [],
+  "helpers": [
+    {
+      "id": "eye_left_aperture_mask",
+      "sourceBounds": [
+        489,
+        187,
+        539,
+        229
+      ],
+      "nativeVertexCount": 10,
+      "nativeTriangleCount": 11,
+      "sourceAlphaCenters": 1563,
+      "uncoveredSourceAlphaCenters": 0,
+      "alphaCentersOutsideActualAtlas": 0,
+      "uncoveredExamples": [],
+      "sampledActualTriangleAtlasTexels": 3731,
+      "strongExpectedAlphaTexels": 1563,
+      "maximumExpectedAlphaError": 0.0046253030039622445,
+      "alphaErrorGreaterThan2": 0,
+      "atlasMismatchExamples": [],
+      "opaqueExpectedRGBTexels": 1531,
+      "maximumOpaqueRGBChannelError": 0.00458305423666161,
+      "opaqueRGBErrorGreaterThan2": 0,
+      "opaqueRGBMismatchExamples": [],
+      "premultipliedExpectedRGBTexels": 1563,
+      "maximumPremultipliedRGBChannelError": 0.00458305423666161,
+      "premultipliedRGBErrorGreaterThan2": 0,
+      "premultipliedRGBMismatchExamples": [],
+      "neutralOpacity": 0,
+      "usedAsMaskBy": [
+        "eye_left_pupil_visible_rim",
+        "eye_left_iris",
+        "eye_left_highlight_upper",
+        "eye_left_highlight_center",
+        "iris_left_occlusion"
+      ]
+    },
+    {
+      "id": "eye_left_closed_skin",
+      "sourceBounds": [
+        484,
+        183,
+        544,
+        231
+      ],
+      "nativeVertexCount": 4,
+      "nativeTriangleCount": 2,
+      "sourceAlphaCenters": 2289,
+      "uncoveredSourceAlphaCenters": 0,
+      "alphaCentersOutsideActualAtlas": 0,
+      "uncoveredExamples": [],
+      "sampledActualTriangleAtlasTexels": 3100,
+      "strongExpectedAlphaTexels": 2092,
+      "maximumExpectedAlphaError": 1.2846612662542611e-11,
+      "alphaErrorGreaterThan2": 0,
+      "atlasMismatchExamples": [],
+      "opaqueExpectedRGBTexels": 1735,
+      "maximumOpaqueRGBChannelError": 1.4210854715202004e-13,
+      "opaqueRGBErrorGreaterThan2": 0,
+      "opaqueRGBMismatchExamples": [],
+      "premultipliedExpectedRGBTexels": 2092,
+      "maximumPremultipliedRGBChannelError": 0.964705882351268,
+      "premultipliedRGBErrorGreaterThan2": 0,
+      "premultipliedRGBMismatchExamples": [],
+      "neutralOpacity": 0,
+      "usedAsMaskBy": []
+    },
+    {
+      "id": "eye_left_closed_lash",
+      "sourceBounds": [
+        488,
+        198,
+        540,
+        218
+      ],
+      "nativeVertexCount": 4,
+      "nativeTriangleCount": 2,
+      "sourceAlphaCenters": 153,
+      "uncoveredSourceAlphaCenters": 0,
+      "alphaCentersOutsideActualAtlas": 0,
+      "uncoveredExamples": [],
+      "sampledActualTriangleAtlasTexels": 1188,
+      "strongExpectedAlphaTexels": 153,
+      "maximumExpectedAlphaError": 2.8762769943568856e-11,
+      "alphaErrorGreaterThan2": 0,
+      "atlasMismatchExamples": [],
+      "opaqueExpectedRGBTexels": 0,
+      "maximumOpaqueRGBChannelError": null,
+      "opaqueRGBErrorGreaterThan2": 0,
+      "opaqueRGBMismatchExamples": [],
+      "premultipliedExpectedRGBTexels": 153,
+      "maximumPremultipliedRGBChannelError": 1.0828671292983927e-11,
+      "premultipliedRGBErrorGreaterThan2": 0,
+      "premultipliedRGBMismatchExamples": [],
+      "neutralOpacity": 0,
+      "usedAsMaskBy": []
+    },
+    {
+      "id": "eye_right_aperture_mask",
+      "sourceBounds": [
+        558,
+        218,
+        601,
+        262
+      ],
+      "nativeVertexCount": 9,
+      "nativeTriangleCount": 10,
+      "sourceAlphaCenters": 1423,
+      "uncoveredSourceAlphaCenters": 0,
+      "alphaCentersOutsideActualAtlas": 0,
+      "uncoveredExamples": [],
+      "sampledActualTriangleAtlasTexels": 3374,
+      "strongExpectedAlphaTexels": 1423,
+      "maximumExpectedAlphaError": 3.623767952376511e-11,
+      "alphaErrorGreaterThan2": 0,
+      "atlasMismatchExamples": [],
+      "opaqueExpectedRGBTexels": 1423,
+      "maximumOpaqueRGBChannelError": 2.887645678129047e-11,
+      "opaqueRGBErrorGreaterThan2": 0,
+      "opaqueRGBMismatchExamples": [],
+      "premultipliedExpectedRGBTexels": 1423,
+      "maximumPremultipliedRGBChannelError": 2.887645678129047e-11,
+      "premultipliedRGBErrorGreaterThan2": 0,
+      "premultipliedRGBMismatchExamples": [],
+      "neutralOpacity": 0,
+      "usedAsMaskBy": [
+        "eye_right_iris",
+        "eye_right_highlight_upper",
+        "eye_right_highlight_secondary",
+        "iris_right_occlusion"
+      ]
+    },
+    {
+      "id": "eye_right_closed_skin",
+      "sourceBounds": [
+        556,
+        216,
+        610,
+        267
+      ],
+      "nativeVertexCount": 4,
+      "nativeTriangleCount": 2,
+      "sourceAlphaCenters": 2113,
+      "uncoveredSourceAlphaCenters": 0,
+      "alphaCentersOutsideActualAtlas": 0,
+      "uncoveredExamples": [],
+      "sampledActualTriangleAtlasTexels": 2968,
+      "strongExpectedAlphaTexels": 1922,
+      "maximumExpectedAlphaError": 1.7848833522293717e-11,
+      "alphaErrorGreaterThan2": 0,
+      "atlasMismatchExamples": [],
+      "opaqueExpectedRGBTexels": 1587,
+      "maximumOpaqueRGBChannelError": 1.63140612130519e-11,
+      "opaqueRGBErrorGreaterThan2": 0,
+      "opaqueRGBMismatchExamples": [],
+      "premultipliedExpectedRGBTexels": 1922,
+      "maximumPremultipliedRGBChannelError": 0.9529411764706026,
+      "premultipliedRGBErrorGreaterThan2": 0,
+      "premultipliedRGBMismatchExamples": [],
+      "neutralOpacity": 0,
+      "usedAsMaskBy": []
+    },
+    {
+      "id": "eye_right_closed_lash",
+      "sourceBounds": [
+        570,
+        238,
+        606,
+        252
+      ],
+      "nativeVertexCount": 4,
+      "nativeTriangleCount": 2,
+      "sourceAlphaCenters": 90,
+      "uncoveredSourceAlphaCenters": 0,
+      "alphaCentersOutsideActualAtlas": 0,
+      "uncoveredExamples": [],
+      "sampledActualTriangleAtlasTexels": 608,
+      "strongExpectedAlphaTexels": 90,
+      "maximumExpectedAlphaError": 2.8762769943568856e-11,
+      "alphaErrorGreaterThan2": 0,
+      "atlasMismatchExamples": [],
+      "opaqueExpectedRGBTexels": 0,
+      "maximumOpaqueRGBChannelError": null,
+      "opaqueRGBErrorGreaterThan2": 0,
+      "opaqueRGBMismatchExamples": [],
+      "premultipliedExpectedRGBTexels": 90,
+      "maximumPremultipliedRGBChannelError": 1.8275159163749777e-11,
+      "premultipliedRGBErrorGreaterThan2": 0,
+      "premultipliedRGBMismatchExamples": [],
+      "neutralOpacity": 0,
+      "usedAsMaskBy": []
+    }
+  ]
+}

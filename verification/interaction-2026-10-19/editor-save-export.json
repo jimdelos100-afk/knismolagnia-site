@@ -1,0 +1,123 @@
+{
+  "date": "2026-10-19T04:52:17.246Z",
+  "testedSourceSnapshotSha256": "a565134a78dce22cc80e005c2090bb248e36acf6f3396f408f8e2761837a7d91",
+  "sourceCmoSha256": "2bd397f25d5aa511cd45ce956927e3d06410bbc756bf807b71de9dc21a920650",
+  "newMocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+  "application": "Live2D Cubism Editor 5.3.04 PRO",
+  "checks": [
+    {
+      "name": "Exact final saved CMO reopened in Cubism with no unsaved marker and neutral parameters",
+      "pass": true
+    },
+    {
+      "name": "Official export after reopening equals integrated export02: standing-head-neck-2026-10-19.cdi3.json",
+      "pass": true,
+      "sha256": "03aba1480ab632b11a8c6d79fb9ec0b779190ccb7acccb7640b7794d039ca267"
+    },
+    {
+      "name": "Official export after reopening equals integrated export02: standing-head-neck-2026-10-19.moc3",
+      "pass": true,
+      "sha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b"
+    },
+    {
+      "name": "Official export after reopening equals integrated export02: standing-head-neck-2026-10-19.model3.json",
+      "pass": true,
+      "sha256": "156034245357f04cc2a760b07138677625496f2fd92b3efceaaa7d0362aaf759"
+    },
+    {
+      "name": "Official export after reopening equals integrated export02: standing-head-neck-2026-10-19.physics3.json",
+      "pass": true,
+      "sha256": "70d2f649d0692e0fc23f0a0fed3c6ff998bc075063da9258d82e1ffdd81f7c40"
+    },
+    {
+      "name": "Official export after reopening equals integrated export02: standing-head-neck-2026-10-19.4096/texture_00.png",
+      "pass": true,
+      "sha256": "90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30"
+    },
+    {
+      "name": "Official export after reopening equals integrated export02: standing-head-neck-2026-10-19.4096/texture_01.png",
+      "pass": true,
+      "sha256": "61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7"
+    },
+    {
+      "name": "Every formal raw export still equals the website resource in the frozen snapshot",
+      "pass": true
+    },
+    {
+      "name": "All source collections retained by declining deletion of unused PSD sources during editor saves",
+      "pass": true
+    },
+    {
+      "name": "Export-path-only later memory preserved in separate recovery CMO and formal CMO reopened",
+      "pass": true
+    },
+    {
+      "name": "Root visually inspected exact actual SDK contact sheet with 10 tilt/open-close combinations",
+      "pass": true,
+      "detail": "Root viewed original 2704x1236 actual SDK contact sheet: AngleZ -15,-4,0,4,15 with open and closed eyes; no exposed transparent neck/collar seam, detachment, or newly visible occlusion artifact seen. Preserves accepted eye images. This visual review is separate from strict pixel and geometry tests."
+    },
+    {
+      "name": "No newly visible neck/collar seam, exposure, detachment, or occlusion artifact observed",
+      "pass": true
+    },
+    {
+      "name": "Both locked texture pages remain byte-identical to accepted export04",
+      "pass": true
+    },
+    {
+      "name": "No manual binary geometry patch, repository push, deployment, or real-account database action",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "visualInspectionCompleted": true,
+  "inspectedContactImageSha256": "702ec29ab41426dd20b6778f86e4789e98d8d98fb58e42cd2d77f118222fd3b6",
+  "observedEditorScreenshotSha256": "709fddfdd87d4148aef93a226af1e2b6e1ae0e9de91b9dfae23ce72b5727b160",
+  "reexportFiles": [
+    {
+      "path": "standing-head-neck-2026-10-19.cdi3.json",
+      "sha256": "03aba1480ab632b11a8c6d79fb9ec0b779190ccb7acccb7640b7794d039ca267",
+      "reopenSha256": "03aba1480ab632b11a8c6d79fb9ec0b779190ccb7acccb7640b7794d039ca267",
+      "pass": true,
+      "bytes": 11344
+    },
+    {
+      "path": "standing-head-neck-2026-10-19.moc3",
+      "sha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+      "reopenSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+      "pass": true,
+      "bytes": 145984
+    },
+    {
+      "path": "standing-head-neck-2026-10-19.model3.json",
+      "sha256": "156034245357f04cc2a760b07138677625496f2fd92b3efceaaa7d0362aaf759",
+      "reopenSha256": "156034245357f04cc2a760b07138677625496f2fd92b3efceaaa7d0362aaf759",
+      "pass": true,
+      "bytes": 427
+    },
+    {
+      "path": "standing-head-neck-2026-10-19.physics3.json",
+      "sha256": "70d2f649d0692e0fc23f0a0fed3c6ff998bc075063da9258d82e1ffdd81f7c40",
+      "reopenSha256": "70d2f649d0692e0fc23f0a0fed3c6ff998bc075063da9258d82e1ffdd81f7c40",
+      "pass": true,
+      "bytes": 18369
+    },
+    {
+      "path": "standing-head-neck-2026-10-19.4096/texture_00.png",
+      "sha256": "90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30",
+      "reopenSha256": "90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30",
+      "pass": true,
+      "bytes": 3195709
+    },
+    {
+      "path": "standing-head-neck-2026-10-19.4096/texture_01.png",
+      "sha256": "61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7",
+      "reopenSha256": "61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7",
+      "pass": true,
+      "bytes": 21869
+    }
+  ],
+  "observationsFile": "editor/editor-observations.json",
+  "editorScreenshot": "editor/cubism-final-reopened-saved.png",
+  "note": "Visual acceptance supplements exact default geometry and strict approved-reference pixel regression. Original accepted 2404 eye-pixel disclosure is unchanged; horizontal mirroring is not native face turning, and native eye motion range is not increased."
+}

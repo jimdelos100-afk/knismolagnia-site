@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 2,
+  "createdAt": "2026-10-19T04:51:41.114Z",
+  "scope": "Actual new CMO/MOC/locked atlas binding. This is not a new appearance acceptance; strict zero RGBA regression remains required.",
+  "mocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+  "textureSha256": [
+    "90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30",
+    "61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7"
+  ],
+  "cmoSha256": "2bd397f25d5aa511cd45ce956927e3d06410bbc756bf807b71de9dc21a920650",
+  "model3Sha256": "eee781d7c74cda3526a08ac663e33d110d5dc699d664b9be56d6d0e8a144b6ed",
+  "testedSourceSnapshotSha256": "a565134a78dce22cc80e005c2090bb248e36acf6f3396f408f8e2761837a7d91",
+  "historicalAcceptedMocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
+  "historicalAcceptedContractSha256": "db4f7d4484b4f837c0cef4cf3694b700de40fa55acd58d9e2010040ea904fc63",
+  "officialRawExport": {
+    "model3": {
+      "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-19\\live2d-v8-cubism-c-users-daisy\\work\\interaction-2026-10-19\\model\\export-02\\standing-head-neck-2026-10-19.model3.json",
+      "sha256": "156034245357f04cc2a760b07138677625496f2fd92b3efceaaa7d0362aaf759"
+    },
+    "files": [
+      {
+        "kind": "Moc",
+        "index": 0,
+        "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-19\\live2d-v8-cubism-c-users-daisy\\work\\interaction-2026-10-19\\model\\export-02\\standing-head-neck-2026-10-19.moc3",
+        "websiteFile": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\v8-source\\knismolagnia-site\\public\\konisi-game\\live2d\\standing\\native-2026-10-19\\standing-head-neck-2026-10-19.moc3",
+        "sha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b"
+      },
+      {
+        "kind": "Textures",
+        "index": 0,
+        "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-19\\live2d-v8-cubism-c-users-daisy\\work\\interaction-2026-10-19\\model\\export-02\\standing-head-neck-2026-10-19.4096\\texture_00.png",
+        "websiteFile": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\v8-source\\knismolagnia-site\\public\\konisi-game\\live2d\\standing\\native-2026-10-19\\standing-head-neck-2026-10-19.4096\\texture_00.png",
+        "sha256": "90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30"
+      },
+      {
+        "kind": "Textures",
+        "index": 1,
+        "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-19\\live2d-v8-cubism-c-users-daisy\\work\\interaction-2026-10-19\\model\\export-02\\standing-head-neck-2026-10-19.4096\\texture_01.png",
+        "websiteFile": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\v8-source\\knismolagnia-site\\public\\konisi-game\\live2d\\standing\\native-2026-10-19\\standing-head-neck-2026-10-19.4096\\texture_01.png",
+        "sha256": "61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7"
+      },
+      {
+        "kind": "Physics",
+        "index": 0,
+        "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-19\\live2d-v8-cubism-c-users-daisy\\work\\interaction-2026-10-19\\model\\export-02\\standing-head-neck-2026-10-19.physics3.json",
+        "websiteFile": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\v8-source\\knismolagnia-site\\public\\konisi-game\\live2d\\standing\\native-2026-10-19\\standing-head-neck-2026-10-19.physics3.json",
+        "sha256": "70d2f649d0692e0fc23f0a0fed3c6ff998bc075063da9258d82e1ffdd81f7c40"
+      },
+      {
+        "kind": "DisplayInfo",
+        "index": 0,
+        "file": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-19\\live2d-v8-cubism-c-users-daisy\\work\\interaction-2026-10-19\\model\\export-02\\standing-head-neck-2026-10-19.cdi3.json",
+        "websiteFile": "C:\\Users\\daisy\\Documents\\Codex\\2026-10-10\\referenced-chatgpt-conversation-this-is-an\\work\\v8-source\\knismolagnia-site\\public\\konisi-game\\live2d\\standing\\native-2026-10-19\\standing-head-neck-2026-10-19.cdi3.json",
+        "sha256": "03aba1480ab632b11a8c6d79fb9ec0b779190ccb7acccb7640b7794d039ca267"
+      }
+    ]
+  }
+}

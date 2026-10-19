@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-19T04:55:13.1685682Z",
+  "testedSourceSnapshotSha256": "a565134a78dce22cc80e005c2090bb248e36acf6f3396f408f8e2761837a7d91",
+  "scope": "Root actually viewed these exact final frozen-candidate screenshots, supplementing automated tests.",
+  "checks": [
+    {
+      "pass": true,
+      "name": "Left and right actual canvas orientations visible while toolbar text stays upright"
+    },
+    {
+      "pass": true,
+      "name": "Desktop character frame shows webpage content behind transparent area"
+    },
+    {
+      "pass": true,
+      "name": "Mobile settings above character with upright readable text and reachable controls"
+    },
+    {
+      "pass": true,
+      "name": "390x120 short viewport keeps visible character canvas and separate settings/toolbar"
+    }
+  ],
+  "errors": [],
+  "images": [
+    {
+      "file": "root-visual-review/chrome-desktop-mouse-facing-left.png",
+      "sha256": "c66f0977bf8bf6189580ffe87324564656fdb498579b362ee4d41d41e7c0a7b2"
+    },
+    {
+      "file": "root-visual-review/chrome-desktop-mouse-facing-right.png",
+      "sha256": "6a83d288c6166dbd0b46b965556fd905dc60d45133f98eb5b9583a921cbec312"
+    },
+    {
+      "file": "root-visual-review/chrome-mobile-touch-settings-bottom-right.png",
+      "sha256": "f5529e705cbce305856429f5f98c23dd01eadac080e3da10ba4dbc718f604372"
+    },
+    {
+      "file": "root-visual-review/chrome-short-390x120.png",
+      "sha256": "ce860750825c16d2b1f5ffe98a6bef40c7132df07c451a23128237fc898cbd7e"
+    }
+  ],
+  "note": "Screenshot contains isolated local preview label and development indicator; no real account or database was accessed. This manual review does not replace the exact transparent pixel matrix or original-art regression."
+}

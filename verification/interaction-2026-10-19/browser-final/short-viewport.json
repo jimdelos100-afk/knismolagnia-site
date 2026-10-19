@@ -1,0 +1,989 @@
+{
+  "date": "2026-10-19T04:53:57.489Z",
+  "testedSourceSnapshotSha256": "a565134a78dce22cc80e005c2090bb248e36acf6f3396f408f8e2761837a7d91",
+  "newMocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+  "scope": "Actual Chrome/Edge mobile touch contexts. CSS viewport and visualViewport sizes are varied to 120/150/162/180/240px high. Real rendered alpha, DOM bounds, separate panel scrolling, upright toolbar and restored position are measured; no test source edits.",
+  "checks": [
+    {
+      "name": "chrome 390×120",
+      "pass": true,
+      "detail": {
+        "normal": {
+          "x": 173.890625,
+          "y": 8,
+          "width": 208.09375,
+          "height": 104
+        },
+        "character": {
+          "x": 262.3125,
+          "y": 8,
+          "width": 119.671875,
+          "height": 104
+        },
+        "panel": {
+          "x": 8,
+          "y": 8,
+          "width": 244.96875,
+          "height": 104
+        },
+        "iframe": {
+          "x": 262.3125,
+          "y": 42,
+          "width": 119.671875,
+          "height": 70
+        },
+        "toolbar": {
+          "x": 262.3125,
+          "y": 8,
+          "width": 119.671875,
+          "height": 34
+        },
+        "buttons": [
+          {
+            "name": "拖动或用方向键移动看板娘",
+            "x": 262.3125,
+            "y": 11,
+            "width": 37.890625,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "角色设置",
+            "x": 303.203125,
+            "y": 11,
+            "width": 37.890625,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "收起柯妮丝看板娘",
+            "x": 344.09375,
+            "y": 11,
+            "width": 37.890625,
+            "height": 28,
+            "transform": "none"
+          }
+        ],
+        "panelStyle": {
+          "fontSize": "13px",
+          "transform": "none",
+          "direction": "ltr",
+          "scrollHeight": 634,
+          "clientHeight": 102
+        },
+        "render": {
+          "width": 120,
+          "height": 70,
+          "nonzeroAlphaPixels": 1176,
+          "mocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b"
+        },
+        "restored": {
+          "x": 173.890625,
+          "y": 8,
+          "width": 208.09375,
+          "height": 104
+        }
+      }
+    },
+    {
+      "name": "chrome 390×150",
+      "pass": true,
+      "detail": {
+        "normal": {
+          "x": 167.5,
+          "y": 16.5,
+          "width": 214.5,
+          "height": 125.5
+        },
+        "character": {
+          "x": 262.3125,
+          "y": 8,
+          "width": 119.671875,
+          "height": 134
+        },
+        "panel": {
+          "x": 8,
+          "y": 8,
+          "width": 244.96875,
+          "height": 134
+        },
+        "iframe": {
+          "x": 262.3125,
+          "y": 42,
+          "width": 119.671875,
+          "height": 100
+        },
+        "toolbar": {
+          "x": 262.3125,
+          "y": 8,
+          "width": 119.671875,
+          "height": 34
+        },
+        "buttons": [
+          {
+            "name": "拖动或用方向键移动看板娘",
+            "x": 262.3125,
+            "y": 11,
+            "width": 37.890625,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "角色设置",
+            "x": 303.203125,
+            "y": 11,
+            "width": 37.890625,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "收起柯妮丝看板娘",
+            "x": 344.09375,
+            "y": 11,
+            "width": 37.890625,
+            "height": 28,
+            "transform": "none"
+          }
+        ],
+        "panelStyle": {
+          "fontSize": "13px",
+          "transform": "none",
+          "direction": "ltr",
+          "scrollHeight": 634,
+          "clientHeight": 132
+        },
+        "render": {
+          "width": 120,
+          "height": 100,
+          "nonzeroAlphaPixels": 2388,
+          "mocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b"
+        },
+        "restored": {
+          "x": 167.5,
+          "y": 16.5,
+          "width": 214.5,
+          "height": 125.5
+        }
+      }
+    },
+    {
+      "name": "chrome 844×162",
+      "pass": true,
+      "detail": {
+        "normal": {
+          "x": 521,
+          "y": 14.6875,
+          "width": 315,
+          "height": 139.296875
+        },
+        "character": {
+          "x": 521,
+          "y": 14.6875,
+          "width": 315,
+          "height": 139.296875
+        },
+        "panel": {
+          "x": 221,
+          "y": 8,
+          "width": 288,
+          "height": 146
+        },
+        "iframe": {
+          "x": 521,
+          "y": 48.6875,
+          "width": 315,
+          "height": 105.296875
+        },
+        "toolbar": {
+          "x": 521,
+          "y": 14.6875,
+          "width": 315,
+          "height": 34
+        },
+        "buttons": [
+          {
+            "name": "拖动或用方向键移动看板娘",
+            "x": 521,
+            "y": 17.6875,
+            "width": 59.765625,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "角色设置",
+            "x": 770.140625,
+            "y": 17.6875,
+            "width": 32.859375,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "收起柯妮丝看板娘",
+            "x": 808,
+            "y": 17.6875,
+            "width": 28,
+            "height": 28,
+            "transform": "none"
+          }
+        ],
+        "panelStyle": {
+          "fontSize": "13px",
+          "transform": "none",
+          "direction": "ltr",
+          "scrollHeight": 637,
+          "clientHeight": 144
+        },
+        "render": {
+          "width": 315,
+          "height": 105,
+          "nonzeroAlphaPixels": 2656,
+          "mocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b"
+        },
+        "restored": {
+          "x": 521,
+          "y": 14.6875,
+          "width": 315,
+          "height": 139.296875
+        }
+      }
+    },
+    {
+      "name": "chrome 812×180",
+      "pass": true,
+      "detail": {
+        "normal": {
+          "x": 489,
+          "y": 21,
+          "width": 315,
+          "height": 151
+        },
+        "character": {
+          "x": 489,
+          "y": 21,
+          "width": 315,
+          "height": 151
+        },
+        "panel": {
+          "x": 189,
+          "y": 8,
+          "width": 288,
+          "height": 164
+        },
+        "iframe": {
+          "x": 489,
+          "y": 55,
+          "width": 315,
+          "height": 117
+        },
+        "toolbar": {
+          "x": 489,
+          "y": 21,
+          "width": 315,
+          "height": 34
+        },
+        "buttons": [
+          {
+            "name": "拖动或用方向键移动看板娘",
+            "x": 489,
+            "y": 24,
+            "width": 59.765625,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "角色设置",
+            "x": 738.140625,
+            "y": 24,
+            "width": 32.859375,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "收起柯妮丝看板娘",
+            "x": 776,
+            "y": 24,
+            "width": 28,
+            "height": 28,
+            "transform": "none"
+          }
+        ],
+        "panelStyle": {
+          "fontSize": "13px",
+          "transform": "none",
+          "direction": "ltr",
+          "scrollHeight": 637,
+          "clientHeight": 162
+        },
+        "render": {
+          "width": 315,
+          "height": 117,
+          "nonzeroAlphaPixels": 3276,
+          "mocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b"
+        },
+        "restored": {
+          "x": 489,
+          "y": 21,
+          "width": 315,
+          "height": 151
+        }
+      }
+    },
+    {
+      "name": "chrome 320×180",
+      "pass": true,
+      "detail": {
+        "normal": {
+          "x": 107,
+          "y": 28.1875,
+          "width": 205,
+          "height": 143.796875
+        },
+        "character": {
+          "x": 214.71875,
+          "y": 8,
+          "width": 97.265625,
+          "height": 164
+        },
+        "panel": {
+          "x": 8,
+          "y": 8,
+          "width": 199.109375,
+          "height": 164
+        },
+        "iframe": {
+          "x": 214.71875,
+          "y": 42,
+          "width": 97.265625,
+          "height": 130
+        },
+        "toolbar": {
+          "x": 214.71875,
+          "y": 8,
+          "width": 97.265625,
+          "height": 34
+        },
+        "buttons": [
+          {
+            "name": "拖动或用方向键移动看板娘",
+            "x": 214.71875,
+            "y": 11,
+            "width": 30.421875,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "角色设置",
+            "x": 248.140625,
+            "y": 11,
+            "width": 30.421875,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "收起柯妮丝看板娘",
+            "x": 281.5625,
+            "y": 11,
+            "width": 30.421875,
+            "height": 28,
+            "transform": "none"
+          }
+        ],
+        "panelStyle": {
+          "fontSize": "13px",
+          "transform": "none",
+          "direction": "ltr",
+          "scrollHeight": 917,
+          "clientHeight": 162
+        },
+        "render": {
+          "width": 97,
+          "height": 130,
+          "nonzeroAlphaPixels": 4045,
+          "mocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b"
+        },
+        "restored": {
+          "x": 107,
+          "y": 28.1875,
+          "width": 205,
+          "height": 143.796875
+        }
+      }
+    },
+    {
+      "name": "chrome 320×240",
+      "pass": true,
+      "detail": {
+        "normal": {
+          "x": 107,
+          "y": 51.59375,
+          "width": 205,
+          "height": 180.390625
+        },
+        "character": {
+          "x": 214.71875,
+          "y": 8,
+          "width": 97.265625,
+          "height": 224
+        },
+        "panel": {
+          "x": 8,
+          "y": 8,
+          "width": 199.109375,
+          "height": 224
+        },
+        "iframe": {
+          "x": 214.71875,
+          "y": 42,
+          "width": 97.265625,
+          "height": 190
+        },
+        "toolbar": {
+          "x": 214.71875,
+          "y": 8,
+          "width": 97.265625,
+          "height": 34
+        },
+        "buttons": [
+          {
+            "name": "拖动或用方向键移动看板娘",
+            "x": 214.71875,
+            "y": 11,
+            "width": 30.421875,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "角色设置",
+            "x": 248.140625,
+            "y": 11,
+            "width": 30.421875,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "收起柯妮丝看板娘",
+            "x": 281.5625,
+            "y": 11,
+            "width": 30.421875,
+            "height": 28,
+            "transform": "none"
+          }
+        ],
+        "panelStyle": {
+          "fontSize": "13px",
+          "transform": "none",
+          "direction": "ltr",
+          "scrollHeight": 917,
+          "clientHeight": 222
+        },
+        "render": {
+          "width": 97,
+          "height": 190,
+          "nonzeroAlphaPixels": 5062,
+          "mocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b"
+        },
+        "restored": {
+          "x": 107,
+          "y": 51.59375,
+          "width": 205,
+          "height": 180.390625
+        }
+      }
+    },
+    {
+      "name": "edge 390×120",
+      "pass": true,
+      "detail": {
+        "normal": {
+          "x": 173.890625,
+          "y": 8,
+          "width": 208.09375,
+          "height": 104
+        },
+        "character": {
+          "x": 262.3125,
+          "y": 8,
+          "width": 119.671875,
+          "height": 104
+        },
+        "panel": {
+          "x": 8,
+          "y": 8,
+          "width": 244.96875,
+          "height": 104
+        },
+        "iframe": {
+          "x": 262.3125,
+          "y": 42,
+          "width": 119.671875,
+          "height": 70
+        },
+        "toolbar": {
+          "x": 262.3125,
+          "y": 8,
+          "width": 119.671875,
+          "height": 34
+        },
+        "buttons": [
+          {
+            "name": "拖动或用方向键移动看板娘",
+            "x": 262.3125,
+            "y": 11,
+            "width": 37.890625,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "角色设置",
+            "x": 303.203125,
+            "y": 11,
+            "width": 37.890625,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "收起柯妮丝看板娘",
+            "x": 344.09375,
+            "y": 11,
+            "width": 37.890625,
+            "height": 28,
+            "transform": "none"
+          }
+        ],
+        "panelStyle": {
+          "fontSize": "13px",
+          "transform": "none",
+          "direction": "ltr",
+          "scrollHeight": 634,
+          "clientHeight": 102
+        },
+        "render": {
+          "width": 120,
+          "height": 70,
+          "nonzeroAlphaPixels": 1176,
+          "mocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b"
+        },
+        "restored": {
+          "x": 173.890625,
+          "y": 8,
+          "width": 208.09375,
+          "height": 104
+        }
+      }
+    },
+    {
+      "name": "edge 390×150",
+      "pass": true,
+      "detail": {
+        "normal": {
+          "x": 167.5,
+          "y": 16.5,
+          "width": 214.5,
+          "height": 125.5
+        },
+        "character": {
+          "x": 262.3125,
+          "y": 8,
+          "width": 119.671875,
+          "height": 134
+        },
+        "panel": {
+          "x": 8,
+          "y": 8,
+          "width": 244.96875,
+          "height": 134
+        },
+        "iframe": {
+          "x": 262.3125,
+          "y": 42,
+          "width": 119.671875,
+          "height": 100
+        },
+        "toolbar": {
+          "x": 262.3125,
+          "y": 8,
+          "width": 119.671875,
+          "height": 34
+        },
+        "buttons": [
+          {
+            "name": "拖动或用方向键移动看板娘",
+            "x": 262.3125,
+            "y": 11,
+            "width": 37.890625,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "角色设置",
+            "x": 303.203125,
+            "y": 11,
+            "width": 37.890625,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "收起柯妮丝看板娘",
+            "x": 344.09375,
+            "y": 11,
+            "width": 37.890625,
+            "height": 28,
+            "transform": "none"
+          }
+        ],
+        "panelStyle": {
+          "fontSize": "13px",
+          "transform": "none",
+          "direction": "ltr",
+          "scrollHeight": 634,
+          "clientHeight": 132
+        },
+        "render": {
+          "width": 120,
+          "height": 100,
+          "nonzeroAlphaPixels": 2388,
+          "mocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b"
+        },
+        "restored": {
+          "x": 167.5,
+          "y": 16.5,
+          "width": 214.5,
+          "height": 125.5
+        }
+      }
+    },
+    {
+      "name": "edge 844×162",
+      "pass": true,
+      "detail": {
+        "normal": {
+          "x": 521,
+          "y": 14.6875,
+          "width": 315,
+          "height": 139.296875
+        },
+        "character": {
+          "x": 521,
+          "y": 14.6875,
+          "width": 315,
+          "height": 139.296875
+        },
+        "panel": {
+          "x": 221,
+          "y": 8,
+          "width": 288,
+          "height": 146
+        },
+        "iframe": {
+          "x": 521,
+          "y": 48.6875,
+          "width": 315,
+          "height": 105.296875
+        },
+        "toolbar": {
+          "x": 521,
+          "y": 14.6875,
+          "width": 315,
+          "height": 34
+        },
+        "buttons": [
+          {
+            "name": "拖动或用方向键移动看板娘",
+            "x": 521,
+            "y": 17.6875,
+            "width": 59.765625,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "角色设置",
+            "x": 770.140625,
+            "y": 17.6875,
+            "width": 32.859375,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "收起柯妮丝看板娘",
+            "x": 808,
+            "y": 17.6875,
+            "width": 28,
+            "height": 28,
+            "transform": "none"
+          }
+        ],
+        "panelStyle": {
+          "fontSize": "13px",
+          "transform": "none",
+          "direction": "ltr",
+          "scrollHeight": 637,
+          "clientHeight": 144
+        },
+        "render": {
+          "width": 315,
+          "height": 105,
+          "nonzeroAlphaPixels": 2656,
+          "mocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b"
+        },
+        "restored": {
+          "x": 521,
+          "y": 14.6875,
+          "width": 315,
+          "height": 139.296875
+        }
+      }
+    },
+    {
+      "name": "edge 812×180",
+      "pass": true,
+      "detail": {
+        "normal": {
+          "x": 489,
+          "y": 21,
+          "width": 315,
+          "height": 151
+        },
+        "character": {
+          "x": 489,
+          "y": 21,
+          "width": 315,
+          "height": 151
+        },
+        "panel": {
+          "x": 189,
+          "y": 8,
+          "width": 288,
+          "height": 164
+        },
+        "iframe": {
+          "x": 489,
+          "y": 55,
+          "width": 315,
+          "height": 117
+        },
+        "toolbar": {
+          "x": 489,
+          "y": 21,
+          "width": 315,
+          "height": 34
+        },
+        "buttons": [
+          {
+            "name": "拖动或用方向键移动看板娘",
+            "x": 489,
+            "y": 24,
+            "width": 59.765625,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "角色设置",
+            "x": 738.140625,
+            "y": 24,
+            "width": 32.859375,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "收起柯妮丝看板娘",
+            "x": 776,
+            "y": 24,
+            "width": 28,
+            "height": 28,
+            "transform": "none"
+          }
+        ],
+        "panelStyle": {
+          "fontSize": "13px",
+          "transform": "none",
+          "direction": "ltr",
+          "scrollHeight": 637,
+          "clientHeight": 162
+        },
+        "render": {
+          "width": 315,
+          "height": 117,
+          "nonzeroAlphaPixels": 3276,
+          "mocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b"
+        },
+        "restored": {
+          "x": 489,
+          "y": 21,
+          "width": 315,
+          "height": 151
+        }
+      }
+    },
+    {
+      "name": "edge 320×180",
+      "pass": true,
+      "detail": {
+        "normal": {
+          "x": 107,
+          "y": 28.1875,
+          "width": 205,
+          "height": 143.796875
+        },
+        "character": {
+          "x": 214.71875,
+          "y": 8,
+          "width": 97.265625,
+          "height": 164
+        },
+        "panel": {
+          "x": 8,
+          "y": 8,
+          "width": 199.109375,
+          "height": 164
+        },
+        "iframe": {
+          "x": 214.71875,
+          "y": 42,
+          "width": 97.265625,
+          "height": 130
+        },
+        "toolbar": {
+          "x": 214.71875,
+          "y": 8,
+          "width": 97.265625,
+          "height": 34
+        },
+        "buttons": [
+          {
+            "name": "拖动或用方向键移动看板娘",
+            "x": 214.71875,
+            "y": 11,
+            "width": 30.421875,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "角色设置",
+            "x": 248.140625,
+            "y": 11,
+            "width": 30.421875,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "收起柯妮丝看板娘",
+            "x": 281.5625,
+            "y": 11,
+            "width": 30.421875,
+            "height": 28,
+            "transform": "none"
+          }
+        ],
+        "panelStyle": {
+          "fontSize": "13px",
+          "transform": "none",
+          "direction": "ltr",
+          "scrollHeight": 917,
+          "clientHeight": 162
+        },
+        "render": {
+          "width": 97,
+          "height": 130,
+          "nonzeroAlphaPixels": 4045,
+          "mocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b"
+        },
+        "restored": {
+          "x": 107,
+          "y": 28.1875,
+          "width": 205,
+          "height": 143.796875
+        }
+      }
+    },
+    {
+      "name": "edge 320×240",
+      "pass": true,
+      "detail": {
+        "normal": {
+          "x": 107,
+          "y": 51.59375,
+          "width": 205,
+          "height": 180.390625
+        },
+        "character": {
+          "x": 214.71875,
+          "y": 8,
+          "width": 97.265625,
+          "height": 224
+        },
+        "panel": {
+          "x": 8,
+          "y": 8,
+          "width": 199.109375,
+          "height": 224
+        },
+        "iframe": {
+          "x": 214.71875,
+          "y": 42,
+          "width": 97.265625,
+          "height": 190
+        },
+        "toolbar": {
+          "x": 214.71875,
+          "y": 8,
+          "width": 97.265625,
+          "height": 34
+        },
+        "buttons": [
+          {
+            "name": "拖动或用方向键移动看板娘",
+            "x": 214.71875,
+            "y": 11,
+            "width": 30.421875,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "角色设置",
+            "x": 248.140625,
+            "y": 11,
+            "width": 30.421875,
+            "height": 28,
+            "transform": "none"
+          },
+          {
+            "name": "收起柯妮丝看板娘",
+            "x": 281.5625,
+            "y": 11,
+            "width": 30.421875,
+            "height": 28,
+            "transform": "none"
+          }
+        ],
+        "panelStyle": {
+          "fontSize": "13px",
+          "transform": "none",
+          "direction": "ltr",
+          "scrollHeight": 917,
+          "clientHeight": 222
+        },
+        "render": {
+          "width": 97,
+          "height": 190,
+          "nonzeroAlphaPixels": 5062,
+          "mocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b"
+        },
+        "restored": {
+          "x": 107,
+          "y": 51.59375,
+          "width": 205,
+          "height": 180.390625
+        }
+      }
+    },
+    {
+      "name": "Twelve actual browser tiny viewport scenes executed",
+      "pass": true
+    },
+    {
+      "name": "Frozen final source and new MOC identity bound",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

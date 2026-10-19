@@ -1,0 +1,32 @@
+Live2D 线上透明修复只读核验
+核验时间（上海）：2026-10-19 12:13:43
+地址：https://knismolagnia.club/
+结论：通过。线上已应用 transparent-fix-r2 的透明修复。
+
+公开主页加载的 CSS 文件名和 SHA256 与 r2 生产构建记录完全一致：
+https://knismolagnia.club/_next/static/css/c8898797bfca7164.css
+f441409c082edf7e3b3080d045713bb3b5db34961522e72461487480b2c2ed74
+其中 .site-companion-frame 同时声明 background:transparent 和 color-scheme:light。
+
+实际下载的 MOC 及两张图集与正式 export04 完全一致：
+native-2026-10-18/standing-native-2026-10-18.moc3
+cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c
+native-2026-10-18/standing-native-2026-10-18.4096/texture_00.png
+90b44056f868cff238301ab88fe080822b565636141badf4ad40faf7db7cbe30
+native-2026-10-18/standing-native-2026-10-18.4096/texture_01.png
+61cdeb2d1c22d760bfdc8c27266fd245939d5a010ae099bd092260ca7f614be7
+
+home.html、character.css、character.js 与 r2 本地文件仅有 CRLF→LF 换行差异；内容规范化后完全一致。manifest.json 原始字节也一致。
+
+真实浏览器验证：Chrome 155.0.8059.84 和 Edge 139.0.3405.102，共 16 场景全部通过。每浏览器检查亮/暗页面主题×亮/暗系统偏好、两个实际主题按钮切换、最小化再恢复、390×844 DPR2 触屏。
+桌面每场景采样91,034个渲染透明像素，手机每场景173,396个。所有采样与隐藏 iframe 后的相同父页背景逐像素差异为0；恢复后重复截图差异仍为0。iframe和子页计算color-scheme均为light，WebGL四角alpha均0，无页内JS异常。
+
+没有注入临时修复CSS。沿用诊断脚本的 after-parent-iframe-light 文件名在本次仅表示iframe恢复后的重复线上截图。原始记录 noTemporaryStyleInjected 为 true。
+
+边界：只检查公开线上页面与资源；未部署、未推送、未登录、未操作真实账号数据库。主题偏好和最小化操作仅发生在新建浏览器会话中。此次未修改网站、模型或旧报告。
+
+主要机器证据：online-transparency-verification-2026-10-19.json
+完整浏览器证据：actual-next-color-scheme-matrix.json
+公开响应与哈希：public-response-audit.json、public-model-hashes.json
+换行核对：local-public-file-comparison.json
+实际线上截图：chrome155-page-dark-os-dark-initial-theme-before.png、chrome155-page-dark-os-dark-mobile-before.png（及其他场景）
