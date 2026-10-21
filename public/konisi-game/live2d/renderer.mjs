@@ -94,7 +94,6 @@ class Live2DRenderer {
     this.textures = []; this.textureDimensions = []; this.defaultMapping = null;
     this.moc = null; this.model = null; this.renderer = null; this.physics = null;
     this.gaze = null; this.nativeRig = null; this.nativeGaze = null; this.blinkAmount = 0;
-    this.headFollow = { enabled: false, input: [0, 0], angle: 0, appliedAngle: 0 };
     this.animation = null; this.baseParameterValues = new Map(); this.layerParameterIds = new Set(); this.disabledAnimatedParameters = new Set(); this.physicsEnabled = true;
     this.physicsInfo = { loaded: false, reason: 'No Physics reference in model3.', inputIds: [], outputIds: [], evaluations: 0 };
     this.retained = false; this.disposed = false;
@@ -265,35 +264,6 @@ class Live2DRenderer {
     const supported = this.gaze?.set(x, y, options) ?? false;
     this.status.gazeTracking = this.gaze?.getStatus().enabled ?? false;
     return supported;
-  }
-
-  // A small additive side tilt uses the model's existing real AngleZ rig.
-  // Horizontal facing is a display mirror; no unbound AngleX/Y is driven here.
-  setHeadFollow(x, y, { enabled = true } = {}) {
-    this.assertModel();
-    if (![x, y].every(Number.isFinite) || typeof enabled !== 'boolean') throw new TypeError('Head follow requires finite coordinates and boolean enabled.');
-    this.headFollow.enabled = enabled && !!this.nativeRig && this.parameterIndices.has('ParamAngleZ');
-    this.headFollow.input = this.headFollow.enabled ? [Math.max(-1, Math.min(1, x)), Math.max(-1, Math.min(1, y))] : [0, 0];
-    if (!this.headFollow.enabled) this.headFollow.angle = this.headFollow.appliedAngle = 0;
-    return this.headFollow.enabled;
-  }
-
-  applyHeadFollow(deltaSeconds) {
-    const follow = this.headFollow;
-    follow.appliedAngle = 0;
-    if (!follow.enabled) return;
-    const index = this.parameterIndices.get('ParamAngleZ');
-    if (index === undefined) return;
-    // AngleZ is in exported parameter units. This rig maps +30 to roughly
-    // 1.5 degrees clockwise, so a positive input leans toward screen right.
-    const target = follow.input[0] * 4;
-    follow.angle += (target - follow.angle) * (1 - Math.exp(-deltaSeconds / .18));
-    const current = this.model.getParameterValueByIndex(index);
-    const minimum = Math.max(-15, this.model.getParameterMinimumValue(index));
-    const maximum = Math.min(15, this.model.getParameterMaximumValue(index));
-    const next = Math.max(minimum, Math.min(maximum, current + follow.angle));
-    this.model.setParameterValueByIndex(index, next);
-    follow.appliedAngle = next - current;
   }
 
   getGazeStatus() {
@@ -491,7 +461,7 @@ class Live2DRenderer {
   }
 
   getStatus() {
-    return { ...this.status, gaze: this.getGazeStatus(), headFollow: structuredClone(this.headFollow), animation: this.getAnimationStatus(), nativeRig: this.nativeRig ? structuredClone(this.nativeRig) : null, canvasInfo: this.info ? { ...this.info } : null,
+    return { ...this.status, gaze: this.getGazeStatus(), animation: this.getAnimationStatus(), nativeRig: this.nativeRig ? structuredClone(this.nativeRig) : null, canvasInfo: this.info ? { ...this.info } : null,
       modelUrl: this.modelUrl, camera: { ...this.camera, focus: [...this.camera.focus], offset: [...this.camera.offset] },
       optionalReferencesNotPlayed: [...(this.status.optionalReferencesNotPlayed || [])] };
   }
@@ -510,8 +480,6 @@ class Live2DRenderer {
     this.animation?.update(deltaSeconds);
     for (const id of this.disabledAnimatedParameters) this.model.setParameterValueByIndex(this.parameterIndices.get(id), this.baseParameterValues.get(id));
     this.applyNativeEyes();
-    // Blend after exported motions/expressions, before hair physics and Core.
-    this.applyHeadFollow(deltaSeconds);
     if (this.physics && this.physicsEnabled && deltaSeconds > 0) {
       this.physics.evaluate(this.model, deltaSeconds);
       this.physicsInfo.evaluations++;

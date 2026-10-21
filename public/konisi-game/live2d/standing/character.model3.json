@@ -1,13 +1,13 @@
 {
   "Version": 3,
   "FileReferences": {
-    "Moc": "native-2026-10-19/standing-head-neck-2026-10-19.moc3",
+    "Moc": "native-2026-10-18/standing-native-2026-10-18.moc3",
     "Textures": [
-      "native-2026-10-19/standing-head-neck-2026-10-19.4096/texture_00.png",
-      "native-2026-10-19/standing-head-neck-2026-10-19.4096/texture_01.png"
+      "native-2026-10-18/standing-native-2026-10-18.4096/texture_00.png",
+      "native-2026-10-18/standing-native-2026-10-18.4096/texture_01.png"
     ],
-    "Physics": "native-2026-10-19/standing-head-neck-2026-10-19.physics3.json",
-    "DisplayInfo": "native-2026-10-19/standing-head-neck-2026-10-19.cdi3.json",
+    "Physics": "native-2026-10-18/standing-native-2026-10-18.physics3.json",
+    "DisplayInfo": "native-2026-10-18/standing-native-2026-10-18.cdi3.json",
     "Motions": {
       "Idle": [
         {

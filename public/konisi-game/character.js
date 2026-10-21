@@ -8,63 +8,31 @@
   const W = model.width, H = model.height;
   const outfits = model.outfits || { original:'原装', tights:'白色裤袜', overknee:'过膝白丝' };
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-  const state = { expression:'neutral', outfit:model.defaultOutfit || 'original', focus:model.full.slice(0,2), zoom:companion?1.0:model.full[2], headMotion:companion||!reduced.matches, motion:companion||!reduced.matches, gaze:companion, facing:true, blink:true, hairPhysics:true, gazeInput:[0,0], gazeTarget:[0,0], preferredExpression:'neutral', headInput:[0,0], target:[0,0], shake:[0,0], shakeTarget:[0,0], nextShake:0, time:0, blinkAt:-100, nextBlink:2.5, reaction:null, reactionStart:0, reactionElapsed:0, reactionDuration:0 };
+  const state = { expression:'neutral', outfit:model.defaultOutfit || 'original', focus:model.full.slice(0,2), zoom:companion?1.0:model.full[2], headMotion:companion||!reduced.matches, motion:companion||!reduced.matches, gaze:companion, blink:true, hairPhysics:true, gazeInput:[0,0], gazeTarget:[0,0], preferredExpression:'neutral', headInput:[0,0], target:[0,0], shake:[0,0], shakeTarget:[0,0], nextShake:0, time:0, blinkAt:-100, nextBlink:2.5, reaction:null, reactionStart:0, reactionElapsed:0, reactionDuration:0 };
   const canvas = $('character'), scene = $('scene');
   let live2d, compositor, maxHeadInput=30, frame=0, lastTime=0, lastDraw=0, visible=true, intersectionVisible=true, parentVisible=true, ready=false, metrics, controlsAttached=false, loading=false;
   let nativeMode=false,nativeRig=null,nativeAnimation=null,nativeWasAnimating=null;
   const images = new Map();
   const pointers=new Map();let gesture=null;
-  let facing=1,hostControls=false,hostDragging=false,companionGesture=null,lastInteractionPoint=null;
   const expressionOptions=['neutral','happy','shy','surprised','angry','sad','blink'];
-  function preferences(){return {motion:state.motion,headMotion:state.headMotion,gaze:state.gaze,facing:state.facing,blink:state.blink,hairPhysics:state.hairPhysics,zoom:state.zoom,outfit:state.outfit,expression:state.preferredExpression};}
+  function preferences(){return {motion:state.motion,headMotion:state.headMotion,gaze:state.gaze,blink:state.blink,hairPhysics:state.hairPhysics,zoom:state.zoom,outfit:state.outfit,expression:state.preferredExpression};}
   function publishPreferences(){if(companion&&parent!==window)parent.postMessage({type:'konisi-pet-preferences',preferences:preferences()},'*');}
   function applyPreferences(p){
     if(!companion||!p||typeof p!=='object')return;
-    for(const key of ['motion','headMotion','gaze','facing','blink','hairPhysics'])if(typeof p[key]==='boolean')state[key]=p[key];
+    for(const key of ['motion','headMotion','gaze','blink','hairPhysics'])if(typeof p[key]==='boolean')state[key]=p[key];
     if(Number.isFinite(p.zoom))state.zoom=Math.max(.75,Math.min(1.25,p.zoom));
     if(['original','tights','overknee'].includes(p.outfit))state.outfit=p.outfit;
     if(expressionOptions.includes(p.expression)){state.preferredExpression=p.expression;if(!state.reaction)state.expression=p.expression;}
-    if(!state.facing)setFacing(1);
-    if(!state.motion)cancelReaction();
     state.blinkAt=-100;lastTime=0;compose();updateMetrics();requestFrame();
   }
   function updateVisibility(){visible=intersectionVisible&&parentVisible;lastTime=0;if(!visible&&frame){cancelAnimationFrame(frame);frame=0;}else requestFrame();}
-  function setFacing(value){
-    if(facing===value)return;
-    facing=value;state.gazeInput[0]*=-1;
-    canvas.style.setProperty('--character-facing',String(facing));document.documentElement.dataset.facing=facing===1?'right':'left';
-  }
-  function setPointer(x,y,active){
-    if(!companion||hostDragging||companionGesture?.dragging)return;
-    if(active&&Number.isFinite(x)&&Number.isFinite(y)){
-      x=Math.max(-1,Math.min(1,x));y=Math.max(-1,Math.min(1,y));
-      updateMetrics();
-      const eyes=model.eyes?.neutral,eyeY=eyes?.length?eyes.reduce((total,eye)=>total+eye[1],0)/eyes.length:model.head[1];
-      const eyeX=eyes?.length?eyes.reduce((total,eye)=>total+eye[0],0)/eyes.length:model.head[0]+model.head[2]/2;
-      const headX=model.head[0]+model.head[2]/2;
-      const headOffset=metrics?(headX-state.focus[0])*metrics.fit/(metrics.rect.width/2):0;
-      // The buffer follows the displayed head centre, including its mirrored camera offset.
-      const relativeX=x-headOffset*facing;
-      if(state.motion&&state.facing){if(relativeX<-.12)setFacing(-1);else if(relativeX>.12)setFacing(1);}
-      const eyeOffsetX=metrics?(eyeX-state.focus[0])*metrics.fit/(metrics.rect.width/2):0;
-      const eyeOffset=metrics?(state.focus[1]-eyeY)*metrics.fit/(metrics.rect.height/2):0;
-      state.gazeTarget=[Math.max(-1,Math.min(1,x*facing-eyeOffsetX)),Math.max(-1,Math.min(1,y+eyeOffset))];
-    }else state.gazeTarget=[0,0];
-    requestFrame();
-  }
+  function setPointer(x,y,active){if(!companion)return;state.gazeTarget=active&&Number.isFinite(x)&&Number.isFinite(y)?[Math.max(-1,Math.min(1,x)),Math.max(-1,Math.min(1,y))]:[0,0];requestFrame();}
   if(companion)window.addEventListener('message',event=>{
-    if(parent===window||event.source!==parent||event.origin!==new URL(document.baseURI).origin||!event.data||typeof event.data!=='object')return;
+    if(parent===window||event.source!==parent||!event.data||typeof event.data!=='object')return;
     const data=event.data;
     if(data.type==='konisi-pet-config')applyPreferences(data.preferences);
     else if(data.type==='konisi-pet-pointer'&&typeof data.active==='boolean')setPointer(data.x,data.y,data.active);
-    else if(data.type==='konisi-pet-visibility'&&typeof data.visible==='boolean'){parentVisible=data.visible;if(!parentVisible){endCompanionGesture(null,true);hostDragging=false;}updateVisibility();}
-    else if(data.type==='konisi-pet-host'&&data.enabled===true){hostControls=true;document.documentElement.dataset.hostControls='true';$('petSettings').hidden=true;}
-    else if(data.type==='konisi-pet-action'&&ready&&state.motion&&['pat','poke','pinch','rub','tickle'].includes(data.action))react(data.action,null);
-    else if(data.type==='konisi-pet-drag-state'&&typeof data.active==='boolean'){
-      hostDragging=data.active;if(hostDragging){cancelReaction();state.gazeTarget=[0,0];}
-      else if(companionGesture?.dragging)endCompanionGesture(null,true);
-      requestFrame();
-    }
+    else if(data.type==='konisi-pet-visibility'&&typeof data.visible==='boolean'){parentVisible=data.visible;updateVisibility();}
   });
   function feedback() {
     $('costume').value=state.outfit;
@@ -76,10 +44,6 @@
       const button=$(id);if(button){button.textContent=(state[key]?'关闭':'开启')+label;button.setAttribute('aria-pressed',String(state[key]));}
     }
     if($('expression'))$('expression').value=state.preferredExpression;
-    if(companion){
-      document.querySelectorAll('[data-action]').forEach(button=>{button.disabled=!ready||!state.motion;});
-      scene.setAttribute('aria-label',state.motion?'点按摸头，拖动移动柯妮丝':'动作已暂停，仍可拖动移动柯妮丝');
-    }
     $('appearance').textContent=outfits[state.outfit];
     document.documentElement.dataset.expression=state.expression; document.documentElement.dataset.outfit=state.outfit;
   }
@@ -215,7 +179,6 @@
       const gazeEnabled=companion&&state.gaze&&state.motion&&state.expression==='neutral';
       for(let i=0;i<2;i++)state.gazeInput[i]+=((gazeEnabled?state.gazeTarget[i]:0)-state.gazeInput[i])*smooth;
       live2d.setGaze?.(state.gazeInput[0],state.gazeInput[1],{enabled:gazeEnabled,strength:1-blink});
-      live2d.setHeadFollow?.(state.gazeTarget[0],state.gazeTarget[1],{enabled:companion&&state.motion&&state.headMotion&&!hostDragging&&!companionGesture?.dragging});
       live2d.setPhysicsEnabled?.(state.hairPhysics);
 
       if(!state.motion&&(nativeMode||!state.reaction)) {
@@ -234,16 +197,14 @@
     if(state.motion||settling||state.reaction||shakeSettling||gazeSettling)requestFrame();
   }
   function settleHead(){state.target=[0,0];requestFrame();}
-  function point(e){updateMetrics();const r=metrics.rect,v=metrics.view;return [(e.clientX-r.left-r.width/2)*(companion?facing:1)/metrics.fit+v[0],(e.clientY-r.top-r.height/2)/metrics.fit+v[1]];}
+  function point(e){updateMetrics();const r=metrics.rect,v=metrics.view;return [(e.clientX-r.left-r.width/2)/metrics.fit+v[0],(e.clientY-r.top-r.height/2)/metrics.fit+v[1]];}
   const reactions=model.reactions || {
     pat:{mood:'happy',duration:900,line:'唔……这样轻轻摸头的话，我很喜欢哦。'},
     poke:{mood:'surprised',duration:760,line:'呀！突然戳过来，吓了我一跳。'},
     pinch:{mood:'shy',duration:980,line:'脸要被捏红啦……轻一点嘛。'},
-    rub:{mood:'angry',duration:1160,line:'头发都要被揉乱了，快住手啦。'},
-    tickle:{mood:'happy',duration:1400,line:'哈哈……好痒呀，先让我缓一缓。'}
+    rub:{mood:'angry',duration:1160,line:'头发都要被揉乱了，快住手啦。'}
   };
   function react(kind,button){
-    if(companion&&!state.motion)return;
     const reaction=reactions[kind];if(!reaction||model.id==='seated')return;
     state.reaction=kind;state.reactionStart=0;state.reactionElapsed=0;state.reactionDuration=reaction.duration;state.expression=reaction.mood;state.blinkAt=-100;
     if(nativeMode&&state.motion){
@@ -254,44 +215,6 @@
     delete document.documentElement.dataset.reaction;void document.documentElement.offsetWidth;document.documentElement.dataset.reaction=kind;
     document.querySelectorAll('[data-action]').forEach(item=>item.classList.toggle('is-active',item===button));
     compose();$('speaker').textContent='柯妮丝';$('dialogue').textContent=reaction.line;requestFrame();
-  }
-  function cancelReaction(){
-    if(!state.reaction)return;
-    state.reaction=null;state.reactionStart=0;state.reactionElapsed=0;state.expression=state.preferredExpression;
-    live2d?.stopMotions();delete document.documentElement.dataset.reaction;
-    document.querySelectorAll('[data-action]').forEach(button=>button.classList.remove('is-active'));compose();
-  }
-  function postDrag(phase,details={}){if(hostControls&&parent!==window)parent.postMessage({type:'konisi-pet-drag',phase,...details},'*');}
-  function endCompanionGesture(event,cancelled=false){
-    const g=companionGesture;if(!g||(event&&event.pointerId!==g.id))return;
-    companionGesture=null;scene.classList.remove('is-dragging');
-    if(scene.hasPointerCapture?.(g.id))scene.releasePointerCapture(g.id);
-    if(g.dragging){if(!g.delegated||event)postDrag(cancelled?'cancel':'end',event?{clientX:event.clientX,clientY:event.clientY}:{});}
-    else if(!cancelled&&event&&ready){lastInteractionPoint=point(event);react('pat',scene);}
-  }
-  function attachCompanionDragging(){
-    scene.addEventListener('pointerdown',event=>{
-      if(event.target.closest('button')||event.button!==0||companionGesture)return;
-      event.preventDefault();scene.setPointerCapture?.(event.pointerId);
-      companionGesture={id:event.pointerId,x:event.clientX,y:event.clientY,dragging:false,delegated:false};
-    });
-    scene.addEventListener('pointermove',event=>{
-      const g=companionGesture;
-      if(!g||event.pointerId!==g.id)return;
-      if(g.delegated)return;
-      event.preventDefault();const dx=event.clientX-g.x,dy=event.clientY-g.y;
-      if(!g.dragging&&hostControls&&Math.hypot(dx,dy)>=6){
-        g.dragging=true;g.delegated=true;cancelReaction();state.gazeTarget=[0,0];scene.classList.add('is-dragging');
-        postDrag('start',{dx,dy,clientX:event.clientX,clientY:event.clientY,pointerId:event.pointerId});
-        // The host receives subsequent pointer coordinates directly over a viewport overlay.
-        // screenX is intentionally unused: Edge 139 reports it in iframe-local coordinates.
-        if(scene.hasPointerCapture?.(g.id))scene.releasePointerCapture(g.id);
-      }
-    });
-    scene.addEventListener('pointerup',event=>endCompanionGesture(event));
-    scene.addEventListener('pointercancel',event=>endCompanionGesture(event,true));
-    scene.addEventListener('lostpointercapture',event=>{if(!companionGesture?.delegated)endCompanionGesture(event,true);});
-    window.addEventListener('blur',()=>endCompanionGesture(null,true));
   }
   function refreshCamera(){updateMetrics();feedback();settleHead();requestFrame();}
   function zoomAt(next,clientX,clientY){
@@ -335,13 +258,12 @@
       for(const key of ['gaze','blink','hairPhysics'])$(key).addEventListener('click',()=>{state[key]=!state[key];state.blinkAt=-100;feedback();requestFrame();publishPreferences();});
       const panel=$('petSettings'),toggle=$('settingsToggle');
       function showSettings(open){panel.hidden=!open;toggle.setAttribute('aria-expanded',String(open));if(open)$('costume').focus();}
-      toggle.addEventListener('click',()=>{if(hostControls)parent.postMessage({type:'konisi-pet-panel',open:true},'*');else showSettings(panel.hidden);});
+      toggle.addEventListener('click',()=>showSettings(panel.hidden));
       $('settingsClose').addEventListener('click',()=>{showSettings(false);toggle.focus();});
       document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!panel.hidden){showSettings(false);toggle.focus();}});
       scene.addEventListener('pointermove',e=>{const r=scene.getBoundingClientRect();setPointer((e.clientX-r.left-r.width/2)/(r.width/2),(e.clientY-r.top-r.height/2)/(r.height/2),true);});
-      // In a hosted frame the host owns pointer leave; it keeps following across the whole page.
-      scene.addEventListener('pointerleave',()=>{if(!hostControls)setPointer(0,0,false);});
-      attachCompanionDragging();
+      scene.addEventListener('pointerleave',()=>setPointer(0,0,false));
+      scene.addEventListener('click',e=>{if(!e.target.closest('button'))react('pat',scene);});
       scene.addEventListener('keydown',e=>{if(e.target===scene&&['Enter',' '].includes(e.key)){e.preventDefault();react('pat',scene);}});
     }
     $('headMotion').addEventListener('click',()=>{state.headMotion=!state.headMotion;settleHead();feedback();publishPreferences();});
@@ -349,7 +271,7 @@
     document.querySelectorAll('[data-action]').forEach(button=>button.addEventListener('click',()=>react(button.dataset.action,button)));
     // Level poses keep their original camera controls. Homepage input only follows eyes.
     new ResizeObserver(()=>{updateMetrics();settleHead();requestFrame();}).observe(scene);
-    document.addEventListener('visibilitychange',()=>{lastTime=0;settleHead();if(document.hidden){if(companion)endCompanionGesture(null,true);if(frame){cancelAnimationFrame(frame);frame=0;}}else requestFrame();});
+    document.addEventListener('visibilitychange',()=>{lastTime=0;settleHead();if(document.hidden&&frame){cancelAnimationFrame(frame);frame=0;}else requestFrame();});
     if('IntersectionObserver' in window)new IntersectionObserver(entries=>{intersectionVisible=entries[0].isIntersecting;updateVisibility();}).observe(scene);
     reduced.addEventListener('change',()=>{if(!companion&&reduced.matches){state.motion=false;state.headMotion=false;settleHead();feedback();requestFrame();}});
     canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();showFailure(new Error('WebGL context lost.'));});
@@ -386,7 +308,7 @@
   }
   // Read-only diagnostics for integration verification. No account or pointer data leaves this page.
   Object.defineProperty(window,'KONISI_LIVE2D',{value:Object.freeze({snapshot:({vertices=false}={})=>({
-    pose:model.id,ready,time:state.time,zoom:state.zoom,focus:[...state.focus],gazeTracking:companion&&state.gaze,gaze:[...state.gazeInput],pointerTarget:[...state.gazeTarget],facing,dragging:hostDragging||!!companionGesture?.dragging,lastInteractionPoint,hostControls,blinkEnabled:state.blink,hairPhysics:state.hairPhysics,preferences:preferences(),headMotion:state.headMotion,motion:state.motion,expression:state.expression,outfit:state.outfit,
+    pose:model.id,ready,time:state.time,zoom:state.zoom,focus:[...state.focus],gazeTracking:companion&&state.gaze,gaze:[...state.gazeInput],pointerTarget:[...state.gazeTarget],blinkEnabled:state.blink,hairPhysics:state.hairPhysics,preferences:preferences(),headMotion:state.headMotion,motion:state.motion,expression:state.expression,outfit:state.outfit,
     status:live2d?.getStatus()||null,parameters:ready?live2d.getParameters():[],
     drawables:ready?live2d.getDrawables({vertices}):[],appearance:compositor?.getStatus()||null,
     physics:ready?live2d.getPhysicsStatus():null,

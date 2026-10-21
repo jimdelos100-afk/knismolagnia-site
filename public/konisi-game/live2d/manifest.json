@@ -6,9 +6,9 @@
       "appearance": "standing-detailed",
       "maxHeadInput": 21,
       "rigContract": "standing/detailed/rig-contract.json",
-      "modelSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+      "modelSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
       "nativeRig": {
-        "mocSha256": "342caefaf7030587ee50f31be8c0d9a9c70b9f4b77a498fc504ff09a97761d4b",
+        "mocSha256": "cb8f9eda38f1b8dcf036e2f367139741245799fdb161e1617b4f6916029dca8c",
         "gaze": {
           "x": "ParamEyeBallX",
           "y": "ParamEyeBallY"
