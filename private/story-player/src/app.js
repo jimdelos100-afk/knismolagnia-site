@@ -10,14 +10,16 @@ import {createProgress,parseProgress} from './progress.js';
 import {MediaController} from './media.js';
 import {renderRichText,countRichText} from './rich-text.js';
 import {readStored,writeStored} from './store.js';
+import {AutoReader} from './auto-reader.js';
 import {createGraphView} from './graph-view.js';
 import {restoreProject} from './restore.js';
 
-const $=id=>document.getElementById(id),ROOT=new URL('../',import.meta.url),VERSION='1.2.0';
-const app={unityIndex:null,localReady:false,resourceLoading:false,story:null,player:null,library:null,media:null,translations:null,visited:new Set(),history:[],historyIndex:-1,actors:new Map(),graphButtons:new Map(),lastText:'',lastBackground:null,lastSave:0,saveChain:Promise.resolve(),loading:false,transitioning:false,support:[],lastState:null,config:null,savingBlocked:false,recovery:null,mode:'player',epoch:0,bundledStory:null,bundledTranslations:null,assetManifest:null,assetAudit:null,reviewAudit:null,presentation:null,checkpoints:[],stageAudit:null,graphView:null,mapManifest:null,sceneMap:new Map(),scenePositions:new Map(),storySceneIds:new Set(),storySceneCount:0,lengths:{},navigating:false,referenceURL:null,stageAuditSignature:null,resourceRevision:0};
+const $=id=>document.getElementById(id),ROOT=new URL('../',import.meta.url),VERSION='1.3.0';
+const app={unityIndex:null,localReady:false,resourceLoading:false,story:null,player:null,library:null,media:null,translations:null,visited:new Set(),history:[],historyIndex:-1,actors:new Map(),graphButtons:new Map(),lastText:'',lastBackground:null,lastSave:0,saveChain:Promise.resolve(),loading:false,transitioning:false,support:[],lastState:null,config:null,savingBlocked:false,recovery:null,mode:'player',epoch:0,bundledStory:null,bundledTranslations:null,assetManifest:null,assetAudit:null,reviewAudit:null,presentation:null,checkpoints:[],stageAudit:null,graphView:null,mapManifest:null,sceneMap:new Map(),scenePositions:new Map(),storySceneIds:new Set(),storySceneCount:0,lengths:{},navigating:false,referenceURL:null,stageAuditSignature:null,resourceRevision:0,hudError:'',dialogueHidden:false,historyOpen:false,historyEntries:new Map()};
+const autoReader=new AutoReader();
 const status=text=>{$('statusMessage').textContent=text;$('publicStatus').textContent=text;};
-const clearError=()=>{$('errorBox').hidden=true;};
-const showError=error=>{$('errorMessage').textContent=error?.message||String(error);$('errorBox').hidden=false;};
+const clearError=()=>{$('errorBox').hidden=true;app.hudError='';if($('hudStatus'))$('hudStatus').hidden=true;};
+const showError=error=>{stopAuto();app.hudError=error?.message||String(error);$('errorMessage').textContent=app.hudError;$('errorBox').hidden=false;const node=$('hudStatus');if(node){node.dataset.kind='error';node.textContent=app.hudError;node.hidden=false;}};
 const element=(tag,className,text)=>{const node=document.createElement(tag);if(className)node.className=className;if(text!==undefined)node.textContent=text;return node;};
 const legacyKeyFor=story=>`${story.id}|${story.gameFingerprint}`;
 const keyFor=story=>`${legacyKeyFor(story)}|reader-${app.mode}|player-1.1`;
@@ -27,27 +29,28 @@ const sceneById=id=>app.sceneMap.get(id);
 const activeScene=()=>sceneById(app.lastState?.sceneId||app.player?.state.sceneId);
 const mapId=id=>id;
 const sceneName=scene=>/^\d+(?:_\d+)*_txt$/i.test(scene.title)?`剧情 ${scene.title.replace(/_txt$/i,'').replaceAll('_','·')}`:scene.title;
-const inputIds=['readerNext','readerPrevious','modeSelect','loadStoryPack','resetDemo','loadTranslation','importProgress','exportProgress','loadGameFolder','assetFolderButton','auditAssets','runReview','saveCheckpoint','exportReview','importCheckpoint','clearAssets','compareReference','clearReference','playPause','restartScene','previousScene','nextScene','readerPosition','timeSlider','speedSelect','languageSelect','fullscreenButton'];
+const inputIds=['readerNext','readerPrevious','hudNext','hudPrevious','hudAuto','hudHistory','hudHide','autoReadButton','historyButton','hideDialogueButton','modeSelect','loadStoryPack','resetDemo','loadTranslation','importProgress','exportProgress','loadGameFolder','assetFolderButton','auditAssets','runReview','saveCheckpoint','exportReview','importCheckpoint','clearAssets','compareReference','clearReference','playPause','restartScene','previousScene','nextScene','readerPosition','timeSlider','speedSelect','languageSelect','fullscreenButton'];
 const busy=()=>app.loading||app.transitioning;
 function updateInputLocks(state=app.lastState||app.player?.state){
   const locked=busy()||!app.player;for(const id of inputIds)$(id).disabled=locked;
-  if(locked){$('stageViewport').setAttribute('aria-disabled','true');return;}
+  if(locked){$('stageViewport').dataset.readerDisabled='true';syncReadingChrome(state);return;}
   $('auditAssets').disabled=app.config?.localGame||!app.assetManifest;$('loadGameFolder').disabled=app.config?.localGame?!app.unityIndex:!app.assetManifest;$('assetFolderButton').disabled=$('loadGameFolder').disabled;$('clearAssets').disabled=!(app.library?.provider||app.library?.overrides.size);$('clearReference').disabled=!app.referenceURL;for(const id of ['referenceOpacity','referenceMode'])$(id).disabled=!app.referenceURL;
   const choiceWait=['choice','signal'].includes(state.waiting);
   $('previousScene').disabled=app.historyIndex<=0;$('nextScene').disabled=!sceneById(state.sceneId)?.next;
-  $('readerNext').disabled=!!state.ended||choiceWait||stagePending()||state.playing&&!['dialogue','text','node'].includes(state.waiting);
-  $('readerPrevious').disabled=!app.player.canPreviousDialogue?.()||stagePending(state);
+  $('readerNext').disabled=app.historyOpen||!!state.ended||choiceWait||stagePending()||state.playing&&!['dialogue','text','node'].includes(state.waiting);
+  $('readerPrevious').disabled=app.historyOpen||!app.player.canPreviousDialogue?.()||stagePending(state);
   $('readerPosition').disabled=!!app.story.program&&(choiceWait||state.ended);
-  $('stageViewport').setAttribute('aria-disabled',String(!!state.ended||choiceWait||stagePending()));
+  $('stageViewport').dataset.readerDisabled=String(!!state.ended||choiceWait||stagePending());
   if(app.config?.localGame&&!app.localReady){for(const id of ['readerPrevious','readerNext','playPause','restartScene','nextScene','readerPosition'])$(id).disabled=true;}
   if($('selectLocalGame'))$('selectLocalGame').disabled=busy()||!app.unityIndex;
+  syncReadingChrome(state);
 }
-function beginTransition(){if(busy()||!app.player)return false;app.transitioning=true;app.epoch++;app.player.pause();app.media?.sync({...app.player.state,rate:app.player.rate});updateInputLocks();return true;}
+function beginTransition(){if(busy()||!app.player)return false;stopAuto();app.transitioning=true;app.epoch++;app.player.pause();app.media?.sync({...app.player.state,rate:app.player.rate});updateInputLocks();return true;}
 function endTransition(){app.transitioning=false;if(app.player&&!app.loading)render(app.player.state);else updateInputLocks();}
 function guardedFile(handler){return async event=>{if(!event.target.files.length||!beginTransition()){event.target.value='';return;}try{await handler(event);}finally{event.target.value='';endTransition();}};}
 // Native file pickers can finish after another action. Lock every entry point,
 // including already-open pickers and keyboard controls, during a transition.
-for(const type of ['click','change','input'])document.addEventListener(type,event=>{if(busy()&&event.target.closest('button,input,select,#stageViewport')&&!event.target.closest('#dismissError,#recoveryExport')){event.preventDefault();event.stopImmediatePropagation();}},true);
+for(const type of ['click','change','input'])document.addEventListener(type,event=>{if(app.historyOpen&&event.target.closest('button,input,select,#stageViewport')&&!event.target.closest('#historyPanel,#hudHistory,#historyButton,#hudExitFullscreen,#fullscreenButton')){event.preventDefault();event.stopImmediatePropagation();return;}if(busy()&&event.target.closest('button,input,select,#stageViewport')&&!event.target.closest('#dismissError,#recoveryExport,#hudExitFullscreen,#hudRestore,#historyClose')){event.preventDefault();event.stopImmediatePropagation();}},true);
 const safeData=doc=>{
   const queue=[{value:doc,depth:0}];let count=0;
   while(queue.length){const {value,depth}=queue.pop();if(++count>200000||depth>40)throw new Error('文件结构过于复杂，未应用。');if(value&&typeof value==='object')for(const [name,child]of Object.entries(value)){if(['__proto__','prototype','constructor'].includes(name))throw new Error('文件包含不支持的字段，未应用。');if(child&&typeof child==='object')queue.push({value:child,depth:depth+1});}}
@@ -56,6 +59,71 @@ const safeData=doc=>{
 async function readJSON(file,maxMB=10){if(!file)return null;if(file.size>maxMB*1024*1024)throw new Error(`文件超过 ${maxMB} MB，未应用。`);try{return safeData(JSON.parse((await file.text()).replace(/^\uFEFF/,'')));}catch(error){if(error instanceof SyntaxError)throw new Error('文件不是有效的 JSON 文档，未应用。');throw error;}}
 async function fetchJSON(path){const response=await fetch(new URL(path,ROOT));if(!response.ok)throw new Error(`无法读取网页资源：${path}`);return safeData(await response.json());}
 function downloadJSON(name,doc){const url=URL.createObjectURL(new Blob([JSON.stringify(doc,null,2)+'\n'],{type:'application/json;charset=utf-8'})),a=element('a');try{a.href=url;a.download=name;document.body.append(a);a.click();}finally{a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);}}
+
+const setText=(node,text)=>{if(node.textContent!==text)node.textContent=text;};
+function syncReadingChrome(state=app.lastState){
+  const unavailable=busy()||!app.player||app.config?.localGame&&!app.localReady;
+  const gate=!!state&&(['choice','signal','node'].includes(state.waiting)||state.ended);
+  if(gate)autoReader.setEnabled(false);
+  const progress=app.player?.getDialogueProgress?.()||{current:0,total:0,ratio:0,complete:false};
+  const total=progress.total||0,current=Math.min(total,progress.current||0),bar=$('segmentProgress');
+  const max=total||1,value=total?current:progress.complete?1:0;if(bar.max!==max)bar.max=max;if(bar.value!==value)bar.value=value;
+  setText($('segmentProgressLabel'),total?`本段 ${current} / ${total} 句 · 还剩 ${Math.max(0,total-current)} 句`:state?.waiting==='choice'||state?.waiting==='signal'?'本段过场 · 等待选择':progress.complete?'本段过场已结束':'本段过场');
+  $('hudPrevious').disabled=$('readerPrevious').disabled||app.historyOpen;$('hudNext').disabled=$('readerNext').disabled||app.historyOpen;
+  setText($('hudNext'),$('readerNext').textContent||'下一句');
+  for(const id of ['hudAuto','autoReadButton']){const button=$(id);button.disabled=unavailable||app.historyOpen||gate;button.setAttribute('aria-pressed',String(autoReader.enabled));setText(button,autoReader.enabled?'自动：开':'自动播放');}
+  for(const id of ['hudHistory','historyButton']){const button=$(id);button.disabled=unavailable;button.setAttribute('aria-expanded',String(app.historyOpen));}
+  for(const id of ['hudHide','hideDialogueButton'])$(id).disabled=unavailable||app.historyOpen;
+  setText($('hideDialogueButton'),app.dialogueHidden?'显示对话框':'隐藏对话框');
+  $('stageViewport').dataset.dialogueHidden=String(app.dialogueHidden);$('hudRestore').hidden=!app.dialogueHidden;
+  $('hudExitFullscreen').hidden=document.fullscreenElement!==$('stageViewport');
+  const hudStatus=$('hudStatus');if(hudStatus){const pending=!!state&&(busy()||stagePending(state));hudStatus.hidden=!app.hudError&&!pending;hudStatus.dataset.kind=app.hudError?'error':'loading';if(!hudStatus.hidden)setText(hudStatus,app.hudError||'正在读取本段画面与声音…');}
+}
+function stopAuto(){autoReader.setEnabled(false);for(const id of ['hudAuto','autoReadButton']){const button=$(id);if(button){button.setAttribute('aria-pressed','false');setText(button,'自动播放');}}}
+function toggleAuto(){
+  if(busy()||!app.player||app.historyOpen||app.config?.localGame&&!app.localReady)return;
+  const state=app.player.state;if(state.ended||['choice','signal','node'].includes(state.waiting))return;
+  if(autoReader.enabled){stopAuto();app.player.pause();status('自动播放已关闭，点击继续阅读。');}
+  else{autoReader.setEnabled(true);previousFrame=performance.now();app.media.unlock();app.player.play();status('自动播放已开启，遇到分支会暂停。');}
+  syncReadingChrome(app.lastState);
+}
+function setDialogueHidden(hidden){app.dialogueHidden=!!hidden;if(hidden)closeHistory(false);syncReadingChrome(app.lastState);(hidden?$('hudRestore'):$('stageViewport')).focus({preventScroll:true});}
+function closeHistory(restoreFocus=true){
+  if(!app.historyOpen)return;app.historyOpen=false;app.historyEntries.clear();$('historyPanel').hidden=true;$('historyList').replaceChildren();
+  if(app.player)updateInputLocks(app.lastState||app.player.state);
+  if(restoreFocus){const target=[$('hudHistory'),$('historyButton'),$('stageViewport')].find(node=>node.getClientRects().length&&getComputedStyle(node).visibility!=='hidden');target?.focus({preventScroll:true});}
+}
+function openHistory(){
+  if(busy()||!app.player||app.config?.localGame&&!app.localReady)return;
+  if(app.historyOpen){closeHistory();return;}
+  stopAuto();app.dialogueHidden=false;app.historyOpen=true;app.player.pause();
+  const entries=app.player.getDialogueHistory(30),list=$('historyList');list.replaceChildren();app.historyEntries=new Map(entries.map(entry=>[entry.token,entry]));
+  for(const [index,entry]of entries.entries()){
+    const item=translateText(app.story,app.translations,entry.textId,app.mode==='player'?'translation':$('languageSelect').value);
+    const button=element('button','history-entry');button.type='button';button.dataset.historyToken=entry.token;
+    button.append(element('span','history-speaker',`${index+1}. ${entry.speaker||item.speaker||'旁白'}`));
+    const text=element('span','history-text');renderRichText(text,item.text,{visibleCharacters:countRichText(item.text)});button.append(text);list.append(button);
+  }
+  if(!entries.length)list.append(element('p','history-empty','还没有更早的已读对白。'));
+  const current=app.player.state.dialogue;
+  if(current?.textId){const item=translateText(app.story,app.translations,current.textId,app.mode==='player'?'translation':$('languageSelect').value);const line=element('p','history-current');line.append(element('strong','','当前句 · '));const text=element('span','history-text');renderRichText(text,item.text,{visibleCharacters:countRichText(item.text)});line.append(text);list.append(line);}
+  $('historyPanel').hidden=false;list.scrollTop=list.scrollHeight;$('historyClose').focus({preventScroll:true});updateInputLocks(app.lastState);
+}
+async function jumpHistory(token){
+  if(!app.historyEntries.has(token)||!beginTransition())return;
+  try{app.media.stop();app.player.rewindToDialogue(token);closeHistory(false);app.dialogueHidden=false;app.lastState=app.player.state;
+    buildDialoguePositions();app.visited.add(app.lastState.sceneId);updateProgressSummary();await readyStageResources();scheduleSave(true);status('已返回所选对白，点击继续阅读。');
+  }catch(error){showError(error);}finally{endTransition();$('stageViewport').focus({preventScroll:true});}
+}
+async function toggleFullscreen(){try{if(document.fullscreenElement)await document.exitFullscreen();else await $('stageViewport').requestFullscreen();}catch{showError(new Error('当前浏览器或嵌入页面未允许全屏，可继续在页面中浏览。'));}}
+for(const id of ['hudPrevious'])$(id).addEventListener('click',previousReading);
+$('hudNext').addEventListener('click',()=>continueReading());
+for(const id of ['hudAuto','autoReadButton'])$(id).addEventListener('click',toggleAuto);
+for(const id of ['hudHistory','historyButton'])$(id).addEventListener('click',openHistory);
+for(const id of ['hudHide','hideDialogueButton'])$(id).addEventListener('click',()=>setDialogueHidden(!app.dialogueHidden));
+$('hudRestore').addEventListener('click',()=>setDialogueHidden(false));$('hudExitFullscreen').addEventListener('click',toggleFullscreen);
+$('historyClose').addEventListener('click',()=>closeHistory());
+$('historyList').addEventListener('click',event=>{const button=event.target.closest('[data-history-token]');if(button)jumpHistory(button.dataset.historyToken);});
 
 function fitStage(){if(app.stageAudit)invalidateStageReview();const width=app.story?.stage?.width||1280,height=app.story?.stage?.height||720,viewport=$('stageViewport'),full=document.fullscreenElement===viewport,scale=full?Math.min(viewport.clientWidth/width,viewport.clientHeight/height):viewport.clientWidth/width;viewport.style.aspectRatio=full?'auto':`${width} / ${height}`;Object.assign($('logicalStage').style,{width:`${width}px`,height:`${height}px`,left:full?`${(viewport.clientWidth-width*scale)/2}px`:'0px',top:full?`${(viewport.clientHeight-height*scale)/2}px`:'0px',transformOrigin:'top left',transform:`scale(${scale})`});}
 function setRate(rate){app.player.setRate(rate);if(!Array.from($('speedSelect').options).some(option=>Number(option.value)===rate))$('speedSelect').append(new Option(`${rate}×`,String(rate)));$('speedSelect').value=String(rate);scheduleSave(true);}
@@ -102,7 +170,7 @@ async function requestJump(sceneId){
 }
 function renderChoices(state){
   const scene=sceneById(state.sceneId),panel=$('choicePanel');panel.replaceChildren();
-  const invoke=action=>{if(busy())return;try{app.media.unlock();app.player.play();action();scheduleSave(true);}catch(error){showError(error);}};
+  const invoke=action=>{if(busy()||app.historyOpen)return;try{stopAuto();app.media.unlock();app.player.play();action();scheduleSave(true);}catch(error){showError(error);}};
   if(app.story.program){
     const items=state.signal?.outcomes||state.choices||[];panel.hidden=!items.length;if(!items.length)return;
     panel.append(element('span','choice-heading',state.signal?'选择演出结果':'选择分支'));
@@ -144,12 +212,12 @@ function render(state){
   }
   const choiceWait=state.waiting==='choice'||state.waiting==='signal';
   $('readerNext').textContent=state.ended?'本段结束':choiceWait?(state.signal?'等待演出结果':'请选择分支'):state.waiting==='node'?'继续剧情':!state.playing?'继续阅读':state.waiting==='dialogue'?(dialogue.textComplete?'下一句':'显示完整对白'):state.waiting==='text'?'显示完整对白':'演出进行中';
-  $('readerNext').disabled=!!state.ended||choiceWait||stagePending()||state.playing&&!['dialogue','text','node'].includes(state.waiting);
+  $('readerNext').disabled=app.historyOpen||!!state.ended||choiceWait||stagePending()||state.playing&&!['dialogue','text','node'].includes(state.waiting);
   $('readerHint').textContent=state.ended?'本段已结束，可选择地图中的其他场景。':choiceWait?(state.signal?'本段正在等待演出结果，请选择下方结果继续。':'请选择下方分支继续。'):state.waiting==='node'?'已定位到此分支节点，点击继续剧情。':!state.playing?'点击画面或按空格继续阅读。':state.waiting==='dialogue'?(dialogue.textComplete?'点击画面进入下一句。':'点击画面显示完整对白，再次点击继续。'):state.waiting==='text'?'文字显示后会自动继续，点击可补全文字。':'正在演出，请稍候。';
-  $('stageViewport').setAttribute('aria-disabled',String(state.ended||choiceWait));
+  $('stageViewport').dataset.readerDisabled=String(state.ended||choiceWait);
   $('stageViewport').setAttribute('aria-label',state.ended?'本段结束，请选择地图节点':choiceWait?'请使用下方选项继续':!state.playing?'继续剧情阅读':state.waiting==='dialogue'?'点击继续对白':'剧情演出画面');
   $('readerPosition').value=dialogue.index>=0?String(dialogue.index):'';
-  $('readerPrevious').disabled=!app.player.canPreviousDialogue?.()||stagePending(state);
+  $('readerPrevious').disabled=app.historyOpen||!app.player.canPreviousDialogue?.()||stagePending(state);
   $('readerPosition').disabled=!!app.story.program&&(choiceWait||state.ended);
   $('stageLabel').textContent=app.config?.localGame?'XP2 · 本地资源':'二维演出';
   const video=state.video;if(video){$('videoLayer').style.transform=transform;$('videoLayer').style.transformOrigin=`${width/2-(video.x||0)}px ${height/2-(video.y||0)}px`;}
@@ -168,7 +236,7 @@ function scheduleSave(force=false){
   const envelope=saveEnvelope(),key=keyFor(app.story);app.saveChain=app.saveChain.catch(()=>{}).then(()=>writeStored(key,envelope)).catch(()=>{$('progressSummary').textContent='本机保存不可用，请导出浏览记录。';});
 }
 function navigate(sceneId,{history=true,time=0,save=true,reader=null,internal=false}={}){
-  if(busy()&&!internal)return;if(!sceneById(sceneId))throw new Error('没有找到该剧情节点。');app.media.stop();app.navigating=true;try{app.player.enter(sceneId);if(reader)app.player.restore(reader);else if(time)app.player.seek(time);}finally{app.navigating=false;}app.lastState=app.player.state;app.visited.add(app.lastState.sceneId);
+  if(busy()&&!internal)return;stopAuto();closeHistory(false);if(!sceneById(sceneId))throw new Error('没有找到该剧情节点。');app.media.stop();app.navigating=true;try{app.player.enter(sceneId);if(reader)app.player.restore(reader);else if(time)app.player.seek(time);}finally{app.navigating=false;}app.lastState=app.player.state;app.visited.add(app.lastState.sceneId);
   if(history){app.history=app.history.slice(0,app.historyIndex+1);app.history.push(sceneId);app.historyIndex=app.history.length-1;}
   buildDialoguePositions();updateProgressSummary();render(app.player.state);if(save)scheduleSave(true);status(`已进入「${activeScene().title}」，点击画面开始阅读。`);
 }
@@ -181,7 +249,7 @@ async function installStory(story,document=null,{restore=true}={}){
   if(!mapManifest)throw new Error('当前剧情包缺少章节目录。');
   const assetManifest=story.id===app.bundledStory?.id?app.bundledAssetManifest:story.assetManifest||null;
   if(assetManifest)story={...story,assetManifest:validateAssetManifest(story,assetManifest)};
-  const library=new ResourceLibrary({baseURL:ROOT.href,assets:story.assets,localOnly:!!app.config?.localGame,onReady:()=>{if(app.library===library&&app.player&&!busy())render(app.player.state);},onError:error=>{app.player?.pause();showError(error);}});
+  const library=new ResourceLibrary({baseURL:ROOT.href,assets:story.assets,localOnly:!!app.config?.localGame,onReady:()=>{if(app.library===library&&app.player&&!busy())render(app.player.state);},onError:error=>{stopAuto();app.player?.pause();showError(error);}});
   let merged,player,activated=false;
   try{
     // A structurally valid program can still fail while resolving its entry.
@@ -197,7 +265,7 @@ async function installStory(story,document=null,{restore=true}={}){
   app.story=story;app.mapManifest=mapManifest;app.sceneMap=new Map(story.scenes.map(scene=>[scene.id,scene]));
   app.storySceneIds=new Set(story.scenes.filter(scene=>!scene.id.startsWith('archive-')).map(scene=>scene.id));app.storySceneCount=app.storySceneIds.size;
   app.scenePositions=new Map();for(const reference of [false,true]){const scenes=story.scenes.filter(scene=>scene.id.startsWith('archive-')===reference);scenes.forEach((scene,index)=>app.scenePositions.set(scene.id,{label:`${reference?'资料 ':''}${index+1} / ${scenes.length}`}));}
-  app.lastState=null;app.library=library;app.player=player;activated=true;app.translations=merged.document;app.visited=new Set();app.history=[];app.historyIndex=-1;app.actors.clear();$('actorLayer').replaceChildren();app.lastBackground=null;$('backgroundLayer').replaceChildren();app.lastText='';app.lastRenderedScene=null;app.lastRenderedEnded=null;
+  app.lastState=null;autoReader.setEnabled(false);app.historyOpen=false;app.dialogueHidden=false;app.historyEntries.clear();$('historyPanel').hidden=true;app.library=library;app.player=player;activated=true;app.translations=merged.document;app.visited=new Set();app.history=[];app.historyIndex=-1;app.actors.clear();$('actorLayer').replaceChildren();app.lastBackground=null;$('backgroundLayer').replaceChildren();app.lastText='';app.lastRenderedScene=null;app.lastRenderedEnded=null;
   app.presentation=new PresentationRenderer($('effectLayer'),library);
   app.assetManifest=assetManifest;app.assetAudit=null;app.reviewAudit=app.mode==='review'?auditStory(story):null;app.checkpoints=[];app.stageAudit=null;clearReference();
   app.media=new MediaController($('videoLayer'),library,message=>{$('mediaStatus').textContent=message;if(/无法|尚未|检查/.test(message))status(message);});
@@ -240,15 +308,17 @@ function syncReference(){const img=$('referenceImage');img.hidden=!app.reference
 function renderSupport(){const list=$('supportList');list.replaceChildren();for(const item of app.support){const row=element('li',`support-item ${item.status}`);row.append(element('span','support-dot'),element('span','',item.label),element('small','',item.status==='ready'?'已实现':'待接入'));list.append(row);}}
 
 $('dismissError').addEventListener('click',clearError);
-function continueReading(){
+function continueReading({automatic=false}={}){
+  if(app.historyOpen||app.dialogueHidden&&!automatic)return;
   if(app.config?.localGame&&!app.localReady){status("请先选择游戏文件夹。");return;}
   if(busy()||!app.player||app.player.state.ended||['choice','signal'].includes(app.player.state.waiting))return;
   if(stagePending()){status('正在准备当前画面与声音，请稍候…');return;}
+  if(!automatic)autoReader.reset();
   clearError();previousFrame=performance.now();app.media.unlock();status(`正在浏览「${activeScene().title}」，可从地图切换场景。`);app.player.next();scheduleSave(true);
 }
 async function previousReading(){
   if(busy()||!app.player||app.config?.localGame&&!app.localReady||!app.player.canPreviousDialogue?.())return;
-  if(!beginTransition())return;
+  if(!beginTransition())return;closeHistory(false);
   try{clearError();app.media.stop();app.player.previousDialogue();app.lastState=app.player.state;
     buildDialoguePositions();app.visited.add(app.lastState.sceneId);updateProgressSummary();
     await readyStageResources();scheduleSave(true);status('已回到上一句，点击继续阅读。');
@@ -257,7 +327,7 @@ async function previousReading(){
 $('readerPrevious').title='上一句（←）';
 $('readerPrevious').addEventListener('click',previousReading);
 $('readerNext').addEventListener('click',continueReading);
-$('stageViewport').addEventListener('click',continueReading);
+$('stageViewport').addEventListener('click',event=>{if(event.target.closest('button,input,select,textarea,a,summary,#historyPanel,#choicePanel,.hud-toolbar,.segment-progress-row'))return;continueReading();});
 $('readerPosition').addEventListener('change',event=>{if(app.mode!=='review'||event.target.value==='')return;try{app.media.stop();app.player.seekDialogue(Number(event.target.value));render(app.player.state);scheduleSave(true);status('已定位对白；保持暂停，点击画面继续。');}catch(error){showError(error);}});
 $('modeSelect').addEventListener('change',async event=>{
   if(busy()||app.config?.reviewEnabled===false)return;const nextMode=event.target.value;if(!['player','review'].includes(nextMode)||!beginTransition())return;
@@ -266,14 +336,14 @@ $('modeSelect').addEventListener('change',async event=>{
   app.mode=nextMode;document.body.dataset.mode=nextMode;$('languageSelect').value='translation';
   await installStory(app.bundledStory,app.bundledTranslations);status(app.config?.localGame?'已切换浏览模式，请重新选择本机游戏文件夹。':nextMode==='player'?'已进入阅读模式，译文与素材由网页内置。':'已进入校对模式，可检查对白位置与资源。');}catch(error){if(app.story===previousStory){app.mode=previousMode;document.body.dataset.mode=previousMode;$('languageSelect').value=previousLanguage;}showError(error);}finally{event.target.value=app.mode;endTransition();fitStage();}
 });
-$('playPause').addEventListener('click',()=>{clearError();if(app.player.playing)app.player.pause();else{previousFrame=performance.now();app.media.unlock();if(app.player.state.ended){if(app.story.program)navigate(mapId(app.player.state.sceneId),{history:false});else app.player.seek(0);}app.player.play();}scheduleSave(true);});
+$('playPause').addEventListener('click',()=>{stopAuto();clearError();if(app.player.playing)app.player.pause();else{previousFrame=performance.now();app.media.unlock();if(app.player.state.ended){if(app.story.program)navigate(mapId(app.player.state.sceneId),{history:false});else app.player.seek(0);}app.player.play();}scheduleSave(true);});
 $('restartScene').addEventListener('click',()=>navigate(app.player.state.sceneId,{history:false}));
 $('previousScene').addEventListener('click',()=>{if(app.historyIndex>0){app.historyIndex--;navigate(app.history[app.historyIndex],{history:false});}});
 $('nextScene').addEventListener('click',()=>{if(activeScene()?.next)navigate(activeScene().next);});
 $('timeSlider').addEventListener('input',event=>{const time=Number(event.target.value);app.player.pause();app.player.seek(time);scheduleSave(true);});
 $('speedSelect').addEventListener('change',event=>setRate(Number(event.target.value)));
 $('languageSelect').addEventListener('change',()=>{syncTextLengths();buildDialoguePositions();render(app.player.state);scheduleSave(true);});
-$('fullscreenButton').addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await $('stageViewport').requestFullscreen();}catch{showError(new Error('当前浏览器或嵌入页面未允许全屏，可继续在页面中浏览。'));}});
+$('fullscreenButton').addEventListener('click',toggleFullscreen);
 $('loadTranslation').addEventListener('click',()=>$('translationFile').click());
 $('translationFile').addEventListener('change',guardedFile(async event=>{try{if(app.mode!=='review')throw new Error('请在校对模式中导入文档。');const epoch=app.epoch,sourceStory=app.story;const document=await readJSON(event.target.files[0],50);if(!document)return;if(app.mode!=='review'||app.epoch!==epoch||app.story!==sourceStory)throw new Error('页面已切换，本次导入未应用。');const merged=mergeTranslationDocument(app.story,app.translations,document);app.translations=merged.document;translationSummary(merged);syncTextLengths();buildDialoguePositions();render(app.player.state);scheduleSave(true);status('译文已按编号和原文匹配，空白项保留原有内容。');}catch(error){showError(error);}finally{event.target.value='';}}));
 $('loadStoryPack').addEventListener('click',()=>$('storyPackFile').click());
@@ -306,7 +376,7 @@ $('selectLocalGame').addEventListener('click',()=>{if(!busy()&&app.unityIndex)$(
 $('loadGameFolder').addEventListener('click',()=>$('gameFiles').click());
 $('assetFolderButton').addEventListener('click',()=>$('assetFolderFiles').click());
 for(const id of ['gameFiles','assetFolderFiles'])$(id).addEventListener('change',guardedFile(async event=>{try{await importAssets(Array.from(event.target.files));}catch(error){showError(error);}}));
-$('clearAssets').addEventListener('click',()=>{if(busy())return;app.player.pause();app.media.stop();app.library.clearOverrides();if(app.config?.localGame){app.library.setLocalProvider(null);app.localReady=false;document.body.dataset.localGame='waiting';$('localGameGate').hidden=false;}invalidateImages();render(app.player.state);$('gameFolderSummary').textContent='已解除本地目录绑定。';status('请选择游戏文件夹继续。');});
+$('clearAssets').addEventListener('click',()=>{if(busy())return;stopAuto();app.player.pause();app.media.stop();app.library.clearOverrides();if(app.config?.localGame){app.library.setLocalProvider(null);app.localReady=false;document.body.dataset.localGame='waiting';$('localGameGate').hidden=false;}invalidateImages();render(app.player.state);$('gameFolderSummary').textContent='已解除本地目录绑定。';status('请选择游戏文件夹继续。');});
 $('auditAssets').addEventListener('click',async()=>{if(!beginTransition())return;try{app.player.pause();app.assetAudit=await auditBundledAssets(app.story,app.assetManifest,{baseURL:ROOT.href,onProgress:auditMessage});renderAssetAudit();status(app.assetAudit.available===app.assetAudit.total?'内置素材大小与哈希全部通过。':'素材检查发现缺失或不一致，请查看校对工具。');}catch(error){showError(error);}finally{endTransition();}});
 $('runReview').addEventListener('click',()=>{if(busy())return;app.player.pause();app.reviewAudit=auditStory(app.story);app.stageAudit=inspectRenderedStage($('logicalStage'));app.stageAuditSignature=currentStageSignature();renderReview();status('已检查演出结构和当前画面；其他对白位置仍需分别核对。');});
 $('saveCheckpoint').addEventListener('click',()=>{if(busy())return;try{if(app.checkpoints.length>=100)throw new Error('本次会话最多保留 100 个检查点，请先导出记录。');app.player.pause();const label=$('checkpointLabel').value.trim()||`${activeScene().title} · ${app.player.state.stageTime.toFixed(2)} 秒`,doc=createReviewCheckpoint(app.story,app.player,{label});const existing=app.checkpoints.find(item=>item.doc.id===doc.id);if(existing)existing.doc=doc;else app.checkpoints.push({doc,status:'pending'});renderReview();downloadJSON(`检查点-${doc.id}.json`,doc);status('检查点已导出；回导后可恢复同一对白、流程与舞台时刻。');}catch(error){showError(error);}});
@@ -321,18 +391,44 @@ $('exportProgress').addEventListener('click',()=>{downloadJSON(`剧情浏览记�
 $('importProgress').addEventListener('click',()=>$('progressFile').click());
 $('progressFile').addEventListener('change',guardedFile(async event=>{try{const epoch=app.epoch;const document=await readJSON(event.target.files[0],10);if(!document)return;if(app.epoch!==epoch)throw new Error('页面已切换，本次进度导入未应用。');const progress=parseProgress(app.story,document);app.visited=new Set(progress.visited);navigate(progress.sceneId,{time:progress.time,reader:progress.reader||null,internal:true});setRate(app.mode==='player'?1:progress.rate);status(app.player.state.ended?'本段已结束，已恢复分支位置，请选择分支或地图节点。':'浏览记录已恢复，保持暂停，点击画面继续。');}catch(error){showError(error);}finally{event.target.value='';}}));
 $('resetDemo').addEventListener('click',async()=>{if(!beginTransition())return;const epoch=app.epoch;try{const [story,translations]=await Promise.all([fetchJSON(app.config.story),fetchJSON(app.config.translations)]);if(epoch!==app.epoch)throw new Error('页面已切换，本次重置未应用。');await installStory(story,translations,{restore:false});app.bundledStory=story;app.bundledTranslations=translations;status('已重新开始，请重新选择本地游戏文件夹。');}catch(error){showError(error);}finally{endTransition();}});
-document.addEventListener('keydown',event=>{if(busy()||!app.player||app.config?.localGame&&!app.localReady||event.ctrlKey||event.metaKey||event.altKey)return;const readingKey=event.code==='Space'||event.code==='Enter';if(readingKey&&(event.repeat||event.target.closest('#stageViewport,#readerNext'))){event.preventDefault();if(!event.repeat)continueReading();return;}if(/^(INPUT|TEXTAREA|SELECT|BUTTON)$/.test(event.target.tagName))return;if(app.mode==='player'&&event.code==='ArrowLeft'){event.preventDefault();if(!event.repeat)previousReading();return;}if(readingKey){event.preventDefault();continueReading();}else if(app.mode==='review'&&(event.code==='ArrowLeft'||event.code==='ArrowRight')){const dialogue=app.player.state.dialogue;if(!dialogue.count||app.story.program&&(app.player.state.ended||['choice','signal'].includes(app.player.state.waiting)))return;event.preventDefault();app.media.stop();app.player.seekDialogue(Math.max(0,Math.min(dialogue.count-1,dialogue.index+(event.code==='ArrowLeft'?-1:1))));scheduleSave(true);}});
-document.addEventListener('visibilitychange',()=>{previousFrame=0;if(document.hidden&&app.player){app.player.pause();scheduleSave(true);}});
-window.addEventListener('pagehide',()=>{app.player?.pause();scheduleSave(true);});
+document.addEventListener('keydown',event=>{
+  if(app.historyOpen){
+    if(event.key==='Escape'){event.preventDefault();event.stopPropagation();closeHistory();return;}
+    if(event.key==='Tab'){const items=[...$('historyPanel').querySelectorAll('button:not([disabled]),[tabindex="0"]')];const first=items[0],last=items.at(-1);if(items.length&&(!$('historyPanel').contains(document.activeElement)||event.shiftKey&&document.activeElement===first||!event.shiftKey&&document.activeElement===last)){event.preventDefault();(event.shiftKey?last:first).focus();}}return;
+  }
+  if(busy()||!app.player||app.config?.localGame&&!app.localReady||event.ctrlKey||event.metaKey||event.altKey)return;
+  const readingKey=event.code==='Space'||event.code==='Enter';
+  if(event.target.closest('button,input,textarea,select,a,summary')){if(readingKey&&event.repeat)event.preventDefault();return;}
+  if(app.dialogueHidden)return;
+  if(readingKey){event.preventDefault();if(!event.repeat)continueReading();}
+  else if(app.mode==='player'&&event.code==='ArrowLeft'){event.preventDefault();if(!event.repeat)previousReading();}
+  else if(app.mode==='review'&&(event.code==='ArrowLeft'||event.code==='ArrowRight')){const dialogue=app.player.state.dialogue;if(!dialogue.count||app.story.program&&(app.player.state.ended||['choice','signal'].includes(app.player.state.waiting)))return;event.preventDefault();stopAuto();app.media.stop();app.player.seekDialogue(Math.max(0,Math.min(dialogue.count-1,dialogue.index+(event.code==='ArrowLeft'?-1:1))));scheduleSave(true);}
+});
+
+document.addEventListener('visibilitychange',()=>{previousFrame=0;if(document.hidden&&app.player){stopAuto();app.player.pause();scheduleSave(true);}});
+window.addEventListener('pagehide',()=>{stopAuto();app.player?.pause();scheduleSave(true);});
 new ResizeObserver(fitStage).observe($('stageViewport'));
-document.addEventListener('fullscreenchange',()=>{fitStage();$('fullscreenButton').textContent=document.fullscreenElement?'退出全屏':'全屏';});
+document.addEventListener('fullscreenchange',()=>{fitStage();$('fullscreenButton').textContent=document.fullscreenElement?'退出全屏':'全屏';syncReadingChrome(app.lastState);});
 function stagePending(state=app.lastState||app.player?.state){if(!app.localReady||!app.library?.provider||!state)return false;const ids=currentResourceIds(state);ids.forEach(id=>app.library.resolve(id));return ids.some(id=>app.library.pending.has(id)&&!app.library.resolved.has(id));}
 function currentResourceIds(state){return [...new Set([state.background?.asset,...(state.characters||[]).map(item=>item.asset),...(state.audio||[]).map(item=>item.asset),state.video?.asset].filter(Boolean))];}
-let previousFrame=0;function frame(now){const delta=previousFrame?Math.max(0,(now-previousFrame)/1000):0;previousFrame=now;if(!busy()&&app.player?.playing&&(!app.config?.localGame||app.localReady))try{const resources=currentResourceIds(app.lastState||app.player.state);resources.forEach(id=>app.library.resolve(id));if(!resources.some(id=>app.library.pending.has(id)&&!app.library.resolved.has(id)))app.player.advance(delta);}catch(error){app.player.pause();showError(error);}requestAnimationFrame(frame);}requestAnimationFrame(frame);
+let previousFrame=0;
+function frame(now){
+  const delta=previousFrame?Math.max(0,(now-previousFrame)/1000):0;previousFrame=now;
+  try{
+    let ready=!!app.player&&(!app.config?.localGame||app.localReady)&&!stagePending();
+    if(!busy()&&app.player?.playing&&ready&&!app.historyOpen)app.player.advance(delta);
+    if(app.player&&autoReader.enabled){const state=app.lastState||app.player.state;ready=(!app.config?.localGame||app.localReady)&&!stagePending(state);const enabled=autoReader.enabled;
+      if(autoReader.update(state,{delta,ready,blocked:busy()||app.historyOpen||document.hidden,lineLength:app.lengths[state.dialogue?.textId]||0}))continueReading({automatic:true});
+      if(enabled!==autoReader.enabled)syncReadingChrome(app.lastState||state);
+    }
+  }catch(error){stopAuto();app.player?.pause();showError(error);}
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
 
 const recoveryButton=element('button','button small quiet','导出保留记录');recoveryButton.id='recoveryExport';recoveryButton.hidden=true;recoveryButton.addEventListener('click',()=>{if(app.recovery)downloadJSON('播放器-保留记录.json',{type:'story-player-recovery',schemaVersion:1,...app.recovery});});$('errorBox').append(recoveryButton);
 
-for(const id of ['readerNext','readerPrevious','modeSelect','loadStoryPack','resetDemo','loadTranslation','importProgress','exportProgress','loadGameFolder','assetFolderButton','auditAssets','runReview','saveCheckpoint','exportReview','importCheckpoint','clearAssets','compareReference','clearReference','playPause','restartScene','previousScene','nextScene','readerPosition','speedSelect','languageSelect','fullscreenButton'])$(id).disabled=true;
+for(const id of ['readerNext','readerPrevious','hudNext','hudPrevious','hudAuto','hudHistory','hudHide','autoReadButton','historyButton','hideDialogueButton','modeSelect','loadStoryPack','resetDemo','loadTranslation','importProgress','exportProgress','loadGameFolder','assetFolderButton','auditAssets','runReview','saveCheckpoint','exportReview','importCheckpoint','clearAssets','compareReference','clearReference','playPause','restartScene','previousScene','nextScene','readerPosition','speedSelect','languageSelect','fullscreenButton'])$(id).disabled=true;
 
 try{
   app.config=await fetchJSON('data/player-config.json');

@@ -113,7 +113,7 @@ export class ReaderPlayer{
     this._onUpdate=onUpdate;this._onEnd=onEnd;this._rate=1;this._playing=false;this._sourceLengths=new Map(this._story.texts.map(text=>[text.id,textLength(text.source)]));this._lengths=new Map(this._sourceLengths);
     this._reset(this._story.startScene);this._notify();
   }
-  _reset(id,entry=null){this._scene=this._scenes.get(id);this._entryOverride=entry?copy(entry):null;this._commands=commandsFor(this._scene);this._revision=revision(this._story,this._scene,this._commands);this._stageTime=0;this._cursor=0;this._executions=[];this._dialogueIndices=[];this._gate=null;this._forcedReveal=false;this._endNotified=false;this._playing=false;this._drain();}
+  _reset(id,entry=null){this._invalidateDialogueHistory();this._scene=this._scenes.get(id);this._entryOverride=entry?copy(entry):null;this._commands=commandsFor(this._scene);this._dialogueCount=this._commands.filter(command=>command.type==='dialogue').length;this._revision=revision(this._story,this._scene,this._commands);this._stageTime=0;this._cursor=0;this._executions=[];this._dialogueIndices=[];this._gate=null;this._forcedReveal=false;this._endNotified=false;this._playing=false;this._drain();}
   get story(){return copy(this._story);}
   get scene(){return copy(this._scene);}
   get playing(){return this._playing;}
@@ -132,8 +132,8 @@ export class ReaderPlayer{
     const length=this._lengths.get(result.dialogue.textId)||0,elapsed=Math.max(0,this._stageTime-result.dialogue.startedAt);
     const full=!!dialogue&&dialogue.releaseAt!==undefined||this._forcedReveal;
     result.dialogue.visibleCharacters=full?length:Math.min(length,Math.floor(elapsed*CPS+EPS));result.dialogue.textComplete=result.dialogue.visibleCharacters>=length;
-    result.dialogue.index=this._commands.slice(0,this._cursor).filter(command=>command.type==='dialogue').length-1;
-    result.dialogue.count=this._commands.filter(command=>command.type==='dialogue').length;
+    result.dialogue.index=this._dialogueIndices.length-1;
+    result.dialogue.count=this._dialogueCount;
     let pageSegments=[],previous=null;
     for(const execution of this._executions){const command=this._commands[execution.commandIndex];if(command.type!=='dialogue')continue;
       if(previous&&['InputBrPage','BrPage'].includes(previous))pageSegments=[];
@@ -145,7 +145,7 @@ export class ReaderPlayer{
     Object.defineProperty(result,'readerSnapshot',{configurable:true,enumerable:false,get:()=>this.snapshot()});return result;
   }
   snapshot(){return {type:'story-player-reader',schemaVersion:1,storyId:this._story.id,gameFingerprint:this._story.gameFingerprint,readerRevision:this._revision,sceneId:this._scene.id,stageTime:this._stageTime,cursor:this._cursor,executions:copy(this._executions),wait:copy(this._gate),forcedReveal:this._forcedReveal,rate:this._rate};}
-  restore(snapshot){const valid=checkedSnapshot(this._story,snapshot);this._scene=this._scenes.get(valid.sceneId);this._commands=commandsFor(this._scene);this._revision=valid.readerRevision;this._stageTime=valid.stageTime;this._cursor=valid.cursor;this._executions=valid.executions;this._dialogueIndices=this._executions.filter(item=>this._commands[item.commandIndex].type==='dialogue').map(item=>item.commandIndex);this._gate=valid.wait;this._forcedReveal=valid.forcedReveal;this._rate=valid.rate;this._playing=false;this._endNotified=this._cursor===this._commands.length&&!this._gate;this._notify();return this.state;}
+  restore(snapshot){const valid=checkedSnapshot(this._story,snapshot);this._invalidateDialogueHistory();this._scene=this._scenes.get(valid.sceneId);this._commands=commandsFor(this._scene);this._dialogueCount=this._commands.filter(command=>command.type==='dialogue').length;this._revision=valid.readerRevision;this._stageTime=valid.stageTime;this._cursor=valid.cursor;this._executions=valid.executions;this._dialogueIndices=this._executions.filter(item=>this._commands[item.commandIndex].type==='dialogue').map(item=>item.commandIndex);this._gate=valid.wait;this._forcedReveal=valid.forcedReveal;this._rate=valid.rate;this._playing=false;this._endNotified=this._cursor===this._commands.length&&!this._gate;this._notify();return this.state;}
   _notify(){const state=this.state;this._onUpdate(state);if(state.ended&&!this._endNotified){this._endNotified=true;this._onEnd(state,this.scene);}}
   _drain(){
     while(!this._gate&&this._cursor<this._commands.length){
@@ -176,8 +176,33 @@ export class ReaderPlayer{
   _previousDialogueCommand(){return this._dialogueIndices.at(this._gate?.kind==='dialogue'?-2:-1);}
   canPreviousDialogue(){return this._previousDialogueCommand()!==undefined;}
   previousDialogue(){
-    const commandIndex=this._previousDialogueCommand();if(commandIndex===undefined)return this.state;
-    const execution=this._executions[commandIndex];this._stageTime=execution.releaseAt??execution.at;
+    const commandIndex=this._previousDialogueCommand();return commandIndex===undefined?this.state:this._rewindDialogueCommand(commandIndex);
+  }
+  _invalidateDialogueHistory(){this._historyTokens=new Map();this._historyKeys=new Map();}
+  getDialogueProgress(){
+    const total=this._dialogueCount,current=this._dialogueIndices.length,complete=this._cursor===this._commands.length&&!this._gate;
+    return {current,total,ratio:total?current/total:complete?1:0,complete};
+  }
+  getDialogueHistory(limit=30){
+    if(!Number.isInteger(limit)||limit<0)fail('历史台词数量无效');limit=Math.min(30,limit);
+    const indices=limit?this._dialogueIndices.slice(0,-1).filter(index=>this._scene.events[this._commands[index].eventIndex].textId).slice(-limit):[];
+    const descriptors=[],keep=new Set();
+    for(const index of indices){
+      const event=this._scene.events[this._commands[index].eventIndex];let token=this._historyKeys.get(index);
+      if(!token){token=globalThis.crypto.randomUUID();this._historyKeys.set(index,token);this._historyTokens.set(token,index);}
+      keep.add(index);descriptors.push({token,sceneId:this._scene.id,textId:event.textId,...(event.speaker?{speaker:event.speaker}:{})});
+    }
+    for(const [index,token] of this._historyKeys)if(!keep.has(index)){this._historyKeys.delete(index);this._historyTokens.delete(token);}
+    return descriptors;
+  }
+  rewindToDialogue(token){
+    if(typeof token!=='string'||!this._historyTokens.has(token))fail('历史台词定位已失效');
+    return this._rewindDialogueCommand(this._historyTokens.get(token));
+  }
+  _rewindDialogueCommand(commandIndex){
+    const execution=this._executions[commandIndex];
+    if(!execution||this._commands[commandIndex]?.type!=='dialogue')fail('历史台词尚未阅读');
+    this._invalidateDialogueHistory();this._stageTime=execution.releaseAt??execution.at;
     this._executions=this._executions.slice(0,commandIndex+1);delete this._executions[commandIndex].releaseAt;
     this._cursor=commandIndex+1;this._dialogueIndices=this._dialogueIndices.filter(index=>index<=commandIndex);
     this._gate={kind:'dialogue',commandIndex};this._forcedReveal=true;this._playing=false;this._endNotified=false;

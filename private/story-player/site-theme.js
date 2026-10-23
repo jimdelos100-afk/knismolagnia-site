@@ -27,6 +27,7 @@
     const viewport = document.getElementById('stageViewport');
     const sourceSpeaker = document.getElementById('speakerName');
     const sourceText = document.getElementById('dialogueText');
+    const sourceWindow = document.getElementById('messageWindow');
     if (viewport && sourceSpeaker && sourceText && !document.querySelector('.mobile-dialogue')) {
       const dialogue = document.createElement('section');
       dialogue.className = 'mobile-dialogue';
@@ -38,6 +39,7 @@
       dialogue.append(speaker, text);
       viewport.after(dialogue);
       const syncDialogue = () => {
+        dialogue.hidden = !!sourceWindow?.hidden;
         speaker.textContent = sourceSpeaker.textContent || '旁白';
         text.replaceChildren(...Array.from(sourceText.childNodes, node => node.cloneNode(true)));
         if (!sourceText.textContent.trim()) text.textContent = '点击「继续阅读」开始。';
@@ -45,6 +47,7 @@
       const observer = new MutationObserver(syncDialogue);
       observer.observe(sourceSpeaker, { childList: true, subtree: true, characterData: true });
       observer.observe(sourceText, { childList: true, subtree: true, characterData: true });
+      if (sourceWindow) observer.observe(sourceWindow, { attributes: true, attributeFilter: ['hidden'] });
       syncDialogue();
     }
 
