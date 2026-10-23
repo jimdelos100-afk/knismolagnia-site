@@ -1,0 +1,158 @@
+{
+  "type": "story-player-program",
+  "schemaVersion": 1,
+  "storyId": "xp2-1-0-0",
+  "gameFingerprint": "xp2-1.0.0:97758f926ac3db7ca0b1bc2fa307dddcc69a777ec0704bf64b5f105575c91020",
+  "programRevision": "program-2:f4970d4f51acdfe9",
+  "runId": "ebae930a-6c17-4ed6-bf50-6a77b05feea0",
+  "entrySceneId": "chapter-26-row-1",
+  "mapRoute": {
+    "sourceSceneId": "chapter-25-row-1",
+    "steps": [
+      {
+        "node": "chapter-25-row-1",
+        "picks": []
+      },
+      {
+        "node": "chapter-25-row-229",
+        "picks": []
+      }
+    ],
+    "preference": "canonical"
+  },
+  "trace": [],
+  "nodeId": "chapter-26-row-1",
+  "variables": {},
+  "stack": [],
+  "phase": "reader",
+  "signalSerial": 0,
+  "reader": {
+    "type": "story-player-reader",
+    "schemaVersion": 1,
+    "storyId": "xp2-1-0-0",
+    "gameFingerprint": "xp2-1.0.0:97758f926ac3db7ca0b1bc2fa307dddcc69a777ec0704bf64b5f105575c91020",
+    "readerRevision": "reader-1:6ec796e18bbab30d",
+    "sceneId": "chapter-26-row-1",
+    "stageTime": 130,
+    "cursor": 27,
+    "executions": [
+      {
+        "commandIndex": 0,
+        "at": 0
+      },
+      {
+        "commandIndex": 1,
+        "at": 1,
+        "releaseAt": 40
+      },
+      {
+        "commandIndex": 2,
+        "at": 40
+      },
+      {
+        "commandIndex": 3,
+        "at": 41.5
+      },
+      {
+        "commandIndex": 4,
+        "at": 41.5
+      },
+      {
+        "commandIndex": 5,
+        "at": 41.52
+      },
+      {
+        "commandIndex": 6,
+        "at": 41.52
+      },
+      {
+        "commandIndex": 7,
+        "at": 41.540000000000006
+      },
+      {
+        "commandIndex": 8,
+        "at": 41.790000000000006
+      },
+      {
+        "commandIndex": 9,
+        "at": 41.790000000000006
+      },
+      {
+        "commandIndex": 10,
+        "at": 41.81000000000001
+      },
+      {
+        "commandIndex": 11,
+        "at": 41.81000000000001
+      },
+      {
+        "commandIndex": 12,
+        "at": 41.81000000000001,
+        "releaseAt": 80
+      },
+      {
+        "commandIndex": 13,
+        "at": 80
+      },
+      {
+        "commandIndex": 14,
+        "at": 80.0167
+      },
+      {
+        "commandIndex": 15,
+        "at": 80.0167
+      },
+      {
+        "commandIndex": 16,
+        "at": 80.0167
+      },
+      {
+        "commandIndex": 17,
+        "at": 81.0167
+      },
+      {
+        "commandIndex": 18,
+        "at": 81.0167
+      },
+      {
+        "commandIndex": 19,
+        "at": 81.0367
+      },
+      {
+        "commandIndex": 20,
+        "at": 81.0367
+      },
+      {
+        "commandIndex": 21,
+        "at": 81.0367,
+        "releaseAt": 120
+      },
+      {
+        "commandIndex": 22,
+        "at": 120
+      },
+      {
+        "commandIndex": 23,
+        "at": 120
+      },
+      {
+        "commandIndex": 24,
+        "at": 120.02
+      },
+      {
+        "commandIndex": 25,
+        "at": 120.02
+      },
+      {
+        "commandIndex": 26,
+        "at": 120.02
+      }
+    ],
+    "wait": {
+      "kind": "dialogue",
+      "commandIndex": 26
+    },
+    "forcedReveal": false,
+    "rate": 1
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "story": "data/story.json",
   "translations": "data/translations.json",
   "support": "data/support.json",
@@ -7,5 +7,6 @@
   "defaultMode": "player",
   "reviewEnabled": false,
   "localGame": true,
-  "unityIndex": "data/unity-index.json"
+  "unityIndex": "data/unity-index.json",
+  "chapterMap": "data/chapter-map/manifest.json"
 }

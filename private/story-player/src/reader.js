@@ -113,7 +113,7 @@ export class ReaderPlayer{
     this._onUpdate=onUpdate;this._onEnd=onEnd;this._rate=1;this._playing=false;this._sourceLengths=new Map(this._story.texts.map(text=>[text.id,textLength(text.source)]));this._lengths=new Map(this._sourceLengths);
     this._reset(this._story.startScene);this._notify();
   }
-  _reset(id,entry=null){this._scene=this._scenes.get(id);this._entryOverride=entry?copy(entry):null;this._commands=commandsFor(this._scene);this._revision=revision(this._story,this._scene,this._commands);this._stageTime=0;this._cursor=0;this._executions=[];this._gate=null;this._forcedReveal=false;this._endNotified=false;this._playing=false;this._drain();}
+  _reset(id,entry=null){this._scene=this._scenes.get(id);this._entryOverride=entry?copy(entry):null;this._commands=commandsFor(this._scene);this._revision=revision(this._story,this._scene,this._commands);this._stageTime=0;this._cursor=0;this._executions=[];this._dialogueIndices=[];this._gate=null;this._forcedReveal=false;this._endNotified=false;this._playing=false;this._drain();}
   get story(){return copy(this._story);}
   get scene(){return copy(this._scene);}
   get playing(){return this._playing;}
@@ -142,15 +142,15 @@ export class ReaderPlayer{
     result.dialogue.pageSegments=pageSegments;
     if(dialogue?.releaseAt!==undefined){const command=this._commands[dialogue.commandIndex];if(command.pageCtrl!==undefined&&['InputBrPage','BrPage'].includes(normalizePageControl(command.pageCtrl))){result.dialogue.visible=false;result.dialogue.pageSegments=[];}}
     for(const track of result.audio)track.playing=track.playing&&this._playing;if(result.video)result.video.playing=result.video.playing&&this._playing;
-    result.readerSnapshot=this.snapshot();return result;
+    Object.defineProperty(result,'readerSnapshot',{configurable:true,enumerable:false,get:()=>this.snapshot()});return result;
   }
   snapshot(){return {type:'story-player-reader',schemaVersion:1,storyId:this._story.id,gameFingerprint:this._story.gameFingerprint,readerRevision:this._revision,sceneId:this._scene.id,stageTime:this._stageTime,cursor:this._cursor,executions:copy(this._executions),wait:copy(this._gate),forcedReveal:this._forcedReveal,rate:this._rate};}
-  restore(snapshot){const valid=checkedSnapshot(this._story,snapshot);this._scene=this._scenes.get(valid.sceneId);this._commands=commandsFor(this._scene);this._revision=valid.readerRevision;this._stageTime=valid.stageTime;this._cursor=valid.cursor;this._executions=valid.executions;this._gate=valid.wait;this._forcedReveal=valid.forcedReveal;this._rate=valid.rate;this._playing=false;this._endNotified=this._cursor===this._commands.length&&!this._gate;this._notify();return this.state;}
+  restore(snapshot){const valid=checkedSnapshot(this._story,snapshot);this._scene=this._scenes.get(valid.sceneId);this._commands=commandsFor(this._scene);this._revision=valid.readerRevision;this._stageTime=valid.stageTime;this._cursor=valid.cursor;this._executions=valid.executions;this._dialogueIndices=this._executions.filter(item=>this._commands[item.commandIndex].type==='dialogue').map(item=>item.commandIndex);this._gate=valid.wait;this._forcedReveal=valid.forcedReveal;this._rate=valid.rate;this._playing=false;this._endNotified=this._cursor===this._commands.length&&!this._gate;this._notify();return this.state;}
   _notify(){const state=this.state;this._onUpdate(state);if(state.ended&&!this._endNotified){this._endNotified=true;this._onEnd(state,this.scene);}}
   _drain(){
     while(!this._gate&&this._cursor<this._commands.length){
       const commandIndex=this._cursor++,command=this._commands[commandIndex];this._executions.push({commandIndex,at:this._stageTime});
-      if(command.type==='dialogue'){this._forcedReveal=false;this._gate={kind:'dialogue',commandIndex};}
+      if(command.type==='dialogue'){this._dialogueIndices.push(commandIndex);this._forcedReveal=false;this._gate={kind:'dialogue',commandIndex};}
       else {const duration=blockDuration(this._scene,command);if(duration>0)this._gate={kind:'wait',commandIndex,until:this._stageTime+duration};}
     }
   }
@@ -170,6 +170,18 @@ export class ReaderPlayer{
       this._executions[this._gate.commandIndex].releaseAt=this._stageTime;this._gate=null;this._forcedReveal=false;this._drain();this._notify();return this.state.ended?'end':'advance';
     }
     this._notify();return this.state.ended?'end':wasPaused?'start':'wait';
+  }
+  // Keep only executed command cursors. Rewinding never borrows an unchosen
+  // branch or substitutes canonical timing for the reader's actual dwell time.
+  _previousDialogueCommand(){return this._dialogueIndices.at(this._gate?.kind==='dialogue'?-2:-1);}
+  canPreviousDialogue(){return this._previousDialogueCommand()!==undefined;}
+  previousDialogue(){
+    const commandIndex=this._previousDialogueCommand();if(commandIndex===undefined)return this.state;
+    const execution=this._executions[commandIndex];this._stageTime=execution.releaseAt??execution.at;
+    this._executions=this._executions.slice(0,commandIndex+1);delete this._executions[commandIndex].releaseAt;
+    this._cursor=commandIndex+1;this._dialogueIndices=this._dialogueIndices.filter(index=>index<=commandIndex);
+    this._gate={kind:'dialogue',commandIndex};this._forcedReveal=true;this._playing=false;this._endNotified=false;
+    this._notify();return this.state;
   }
   _advanceTo(target){
     while(this._gate){
@@ -208,10 +220,11 @@ export class ReaderPlayer{
   }
   /** Deterministic reconstruction for map routes, without synthetic user clicks. */
   completeCanonical(){
-    this._stageTime=0;this._cursor=0;this._executions=[];this._gate=null;this._forcedReveal=false;this._playing=false;
+    this._stageTime=0;this._cursor=0;this._executions=[];this._dialogueIndices=[];this._gate=null;this._forcedReveal=false;this._playing=false;
     for(const command of this._commands){
       const execution={commandIndex:this._cursor++,at:this._stageTime};this._executions.push(execution);
       if(command.type==='dialogue'){
+        this._dialogueIndices.push(execution.commandIndex);
         const event=this._scene.events[command.eventIndex];
         execution.releaseAt=this._stageTime+(this._sourceLengths.get(event.textId)||0)/CPS;this._stageTime=execution.releaseAt;
       }else this._stageTime+=blockDuration(this._scene,command);

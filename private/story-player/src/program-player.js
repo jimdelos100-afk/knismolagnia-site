@@ -5,7 +5,7 @@ const plain=value=>value!==null&&typeof value==='object'&&!Array.isArray(value)&
 const own=(object,key)=>Object.prototype.hasOwnProperty.call(object,key);
 const finite=value=>typeof value==='number'&&Number.isFinite(value);
 const forbidden=new Set(['__proto__','prototype','constructor']);
-const MAX_TRACE=10000,MAX_STACK=64,MAX_HOPS=512;
+const MAX_TRACE=10000,MAX_STACK=64,MAX_HOPS=512,MAX_BACK_BLOCKS=256;
 const fail=message=>{throw new Error(`剧情流程无效：${message}`);};
 function fields(value,allowed,name){if(!plain(value))fail(`${name}必须是普通对象`);for(const key of Object.keys(value))if(!allowed.includes(key)||forbidden.has(key))fail(`${name}含未知字段 ${key}`);}
 function nameOK(value,name){if(typeof value!=='string'||!value.trim()||value.length>512||/[\u0000-\u001f\u007f]/.test(value)||forbidden.has(value))fail(`${name}不是有效编号`);}
@@ -62,7 +62,10 @@ function evaluate(ast,scope){
 export function evaluateExpression(source,variables){scopeOK(variables);return evaluate(parseExpression(source,new Set(Object.keys(variables))),variables);}
 
 export function validateProgramStory(story){
-  validateReaderStory(story);const program=story.program;fields(program,['version','entry','variables','nodes','mapEntries','entryMode'],'流程程序');if(program.version!==1)fail('流程版本不支持');if(program.entryMode!==undefined&&!['reset','carry'].includes(program.entryMode))fail('流程画面继承模式无效');scopeOK(program.variables);
+  validateReaderStory(story);return validateProgramFields(story);
+}
+function validateProgramFields(story){
+  const program=story.program;fields(program,['version','entry','variables','nodes','mapEntries','entryMode'],'流程程序');if(program.version!==1)fail('流程版本不支持');if(program.entryMode!==undefined&&!['reset','carry'].includes(program.entryMode))fail('流程画面继承模式无效');scopeOK(program.variables);
   if(!plain(program.nodes)||!Object.keys(program.nodes).length||Object.keys(program.nodes).length>10000)fail('流程节点目录无效');
   const names=new Set(Object.keys(program.variables)),scenes=new Set(story.scenes.map(scene=>scene.id)),usedScenes=new Set();let instructions=0;
   function target(id){nameOK(id,'目标节点');if(!own(program.nodes,id))fail(`目标节点不存在 ${id}`);}
@@ -187,7 +190,10 @@ function checkMapRoute(program,route){
 /** Control flow delegates every visual block and click gate to ReaderPlayer. */
 export class ProgramPlayer{
   constructor(story,{onUpdate=()=>{},onEnd=()=>{}}={}){
-    validateProgramStory(story);this._story=copy(story);this._program=this._story.program;this._revision=revision(this._story);this._onUpdate=onUpdate;this._onEnd=onEnd;this._reader=new ReaderPlayer(this._story);this._ast=new Map();this._endNotified=false;this._arrivals=new Map();
+    // ReaderPlayer validates its public input and owns a detached private copy.
+    // Flow and reader can share that copy without repeating validation or
+    // copying the complete game again. Neither controller mutates the script.
+    this._reader=new ReaderPlayer(story);this._story=this._reader._story;validateProgramFields(this._story);this._program=this._story.program;this._revision=revision(this._story);this._onUpdate=onUpdate;this._onEnd=onEnd;this._ast=new Map();this._endNotified=false;this._arrivals=new Map();
     this._reset(null,freshRun());this._notify();
   }
   get story(){return copy(this._story);}get scene(){return this._reader.scene;}get playing(){return this._reader.playing;}get rate(){return this._reader.rate;}
@@ -196,7 +202,7 @@ export class ProgramPlayer{
     const route=entrySceneId===null?null:(mapRoute||findRoute(this._story,entrySceneId,this._arrivals.get(entrySceneId)));
     const start=routeStart(this._program,route?.sourceSceneId??null,route?.preference==='isolated');
     if(route){const end=checkMapRoute(this._program,route);if(this._program.nodes[end.node].sceneId!==entrySceneId)fail('地图路径终点与请求场景不一致');}
-    this._nodeId=null;this._origin=entrySceneId;this._runId=runId;this._variables=start.variables;this._stack=start.stack;this._trace=[];this._serial=0;this._gate=null;this._phase='reader';this._endNotified=false;
+    this._nodeId=null;this._origin=entrySceneId;this._runId=runId;this._variables=start.variables;this._stack=start.stack;this._trace=[];this._backBlocks=[];this._serial=0;this._gate=null;this._phase='reader';this._endNotified=false;
     this._mapRoute=copy(route);this._routeSource=route?.sourceSceneId??null;this._routeWalk=[];this._pendingRouteStep=null;this._rebuilding=!!route;this._activate(start.node);
     if(route){for(const step of route.steps)this._canonicalStep(step);this._trace=[];this._rebuilding=false;if(route.preference!=='isolated')this._arrivals.set(entrySceneId,{sourceSceneId:route.sourceSceneId,steps:copy(route.steps),preference:route.preference});this._parkMapNode();}
     else this._settle();
@@ -215,10 +221,17 @@ export class ProgramPlayer{
   _parkMapNode(){
     if(!this._reader.state.ended)return;
     const exit=this._program.nodes[this._nodeId].exit;
-    if(['choices','signal'].includes(exit.type)){this._record({kind:'finish',reader:this._reader.snapshot()});this._pendingRouteStep={node:this._nodeId,picks:[]};this._resolve(exit,{count:0});}
+    if(['choices','signal'].includes(exit.type)){this._finishBlock();this._pendingRouteStep={node:this._nodeId,picks:[]};this._resolve(exit,{count:0});}
     else this._phase='node';
   }
   _record(action){if(this._trace.length>=MAX_TRACE)fail('流程记录超过上限，请从地图入口重新开始');this._trace.push(copy(action));}
+  _finishBlock(){
+    // One small anchor per completed block points into the existing validated
+    // trace. No story, per-frame state, or per-line art snapshot is retained.
+    const anchor={traceIndex:this._trace.length,nodeId:this._nodeId,variables:copy(this._variables),stack:copy(this._stack),serial:this._serial,walkLength:this._routeWalk.length,entry:copy(this._reader._entryOverride),hasDialogue:this._reader._dialogueIndices.length>0};
+    this._record({kind:'finish',reader:this._reader.snapshot()});
+    if(!this._rebuilding){this._backBlocks.push(anchor);if(this._backBlocks.length>MAX_BACK_BLOCKS)this._backBlocks.shift();}
+  }
   _resolve(exit,budget){
     if(++budget.count>MAX_HOPS)fail('连续流程超过限制，可能存在无等待循环');
     switch(exit.type){
@@ -235,7 +248,7 @@ export class ProgramPlayer{
       default:fail('未知流程出口');
     }
   }
-  _settle(){const budget={count:0};while(this._phase==='reader'&&this._reader.state.ended){this._record({kind:'finish',reader:this._reader.snapshot()});this._pendingRouteStep={node:this._nodeId,picks:[]};this._resolve(this._program.nodes[this._nodeId].exit,budget);}}
+  _settle(){const budget={count:0};while(this._phase==='reader'&&this._reader.state.ended){this._finishBlock();this._pendingRouteStep={node:this._nodeId,picks:[]};this._resolve(this._program.nodes[this._nodeId].exit,budget);}}
   get state(){
     const state=this._reader.state;state.ended=this._phase==='end';if(this._phase!=='reader')state.waiting=this._phase==='end'?null:this._phase;
     state.choices=this._phase==='choice'?this._gate.items.map(({id,label})=>({id,label})):[];state.signal=this._phase==='signal'?{id:this._gate.id,token:this._gate.token,outcomes:this._gate.items.map(({id,label})=>({id,label}))}:null;
@@ -249,6 +262,23 @@ export class ProgramPlayer{
   setRate(rate){this._reader.setRate(rate);this._notify();return this.state;}setTextLengths(lengths){this._reader.setTextLengths(lengths);this._notify();return this.state;}
   advance(seconds){this._reader.advance(seconds);this._settle();this._notify();return this.state;}
   next(){if(this._phase==='node'){this._phase='reader';this._settle();this._notify();return this._phase==='reader'?'advance':this._phase;}if(this._phase!=='reader'){this._notify();return this._phase==='end'?'end':this._phase;}const result=this._reader.next();this._settle();this._notify();return this._phase==='end'?'end':this._phase!=='reader'?this._phase:result==='end'?'advance':result;}
+  canPreviousDialogue(){return this._reader.canPreviousDialogue()||this._backBlocks.some(block=>block.hasDialogue);}
+  previousDialogue(){
+    if(!this.canPreviousDialogue())return this.state;
+    const rate=this.rate;
+    // A pending exit has already recorded its finish. Undo that exit before
+    // revisiting the last line, so variables, calls and choices can run again.
+    if(this._phase==='reader'&&this._reader.canPreviousDialogue())this._reader.previousDialogue();
+    else{
+      let anchor;while(this._backBlocks.length){const candidate=this._backBlocks.pop();if(candidate.hasDialogue){anchor=candidate;break;}}
+      if(!anchor)return this.state;
+      const completed=this._trace[anchor.traceIndex].reader;
+      this._trace.length=anchor.traceIndex;this._nodeId=anchor.nodeId;this._variables=copy(anchor.variables);this._stack=copy(anchor.stack);this._serial=anchor.serial;
+      this._routeWalk.length=anchor.walkLength;this._pendingRouteStep=null;this._phase='reader';this._gate=null;
+      this._reader._entryOverride=copy(anchor.entry);this._reader.restore(completed);this._reader.previousDialogue();
+    }
+    this._reader.setRate(rate);this._reader.pause();this._endNotified=false;this._notify();return this.state;
+  }
   choose(id){
     if(this._phase!=='choice')fail('当前没有等待分支选择');const item=this._gate.items.find(item=>item.id===id);if(!item)fail('选项不存在或条件不满足');this._record({kind:'choice',id,reader:this._reader.snapshot()});this._pendingRouteStep.picks.push(id);this._gate=null;this._resolve(item.then,{count:0});this._settle();this._notify();return this.state;
   }
@@ -258,7 +288,7 @@ export class ProgramPlayer{
   // Canonical review is confined to the active block; its completed exit still executes.
   seek(seconds){if(this._phase!=='reader')fail('交互出口处不能校对定位，请重新进入场景');this._reader.seek(seconds);this._settle();this._notify();return this.state;}
   seekDialogue(index){if(this._phase!=='reader')fail('交互出口处不能校对定位，请重新进入场景');this._reader.seekDialogue(index);this._notify();return this.state;}
-  restore(snapshot){const runner=replaySnapshot(this._story,snapshot);for(const key of ['_origin','_runId','_nodeId','_variables','_stack','_trace','_serial','_gate','_phase','_mapRoute','_routeSource','_routeWalk','_pendingRouteStep','_arrivals'])this[key]=copy(runner[key]);this._reader._entryOverride=copy(runner._reader._entryOverride);this._reader.restore(runner._reader.snapshot());this._endNotified=this._phase==='end';runner.dispose();this._notify();return this.state;}
+  restore(snapshot){const runner=replaySnapshot(this._story,snapshot);for(const key of ['_origin','_runId','_nodeId','_variables','_stack','_trace','_backBlocks','_serial','_gate','_phase','_mapRoute','_routeSource','_routeWalk','_pendingRouteStep','_arrivals'])this[key]=copy(runner[key]);this._reader._entryOverride=copy(runner._reader._entryOverride);this._reader.restore(runner._reader.snapshot());this._endNotified=this._phase==='end';runner.dispose();this._notify();return this.state;}
   dispose(){this._reader.dispose();this._onUpdate=()=>{};this._onEnd=()=>{};}
 }
 
