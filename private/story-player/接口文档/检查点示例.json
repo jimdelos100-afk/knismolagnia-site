@@ -1,0 +1,53 @@
+{
+  "type": "neutral-story-review-checkpoint",
+  "schemaVersion": 1,
+  "scope": "independent-neutral-story",
+  "id": "review-1:1a49478a920d1ece93e8cffae375faee",
+  "storyId": "night-shift-original",
+  "sourceFingerprint": "original:night-shift:1",
+  "storyRevision": "review-source-1:7b6160fa8dfdf2c22848b96610e22104",
+  "sceneId": "signals",
+  "label": "屋顶灯点暂停校对",
+  "savedAt": "2026-10-23T05:47:29.675Z",
+  "paused": true,
+  "snapshot": {
+    "type": "story-player-program",
+    "schemaVersion": 1,
+    "storyId": "night-shift-original",
+    "gameFingerprint": "original:night-shift:1",
+    "programRevision": "program-1:7b6160fa8dfdf2c2",
+    "runId": "8526487f-16be-4c63-b66b-1a52b58475bf",
+    "entrySceneId": "signals",
+    "trace": [],
+    "nodeId": "signals",
+    "variables": {
+      "route": "",
+      "confirmed": false
+    },
+    "stack": [],
+    "phase": "reader",
+    "signalSerial": 0,
+    "reader": {
+      "type": "story-player-reader",
+      "schemaVersion": 1,
+      "storyId": "night-shift-original",
+      "gameFingerprint": "original:night-shift:1",
+      "readerRevision": "reader-1:1e32a7198741f0af",
+      "sceneId": "signals",
+      "stageTime": 0.27380000001787996,
+      "cursor": 1,
+      "executions": [
+        {
+          "commandIndex": 0,
+          "at": 0
+        }
+      ],
+      "wait": {
+        "kind": "dialogue",
+        "commandIndex": 0
+      },
+      "forcedReveal": true,
+      "rate": 1
+    }
+  }
+}

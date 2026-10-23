@@ -1,0 +1,58 @@
+{
+  "textures": [
+    {
+      "id": "texture:resources.assets:146",
+      "format": 3,
+      "width": 1280,
+      "height": 720,
+      "path": "texture-3.rgba",
+      "sha256": "89359a4f66fb07d2a0e3daeb29854c2afccd3ad8330ad038783282c6563e773a"
+    },
+    {
+      "id": "texture:resources.assets:13",
+      "format": 4,
+      "width": 1280,
+      "height": 720,
+      "path": "texture-4.rgba",
+      "sha256": "61238f6237d61d845f5c2f66162b8c16df143fc553d9b4cf7013d1062f5aa173"
+    },
+    {
+      "id": "texture:resources.assets:4",
+      "format": 10,
+      "width": 640,
+      "height": 360,
+      "path": "texture-10.rgba",
+      "sha256": "c6bbeb19ba3a79c1618241bd2d92eb2cf11a77a54bf0e4a343c9da569d71f2aa"
+    },
+    {
+      "id": "texture:resources.assets:7",
+      "format": 12,
+      "width": 600,
+      "height": 600,
+      "path": "texture-12.rgba",
+      "sha256": "097ef6e8780397ee4bea4613a73ce067fa693bf32f5b44db15a38586ac0650ee"
+    }
+  ],
+  "blocks": [
+    {
+      "index": 0,
+      "sha256": "8d67d9339bc87fa19769a035ae934012081c39eb2b6bcee8bcae597cd93c0b1c"
+    },
+    {
+      "index": 1,
+      "sha256": "e62f4f30c5a437520de9a35df14653a19628a733c10199817d4235e164af8b87"
+    },
+    {
+      "index": 100,
+      "sha256": "469801e267dceb1f0f16821eb2201f3525aa5ba419338f83ec7fb38e591ec2d8"
+    },
+    {
+      "index": 1000,
+      "sha256": "310bc13a3c6e39a49e59db7cddecabe47061ddc4d788388e5b1f66b457ab2167"
+    },
+    {
+      "index": 71005,
+      "sha256": "5e3a975003ded0006dbc408f32b03a61b95b229c8ce5c8b23256d558125f5ff3"
+    }
+  ]
+}

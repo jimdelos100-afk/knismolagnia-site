@@ -1,0 +1,101 @@
+独立剧情播放器：声明式二维效果接口，第 1 版
+
+用途
+为原创或其他适用作品提供抽象灯点、图集帧动画和有限画面滤镜。
+本模块是独立实现的网页二维效果，不包含任何游戏解析器，也不宣称兼容 Unity 着色器、粒子系统、骨骼、插件或第三方演出指令。
+灯点和图集样片均为自主绘制的抽象图形。
+
+入口
+site/src/effects.js 导出：
+validatePresentation(story) → 原 story；不修改输入，未知类型、字段和非法范围明确抛错。
+evaluatePresentation(story, sceneId, seconds) → {filter, particles, sprites}，全部为独立值。
+PresentationRenderer(container, library) → 实例。
+  .sync(story, state) → CSS filter 字符串。
+  .dispose() → 移除本实例创建的元素，可重复调用。
+library 需提供 resolve(assetId)；可使用 ResourceLibrary。
+
+容器及时间
+效果容器应放在舞台的可视区域内，使用舞台原始像素坐标。渲染器只创建自身的绝对定位子容器，裁切越界内容、忽略鼠标、对辅助技术隐藏。
+sync 使用 state.sceneId 和 state.stageTime ?? state.time，优先使用演出舞台时间，不受播放器速率字段二次缩放。
+宿主把 sync 返回值应用于整个可视层的 style.filter；不要把滤镜施加到对白、选项和操作按钮。
+本模块没有计时器。暂停保持相同帧，拖动或回退直接按指定时间重建，不依赖上次访问顺序。
+时间必须是非负有限数字；长时间停在对白导致舞台时间超过场景时长时，效果已自然清空。
+渲染器按 story 对象身份编译配置，不监视原地修改；更新配置需换一个新的 story 对象。资源库 resolve 每次同步都会重新读取，允许文件替换。
+
+可选顶层字段
+story.presentation = {
+  version: 1,
+  scenes: {
+    arrival: [ /* 本场景的效果列表 */ ]
+  }
+}
+场景编号须出现在 story.scenes 中；图集 asset 须出现在 story.assets 且类型为 image。
+没有 presentation 的演出包兼容原有播放器。
+
+通用字段
+每个效果都必须有 id、type、at、duration；id 在同一场景内唯一。
+at ≥ 0，duration ≥ 0.001 秒，at + duration 不得超过场景声明时长。
+效果只在 [at, at + duration) 内存在，精确结束时刻即移除；场景切换清除上一个场景的效果。
+边界计算仅归一化数个二进制浮点舍入单位的误差，避免 0.1 + 0.2 或 at + 1/6 产生的迟一帧；不会把实际提前一段时间的采样推到下一帧。
+数字不接受字符串、NaN 或无穷大。编号不得为空、含控制字符、超过 256 字符或使用原型污染字段名称。
+
+确定性灯点粒子
+{
+  id: "lights", type: "particles", at: 0, duration: 20,
+  seed: 2026, count: 24,
+  region: {x: 60, y: 80, width: 1120, height: 500},
+  velocity: {x: [-8, 8], y: [-16, -4]},
+  lifetime: [3, 6], size: [2, 5],
+  colors: ["#d1ebff", "#8fd5c8"],
+  gravity: {x: 0, y: 0},
+  opacity: 0.75, loop: true, fadeIn: 0.15, fadeOut: 0.35
+}
+每粒子在 effect.at 同时出生，按 seed 与自身索引决定初始位置、速度、寿命、尺寸和颜色；增加 count 不改变已有粒子。
+非循环粒子在自身寿命结束时消失；循环粒子每次寿命结束从同一初始位置重新开始。每次循环不重新随机采样。精确循环边界回到 age = 0。
+x、y 为灯点中心，单位为舞台像素；位置为起点 + 速度 × age + 0.5 × gravity × age²。
+fadeIn 和 fadeOut 是单粒子寿命的比例，默认都为 0，比例和不得超过 1；opacity 默认为 1。
+seed 为 0 至 4294967295 的整数；count 为 1 至 256。
+region 的 x、y 为 -32768 至 32768，width、height 为 0 至 32768；零宽区域可用于确定的点或线发射。
+velocity 每轴为两个由小到大的数字，范围 -2000 至 2000 像素/秒。
+lifetime 为 0.05 至 120 秒的有序范围；size 为 0.1 至 512 像素的有序范围。
+colors 为 1 至 8 项，仅接受 #RGB、#RRGGBB、#RRGGBBAA；gravity 每轴为 -1000 至 1000，默认 0。
+输出 particles 的每项含 id、effectId、x、y、size、opacity、color、age、cycle。
+
+图集帧动画
+{
+  id: "signal", type: "sprite", at: 0, duration: 20,
+  asset: "fx-atlas", columns: 4, rows: 2,
+  frameWidth: 128, frameHeight: 128,
+  fps: 6, frames: [0, 1, 2, 3, 4, 5, 6, 7], loop: true,
+  x: 560, y: 180, width: 128, height: 128, opacity: 0.8
+}
+图集索引从 0 开始，按行从左向右、从上到下排列；frames 可重排和重复索引。
+每次采样帧步数为 floor((seconds-at) × fps)。loop 为 true 时对 frames.length 取余，精确循环边界返回第一项；非循环保持最后一帧到效果结束。
+x、y 是显示框左上角；width、height 是显示尺寸，不必等于单帧源尺寸。
+columns、rows 为 1 至 32 的整数，frameWidth、frameHeight 为 1 至 4096 的整数；声明图集每轴不得超过 16384，像素总数不得超过 67108864。
+源图片应与 columns × frameWidth、rows × frameHeight 一致；当前网页渲染按声明网格缩放切片，不检测图片的固有像素是否与声明一致。
+fps 为 0.01 至 120；frames 为 1 至 4096 个有效帧索引；显示宽高为 0.1 至 16384。
+opacity 默认为 1。渲染器只接受资源库返回的 http、https、file 或 blob 地址，未提供资源时明确抛错，拒绝脚本和 data 地址。
+输出 sprites 含 id、asset、x、y、width、height、opacity、frame、column、row、columns、rows、frameWidth、frameHeight。
+自主图集 site/assets/fx-atlas.svg 为 4 列 × 2 行，每帧 128 × 128，总尺寸 512 × 256，透明底。
+
+有限画面滤镜
+{
+  id: "memory", type: "filter", at: 0, duration: 4,
+  values: {grayscale: 0.25, sepia: 0.1, brightness: 0.9, saturate: 0.8}
+}
+允许 grayscale、sepia 为 0 至 1；blur 为 0 至 32 像素；brightness、saturate、contrast 为 0 至 4；hueRotate 为 -360 至 360 度。
+values 至少含一个值，不接受 url 或任意 CSS 字符串。
+同一效果内固定按 grayscale、sepia、blur、brightness、saturate、contrast、hueRotate 顺序拼接。
+重叠效果按场景列表的声明顺序串接，重复滤镜也依次作用，不自动合并或覆盖。
+本版滤镜为固定值区间，不包含滤镜渐变、混合模式、遮罩或自定义着色器。
+
+复杂度与图层
+每场景最多 64 个效果、512 个声明粒子、32 个图集动画、16 个滤镜；即使时间不重叠也按声明数计预算。
+全包最多 256 个带效果的场景、2048 个效果、8192 个声明粒子、512 个图集动画。
+渲染顺序为所有粒子在下、所有图集动画在上，各类内部保持声明顺序；同类粒子按粒子索引。效果层相对于人物和视频的位置由宿主容器控制。
+无动态脚本、着色器代码、外部命令、物理碰撞、粒子纹理、嵌套效果或未声明的功能回退。
+绘制元素有稳定编号，重复同步复用节点；结束或切场景后删去多余元素；dispose 不改宿主原有内容。
+
+验证
+tests/effects.test.mjs 使用独立的中性输入覆盖：时间倒退与重进、seed、索引稳定性、独立运动学、淡入淡出、粒子与图集循环边界、非循环末帧、结束清空、长时间对白停留、叠加滤镜、无效资源与字段、预算、DOM 复用与清理、资源替换和关闭后的拒绝。

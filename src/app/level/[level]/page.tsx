@@ -11,6 +11,7 @@ import { isLocalDesignMode } from '@/lib/local-design-mode'
 import LocalLevelPreview from './LocalLevelPreview'
 import LevelHeading from './LevelHeading'
 import KonisiCharacterGame from '@/components/KonisiCharacterGame'
+import StoryPlayer from '@/components/StoryPlayer'
 
 
 
@@ -56,6 +57,7 @@ export default async function LevelPage({ params, searchParams }: {
 
   return <><SiteHeader /><main className="wrap level-page">
     <LevelHeading level={n} />
+    {n === 6 && <StoryPlayer />}
     {(n === 3 || n === 4) && <><WorkTemplateExample level={n} /><form className="panel work-search" action={`/level/${n}`} method="get"><label htmlFor="work-search-input">检索作品</label><div><input id="work-search-input" name="q" defaultValue={queryText} placeholder="输入标题、作者、简介或标签" maxLength={80} /><button className="button primary" type="submit">检索</button></div><small>本页每页显示 {pageSize} 条，结果按管理员指定顺序排列。</small></form></>}
     {error ? <div className="panel warning-panel">内容读取失败，请确认最新数据库升级文件已经执行。</div> : <ContentFeed items={contentItems} />}
     {totalPages > 1 && <nav className="pagination" aria-label="内容分页"><Link className={`button secondary ${currentPage <= 1 ? 'disabled-link' : ''}`} aria-disabled={currentPage <= 1} href={pageHref(n, Math.max(1, currentPage - 1), queryText)}>上一页</Link><span>第 {Math.min(currentPage, totalPages)} / {totalPages} 页 · 共 {count || 0} 条</span><Link className={`button secondary ${currentPage >= totalPages ? 'disabled-link' : ''}`} aria-disabled={currentPage >= totalPages} href={pageHref(n, Math.min(totalPages, currentPage + 1), queryText)}>下一页</Link></nav>}

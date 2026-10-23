@@ -1,0 +1,138 @@
+独立通用剧情播放器 · 场景校对接口（第 1 版）
+
+适用范围
+本模块只做独立通用剧情项目的结构自检、当前位置检查与人工检查记录。
+不连接任何既有游戏的专用读取器，不提供其他作品的还原背书。
+静态通过、资源哈希通过或某个画面通过，均不等于全剧情、全分支、逐帧演出一致。
+模块位置：site/src/review-tools.js；可以在浏览器或 Node ES module 中导入。
+
+一、auditStory(story, options?)
+纯函数，不修改 story，也不运行整个剧情。
+options：
+  expectedEndings：已人工声明为有意结尾的 Reader 场景 ID 数组，默认 []。
+  longDialogueLimit：单句可见源文字长度提醒阈值，默认 160，范围 1 至 1000000。
+
+返回：
+  {ok, summary, scenes, issues}
+  summary：validation 为 valid 或 invalid；scenes、dialogues、reachable、unreachable 为数量；
+           errors、warnings、infos 为问题数量。
+  scenes：[{id, title, dialogues, reachable, issues}]
+  issues：[{severity, code, message, sceneId?}]
+  severity 为 error、warning 或 info。
+  ok 仅表示没有 error。warning 必须保留给人工处理，不能隐藏后称作全面通过。
+
+检查内容：
+  1. validatePlaybackStory 验证逐句指令与流程结构；未知指令返回 INVALID_STORY。
+  2. validatePresentation 验证粒子、图集与滤镜；未知效果返回 INVALID_PRESENTATION。
+  3. graphStory 与 layoutGraph 验证地图。
+  4. 从主入口计算声明路径的潜在可达性；不可达场景给 UNREACHABLE_SCENE。
+  5. Reader 没有 next/choices 且不在 expectedEndings 的节点给 ENDING_UNCONFIRMED。
+     Program 使用显式 end 结尾，不需要再写 expectedEndings。
+  6. 长对白给 LONG_DIALOGUE，只作实际排版检查提醒。
+  7. Program 地图节点未声明独立 mapEntries 上下文给 MAP_ENTRY_UNDECLARED。
+     mapGroup 必须有真实可见的代表场景，否则给 INVALID_MAP_GROUP。
+
+边界：
+  条件按所有声明分支处理，不证明条件可满足。
+  call/return 按声明调用位置估算，不证明各路径的调用栈正确。
+  此静态工具不会模拟所有变量组合，也不证明没有运行时无等待循环。
+  格式验证失败会返回带错误说明的 report，不会把错误吞掉后返回 ok。
+
+二、createReviewCheckpoint(story, player, {label, now}?)
+读取 player.snapshot() 并严格验证。不会调用 pause、next、seek、restore 或播放媒体。
+label 默认“未命名检查点”，最大 200 字符。
+now 可省略，或传 Date / 可转为标准 ISO 时间的值；输出 savedAt 为标准 ISO 字符串。
+UI 如需保存时同时暂停当前演出，应先由 UI 调用 player.pause()。
+
+返回文档：
+  type: neutral-story-review-checkpoint
+  schemaVersion: 1
+  scope: independent-neutral-story
+  id: 由作品 ID、sourceFingerprint、storyRevision 与完整 snapshot 稳定派生
+  storyId / sourceFingerprint
+  storyRevision: 完整 story 规范序列的确定性版本标识
+  sceneId / label / savedAt
+  paused: true
+  snapshot: validatePlaybackSnapshot 验证后的逐句或 Program 记录
+
+storyRevision 覆盖完整 story，包括 presentation、素材路径和附入 story 的 assetManifest。
+即便作品 gameFingerprint 忘记更新，任意完整源码字段变化也会拒绝旧检查点。
+此版本标识不是数字签名，不认证文件作者，也不用于权限控制。
+同一源码和 snapshot 的 ID 相同，修改 label 或 savedAt 不改变 ID。
+Program 记录中有运行 ID，因此不同运行会话的检查点可以有不同 ID。
+
+检查点不封装素材或译文文件。回导后显示使用当前演出包、当前同版译文与已核验素材。
+它保存具体对白、顺序执行记录、舞台时刻、变量、调用栈与待选分支/结果状态。
+它不声称浏览器解码器、音频设备或每个媒体帧具有跨机器逐位一致性。
+
+三、parseReviewCheckpoint(story, document)
+返回完整清洗后文档，带 .id、.label、.sceneId 与 .snapshot。
+不读取任意脚本、不执行存档里的事件，也不修改 player。
+只接受精确的 type、schemaVersion、scope 与白名单字段。
+源码版本、场景、稳定 ID、时间、paused 标志和内部 snapshot 均会校验。
+Program snapshot 会重新验证执行轨迹派生出的变量、调用栈和流程位置。
+额外字段、伪造派生状态、错版来源、无效页控制等一律抛错。
+
+建议回导顺序：
+  const checked = parseReviewCheckpoint(story, document);
+  // 至此才允许改动当前播放器。
+  player.restore(checked.snapshot);
+  // ReaderPlayer / ProgramPlayer 的 restore 均保持暂停。
+
+四、inspectRenderedStage(stage)
+stage 应为当前逻辑画面的 DOM 元素。函数只读取 DOM、布局和原生媒体属性。
+不会改变样式、载入素材、播放视频或推进剧情。
+
+返回：
+  {ok, checked: {texts, images, videos}, issues, limitations}
+  ok 表示没有 error；warning 依旧需要人工检查。
+  文字范围：data-review-text、data-review-overflow、.dialogue-text、#dialogueText。
+  隐藏元素与没有可见面积的元素不计入检查数。
+  scrollWidth/scrollHeight 比 clientWidth/clientHeight 大超过 1 像素时给 TEXT_OVERFLOW。
+  文字框超出演出容器边界超过 1 像素时给 TEXT_OUTSIDE_STAGE。
+  img.complete 且 naturalWidth/naturalHeight 大于 0 才视作已解码。
+  图片尚未载完给 IMAGE_PENDING；解码失败给 IMAGE_DECODE_FAILED。
+  video 读取 error、readyState、videoWidth、videoHeight；待解码不等于通过。
+
+边界：
+  只检查此刻的可见 DOM，不遍历未进入的场景。
+  CSS 背景图、图集背景、音轨、全部视频帧不由此函数验证。
+  布局不溢出不代表措辞、换行和艺术效果已经人工确认。
+  UI 应保留检查的场景/时刻，或在位置、素材、语言、视窗变化后清空旧结果。
+  UI 不应仅凭 ok=true 把仍有 warning 的画面显示为“未发现布局问题”。
+
+五、createReviewReport(story, options?)
+options：
+  resources：auditBundledAssets 的结果，或省略表示未查。
+  rendered：inspectRenderedStage 的结果，或省略表示未查。
+  checkpoints：人工状态数组，默认 []。
+    每项 {id, label, status, sceneId?, notes?}。
+    status 必须为 pending、passed 或 failed。
+  expectedEndings / longDialogueLimit：与静态检查相同。
+  now：导出时间，规则同检查点。
+
+支持的资源结果：
+  {storyId, gameFingerprint, total, available, missing, failed,
+   results: [{id, type, path, status, expectedSize?, actualSize?, message?}]}
+  status：available、missing、size-mismatch、hash-mismatch、type-mismatch、error。
+  由每条结果重新汇总，不能只信任 available 数字或原始 ok。
+  必须覆盖当前作品全部素材 ID，不得有重复、未知或类型不匹配的记录。
+
+导出字段：
+  type: neutral-story-review-report
+  schemaVersion / scope / scopeNotice
+  storyId / sourceFingerprint / storyRevision / createdAt
+  ok / summary / static / resources / rendered / checkpoints / issues
+
+分类状态：passed、failed、needs-review、unchecked。
+没有运行资源检查、没有可检查画面、没有人工记录均不是 passed。
+人工 pending、文字溢出和载入未完成会保留为待检查。
+ok 只有所提交的四类检查全通过才为 true；summary.status 否则为 failed 或 incomplete。
+报告 scopeNotice 始终注明：这不是其他作品的还原、全路径覆盖或逐帧一致性证明。
+人工记录只表达这些已提交检查点的判断，不能扩展成未观察场景的验收结论。
+
+验证
+tests/review-tools.test.mjs 包含 7 项测试：
+  结构错误与可达性、条件/地图入口提醒、稳定 ID 与暂停恢复、全源码版本变更拒绝、
+  Program 派生状态伪造拒绝、未检查和失败报告、布局容差与媒体解码状态。
+测试数据全部独立编写，不读取任何原作故事、用户 CSV 或专用解析器。

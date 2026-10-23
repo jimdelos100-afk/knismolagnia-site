@@ -6,6 +6,7 @@ export async function middleware(request: NextRequest) {
   const isLoopback = /^(?:localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/.test(host)
   const isDesign = process.env.NODE_ENV === 'development' && process.env.LOCAL_DESIGN_MODE === 'true'
   const isLevelPreview = /^\/level\/[1-6]\/??$/.test(request.nextUrl.pathname)
+    || request.nextUrl.pathname.startsWith('/level/6/player/')
 
   // Remove any incoming marker; only middleware is allowed to set the trusted marker.
   const requestHeaders = new Headers(request.headers)

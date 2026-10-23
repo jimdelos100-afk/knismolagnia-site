@@ -6,6 +6,7 @@ import SubmissionBox from '@/components/SubmissionBox'
 import DiscussionRoom from '@/components/DiscussionRoom'
 import LevelHeading from './LevelHeading'
 import KonisiCharacterGame from '@/components/KonisiCharacterGame'
+import StoryPlayer from '@/components/StoryPlayer'
 
 
 
@@ -33,6 +34,7 @@ export default function LocalLevelPreview({ level }: { level: number }) {
   return <><SiteHeader /><main className="wrap level-page">
     <LevelHeading level={level} />
     <div className="panel"><strong>设计预览，不是真实登录</strong><p>本页面仅在本机开发模式显示示例数据。表单、交流及下载不会提交到数据库。修改共用组件的样式会影响真实页面；真实发布内容仍需在正式管理后台修改。</p></div>
+    {level === 6 && <StoryPlayer />}
     {(level === 3 || level === 4) && <><WorkTemplateExample level={level} /><form className="panel work-search" action="#"><label htmlFor="local-work-search">检索作品</label><div><input id="local-work-search" placeholder="输入标题、作者、简介或标签" disabled /><button className="button primary" disabled type="button">检索</button></div><small>示例内容 · 不进行真实检索</small></form></>}
     {level !== 5 && <ContentFeed items={sampleContent(level)} />}
     {level === 2 && <><div className="panel profile-form"><h3>给管理员留言 <span className="badge">仅管理员可见</span></h3><p>本地预览，不会发送任何消息。</p><label>留言内容<textarea disabled placeholder="示例留言" /></label><button className="button primary" disabled type="button">发送私密留言</button></div><div className="panel members-entry"><h3>同好列表</h3><p>本地预览仅展示入口，不读取真实成员资料。</p><Link className="button primary" href="/level/2/members">进入同好列表 ♡</Link></div></>}

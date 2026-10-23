@@ -1,0 +1,60 @@
+独立剧情播放器：素材装配与本地验证接口
+
+一、部署构建
+在项目目录执行：node tools/build-assets.mjs
+默认只读 site/data/story.json 中明确列出的 assets，不扫描其他目录。
+默认写出 site/data/asset-manifest.json；所有素材必须位于 site/ 内，且不可通过符号链接越出网站目录。
+可选参数：--story data/story.json --out data/asset-manifest.json --max-bytes 268435456
+每个路径必须为普通相对路径，禁止网址、绝对路径、百分号转义、查询参数和上级目录。
+同一素材可用于多处演出；素材清单内的 id 和文件路径均需唯一。
+修改任何图片、音频或视频后，需要重新执行构建，然后随整个网站一起部署清单。
+
+清单结构：
+{
+  "type": "story-player-asset-manifest",
+  "schemaVersion": 1,
+  "storyId": "作品 id",
+  "gameFingerprint": "作品版本标识",
+  "assets": [
+    {"id":"portrait","type":"image","path":"assets/portrait.svg","size":123,"sha256":"64 位小写十六进制"}
+  ]
+}
+素材类型仅允许 image、audio、video。path 必须完全等于当前作品 assets 中的 src；若作品含 localPath，也必须与 src 一致。
+未使用的文件不会被构建脚本读取；原文件不会被改写。
+
+二、浏览器 API（site/src/asset-pack.js）
+validateAssetManifest(story, manifest)
+验证完整绑定关系后，返回冻结的规范清单副本。错误以中文 Error 抛出。
+
+await auditBundledAssets(story, manifest, {baseURL, fetcher=fetch, onProgress, maxFileBytes})
+只检查网站部署素材，不操作 ResourceLibrary，也不上传本地文件。
+逐项按大小和 SHA-256 检查，并检查响应 MIME 与声明的图片/音频/视频类型是否相符。
+返回：{storyId, gameFingerprint, total, available, missing, failed, results}
+results 每项含 id/type/path/expectedSize/status，可附 actualSize/message。
+status 为 available、missing、size-mismatch、hash-mismatch、type-mismatch 或 error。
+404/410 为 missing；网络失败为 error。流式响应超限会停止读取，actualSize 此时为已读取大小的下限。
+不会自动把失败结果视为成功，也不会在运行时改写校验清单。
+
+await importVerifiedAssetFolder(library, story, manifest, files, {onProgress, maxFileBytes})
+manifest 必须来自网站部署配置，不能使用用户目录附带的清单覆盖它。
+files 是用户明确选择的 FileList 或 File 数组。
+只按完整路径匹配，最多剥离一层所选根目录；大小写敏感，不按文件名猜测。
+未匹配文件仅检查路径信息，绝不调用 arrayBuffer。
+允许只选部分素材；空选择、没有匹配项、缺少某份素材均保留当前已加载资源。
+全部匹配项验证通过后，只调用一次 library.importFolder 进行原子替换。
+任何重复路径、大小不符、类型不符或哈希失败都会拒绝整次导入；旧的对象 URL 不变。
+对象 URL 创建中途失败时，由 ResourceLibrary 撤销已暂存的新 URL，并保留旧资源。
+返回 ResourceLibrary.importFolder 的结果，附 verified 数量；unmatched 按原始所选文件计算。
+本地素材只在当前网页内读取，既不上传，也不修改源文件；关闭页面后用户需重新选择。
+
+默认单份上限为 256 MiB，maxFileBytes 可在 1 字节至 1 GiB 间设置。
+onProgress 接收 {phase:'audit'|'verify'|'complete', completed, total, id?, status?}。
+界面应在异步检查/导入期间锁定作品切换，防止用户将校验结果应用到其他作品。
+回调仅用于显示进度，回调异常不会跳过验证或改变提交结果。
+SHA-256 需要安全浏览器上下文（HTTPS 或 localhost）。
+
+三、显示与能力边界
+SVG 仅可通过 img/src 显示，不把 SVG 或素材字符串插入 HTML。
+清单用于确认作品绑定和字节一致性，不是对任意文件的杀毒或真实性认证。
+本模块不提取专有游戏格式、不分析文件夹内其他程序、不接受目录自带配置。
+图片、视频的译文版本应由作品作者替换网站内素材，然后重新构建校验清单。

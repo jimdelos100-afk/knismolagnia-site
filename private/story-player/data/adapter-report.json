@@ -1,0 +1,34 @@
+{
+  "type": "xp2-adapter-report",
+  "schemaVersion": 1,
+  "scenarioGrids": 56,
+  "exactScenarioTextFields": 6670,
+  "displayedDialogueCount": 5614,
+  "selectionLabelCount": 35,
+  "nativeCommandTextFields": 1021,
+  "preservedTranslationEntries": 10173,
+  "catalogMatchedTranslations": 10173,
+  "accessibleTextEntries": 9152,
+  "assets": 931,
+  "scenes": 1442,
+  "mapEntries": 351,
+  "stats": {
+    "rows": 22220,
+    "nativeCommandTextFields": 1021,
+    "spokenDialogueRows": 5614,
+    "manualConditionalGates": 171,
+    "selectionLabelCount": 35,
+    "selections": 16,
+    "customInteractionGates": 82
+  },
+  "approximations": {
+    "Shake (camera substitute)": 1188,
+    "GuiActive": 150,
+    "Param manual branch context": 212,
+    "Tween unsupported target/preset": 348
+  },
+  "unresolved": {},
+  "scope": "Scene resource/translated dialogue and manual branch browsing. Native custom discussion minigames are reference texts and explicit continuation gates; variables are not evaluated.",
+  "sourceBytesReadLocally": true,
+  "commandTextHandling": "Only blank Command rows become dialogue. Selection Text becomes choice labels. Text fields on Bg, BgEvent, BgOff, DebugLog and Wait remain in the source translation catalog but never become spoken dialogue."
+}

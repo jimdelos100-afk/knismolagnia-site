@@ -1,0 +1,17 @@
+作品与流程格式 · 独立版 1.0.0
+
+以 site/data/story.json 的原创样例作为完整可运行范例。演出包为 type=story-player，schemaVersion=1。
+id 是作品编号；gameFingerprint 字段在此通用格式中表示作品版本指纹。stage 指定逻辑舞台大小；startScene 指入口。assets 是图片／音频／视频相对路径目录；texts 保存稳定编号、原文和可选 speaker。
+
+scenes 每项含 id/title/duration/entry/events/commands。
+entry 是独立进入时的完整舞台：背景、人物、图层、镜头、遮罩和可选媒体。坐标使用逻辑舞台像素；人物 pivotY 使用从底向上的归一化轴心。默认1280×720，不依赖窗口像素。
+commands 按声明顺序执行。dialogue 指向 events 的对白索引，支持需要点击的 InputBrPage/Input/InputBr 及自动完成的 Next/Br/BrPage。event 指向画面／媒体事件，可对明确支持的有限时长动画使用 block。wait 指固定等待。未知指令、未引用事件和不支持的等待会拒绝。
+阅读舞台时钟独立于对白位置：等待点击时动画和媒体仍能继续，暂停则停止舞台和原生媒体。校对的指定对白定位使用规范入口重放；保存的检查点记录真实停留时间。
+
+program 可选，用于变量和真实执行流。当前 nodes 将一个流程节点绑定一个唯一场景，入口模式只支持 reset；跨节点动态舞台继承没有实现。
+出口类型 end/goto/set/if/call/return/choices/signal；表达式只允许有界的安全标量运算，不执行 JavaScript、属性访问或外部脚本。mapEntries 声明地图直接进入时的变量覆盖和返回栈上下文。
+地图显示所有声明路线，可达性检查只表示存在声明的连接，不能证明运行时每个条件分支都满足。
+
+资源：先制作普通媒体文件并在 assets 中明确列出，运行 node tools/build-assets.mjs 生成 SHA-256 清单。部署配置的 assets 指向清单；app 安装时将规范清单纳入运行作品版本，以绑定检查点。临时载入自创演出包时可内嵌 assetManifest。
+译文：type=story-translations，schemaVersion=2；gameFingerprint 必须匹配。每项有 id/source/translation/note/status，status 为 draft/translated/reviewed。原文不同明确拒绝，空白保留现有值。
+效果与校对的精确字段、大小限制、返回结构和验证边界见同目录另外三份接口说明。

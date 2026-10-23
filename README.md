@@ -1,3 +1,22 @@
+# 第六层 XP2 本地剧情播放器集成版 · 2026-10-23
+
+此包包含完整现有 Next.js 网站，以及第六层新增的 XP2 本地剧情播放器。玩家在第六层选择本机的「性癖討論v1.0.0」或「性癖討論2_Data」目录；资源由浏览器按需读取。网站提供剧情目录和配套中文译文，不需要上传约 3 GB 的 Windows 游戏本体。
+
+## 部署
+
+1. 将本包 `knismolagnia-site` 文件夹内的内容完整放到原仓库根目录。必须包含 `private/story-player`，不要只上传 `src` 或 `public`。
+2. 沿用原托管平台的 `NEXT_PUBLIC_SUPABASE_URL`、`NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`。使用 Builder 首页的站点继续保留原 Builder 配置。不要把 `.env.example` 中的占位值用于正式部署。
+3. 使用 Node.js 20 或更新版本，安装 `npm ci`，构建 `npm run build`。普通 Node 主机运行 `npm start`；原 Vercel 项目沿用 Next.js 部署方式。
+4. 使用原有具备 Level 6 权限的账号打开 `/level/6`。游戏目录选择需要桌面浏览器支持文件夹选择；推荐使用新版 Chrome 或 Edge。仅查看和检索剧情目录可在手机进行。
+
+不需要新增数据库表或重新执行历史 SQL。播放器代码与译文保存在非公开目录，每次读取经过原有第六层权限检查；原有账号、会员、后台、其他层内容和 Live2D 资源继续保留。游戏目录权限在刷新后需要重新选择，浏览进度保存在当前浏览器，也可导出备份。
+
+此包是网站源码部署包，不能作为纯静态 HTML 网站直接打开。本轮未推送仓库或修改线上部署。播放器的实现范围和本轮验收结果见 `XP2-部署说明.txt` 与 `verification/xp2-player-2026-10-23/`。
+
+---
+
+以下为原网站历史说明，保留以供维护参考。
+
 # 雪糕少女汉化组官网 · V8 原生 Live2D 桌宠版
 本版追加首页深色模式透明背景修复。原生模型、纹理、动作和业务代码均沿用已交付版本；唯一运行源码变化是 `.site-companion-frame` 增加 `color-scheme: light`。旧包在深色首页会因父 iframe 与子页配色模式不一致出现白底，这项遗漏已补测。新增验证及精确差分见 `verification/iframe-transparency-2026-10-18/`。
 

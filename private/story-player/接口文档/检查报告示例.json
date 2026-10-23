@@ -1,0 +1,187 @@
+{
+  "type": "neutral-story-review-report",
+  "schemaVersion": 1,
+  "scope": "independent-neutral-story",
+  "scopeNotice": "仅用于独立通用剧情项目的自检；不是任何其他作品的还原、全路径覆盖或逐帧一致性证明。",
+  "storyId": "night-shift-original",
+  "sourceFingerprint": "original:night-shift:1",
+  "storyRevision": "review-source-1:7b6160fa8dfdf2c22848b96610e22104",
+  "createdAt": "2026-10-23T05:48:28.653Z",
+  "ok": false,
+  "summary": {
+    "status": "incomplete",
+    "staticStatus": "passed",
+    "resourcesStatus": "passed",
+    "renderedStatus": "passed",
+    "manualStatus": "needs-review",
+    "errors": 0,
+    "warnings": 1,
+    "infos": 1
+  },
+  "static": {
+    "ok": true,
+    "summary": {
+      "validation": "valid",
+      "scenes": 5,
+      "dialogues": 9,
+      "reachable": 5,
+      "unreachable": 0,
+      "errors": 0,
+      "warnings": 0,
+      "infos": 1
+    },
+    "scenes": [
+      {
+        "id": "arrival",
+        "title": "夜班开始",
+        "dialogues": 2,
+        "reachable": true,
+        "issues": []
+      },
+      {
+        "id": "signals",
+        "title": "屋顶的光信号",
+        "dialogues": 2,
+        "reachable": true,
+        "issues": []
+      },
+      {
+        "id": "recording",
+        "title": "走廊的交接录音",
+        "dialogues": 2,
+        "reachable": true,
+        "issues": []
+      },
+      {
+        "id": "confirmation",
+        "title": "完成交接",
+        "dialogues": 1,
+        "reachable": true,
+        "issues": []
+      },
+      {
+        "id": "ending",
+        "title": "灯光仍亮着",
+        "dialogues": 2,
+        "reachable": true,
+        "issues": []
+      }
+    ],
+    "issues": [
+      {
+        "severity": "info",
+        "code": "RUNTIME_PATHS_NOT_EXECUTED",
+        "message": "静态检查不执行完整流程；无等待循环、表达式运行结果和演出时序仍需实际检查。"
+      }
+    ]
+  },
+  "resources": {
+    "status": "passed",
+    "total": 8,
+    "available": 8,
+    "results": [
+      {
+        "id": "bg-archive",
+        "type": "image",
+        "status": "available",
+        "path": "assets/bg-archive.svg",
+        "expectedSize": 5155,
+        "actualSize": 5155
+      },
+      {
+        "id": "bg-corridor",
+        "type": "image",
+        "status": "available",
+        "path": "assets/bg-corridor.svg",
+        "expectedSize": 2734,
+        "actualSize": 2734
+      },
+      {
+        "id": "bg-rooftop",
+        "type": "image",
+        "status": "available",
+        "path": "assets/bg-rooftop.svg",
+        "expectedSize": 3054,
+        "actualSize": 3054
+      },
+      {
+        "id": "actor-noa",
+        "type": "image",
+        "status": "available",
+        "path": "assets/actor-noa.svg",
+        "expectedSize": 2447,
+        "actualSize": 2447
+      },
+      {
+        "id": "actor-lin",
+        "type": "image",
+        "status": "available",
+        "path": "assets/actor-lin.svg",
+        "expectedSize": 2652,
+        "actualSize": 2652
+      },
+      {
+        "id": "demo-tone",
+        "type": "audio",
+        "status": "available",
+        "path": "assets/demo-tone.wav",
+        "expectedSize": 352844,
+        "actualSize": 352844
+      },
+      {
+        "id": "demo-video",
+        "type": "video",
+        "status": "available",
+        "path": "assets/demo-video.webm",
+        "expectedSize": 54855,
+        "actualSize": 54855
+      },
+      {
+        "id": "fx-atlas",
+        "type": "image",
+        "status": "available",
+        "path": "assets/fx-atlas.svg",
+        "expectedSize": 1783,
+        "actualSize": 1783
+      }
+    ],
+    "issues": []
+  },
+  "rendered": {
+    "status": "passed",
+    "checked": {
+      "texts": 1,
+      "images": 3,
+      "videos": 0
+    },
+    "issues": [],
+    "limitations": [
+      "仅检查一次当前可见 DOM；不代表所有场景、CSS 背景、音轨或全部媒体帧已经检查。"
+    ],
+    "position": {
+      "sceneId": "signals",
+      "stageTime": 0.27380000001787996
+    }
+  },
+  "checkpoints": [
+    {
+      "id": "review-1:1a49478a920d1ece93e8cffae375faee",
+      "label": "屋顶灯点暂停校对",
+      "status": "pending",
+      "sceneId": "signals"
+    }
+  ],
+  "issues": [
+    {
+      "severity": "info",
+      "code": "RUNTIME_PATHS_NOT_EXECUTED",
+      "message": "静态检查不执行完整流程；无等待循环、表达式运行结果和演出时序仍需实际检查。"
+    },
+    {
+      "severity": "warning",
+      "code": "MANUAL_CHECK_PENDING",
+      "message": "人工检查点「屋顶灯点暂停校对」尚未确认。",
+      "sceneId": "signals"
+    }
+  ]
+}

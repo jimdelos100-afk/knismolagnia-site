@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   poweredByHeader: false,
+  outputFileTracingIncludes: {
+    '/level/*/player/*': ['./private/story-player/**/*'],
+  },
   async headers() {
     // Public art can be decoded by WebGL inside the opaque, script-only iframe.
     // Anonymous image requests do not send the site's account cookies.
