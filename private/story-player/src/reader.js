@@ -65,7 +65,7 @@ export function validateReaderStory(story){
     if(duration>86400)fail('场景累计演出超过支持范围');
     const assetIds=new Set([scene.entry.background.asset,...scene.entry.characters.map(item=>item.asset),...(scene.entry.audio||[]).map(item=>item.asset),scene.entry.video?.asset,...canonical.map(item=>item.asset)].filter(Boolean));
     const textIds=new Set([scene.entry.dialogue?.textId,...canonical.map(item=>item.textId)].filter(Boolean));
-    validateStory({...story,program:undefined,assets:[...assetIds].map(id=>assetMap.get(id)),texts:[...textIds].map(id=>textMap.get(id)),startScene:scene.id,scenes:[{...scene,next:undefined,choices:[],duration,events:canonical}]});
+    validateStory({...story,assets:[...assetIds].map(id=>assetMap.get(id)),texts:[...textIds].map(id=>textMap.get(id)),startScene:scene.id,scenes:[{...scene,next:undefined,choices:[],duration,events:canonical}]});
   }
   return story;
 }
@@ -110,7 +110,7 @@ function textLength(text){const stripped=text.replace(/<\/?(?:b|i|u|color|size)(
 export class ReaderPlayer{
   constructor(story,{onUpdate=()=>{},onEnd=()=>{}}={}){
     validateReaderStory(story);this._story=copy(story);this._scenes=new Map(this._story.scenes.map(scene=>[scene.id,scene]));
-    this._onUpdate=onUpdate;this._onEnd=onEnd;this._rate=1;this._playing=false;this._lengths=new Map(this._story.texts.map(text=>[text.id,textLength(text.source)]));
+    this._onUpdate=onUpdate;this._onEnd=onEnd;this._rate=1;this._playing=false;this._sourceLengths=new Map(this._story.texts.map(text=>[text.id,textLength(text.source)]));this._lengths=new Map(this._sourceLengths);
     this._reset(this._story.startScene);this._notify();
   }
   _reset(id,entry=null){this._scene=this._scenes.get(id);this._entryOverride=entry?copy(entry):null;this._commands=commandsFor(this._scene);this._revision=revision(this._story,this._scene,this._commands);this._stageTime=0;this._cursor=0;this._executions=[];this._gate=null;this._forcedReveal=false;this._endNotified=false;this._playing=false;this._drain();}
@@ -205,6 +205,18 @@ export class ReaderPlayer{
       else {this._stageTime=this._gate.until;this._gate=null;this._drain();}
     }
     this._notify();return this.state;
+  }
+  /** Deterministic reconstruction for map routes, without synthetic user clicks. */
+  completeCanonical(){
+    this._stageTime=0;this._cursor=0;this._executions=[];this._gate=null;this._forcedReveal=false;this._playing=false;
+    for(const command of this._commands){
+      const execution={commandIndex:this._cursor++,at:this._stageTime};this._executions.push(execution);
+      if(command.type==='dialogue'){
+        const event=this._scene.events[command.eventIndex];
+        execution.releaseAt=this._stageTime+(this._sourceLengths.get(event.textId)||0)/CPS;this._stageTime=execution.releaseAt;
+      }else this._stageTime+=blockDuration(this._scene,command);
+    }
+    this._endNotified=true;return this.state;
   }
   dispose(){this._playing=false;this._onUpdate=()=>{};this._onEnd=()=>{};}
 }

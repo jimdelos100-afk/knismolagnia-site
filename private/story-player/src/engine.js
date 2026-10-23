@@ -1,4 +1,4 @@
-const EVENT_TYPES=new Set(['background','character','layer','tween','camera','fade','dialogue','audio','stopAudio','video','stopVideo']);
+const EVENT_TYPES=new Set(['mode','clearActors','background','character','layer','tween','camera','fade','dialogue','audio','stopAudio','video','stopVideo']);
 const EASINGS={linear:t=>t,easeIn:t=>t*t,easeOut:t=>1-(1-t)*(1-t),easeInOut:t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2};
 const ACTOR_NUMBERS=new Set(['x','y','width','height','scale','scaleX','scaleY','rotation','opacity','layer','pivotX','pivotY']);
 const LAYER_NUMBERS=new Set(['x','y','scale','scaleX','scaleY','rotation','opacity','layer']);
@@ -47,7 +47,9 @@ function layerTree(layers){
   }
 }
 function actorPatch(value,name,assetMap,{complete=false}={}){
-  shape(value,name);keys(value,['id','asset',...ACTOR_NUMBERS,'flip','flipY','visible','remove','layerId'],name);identity(value.id,`${name}编号`);
+  shape(value,name);keys(value,['id','asset','kind','layerName',...ACTOR_NUMBERS,'flip','flipY','visible','remove','layerId'],name);identity(value.id,`${name}编号`);
+  if(value.kind!==undefined&&!['character','background','sprite'].includes(value.kind))error(`${name}角色类型无效`);
+  if(value.layerName!==undefined)identity(value.layerName,`${name}原生图层`);
   if(complete||value.asset!==undefined)assetReference(value.asset,assetMap,['image'],`${name}图片`);
   for(const field of ACTOR_NUMBERS)if(value[field]!==undefined)visualNumber(value[field],field,name);
   for(const field of ['flip','flipY','visible','remove'])if(value[field]!==undefined&&typeof value[field]!=='boolean')error(`${name}.${field}必须为布尔值`);
@@ -84,9 +86,11 @@ export function validateStory(story){
   if(!scenes.has(story.startScene))error('起始场景不存在');
   if(story.mapSize!==undefined){shape(story.mapSize,'地图尺寸');number(story.mapSize.width,'地图宽度',{min:1,max:100000});number(story.mapSize.height,'地图高度',{min:1,max:100000});}
   for(const scene of story.scenes){
+    const carries=Object.values(story.program?.nodes||{}).some(node=>node.sceneId===scene.id&&(node.entryMode||story.program?.entryMode)==='carry');
     if(typeof scene.title!=='string')error(`场景 ${scene.id} 缺少标题`);number(scene.duration,`${scene.id}时长`,{min:.001,max:86400});
     if(!Array.isArray(scene.events)||scene.events.length>50000)error(`${scene.id}事件列表无效`);
-    shape(scene.entry,`${scene.id}入口状态`);keys(scene.entry,['background','characters','layers','camera','overlay','dialogue','audio','video'],`${scene.id}入口状态`);
+    shape(scene.entry,`${scene.id}入口状态`);keys(scene.entry,['eventMode','background','characters','layers','camera','overlay','dialogue','audio','video'],`${scene.id}入口状态`);
+    if(scene.entry.eventMode!==undefined&&typeof scene.entry.eventMode!=='boolean')error('入口事件模式无效');
     backgroundPatch(scene.entry.background,'入口背景',assets);
     const layers=new Map();if(scene.entry.layers!==undefined){if(!Array.isArray(scene.entry.layers))error('入口图层列表无效');for(const layer of scene.entry.layers){layerPatch(layer,'入口图层');if(layers.has(layer.id))error('入口图层编号重复');layers.set(layer.id,{...layer});}layerTree(layers);}
     if(!Array.isArray(scene.entry.characters))error('入口人物列表无效');const actors=new Set();for(const actor of scene.entry.characters){actorPatch(actor,'入口人物',assets,{complete:true});layerReference(actor.layerId,layers,'入口人物');if(actors.has(actor.id))error('入口人物编号重复');actors.add(actor.id);}
@@ -101,9 +105,11 @@ export function validateStory(story){
       shape(event,'演出事件');if(!EVENT_TYPES.has(event.type))error(`场景 ${scene.id} 含未实现的指令 ${String(event.type)}`);number(event.at,'事件时间',{min:0,max:scene.duration});
       if(event.eventId!==undefined){identity(event.eventId,'事件编号');if(eventIds.has(event.eventId))error('同一场景含重复事件编号');eventIds.add(event.eventId);}
       const payload=Object.fromEntries(Object.entries(event).filter(([key])=>!['at','type','eventId'].includes(key)));
-      if(event.type==='background')backgroundPatch(payload,'背景指令',assets);
+      if(event.type==='mode'){keys(payload,['eventMode'],'事件模式');if(typeof payload.eventMode!=='boolean')error('事件模式必须为布尔值');}
+      else if(event.type==='clearActors'){keys(payload,['kind','id','layerName'],'移除对象');if(!['character','background','sprite'].includes(event.kind))error('移除对象类型无效');if(event.id!==undefined)identity(event.id,'移除对象编号');if(event.layerName!==undefined)identity(event.layerName,'移除图层');}
+      else if(event.type==='background')backgroundPatch(payload,'背景指令',assets);
       else if(event.type==='character'){
-        actorPatch(payload,'人物指令',assets);layerReference(event.layerId,layers,'人物指令');if(!actors.has(event.id)&&event.asset===undefined&&!event.remove)error(`人物 ${event.id} 尚未入场`);
+        actorPatch(payload,'人物指令',assets);layerReference(event.layerId,layers,'人物指令');if(!actors.has(event.id)&&event.asset===undefined&&!event.remove&&!carries)error(`人物 ${event.id} 尚未入场`);
         if(event.remove)actors.delete(event.id);else actors.add(event.id);
       }else if(event.type==='layer'){
         layerPatch(payload,'图层指令');layers.set(event.id,{...layers.get(event.id),...payload});layerTree(layers);
@@ -115,7 +121,7 @@ export function validateStory(story){
       else if(event.type==='stopVideo'){keys(payload,[],'停止视频');}
       else if(event.type==='tween'){
         keys(payload,['target','to','duration','easing'],'动画指令');identity(event.target,'动画目标');shape(event.to,'动画目标值');if(!Object.keys(event.to).length)error('动画缺少目标值');number(event.duration,'动画时长',{min:0,max:scene.duration});if(event.at+event.duration>scene.duration+.000001)error('动画超出场景时长');if(event.easing!==undefined&&!Object.hasOwn(EASINGS,event.easing))error('动画曲线不支持');
-        let allowed;if(event.target.startsWith('character:')){if(!actors.has(event.target.slice(10)))error('动画引用了尚未入场的人物');allowed=ACTOR_NUMBERS;}else if(event.target.startsWith('layer:')){if(!layers.has(event.target.slice(6)))error('动画引用了尚未声明的图层');allowed=LAYER_NUMBERS;}else if(event.target==='camera')allowed=CAMERA_NUMBERS;else if(event.target==='overlay'||event.target==='background')allowed=new Set(['opacity']);else error(`动画目标不支持 ${event.target}`);
+        let allowed;if(event.target.startsWith('character:')){if(!actors.has(event.target.slice(10))&&!carries)error('动画引用了尚未入场的人物');allowed=ACTOR_NUMBERS;}else if(event.target.startsWith('layer:')){if(!layers.has(event.target.slice(6)))error('动画引用了尚未声明的图层');allowed=LAYER_NUMBERS;}else if(event.target==='camera')allowed=CAMERA_NUMBERS;else if(event.target==='overlay'||event.target==='background')allowed=new Set(['opacity']);else error(`动画目标不支持 ${event.target}`);
         for(const [key,value] of Object.entries(event.to)){if(!allowed.has(key))error(`动画字段不支持 ${key}`);visualNumber(value,key,'动画目标');}
       }
     }
@@ -129,7 +135,7 @@ function mediaState(media,at,video=false){return {...(video?{visible:true,x:0,y:
 function baseState(scene){
   const entry=scene.entry;
   return {sceneId:scene.id,time:0,duration:scene.duration,playing:false,rate:1,ended:false,
-    background:{opacity:1,...safeCopy(entry.background)},characters:entry.characters.map(actorState),layers:(entry.layers||[]).map(layerState),
+    eventMode:entry.eventMode===true,background:{opacity:1,...safeCopy(entry.background)},characters:entry.characters.map(actorState).filter(actor=>!entry.eventMode||actor.kind!=='character'),layers:(entry.layers||[]).map(layerState),
     camera:{x:0,y:0,scale:1,rotation:0,shakeX:0,shakeY:0,...safeCopy(entry.camera||{})},
     overlay:{color:'#000000',opacity:0,...safeCopy(entry.overlay||{})},
     dialogue:{textId:null,speaker:'',visible:false,startedAt:0,...safeCopy(entry.dialogue||{})},
@@ -147,13 +153,20 @@ export function evaluateScene(scene,time){
   const events=scene.events.map((event,index)=>({event,index})).sort((a,b)=>a.event.at-b.event.at||a.index-b.index);
   for(const {event} of events){
     if(!EVENT_TYPES.has(event.type))error(`未实现的指令 ${String(event.type)}`);if(event.at>endTime)break;materialize(event.at);const {at,type,eventId,...payload}=event;
-    if(type==='background'){cancel('background');state.background={opacity:1,...payload};}
+    if(type==='mode'){
+      state.eventMode=event.eventMode;
+      if(state.eventMode){for(const actor of state.characters)if(actor.kind==='character')cancel(`character:${actor.id}`);state.characters=state.characters.filter(actor=>actor.kind!=='character');}
+    }else if(type==='clearActors'){
+      const remove=actor=>actor.kind===event.kind&&(event.id===undefined||event.id===actor.id)&&(event.layerName===undefined||event.layerName===actor.layerName);
+      for(const actor of state.characters)if(remove(actor))cancel(`character:${actor.id}`);state.characters=state.characters.filter(actor=>!remove(actor));
+    }else if(type==='background'){cancel('background');state.background={opacity:1,...payload};}
     else if(type==='character'){
       const index=state.characters.findIndex(actor=>actor.id===event.id);
       if(event.remove){cancel(`character:${event.id}`);if(index>=0)state.characters.splice(index,1);continue;}
+      if(state.eventMode&&(event.kind==='character'||state.characters[index]?.kind==='character'))continue;
       const patch={...payload};delete patch.visible;delete patch.remove;if(event.visible!==undefined)patch.opacity=event.visible?(event.opacity??1):0;
       cancel(`character:${event.id}`,Object.keys(patch));
-      if(index<0)state.characters.push(actorState(patch));else Object.assign(state.characters[index],patch);
+      if(index<0){if(patch.asset!==undefined)state.characters.push(actorState(patch));}else Object.assign(state.characters[index],patch);
     }else if(type==='layer'){
       const index=state.layers.findIndex(layer=>layer.id===event.id);cancel(`layer:${event.id}`,Object.keys(payload));
       if(index<0)state.layers.push(layerState(payload));else Object.assign(state.layers[index],payload);

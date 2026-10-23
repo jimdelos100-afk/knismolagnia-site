@@ -9,7 +9,7 @@
   "preservedTranslationEntries": 10173,
   "catalogMatchedTranslations": 10173,
   "accessibleTextEntries": 9152,
-  "assets": 931,
+  "assets": 932,
   "scenes": 1442,
   "mapEntries": 351,
   "stats": {
@@ -25,10 +25,27 @@
     "Shake (camera substitute)": 1188,
     "GuiActive": 150,
     "Param manual branch context": 212,
-    "Tween unsupported target/preset": 348
+    "Tween unsupported target/preset": 324
   },
   "unresolved": {},
   "scope": "Scene resource/translated dialogue and manual branch browsing. Native custom discussion minigames are reference texts and explicit continuation gates; variables are not evaluated.",
   "sourceBytesReadLocally": true,
-  "commandTextHandling": "Only blank Command rows become dialogue. Selection Text becomes choice labels. Text fields on Bg, BgEvent, BgOff, DebugLog and Wait remain in the source translation catalog but never become spoken dialogue."
+  "commandTextHandling": "Only blank Command rows become dialogue. Selection Text becomes choice labels. Text fields on Bg, BgEvent, BgOff, DebugLog and Wait remain in the source translation catalog but never become spoken dialogue.",
+  "declaredMapEntries": 351,
+  "storyChapterEntries": 55,
+  "visibleMapNodes": 1442,
+  "storyMapNodes": 1083,
+  "referenceMapNodes": 359,
+  "mapEntriesRole": "Legacy chapter and reference-group entry anchors. The visible graph contains every story segment and reference page, including intermediate branch/control nodes.",
+  "visualRepairs": {
+    "stage": {
+      "width": 1280,
+      "height": 720
+    },
+    "resourceBinding": "Native Unity ResourceManager path, including Texture Type folder; thumbnails excluded from story resources.",
+    "backgroundSlots": "One fixed graphic slot per resolved native Bg layer, preserving explicitly separate layers.",
+    "eventMode": "BgEvent hides ordinary characters until Bg. Mode and clears are evaluated dynamically across actual graph traversal.",
+    "jumpEntries": "Neutral baked entries; runtime reconstructs a canonical valid graph route or restores the visited route state, never accumulates spreadsheet alternatives.",
+    "spriteBinding": "Sprite Arg1 is object identity; Arg2 optionally supplies its texture label."
+  }
 }

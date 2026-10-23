@@ -19,8 +19,10 @@ for(const scene of story.scenes)for(const event of scene.events){
   if(event.type==='dialogue')assert.ok(!/^(backChange|sceneChange)\s/.test(source.get(event.textId)||''),'Command annotation became dialogue');
 }
 const player=createPlayer(story),maps=graphStory(story).scenes;
-assert.equal(maps.length,351);
-for(const entry of maps){player.enter(entry.id);assert.ok(story.scenes.some(scene=>scene.id===player.state.sceneId));}
+assert.equal(maps.length,1442);
+assert.equal(maps.filter(scene=>scene.category==='story').length,1083);
+assert.equal(maps.filter(scene=>scene.category==='reference').length,359);
+for(const entry of maps){try{player.enter(entry.id);}catch(error){throw new Error(`Jump failed: ${entry.id}`,{cause:error});}assert.equal(player.state.sceneId,entry.id,`Jump must stay on requested node ${entry.id}`);}
 player.enter(story.startScene);const snapshot=player.snapshot();
 const progress=createProgress(story,player.state,new Set(),{reader:snapshot});parseProgress(story,progress);
 const wrong=structuredClone(progress);wrong.gameFingerprint='wrong-version';assert.throws(()=>parseProgress(story,wrong));

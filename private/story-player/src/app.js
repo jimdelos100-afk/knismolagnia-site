@@ -11,20 +11,21 @@ import {MediaController} from './media.js';
 import {renderRichText,countRichText} from './rich-text.js';
 import {readStored,writeStored} from './store.js';
 import {layoutGraph} from './graph.js';
+import {createGraphView} from './graph-view.js';
 import {restoreProject} from './restore.js';
 
-const $=id=>document.getElementById(id),ROOT=new URL('../',import.meta.url),VERSION='1.0.0';
-const app={unityIndex:null,localReady:false,resourceLoading:false,story:null,player:null,library:null,media:null,translations:null,visited:new Set(),history:[],historyIndex:-1,actors:new Map(),graphButtons:new Map(),lastText:'',lastBackground:null,lastSave:0,saveChain:Promise.resolve(),loading:false,transitioning:false,support:[],lastState:null,config:null,savingBlocked:false,recovery:null,mode:'player',epoch:0,bundledStory:null,bundledTranslations:null,assetManifest:null,assetAudit:null,reviewAudit:null,presentation:null,checkpoints:[],stageAudit:null,mapStory:null,sceneMap:new Map(),lengths:{},navigating:false,referenceURL:null,stageAuditSignature:null,resourceRevision:0};
+const $=id=>document.getElementById(id),ROOT=new URL('../',import.meta.url),VERSION='1.1.0';
+const app={unityIndex:null,localReady:false,resourceLoading:false,story:null,player:null,library:null,media:null,translations:null,visited:new Set(),history:[],historyIndex:-1,actors:new Map(),graphButtons:new Map(),lastText:'',lastBackground:null,lastSave:0,saveChain:Promise.resolve(),loading:false,transitioning:false,support:[],lastState:null,config:null,savingBlocked:false,recovery:null,mode:'player',epoch:0,bundledStory:null,bundledTranslations:null,assetManifest:null,assetAudit:null,reviewAudit:null,presentation:null,checkpoints:[],stageAudit:null,graphView:null,mapStory:null,sceneMap:new Map(),lengths:{},navigating:false,referenceURL:null,stageAuditSignature:null,resourceRevision:0};
 const status=text=>{$('statusMessage').textContent=text;$('publicStatus').textContent=text;};
 const clearError=()=>{$('errorBox').hidden=true;};
 const showError=error=>{$('errorMessage').textContent=error?.message||String(error);$('errorBox').hidden=false;};
 const element=(tag,className,text)=>{const node=document.createElement(tag);if(className)node.className=className;if(text!==undefined)node.textContent=text;return node;};
 const legacyKeyFor=story=>`${story.id}|${story.gameFingerprint}`;
-const keyFor=story=>`${legacyKeyFor(story)}|reader-${app.mode}`;
+const keyFor=story=>`${legacyKeyFor(story)}|reader-${app.mode}|player-1.1`;
 const emptyTranslations=story=>({type:'story-translations',schemaVersion:2,gameName:story.title,gameFingerprint:story.gameFingerprint,translations:[]});
 const formatTime=time=>{const ticks=Math.round(Math.max(0,time)*10);return `${Math.floor(ticks/600).toString().padStart(2,'0')}:${(Math.floor(ticks/10)%60).toString().padStart(2,'0')}.${ticks%10}`;};
 const sceneById=id=>app.sceneMap.get(id);
-const mapId=id=>sceneById(id)?.mapGroup||id;
+const mapId=id=>id;
 const sceneName=scene=>/^\d+(?:_\d+)*_txt$/i.test(scene.title)?`剧情 ${scene.title.replace(/_txt$/i,'').replaceAll('_','·')}`:scene.title;
 const inputIds=['readerNext','modeSelect','loadStoryPack','resetDemo','loadTranslation','importProgress','exportProgress','loadGameFolder','assetFolderButton','auditAssets','runReview','saveCheckpoint','exportReview','importCheckpoint','clearAssets','compareReference','clearReference','playPause','restartScene','previousScene','nextScene','readerPosition','timeSlider','speedSelect','languageSelect','fullscreenButton'];
 const busy=()=>app.loading||app.transitioning;
@@ -34,9 +35,9 @@ function updateInputLocks(){
   $('auditAssets').disabled=app.config?.localGame||!app.assetManifest;$('loadGameFolder').disabled=app.config?.localGame?!app.unityIndex:!app.assetManifest;$('assetFolderButton').disabled=$('loadGameFolder').disabled;$('clearAssets').disabled=!(app.library?.provider||app.library?.overrides.size);$('clearReference').disabled=!app.referenceURL;for(const id of ['referenceOpacity','referenceMode'])$(id).disabled=!app.referenceURL;
   const state=app.player.state,choiceWait=['choice','signal'].includes(state.waiting);
   $('previousScene').disabled=app.historyIndex<=0;$('nextScene').disabled=!app.player.scene.next;
-  $('readerNext').disabled=!!state.ended||choiceWait||state.playing&&!['dialogue','text'].includes(state.waiting);
+  $('readerNext').disabled=!!state.ended||choiceWait||stagePending()||state.playing&&!['dialogue','text','node'].includes(state.waiting);
   $('readerPosition').disabled=!!app.story.program&&(choiceWait||state.ended);
-  $('stageViewport').setAttribute('aria-disabled',String(!!state.ended||choiceWait));
+  $('stageViewport').setAttribute('aria-disabled',String(!!state.ended||choiceWait||stagePending()));
   if(app.config?.localGame&&!app.localReady){for(const id of ['readerNext','playPause','restartScene','nextScene','readerPosition'])$(id).disabled=true;}
   if($('selectLocalGame'))$('selectLocalGame').disabled=busy()||!app.unityIndex;
 }
@@ -67,14 +68,34 @@ function buildDialoguePositions(){
   const lines=commands?commands.filter(command=>command.type==='dialogue').map(command=>scene.events[command.eventIndex]):scene.events.filter(event=>event.type==='dialogue'&&event.textId).sort((a,b)=>a.at-b.at);
   lines.forEach((event,index)=>{if(!event?.textId)return;const item=translateText(app.story,app.translations,event.textId,app.mode==='player'?'translation':$('languageSelect').value);select.append(new Option(`${index+1}. ${item.speaker?item.speaker+'：':''}${item.text.replace(/<[^>]+>/g,'').slice(0,40)}`,String(index)));});
 }
-function updateProgressSummary(){if(!app.story)return;$('progressSummary').textContent=`已浏览 ${new Set([...app.visited].map(mapId)).size} / ${app.mapStory.scenes.length} 个节点 · ${app.savingBlocked?'原记录已保留，请导出当前进度':'本机自动保存'}`;for(const [id,node]of app.graphButtons){node.classList.toggle('is-current',id===mapId(app.player?.state.sceneId));node.classList.toggle('is-visited',[...app.visited].some(visited=>mapId(visited)===id));node.setAttribute('aria-current',id===mapId(app.player?.state.sceneId)?'step':'false');}}
+function updateProgressSummary(){
+  if(!app.story)return;
+  const visible=app.mapStory.scenes.filter(scene=>!scene.id.startsWith('archive-'));
+  const visited=[...app.visited].filter(id=>visible.some(scene=>scene.id===id));
+  $('progressSummary').textContent=`已浏览 ${visited.length} / ${visible.length} 个剧情片段 · ${app.savingBlocked?'请导出当前进度':'本机自动保存'}`;
+  app.graphView?.setCurrent(app.player?.state.sceneId,app.visited);
+}
 function buildGraph(){
-  const canvas=$('graphCanvas'),{width,height,positions}=layoutGraph(app.mapStory);canvas.replaceChildren();canvas.style.aspectRatio=`${width} / ${height}`;canvas.style.height=`${Math.max(420,height*.86)}px`;app.graphButtons.clear();
-  if(!canvas.parentElement.classList.contains('map-scroll')){const scroll=element('div','map-scroll');canvas.before(scroll);scroll.append(canvas);}
-  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox',`0 0 ${width} ${height}`);svg.setAttribute('preserveAspectRatio','none');svg.setAttribute('aria-hidden','true');svg.classList.add('map-connections');
-  for(const scene of app.mapStory.scenes){const from=positions.get(scene.id);for(const target of [...(scene.next?[{target:scene.next}]:[]),...(scene.choices||[])]){const to=positions.get(target.target);if(!to)continue;const path=document.createElementNS(svg.namespaceURI,'path');path.setAttribute('d',`M ${from.x} ${from.y+28} C ${from.x} ${(from.y+to.y)/2}, ${to.x} ${(from.y+to.y)/2}, ${to.x} ${to.y-28}`);path.setAttribute('class','map-link');svg.append(path);}}
-  canvas.append(svg);
-  app.mapStory.scenes.forEach((scene,index)=>{const point=positions.get(scene.id),button=element('button',`map-node${Math.abs(point.x-width/2)>width*.15?' is-branch':''}`);button.type='button';button.dataset.category=scene.chapter==='资料浏览'?'reference':'story';button.style.left=`${point.x/width*100}%`;button.style.top=`${point.y/height*100}%`;button.append(element('span','map-node-kicker',scene.chapter||scene.category||`片段 ${String(index+1).padStart(2,'0')}`),element('strong','',sceneName(scene)));button.title=scene.description||scene.subtitle||scene.title;button.addEventListener('click',()=>navigate(scene.id));canvas.append(button);app.graphButtons.set(scene.id,button);});updateProgressSummary();
+  app.graphView?.dispose();
+  app.graphView=createGraphView($('graphCanvas'),app.mapStory,{onNavigate:id=>requestJump(id)});
+  updateProgressSummary();
+}
+async function readyStageResources(){
+  if(!app.localReady||!app.library?.provider)return;
+  const ids=currentResourceIds(app.player.state);
+  await app.library.preload(ids);
+  const failed=ids.filter(id=>!app.library.resolve(id));
+  if(failed.length)throw new Error('当前分支的画面或声音未能完整读取，请检查游戏文件后重新选择目录。');
+}
+async function requestJump(sceneId){
+  if(!beginTransition())return;
+  try{
+    clearError();status('正在准备所选分支的画面与声音…');
+    await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+    navigate(sceneId,{internal:true,save:false});
+    await readyStageResources();
+    scheduleSave(true);const route=app.player.state.program?.mapRoute;status(`已定位到「${sceneName(app.player.scene)}」${route?route.preference==='visited'?'，沿已选路径还原':route.preference==='isolated'?'，从独立入口浏览':'，按默认可达路径还原':''}，点击继续阅读。`);
+  }catch(error){showError(error);}finally{endTransition();}
 }
 function renderChoices(state){
   const scene=app.player.scene,panel=$('choicePanel');panel.replaceChildren();
@@ -97,7 +118,7 @@ function render(state){
   app.library?.retain(currentResourceIds(state));
   if(app.lastRenderedScene&&app.lastRenderedScene!==state.sceneId&&!app.navigating){app.visited.add(state.sceneId);app.history=app.history.slice(0,app.historyIndex+1);app.history.push(state.sceneId);app.historyIndex=app.history.length-1;buildDialoguePositions();updateProgressSummary();}
   const scene=app.player.scene,width=app.story.stage.width,height=app.story.stage.height,camera=state.camera||{};
-  $('sceneTitle').textContent=sceneName(scene);$('sceneDescription').textContent=scene.subtitle==='顺序指令段'&&app.mode==='player'?'逐句阅读 · 可从地图选择场景':scene.description||scene.subtitle||'';const reference=scene.id.startsWith('archive-'),group=app.mapStory.scenes.filter(item=>item.id.startsWith('archive-')===reference);$('sceneCounter').textContent=`${reference?'资料 ':''}${group.findIndex(item=>item.id===mapId(state.sceneId))+1} / ${group.length}`;
+  $('sceneTitle').textContent=sceneName(scene);$('sceneDescription').textContent=scene.subtitle==='顺序指令段'&&app.mode==='player'?'逐句阅读 · 可从地图选择场景':scene.description||scene.subtitle||'';const reference=scene.id.startsWith('archive-'),group=app.mapStory.scenes.filter(item=>item.id.startsWith('archive-')===reference);$('sceneCounter').textContent=`${reference?'资料 ':''}${group.findIndex(item=>item.id===state.sceneId)+1} / ${group.length}`;
   $('playPause').textContent=state.playing?'暂停':'播放';$('playPause').setAttribute('aria-label',state.playing?'暂停演出':'播放演出');$('playPause').setAttribute('aria-pressed',String(state.playing));
   $('timeSlider').max=String(state.duration);$('timeSlider').value=String(state.time);$('timeSlider').setAttribute('aria-valuetext',`${formatTime(state.time)}，共 ${formatTime(state.duration)}`);$('timeLabel').textContent=`${formatTime(state.time)} / ${formatTime(state.duration)}`;
   $('previousScene').disabled=app.historyIndex<=0;$('nextScene').disabled=!scene.next;
@@ -119,9 +140,9 @@ function render(state){
     if(signature!==app.lastText){app.lastText=signature;$('speakerName').textContent=dialogue.speaker||translated.speaker||'';renderRichText($('dialogueText'),combined,{visibleCharacters:visible});}
   }
   const choiceWait=state.waiting==='choice'||state.waiting==='signal';
-  $('readerNext').textContent=state.ended?'本段结束':choiceWait?(state.signal?'等待演出结果':'请选择分支'):!state.playing?'继续阅读':state.waiting==='dialogue'?(dialogue.textComplete?'下一句':'显示完整对白'):state.waiting==='text'?'显示完整对白':'演出进行中';
-  $('readerNext').disabled=!!state.ended||choiceWait||state.playing&&!['dialogue','text'].includes(state.waiting);
-  $('readerHint').textContent=state.ended?'本段已结束，可选择地图中的其他场景。':choiceWait?(state.signal?'本段正在等待演出结果，请选择下方结果继续。':'请选择下方分支继续。'):!state.playing?'点击画面或按空格继续阅读。':state.waiting==='dialogue'?(dialogue.textComplete?'点击画面进入下一句。':'点击画面显示完整对白，再次点击继续。'):state.waiting==='text'?'文字显示后会自动继续，点击可补全文字。':'正在演出，请稍候。';
+  $('readerNext').textContent=state.ended?'本段结束':choiceWait?(state.signal?'等待演出结果':'请选择分支'):state.waiting==='node'?'继续剧情':!state.playing?'继续阅读':state.waiting==='dialogue'?(dialogue.textComplete?'下一句':'显示完整对白'):state.waiting==='text'?'显示完整对白':'演出进行中';
+  $('readerNext').disabled=!!state.ended||choiceWait||stagePending()||state.playing&&!['dialogue','text','node'].includes(state.waiting);
+  $('readerHint').textContent=state.ended?'本段已结束，可选择地图中的其他场景。':choiceWait?(state.signal?'本段正在等待演出结果，请选择下方结果继续。':'请选择下方分支继续。'):state.waiting==='node'?'已定位到此分支节点，点击继续剧情。':!state.playing?'点击画面或按空格继续阅读。':state.waiting==='dialogue'?(dialogue.textComplete?'点击画面进入下一句。':'点击画面显示完整对白，再次点击继续。'):state.waiting==='text'?'文字显示后会自动继续，点击可补全文字。':'正在演出，请稍候。';
   $('stageViewport').setAttribute('aria-disabled',String(state.ended||choiceWait));
   $('stageViewport').setAttribute('aria-label',state.ended?'本段结束，请选择地图节点':choiceWait?'请使用下方选项继续':!state.playing?'继续剧情阅读':state.waiting==='dialogue'?'点击继续对白':'剧情演出画面');
   $('readerPosition').value=dialogue.index>=0?String(dialogue.index):'';
@@ -174,7 +195,7 @@ async function installStory(story,document=null,{restore=true}={}){
   app.media=new MediaController($('videoLayer'),library,message=>{$('mediaStatus').textContent=message;if(/无法|尚未|检查/.test(message))status(message);});
   syncTextLengths();
   let restored=null;
-  if(restore)try{let saved=await readStored(keyFor(story));if(saved===undefined)saved=await readStored(legacyKeyFor(story));const recovered=restoreProject(story,app.translations,saved,{useSavedTranslations:app.mode==='review'});restored=recovered.progress;app.translations=recovered.translations;$('languageSelect').value=app.mode==='player'?'translation':recovered.language;if(recovered.errors.length){app.savingBlocked=true;app.recovery={key:keyFor(story),saved:recovered.preserved};$('recoveryExport').hidden=false;showError(new Error(recovered.errors.join('；')+'。有效部分已恢复，原始记录未覆盖。可导出保留记录，或导出当前浏览进度。'));}}catch{restored=null;app.savingBlocked=true;showError(new Error('本机记录无法读取，已暂停自动保存。可先导出当前浏览进度。'));}
+  if(restore)try{let saved=await readStored(keyFor(story));const recovered=restoreProject(story,app.translations,saved,{useSavedTranslations:app.mode==='review'});restored=recovered.progress;app.translations=recovered.translations;$('languageSelect').value=app.mode==='player'?'translation':recovered.language;if(recovered.errors.length){app.savingBlocked=true;app.recovery={key:keyFor(story),saved:recovered.preserved};$('recoveryExport').hidden=false;showError(new Error(recovered.errors.join('；')+'。有效部分已恢复，原始记录未覆盖。可导出保留记录，或导出当前浏览进度。'));}}catch{restored=null;app.savingBlocked=true;showError(new Error('本机记录无法读取，已暂停自动保存。可先导出当前浏览进度。'));}
   else if(app.recovery?.key===keyFor(story))await writeStored(`recovery|${app.recovery.key}|${Date.now()}`,app.recovery.saved).catch(()=>{app.savingBlocked=true;});
   syncTextLengths();app.loading=false;$('storyTitle').textContent=story.title;app.visited=new Set(restored?.visited||[]);buildGraph();navigate(restored?.sceneId||story.startScene,{time:restored?.time||0,reader:restored?.reader||null,save:false,internal:true});setRate(app.mode==='player'?1:restored?.rate||1);translationSummary(mergeTranslationDocument(story,emptyTranslations(story),app.translations));fitStage();renderSupport();
   $('sourceNotice').textContent='游戏文件按版本与资源编号匹配；所选文件只在本机读取，不会上传。';
@@ -215,6 +236,7 @@ $('dismissError').addEventListener('click',clearError);
 function continueReading(){
   if(app.config?.localGame&&!app.localReady){status("请先选择游戏文件夹。");return;}
   if(busy()||!app.player||app.player.state.ended||['choice','signal'].includes(app.player.state.waiting))return;
+  if(stagePending()){status('正在准备当前画面与声音，请稍候…');return;}
   clearError();previousFrame=performance.now();app.media.unlock();status(`正在浏览「${app.player.scene.title}」，可从地图切换场景。`);app.player.next();scheduleSave(true);
 }
 $('readerNext').addEventListener('click',continueReading);
@@ -287,6 +309,7 @@ document.addEventListener('visibilitychange',()=>{previousFrame=0;if(document.hi
 window.addEventListener('pagehide',()=>{app.player?.pause();scheduleSave(true);});
 new ResizeObserver(fitStage).observe($('stageViewport'));
 document.addEventListener('fullscreenchange',()=>{fitStage();$('fullscreenButton').textContent=document.fullscreenElement?'退出全屏':'全屏';});
+function stagePending(){if(!app.localReady||!app.library?.provider||!app.player)return false;const ids=currentResourceIds(app.player.state);ids.forEach(id=>app.library.resolve(id));return ids.some(id=>app.library.pending.has(id)&&!app.library.resolved.has(id));}
 function currentResourceIds(state){return [...new Set([state.background?.asset,...(state.characters||[]).map(item=>item.asset),...(state.audio||[]).map(item=>item.asset),state.video?.asset].filter(Boolean))];}
 let previousFrame=0;function frame(now){const delta=previousFrame?Math.max(0,(now-previousFrame)/1000):0;previousFrame=now;if(!busy()&&app.player?.playing&&(!app.config?.localGame||app.localReady))try{const resources=currentResourceIds(app.player.state);resources.forEach(id=>app.library.resolve(id));if(!resources.some(id=>app.library.pending.has(id)&&!app.library.resolved.has(id)))app.player.advance(delta);}catch(error){app.player.pause();showError(error);}requestAnimationFrame(frame);}requestAnimationFrame(frame);
 

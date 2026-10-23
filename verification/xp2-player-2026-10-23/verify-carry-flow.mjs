@@ -36,8 +36,8 @@ check('signal dwell survives carry and save replay',()=>{
 check('reset branch clears prior art and audio',()=>{
   const player=new ProgramPlayer(fixture());toB(player);finishB(player);player.choose('reset');assert.equal(player.state.background.asset,'red');assert.equal(player.state.characters[0].x,100);assert.deepEqual(player.state.audio,[]);player.dispose();
 });
-check('map entry resets even when destination node carries internal transitions',()=>{
-  const player=new ProgramPlayer(fixture());toB(player);player.enter('c');assert.equal(player.state.background.asset,'red');assert.deepEqual(player.state.audio,[]);player.dispose();
+check('map entry rebuilds valid preceding route and preserves its art and media',()=>{
+  const player=new ProgramPlayer(fixture());toB(player);player.enter('c');assert.equal(player.state.background.asset,'blue');assert.equal(player.state.characters[0].x,30);assert.equal(player.state.audio[0].asset,'tone');assert.equal(player.state.program.mapRoute.preference,'canonical');player.dispose();
 });
 check('canonical review retains carried entry within active block',()=>{
   const player=new ProgramPlayer(fixture());toB(player);player.advance(2);player.seekDialogue(0);assert.equal(player.state.background.asset,'blue');near(player.state.audio[0].position,8,'reviewed entry offset');player.dispose();

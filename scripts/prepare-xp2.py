@@ -137,6 +137,19 @@ for o in env.objects:
  else:
   st=t['m_ExternalResources'];item=location(st['m_Source'],st['m_Offset'],st['m_Size']);item.update(kind='video',codec='mp4',width=t['Width'],height=t['Height'],duration=t['m_FrameCount']/t['m_FrameRate'])
  item['name']=name;assets[id]=item;names.setdefault(prefix,{}) .setdefault(name,[]).append(id)
+# Use Unity's actual Resources paths. A basename is not an asset identity:
+# texture/event/foo and texture/thumbnail/foo deliberately share m_Name.
+resource_paths={}
+for o in env.objects:
+ if o.type.name!='ResourceManager':continue
+ for path,ptr in o.read().m_Container:
+  if not ptr.m_PathID:continue
+  obj=ptr.deref();kind={'Texture2D':'texture','AudioClip':'audio','VideoClip':'video'}.get(obj.type.name)
+  if not kind:continue
+  asset=f'{kind}:{obj.assets_file.name}:{obj.path_id}'
+  if asset not in assets:continue
+  path=path.replace('\\','/').lower();resource_paths.setdefault(path,[]).append(asset)
+  assets[asset].setdefault('resourcePaths',[]).append(path)
 files=[]
 for path in ['data.unity3d','resources.resource','sharedassets0.resource']:
  size=(GAME/path).stat().st_size;samples=[]
@@ -145,19 +158,29 @@ for path in ['data.unity3d','resources.resource','sharedassets0.resource']:
    fp.seek(offset);sample_data=fp.read(min(65536,size-offset));samples.append(dict(offset=offset,length=len(sample_data),sha256=hashlib.sha256(sample_data).hexdigest()))
  files.append(dict(path=path,size=size,samples=samples))
 fingerprint=translation['gameFingerprint']
-index=dict(type='xp2-unity-local-index',schemaVersion=1,gameFingerprint=fingerprint,files=files,bundle=dict(file='data.unity3d',blocks=blocks),assets=assets,vorbisSetups=settings,names=names)
+index=dict(type='xp2-unity-local-index',schemaVersion=1,gameFingerprint=fingerprint,files=files,bundle=dict(file='data.unity3d',blocks=blocks),assets=assets,vorbisSetups=settings,names=names,resourcePaths=resource_paths)
 (data/'unity-index.json').write_text(json.dumps(index,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
 tr={x['id']:x for x in translation['translations']};texts={id:dict(id=id,source=x['source']) for id,x in tr.items()};assets=index['assets'];texture={};characters={};layers={};sounds={};stats=collections.Counter();unresolved=collections.Counter();approximations=collections.Counter();used=set()
 def num(x,default=0):
  try:return float(x) if x else default
  except:return default
 def rowdict(g,r):return dict(zip(g['rows'][0]['strings'],r['strings']))
-def media(name,kind):
+def media(name,kind,category=None,subfile=None):
  if not name:return None
- name=name.replace('\\','/').split('/')[-1];stem=name.rsplit('.',1)[0] if '.' in name else name
- ids=index['names'].get(kind,{}).get(name) or index['names'].get(kind,{}).get(stem)
- if not ids:return None
- id=next((id for id in ids if ':resources.assets:' in id),ids[0]);used.add(id);return id
+ path=name.replace('\\','/').strip('/');stem=path.rsplit('.',1)[0] if '.' in path.rsplit('/',1)[-1] else path
+ prefix={'texture':'texture','audio':'sound','video':'video'}[kind]
+ native='/'.join(x for x in [prefix,category,stem] if x).lower()
+ ids=resource_paths.get(native,[])
+ # Explicit sub-sprite requests must never silently display the atlas. This
+ # game's settings have no SubFileName cells; preserve that fact on regeneration.
+ if subfile:raise ValueError('SubFileName requires a sprite crop adapter: '+native+'#'+subfile)
+ if not ids:
+  # Only accept an unambiguous full resource. Never guess among duplicate names
+  # or use a gallery thumbnail as a substitute for an unresolved event texture.
+  candidates=[id for id,a in assets.items() if a['kind']==kind and a['name'].lower()==stem.rsplit('/',1)[-1].lower() and not any('/thumbnail/' in p for p in a.get('resourcePaths',[]))]
+  if len(candidates)==1:ids=candidates
+ if len(ids)!=1:return None
+ id=ids[0];used.add(id);return id
 for g in setting_grids:
  kind=g['name'].split(':')[-1]
  for r in g['rows'][1:]:
@@ -176,7 +199,8 @@ for gg in grids:
   if id in texts:
    assert texts[id]['source']==d.get('Text','');char=characters.get((d.get('Arg1',''),d.get('Arg2',''))) or characters.get((d.get('Arg1',''),''))
    if char:texts[id]['speaker']=char.get('NameText') or d.get('Arg1','')
-blank=media('2560_black','texture')
+default_layers={kind:next((name for name,d in layers.items() if d.get('Type')==kind),None) for kind in ['Bg','Character','Sprite']}
+blank=media('2560_black','texture','bg')
 scenes=[];nodes={};mapentries={};allrows={};chapter_first={};labelmap={};nextmap={};if_false={};branch_end={};segments=[];seg_at={};pagecounts=collections.Counter();mapped_texts=set()
 CONTROL={'If','ElseIf','Else','EndIf','Jump','Selection','PauseScenario','StartDiscussionSystem','StartSpecialTalk','StartClaimArgument','StartCollectObservations','EndScenario','EndSceneGallery'}
 for gi,g in enumerate(grids):
@@ -216,17 +240,19 @@ for i,seg in enumerate(segments):
 def go(sid):return dict(type='goto',target=sid) if sid else dict(type='end')
 def target(gi,label):return labelmap.get((gi,label)) or labelmap.get((None,label)) or labelmap.get((None,label.lstrip('*')))
 def at(gi,i):return seg_at.get((gi,i))
-def default_entry():return dict(background=dict(asset=blank),characters=[],dialogue=dict(textId=None,visible=False))
+def default_entry():return dict(background=dict(asset=blank),characters=[],eventMode=False,dialogue=dict(textId=None,visible=False))
 state_by_chapter={};supported={'','Wait','Bg','BgOff','BgEvent','BgEventOff','CharacterOff','Sprite','SpriteOff','Bgm','Se','StopBgm','StopSe','Video','Tween','Shake','GuiActive','Param','SelectionClick','ChangeSkip','DebugLog','ShowHearts','HideHearts','AddHeart','LossHeart','ShowConsiderResult','HideConsiderResult','ShowClaimArgumentAgenda','HideClaimArgumentAgenda','FinishSpecialTalk','EndDiscussionSystem','HideConsiderResult'}
 def entry_for(state):
- return dict(background=dict(asset=blank),characters=list(copy.deepcopy(state['actors']).values()),dialogue=dict(textId=None,visible=False))
-def add_event(scene,kind,**payload):
- e=dict(type=kind,at=scene['_clock'],**payload);scene['events'].append(e);scene['commands'].append(dict(type='dialogue' if kind=='dialogue' else 'event',eventIndex=len(scene['events'])-1));return scene['commands'][-1]
-def actor(scene,state,id,asset,layer=None,params=None,x=None,y=None,scale=None):
+ # Runtime reconstructs a valid graph path for direct jumps. Spreadsheet order
+ # crosses alternatives that were never taken and cannot supply entry snapshots.
+ return default_entry()
+def add_event(scene,event_type,**payload):
+ e=dict(type=event_type,at=scene['_clock'],**payload);scene['events'].append(e);scene['commands'].append(dict(type='dialogue' if event_type=='dialogue' else 'event',eventIndex=len(scene['events'])-1));return scene['commands'][-1]
+def actor(scene,state,id,asset,layer=None,params=None,x=None,y=None,scale=None,kind='character'):
  if not asset:return
  md=assets[asset];params=params or {};ly=layers.get(layer or '',{});factor=num(params.get('Scale'),1)*(scale if scale is not None else 1);w=md['width']*factor;h=md['height']*factor
- xx=960+num(ly.get('X'))+num(params.get('X'))+(x or 0)-w/2;yy=540-num(ly.get('Y'))-num(params.get('Y'))-(y or 0)-h/2
- patch=dict(id=id,asset=asset,x=xx,y=yy,width=w,height=h,layer=num(ly.get('Order'),10),flip=str(ly.get('FlipX','')).lower()=='true',opacity=1)
+ xx=640+num(ly.get('X'))+num(params.get('X'))+(x or 0)-w/2;yy=360-num(ly.get('Y'))-num(params.get('Y'))-(y or 0)-h/2
+ patch=dict(id=id,asset=asset,x=xx,y=yy,width=w,height=h,layer=num(ly.get('Order'),10),layerName=layer or '',kind=kind,flip=str(ly.get('FlipX','')).lower()=='true',opacity=1)
  state['actors'][id]=patch;add_event(scene,'character',**patch)
 def remove(scene,state,id):
  if id in state['actors']:add_event(scene,'character',id=id,remove=True);del state['actors'][id]
@@ -264,29 +290,38 @@ for seg in segments:
   if c in CONTROL or c.startswith('*'):continue
   a=d.get('Arg1','');b=d.get('Arg2','');ly=d.get('Arg3','');amount=num(d.get('Arg6'))
   if c in ['Bg','BgEvent','Sprite']:
-   p=texture.get(a,{});asset=media(p.get('FileName') or a,'texture')
+   label=(b or a) if c=='Sprite' else a
+   p=texture.get(label,{});asset=media(p.get('FileName') or label,'texture',p.get('Type','Sprite' if c=='Sprite' else 'Bg').lower(),p.get('SubFileName'))
+   layer=ly or default_layers['Sprite' if c=='Sprite' else 'Bg']
+   if c in ['Bg','BgEvent']:add_event(scene,'mode',eventMode=c=='BgEvent')
    if asset:
-    id=('bg:' if c!='Sprite' else 'sprite:')+(ly or a);actor(scene,state,id,asset,ly,p,x=num(d.get('Arg4')),y=num(d.get('Arg5')));state['bg'][ly or a]=id
+    id='sprite:'+a if c=='Sprite' else 'bg:'+layer
+    actor(scene,state,id,asset,layer,p,x=num(d.get('Arg4')),y=num(d.get('Arg5')),kind='sprite' if c=='Sprite' else 'background');state['bg'][a]=id
    else:unresolved[c+':'+a]+=1
   elif c in ['BgOff','BgEventOff','SpriteOff']:
-   prefix='sprite:' if c=='SpriteOff' else 'bg:'
-   for id in list(state['actors']):
-    if id.startswith(prefix) and (not (ly or a) or id in [prefix+ly,prefix+a] or state['actors'][id]['asset']==media(a,'texture')):remove(scene,state,id)
+   kind='sprite' if c=='SpriteOff' else 'background';filters={}
+   if c=='SpriteOff' and a not in ['', 'AllSpriteLayers','AllSpriteObjects']:
+    filters={'layerName':a} if a in layers else {'id':'sprite:'+a}
+   add_event(scene,'clearActors',kind=kind,**filters)
+   for id,item in list(state['actors'].items()):
+    if item.get('kind')==kind and all(item.get(k)==v for k,v in filters.items()):del state['actors'][id]
   elif c=='CharacterOff':
-   for id in list(state['actors']):
-    if id.startswith('char:') and (not a or id=='char:'+a):remove(scene,state,id)
+   filters={} if not a or a in ['All','AllCharacterLayers','AllCharacterObjects'] else ({'layerName':a} if a in layers else {'id':'char:'+a})
+   add_event(scene,'clearActors',kind='character',**filters)
+   for id,item in list(state['actors'].items()):
+    if item.get('kind')=='character' and all(item.get(k)==v for k,v in filters.items()):del state['actors'][id]
   elif c=='' and a:
-   p=characters.get((a,b)) or characters.get((a,''));asset=media(p.get('FileName') if p else b,'texture')
-   if asset:actor(scene,state,'char:'+a,asset,ly,p,x=num(d.get('Arg4')),y=num(d.get('Arg5')))
+   p=characters.get((a,b)) or characters.get((a,''));asset=media(p.get('FileName') if p else b,'texture','character',p.get('SubFileName') if p else None)
+   if asset:actor(scene,state,'char:'+a,asset,ly or default_layers['Character'],p,x=num(d.get('Arg4')),y=num(d.get('Arg5')))
    elif p:unresolved['Character:'+a+':'+b]+=1
   elif c in ['Bgm','Se']:
-   p=sounds.get(a,{});asset=media(p.get('FileName') or a,'audio')
+   p=sounds.get(a,{});asset=media(p.get('FileName') or a,'audio',p.get('Type',c).lower())
    if asset:add_event(scene,'audio',id='bgm' if c=='Bgm' else 'se',asset=asset,loop=c=='Bgm',volume=max(0,min(1,num(p.get('Volume'),1))),duration=max(.01,assets[asset].get('duration',1)))
    else:unresolved[c+':'+a]+=1
   elif c in ['StopBgm','StopSe']:add_event(scene,'stopAudio',id='bgm' if c=='StopBgm' else 'se',duration=max(0,min(20,num(d.get('Arg1')))))
   elif c=='Video':
    asset=media(a,'video')
-   if asset:add_event(scene,'video',id='video',asset=asset,width=1920,height=1080,x=0,y=0,loop=False,duration=assets[asset]['duration'])
+   if asset:add_event(scene,'video',id='video',asset=asset,width=1280,height=720,x=0,y=0,loop=False,duration=assets[asset]['duration'])
    else:unresolved['Video:'+a]+=1
   elif c=='Wait':
    wait=num(d.get('Arg6'),num(a));wait=max(0,min(60,wait))
@@ -300,8 +335,8 @@ for seg in segments:
     for field in ['x','y','rotation','opacity','scaleX','scaleY']:
      raw=p.get(field) or p.get(field.lower())
      if raw is not None:to[field]=num(raw)
-    if 'x' in to:to['x']=960+to['x']-old['width']/2
-    if 'y' in to:to['y']=540-to['y']-old['height']/2
+    if 'x' in to:to['x']=640+to['x']-old['width']/2
+    if 'y' in to:to['y']=360-to['y']-old['height']/2
     if to:
      duration=max(0,min(30,num(p.get('time'),amount or .3)));add_event(scene,'tween',target='character:'+id,to=to,duration=duration,easing='linear');old.update(to)
     else:approximations['Tween no supported property']+=1
@@ -334,14 +369,15 @@ for group,ids in extras.items():
 # Main story opens on its original Start entry rather than promotional/book utility scenes.
 start=next((chapter_first[i] for i,g in enumerate(grids) if g['name'].split(':')[-1]=='Start'),chapter_first[0]);story_assets=[]
 for id in sorted(used):story_assets.append(dict(id=id,type={'texture':'image','audio':'audio','video':'video'}[assets[id]['kind']],src='local-assets/'+re.sub('[^a-zA-Z0-9_-]','_',id)+({'texture':'.png','audio':'.ogg','video':'.mp4'}[assets[id]['kind']])))
-story=dict(type='story-player',schemaVersion=1,id='xp2-1-0-0',gameFingerprint=translation['gameFingerprint'],title='XP2 · 场景播放器',stage=dict(width=1920,height=1080),startScene=start,assets=story_assets,texts=list(texts.values()),scenes=scenes,mapSize=dict(width=1320,height=max(s.get('map',{}).get('y',0) for s in scenes)+150),program=dict(version=1,entry=start,variables={},nodes=nodes,mapEntries=mapentries),adapter=dict(mode='scene-and-branch-browser',sourceTextRows=6670,translationEntries=len(texts),spokenDialogueRows=stats['spokenDialogueRows'],nativeCommandTextFields=stats['nativeCommandTextFields'],description='条件分支手动浏览；讨论小游戏不运行，界面和讨论译文在资料节点查阅。'))
+story=dict(type='story-player',schemaVersion=1,id='xp2-1-0-0',gameFingerprint=translation['gameFingerprint'],title='XP2 · 场景播放器',stage=dict(width=1280,height=720),startScene=start,assets=story_assets,texts=list(texts.values()),scenes=scenes,mapSize=dict(width=1320,height=max(s.get('map',{}).get('y',0) for s in scenes)+150),program=dict(version=1,entry=start,variables={},nodes=nodes,mapEntries=mapentries),adapter=dict(mode='scene-and-branch-browser',sourceTextRows=6670,translationEntries=len(texts),spokenDialogueRows=stats['spokenDialogueRows'],nativeCommandTextFields=stats['nativeCommandTextFields'],description='条件分支手动浏览；讨论小游戏不运行，界面和讨论译文在资料节点查阅。'))
 translation.update(type='story-translations',schemaVersion=2,gameName=story['title']);jsonopts=dict(ensure_ascii=False,separators=(',',':'))
 (data/'story.json').write_text(json.dumps(story,**jsonopts),encoding='utf-8');(data/'translations.json').write_text(json.dumps(translation,**jsonopts),encoding='utf-8')
 manifest=dict(type='story-player-asset-manifest',schemaVersion=1,storyId=story['id'],gameFingerprint=story['gameFingerprint'],assets=[])
 (data/'asset-manifest.json').write_text(json.dumps(manifest,**jsonopts),encoding='utf-8')
-config=dict(version='1.0.0',story='data/story.json',translations='data/translations.json',support='data/support.json',assets='data/asset-manifest.json',defaultMode='player',reviewEnabled=False,localGame=True,unityIndex='data/unity-index.json')
+config=dict(version='1.1.0',story='data/story.json',translations='data/translations.json',support='data/support.json',assets='data/asset-manifest.json',defaultMode='player',reviewEnabled=False,localGame=True,unityIndex='data/unity-index.json')
 (data/'player-config.json').write_text(json.dumps(config,**jsonopts),encoding='utf-8')
 report=dict(type='xp2-adapter-report',schemaVersion=1,scenarioGrids=len(grids),exactScenarioTextFields=6670,displayedDialogueCount=stats['spokenDialogueRows'],selectionLabelCount=stats['selectionLabelCount'],nativeCommandTextFields=stats['nativeCommandTextFields'],preservedTranslationEntries=len(texts),catalogMatchedTranslations=len(texts),accessibleTextEntries=len(mapped_texts),assets=len(story_assets),scenes=len(scenes),mapEntries=len(mapentries),stats=stats,approximations=approximations,unresolved=dict(unresolved),scope='Scene resource/translated dialogue and manual branch browsing. Native custom discussion minigames are reference texts and explicit continuation gates; variables are not evaluated.',sourceBytesReadLocally=True,commandTextHandling='Only blank Command rows become dialogue. Selection Text becomes choice labels. Text fields on Bg, BgEvent, BgOff, DebugLog and Wait remain in the source translation catalog but never become spoken dialogue.')
+report.update(declaredMapEntries=len(mapentries),storyChapterEntries=len(chapter_first),visibleMapNodes=len(scenes),storyMapNodes=len(segments),referenceMapNodes=len(scenes)-len(segments),mapEntriesRole='Legacy chapter and reference-group entry anchors. The visible graph contains every story segment and reference page, including intermediate branch/control nodes.',visualRepairs=dict(stage=dict(width=1280,height=720),resourceBinding='Native Unity ResourceManager path, including Texture Type folder; thumbnails excluded from story resources.',backgroundSlots='One fixed graphic slot per resolved native Bg layer, preserving explicitly separate layers.',eventMode='BgEvent hides ordinary characters until Bg. Mode and clears are evaluated dynamically across actual graph traversal.',jumpEntries='Neutral baked entries; runtime reconstructs a canonical valid graph route or restores the visited route state, never accumulates spreadsheet alternatives.',spriteBinding='Sprite Arg1 is object identity; Arg2 optionally supplies its texture label.'))
 (data/'adapter-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
 support=dict(version='1.0.0',items=[dict(label='原版 Unity 游戏目录只读读取，资源保留本机',status='ready'),dict(label='保留全部 10,173 项原文译文；场景显示 5,614 行对白和 35 个选项标签',status='ready'),dict(label='条件分支采用明确的手动浏览选项，不计算原游戏变量',status='partial'),dict(label='讨论小游戏未移植；对应译文可在资料节点查阅',status='partial'),dict(label='部分原生动画与窗口特效采用二维近似，请见部署说明',status='partial')]);(data/'support.json').write_text(json.dumps(support,**jsonopts),encoding='utf-8');print(json.dumps({k:v for k,v in report.items() if k not in ['unresolved','approximations']},ensure_ascii=True));print('unresolved',len(unresolved),sum(unresolved.values()),'approximations',dict(approximations))
 

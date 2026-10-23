@@ -12,12 +12,14 @@ function validateNumber(value,key){
 function validateFields(value,actor=false){
   if(!object(value))fail('对象必须是普通字段集合');
   const fields=actor?[...numericFields,'width','height','pivotX','pivotY']:numericFields;
-  const allowed=new Set(['id',...fields,'flip','flipY','visible',...(actor?['asset','layerId']:['parentId'])]);
+  const allowed=new Set(['id',...fields,'flip','flipY','visible',...(actor?['asset','layerId','kind','layerName']:['parentId'])]);
   for(const [key,entry] of Object.entries(value)){
     if(!allowed.has(key))fail(`不支持字段 ${key}`);
     if(entry===undefined)continue;
     if(fields.includes(key))validateNumber(entry,key);
     if(['flip','flipY','visible'].includes(key)&&typeof entry!=='boolean')fail(`${key}必须为布尔值`);
+    if(key==='kind'&&!['character','background','sprite'].includes(entry))fail('角色类型无效');
+    if(key==='layerName'&&!validId(entry))fail('原生图层名称无效');
   }
   const reference=actor?value.layerId:value.parentId;
   if(reference!==undefined&&reference!==null&&!validId(reference))fail('图层引用编号无效');
