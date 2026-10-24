@@ -1,6 +1,7 @@
 'use client'
 import { useMemo, useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
+import { ADMIN_MESSAGE_GUIDANCE } from '@/lib/site-copy'
 
 export default function PrivateMessageBox({ userId }: { userId: string }) {
   const [message,setMessage]=useState('')
@@ -19,8 +20,9 @@ export default function PrivateMessageBox({ userId }: { userId: string }) {
   }
   return <form className="panel profile-form" onSubmit={submit}>
     <h3>给管理员留言 <span className="badge">仅管理员可见</span></h3>
+    <p id="admin-message-guidance">{ADMIN_MESSAGE_GUIDANCE}</p>
     <p>留言会发送到后台审核区，不会向其他成员公开。</p>
-    <label>留言内容<textarea value={message} maxLength={2000} required onChange={e=>setMessage(e.target.value)} /></label>
+    <label>留言内容<textarea value={message} maxLength={2000} required aria-describedby="admin-message-guidance" onChange={e=>setMessage(e.target.value)} /></label>
     <button className="button primary" disabled={busy}>{busy?'发送中…':'发送私密留言'}</button>
     {msg&&<p className="form-msg">{msg}</p>}
   </form>

@@ -35,11 +35,15 @@ function readPreferences(value: unknown): PetPreferences {
 export default function HomeCharacter() {
   const pathname = usePathname() || '/'
   const [minimized, setMinimized] = useState(false)
+  const [routeDisclosure, setRouteDisclosure] = useState({ pathname: '', expanded: false })
   const iframeRef = useRef<HTMLIFrameElement>(null)
   const preferencesRef = useRef<PetPreferences>({})
+  const routeStartsCollapsed = /^\/level\/[12]\/?$/.test(pathname)
+  const routeExpanded = routeDisclosure.pathname === pathname && routeDisclosure.expanded
+  const effectiveMinimized = routeStartsCollapsed ? !routeExpanded : minimized
   const visibleOnRoute = pathname === '/' || pathname === '/account' || pathname.startsWith('/level/')
   const isHomeRoute = pathname === '/' || pathname === '/account'
-  const frameVisible = visibleOnRoute && !minimized
+  const frameVisible = visibleOnRoute && !effectiveMinimized
 
   const send = useCallback((message: object) => {
     // A script-only sandbox has an opaque origin, so '*' is required here.
@@ -56,11 +60,20 @@ export default function HomeCharacter() {
 
   useEffect(() => {
     try {
-      setMinimized(window.localStorage.getItem('konisi-companion-minimized') === '1')
       const stored = window.localStorage.getItem(preferencesKey)
       if (stored) preferencesRef.current = readPreferences(JSON.parse(stored))
     } catch { /* Keep the companion usable when storage is unavailable or malformed. */ }
   }, [])
+
+  useEffect(() => {
+    if (routeStartsCollapsed) return
+    try { setMinimized(window.localStorage.getItem('konisi-companion-minimized') === '1') }
+    catch { /* Keep the in-memory choice when storage is unavailable. */ }
+  }, [routeStartsCollapsed])
+
+  useEffect(() => {
+    setRouteDisclosure({ pathname, expanded: false })
+  }, [pathname])
 
   useEffect(() => {
     const receive = (event: MessageEvent<unknown>) => {
@@ -119,16 +132,20 @@ export default function HomeCharacter() {
   }, [frameVisible, send])
 
   const toggle = () => {
+    if (routeStartsCollapsed) {
+      setRouteDisclosure({ pathname, expanded: !routeExpanded })
+      return
+    }
     const next = !minimized
     setMinimized(next)
     try { window.localStorage.setItem('konisi-companion-minimized', next ? '1' : '0') }
     catch { /* The toggle should still work without storage. */ }
   }
 
-  return <aside className={`site-companion ${minimized ? 'is-minimized' : ''} ${visibleOnRoute ? '' : 'is-route-hidden'} ${isHomeRoute ? 'is-home-route' : ''}`}
-    aria-label="柯妮丝 · 全站看板娘">
+  return <aside className={`site-companion ${effectiveMinimized ? 'is-minimized' : ''} ${visibleOnRoute ? '' : 'is-route-hidden'} ${isHomeRoute ? 'is-home-route' : ''}`}
+    aria-label="柯妮丝 · 全站看板娘" data-route-disclosure={routeStartsCollapsed} data-expanded={!effectiveMinimized}>
     <button className="site-companion-minimize" type="button" onClick={toggle} aria-label="收起柯妮丝看板娘" title="收起看板娘">−</button>
-    <CharacterFrame
+    {(!routeStartsCollapsed || routeExpanded) && <CharacterFrame
       ref={iframeRef}
       onLoad={synchronize}
       className="site-companion-frame"
@@ -137,7 +154,7 @@ export default function HomeCharacter() {
       sandbox="allow-scripts"
       referrerPolicy="no-referrer"
       loading="eager"
-    />
+    />}
     <button className="site-companion-restore" type="button" onClick={toggle} aria-label="展开柯妮丝看板娘" title="展开看板娘">♡</button>
   </aside>
 }

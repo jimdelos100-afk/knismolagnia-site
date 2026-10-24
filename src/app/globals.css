@@ -129,6 +129,14 @@ textarea { resize: vertical; min-height: 100px; }
 .content-feed,.thread-list,.submission-admin,.admin-content-list,.profile-change-admin { display: grid; gap: 18px; }
 .content-item h2 { font-size: 24px; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
 .content-body { white-space: pre-wrap; overflow-wrap: anywhere; }
+.level-introduction { min-width: 0; }
+.level-introduction h2 { margin-top: 0; }
+.level-introduction p { line-height: 1.9; }
+.introduction-contacts strong { color: var(--red-dark); letter-spacing: .04em; }
+.culture-introduction a { text-decoration: underline; overflow-wrap: anywhere; }
+.culture-consent { padding: 14px 18px; border-left: 3px solid var(--red); background: var(--pink-soft); }
+.culture-reference { margin-left: .15em; line-height: 0; font-size: .7em; }
+.culture-source { color: var(--muted); font-size: .9rem; }
 .files { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
 .files h4 { width: 100%; margin: 0; }
 .submission,.discussion,.members-entry,.level-page>.profile-form { margin-top: 28px; }
