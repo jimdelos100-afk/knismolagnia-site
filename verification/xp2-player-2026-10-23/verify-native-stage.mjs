@@ -19,7 +19,12 @@ await renderer.waitFor(state([to,other]));assert.equal(cast.nodes.length,2);asse
 await renderer.waitFor(state([other],fade(.5,to,null)));assert.equal(cast.nodes.length,2);assert.equal(cast.nodes.find(node=>node.src==='blob:new').style.opacity,'0.5','out transition keeps its removed actor until completed');
 await renderer.waitFor(state([to],fade(.25,null,to)));assert.equal(cast.nodes.length,1);assert.equal(cast.nodes[0].style.opacity,'0.25');
 await renderer.waitFor(state([from]));const stable=cast.nodes[0];let release;gates.set('blob:new',new Promise(resolve=>{release=resolve;}));renderer.sync(state([to],fade(.1)));await tick();assert.equal(cast.nodes[0],stable);renderer.sync(state([to],fade(.75)));release();await tick();await tick();assert.equal(cast.nodes[0].src,'blob:old');assert.equal(cast.nodes[1].style.opacity,'0.75','decode completion uses the latest logical transition time');
-await renderer.waitFor(state([to]));assert.equal(cast.nodes.length,1,'scrub settles directly to a single native CG');renderer.dispose();
+await renderer.waitFor(state([to]));assert.equal(cast.nodes.length,1,'scrub settles directly to a single native CG');
+renderer.lighting={m_Enabled:1,mainColor:{r:1},subColor:{r:.5},fadeTime:.2};
+const litState=state([{...actor('speaker-a','a'),kind:'character'},{...actor('speaker-b','b'),kind:'character'},to]);
+litState.stageTime=.1;Object.assign(litState.nativeEffects,{speakerActorId:'b',previousSpeakerActorId:'a',speakerChangedAt:0});await renderer.waitFor(litState);
+assert.equal(cast.nodes[0].style.filter,'brightness(0.75)');assert.equal(cast.nodes[1].style.filter,'brightness(0.75)');assert.equal(cast.nodes[2].style.filter,'none','speaker tint never affects native CG');
+litState.stageTime=.2;renderer.sync(litState);assert.equal(cast.nodes[0].style.filter,'brightness(0.5)');assert.equal(cast.nodes[1].style.filter,'brightness(1)');renderer.dispose();
 
 const audio=[];let enabled=true,resolveCue;const cueGate=new Promise(resolve=>{resolveCue=resolve;});
 const sounds=new MenuSounds({asset:id=>({type:id==='bad'?'image':'audio'}),preload:()=>cueGate,resolve:id=>`blob:${id}`},{enabled:()=>enabled,createAudio:url=>{const element={url,paused:true,play(){this.paused=false;return Promise.resolve();},pause(){this.paused=true;},removeAttribute(){},load(){}};audio.push(element);return element;}});
@@ -27,4 +32,4 @@ const pending=sounds.play({assetId:'click',volume:.5});sounds.stop();resolveCue(
 sounds.setVolume(.4);assert.equal(await sounds.play({assetId:'click',volume:.5}),true);assert.equal(audio[0].volume,.2);sounds.setVolume(0);assert.equal(audio[0].volume,0);audio[0].onended();assert.equal(sounds.channels.size,0);enabled=false;assert.equal(await sounds.play({assetId:'click'}),false);sounds.dispose();
 const controller=new MediaController({pause(){},load(){},removeAttribute(){}},{},()=>{});controller.masterVolume=.5;controller.channelVolumes.bgm=.2;controller.channelVolumes.se=.6;
 const element={readyState:0,paused:true,pause(){}};controller.syncElement(element,{id:'bgm',volume:.8,playing:false},1);assert.ok(Math.abs(element.volume-.08)<1e-10);controller.syncElement(element,{id:'se',volume:.8,playing:false},1);assert.ok(Math.abs(element.volume-.24)<1e-10);controller.dispose();
-console.log('Native stage checks passed: opaque swap, independent slots, no per-frame decode, fade-out, fade-in, held decode, latest logical time, settled scrub; menu cancellation/volume/cleanup; BGM/SE mixing.');
+console.log('Native stage checks passed: opaque swap, independent slots, no per-frame decode, fade-out, fade-in, held decode, latest logical time, settled scrub, speaker brightness interpolation; menu cancellation/volume/cleanup; BGM/SE mixing.');

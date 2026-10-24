@@ -3,7 +3,10 @@ const copy=value=>structuredClone(value),finite=value=>typeof value==='number'&&
 const fail=message=>{throw new Error(`原作演出配置无效：${message}`);};
 const clamp=value=>Math.max(0,Math.min(1,value));
 const registered=new Map();
+const compiledManifests=new WeakMap();
 const registryKey=(story,revision)=>`${story.id}|${story.gameFingerprint}|${revision}`;
+const stable=value=>value===undefined?'null':value===null||typeof value!=='object'?JSON.stringify(value):Array.isArray(value)?`[${value.map(stable).join(',')}]`:`{${Object.keys(value).sort().map(key=>`${JSON.stringify(key)}:${stable(value[key])}`).join(',')}}`;
+function semanticRevision(manifest){const source=stable({defaults:manifest.defaults,layers:manifest.layers,bindings:manifest.bindings,scenes:manifest.scenes,dialogueSpeakers:manifest.dialogueSpeakers,nativeUiSettings:manifest.nativeUiSettings});let a=2166136261,b=5381;for(let i=0;i<source.length;i++){const c=source.charCodeAt(i);a=Math.imul(a^c,16777619);b=Math.imul(b,33)^c;}return(a>>>0).toString(16).padStart(8,'0')+(b>>>0).toString(16).padStart(8,'0');}
 const fresh=()=>({messageWindow:{offsetX:0,offsetY:0,opacity:1,visible:true},messageWindowPosition:{offsetX:0,offsetY:0},guiActive:{},transitions:[],motions:[],shakes:[],waits:[],textureOffsets:{}});
 const hash=text=>{let value=2166136261;for(const char of String(text))value=Math.imul(value^char.charCodeAt(0),16777619);return value>>>0;};
 function random(seed,step){let n=(seed^Math.imul(step+1,0x9e3779b9))>>>0;n^=n>>>16;n=Math.imul(n,0x7feb352d);n^=n>>>15;n=Math.imul(n,0x846ca68b);return((n^(n>>>16))>>>0)/4294967296;}
@@ -28,7 +31,7 @@ export class NativeEffectsRuntime{
       }
       this.scenes.set(sceneId,compiled);
     }
-    this.count=count;this.revision='native-1:'+String(manifest.sourceStorySha256||'');if(!/^native-1:[a-f0-9]{64}$/.test(this.revision))fail('原作来源版本校验无效');registered.set(registryKey(story,this.revision),this);if(registered.size>4)registered.delete(registered.keys().next().value);
+    if(!/^[a-f0-9]{64}$/.test(manifest.sourceStorySha256||''))fail('原作来源版本校验无效');this.count=count;this.revision='native-1:'+manifest.sourceStorySha256+':'+semanticRevision(manifest);registered.set(registryKey(story,this.revision),this);if(registered.size>4)registered.delete(registered.keys().next().value);
   }
   base(entry){return entry?.nativeEffects?{...fresh(),...copy(entry.nativeEffects)}:fresh();}
   timeline(scene,commands,executions,{ended=false}={}){
@@ -54,6 +57,7 @@ export class NativeEffectsRuntime{
       if(row.targetKind!=='messageWindow')return;
       fx.shakes=fx.shakes.filter(item=>item.target!=='messageWindow');fx.shakes.push({id:row.id,target:'messageWindow',at:at+delay,duration,x:row.parameters?.x??30,y:row.parameters?.y??30,seed:hash(row.id)});
     }else if(row.command==='Tween'){
+      if(row.targetKind==='unresolved')return;
       for(const targetName of this.targets(state,row)){
         const target=resolveTarget(state,targetName);if(!target)continue;const to={},p=row.parameters||{};
         if(targetName==='messageWindow'){
@@ -114,10 +118,10 @@ export class NativeEffectsRuntime{
     return Math.max(0,until-at);
   }
   settleTime(scene,commands,executions,{ended=false}={}){
-    let until=0;for(const row of this.scenes.get(scene.id)||[]){const execution=executions[row.beforeCommandIndex];if(!execution&&!(ended&&row.beforeCommandIndex===commands.length))continue;const at=execution?.at??(executions.length?commandEnd(scene,commands.at(-1),executions.at(-1)):0);until=Math.max(until,at+(row.parameters?.delay||0)+(row.duration||0));}return until;
+    let until=0;for(const row of this.scenes.get(scene.id)||[]){const execution=executions[row.beforeCommandIndex];if(!execution&&!(ended&&row.beforeCommandIndex===commands.length))continue;const at=execution?.at??(executions.length?commandEnd(scene,commands.at(-1),executions.at(-1)):0);until=Math.max(until,at+(row.parameters?.delay||0)+(row.duration||0));}const speakerFade=.2;for(const execution of executions){const command=commands[execution.commandIndex];if(command.type==='dialogue'&&this.speakers.get(scene.id)?.has(scene.events[command.eventIndex].textId))until=Math.max(until,execution.at+speakerFade);}return until;
   }
 }
-export function compileNativeEffects(story,manifest){if(manifest instanceof NativeEffectsRuntime){if(manifest.storyId!==story.id)fail('配置与剧情不匹配');return manifest;}return new NativeEffectsRuntime(story,manifest);}
+export function compileNativeEffects(story,manifest){if(manifest instanceof NativeEffectsRuntime){if(manifest.storyId!==story.id)fail('配置与剧情不匹配');return manifest;}if(!plain(manifest))fail('缺少配置');let byStory=compiledManifests.get(manifest);if(!byStory){byStory=new WeakMap();compiledManifests.set(manifest,byStory);}let runtime=byStory.get(story);if(!runtime){runtime=new NativeEffectsRuntime(story,manifest);byStory.set(story,runtime);}registered.set(registryKey(story,runtime.revision),runtime);return runtime;}
 export function carryNativeEffects(effects,elapsed){if(!effects)return undefined;const result=copy(effects);for(const key of ['transitions','motions','shakes','waits'])for(const item of result[key]||[])item.at-=elapsed;result.waitUntil=Math.max(0,(result.waitUntil||0)-elapsed);result.inputWaitUntil=Math.max(0,(result.inputWaitUntil||0)-elapsed);result.defaultBarrier=Math.max(0,(result.defaultBarrier||0)-elapsed);if(result.speakerChangedAt!==undefined)result.speakerChangedAt-=elapsed;return result;}
 
 export function nativeEffectsFor(story,revision){const runtime=registered.get(registryKey(story,revision));if(!runtime)fail('此浏览记录需要先载入匹配的原作演出配置');return runtime;}

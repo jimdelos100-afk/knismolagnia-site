@@ -340,7 +340,8 @@ function render(state){
     if(signature!==app.lastText){app.lastText=signature;$('speakerName').textContent=dialogue.speaker||translated.speaker||'';renderRichText($('dialogueText'),combined,{visibleCharacters:visible});}
   }
   const choiceWait=state.waiting==='choice'||state.waiting==='signal';
-  $('readerNext').textContent=state.ended?'本段结束':choiceWait?(state.signal?'等待演出结果':'请选择分支'):state.waiting==='node'?'继续剧情':!state.playing?'继续阅读':state.waiting==='dialogue'?(dialogue.textComplete?'下一句':'显示完整对白'):state.waiting==='text'?'显示完整对白':'演出进行中';
+  const nativeInputWait=!!state.nativeEffects?.inputWaiting&&dialogue.textComplete;
+  $('readerNext').textContent=state.ended?'本段结束':choiceWait?(state.signal?'等待演出结果':'请选择分支'):state.waiting==='node'?'继续剧情':!state.playing?'继续阅读':nativeInputWait?'演出完成后下一句':state.waiting==='dialogue'?(dialogue.textComplete?'下一句':'显示完整对白'):state.waiting==='text'?'显示完整对白':'演出进行中';
   $('readerNext').disabled=app.historyOpen||!!state.ended||choiceWait||stagePending()||state.playing&&!['dialogue','text','node'].includes(state.waiting);
   $('readerHint').textContent=state.ended?'本段已结束，可选择地图中的其他场景。':choiceWait?(state.signal?'本段正在等待演出结果，请选择下方结果继续。':'请选择下方分支继续。'):state.waiting==='node'?'已定位到此分支节点，点击继续剧情。':!state.playing?'点击画面或按空格继续阅读。':state.waiting==='dialogue'?(dialogue.textComplete?'点击画面进入下一句。':'点击画面显示完整对白，再次点击继续。'):state.waiting==='text'?'文字显示后会自动继续，点击可补全文字。':'正在演出，请稍候。';
   $('stageViewport').dataset.readerDisabled=String(state.ended||choiceWait);
@@ -560,7 +561,7 @@ function frame(now){
     let ready=!!app.player&&(!app.config?.localGame||app.localReady)&&!stagePending();
     if(!busy()&&app.player?.playing&&ready&&!app.historyOpen)app.player.advance(delta);
     if(app.player&&autoReader.enabled){const state=app.lastState||app.player.state;ready=(!app.config?.localGame||app.localReady)&&!stagePending(state);const enabled=autoReader.enabled;
-      if(autoReader.update(state,{delta,ready,blocked:busy()||app.scrubbing||app.historyOpen||document.hidden,lineLength:app.lengths[state.dialogue?.textId]||0,speed:app.settings.autoSpeed}))continueReading({automatic:true});
+      if(autoReader.update(state,{delta,ready:ready&&!state.nativeEffects?.inputWaiting,blocked:busy()||app.scrubbing||app.historyOpen||document.hidden,lineLength:app.lengths[state.dialogue?.textId]||0,speed:app.settings.autoSpeed}))continueReading({automatic:true});
       if(enabled!==autoReader.enabled)syncReadingChrome(app.lastState||state);
     }
   }catch(error){stopAuto();app.player?.pause();showError(error);}

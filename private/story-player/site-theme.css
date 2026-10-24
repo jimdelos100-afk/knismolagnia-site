@@ -477,8 +477,21 @@ body[data-mode] .transport-options { margin-inline-start: auto; }
 .shell-localization > p { margin-top: 7px; color: var(--site-muted); font-size: 12px; line-height: 1.8; }
 .shell-localization-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
 .shell-localization .shell-localization-status { color: var(--site-blue); }
-.game-purchase-link { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 18px; border-bottom: 1px solid var(--site-line); color: var(--site-pink-dark); background: var(--site-pink-soft); font-size: 13px; line-height: 1.8; text-decoration: none; }
-.game-purchase-link:hover { text-decoration: underline; }
+.game-access-banner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(250px, .42fr); align-items: center; gap: 28px; max-width: 1556px; margin: 12px 22px 28px; padding: clamp(26px, 4vw, 48px); border: 2px solid var(--site-pink); border-top-width: 8px; border-radius: 6px; background: linear-gradient(115deg, var(--site-pink-soft), var(--site-paper-blue)); box-shadow: 0 10px 28px color-mix(in srgb, var(--site-pink) 14%, transparent); }
+.game-access-copy { min-width: 0; }
+.game-access-label { display: inline-block; margin-bottom: 14px; padding: 5px 12px; border-radius: 2px; color: var(--site-primary-text); background: var(--site-pink); font-size: 14px; font-weight: 700; letter-spacing: .08em; }
+.game-access-banner h2 { margin: 0 0 14px; color: var(--site-pink-dark); font-size: clamp(24px, 2.6vw, 36px); line-height: 1.45; font-weight: 750; }
+.game-access-banner p { margin: 0; color: var(--site-ink); font-size: clamp(17px, 1.65vw, 23px); line-height: 1.9; font-weight: 600; overflow-wrap: anywhere; }
+.game-access-link { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px; min-width: 0; min-height: 124px; padding: 24px 18px; border: 2px solid var(--site-pink); border-radius: 4px; color: var(--site-primary-text); background: var(--site-pink); font-size: clamp(20px, 2vw, 28px); font-weight: 750; line-height: 1.5; text-align: center; text-decoration: none; overflow-wrap: anywhere; transition: box-shadow .15s; }
+.game-access-link small { font-size: 13px; font-weight: 400; letter-spacing: .04em; }
+.game-access-link:hover { box-shadow: 0 0 0 5px color-mix(in srgb, var(--site-pink) 22%, transparent); }
+@media (min-width: 1600px) { .game-access-banner { margin-inline: auto; } }
+@media (max-width: 740px) {
+  .game-access-banner { grid-template-columns: minmax(0, 1fr); gap: 22px; margin: 12px 10px 24px; padding: 26px 20px; }
+  .game-access-banner h2 { font-size: 25px; }
+  .game-access-banner p { font-size: 18px; }
+  .game-access-link { min-height: 108px; font-size: 22px; }
+}
 .segment-progress-row .segment-progress { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; clip: rect(0,0,0,0); overflow: hidden; }
 .segment-seek { flex: 1 1 150px; min-width: 80px; min-height: 24px; margin: 0; accent-color: #ecc0d3; cursor: ew-resize; }
 .segment-seek:disabled { cursor: default; opacity: .5; }
@@ -518,7 +531,6 @@ body[data-mode] .transport-options { margin-inline-start: auto; }
   .shell-localization { padding: 14px; }
   .shell-localization-actions .button { flex: 1 1 160px; }
   .shell-feedback { margin-inline: 12px; }
-  .game-purchase-link { padding: 11px 12px; font-size: 12px; }
   .inline-auto-speed { flex: 1 1 180px; }
   .hud-speed-control { padding: 3px 6px; }
   .hud-speed-control input { width: 65px; }

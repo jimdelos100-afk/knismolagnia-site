@@ -211,7 +211,7 @@ export class ProgramPlayer{
   _activate(nodeId){
     const playing=this.playing,rate=this.rate,entry=(this._program.nodes[nodeId].entryMode||this._program.entryMode)==='carry'&&this._nodeId?carryEntry(this._reader.state):null;
     if(this._pendingRouteStep){this._routeWalk.push(this._pendingRouteStep);this._pendingRouteStep=null;}
-    this._historyBlockId=freshRun();this._nodeId=nodeId;this._phase='reader';this._gate=null;this._reader.enter(this._program.nodes[nodeId].sceneId,entry);this._reader.setRate(rate);if(playing)this._reader.play();
+    this._historyBlockId=freshRun();this._nodeId=nodeId;this._phase='reader';this._gate=null;this._reader.enter(this._program.nodes[nodeId].sceneId,entry,{nativeTiming:this._reader._nativeTiming});this._reader.setRate(rate);if(playing)this._reader.play();
     if(!this._rebuilding&&(this._routeSource===null||this._program.mapEntries?.[this._routeSource]))this._arrivals.set(this._program.nodes[nodeId].sceneId,{sourceSceneId:this._routeSource,steps:copy(this._routeWalk),preference:'visited'});
   }
   _canonicalStep(step){

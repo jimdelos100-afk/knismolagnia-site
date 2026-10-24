@@ -109,7 +109,7 @@ function checkedSnapshot(story,doc){
     if(!same(execution.at,expectedAt)||execution.at>doc.stageTime+EPS)fail('执行时间不符合顺序指令');
     if(command.type==='dialogue'){
       lastDialogue=execution;
-      if(execution.releaseAt!==undefined){clock(execution.releaseAt,'台词继续时间');if(execution.releaseAt<execution.at||execution.releaseAt>doc.stageTime+EPS)fail('台词继续时间无效');expectedAt=execution.releaseAt;}
+      if(execution.releaseAt!==undefined){clock(execution.releaseAt,'台词继续时间');if(execution.releaseAt<execution.at||execution.releaseAt>doc.stageTime+EPS||native&&execution.releaseAt+EPS<native.inputWaitUntil(scene,doc.executions,index,execution.at))fail('台词继续时间无效');expectedAt=execution.releaseAt;}
       else {if(index!==doc.cursor-1)fail('等待中的台词之后不能执行指令');gate={kind:'dialogue',commandIndex:index};expectedAt=Infinity;}
     }else{
       if(execution.releaseAt!==undefined)fail('只有台词允许记录点击继续');
@@ -171,7 +171,7 @@ export class ReaderPlayer{
     if(snapshot)Object.defineProperty(result,'readerSnapshot',{configurable:true,enumerable:false,get:snapshot});return result;
   }
   snapshot(){return {type:'story-player-reader',schemaVersion:1,storyId:this._story.id,gameFingerprint:this._story.gameFingerprint,readerRevision:this._revision,sceneId:this._scene.id,stageTime:this._stageTime,cursor:this._cursor,executions:copy(this._executions),wait:copy(this._gate),forcedReveal:this._forcedReveal,rate:this._rate,...(this._historyStart?{historyStart:this._historyStart}:{}),...(this._nativeTiming&&this._nativeEffects?{nativeTimingRevision:this._nativeEffects.revision}:{})};}
-  restore(snapshot){const valid=checkedSnapshot(this._story,snapshot);this._invalidateDialogueHistory();this._clearDialoguePreview();this._historyStart=valid.historyStart??0;this._nativeTiming=!!valid.nativeTimingRevision;this._pendingAdvance=false;this._scene=this._scenes.get(valid.sceneId);this._commands=commandsFor(this._scene);this._dialogueCount=this._commands.filter(command=>command.type==='dialogue').length;this._revision=valid.readerRevision;this._stageTime=valid.stageTime;this._cursor=valid.cursor;this._executions=valid.executions;this._dialogueIndices=this._executions.filter(item=>this._commands[item.commandIndex].type==='dialogue').map(item=>item.commandIndex);this._gate=valid.wait;this._forcedReveal=valid.forcedReveal;this._rate=valid.rate;this._playing=false;this._endNotified=this._cursor===this._commands.length&&!this._gate;this._notify();return this.state;}
+  restore(snapshot){const valid=checkedSnapshot(this._story,snapshot);if(valid.nativeTimingRevision)this._nativeEffects=nativeEffectsFor(this._story,valid.nativeTimingRevision);this._invalidateDialogueHistory();this._clearDialoguePreview();this._historyStart=valid.historyStart??0;this._nativeTiming=!!valid.nativeTimingRevision;this._pendingAdvance=false;this._scene=this._scenes.get(valid.sceneId);this._commands=commandsFor(this._scene);this._dialogueCount=this._commands.filter(command=>command.type==='dialogue').length;this._revision=valid.readerRevision;this._stageTime=valid.stageTime;this._cursor=valid.cursor;this._executions=valid.executions;this._dialogueIndices=this._executions.filter(item=>this._commands[item.commandIndex].type==='dialogue').map(item=>item.commandIndex);this._gate=valid.wait;this._forcedReveal=valid.forcedReveal;this._rate=valid.rate;this._playing=false;this._endNotified=this._cursor===this._commands.length&&!this._gate;this._notify();return this.state;}
   _notify(){const state=this.state;this._onUpdate(state);if(state.ended&&!this._endNotified){this._endNotified=true;this._onEnd(state,this.scene);}}
   _drain(){
     while(!this._gate&&this._cursor<this._commands.length){
@@ -180,7 +180,7 @@ export class ReaderPlayer{
       else {const duration=blockDuration(this._scene,command,this._nativeTiming?this._nativeEffects:null,commandIndex,this._executions);if(duration>0)this._gate={kind:'wait',commandIndex,until:this._stageTime+duration};}
     }
   }
-  enter(id,entry=null){if(!this._scenes.has(id))fail('选择的剧情节点不存在');this._reset(id,entry);this._notify();return this.state;}
+  enter(id,entry=null,{nativeTiming=!!this._nativeEffects}={}){if(!this._scenes.has(id))fail('选择的剧情节点不存在');this._nativeTiming=!!this._nativeEffects&&nativeTiming;this._reset(id,entry);this._notify();return this.state;}
   play(){this._playing=true;this._notify();return this.state;}
   pause(){this._pendingAdvance=false;this._playing=false;this._notify();return this.state;}
   setRate(rate){rateOK(rate);this._rate=rate;this._notify();return this.state;}
@@ -195,7 +195,7 @@ export class ReaderPlayer{
     const wasPaused=!this._playing;this._playing=true;
     if(this._gate?.kind==='dialogue'){
       if(!this.state.dialogue.textComplete){this._forcedReveal=true;if(autoPage(this._commands[this._gate.commandIndex]))this._advanceTo(this._stageTime);this._notify();return 'reveal';}
-      if(this._nativeEffects&&this.state.nativeEffects?.inputWaiting){this._pendingAdvance=true;this._notify();return 'wait';}
+      if(this._nativeTiming&&this._nativeEffects&&this.state.nativeEffects?.inputWaiting){this._pendingAdvance=true;this._notify();return 'wait';}
       this._pendingAdvance=false;this._executions[this._gate.commandIndex].releaseAt=this._stageTime;this._gate=null;this._forcedReveal=false;this._drain();this._notify();return this.state.ended?'end':'advance';
     }
     this._notify();return this.state.ended?'end':wasPaused?'start':'wait';
@@ -242,7 +242,7 @@ export class ReaderPlayer{
       if(this._gate.kind==='wait'&&this._gate.until<=target){this._stageTime=this._gate.until;this._gate=null;this._drain();continue;}
       if(this._gate.kind==='dialogue'&&(autoPage(this._commands[this._gate.commandIndex])||this._pendingAdvance)){
         const execution=this._executions[this._gate.commandIndex],event=this._scene.events[this._commands[this._gate.commandIndex].eventIndex],length=this._lengths.get(event.textId)||0;
-        const revealUntil=this._forcedReveal?this._stageTime:Math.max(this._stageTime,execution.at+length/this._textSpeed),nativeUntil=this._nativeEffects?this.state.nativeEffects?.inputWaitUntil||0:0;const until=Math.max(revealUntil,nativeUntil);
+        const revealUntil=this._forcedReveal?this._stageTime:Math.max(this._stageTime,execution.at+length/this._textSpeed),nativeUntil=this._nativeTiming&&this._nativeEffects?this.state.nativeEffects?.inputWaitUntil||0:0;const until=Math.max(revealUntil,nativeUntil);
         if(until<=target+EPS){this._stageTime=Math.min(until,target);execution.releaseAt=this._stageTime;this._gate=null;this._forcedReveal=false;this._pendingAdvance=false;this._drain();continue;}
       }
       break;
