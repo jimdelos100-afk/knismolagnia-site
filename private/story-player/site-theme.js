@@ -24,6 +24,23 @@
     const map = document.querySelector('.map-panel');
     if (main && map) main.prepend(map);
 
+    const mapToggle = document.getElementById('mapFoldButton');
+    const mapContents = document.getElementById('mapContents');
+    if (mapToggle && mapContents) {
+      const mapKey = 'xp2-chapter-map-collapsed';
+      const setMapCollapsed = collapsed => {
+        mapContents.hidden = collapsed;
+        mapToggle.setAttribute('aria-expanded', String(!collapsed));
+        mapToggle.textContent = collapsed ? '展开地图' : '收起地图';
+      };
+      try { setMapCollapsed(localStorage.getItem(mapKey) === 'true'); } catch { setMapCollapsed(false); }
+      mapToggle.addEventListener('click', () => {
+        const collapsed = !mapContents.hidden;
+        setMapCollapsed(collapsed);
+        try { localStorage.setItem(mapKey, String(collapsed)); } catch { /* Browsing remains available without storage. */ }
+      });
+    }
+
     const viewport = document.getElementById('stageViewport');
     const sourceSpeaker = document.getElementById('speakerName');
     const sourceText = document.getElementById('dialogueText');

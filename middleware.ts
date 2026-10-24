@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server'
 import { updateSession } from '@/lib/supabase/middleware'
+import { preventLevelSixCaching } from '@/lib/level-six-access'
 
 export async function middleware(request: NextRequest) {
   const host = (request.headers.get('host') || '').toLowerCase()
@@ -11,15 +12,19 @@ export async function middleware(request: NextRequest) {
   // Remove any incoming marker; only middleware is allowed to set the trusted marker.
   const requestHeaders = new Headers(request.headers)
   requestHeaders.delete('x-local-design-verified')
+  const noStore = (response: NextResponse) => {
+    preventLevelSixCaching(request.nextUrl.pathname, response)
+    return response
+  }
 
   // Never serve design-mock pages from a non-loopback host while design mode is enabled.
   // `npm run dev:design` additionally binds the dev server to 127.0.0.1 only.
   if (isDesign && isLevelPreview && !isLoopback) {
-    return new NextResponse('Local design preview is available only on this computer.', { status: 403 })
+    return noStore(new NextResponse('Local design preview is available only on this computer.', { status: 403 }))
   }
   if (isDesign && isLoopback && isLevelPreview) {
     requestHeaders.set('x-local-design-verified', '1')
-    return NextResponse.next({ request: { headers: requestHeaders } })
+    return noStore(NextResponse.next({ request: { headers: requestHeaders } }))
   }
 
   // Preserve the real production-domain redirect and normal Supabase authentication.
@@ -27,9 +32,9 @@ export async function middleware(request: NextRequest) {
     const url = request.nextUrl.clone()
     url.protocol = 'https:'
     url.host = 'knismolagnia.club'
-    return NextResponse.redirect(url, 308)
+    return noStore(NextResponse.redirect(url, 308))
   }
-  return updateSession(request)
+  return noStore(await updateSession(request))
 }
 
 export const config = {

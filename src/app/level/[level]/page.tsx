@@ -3,7 +3,8 @@ import { notFound } from 'next/navigation'
 import DiscussionRoom from '@/components/DiscussionRoom'
 import SiteHeader from '@/components/SiteHeader'
 import SubmissionBox from '@/components/SubmissionBox'
-import { requireLevel } from '@/lib/auth'
+import { getSessionContext, requireLevel } from '@/lib/auth'
+import { hasActiveLevelSix, isLevelSixPublic, LEVEL_SIX_PUBLIC_DEADLINE } from '@/lib/level-six-access'
 import ContentFeed, { type ContentItem } from './ContentFeed'
 import PrivateMessageBox from './PrivateMessageBox'
 import WorkTemplateExample from './WorkTemplateExample'
@@ -13,7 +14,13 @@ import LevelHeading from './LevelHeading'
 import KonisiCharacterGame from '@/components/KonisiCharacterGame'
 import StoryPlayer from '@/components/StoryPlayer'
 
+// Re-evaluate the temporary opening for every server request, including RSC.
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
+function TemporaryLevelSixNotice() {
+  return <div className="panel"><strong>第六层剧情播放器限时公开</strong><p>开放至 {LEVEL_SIX_PUBLIC_DEADLINE}，届时自动恢复仅限 Level 6 成员访问。原会员资源列表仍按原有权限展示。</p></div>
+}
 
 function pageHref(level: number, page: number, query: string) {
   const params = new URLSearchParams()
@@ -27,10 +34,22 @@ export default async function LevelPage({ params, searchParams }: {
   params: Promise<{ level: string }>
   searchParams: Promise<{ page?: string; q?: string }>
 }) {
-  const n = Number((await params).level)
+  const requestedLevel = (await params).level
+  const n = Number(requestedLevel)
   if (!Number.isInteger(n) || n < 1 || n > 6) notFound()
   if (await isLocalDesignMode()) return <LocalLevelPreview level={n} />
-  const ctx = await requireLevel(n)
+  const publicSix = requestedLevel === '6' && isLevelSixPublic()
+  const ctx = publicSix ? await getSessionContext() : await requireLevel(n)
+  if (publicSix && !hasActiveLevelSix(ctx)) {
+    // A session lookup can straddle midnight. Recheck before returning the
+    // anonymous page; protected database rows and signed URLs are never queried.
+    if (!isLevelSixPublic()) await requireLevel(6)
+    return <><SiteHeader /><main className="wrap level-page">
+      <LevelHeading level={6} /><TemporaryLevelSixNotice /><StoryPlayer />
+      <div className="panel"><p>当前可直接使用剧情播放器。会员资源列表仍需有效的 Level 6 权限。</p>{!ctx.user && <Link className="button secondary" href="/login">会员登录</Link>}</div>
+    </main></>
+  }
+  if (publicSix) await requireLevel(6)
   const requested = await searchParams
   const currentPage = Math.max(1, Number.parseInt(requested.page || '1', 10) || 1)
   const queryText = (requested.q || '').trim().replace(/[%_,()]/g, ' ').slice(0, 80)
@@ -57,6 +76,7 @@ export default async function LevelPage({ params, searchParams }: {
 
   return <><SiteHeader /><main className="wrap level-page">
     <LevelHeading level={n} />
+    {n === 6 && isLevelSixPublic() && <TemporaryLevelSixNotice />}
     {n === 6 && <StoryPlayer />}
     {(n === 3 || n === 4) && <><WorkTemplateExample level={n} /><form className="panel work-search" action={`/level/${n}`} method="get"><label htmlFor="work-search-input">检索作品</label><div><input id="work-search-input" name="q" defaultValue={queryText} placeholder="输入标题、作者、简介或标签" maxLength={80} /><button className="button primary" type="submit">检索</button></div><small>本页每页显示 {pageSize} 条，结果按管理员指定顺序排列。</small></form></>}
     {error ? <div className="panel warning-panel">内容读取失败，请确认最新数据库升级文件已经执行。</div> : <ContentFeed items={contentItems} />}

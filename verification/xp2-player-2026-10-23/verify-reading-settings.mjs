@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {DEFAULT_READING_SETTINGS,normalizeReadingSettings,readReadingSettings,saveReadingSettings} from '../../private/story-player/src/reading-settings.js';
+import {ResourceLibrary} from '../../private/story-player/src/resources.js';
+assert.deepEqual(normalizeReadingSettings(null),{...DEFAULT_READING_SETTINGS});
+assert.deepEqual(normalizeReadingSettings({autoSpeed:99,masterVolume:-1,dialogueOpacity:1}),{...DEFAULT_READING_SETTINGS,autoSpeed:4,masterVolume:0,dialogueOpacity:.65});
+assert.equal(normalizeReadingSettings({textSpeed:0}).textSpeed,8);assert.equal(normalizeReadingSettings({textSpeed:999}).textSpeed,96);assert.equal(normalizeReadingSettings({bgmVolume:2,seVolume:-1}).bgmVolume,1);assert.equal(normalizeReadingSettings({bgmVolume:2,seVolume:-1}).seVolume,0);
+assert.equal(normalizeReadingSettings({autoSpeed:NaN}).autoSpeed,1);
+const storage={data:null,getItem(){return this.data;},setItem(key,value){this.data=value;}};saveReadingSettings({autoSpeed:2.5},storage);assert.equal(readReadingSettings(storage).autoSpeed,2.5);storage.data='{bad';assert.equal(readReadingSettings(storage).autoSpeed,1);
+const revoked=[],library=new ResourceLibrary({baseURL:'https://example.test/level/6/player/',assets:[{id:'cg',type:'image',src:'local-assets/cg.png'}],localOnly:true,urlAPI:{createObjectURL:()=> 'blob:translated',revokeObjectURL:url=>revoked.push(url)}});
+library.setLocalProvider({resolve:()=> 'blob:original',dispose(){}});await library.preload(['cg']);assert.equal(library.resolve('cg'),'blob:original');
+library.replaceImageOverrides([{assetId:'cg',file:new Blob(['fixture'])}]);assert.equal(library.resolve('cg'),'blob:translated','local translation takes precedence over the bound Unity provider');
+assert.throws(()=>library.replaceImageOverrides([{assetId:'cg',url:'https://external.test/leak.png'}]));assert.equal(library.resolve('cg'),'blob:translated','invalid import preserves the old image');
+library.clearOverrides();assert.equal(library.resolve('cg'),'blob:original');assert.deepEqual(revoked,['blob:translated']);library.dispose();
+console.log('Reading settings and local image precedence checks passed.');

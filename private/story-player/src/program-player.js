@@ -1,4 +1,5 @@
 import {ReaderPlayer,compileSceneCommands,validateReaderStory,validateReaderSnapshot} from './reader.js';
+import {carryNativeEffects,nativeEffectsFor} from './native-effects.js';
 
 const copy=value=>structuredClone(value);
 const plain=value=>value!==null&&typeof value==='object'&&!Array.isArray(value)&&(Object.getPrototypeOf(value)===Object.prototype||Object.getPrototypeOf(value)===null);
@@ -106,7 +107,7 @@ function carryEntry(state){
     if(track.duration!==undefined)result.duration=track.loop?track.duration:Math.max(.001,track.duration-Math.max(0,(state.stageTime||0)-(track.startAt||0)));
     return result;
   };
-  return {eventMode:state.eventMode===true,background:pick(state.background,['asset','opacity']),
+  return {...(state.nativeEffects?{nativeEffects:carryNativeEffects(state.nativeEffects,state.stageTime||0)}:{}),eventMode:state.eventMode===true,background:pick(state.background,['asset','opacity']),
     characters:(state.characters||[]).map(item=>pick(item,['id','asset','kind','layerName','x','y','width','height','scale','scaleX','scaleY','rotation','opacity','layer','pivotX','pivotY','flip','flipY','visible','layerId'])),
     layers:(state.layers||[]).map(item=>pick(item,['id','parentId','x','y','scale','scaleX','scaleY','rotation','opacity','layer','flip','flipY','visible'])),
     camera:pick(state.camera,['x','y','scale','rotation']),overlay:pick(state.overlay,['color','opacity']),
@@ -189,11 +190,11 @@ function checkMapRoute(program,route){
 
 /** Control flow delegates every visual block and click gate to ReaderPlayer. */
 export class ProgramPlayer{
-  constructor(story,{onUpdate=()=>{},onEnd=()=>{}}={}){
+  constructor(story,{onUpdate=()=>{},onEnd=()=>{},nativeEffects=null,nativeTiming=true}={}){
     // ReaderPlayer validates its public input and owns a detached private copy.
     // Flow and reader can share that copy without repeating validation or
     // copying the complete game again. Neither controller mutates the script.
-    this._reader=new ReaderPlayer(story);this._story=this._reader._story;validateProgramFields(this._story);this._program=this._story.program;this._revision=revision(this._story);this._onUpdate=onUpdate;this._onEnd=onEnd;this._ast=new Map();this._endNotified=false;this._arrivals=new Map();
+    this._reader=new ReaderPlayer(story,{nativeEffects,nativeTiming});this._story=this._reader._story;validateProgramFields(this._story);this._program=this._story.program;this._revision=revision(this._story);this._onUpdate=onUpdate;this._onEnd=onEnd;this._ast=new Map();this._endNotified=false;this._arrivals=new Map();
     this._reset(null,freshRun());this._notify();
   }
   get story(){return copy(this._story);}get scene(){return this._reader.scene;}get playing(){return this._reader.playing;}get rate(){return this._reader.rate;}
@@ -228,7 +229,7 @@ export class ProgramPlayer{
   _finishBlock(){
     // One small anchor per completed block points into the existing validated
     // trace. No story, per-frame state, or per-line art snapshot is retained.
-    const anchor={historyId:this._historyBlockId,traceIndex:this._trace.length,nodeId:this._nodeId,variables:copy(this._variables),stack:copy(this._stack),serial:this._serial,walkLength:this._routeWalk.length,entry:copy(this._reader._entryOverride),hasDialogue:this._reader._dialogueIndices.length>0};
+    const anchor={historyId:this._historyBlockId,traceIndex:this._trace.length,nodeId:this._nodeId,variables:copy(this._variables),stack:copy(this._stack),serial:this._serial,walkLength:this._routeWalk.length,entry:copy(this._reader._entryOverride),hasDialogue:this._reader._dialogueIndices.some(index=>index>=this._reader._historyStart)};
     this._record({kind:'finish',reader:this._reader.snapshot()});
     if(!this._rebuilding){this._backBlocks.push(anchor);if(this._backBlocks.length>MAX_BACK_BLOCKS)this._backBlocks.shift();}
   }
@@ -255,10 +256,12 @@ export class ProgramPlayer{
     state.program={nodeId:this._nodeId,variables:copy(this._variables),stackDepth:this._stack.length,entryMode:this._program.nodes[this._nodeId].entryMode||this._program.entryMode||'reset',mapRoute:this._mapRoute?{sourceSceneId:this._mapRoute.sourceSceneId,steps:this._mapRoute.steps.length,preference:this._mapRoute.preference}:null};
     Object.defineProperty(state,'readerSnapshot',{configurable:true,enumerable:false,get:()=>this.snapshot()});return state;
   }
-  snapshot(){return {type:'story-player-program',schemaVersion:1,storyId:this._story.id,gameFingerprint:this._story.gameFingerprint,programRevision:this._revision,runId:this._runId,entrySceneId:this._origin,mapRoute:copy(this._mapRoute),trace:copy(this._trace),nodeId:this._nodeId,variables:copy(this._variables),stack:copy(this._stack),phase:this._phase,signalSerial:this._serial,reader:this._reader.snapshot()};}
+  snapshot(){return {type:'story-player-program',schemaVersion:1,storyId:this._story.id,gameFingerprint:this._story.gameFingerprint,programRevision:this._revision,runId:this._runId,entrySceneId:this._origin,mapRoute:copy(this._mapRoute),trace:copy(this._trace),nodeId:this._nodeId,variables:copy(this._variables),stack:copy(this._stack),phase:this._phase,signalSerial:this._serial,reader:this._reader.snapshot(),...(this._reader._nativeTiming&&this._reader._nativeEffects?{nativeTimingRevision:this._reader._nativeEffects.revision}:{})};}
   _notify(){const state=this.state;this._onUpdate(state);if(state.ended&&!this._endNotified){this._endNotified=true;this._onEnd(state,this.scene);}}
-  enter(sceneId){if(typeof sceneId!=='string')fail('地图场景编号无效');this._reset(sceneId,freshRun());this._reader.pause();this._notify();return this.state;}
+  enter(sceneId){this._reader._nativeTiming=!!this._reader._nativeEffects;if(typeof sceneId!=='string')fail('地图场景编号无效');this._reset(sceneId,freshRun());this._reader.pause();this._notify();return this.state;}
   play(){this._reader.play();this._notify();return this.state;}pause(){this._reader.pause();this._notify();return this.state;}
+  setNativeEffects(manifest){const snapshot=this.snapshot();this._reader.setNativeEffects(manifest,{notify:false});this.restore(snapshot);return this.state;}
+  setTextSpeed(speed){this._reader.setTextSpeed(speed);this._notify();return this.state;}
   setRate(rate){this._reader.setRate(rate);this._notify();return this.state;}setTextLengths(lengths){this._reader.setTextLengths(lengths);this._notify();return this.state;}
   advance(seconds){this._reader.advance(seconds);this._settle();this._notify();return this.state;}
   next(){if(this._phase==='node'){this._phase='reader';this._settle();this._notify();return this._phase==='reader'?'advance':this._phase;}if(this._phase!=='reader'){this._notify();return this._phase==='end'?'end':this._phase;}const result=this._reader.next();this._settle();this._notify();return this._phase==='end'?'end':this._phase!=='reader'?this._phase:result==='end'?'advance':result;}
@@ -268,26 +271,26 @@ export class ProgramPlayer{
     if(this._phase==='reader'&&this._reader.canPreviousDialogue())return this._rewindDialogueLocation(this._historyBlockId,this._reader._previousDialogueCommand());
     const anchor=this._backBlocks.findLast(block=>block.hasDialogue);if(!anchor)return this.state;
     const snapshot=this._trace[anchor.traceIndex].reader,scene=this._reader._scenes.get(snapshot.sceneId),commands=scene.commands||compileSceneCommands(scene);
-    return this._rewindDialogueLocation(anchor.historyId,snapshot.executions.findLast(execution=>commands[execution.commandIndex].type==='dialogue').commandIndex);
+    return this._rewindDialogueLocation(anchor.historyId,snapshot.executions.findLast(execution=>execution.commandIndex>=(snapshot.historyStart??0)&&commands[execution.commandIndex].type==='dialogue').commandIndex);
   }
   _invalidateDialogueHistory(){this._historyTokens=new Map();this._historyKeys=new Map();}
   getDialogueProgress(){return this._reader.getDialogueProgress();}
   getDialogueHistory(limit=30){
     if(!Number.isInteger(limit)||limit<0)fail('历史台词数量无效');limit=Math.min(30,limit);
     const found=[];
-    const collect=(blockId,scene,commands,executions,excludeCurrent=false)=>{
+    const collect=(blockId,scene,commands,executions,excludeCurrent=false,historyStart=0)=>{
       let exclude=excludeCurrent;
       for(let index=executions.length-1;index>=0&&found.length<limit;index--){
-        const execution=executions[index],command=commands[execution.commandIndex];if(command.type!=='dialogue')continue;
+        const execution=executions[index],command=commands[execution.commandIndex];if(command.type!=='dialogue'||execution.commandIndex<historyStart)continue;
         if(exclude){exclude=false;continue;}
         const event=scene.events[command.eventIndex];if(event.textId)found.push({blockId,commandIndex:execution.commandIndex,sceneId:scene.id,textId:event.textId,...(event.speaker?{speaker:event.speaker}:{})});
       }
     };
-    collect(this._historyBlockId,this._reader._scene,this._reader._commands,this._reader._executions,true);
+    collect(this._historyBlockId,this._reader._scene,this._reader._commands,this._reader._executions,true,this._reader._historyStart);
     for(let index=this._backBlocks.length-1;index>=0&&found.length<limit;index--){
       const anchor=this._backBlocks[index];if(!anchor.hasDialogue||anchor.historyId===this._historyBlockId)continue;
       const snapshot=this._trace[anchor.traceIndex].reader,scene=this._reader._scenes.get(snapshot.sceneId);
-      collect(anchor.historyId,scene,scene.commands||compileSceneCommands(scene),snapshot.executions);
+      collect(anchor.historyId,scene,scene.commands||compileSceneCommands(scene),snapshot.executions,false,snapshot.historyStart??0);
     }
     const keep=new Set(),descriptors=[];
     for(const {blockId,commandIndex,...descriptor} of found.reverse()){
@@ -323,26 +326,46 @@ export class ProgramPlayer{
   completeSignal(token,outcomeId){
     if(this._phase!=='signal'||token!==this._gate.token)fail('外部完成令牌已失效');const outcome=this._gate.items.find(item=>item.id===outcomeId);if(!outcome)fail('外部完成结果没有列入允许目录');this._record({kind:'signal',token,outcomeId,reader:this._reader.snapshot()});this._pendingRouteStep.picks.push(outcomeId);this._gate=null;this._resolve(outcome.then,{count:0});this._settle();this._notify();return this.state;
   }
+  previewDialogue(index,options){
+    const state=this._reader.previewDialogue(index,options);
+    const anchor=this._phase==='reader'?null:this._backBlocks.findLast(block=>block.historyId===this._historyBlockId);
+    state.ended=false;state.choices=[];state.signal=null;
+    state.program={nodeId:this._nodeId,variables:copy(anchor?.variables||this._variables),stackDepth:anchor?.stack.length??this._stack.length,entryMode:this._program.nodes[this._nodeId].entryMode||this._program.entryMode||'reset',mapRoute:this._mapRoute?{sourceSceneId:this._mapRoute.sourceSceneId,steps:this._mapRoute.steps.length,preference:this._mapRoute.preference}:null};
+    return state;
+  }
+  commitDialogue(index){
+    // Validate the requested position before undoing any already-recorded exit.
+    this._reader._dialogueTarget(index);
+    if(this._phase!=='reader'){
+      const anchorIndex=this._backBlocks.findIndex(block=>block.historyId===this._historyBlockId),anchor=this._backBlocks[anchorIndex];
+      if(!anchor)fail('当前片段没有可恢复的对白位置');
+      const completed=this._trace[anchor.traceIndex].reader;
+      this._backBlocks.length=anchorIndex;this._trace.length=anchor.traceIndex;this._nodeId=anchor.nodeId;this._variables=copy(anchor.variables);this._stack=copy(anchor.stack);this._serial=anchor.serial;
+      this._routeWalk.length=anchor.walkLength;this._pendingRouteStep=null;this._phase='reader';this._gate=null;
+      this._reader._entryOverride=copy(anchor.entry);this._reader.restore(completed);
+    }
+    this._reader.commitDialogue(index);this._invalidateDialogueHistory();this._endNotified=false;this._notify();return this.state;
+  }
   // Canonical review is confined to the active block; its completed exit still executes.
   seek(seconds){if(this._phase!=='reader')fail('交互出口处不能校对定位，请重新进入场景');this._reader.seek(seconds);this._invalidateDialogueHistory();this._settle();this._notify();return this.state;}
   seekDialogue(index){if(this._phase!=='reader')fail('交互出口处不能校对定位，请重新进入场景');this._reader.seekDialogue(index);this._invalidateDialogueHistory();this._notify();return this.state;}
-  restore(snapshot){const runner=replaySnapshot(this._story,snapshot);for(const key of ['_origin','_runId','_nodeId','_variables','_stack','_trace','_backBlocks','_serial','_gate','_phase','_mapRoute','_routeSource','_routeWalk','_pendingRouteStep','_arrivals','_historyBlockId'])this[key]=copy(runner[key]);this._invalidateDialogueHistory();this._reader._entryOverride=copy(runner._reader._entryOverride);this._reader.restore(runner._reader.snapshot());this._endNotified=this._phase==='end';runner.dispose();this._notify();return this.state;}
+  restore(snapshot){const runner=replaySnapshot(this._story,snapshot,this._reader._nativeEffects);for(const key of ['_origin','_runId','_nodeId','_variables','_stack','_trace','_backBlocks','_serial','_gate','_phase','_mapRoute','_routeSource','_routeWalk','_pendingRouteStep','_arrivals','_historyBlockId'])this[key]=copy(runner[key]);this._invalidateDialogueHistory();this._reader._entryOverride=copy(runner._reader._entryOverride);this._reader.restore(runner._reader.snapshot());this._endNotified=this._phase==='end';runner.dispose();this._notify();return this.state;}
   dispose(){this._reader.dispose();this._onUpdate=()=>{};this._onEnd=()=>{};}
 }
 
-function replaySnapshot(story,doc){
-  fields(doc,['type','schemaVersion','storyId','gameFingerprint','programRevision','runId','entrySceneId','mapRoute','trace','nodeId','variables','stack','phase','signalSerial','reader'],'流程进度');
+function replaySnapshot(story,doc,nativeEffects=null){
+  fields(doc,['type','schemaVersion','storyId','gameFingerprint','programRevision','runId','entrySceneId','mapRoute','trace','nodeId','variables','stack','phase','signalSerial','reader','nativeTimingRevision'],'流程进度');
   if(doc.type!=='story-player-program'||doc.schemaVersion!==1)fail('不是支持的流程进度');if(doc.storyId!==story.id||doc.gameFingerprint!==story.gameFingerprint||doc.programRevision!==revision(story))fail('流程进度与当前演出包版本不匹配');checkRun(doc.runId);
   if(doc.entrySceneId!==null&&typeof doc.entrySceneId!=='string')fail('流程入口记录无效');if(!Array.isArray(doc.trace)||doc.trace.length>MAX_TRACE)fail('流程轨迹无效');
   if((doc.entrySceneId===null)!==(doc.mapRoute===null)||doc.mapRoute===undefined)fail('流程进度缺少可验证的地图路径');
-  const runner=new ProgramPlayer(story);runner._reset(doc.entrySceneId,doc.runId,doc.mapRoute);let cursor=0,totalExecutions=0;
+  if(doc.nativeTimingRevision!==undefined)nativeEffects=nativeEffectsFor(story,doc.nativeTimingRevision);if((doc.reader.nativeTimingRevision??null)!==(doc.nativeTimingRevision??null))fail('流程与逐句时钟版本不一致');const runner=new ProgramPlayer(story,{nativeEffects,nativeTiming:!!doc.nativeTimingRevision});runner._reset(doc.entrySceneId,doc.runId,doc.mapRoute);let cursor=0,totalExecutions=0;
   // A completed block can keep animating and playing media while a choice or
   // external result is pending. Replay that dwell time before carrying state
   // into the next block, while accepting only the same completed commands.
   function restoreGateReader(snapshot,phase){
-    if(runner._phase!==phase)fail('交互轨迹越过了对应的等待出口');
+    if(runner._phase!==phase)fail('交互轨迹越过了对应的等待出口');if((snapshot.nativeTimingRevision??null)!==(doc.nativeTimingRevision??null))fail('交互等待的原作时钟版本不一致');
     const completed=runner._reader.snapshot(),checked=validateReaderSnapshot(story,snapshot,{validatedStory:true});
-    if(checked.sceneId!==completed.sceneId||checked.wait!==null||checked.cursor!==completed.cursor||checked.forcedReveal!==completed.forcedReveal||stable(checked.executions)!==stable(completed.executions)||checked.stageTime<completed.stageTime)fail('交互等待记录与已完成的演出不一致');
+    if(checked.sceneId!==completed.sceneId||checked.wait!==null||checked.cursor!==completed.cursor||checked.forcedReveal!==completed.forcedReveal||stable(checked.executions)!==stable(completed.executions)||checked.stageTime<completed.stageTime||(checked.historyStart??0)!==(completed.historyStart??0))fail('交互等待记录与已完成的演出不一致');
     totalExecutions+=checked.executions.length;if(totalExecutions>500000)fail('流程轨迹过大');
     runner._reader.restore(checked);
   }
@@ -351,7 +374,7 @@ function replaySnapshot(story,doc){
     if(cursor<runner._trace.length){if(stable(doc.trace[cursor])!==stable(runner._trace[cursor]))fail('流程轨迹不符合已执行的指令');cursor++;continue;}
     const action=doc.trace[cursor];
     if(action?.kind==='finish'){
-      fields(action,['kind','reader'],'完成轨迹');if(runner._phase==='node')runner._phase='reader';if(runner._phase!=='reader')fail('完成轨迹越过了选择或外部等待');const checked=validateReaderSnapshot(story,action.reader,{validatedStory:true});totalExecutions+=checked.executions.length;if(totalExecutions>500000)fail('流程轨迹过大');if(checked.sceneId!==runner.scene.id||checked.wait!==null)fail('完成轨迹中的场景或等待状态无效');runner._reader.restore(checked);if(!runner._reader.state.ended)fail('未结束的演出不能进入流程出口');runner._settle();
+      fields(action,['kind','reader'],'完成轨迹');if(runner._phase==='node')runner._phase='reader';if(runner._phase!=='reader')fail('完成轨迹越过了选择或外部等待');if((action.reader.nativeTimingRevision??null)!==(doc.nativeTimingRevision??null))fail('完成轨迹的原作时钟版本不一致');const checked=validateReaderSnapshot(story,action.reader,{validatedStory:true});totalExecutions+=checked.executions.length;if(totalExecutions>500000)fail('流程轨迹过大');if(checked.sceneId!==runner.scene.id||checked.wait!==null)fail('完成轨迹中的场景或等待状态无效');runner._reader.restore(checked);if(!runner._reader.state.ended)fail('未结束的演出不能进入流程出口');runner._settle();
     }else if(action?.kind==='choice'){fields(action,['kind','id','reader'],'选择轨迹');restoreGateReader(action.reader,'choice');runner.choose(action.id);}
     else if(action?.kind==='signal'){fields(action,['kind','token','outcomeId','reader'],'完成结果轨迹');restoreGateReader(action.reader,'signal');runner.completeSignal(action.token,action.outcomeId);}
     else fail('未知的流程轨迹');
@@ -361,7 +384,7 @@ function replaySnapshot(story,doc){
   const current=validateReaderSnapshot(story,doc.reader,{validatedStory:true});if(current.sceneId!==runner.scene.id)fail('当前演出场景与流程不一致');
   if(runner._phase!=='reader'){
     const completed=runner._reader.snapshot();
-    if(stable(current.executions)!==stable(completed.executions)||current.cursor!==completed.cursor||current.forcedReveal!==completed.forcedReveal||current.stageTime<completed.stageTime)fail('交互出口处的演出记录与完成轨迹不一致');
+    if(stable(current.executions)!==stable(completed.executions)||current.cursor!==completed.cursor||current.forcedReveal!==completed.forcedReveal||current.stageTime<completed.stageTime||(current.historyStart??0)!==(completed.historyStart??0))fail('交互出口处的演出记录与完成轨迹不一致');
   }
   runner._reader.restore(current);
   if(runner._phase==='reader'&&runner._reader.state.ended)fail('进度遗漏了场景完成后的流程');if(runner._phase!=='reader'&&!runner._reader.state.ended)fail('交互出口前的演出尚未完成');

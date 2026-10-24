@@ -1,0 +1,66 @@
+XP2 译文与图片汉化维护
+
+一、更新文字
+
+继续使用同版本的翻译 JSON，保留每行 id、source、状态与备注，只编辑 translation。
+工具支持 xp2-translation 或 story-translations 第 1 / 2 版文档。
+编号、原文和游戏指纹必须匹配，空白译文不会擦除已有译文。
+工具只更新 data/translations.json，绝不改动 story.json 中的剧情原文或游戏本体。
+
+先在网站仓库中预览：
+node scripts/xp2-adapter/install-localization.mjs --translation "C:/工作目录/新版译文.json" --dry-run
+
+确认后安装，并指定一个尚不存在、位于仓库之外的备份目录：
+node scripts/xp2-adapter/install-localization.mjs --translation "C:/工作目录/新版译文.json" --apply --backup "C:/工作目录/备份-2026-10-24-文字"
+
+二、准备图片汉化包
+
+先导出资源编号与尺寸目录，目标文件必须不存在：
+node scripts/xp2-adapter/install-localization.mjs --template "C:/工作目录/overrides.json"
+
+模板的 catalog 包含全部原版纹理的 assetId、name、nativePaths、width 和 height。
+按 assetId 定位原素材，不按图片同名猜测。编辑图片后保持原图尺寸、透明区域与构图。
+将要替换的图片映射填写到 images；catalog 只供查阅，可以保留或删除。
+示例（assetId 须替换成模板中真实存在的纹理编号）：
+
+{
+  "type": "xp2-image-overrides",
+  "schemaVersion": 1,
+  "gameFingerprint": "与模板完全一致",
+  "images": [
+    { "assetId": "texture:resources.assets:真实编号", "path": "images/title-cn.png" }
+  ]
+}
+
+图片目录结构：
+图片包/overrides.json
+图片包/images/title-cn.png
+
+可选 sha256 字段为图片文件的 SHA-256，填写后必须匹配。
+仅支持 PNG、JPEG 和 WebP。单张最多 20 MB，映射最多 200 张，所选目录合计最多 200 MB。
+图片必须能完整解码，且解码尺寸与原纹理一致。目录层级、路径和大小写须与清单一致。
+不接受网址、SVG、跨目录路径、符号链接，以及不同文件夹里的同名文件。
+验证失败时不会应用半份图片包。请在专用工作目录准备汉化图片，不放游戏原包或账号密钥。
+
+三、安装图片并发布
+
+预览图片包：
+node scripts/xp2-adapter/install-localization.mjs --images "C:/工作目录/图片包" --dry-run
+
+安装文字与图片也可一次完成：
+node scripts/xp2-adapter/install-localization.mjs --translation "C:/工作目录/新版译文.json" --images "C:/工作目录/图片包" --apply --backup "C:/工作目录/备份-2026-10-24-汉化"
+
+工具只复制清单内的汉化图片到 private/story-player/localized-images/，自动生成 data/image-overrides.json。
+图片更新会替换整份图片映射；要保留的旧图片也必须包含在本次包中。
+已不再映射的旧汉化图片会先备份，再移除；其他用户文件不删除。
+备份目录包含 before/ 下的旧文件和 files.json 文件清单。
+校验或写入失败时保留备份；已经替换的文件会回滚。
+
+安装通过后按原网站流程构建、重新部署。长期维护文件是：
+private/story-player/data/translations.json
+private/story-player/data/image-overrides.json
+private/story-player/localized-images/（仅汉化图片）
+
+使用浏览器导入的汉化包仅保存在当前浏览器本机；网站统一版本请走上述维护工具后重新部署。
+此通道不上传本地游戏、不替换原游戏文件，也不执行输入文件中的脚本或指令。
+更多参数：node scripts/xp2-adapter/install-localization.mjs --help

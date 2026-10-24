@@ -1,5 +1,5 @@
 {
-  "version": "1.3.0",
+  "version": "1.5.0",
   "story": "data/story.json",
   "translations": "data/translations.json",
   "support": "data/support.json",
@@ -8,5 +8,7 @@
   "reviewEnabled": false,
   "localGame": true,
   "unityIndex": "data/unity-index.json",
-  "chapterMap": "data/chapter-map/manifest.json"
+  "chapterMap": "data/chapter-map/manifest.json",
+  "imageOverrides": "data/image-overrides.json",
+  "nativePresentation": "data/native-presentation.json"
 }

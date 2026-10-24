@@ -96,5 +96,10 @@ await check('explicit off and rewind reset prevent any pending automatic next ac
   player.next();player.advance(.8);assert.equal(player.state.dialogue.textId,'two');auto.setEnabled(false);player.previousDialogue();assert.equal(player.state.dialogue.textId,'one');assert.equal(playFrames(auto,player,10),0);player.dispose();
 });
 
+await check('user speed adjusts dwell time without changing the player stage or audio rate',()=>{
+  const fast=new AutoReader(),normal=new AutoReader(),slow=new AutoReader();for(const reader of [fast,normal,slow]){reader.setEnabled(true);reader.update(state(),{delta:0,lineLength:0});}
+  let quick=0,ordinary=0,delayed=0;for(let i=0;i<4;i++){quick+=Number(fast.update(state(),{delta:.1,lineLength:0,speed:4}));ordinary+=Number(normal.update(state(),{delta:.1,lineLength:0,speed:1}));delayed+=Number(slow.update(state(),{delta:.1,lineLength:0,speed:.25}));}
+  assert.equal(quick,1);assert.equal(ordinary,0);assert.equal(delayed,0);for(let i=0;i<50;i++)delayed+=Number(slow.update(state(),{delta:.1,lineLength:0,speed:.25}));assert.equal(delayed,1);
+});
 console.log(JSON.stringify({passed:results.filter(item=>item.passed).length,total:results.length,results},null,2));
 if(results.some(item=>!item.passed))process.exitCode=1;

@@ -23,17 +23,22 @@
     <input id="referenceFile" type="file" accept="image/png,image/jpeg,image/webp" hidden>
     <input id="progressFile" type="file" accept=".json,application/json" hidden>
     <input id="assetFolderFiles" type="file" webkitdirectory multiple hidden>
+    <input id="localizedImageFiles" type="file" webkitdirectory multiple hidden>
   </header>
 
   <div class="sample-notice"><span class="sample-dot" aria-hidden="true"></span><strong id="sampleTitle">XP2 本地剧情</strong><span id="sampleDescription">选择游戏本体文件夹，即可使用内置中文翻译阅读。</span><span class="local-tag">游戏资源仅在本机读取</span></div>
 
   <p class="scope-note">剧情浏览模式：条件分支手动选择，讨论小游戏以译文资料和继续入口展示；部分演出效果采用近似处理。</p>
+  <section id="gameShell" class="game-shell panel" aria-label="游戏菜单"><p class="shell-loading" role="status">正在准备游戏菜单……</p></section>
   <main id="main" class="player-layout">
     <aside class="map-panel panel" aria-labelledby="mapHeading">
-      <div class="section-heading"><div><span class="eyebrow">STORY MAP</span><h2 id="mapHeading">剧情地图</h2></div><span class="tiny-mark" aria-hidden="true">↗</span></div>
+      <a class="game-purchase-link" href="https://www.dlsite.com/maniax/work/=/product_id/RJ01049613.html" target="_blank" rel="noopener noreferrer">购买游戏本体后直接载入文件夹即可享受汉化版 <span aria-hidden="true">↗</span></a>
+      <div class="section-heading"><div><span class="eyebrow">STORY MAP</span><h2 id="mapHeading">剧情地图</h2></div><button id="mapFoldButton" class="button small quiet" type="button" aria-expanded="true" aria-controls="mapContents">收起地图</button></div>
+      <div id="mapContents">
       <div class="map-intro"><h3 id="storyTitle">XP2</h3><p>按章节浏览静态剧情地图，展开分支层级，跳到想看的剧情。</p></div>
       <div id="graphCanvas" class="graph-canvas" aria-label="按章节读取的静态剧情分支地图"></div>
       <div id="graphLegend" class="graph-legend"><span><i class="legend-current"></i>正在浏览</span><span><i class="legend-visited"></i>已浏览</span><span><i></i>未浏览</span></div>
+      </div>
       <div class="map-footer"><span class="eyebrow">YOUR PROGRESS</span><p id="progressSummary">尚未开始浏览</p><div class="split-actions"><button id="exportProgress" class="button small">导出进度</button><button id="importProgress" class="button small quiet">导入进度</button></div></div>
     </aside>
 
@@ -58,11 +63,12 @@
             <div class="dialogue-dock">
               <div id="messageWindow" class="message-window"><div class="message-topline"><span id="speakerName" class="speaker-name">旁白</span><span class="dialogue-emblem" aria-hidden="true">◆</span></div><div id="dialogueText" class="dialogue-text" aria-live="off">正在准备演出……</div></div>
               <p id="hudStatus" class="hud-status" role="status" aria-live="polite" hidden></p>
-              <div class="segment-progress-row"><span id="segmentProgressLabel" class="segment-progress-label">本段剧情 · 正在准备</span><progress id="segmentProgress" class="segment-progress" max="1" value="0" aria-labelledby="segmentProgressLabel">0%</progress></div>
+              <div class="segment-progress-row"><span id="segmentProgressLabel" class="segment-progress-label">本段剧情 · 正在准备</span><progress id="segmentProgress" class="segment-progress" max="1" value="0" aria-labelledby="segmentProgressLabel">0%</progress><input id="segmentSeek" class="segment-seek" type="range" min="0" max="0" step="1" value="0" disabled aria-label="拖动跳转本段对白" aria-describedby="segmentProgressLabel"></div>
               <div class="hud-toolbar" role="group" aria-label="对白操作">
                 <button id="hudPrevious" class="hud-button" type="button" disabled>上一句</button>
                 <button id="hudNext" class="hud-button hud-next" type="button" disabled>下一句</button>
                 <button id="hudAuto" class="hud-button" type="button" aria-pressed="false" disabled>自动播放</button>
+                <label class="hud-speed-control" for="hudAutoSpeed"><span>翻句速度</span><input id="hudAutoSpeed" type="range" min="0.25" max="4" step="0.25" value="1" aria-label="自动翻句速度"><output id="hudAutoSpeedValue" for="hudAutoSpeed">1×</output></label>
                 <button id="hudHistory" class="hud-button" type="button" aria-controls="historyPanel" aria-expanded="false" disabled>文本全览</button>
                 <button id="hudHide" class="hud-button" type="button" aria-label="隐藏对话框" disabled>隐藏对话框</button>
                 <button id="hudExitFullscreen" class="hud-button hud-exit-fullscreen" type="button">退出全屏</button>
@@ -80,7 +86,7 @@
         <div class="timeline-area review-only" hidden><label class="sr-only" for="timeSlider">旧版场景播放位置</label><input id="timeSlider" class="time-slider" type="range" min="0" max="16" step="0.01" value="0"><div class="timeline-meta"><span>旧版时间轴</span><output id="timeLabel" for="timeSlider">00:00 / 00:16</output></div></div>
         <div class="dialogue-position review-only"><label for="readerPosition">对白定位</label><select id="readerPosition" aria-label="跳转到当前场景的指定对白"><option value="">正在准备对白列表</option></select></div>
         <div class="reader-guide"><p id="readerHint" role="status" aria-live="polite">点击画面或按空格继续；文字显示中点击可补全。</p></div>
-        <div class="transport-bar"><div class="transport-main"><button id="readerPrevious" class="button reader-previous" type="button">上一句</button><button id="readerNext" class="reader-next" type="button">开始阅读</button><button id="autoReadButton" class="button reader-extra" type="button" aria-pressed="false" disabled>自动播放</button><button id="historyButton" class="button quiet reader-extra" type="button" aria-controls="historyPanel" aria-expanded="false" disabled>文本全览</button><button id="hideDialogueButton" class="button quiet reader-extra" type="button" disabled>隐藏对话框</button><div class="transport-debug-group review-only"><button id="previousScene" class="icon-button" aria-label="上一场景" title="上一场景">‹</button><button id="playPause" class="play-button" aria-label="播放演出">播放</button><button id="nextScene" class="icon-button" aria-label="下一场景" title="下一场景">›</button><button id="restartScene" class="button quiet restart-button">重新播放</button></div></div><div class="transport-options"><label class="review-only"><span class="sr-only">播放速度</span><select id="speedSelect" aria-label="播放速度"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label><label class="review-only"><span class="sr-only">显示语言</span><select id="languageSelect" aria-label="显示语言"><option value="translation">汉化文本</option><option value="original">原文</option></select></label><button id="fullscreenButton" class="icon-button fullscreen-button" aria-label="全屏显示" title="全屏显示">⛶</button></div></div>
+        <div class="transport-bar"><div class="transport-main"><button id="readerPrevious" class="button reader-previous" type="button">上一句</button><button id="readerNext" class="reader-next" type="button">开始阅读</button><button id="autoReadButton" class="button reader-extra" type="button" aria-pressed="false" disabled>自动播放</button><button id="historyButton" class="button quiet reader-extra" type="button" aria-controls="historyPanel" aria-expanded="false" disabled>文本全览</button><button id="hideDialogueButton" class="button quiet reader-extra" type="button" disabled>隐藏对话框</button><div class="transport-debug-group review-only"><button id="previousScene" class="icon-button" aria-label="上一场景" title="上一场景">‹</button><button id="playPause" class="play-button" aria-label="播放演出">播放</button><button id="nextScene" class="icon-button" aria-label="下一场景" title="下一场景">›</button><button id="restartScene" class="button quiet restart-button">重新播放</button></div></div><div class="transport-options"><label class="inline-auto-speed" for="autoReadSpeed"><span>翻句速度</span><input id="autoReadSpeed" type="range" min="0.25" max="4" step="0.25" value="1" aria-label="自动翻句速度"><output id="autoReadSpeedValue" for="autoReadSpeed">1×</output></label><label class="review-only"><span class="sr-only">播放速度</span><select id="speedSelect" aria-label="播放速度"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label><label class="review-only"><span class="sr-only">显示语言</span><select id="languageSelect" aria-label="显示语言"><option value="translation">汉化文本</option><option value="original">原文</option></select></label><button id="fullscreenButton" class="icon-button fullscreen-button" aria-label="全屏显示" title="全屏显示">⛶</button></div></div>
       </div>
       <p id="publicStatus" class="viewer-note" role="status" aria-live="polite">请选择游戏文件夹。</p>
       <div class="playback-status review-only"><span class="status-dot" aria-hidden="true"></span><p id="statusMessage" role="status" aria-live="polite">正在准备播放器。</p><span id="mediaStatus" class="media-status">音视频待命</span></div>

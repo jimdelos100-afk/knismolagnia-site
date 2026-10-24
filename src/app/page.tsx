@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import SiteHeader from '@/components/SiteHeader'
+import { isLevelSixPublic, LEVEL_SIX_PUBLIC_DEADLINE } from '@/lib/level-six-access'
 import {
   Content,
   fetchOneEntry,
@@ -19,6 +20,7 @@ const cards = [
 ]
 
 function OriginalHomeBody() {
+  const publicSix = isLevelSixPublic()
   return <main className="wrap">
       <section className="hero">
         <h1><span>欢迎来到</span><strong>柯妮丝·摩拉·戈妮娅</strong><i>。</i></h1>
@@ -26,8 +28,8 @@ function OriginalHomeBody() {
         <div className="actions"><Link className="button primary" href="/login">进入 / 登录 ♡</Link><Link className="button secondary" href="#levels">浏览六个 Level</Link></div>
       </section>
       <section id="levels" className="level-grid">
-        {cards.map(([n,icon,title,desc]) => <Link className="level-card" href={`/level/${n}`} key={String(n)}>
-          <b>Level {n}</b><i>{icon}</i><h3>{title}</h3><p>{desc}</p><span>进入这个 Level →</span>
+        {cards.map(([n,icon,title,desc]) => <Link className="level-card" href={`/level/${n}`} key={String(n)} prefetch={n === 6 ? false : undefined}>
+          <b>Level {n}</b><i>{icon}</i><h3>{title}</h3><p>{n === 6 && publicSix ? `剧情播放器临时公开，开放至 ${LEVEL_SIX_PUBLIC_DEADLINE}。` : desc}</p><span>进入这个 Level →</span>
         </Link>)}
       </section>
       <section className="intro-card">

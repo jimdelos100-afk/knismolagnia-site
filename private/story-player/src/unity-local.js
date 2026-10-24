@@ -4,6 +4,7 @@
    https://github.com/lz4/lz4/blob/dev/doc/lz4_Block_format.md
    https://learn.microsoft.com/windows/win32/direct3d10/d3d10-graphics-programming-guide-resources-block-compression
    https://xiph.org/ogg/doc/framing.html */
+import {TextureDecoder} from './texture-decoder.js';
 const MIB=1024*1024;
 const MAX_RANGE=128*MIB;
 const MAX_PIXELS=16777216;
@@ -232,7 +233,7 @@ export class UnityLocalLibrary{
       if(!source||block.compressedOffset+block.compressedSize>source.size)fail('本地游戏的压缩块索引超出文件范围。');
       expectedOffset+=block.uncompressedSize;
     }
-    this.virtualSize=expectedOffset;
+    this.virtualSize=expectedOffset;this.textureDecoder=new TextureDecoder(textureBlob);
   }
   assertOpen(){if(this.disposed)fail('本地游戏资源已关闭，请重新选择文件夹。');}
   async blockAt(index){
@@ -285,7 +286,7 @@ export class UnityLocalLibrary{
         blob=file.slice(source.offset,source.offset+source.size,'video/mp4');
       }else{
         const bytes=await this.readRange(source.file,source.offset,source.size,source.space||'file');
-        if(asset.kind==='texture'||asset.type==='image')blob=await textureBlob(bytes,asset);
+        if(asset.kind==='texture'||asset.type==='image')blob=await this.textureDecoder.decode(bytes,asset);
         else if(asset.codec==='fsb5-vorbis'||asset.codec==='vorbis')blob=rebuildVorbisPackets(bytes,asset,this.index.vorbisSetups?.[asset.vorbisSetup]);
         else if(asset.codec==='pcm')blob=wavBlob(bytes.subarray(asset.packetOffset||0),asset);
         else if(asset.codec==='mp3'||asset.codec==='mpeg')blob=new Blob([bytes.subarray(asset.packetOffset||0)],{type:'audio/mpeg'});
@@ -303,7 +304,7 @@ export class UnityLocalLibrary{
   }
   release(assetId){const url=this.urls.get(assetId);if(url)this.urlAPI.revokeObjectURL(url);this.urls.delete(assetId);}
   dispose(){
-    if(this.disposed)return;this.disposed=true;
+    if(this.disposed)return;this.disposed=true;this.textureDecoder.dispose();
     for(const url of this.urls.values())this.urlAPI.revokeObjectURL(url);
     this.urls.clear();this.blockCache.clear();this.cacheBytes=0;this.stats.cacheBytes=0;this.files.clear();
   }

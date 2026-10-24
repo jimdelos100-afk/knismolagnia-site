@@ -1,5 +1,5 @@
 const EVENT_TYPES=new Set(['mode','clearActors','background','character','layer','tween','camera','fade','dialogue','audio','stopAudio','video','stopVideo']);
-const EASINGS={linear:t=>t,easeIn:t=>t*t,easeOut:t=>1-(1-t)*(1-t),easeInOut:t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2};
+const EASINGS={easeOutExpo:t=>t===1?1:1-Math.pow(2,-10*t),linear:t=>t,easeIn:t=>t*t,easeOut:t=>1-(1-t)*(1-t),easeInOut:t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2};
 const ACTOR_NUMBERS=new Set(['x','y','width','height','scale','scaleX','scaleY','rotation','opacity','layer','pivotX','pivotY']);
 const LAYER_NUMBERS=new Set(['x','y','scale','scaleX','scaleY','rotation','opacity','layer']);
 const CAMERA_NUMBERS=new Set(['x','y','scale','rotation']);
@@ -141,45 +141,50 @@ function baseState(scene){
     dialogue:{textId:null,speaker:'',visible:false,startedAt:0,...safeCopy(entry.dialogue||{})},
     audio:(entry.audio||[]).map(track=>mediaState(track,0)),video:entry.video?mediaState(entry.video,0,true):null};
 }
-function resolveTarget(state,target){return target.startsWith('character:')?state.characters.find(actor=>actor.id===target.slice(10)):target.startsWith('layer:')?state.layers.find(layer=>layer.id===target.slice(6)):state[target];}
+function resolveTarget(state,target){if(target==='messageWindow')return state.nativeEffects?.messageWindowPosition;return target.startsWith('character:')?state.characters.find(actor=>actor.id===target.slice(10)):target.startsWith('layer:')?state.layers.find(layer=>layer.id===target.slice(6)):state[target];}
+
+function copyNativeMotions(motions){return (motions||[]).map(item=>safeCopy(item));}
 
 /** Replays from the explicit entry every time, so arbitrary seek never inherits a previous scene. */
-export function evaluateScene(scene,time){
+export function evaluateScene(scene,time,{nativeEffects=null}={}){
   if(!plain(scene)||!finite(time))throw new Error('场景或播放时间无效');
-  const state=baseState(scene),endTime=clamp(time,0,scene.duration),tweens=[];let shake=state.camera.shake?{...state.camera.shake,at:0}:null;delete state.camera.shake;
+  const state=baseState(scene),endTime=clamp(time,0,scene.duration);if(nativeEffects){state.nativeEffects=nativeEffects.base(scene.entry);nativeEffects.begin(scene);}const tweens=nativeEffects?copyNativeMotions(state.nativeEffects.motions):[];let shake=state.camera.shake?{...state.camera.shake,at:0}:null;delete state.camera.shake;
   const cancel=(target,fields=null)=>{for(const tween of tweens)if(tween.target===target)for(const key of Object.keys(tween.to))if(!fields||fields.includes(key)){delete tween.to[key];delete tween.from[key];}};
   const materialize=at=>{for(const tween of tweens){const target=resolveTarget(state,tween.target);if(!target)continue;const progress=tween.duration?clamp((at-tween.at)/tween.duration,0,1):1,ratio=EASINGS[tween.easing](progress);for(const key of Object.keys(tween.to))target[key]=tween.from[key]+(tween.to[key]-tween.from[key])*ratio;}};
-  const animate=(targetName,to,at,duration,easing='linear')=>{const target=resolveTarget(state,targetName);if(!target)return;cancel(targetName,Object.keys(to));const from=Object.fromEntries(Object.keys(to).map(key=>[key,Number(target[key])]));tweens.push({target:targetName,to:safeCopy(to),from,at,duration,easing});if(!duration)Object.assign(target,to);};
+  const animate=(targetName,to,at,duration,easing='linear',native=false)=>{const target=resolveTarget(state,targetName);if(!target)return;cancel(targetName,Object.keys(to));const from=Object.fromEntries(Object.keys(to).map(key=>[key,Number(target[key])]));tweens.push({target:targetName,to:safeCopy(to),from,at,duration,easing,...(native?{native:true}:{})});if(!duration)Object.assign(target,to);};
+  const patchActor=event=>{
+      const {at,type,eventId,...payload}=event;const index=state.characters.findIndex(actor=>actor.id===event.id);
+      if(event.remove){cancel(`character:${event.id}`);if(index>=0)state.characters.splice(index,1);return;}
+      if(state.eventMode&&(event.kind==='character'||state.characters[index]?.kind==='character'))return;
+      const patch={...payload};delete patch.visible;delete patch.remove;if(event.visible!==undefined)patch.opacity=event.visible?(event.opacity??1):0;
+      cancel(`character:${event.id}`,Object.keys(patch));
+      if(index<0){if(patch.asset!==undefined)state.characters.push(actorState(patch));}else Object.assign(state.characters[index],patch);
+
+  };
   const events=scene.events.map((event,index)=>({event,index})).sort((a,b)=>a.event.at-b.event.at||a.index-b.index);
   for(const {event} of events){
-    if(!EVENT_TYPES.has(event.type))error(`未实现的指令 ${String(event.type)}`);if(event.at>endTime)break;materialize(event.at);const {at,type,eventId,...payload}=event;
-    if(type==='mode'){
+    if(!EVENT_TYPES.has(event.type)&&!(nativeEffects&&event.type==='nativeEffect'))error(`未实现的指令 ${String(event.type)}`);if(event.at>endTime)break;materialize(event.at);const {at,type,eventId,...payload}=event;
+    if(type==='nativeEffect'){nativeEffects.apply(state,event.native,at,{animate,actorState,resolveTarget,patchActor});}
+    else if(type==='mode'){
       state.eventMode=event.eventMode;
       if(state.eventMode){for(const actor of state.characters)if(actor.kind==='character')cancel(`character:${actor.id}`);state.characters=state.characters.filter(actor=>actor.kind!=='character');}
     }else if(type==='clearActors'){
       const remove=actor=>actor.kind===event.kind&&(event.id===undefined||event.id===actor.id)&&(event.layerName===undefined||event.layerName===actor.layerName);
       for(const actor of state.characters)if(remove(actor))cancel(`character:${actor.id}`);state.characters=state.characters.filter(actor=>!remove(actor));
     }else if(type==='background'){cancel('background');state.background={opacity:1,...payload};}
-    else if(type==='character'){
-      const index=state.characters.findIndex(actor=>actor.id===event.id);
-      if(event.remove){cancel(`character:${event.id}`);if(index>=0)state.characters.splice(index,1);continue;}
-      if(state.eventMode&&(event.kind==='character'||state.characters[index]?.kind==='character'))continue;
-      const patch={...payload};delete patch.visible;delete patch.remove;if(event.visible!==undefined)patch.opacity=event.visible?(event.opacity??1):0;
-      cancel(`character:${event.id}`,Object.keys(patch));
-      if(index<0){if(patch.asset!==undefined)state.characters.push(actorState(patch));}else Object.assign(state.characters[index],patch);
-    }else if(type==='layer'){
+    else if(type==='character'){patchActor(event);    }else if(type==='layer'){
       const index=state.layers.findIndex(layer=>layer.id===event.id);cancel(`layer:${event.id}`,Object.keys(payload));
       if(index<0)state.layers.push(layerState(payload));else Object.assign(state.layers[index],payload);
     }else if(type==='tween')animate(event.target,event.to,at,event.duration,event.easing);
     else if(type==='camera'){const patch={...payload};delete patch.shake;cancel('camera',Object.keys(patch));Object.assign(state.camera,patch);if(event.shake)shake={...event.shake,at};}
     else if(type==='fade'){if(event.color!==undefined)state.overlay.color=event.color;animate('overlay',{opacity:event.opacity},at,event.duration||0,event.easing);}
-    else if(type==='dialogue')state.dialogue={...state.dialogue,...payload,speaker:event.speaker??(event.textId!==undefined?'':state.dialogue.speaker),visible:event.visible??true,startedAt:at};
+    else if(type==='dialogue'){state.dialogue={...state.dialogue,...payload,speaker:event.speaker??(event.textId!==undefined?'':state.dialogue.speaker),visible:event.visible??true,startedAt:at};if(nativeEffects)nativeEffects.onDialogue(state,event,at);}
     else if(type==='audio'){const track=mediaState(payload,at),index=state.audio.findIndex(item=>item.id===track.id);if(index<0)state.audio.push(track);else state.audio[index]=track;}
     else if(type==='stopAudio'){const track=state.audio.find(item=>item.id===event.id);if(track){track.stopAt=at;track.fadeOut=event.duration||0;}}
     else if(type==='video')state.video=mediaState(payload,at,true);
     else if(type==='stopVideo')state.video=null;
   }
-  materialize(endTime);
+  materialize(endTime);if(nativeEffects)nativeEffects.finish(state,endTime,tweens);
   if(shake&&endTime>=shake.at&&endTime<shake.at+shake.duration){const elapsed=endTime-shake.at,envelope=1-elapsed/shake.duration;state.camera.shakeX=Math.sin(elapsed*shake.frequency*Math.PI*2)*shake.amplitude*envelope;state.camera.shakeY=Math.sin(elapsed*shake.frequency*Math.PI*2*1.31)*shake.amplitude*.6*envelope;}
   const finishMedia=track=>{
     const elapsed=Math.max(0,endTime-track.startAt),naturalEnd=track.duration!==undefined&&!track.loop&&elapsed>=track.duration;

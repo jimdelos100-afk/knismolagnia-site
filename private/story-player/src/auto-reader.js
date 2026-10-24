@@ -26,7 +26,7 @@ export class AutoReader{
     this._seen=false;this._scene=null;this._node=null;this._text=null;this._index=null;this._startedAt=null;this._clock=null;
     this._elapsed=0;this._complete=false;this._issued=false;
   }
-  update(state,{delta=0,ready=true,blocked=false,lineLength=0}={}){
+  update(state,{delta=0,ready=true,blocked=false,lineLength=0,speed=1}={}){
     if(!this._enabled)return false;
     if(!state){this.reset();return false;}
     if(state.ended||state.waiting==='choice'||state.waiting==='signal'||state.waiting==='node'){
@@ -50,7 +50,7 @@ export class AutoReader{
     // Background throttling or a stalled main thread must never catch up by
     // skipping a line immediately. Normal frame time is measured in real seconds.
     if(!finite(delta)||delta<0||delta>MAX_FRAME_DELTA){this._elapsed=0;return false;}
-    this._elapsed+=delta;
+    this._elapsed+=delta*(finite(speed)?Math.max(.25,Math.min(4,speed)):1);
     if(this._elapsed+EPS<autoReadDelay(lineLength))return false;
     this._issued=true;return true;
   }

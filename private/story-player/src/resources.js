@@ -50,6 +50,7 @@ export class ResourceLibrary{
   resolve(id){
     if(this.disposed)return null;
     const asset=this.assets.get(id);if(!asset)return null;
+    if(this.overrides.has(id))return this.overrides.get(id).url;
     if(this.provider){
       this.recent.delete(id);this.recent.set(id,true);
       if(this.resolved.has(id))return this.resolved.get(id);
@@ -64,7 +65,7 @@ export class ResourceLibrary{
       return null;
     }
     if(this.localOnly)return null;
-    return this.overrides.get(id)?.url||new URL(asset.src,this.baseURL).href;
+    return new URL(asset.src,this.baseURL).href;
   }
   setLocalProvider(provider){this.provider?.dispose();this.provider=provider;this.pending.clear();this.resolved.clear();}
   async preload(ids){for(const id of ids)this.resolve(id);await Promise.all(ids.map(id=>this.pending.get(id)));}
@@ -101,7 +102,20 @@ export class ResourceLibrary{
     for(const entry of staged){const old=this.overrides.get(entry.id);if(old)this.urlAPI.revokeObjectURL(old.url);this.overrides.set(entry.id,entry);}
     return {matched:staged.length,unmatched:files.length-used.size,ambiguous:[],overrides:[...this.overrides.keys()]};
   }
-  clearOverrides(){for(const value of this.overrides.values())this.urlAPI.revokeObjectURL(value.url);this.overrides.clear();}
+  replaceImageOverrides(entries){
+    if(this.disposed)fail('此资源库已经关闭。');
+    const staged=[],seen=new Set();
+    try{for(const entry of entries){
+      const asset=this.assets.get(entry.assetId);if(!asset||asset.type!=='image'||seen.has(entry.assetId))fail('替换图片的目标编号无效或重复。');seen.add(entry.assetId);
+      if(entry.file instanceof Blob){staged.push({id:entry.assetId,file:entry.file,url:this.urlAPI.createObjectURL(entry.file),owned:true});}
+      else if(typeof entry.url==='string'){
+        const url=new URL(entry.url,this.baseURL);if(url.origin!==this.baseURL.origin||!url.pathname.startsWith(this.baseURL.pathname.replace(/[^/]*$/,'')))fail('内置替换图片必须来自播放器目录。');
+        staged.push({id:entry.assetId,url:url.href,owned:false});
+      }else fail('替换图片缺少有效文件。');
+    }}catch(error){for(const entry of staged)if(entry.owned)this.urlAPI.revokeObjectURL(entry.url);throw error;}
+    this.clearOverrides();for(const entry of staged)this.overrides.set(entry.id,entry);return staged.length;
+  }
+  clearOverrides(){for(const value of this.overrides.values())if(value.owned!==false)this.urlAPI.revokeObjectURL(value.url);this.overrides.clear();}
   dispose(){this.clearOverrides();this.provider?.dispose();this.provider=null;this.pending.clear();this.resolved.clear();this.disposed=true;}
 }
 

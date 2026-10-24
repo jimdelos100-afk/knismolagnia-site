@@ -1,9 +1,10 @@
 // Reconcile media with the evaluated timeline. No resource upload is performed.
 export class MediaController{
-  constructor(video,library,onStatus=()=>{}){this.video=video;this.library=library;this.onStatus=onStatus;this.channels=new Map();this.videoKey=null;this.desiredVideo=null;this.lastMessage='';this.video.onerror=()=>this.report('有视频资源无法播放，请检查格式和资源清单。');}
+  constructor(video,library,onStatus=()=>{}){this.video=video;this.library=library;this.onStatus=onStatus;this.masterVolume=1;this.channelVolumes={bgm:1,se:1,voice:1,ambient:1};this.channels=new Map();this.videoKey=null;this.desiredVideo=null;this.lastMessage='';this.video.onerror=()=>this.report('有视频资源无法播放，请检查格式和资源清单。');}
+  channelVolume(cue){const category=cue.channel||String(cue.id||'').toLowerCase();return this.channelVolumes[category]??1;}
   report(message){if(message!==this.lastMessage){this.lastMessage=message;this.onStatus(message);}}
   syncElement(element,cue,rate){
-    element.loop=!!cue.loop;element.volume=Math.max(0,Math.min(1,cue.volume??1));element.playbackRate=rate;
+    element.loop=!!cue.loop;element.volume=Math.max(0,Math.min(1,(cue.volume??1)*this.masterVolume*this.channelVolume(cue)));element.playbackRate=rate;
     let position=Math.max(0,cue.position??0);
     if(Number.isFinite(element.duration)&&element.duration>0)position=cue.loop?position%element.duration:Math.min(position,Math.max(0,element.duration-.015));
     if(element.readyState>=1&&Math.abs(element.currentTime-position)>(cue.playing?.12:.015)){

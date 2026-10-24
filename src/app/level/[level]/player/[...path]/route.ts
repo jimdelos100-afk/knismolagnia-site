@@ -2,6 +2,7 @@ import { readFile, realpath, stat } from 'node:fs/promises'
 import path from 'node:path'
 import { requireLevel } from '@/lib/auth'
 import { isLocalDesignMode } from '@/lib/local-design-mode'
+import { isLevelSixPublic, preventLevelSixCaching } from '@/lib/level-six-access'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -11,18 +12,21 @@ const TYPES: Record<string, string> = {
   '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
   '.mjs': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8',
   '.json': 'application/json; charset=utf-8', '.svg': 'image/svg+xml',
-  '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg',
+  '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg',
   '.wav': 'audio/wav', '.ogg': 'audio/ogg', '.mp3': 'audio/mpeg',
   '.mp4': 'video/mp4', '.webm': 'video/webm', '.wasm': 'application/wasm',
 }
 
-// Player code and text stay outside public/: every request requires Level 6.
+// Player files stay outside public/. After the server deadline every request
+// returns to the original Level 6 guard, including worker and chapter files.
 export async function GET(request: Request, context: {
   params: Promise<{ level: string; path: string[] }>
 }) {
   const params = await context.params
   if (params.level !== '6') return new Response('Not found', { status: 404 })
-  if (!await isLocalDesignMode()) await requireLevel(6)
+  const localPreview = await isLocalDesignMode()
+  let authorized = localPreview
+  if (!localPreview && !isLevelSixPublic()) { await requireLevel(6); authorized = true }
   const parts = params.path
   if (!parts.length || parts.some(part => !part || part.startsWith('.') || /[\\/:%\x00-\x1f]/.test(part))) {
     return new Response('Not found', { status: 404 })
@@ -40,11 +44,13 @@ export async function GET(request: Request, context: {
       'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'same-origin',
       'Cross-Origin-Resource-Policy': 'same-origin', 'Accept-Ranges': 'bytes',
     })
+    preventLevelSixCaching('/level/6/player/', { headers })
     if (type.startsWith('text/html')) {
       headers.set('X-Frame-Options', 'SAMEORIGIN')
-      headers.set('Content-Security-Policy', "default-src 'self' blob:; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; media-src 'self' blob:; connect-src 'self' blob:; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'none'")
+      headers.set('Content-Security-Policy', "default-src 'self' blob:; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; media-src 'self' blob:; connect-src 'self' blob:; object-src 'none'; base-uri 'self'; frame-ancestors 'self'; form-action 'none'")
     }
     const bytes = await readFile(file)
+    if (!authorized && !isLevelSixPublic()) await requireLevel(6)
     const range = request.headers.get('range')
     if (range) {
       const match = /^bytes=(\d*)-(\d*)$/.exec(range)
