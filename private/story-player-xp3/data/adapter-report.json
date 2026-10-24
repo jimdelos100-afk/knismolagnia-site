@@ -1,0 +1,61 @@
+{
+  "type": "xp3-adapter-report",
+  "schemaVersion": 1,
+  "gameId": "xp3",
+  "gameVersion": "v1.10",
+  "gameFingerprint": "xp3-1.10:66bfa5b535ea05ba062276782a1c81832ea2fcf7816260ca0422b7ef11760a8d",
+  "scenarioGrids": 50,
+  "activeScenarioRows": 19108,
+  "catalogEntries": 9925,
+  "displayedDialogueCount": 5782,
+  "selections": 27,
+  "selectionLabelCount": 52,
+  "assets": 892,
+  "indexedAssets": 2484,
+  "bundleBlocks": 73412,
+  "scenes": 1223,
+  "mapEntries": 351,
+  "nativeRecalls": 17,
+  "nativeCgs": 319,
+  "textureFormats": {
+    "12": 374,
+    "3": 421,
+    "4": 957,
+    "10": 331,
+    "1": 2
+  },
+  "approximations": {
+    "GuiActive": 105,
+    "Param manual branch context": 160,
+    "Tween unsupported target/preset": 248,
+    "Shake (camera substitute)": 1518
+  },
+  "unresolved": {},
+  "stats": {
+    "rows": 19108,
+    "nativeCommandTextFields": 937,
+    "manualConditionalGates": 86,
+    "spokenDialogueRows": 5782,
+    "selectionLabelCount": 52,
+    "selections": 27,
+    "customInteractionGates": 64
+  },
+  "translationPending": true,
+  "stableIds": "Native grid.name|rowIndex|Text; setting:grid.name|rowIndex|field. Complete workbench catalog preserves auxiliary field IDs.",
+  "sourceBytesReadLocally": true,
+  "gameMediaCopied": false,
+  "nativeUiParseErrors": [
+    {
+      "id": "level0:1078",
+      "error": "read___int64 out of bounds"
+    },
+    {
+      "id": "level0:1161",
+      "error": "Expected to read 476 bytes, but only read 348 bytes"
+    },
+    {
+      "id": "level0:1167",
+      "error": "Expected to read 132 bytes, but only read 100 bytes"
+    }
+  ]
+}

@@ -20,7 +20,7 @@ export function buildNativeCatalog(story,index){
       if(!appearances.has(event.asset))appearances.set(event.asset,[]);appearances.get(event.asset).push({sceneId:scene.id,mapGroup:scene.mapGroup,...(later?{dialogueIndex}:{}),eventIndex:i});
     }
   }
-  const recalls=NATIVE_RECALLS.map((record,position)=>({...record,id:`native-recall-${position+1}`,sceneId:byTitle.get(record.scenario)?.id||null,thumbnailAssetId:index?.resourcePaths?.[`texture/thumbnail/${record.thumbnail.toLowerCase()}`]?.[0]||null}));
+  const recalls=NATIVE_RECALLS.map((record,position)=>({...record,id:`native-recall-${position+1}`,sceneId:byTitle.get(String(record.scenario||'').replace(/^\*/,''))?.id||null,thumbnailAssetId:index?.resourcePaths?.[`texture/thumbnail/${record.thumbnail.toLowerCase()}`]?.[0]||null}));
   const images=NATIVE_CGS.map((record,position)=>{
     const resourcePath=`texture/event/${String(record.file).replace(/\.[^./]+$/,'').toLowerCase()}`;
     const candidates=index?.resourcePaths?.[resourcePath]||[],thumbnailResourcePath=`texture/thumbnail/${record.thumbnail.toLowerCase()}`,thumbnailCandidates=index?.resourcePaths?.[thumbnailResourcePath]||[];
@@ -33,7 +33,7 @@ export function buildNativeCatalog(story,index){
     const image={...record,id,number:position+1,resourcePath,assetId,thumbnailResourcePath,thumbnailAssetId:thumbnailCandidates.length===1?thumbnailCandidates[0]:null,recallId:recall?.id||null,sourceSceneId:destination?.sceneId,sourceEventIndex:destination?.eventIndex,...target,exactDialogue:override.exactDialogue??(target.dialogueIndex!==undefined)};
     if(!image.exactDialogue)delete image.dialogueIndex;
     return image;
-  }).filter(item=>item.assetId&&item.sceneId);
+  }).filter(item=>item.assetId);
   return {recalls,images};
 }
 
@@ -61,7 +61,7 @@ export function createGameShell(container,options){
   listen(root,'click',event=>{if(event.target.closest('button:not(:disabled)'))sound('click');});
   const announce=message=>{feedback.textContent=message||'';feedback.hidden=!message;};
   async function invoke(callback,...args){try{announce('');const result=options[callback]?.(...args);await result;}catch(error){announce(error?.message||String(error));}}
-  const requestFolder=()=>{const result=invoke('onSelectFolder');announce('请选择「性癖討論v1.0.0」或其中的「性癖討論2_Data」目录；载入后再选择开始或回想。');return result;};
+  const requestFolder=()=>{const result=invoke('onSelectFolder');announce(options.profile?.folderHint||'请选择「性癖討論v1.0.0」或其中的「性癖討論2_Data」目录；载入后再选择开始或回想。');return result;};
   const button=(label,handler,className='button')=>{const el=node('button',className,label);el.type='button';el.addEventListener('click',handler);return el;};
   const title=(heading,description)=>{const top=node('div','shell-page-heading native-page-heading'),copy=node('div');copy.append(node('h2','',heading),node('p','',description));top.append(copy);const back=button('×',()=>{const target=returnPage;returnPage='home';showPage(target,true);},'native-page-close');back.setAttribute('aria-label','返回上一页面');if(state.localReady){const image=node('img');image.alt='';artwork.image(NATIVE_UI.close,image);back.append(image);}top.append(back);return top;};
   function nativeArt(assetId,target,property){if(state.localReady)artwork.background(assetId,target,property);}
@@ -70,10 +70,15 @@ export function createGameShell(container,options){
   function pagination(current,total,onChange,label){const pages=Math.max(1,total),controls=node('div','shell-gallery-pagination');const previous=button('上一页',()=>onChange(current-1),'button small quiet'),next=button('下一页',()=>onChange(current+1),'button small quiet');previous.disabled=current===0;next.disabled=current===pages-1;controls.append(previous,node('p','',`${label} · 第 ${current+1} / ${pages} 页`),next);return controls;}
   function clearPreview(){previewToken++;previewAsset=null;selectedImage=null;options.onPreviewAsset?.(null);}
   async function jump(sceneId,settings){await invoke('onJump',sceneId,settings);if(!disposed)showPage('reader');}
+  function imageJumpButton(image,className='button small quiet'){
+    const label=!image.sceneId?'仅原图预览':image.exactDialogue?'对应剧情':'进入所在片段';
+    const action=button(label,()=>jump(image.sceneId,image.dialogueIndex===undefined?{}:{dialogueIndex:image.dialogueIndex}),className);
+    action.disabled=!image.sceneId;if(!image.sceneId)action.title='原作图库保留此图，但剧情脚本没有可验证的绘制位置。';return action;
+  }
   async function begin(which){if(!state.localReady){await requestFolder();return;}await invoke(which==='start'?'onStart':'onContinue');if(!disposed)showPage('reader');}
   function home(){
     const screen=node('section','native-title-screen');screen.setAttribute('aria-label','原作标题画面');nativeArt(NATIVE_UI.title,screen,'--native-title-image');
-    const heading=node('div','native-title-fallback');heading.append(node('span','eyebrow','XP2 / LOCAL EDITION'),node('h2','','性癖討論'),node('p','','载入游戏目录后显示原作标题画面与菜单。'));screen.append(heading);
+    const heading=node('div','native-title-fallback');heading.append(node('span','eyebrow',`${options.profile?.shortName||'XP2'} / LOCAL EDITION`),node('h2','',options.profile?.gameName||'性癖讨论2'),node('p','','载入游戏目录后显示原作标题画面与菜单。'));screen.append(heading);
     const menus=node('div','native-title-menu');
     for(const [key,label,asset,action]of [['start','开始游戏',NATIVE_UI.start,()=>begin('start')],['continue','继续阅读',NATIVE_UI.resume,()=>begin('continue')],['settings','游戏设置',NATIVE_UI.config,()=>showPage('settings')],['gallery','回想与 CG',NATIVE_UI.gallery,()=>showPage('archive')]]){
       const item=button('',action,'native-title-button');item.dataset.nativeMenu=key;item.setAttribute('aria-label',label);if(!state.localReady&&['start','continue'].includes(key))item.title='请先选择原游戏目录，载入后再点击'+label;
@@ -110,7 +115,7 @@ export function createGameShell(container,options){
     const cards=node('div','shell-cg-grid');
     for(const image of matches.slice(galleryPage*PAGE_SIZE,(galleryPage+1)*PAGE_SIZE)){
       const card=node('article','shell-cg-card');const view=button('',()=>previewImage(image,imageHost,imageActions),'shell-cg-select');
-      view.dataset.previewCg=image.id;view.setAttribute('aria-pressed','false');view.append(thumbnail(image.thumbnailAssetId||image.assetId,`${categoryTitle(image)} · ${image.label}`,{fallback:!image.thumbnailAssetId}),node('span','shell-card-number',String(image.number).padStart(3,'0')),node('strong','',image.label),node('span','',categoryTitle(image)));card.append(view,button(image.exactDialogue?'对应剧情':'进入所在片段',()=>jump(image.sceneId,image.dialogueIndex===undefined?{}:{dialogueIndex:image.dialogueIndex}),'button small quiet'));cards.append(card);
+      view.dataset.previewCg=image.id;view.setAttribute('aria-pressed','false');view.append(thumbnail(image.thumbnailAssetId||image.assetId,`${categoryTitle(image)} · ${image.label}`,{fallback:!image.thumbnailAssetId}),node('span','shell-card-number',String(image.number).padStart(3,'0')),node('strong','',image.label),node('span','',categoryTitle(image)));card.append(view,imageJumpButton(image));cards.append(card);
     }
     const paging=node('div','shell-gallery-pagination');const previous=button('上一页',()=>{galleryPage--;clearPreview();render();},'button small quiet'),next=button('下一页',()=>{galleryPage++;clearPreview();render();},'button small quiet');previous.disabled=galleryPage===0;next.disabled=galleryPage===pages-1;
     paging.append(previous,node('p','',`${matches.length} 张 · 第 ${galleryPage+1} / ${pages} 页`),next);content.append(cards,paging);
@@ -123,7 +128,7 @@ export function createGameShell(container,options){
       const url=await options.resolveAsset?.(image.assetId);if(!url)throw new Error('这张 CG 未能读取，请重新连接游戏目录。');
       const img=new Image();img.alt=`${categoryTitle(image)} · ${image.label}`;img.src=url;await img.decode();
       if(disposed||token!==previewToken||page!=='gallery')return;
-      host.replaceChildren(img);host.scrollIntoView({block:'nearest'});actions.append(node('span','',`${image.label} · ${img.naturalWidth} × ${img.naturalHeight}${image.exactDialogue?'':' · 此图没有可停留的对白位置'}`),button(image.exactDialogue?'进入对应剧情':'进入所在片段',()=>jump(image.sceneId,image.dialogueIndex===undefined?{}:{dialogueIndex:image.dialogueIndex}),'button small'));
+      host.replaceChildren(img);host.scrollIntoView({block:'nearest'});actions.append(node('span','',`${image.label} · ${img.naturalWidth} × ${img.naturalHeight}${!image.sceneId?' · 原作图库保留，未找到剧情绘制位置':image.exactDialogue?'':' · 此图没有可停留的对白位置'}`),imageJumpButton(image,'button small'));
     }catch(error){if(!disposed&&token===previewToken){host.replaceChildren(node('p','shell-cg-status',error?.message||String(error)));options.onPreviewAsset?.(null);previewAsset=null;}}
   }
   const settingInputs=new Map();

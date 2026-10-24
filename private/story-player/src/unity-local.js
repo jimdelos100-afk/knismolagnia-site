@@ -59,14 +59,19 @@ function rgb565(value){
   return [(r<<3)|(r>>>2),(g<<2)|(g>>>4),(b<<3)|(b>>>2),255];
 }
 
-/** Unity base mip -> top-to-bottom RGBA8. Supports every texture format in XP2. */
+/** Unity base mip -> top-to-bottom RGBA8, including Alpha8 masks in the sequel. */
 export function decodeTextureRGBA(bytes,{width,height,format,flipY=true}){
   integer(width,'图片宽度',8192);integer(height,'图片高度',8192);
   if(!width||!height||width*height>MAX_PIXELS)fail('图片尺寸超出本机解码限制。');
-  const formats={RGB24:3,RGBA32:4,ARGB32:5,BGRA32:14,DXT1:10,DXT5:12};
+  const formats={Alpha8:1,RGB24:3,RGBA32:4,ARGB32:5,BGRA32:14,DXT1:10,DXT5:12};
   format=typeof format==='string'?(formats[format]??Number(format)):format;
   const rgba=new Uint8ClampedArray(width*height*4);
   const pixelAt=(x,y)=>((flipY?height-1-y:y)*width+x)*4;
+  if(format===1){
+    if(bytes.length<width*height)fail('图片像素数据不完整。');
+    for(let y=0;y<height;y++)for(let x=0;x<width;x++){const target=pixelAt(x,y);rgba[target]=rgba[target+1]=rgba[target+2]=255;rgba[target+3]=bytes[y*width+x];}
+    return rgba;
+  }
   if([3,4,5,14].includes(format)){
     const stride=format===3?3:4;
     if(bytes.length<width*height*stride)fail('图片像素数据不完整。');
@@ -326,14 +331,15 @@ export async function bindUnityFolder(fileList,index,{onProgress=()=>{},urlAPI=U
     if(!candidates.length)fail(`游戏文件夹缺少 ${path}，请选择完整游戏目录或对应的 _Data 文件夹。`);
     if(candidates.length>1)fail(`所选目录内有多个 ${path}，请只选择一份游戏。`);
     const file=candidates[0];integer(expected.size,`${path} 的预期大小`);
-    if(file.size!==expected.size)fail(`${path} 的大小与 XP2 配套版本不符，请选择原始 v1.0.0 游戏。`);
+    const gameVersion=typeof index.gameVersion==='string'?index.gameVersion:'v1.0.0',gameName=typeof index.gameName==='string'?index.gameName:'性癖讨论2';
+    if(file.size!==expected.size)fail(`${path} 的大小与「${gameName} ${gameVersion}」不符，请选择对应的原始游戏。`);
     if(!Array.isArray(expected.samples)||!expected.samples.length||expected.samples.length>32)fail(`${path} 缺少版本校验信息。`);
     onProgress({phase:'verify',file:path,current:i,total:index.files.length});
     for(const sample of expected.samples){
       integer(sample.offset,'校验偏移');integer(sample.length,'校验长度',MIB);
       if(!/^[0-9a-f]{64}$/i.test(sample.sha256||''))fail('游戏版本的校验摘要无效。');
       const bytes=await readSlice(file,sample.offset,sample.length),actual=hex(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)));
-      if(actual.toLowerCase()!==sample.sha256.toLowerCase())fail(`${path} 与 XP2 配套版本不符，无法安全匹配剧情资源。`);
+      if(actual.toLowerCase()!==sample.sha256.toLowerCase())fail(`${path} 与「${gameName} ${gameVersion}」不符，无法安全匹配剧情资源。`);
     }
     bound.set(path,file);
   }

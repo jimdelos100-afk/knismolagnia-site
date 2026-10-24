@@ -2,7 +2,7 @@
 const nextConfig = {
   poweredByHeader: false,
   outputFileTracingIncludes: {
-    '/level/*/player/*': ['./private/story-player/**/*'],
+    '/level/*/player/*': ['./private/story-player/**/*', './private/story-player-xp3/**/*'],
   },
   async headers() {
     // Public art can be decoded by WebGL inside the opaque, script-only iframe.

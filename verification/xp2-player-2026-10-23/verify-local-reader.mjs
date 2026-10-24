@@ -16,8 +16,7 @@ const args=process.argv.slice(2),option=(name,fallback)=>args.includes(name)?arg
 const gameData=option('--game-data');
 if(!gameData)throw new Error('Pass --game-data with the path to the original game _Data directory.');
 const playerRoot=new URL('../../private/story-player/',import.meta.url);
-const source=await readFile(new URL('src/unity-local.js',playerRoot),'utf8');
-const {bindUnityFolder,decodeTextureRGBA,decodeLZ4Block}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
+const {bindUnityFolder,decodeTextureRGBA,decodeLZ4Block}=await import(new URL('src/unity-local.js',playerRoot));
 const index=JSON.parse(await readFile(new URL('data/unity-index.json',playerRoot),'utf8'));
 const reference=JSON.parse(await readFile(new URL('reader-reference.json',import.meta.url),'utf8'));
 const files=[];

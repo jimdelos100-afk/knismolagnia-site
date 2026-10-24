@@ -14,6 +14,9 @@
   window.addEventListener('message', event => {
     if (event.origin !== window.location.origin || event.source !== window.parent) return;
     if (event.data?.type === 'knismolagnia-player-theme') applyTheme(event.data.theme);
+    if (event.data?.type === 'knismolagnia-player-visibility' && typeof event.data.visible === 'boolean') {
+      document.documentElement.dataset.hostVisible = String(event.data.visible);
+    }
   });
   window.addEventListener('storage', event => {
     if (event.key === themeKey) applyTheme(event.newValue);
@@ -27,7 +30,8 @@
     const mapToggle = document.getElementById('mapFoldButton');
     const mapContents = document.getElementById('mapContents');
     if (mapToggle && mapContents) {
-      const mapKey = 'xp2-chapter-map-collapsed';
+      const gameId = document.documentElement.dataset.gameId === 'xp3' ? 'xp3' : 'xp2';
+      const mapKey = `${gameId}-chapter-map-collapsed`;
       const setMapCollapsed = collapsed => {
         mapContents.hidden = collapsed;
         mapToggle.setAttribute('aria-expanded', String(!collapsed));
@@ -87,6 +91,10 @@
       new ResizeObserver(reportHeight).observe(document.body);
       document.addEventListener('toggle', reportHeight, true);
       window.addEventListener('load', reportHeight);
+      window.addEventListener('message', event => {
+        if (event.origin === window.location.origin && event.source === window.parent &&
+            event.data?.type === 'knismolagnia-player-visibility' && event.data.visible === true) reportHeight();
+      });
       window.parent.postMessage({ type: 'knismolagnia-player-ready' }, window.location.origin);
       reportHeight();
     }

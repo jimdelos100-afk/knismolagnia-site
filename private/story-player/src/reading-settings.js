@@ -5,5 +5,5 @@ export function normalizeReadingSettings(input={}){
   for(const [key,[min,max]] of Object.entries(bounds)){const value=input?.[key];if(typeof value==='number'&&Number.isFinite(value))output[key]=Math.max(min,Math.min(max,value));}
   return output;
 }
-export function readReadingSettings(storage){try{storage??=globalThis.localStorage;return normalizeReadingSettings(JSON.parse(storage.getItem('xp2-reading-settings-1')||'null'));}catch{return {...DEFAULT_READING_SETTINGS};}}
-export function saveReadingSettings(value,storage){const settings=normalizeReadingSettings(value);try{storage??=globalThis.localStorage;storage.setItem('xp2-reading-settings-1',JSON.stringify(settings));}catch{}return settings;}
+export function readReadingSettings(storage,key='xp2-reading-settings-1'){try{storage??=globalThis.localStorage;return normalizeReadingSettings(JSON.parse(storage.getItem(key)||'null'));}catch{return {...DEFAULT_READING_SETTINGS};}}
+export function saveReadingSettings(value,storage,key='xp2-reading-settings-1'){const settings=normalizeReadingSettings(value);try{storage??=globalThis.localStorage;storage.setItem(key,JSON.stringify(settings));}catch{}return settings;}

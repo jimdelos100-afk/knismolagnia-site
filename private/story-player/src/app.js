@@ -14,15 +14,18 @@ import {readStored,writeStored} from './store.js';
 import {AutoReader} from './auto-reader.js';
 import {readReadingSettings,saveReadingSettings,normalizeReadingSettings} from './reading-settings.js';
 import {createGameShell} from './game-shell.js';
+import {NATIVE_UI} from './game-shell-data.js';
 import {validateImageManifest,createImageTemplate,readLocalImagePack} from './localization-pack.js';
 import {createGraphView} from './graph-view.js';
 import {restoreProject} from './restore.js';
 
-const $=id=>document.getElementById(id),ROOT=new URL('../',import.meta.url),VERSION='1.5.0';
+const $=id=>document.getElementById(id),ROOT=new URL('../',import.meta.url),VERSION='1.6.0';
 const app={unityIndex:null,localReady:false,resourceLoading:false,story:null,player:null,library:null,media:null,translations:null,visited:new Set(),history:[],historyIndex:-1,actors:new Map(),graphButtons:new Map(),lastText:'',lastBackground:null,lastSave:0,saveChain:Promise.resolve(),loading:false,transitioning:false,support:[],lastState:null,config:null,savingBlocked:false,recovery:null,mode:'player',epoch:0,bundledStory:null,bundledTranslations:null,assetManifest:null,assetAudit:null,reviewAudit:null,presentation:null,checkpoints:[],stageAudit:null,graphView:null,mapManifest:null,sceneMap:new Map(),scenePositions:new Map(),storySceneIds:new Set(),storySceneCount:0,lengths:{},navigating:false,referenceURL:null,stageAuditSignature:null,resourceRevision:0,hudError:'',dialogueHidden:false,historyOpen:false,historyEntries:new Map()};
-const WINDOW_SKIN='texture:sharedassets0.assets:789';
+const WINDOW_SKIN=NATIVE_UI.messageWindow;
 const autoReader=new AutoReader();
-app.settings=readReadingSettings();app.scrubbing=false;app.previewState=null;app.scrubWanted=null;app.scrubRunning=false;
+const gameName=()=>app.config?.gameName||'性癖讨论2';
+const settingsKey=()=>`${app.config?.gameId==='xp3'?'xp3':'xp2'}-reading-settings-1`;
+app.embeddedVisible=document.documentElement.dataset.hostVisible!=='false';app.settings=normalizeReadingSettings();app.scrubbing=false;app.previewState=null;app.scrubWanted=null;app.scrubRunning=false;
 const status=text=>{$('statusMessage').textContent=text;$('publicStatus').textContent=text;};
 const clearError=()=>{$('errorBox').hidden=true;app.hudError='';if($('hudStatus'))$('hudStatus').hidden=true;};
 const showError=error=>{stopAuto();app.hudError=error?.message||String(error);$('errorMessage').textContent=app.hudError;$('errorBox').hidden=false;const node=$('hudStatus');if(node){node.dataset.kind='error';node.textContent=app.hudError;node.hidden=false;}};
@@ -89,12 +92,12 @@ function syncReadingChrome(state=app.lastState){
 }
 
 function applyReadingSettings(patch={},save=true){
-  const before=app.settings.autoSpeed;app.settings=normalizeReadingSettings({...app.settings,...patch});if(save)saveReadingSettings(app.settings);if(before!==app.settings.autoSpeed)autoReader.reset();
+  const before=app.settings.autoSpeed;app.settings=normalizeReadingSettings({...app.settings,...patch});if(save)saveReadingSettings(app.settings,undefined,settingsKey());if(before!==app.settings.autoSpeed)autoReader.reset();
   for(const id of ['hudAutoSpeed','autoReadSpeed'])if($(id))$(id).value=String(app.settings.autoSpeed);
   for(const id of ['hudAutoSpeedValue','autoReadSpeedValue'])if($(id))$(id).textContent=`${Number(app.settings.autoSpeed.toFixed(2))}×`;
   const dock=document.querySelector('.dialogue-dock');if(dock)dock.style.background=`linear-gradient(100deg,rgba(23,18,31,${app.settings.dialogueOpacity}),rgba(16,30,45,${app.settings.dialogueOpacity}))`;
   app.player?.setTextSpeed?.(app.settings.textSpeed);
-  if(app.media){app.media.masterVolume=app.settings.masterVolume;app.media.channelVolumes={bgm:app.settings.bgmVolume,se:app.settings.seVolume,voice:app.settings.voiceVolume,ambient:app.settings.ambientVolume};if(!app.scrubbing&&app.lastState)app.media.sync({...app.lastState,rate:app.player.rate});}
+  if(app.media){app.media.masterVolume=app.settings.masterVolume;app.media.channelVolumes={bgm:app.settings.bgmVolume,se:app.settings.seVolume,voice:app.settings.voiceVolume,ambient:app.settings.ambientVolume};if(app.embeddedVisible&&!app.scrubbing&&app.lastState)app.media.sync({...app.lastState,rate:app.player.rate});}
   app.menuSounds?.setVolume(app.settings.masterVolume*app.settings.seVolume);
   syncShell(app.lastState);
 }
@@ -107,7 +110,7 @@ const localizationKey=story=>`${story.id}|${story.gameFingerprint}|localization-
 function applyImageOverrides(){
   const entries=new Map((app.baseImageEntries||[]).map(entry=>[entry.assetId,entry]));for(const entry of app.localImageEntries||[])entries.set(entry.assetId,entry);
   app.library.replaceImageOverrides([...entries.values()]);invalidateImages();
-  app.localizationStatus=`${app.customTranslation?'已载入本机更新译文':'正在使用内置译文'} · ${app.localImageEntries?.length||0} 张本机替换图片 · ${app.baseImageEntries?.length||0} 张内置替换图片`;
+  app.localizationStatus=`${app.customTranslation?'已载入本机更新译文':app.config?.translationPending?'原文预览 · 译文待加入':'正在使用内置译文'} · ${app.localImageEntries?.length||0} 张本机替换图片 · ${app.baseImageEntries?.length||0} 张内置替换图片`;
   app.shellKey=null;syncShell();
 }
 async function saveLocalization(){
@@ -145,7 +148,7 @@ async function resetLocalization(){
 function mountGameShell(){
   if(!$('gameShell')||!app.story)return;
   app.shell=createGameShell($('gameShell'),{
-    story:app.story,index:app.unityIndex,translateText:id=>translateText(app.story,app.translations,id).text,
+    story:app.story,index:app.unityIndex,profile:app.config,translateText:id=>translateText(app.story,app.translations,id).text,
     onSelectFolder:()=>$('gameFiles').click(),
     onStart:async()=>{if(app.localReady){await requestJump(app.story.startScene);app.shell?.showPage('reader');}},
     onContinue:()=>app.shell?.showPage('reader'),
@@ -349,9 +352,9 @@ function render(state){
   $('readerPosition').value=dialogue.index>=0?String(dialogue.index):'';
   $('readerPrevious').disabled=app.historyOpen||!app.player.canPreviousDialogue?.()||stagePending(state);
   $('readerPosition').disabled=!!app.story.program&&(choiceWait||state.ended);
-  $('stageLabel').textContent=app.config?.localGame?'XP2 · 本地资源':'二维演出';
+  $('stageLabel').textContent=app.config?.localGame?`${gameName()} · 本地资源`:'二维演出';
   const video=state.video;if(video){$('videoLayer').style.transform=transform;$('videoLayer').style.transformOrigin=`${width/2-(video.x||0)}px ${height/2-(video.y||0)}px`;}
-  if(!app.scrubbing)app.media.sync({...visualState,rate:app.player.rate});
+  if(!app.embeddedVisible)app.media.stop();else if(!app.scrubbing)app.media.sync({...visualState,rate:app.player.rate});
   $('visualLayer').style.filter=app.presentation.sync(app.story,visualState);
   $('reviewCurrent').textContent=`${scene.title} · 舞台 ${Number(state.stageTime??state.time).toFixed(2)} 秒`;
   syncReference();
@@ -402,13 +405,13 @@ async function installStory(story,document=null,{restore=true}={}){
   app.presentation=new PresentationRenderer($('effectLayer'),library);
   app.assetManifest=assetManifest;app.assetAudit=null;app.reviewAudit=app.mode==='review'?auditStory(story):null;app.checkpoints=[];app.stageAudit=null;clearReference();
   app.media=new MediaController($('videoLayer'),library,message=>{$('mediaStatus').textContent=message;if(/无法|尚未|检查/.test(message))status(message);});
-  app.menuSounds=new MenuSounds(library,{enabled:()=>app.localReady&&!busy()&&!window.document.hidden&&window.document.body.dataset.shellPage!=='reader'});
+  app.menuSounds=new MenuSounds(library,{enabled:()=>app.embeddedVisible&&app.localReady&&!busy()&&!window.document.hidden&&window.document.body.dataset.shellPage!=='reader'});
   let restored=null;
   if(restore)try{let saved=await readStored(keyFor(story));const recovered=restoreProject(story,app.translations,saved,{useSavedTranslations:app.mode==='review'});restored=recovered.progress;app.translations=recovered.translations;$('languageSelect').value=app.mode==='player'?'translation':recovered.language;if(recovered.errors.length){app.savingBlocked=true;app.recovery={key:keyFor(story),saved:recovered.preserved};$('recoveryExport').hidden=false;showError(new Error(recovered.errors.join('；')+'。有效部分已恢复，原始记录未覆盖。可导出保留记录，或导出当前浏览进度。'));}}catch{restored=null;app.savingBlocked=true;showError(new Error('本机记录无法读取，已暂停自动保存。可先导出当前浏览进度。'));}
   else if(app.recovery?.key===keyFor(story))await writeStored(`recovery|${app.recovery.key}|${Date.now()}`,app.recovery.saved).catch(()=>{app.savingBlocked=true;});
   await restoreLocalization();syncTextLengths();app.loading=false;$('storyTitle').textContent=story.title;app.visited=new Set(restored?.visited||[]);navigate(restored?.sceneId||story.startScene,{time:restored?.time||0,reader:restored?.reader||null,save:false,internal:true});buildGraph();setRate(app.mode==='player'?1:restored?.rate||1);translationSummary(mergeTranslationDocument(story,emptyTranslations(story),app.translations));fitStage();renderSupport();
   $('sourceNotice').textContent='游戏文件按版本与资源编号匹配；所选文件只在本机读取，不会上传。';
-  $('sampleTitle').textContent=app.config?.localGame?'XP2 本地剧情':'演出包';$('sampleDescription').textContent='内置中文翻译 · 选择场景，逐句阅读。';
+  $('sampleTitle').textContent=app.config?.localGame?`${gameName()} · 本地剧情`:'演出包';$('sampleDescription').textContent=app.config?.translationPending?'续作适配 · 当前显示原文，可在游戏设置导入译文。':'内置中文翻译 · 选择场景，逐句阅读。';
   $('gameFolderSummary').textContent=app.config?.localGame?'尚未绑定本地游戏，请选择游戏本体文件夹。':'正在使用随网页提供的素材。';renderReview();
   render(app.player.state);
   applyReadingSettings({},false);mountGameShell();
@@ -550,6 +553,13 @@ document.addEventListener('keydown',event=>{
 
 document.addEventListener('visibilitychange',()=>{previousFrame=0;if(document.hidden&&app.player){cancelScrub();stopAuto();app.menuSounds?.stop();app.player.pause();scheduleSave(true);}});
 window.addEventListener('pagehide',()=>{stopAuto();app.player?.pause();scheduleSave(true);});
+// Collapsing a player preserves its local File objects, while cancelling all
+// playback. Expanding is intentionally paused until the reader starts it again.
+window.addEventListener('message',event=>{
+  if(window.parent===window||event.origin!==window.location.origin||event.source!==window.parent||event.data?.type!=='knismolagnia-player-visibility'||typeof event.data.visible!=='boolean')return;
+  app.embeddedVisible=event.data.visible;previousFrame=0;
+  if(!app.embeddedVisible){cancelScrub();stopAuto();app.menuSounds?.stop();app.player?.pause();app.media?.stop();scheduleSave(true);}
+});
 new ResizeObserver(fitStage).observe($('stageViewport'));
 document.addEventListener('fullscreenchange',()=>{fitStage();$('fullscreenButton').textContent=document.fullscreenElement?'退出全屏':'全屏';syncReadingChrome(app.lastState);});
 function stagePending(state=app.lastState||app.player?.state){if(!app.localReady||!app.library?.provider||!state)return false;const ids=app.scrubbing?visualAssetIds(state):currentResourceIds(state);ids.forEach(id=>app.library.resolve(id));return !!app.stageImages?.pending(state)||ids.some(id=>app.library.pending.has(id)&&!app.library.resolved.has(id));}
@@ -557,6 +567,7 @@ function currentResourceIds(state){return [...new Set([...visualAssetIds(state),
 let previousFrame=0;
 function frame(now){
   const delta=previousFrame?Math.max(0,(now-previousFrame)/1000):0;previousFrame=now;
+  if(!app.embeddedVisible){if(app.player?.playing)app.player.pause();requestAnimationFrame(frame);return;}
   try{
     let ready=!!app.player&&(!app.config?.localGame||app.localReady)&&!stagePending();
     if(!busy()&&app.player?.playing&&ready&&!app.historyOpen)app.player.advance(delta);
@@ -575,6 +586,7 @@ for(const id of ['readerNext','readerPrevious','hudNext','hudPrevious','hudAuto'
 
 try{
   app.config=await fetchJSON('data/player-config.json');
+  app.settings=readReadingSettings(undefined,settingsKey());
   if(app.config.localGame){app.unityIndex=await fetchJSON(app.config.unityIndex||'data/unity-index.json');$('localGameStatus').textContent='已准备好，请选择游戏文件夹。';}
 
   if(app.config.reviewEnabled===false)$('modeSelect').closest('label').hidden=true;
@@ -589,5 +601,5 @@ try{
   app.bundledStory=results[0].value.document;app.bundledTranslations=results[1].status==='fulfilled'?results[1].value:null;
   await installStory(app.bundledStory,app.bundledTranslations);
   if(results[1].status==='rejected')showError(results[1].reason);
-  status(app.config.localGame?'剧情与中文翻译已准备好。请选择本机游戏文件夹。':'演出包已准备好。');
+  status(app.config.localGame?`${gameName()}${app.config.translationPending?'原文':'与中文翻译'}已准备好。请选择本机游戏文件夹。`:'演出包已准备好。');
 }catch(error){showError(error);status('框架未能完整载入，请通过网页服务打开，并检查部署包是否完整。');}

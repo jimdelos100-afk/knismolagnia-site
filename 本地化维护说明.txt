@@ -1,4 +1,22 @@
-XP2 译文与图片汉化维护
+性癖讨论2 / 性癖讨论3 译文与图片汉化维护
+
+系列通用入口：node scripts/install-localization.mjs
+每次明确选择 --game xp2 或 --game xp3；省略时按旧版兼容规则选择xp2。
+两部作品的游戏指纹和原文编号独立，错用译文或图片清单会被拒绝，不会写入半份文件。
+
+续作完成翻译后，从通用汉化工作台导出JSON（推荐完整文档），保留id、source、sourceHash与gameFingerprint。
+预览：node scripts/install-localization.mjs --game xp3 --translation "C:/工作目录/XP3-新版译文.json" --dry-run
+安装：node scripts/install-localization.mjs --game xp3 --translation "C:/工作目录/XP3-新版译文.json" --apply --backup "C:/工作目录/XP3-备份-新日期"
+图片模板：node scripts/install-localization.mjs --game xp3 --template "C:/工作目录/XP3/overrides.json"
+图片校验：node scripts/install-localization.mjs --game xp3 --images "C:/工作目录/XP3/图片包" --dry-run
+
+XP2维护目录：private/story-player/
+XP3维护目录：private/story-player-xp3/
+每部作品在各自data/translations.json、data/image-overrides.json及localized-images/维护。
+续作安装了有效译文后，维护工具会更新player-config的译文待加入标志；首页折叠卡片的文案可随正式汉化发布一并调整。
+图片清单仍沿用xp2-image-overrides格式标识以兼容旧工具，真正的作品校验依赖gameFingerprint，不会按标识混用作品。
+
+以下旧XP2命令继续有效；换成通用入口并增加--game xp3即可更新续作。
 
 一、更新文字
 

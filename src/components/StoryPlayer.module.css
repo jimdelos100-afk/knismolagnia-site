@@ -1,0 +1,60 @@
+.players {
+  min-width: 0;
+}
+
+.heading:global(.story-player-heading) {
+  align-items: flex-start;
+}
+
+.copy {
+  min-width: 0;
+}
+
+.actions {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 44px;
+  padding: 9px 14px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--paper);
+  color: var(--blue-dark);
+  font: inherit;
+  font-size: .875rem;
+  cursor: pointer;
+}
+
+.toggle:hover {
+  background: var(--pink-soft);
+  color: var(--red-dark);
+}
+
+.toggle:focus-visible {
+  outline: 2px solid var(--red-dark);
+  outline-offset: 3px;
+}
+
+.panel[hidden] {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .actions {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .toggle {
+    width: 100%;
+  }
+}

@@ -7,7 +7,9 @@ import { readLocalImagePack,validateImageManifest,createImageTemplate } from '..
 import { mergeTranslationDocument } from '../../private/story-player/src/translations.js';
 
 const DEFAULT_ROOT=fileURLToPath(new URL('../../',import.meta.url));
-const HELP=`XP2 本地化维护工具（默认仅预览，不改文件）
+const PLAYER_DIRECTORIES={xp2:'story-player',xp3:'story-player-xp3'};
+function playerDirectory(game){if(!Object.hasOwn(PLAYER_DIRECTORIES,game))throw new Error('--game 只支持 xp2 或 xp3。');return PLAYER_DIRECTORIES[game];}
+const HELP=`性癖讨论系列本地化维护工具（默认仅预览，不改文件）
 node scripts/xp2-adapter/install-localization.mjs --translation 新译文.json --images 图片目录 --dry-run
 node scripts/xp2-adapter/install-localization.mjs --translation 新译文.json --images 图片目录 --apply --backup C:/备份目录
 node scripts/xp2-adapter/install-localization.mjs --template C:/工作目录/overrides.json
@@ -19,6 +21,7 @@ node scripts/xp2-adapter/install-localization.mjs --template C:/工作目录/ove
 --apply        完整校验后备份并安装；与 --dry-run 互斥
 --backup       --apply 时必填；新建备份目录，必须在仓库之外且不存在
 --site         可选网站仓库路径；默认本脚本所在仓库
+--game         xp2 或 xp3；默认 xp2，两部作品独立校验与安装
 --help         显示说明
 
 只修改译文、图片清单及 localized-images 内的汉化图片，不修改原文或原游戏文件。
@@ -28,7 +31,7 @@ const stringify=value=>JSON.stringify(value,null,2)+'\n';
 async function absent(file){try{await lstat(file);return false;}catch(error){if(error.code==='ENOENT')return true;throw error;}}
 const inside=(parent,child)=>{const relative=path.relative(parent,child);return relative===''||relative!=='..'&&!relative.startsWith('..'+path.sep)&&!path.isAbsolute(relative);};
 async function safeDirectory(root,folder){let ancestor=folder;while(await absent(ancestor))ancestor=path.dirname(ancestor);if(!inside(root,await realpath(ancestor)))throw new Error('目标目录不允许指向播放器外部。');await mkdir(folder,{recursive:true});if(!inside(root,await realpath(folder)))throw new Error('目标目录不允许指向播放器外部。');}
-async function rootFor(input){const root=await realpath(input);for(const relative of ['private/story-player/data/story.json','private/story-player/data/unity-index.json','private/story-player/data/translations.json']){const target=await realpath(path.join(root,relative));if(!inside(root,target))throw new Error('网站数据路径不允许指向仓库外部。');}return root;}
+async function rootFor(input,game='xp2'){const root=await realpath(input),directory=playerDirectory(game);for(const file of ['story.json','unity-index.json','translations.json']){const target=await realpath(path.join(root,'private',directory,'data',file));if(!inside(root,target))throw new Error('网站数据路径不允许指向仓库外部。');}return root;}
 async function directoryFiles(input){
   const root=await realpath(input),files=[];
   async function walk(folder,relative=''){
@@ -43,19 +46,20 @@ async function directoryFiles(input){
 }
 const decode=async(file,{bytes})=>{const image=sharp(bytes,{failOn:'warning',limitInputPixels:80000000});const {info}=await image.raw().toBuffer({resolveWithObject:true});return {width:info.width,height:info.height};};
 
-export async function installLocalization({root=DEFAULT_ROOT,translationPath,imagesPath,apply=false,backupPath}={}){
+export async function installLocalization({root=DEFAULT_ROOT,game='xp2',translationPath,imagesPath,apply=false,backupPath}={}){
   if(!translationPath&&!imagesPath)throw new Error('请指定 --translation 或 --images。');
-  root=await rootFor(root);const player=await realpath(path.join(root,'private/story-player')),data=path.join(player,'data');
+  root=await rootFor(root,game);const player=await realpath(path.join(root,'private',playerDirectory(game))),data=path.join(player,'data');
   const [story,index,current]=await Promise.all(['story.json','unity-index.json','translations.json'].map(name=>json(path.join(data,name))));
   let translation=null,pack=null;
   if(translationPath){const incoming=await json(translationPath);if(incoming.type==='xp2-translation')incoming.type='story-translations';if(incoming.type!=='story-translations')throw new Error('请选择 xp2-translation 或 story-translations 文档。');const merged=mergeTranslationDocument(story,current,incoming);if(merged.pending)throw new Error(`新译文包含 ${merged.pending} 个未匹配编号；请先核对原文目录。`);translation=merged;}
   if(imagesPath)pack=await readLocalImagePack(await directoryFiles(imagesPath),index,{decode});
-  const plan={apply:!!apply,translation:translation?{matched:translation.matched,entries:translation.document.translations.length}:null,images:pack?{count:pack.count,totalBytes:pack.totalBytes}:null,backup:null};
+  const plan={game,apply:!!apply,translation:translation?{matched:translation.matched,entries:translation.document.translations.length}:null,images:pack?{count:pack.count,totalBytes:pack.totalBytes}:null,backup:null};
   if(!apply)return plan;
   if(!backupPath)throw new Error('--apply 必须同时指定 --backup，先保留可恢复的旧文件。');
   let backup=path.resolve(backupPath);const parent=await realpath(path.dirname(backup));backup=path.join(parent,path.basename(backup));if(inside(root,backup))throw new Error('备份目录必须位于网站仓库之外。');if(!await absent(backup))throw new Error('备份目录已存在，请指定新的目录。');await mkdir(backup);
   const changes=[];
   if(translation)changes.push({relative:'data/translations.json',text:stringify(translation.document)});
+  if(translation&&translation.matched>0){const configPath=path.join(data,'player-config.json');if(!await absent(configPath)){const config=await json(configPath);if(config.translationPending)changes.push({relative:'data/player-config.json',text:stringify({...config,translationPending:false})});}}
   if(pack){
     const images=[];
     for(const [number,entry] of pack.entries.entries()){
@@ -89,9 +93,10 @@ export async function installLocalization({root=DEFAULT_ROOT,translationPath,ima
 }
 export async function main(argv=process.argv.slice(2)){
   if(argv.includes('--help')){console.log(HELP);return;}
-  const options={};for(let i=0;i<argv.length;i++){const key=argv[i];if(['--apply','--dry-run'].includes(key)){options[key]=true;continue;}if(!['--translation','--images','--backup','--site','--template'].includes(key)||!argv[i+1]||argv[i+1].startsWith('--'))throw new Error(`未知或缺少参数：${key}`);if(options[key])throw new Error(`重复参数：${key}`);options[key]=argv[++i];}
+  const options={};for(let i=0;i<argv.length;i++){const key=argv[i];if(['--apply','--dry-run'].includes(key)){options[key]=true;continue;}if(!['--translation','--images','--backup','--site','--template','--game'].includes(key)||!argv[i+1]||argv[i+1].startsWith('--'))throw new Error(`未知或缺少参数：${key}`);if(options[key])throw new Error(`重复参数：${key}`);options[key]=argv[++i];}
   if(options['--apply']&&options['--dry-run'])throw new Error('--apply 与 --dry-run 不能同时使用。');
-  if(options['--template']){if(options['--translation']||options['--images']||options['--apply'])throw new Error('--template 请单独使用。');const root=await rootFor(options['--site']||DEFAULT_ROOT),index=await json(path.join(root,'private/story-player/data/unity-index.json'));const target=path.resolve(options['--template']);if(inside(root,target))throw new Error('请将模板输出到仓库之外的工作目录。');await writeFile(target,stringify(createImageTemplate(index)),{flag:'wx'});console.log(`图片清单模板已输出：${target}`);return;}
-  const result=await installLocalization({root:options['--site']||DEFAULT_ROOT,translationPath:options['--translation'],imagesPath:options['--images'],apply:!!options['--apply'],backupPath:options['--backup']});console.log(JSON.stringify(result,null,2));if(!result.apply)console.log('校验通过。当前为预览；确认后增加 --apply 执行安装。');
+  const game=options['--game']||'xp2';playerDirectory(game);
+  if(options['--template']){if(options['--translation']||options['--images']||options['--apply'])throw new Error('--template 请单独使用。');const root=await rootFor(options['--site']||DEFAULT_ROOT,game),index=await json(path.join(root,'private',playerDirectory(game),'data/unity-index.json'));const target=path.resolve(options['--template']);if(inside(root,target))throw new Error('请将模板输出到仓库之外的工作目录。');await writeFile(target,stringify(createImageTemplate(index)),{flag:'wx'});console.log(`图片清单模板已输出：${target}`);return;}
+  const result=await installLocalization({root:options['--site']||DEFAULT_ROOT,game,translationPath:options['--translation'],imagesPath:options['--images'],apply:!!options['--apply'],backupPath:options['--backup']});console.log(JSON.stringify(result,null,2));if(!result.apply)console.log('校验通过。当前为预览；确认后增加 --apply 执行安装。');
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(path.resolve(process.argv[1])).href)main().catch(error=>{console.error(error.message);process.exitCode=1;});

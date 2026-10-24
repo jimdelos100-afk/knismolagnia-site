@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN" data-game-id="xp3">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#10191c">
+  <meta name="description" content="支持逐句点击阅读、可视化分支地图和内置译文的剧情播放器框架。">
+  <title>性癖讨论3 · 雪糕少女剧情播放器</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="site-theme.css">
+  <script defer src="site-theme.js"></script>
+  <script type="module" src="src/app.js"></script>
+</head>
+<body data-mode="player" data-local-game="waiting">
+  <header class="site-header">
+    <div class="identity"><a class="brand-symbol" href="#main" aria-label="跳到剧情播放器">映</a><div><div class="brand-line"><h1>剧情播放器</h1><span class="version-badge">第六层 · XP3</span></div><p class="brand-subtitle">INDEPENDENT STORY PLAYER <span>逐句阅读，自由浏览</span></p></div></div>
+    <div class="header-actions"><label class="mode-control" for="modeSelect"><span>浏览模式</span><select id="modeSelect"><option value="player" selected>剧情阅读</option><option value="review">演出校对</option></select></label><button id="resetDemo" class="button quiet">重新开始</button><button id="loadGameFolder" class="button primary"><span aria-hidden="true">＋</span> 选择游戏文件夹</button></div>
+    <input id="gameFiles" type="file" webkitdirectory multiple hidden>
+    <input id="storyPackFile" type="file" accept=".json,application/json" hidden>
+    <input id="translationFile" type="file" accept=".json,application/json" hidden>
+    <input id="checkpointFile" type="file" accept=".json,application/json" hidden>
+    <input id="referenceFile" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+    <input id="progressFile" type="file" accept=".json,application/json" hidden>
+    <input id="assetFolderFiles" type="file" webkitdirectory multiple hidden>
+    <input id="localizedImageFiles" type="file" webkitdirectory multiple hidden>
+  </header>
+
+  <div class="sample-notice"><span class="sample-dot" aria-hidden="true"></span><strong id="sampleTitle">XP3 本地剧情</strong><span id="sampleDescription">选择游戏本体文件夹，即可阅读原文；完成汉化后可内置中文翻译。</span><span class="local-tag">游戏资源仅在本机读取</span></div>
+
+  <p class="scope-note">剧情浏览模式：条件分支手动选择，讨论小游戏以译文资料和继续入口展示；部分演出效果采用近似处理。</p>
+  <section id="gameShell" class="game-shell panel" aria-label="游戏菜单"><p class="shell-loading" role="status">正在准备游戏菜单……</p></section>
+  <main id="main" class="player-layout">
+    <aside class="map-panel panel" aria-labelledby="mapHeading">
+      <div class="section-heading"><div><span class="eyebrow">STORY MAP</span><h2 id="mapHeading">剧情地图</h2></div><button id="mapFoldButton" class="button small quiet" type="button" aria-expanded="true" aria-controls="mapContents">收起地图</button></div>
+      <div id="mapContents">
+      <div class="map-intro"><h3 id="storyTitle">XP3</h3><p>按章节浏览静态剧情地图，展开分支层级，跳到想看的剧情。</p></div>
+      <div id="graphCanvas" class="graph-canvas" aria-label="按章节读取的静态剧情分支地图"></div>
+      <div id="graphLegend" class="graph-legend"><span><i class="legend-current"></i>正在浏览</span><span><i class="legend-visited"></i>已浏览</span><span><i></i>未浏览</span></div>
+      </div>
+      <div class="map-footer"><span class="eyebrow">YOUR PROGRESS</span><p id="progressSummary">尚未开始浏览</p><div class="split-actions"><button id="exportProgress" class="button small">导出进度</button><button id="importProgress" class="button small quiet">导入进度</button></div></div>
+    </aside>
+
+    <section class="watch-column" aria-label="剧情演出播放器">
+      <div class="scene-heading"><div><div class="scene-kicker"><span class="eyebrow">NOW SHOWING</span><span id="sceneCounter" class="scene-counter">01 / 04</span></div><h2 id="sceneTitle">XP3</h2><p id="sceneDescription">正在载入剧情与译文目录。</p></div><span id="stageLabel" class="scene-label">本地游戏</span></div>
+      <section id="localGameGate" class="local-game-gate" aria-label="读取本地游戏">
+        <span class="eyebrow">LOCAL GAME</span><h3>从你的游戏文件夹开始</h3>
+        <p>选择「性癖討論3_v1.10」或其中的「性癖討論3_Data」文件夹。图片、声音和视频在本机按需读取，不会上传。</p>
+        <button id="selectLocalGame" class="button primary" type="button">选择游戏文件夹</button>
+        <p id="localGameStatus" role="status">正在准备剧情目录……</p>
+      </section><div class="stage-shell">
+        <div id="stageViewport" class="stage-viewport" role="region" tabindex="0" aria-label="剧情演出画面，点击继续对白" aria-describedby="readerHint">
+          <div id="logicalStage" class="logical-stage">
+            <div id="visualLayer" class="visual-layer"><div id="backgroundLayer" class="background-layer"></div>
+            <div id="actorLayer" class="actor-layer"></div>
+            <video id="videoLayer" class="video-layer" playsinline preload="metadata" aria-label="剧情视频" hidden></video>
+            <div id="effectLayer" class="effect-layer" aria-hidden="true"></div></div><div id="overlayLayer" class="overlay-layer"></div>
+            <img id="referenceImage" class="reference-image" alt="当前校对参考图" hidden>
+          </div>
+          <div class="stage-hud" aria-label="剧情阅读控制">
+            <section id="choicePanel" class="choice-panel" aria-label="剧情分支选择"></section>
+            <div class="dialogue-dock">
+              <div id="messageWindow" class="message-window"><div class="message-topline"><span id="speakerName" class="speaker-name">旁白</span><span class="dialogue-emblem" aria-hidden="true">◆</span></div><div id="dialogueText" class="dialogue-text" aria-live="off">正在准备演出……</div></div>
+              <p id="hudStatus" class="hud-status" role="status" aria-live="polite" hidden></p>
+              <div class="segment-progress-row"><span id="segmentProgressLabel" class="segment-progress-label">本段剧情 · 正在准备</span><progress id="segmentProgress" class="segment-progress" max="1" value="0" aria-labelledby="segmentProgressLabel">0%</progress><input id="segmentSeek" class="segment-seek" type="range" min="0" max="0" step="1" value="0" disabled aria-label="拖动跳转本段对白" aria-describedby="segmentProgressLabel"></div>
+              <div class="hud-toolbar" role="group" aria-label="对白操作">
+                <button id="hudPrevious" class="hud-button" type="button" disabled>上一句</button>
+                <button id="hudNext" class="hud-button hud-next" type="button" disabled>下一句</button>
+                <button id="hudAuto" class="hud-button" type="button" aria-pressed="false" disabled>自动播放</button>
+                <label class="hud-speed-control" for="hudAutoSpeed"><span>翻句速度</span><input id="hudAutoSpeed" type="range" min="0.25" max="4" step="0.25" value="1" aria-label="自动翻句速度"><output id="hudAutoSpeedValue" for="hudAutoSpeed">1×</output></label>
+                <button id="hudHistory" class="hud-button" type="button" aria-controls="historyPanel" aria-expanded="false" disabled>文本全览</button>
+                <button id="hudHide" class="hud-button" type="button" aria-label="隐藏对话框" disabled>隐藏对话框</button>
+                <button id="hudExitFullscreen" class="hud-button hud-exit-fullscreen" type="button">退出全屏</button>
+              </div>
+            </div>
+          </div>
+          <section id="historyPanel" class="dialogue-history" role="dialog" aria-modal="true" aria-labelledby="historyHeading" aria-describedby="historyDescription" hidden>
+            <div class="dialogue-history-heading"><h3 id="historyHeading">文本全览</h3><button id="historyClose" class="hud-button" type="button" aria-label="关闭文本全览">关闭</button></div>
+            <p id="historyDescription" class="dialogue-history-description">当前句与此前最多 30 句已读对白；点击前文可返回该位置。</p>
+            <div id="historyList" class="dialogue-history-list" role="group" aria-label="已读对白"></div>
+          </section>
+          <button id="hudRestore" class="hud-restore" type="button" aria-label="显示对话框" title="显示对话框" hidden><span aria-hidden="true">▤</span><span class="sr-only">显示对话框</span></button>
+          <div class="stage-corner top-left" aria-hidden="true"></div><div class="stage-corner bottom-right" aria-hidden="true"></div>
+        </div>
+        <div class="timeline-area review-only" hidden><label class="sr-only" for="timeSlider">旧版场景播放位置</label><input id="timeSlider" class="time-slider" type="range" min="0" max="16" step="0.01" value="0"><div class="timeline-meta"><span>旧版时间轴</span><output id="timeLabel" for="timeSlider">00:00 / 00:16</output></div></div>
+        <div class="dialogue-position review-only"><label for="readerPosition">对白定位</label><select id="readerPosition" aria-label="跳转到当前场景的指定对白"><option value="">正在准备对白列表</option></select></div>
+        <div class="reader-guide"><p id="readerHint" role="status" aria-live="polite">点击画面或按空格继续；文字显示中点击可补全。</p></div>
+        <div class="transport-bar"><div class="transport-main"><button id="readerPrevious" class="button reader-previous" type="button">上一句</button><button id="readerNext" class="reader-next" type="button">开始阅读</button><button id="autoReadButton" class="button reader-extra" type="button" aria-pressed="false" disabled>自动播放</button><button id="historyButton" class="button quiet reader-extra" type="button" aria-controls="historyPanel" aria-expanded="false" disabled>文本全览</button><button id="hideDialogueButton" class="button quiet reader-extra" type="button" disabled>隐藏对话框</button><div class="transport-debug-group review-only"><button id="previousScene" class="icon-button" aria-label="上一场景" title="上一场景">‹</button><button id="playPause" class="play-button" aria-label="播放演出">播放</button><button id="nextScene" class="icon-button" aria-label="下一场景" title="下一场景">›</button><button id="restartScene" class="button quiet restart-button">重新播放</button></div></div><div class="transport-options"><label class="inline-auto-speed" for="autoReadSpeed"><span>翻句速度</span><input id="autoReadSpeed" type="range" min="0.25" max="4" step="0.25" value="1" aria-label="自动翻句速度"><output id="autoReadSpeedValue" for="autoReadSpeed">1×</output></label><label class="review-only"><span class="sr-only">播放速度</span><select id="speedSelect" aria-label="播放速度"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label><label class="review-only"><span class="sr-only">显示语言</span><select id="languageSelect" aria-label="显示语言"><option value="translation">汉化文本</option><option value="original">原文</option></select></label><button id="fullscreenButton" class="icon-button fullscreen-button" aria-label="全屏显示" title="全屏显示">⛶</button></div></div>
+      </div>
+      <p id="publicStatus" class="viewer-note" role="status" aria-live="polite">请选择游戏文件夹。</p>
+      <div class="playback-status review-only"><span class="status-dot" aria-hidden="true"></span><p id="statusMessage" role="status" aria-live="polite">正在准备播放器。</p><span id="mediaStatus" class="media-status">音视频待命</span></div>
+      <p class="viewer-note review-only">校对时可定位具体对白，使用暂停和速度检查演出。切回「剧情阅读」即可使用逐句点击操作。</p>
+      <section class="review-panel panel review-only" aria-labelledby="reviewHeading">
+        <div class="section-heading"><div><span class="eyebrow">SCENE REVIEW</span><h2 id="reviewHeading">场景校对</h2></div><span id="reviewCurrent" class="review-current"></span></div>
+        <div class="review-body">
+          <p class="review-intro">检查结构、素材和文字布局，保存当前演出位置，或叠加参考图进行人工对照。</p>
+          <div class="review-actions"><button id="runReview" class="button">运行场景检查</button><button id="exportReview" class="button quiet">导出检查报告</button></div>
+          <p id="reviewSummary" class="review-summary" role="status">正在准备检查结果。</p><ul id="reviewIssues" class="audit-list"></ul>
+          <div id="sceneReviewList" class="scene-review-list"></div>
+          <div class="review-subsection"><label for="checkpointLabel">检查点备注</label><input id="checkpointLabel" type="text" maxlength="100" placeholder="例如：光信号第一个亮帧"><div class="review-actions"><button id="saveCheckpoint" class="button">保存检查点</button><button id="importCheckpoint" class="button quiet">导入检查点</button></div><p class="review-note">保存时暂停演出；检查点含具体对白与流程状态，参考图片需单独保留。</p><ul id="checkpointList" class="checkpoint-list"></ul></div>
+          <div class="review-subsection"><div class="review-actions"><button id="compareReference" class="button">选择对照图</button><button id="clearReference" class="button quiet" disabled>清除对照</button></div><label class="reference-opacity" for="referenceOpacity">对照图不透明度 <output id="referenceOpacityValue">50%</output></label><input id="referenceOpacity" type="range" min="0" max="100" value="50" disabled><label for="referenceMode" class="sr-only">对照显示方式</label><select id="referenceMode" disabled><option value="overlay">叠加对照</option><option value="difference">差异混合</option></select><p id="referenceSummary" class="review-note">选择自己制作的 PNG、JPEG 或 WebP 参考图；对照在当前浏览器内完成。</p></div>
+        </div>
+      </section>
+
+    </section>
+
+    <aside class="resource-panel panel review-only" aria-labelledby="resourcesHeading">
+      <div class="section-heading"><div><span class="eyebrow">REVIEW TOOLS</span><h2 id="resourcesHeading">校对工具</h2></div><span class="tiny-mark" aria-hidden="true">＋</span></div>
+      <section class="resource-section"><div class="resource-label"><span class="resource-number">01</span><h3>素材装配</h3></div><p id="gameFolderSummary" class="resource-description">请选择原版游戏文件夹。</p><p id="sourceNotice" class="muted resource-note">素材清单限定编号、路径和文件哈希；所选文件只在本机读取。</p><div class="resource-actions"><button id="auditAssets" class="button resource-button">检查内置素材</button><button id="clearAssets" class="button quiet resource-button">解除目录绑定</button></div><p id="assetAuditSummary" class="resource-description" role="status">尚未检查素材。</p><ul id="assetAuditList" class="audit-list"></ul></section>
+      <section class="resource-section"><div class="resource-label"><span class="resource-number">02</span><h3>演出内容</h3></div><p class="resource-description">页面已载入配套剧情内容。此处可载入自己编写的同格式演出包。</p><button id="loadStoryPack" class="button resource-button">载入演出包</button></section>
+      <section class="resource-section"><div class="resource-label"><span class="resource-number">03</span><h3>译文与替换素材</h3></div><p id="translationSummary" class="resource-description">当前提供原文阅读；汉化完成后将在此内置中文译文。</p><div class="resource-actions"><button id="loadTranslation" class="button resource-button">载入翻译文档</button><button id="assetFolderButton" class="button quiet resource-button">选择替换素材目录</button></div></section>
+      <details id="projectInfo" class="support-details" open><summary><span>演出检查</span><span class="detail-chevron" aria-hidden="true">⌄</span></summary><ul id="supportList" class="support-list"><li>正在检查演出支持情况。</li></ul></details>
+      <div class="resource-footnote"><span class="mini-brand" aria-hidden="true">映</span><p>译文与汉化媒体可随网站提供。<br>此处导入仅用于校对。</p></div>
+    </aside>
+  </main>
+  <section id="gameAccessNotice" class="game-access-banner" aria-labelledby="gameAccessHeading">
+    <div class="game-access-copy">
+      <span class="game-access-label">游戏本体 · 使用前必看</span>
+      <h2 id="gameAccessHeading">先获取游戏本体，再开始汉化剧情</h2>
+      <p>购买并解压游戏本体后，点击「选择游戏文件夹」载入，即可阅读原文，汉化完成后将加入中文译文。</p>
+    </div>
+    <a class="game-access-link" href="https://www.dlsite.com/maniax/work/=/product_id/RJ01598673.html" target="_blank" rel="noopener noreferrer">
+      <span>购买 / 下载游戏本体 <span aria-hidden="true">↗</span></span>
+      <small>前往 DLsite 官方页面</small>
+    </a>
+  </section>
+  <footer class="site-footer"><span>雪糕少女汉化组 / XP3 剧情播放器</span><span>所选文件仅在当前浏览器本地读取</span></footer>
+  <div id="errorBox" class="error-box" role="alert" hidden><span class="error-symbol" aria-hidden="true">!</span><p id="errorMessage"></p><button id="dismissError" class="button small quiet" aria-label="关闭错误提示">关闭</button></div>
+</body>
+</html>

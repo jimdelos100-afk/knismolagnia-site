@@ -8,6 +8,14 @@ export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 
 const ROOT = path.join(process.cwd(), 'private', 'story-player')
+const XP3_ROOT = path.join(process.cwd(), 'private', 'story-player-xp3')
+// Only the engine and common interface are shared. A missing sequel catalogue
+// must never silently fall back to the first game's data or translated images.
+function sharedPlayerFile(parts: string[]) {
+  return parts.length === 1 && ['styles.css', 'site-theme.css', 'site-theme.js'].includes(parts[0])
+    || parts.length === 2 && parts[0] === 'src' && parts[1].endsWith('.js') && parts[1] !== 'game-shell-data.js'
+    || parts.length === 2 && parts[0] === 'assets' && parts[1] === 'mark.svg'
+}
 const TYPES: Record<string, string> = {
   '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
   '.mjs': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8',
@@ -27,14 +35,15 @@ export async function GET(request: Request, context: {
   const localPreview = await isLocalDesignMode()
   let authorized = localPreview
   if (!localPreview && !isLevelSixPublic()) { await requireLevel(6); authorized = true }
-  const parts = params.path
+  const sequel = params.path[0] === 'xp3'
+  const parts = sequel ? params.path.slice(1) : params.path
   if (!parts.length || parts.some(part => !part || part.startsWith('.') || /[\\/:%\x00-\x1f]/.test(part))) {
     return new Response('Not found', { status: 404 })
   }
   const type = TYPES[path.extname(parts.at(-1)!).toLowerCase()]
   if (!type) return new Response('Not found', { status: 404 })
   try {
-    const root = await realpath(ROOT)
+    const root = await realpath(sequel && !sharedPlayerFile(parts) ? XP3_ROOT : ROOT)
     const file = await realpath(path.join(root, ...parts))
     if (!file.startsWith(root + path.sep)) return new Response('Not found', { status: 404 })
     const info = await stat(file)
